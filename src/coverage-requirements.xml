@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../src-generated/schemas/fhir-single.xsd">
+  <id value="coverage-requirements"/>
+  <url value="http://hl7.org/fhir/us/davinci-crd/ImplementationGuide/coverage-requirements"/>
+  <name value="Coverage Requirements Discovery"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <publisher value="HL7 Davinci Project"/>
+  <description value="Guidelines for conveying coverage requirements to clinicians when planning treatment"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+    </coding>
+  </jurisdiction>
+  <fhirVersion value="3.4.0"/>
+  <!-- Once US core supports R4, we'll include this
+  <dependsOn>
+    <uri value="http://hl7.org/fhir/us/core"/>
+    <version value="1.0.1"/>
+  </dependsOn>-->
+  <definition>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="eligibilityrequest-profile-spreadsheet.xml"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="coverage-profile-spreadsheet.xml"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="eligibilityresponse-profile-spreadsheet.xml"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="patient-profile-spreadsheet.xml"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="practitioner-profile-spreadsheet.xml"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="location-profile-spreadsheet.xml"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="procedure-profile-spreadsheet.xml"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="observation-profile-spreadsheet.xml"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="task-profile-spreadsheet.xml"/>
+    </extension>
+    <package id="profiles">
+      <name value="Profiles"/>
+      <description value="Profiles to be supported by EHRs and payor systems conforming to this implementation guide"/>
+    </package>
+    <package id="extensions">
+      <name value="Extensions"/>
+      <description value="Extensions defined as part of this implementation guide"/>
+    </package>
+    <package id="terminology">
+      <name value="Terminology"/>
+      <description value="Value Sets and/or code systems defined as part of this implementation guide"/>
+    </package>
+<!-- Uncomment when we have some
+    <package id="examples">
+      <name value="Example(s)"/>
+      <description value="Example(s) showing the use of the CG profiles"/>
+    </package>-->
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/profile-observation"/>
+      </reference>
+      <name value="CRD Observation"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="profiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/profile-location"/>
+      </reference>
+      <name value="CRD Location"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="profiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/profile-eligibilityrequest"/>
+      </reference>
+      <name value="CRD Eligibility Request"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="profiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/profile-eligibilityresponse"/>
+      </reference>
+      <name value="CRD Eligibility Response"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="profiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/profile-task"/>
+      </reference>
+      <name value="CRD Task"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="profiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/profile-practitioner"/>
+      </reference>
+      <name value="CRD Practitioner"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="profiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/profile-procedure"/>
+      </reference>
+      <name value="CRD Procedure"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="profiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/profile-patient"/>
+      </reference>
+      <name value="CRD Patient"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="profiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ext-requestType"/>
+      </reference>
+      <name value="EligibilityRequest type"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="profiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ext-serviceInformation"/>
+      </reference>
+      <name value="EligibilityRequest service information"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="profiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ext-coverageDocumentation"/>
+      </reference>
+      <name value="EligibilityResponse coverage documentation"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="profiles"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/locationAddressType"/>
+      </reference>
+      <name value="CRD Location Address Types"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="terminology"/>
+    </resource>
+    <page>
+      <nameUrl value="toc.html"/>
+      <title value="Table of Contents"/>
+      <generation value="html"/>
+      <page>
+        <nameUrl value="index.html"/>
+        <title value="CG IG Home Page"/>
+        <generation value="markdown"/>
+<!--        <page>
+          <nameUrl value="background.html"/>
+          <title value="Genomics Primer"/>
+          <generation value="html"/>
+        </page>-->
+      </page>
+      <page>
+        <nameUrl value="artifacts.html"/>
+        <title value="Artifact List"/>
+        <generation value="html"/>
+      </page>
+    </page>
+  </definition>
+</ImplementationGuide>

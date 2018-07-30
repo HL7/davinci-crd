@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+  <id value="locationAddressType"/>
+  <url value="http://hl7.org/fhir/us/davinci-crd/ValueSet/locationAddressType"/>
+  <name value="CRD Location Address Types"/>
+  <status value="draft"/>
+  <description value="Address codes allowed for CRD locations - those that are physical addresses"/>
+  <compose>
+    <include>
+      <system value="http://hl7.org/fhir/address-type"/>
+      <concept>
+        <code value="both"/>
+      </concept>    
+      <concept>
+        <code value="physical"/>
+      </concept>    
+    </include>
+  </compose>
+</ValueSet>
