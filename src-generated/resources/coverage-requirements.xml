@@ -28,6 +28,7 @@
     
     
     
+    
     <package id="profiles">
       <name value="Profiles"/>
       <description value="Profiles to be supported by EHRs and payor systems conforming to this implementation guide"/>
@@ -71,7 +72,7 @@
       <generation value="html"/>
       <page>
         <nameUrl value="index.html"/>
-        <title value="CG IG Home Page"/>
+        <title value="CRD IG Home Page"/>
         <generation value="markdown"/>
 <!--        <page>
           <nameUrl value="background.html"/>

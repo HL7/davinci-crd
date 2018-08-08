@@ -34,16 +34,16 @@ TODO
 
 ### Content and organization
 
-'''Background and use-cases''' describes the intent of this implementation guide and provides examples of how this specification can be used by payors
+**Background and use-cases** describes the intent of this implementation guide and provides examples of how this specification can be used by payors
 
-'''CDS Hooks Considerations''' describes how the CDS hooks framework will be used and highlights those portions of the CDS Hooks specifications that systems conformant with this implementaiton guide will need to support, any constraints on the general CDS Hooks framework that will need to be adhered to as well as business processes that will need to be executed between payors and EHRs wishing to leverage this implementation guide
+**CDS Hooks Considerations** describes how the CDS hooks framework will be used and highlights those portions of the CDS Hooks specifications that systems conformant with this implementaiton guide will need to support, any constraints on the general CDS Hooks framework that will need to be adhered to as well as business processes that will need to be executed between payors and EHRs wishing to leverage this implementation guide
 
-'''Data standards''' Summarizes the resources used by this profile and 
+**Data standards** Summarizes the resources used by this profile and 
 
-'''Hook responses''' Describes the types of cards that Payors can return in response to hook invocation and constraints on those responses
+**Hook responses** Describes the types of cards that Payors can return in response to hook invocation and constraints on those responses
 
-'''Security and consent''' Describes expectations and assumptions around security and consent related to this implementation guide
+**Security and consent** Describes expectations and assumptions around security and consent related to this implementation guide
 
-'''Examples''' includes a set of examples showing how this specification can be used to solve different business cases
+**Examples** includes a set of examples showing how this specification can be used to solve different business cases
 
-'''Credits''' Indicates the individuals and organizations involved in developing this implementation guide
+**Credits** Indicates the individuals and organizations involved in developing this implementation guide

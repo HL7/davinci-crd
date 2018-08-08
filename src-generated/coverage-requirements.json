@@ -102,6 +102,7 @@
     "patient-profile-spreadsheet.xml",
     "practitioner-profile-spreadsheet.xml",
     "location-profile-spreadsheet.xml",
+    "organization-profile-spreadsheet.xml",
     "procedure-profile-spreadsheet.xml",
     "observation-profile-spreadsheet.xml",
     "task-profile-spreadsheet.xml"
