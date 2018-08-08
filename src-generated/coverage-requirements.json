@@ -96,9 +96,7 @@
   "canonicalBase": "http://hl7.org/fhir/us/davinci-crd",
   "source": "coverage-requirements.xml",
   "spreadsheets": [
-    "eligibilityrequest-profile-spreadsheet.xml",
     "coverage-profile-spreadsheet.xml",
-    "eligibilityresponse-profile-spreadsheet.xml",
     "patient-profile-spreadsheet.xml",
     "practitioner-profile-spreadsheet.xml",
     "location-profile-spreadsheet.xml",
@@ -111,10 +109,6 @@
     "StructureDefinition/profile-observation":{
     },
     "StructureDefinition/profile-location":{
-    },
-    "StructureDefinition/profile-eligibilityrequest":{
-    },
-    "StructureDefinition/profile-eligibilityresponse":{
     },
     "StructureDefinition/profile-task":{
     },

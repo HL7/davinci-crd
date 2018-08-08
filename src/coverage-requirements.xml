@@ -21,13 +21,7 @@
   </dependsOn>-->
   <definition>
     <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
-      <valueUri value="eligibilityrequest-profile-spreadsheet.xml"/>
-    </extension>
-    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
       <valueUri value="coverage-profile-spreadsheet.xml"/>
-    </extension>
-    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
-      <valueUri value="eligibilityresponse-profile-spreadsheet.xml"/>
     </extension>
     <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
       <valueUri value="patient-profile-spreadsheet.xml"/>
@@ -87,30 +81,6 @@
         <reference value="StructureDefinition/profile-location"/>
       </reference>
       <name value="CRD Location"/>
-      <description value="TODO"/>
-      <exampleBoolean value="false"/>
-      <package value="profiles"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-        <valueBoolean value="true"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/profile-eligibilityrequest"/>
-      </reference>
-      <name value="CRD Eligibility Request"/>
-      <description value="TODO"/>
-      <exampleBoolean value="false"/>
-      <package value="profiles"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-        <valueBoolean value="true"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/profile-eligibilityresponse"/>
-      </reference>
-      <name value="CRD Eligibility Response"/>
       <description value="TODO"/>
       <exampleBoolean value="false"/>
       <package value="profiles"/>

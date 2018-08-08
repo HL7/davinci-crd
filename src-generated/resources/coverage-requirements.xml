@@ -27,8 +27,6 @@
     
     
     
-    
-    
     <package id="profiles">
       <name value="Profiles"/>
       <description value="Profiles to be supported by EHRs and payor systems conforming to this implementation guide"/>
@@ -46,8 +44,6 @@
       <name value="Example(s)"/>
       <description value="Example(s) showing the use of the CG profiles"/>
     </package>-->
-    
-    
     
     
     
@@ -95,53 +91,43 @@
 <generation value="generated"/>
 </page>
 <page>
-<nameUrl value="profile-eligibilityrequest.html"/>
-<ns2:title xmlns:ns2="http://hl7.org/fhir" value="CRD Eligibility Request"/>
-<generation value="generated"/>
-</page>
-<page>
-<nameUrl value="profile-eligibilityresponse.html"/>
-<ns3:title xmlns:ns3="http://hl7.org/fhir" value="CRD Eligibility Response"/>
-<generation value="generated"/>
-</page>
-<page>
 <nameUrl value="profile-task.html"/>
-<ns4:title xmlns:ns4="http://hl7.org/fhir" value="CRD Task"/>
+<ns2:title xmlns:ns2="http://hl7.org/fhir" value="CRD Task"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="profile-practitioner.html"/>
-<ns5:title xmlns:ns5="http://hl7.org/fhir" value="CRD Practitioner"/>
+<ns3:title xmlns:ns3="http://hl7.org/fhir" value="CRD Practitioner"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="profile-procedure.html"/>
-<ns6:title xmlns:ns6="http://hl7.org/fhir" value="CRD Procedure"/>
+<ns4:title xmlns:ns4="http://hl7.org/fhir" value="CRD Procedure"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="profile-patient.html"/>
-<ns7:title xmlns:ns7="http://hl7.org/fhir" value="CRD Patient"/>
+<ns5:title xmlns:ns5="http://hl7.org/fhir" value="CRD Patient"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="extension-ext-requestType.html"/>
-<ns8:title xmlns:ns8="http://hl7.org/fhir" value="EligibilityRequest type"/>
+<ns6:title xmlns:ns6="http://hl7.org/fhir" value="EligibilityRequest type"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="extension-ext-serviceInformation.html"/>
-<ns9:title xmlns:ns9="http://hl7.org/fhir" value="EligibilityRequest service information"/>
+<ns7:title xmlns:ns7="http://hl7.org/fhir" value="EligibilityRequest service information"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="extension-ext-coverageDocumentation.html"/>
-<ns10:title xmlns:ns10="http://hl7.org/fhir" value="EligibilityResponse coverage documentation"/>
+<ns8:title xmlns:ns8="http://hl7.org/fhir" value="EligibilityResponse coverage documentation"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="valueset-locationAddressType.html"/>
-<ns11:title xmlns:ns11="http://hl7.org/fhir" value="CRD Location Address Types"/>
+<ns9:title xmlns:ns9="http://hl7.org/fhir" value="CRD Location Address Types"/>
 <generation value="generated"/>
 </page>
 </page>
