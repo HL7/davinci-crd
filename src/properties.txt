@@ -1,6 +1,6 @@
 #guidename must match the id of the implementation guide
 guidename=coverage-requirements
-copyrightyear=2017+
+copyrightyear=2018+
 license=CC0-1.0
 version=current
 fhirspec=http://build.fhir.org/

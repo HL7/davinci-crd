@@ -12,11 +12,7 @@
 </p>
 </div>
 <p>This page provides a list of the FHIR artifacts defined as part of this implementation guide.</p>
-<h2 class="self-link-parent">
-<a name="1"> </a>Profiles <a href="#1" title="link to here" class="self-link">
-<img src="assets/images/link.svg" width="20" class="self-link" height="20"/>
-</a>
-</h2>
+<h3>Profiles </h3>
 <p>Profiles to be supported by EHRs and payor systems conforming to this implementation guide</p>
 <p>
 <table>
@@ -101,22 +97,14 @@
 </tbody>
 </table>
 </p>
-<h2 class="self-link-parent">
-<a name="2"> </a>Extensions <a href="#2" title="link to here" class="self-link">
-<img src="assets/images/link.svg" width="20" class="self-link" height="20"/>
-</a>
-</h2>
+<h3>Extensions </h3>
 <p>Extensions defined as part of this implementation guide</p>
 <p>
 <table>
 <tbody/>
 </table>
 </p>
-<h2 class="self-link-parent">
-<a name="3"> </a>Terminology <a href="#3" title="link to here" class="self-link">
-<img src="assets/images/link.svg" width="20" class="self-link" height="20"/>
-</a>
-</h2>
+<h3>Terminology </h3>
 <p>Value Sets and/or code systems defined as part of this implementation guide</p>
 <p>
 <table>

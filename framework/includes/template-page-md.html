@@ -1,26 +1,20 @@
 {% include fragment-pagebegin.html %}
 <style type="text/css">
-h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) "." counter(section) " ";}
-h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(section) "." counter(sub-section) " ";}
-h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(section) "." counter(sub-section) "." counter(composite) " ";}
-h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(section) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
-h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(section) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <h2 class="self-link-parent">foo
-    <span class="sectioncount">{{site.data.pages[page.path].label}}<a name="{{site.data.pages[page.path].label}}"> </a>
-    </span> {{site.data.pages[page.path].title}} <a title="link to here" class="self-link" href="{{[page.path]}}#{{site.data.pages[page.path].label}}">
-      <img src="assets/images/link.svg" class="self-link" width="20" height="20"/>
-    </a>
-  </h2>
+  <h2>{{site.data.pages[page.path].title}}</h2>
   {% assign path = page.path | split: '.html' %}
   {% capture content %}
-{::options parse_block_html="true" /}  
-<!-- TOC  the css styling for this is \pages\assets\css\project.css under 'markdown-toc'-->
+  {::options parse_block_html="true" /}  
 <div class="markdown-toc" markdown="1">
 {:toc}
+* This will not be displayed
 </div>
-<!-- end TOC -->
 {% include {{path}}.md %}
   {% endcapture %}
   {{ content | markdownify }}

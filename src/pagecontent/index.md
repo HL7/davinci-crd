@@ -12,14 +12,14 @@ specific to FHIR.  Before reading this implementation guide, it's important to b
 as general guidance on how to read FHIR specifications.  Readers who are unfamiliar with FHIR are encouraged to read (or at least skim) the following
 prior to reading the rest of this implementation guide.
 
-* (FHIR overview)[{{site.data.fhir.path}}overview.html]
-* (Developer's introduction)[{{site.data.fhir.path}}overview-dev.html]
-* (or (Clinical introduction)[{{site.data.fhir.path}}overview-clinical.html])
-* (FHIR data types)[{{site.data.fhir.path}}datatypes.html]
-* (Using codes)[{{site.data.fhir.path}}terminologies.html]
-* (References between resources)[{{site.data.fhir.path}}references.html]
-* (How to read resource & profile definitions)[{{site.data.fhir.path}}formats.html]
-* (Base resource)[{{site.data.fhir.path}}resource.html]
+* [FHIR overview]({{site.data.fhir.path}}overview.html)
+* [Developer's introduction]({{site.data.fhir.path}}overview-dev.html)
+* (or [Clinical introduction]({{site.data.fhir.path}}overview-clinical.html))
+* [FHIR data types]({{site.data.fhir.path}}datatypes.html)
+* [Using codes]({{site.data.fhir.path}}terminologies.html)
+* [References between resources]({{site.data.fhir.path}}references.html)
+* [How to read resource & profile definitions]({{site.data.fhir.path}}formats.html)
+* [Base resource]({{site.data.fhir.path}}resource.html)
 
 It's a good idea to also look at the resources used by this implementation guide as well - specifically:
 * TODO

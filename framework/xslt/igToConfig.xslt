@@ -83,6 +83,7 @@
     <xsl:text>"
   },
   "suppressedWarningFile": "../src/ignoreWarnings.txt",
+  "includeHeadings": false,
   "pre-process": [
     {"folder": "../framework/assets",
      "relativePath": "assets"},
