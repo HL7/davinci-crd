@@ -61,6 +61,7 @@ The extension here will be called `davinci-crd.configuration-options`.  It will 
 
 For example, a CDS Service within a Discovery Response might look like this:
 
+{% raw %}
     {
       "hook": "medication-prescribe",
       "title": "Payer XYZ Medication Coverage Requirements",
@@ -105,6 +106,7 @@ For example, a CDS Service within a Discovery Response might look like this:
         ]
       }
     }
+{% endraw %}
 
 Notes: 
 
@@ -160,9 +162,11 @@ Note: Recognizing these tokens doesn't mean the client must support prefetch or 
 
 For example, a prefetch for `order-review` might look like this:
 
+{% raw %}
     "prefetch": {
       "ins-sr": "ServiceRequest?id={{context.orders.ServiceRequest.id}}&_include=ServiceRequest:insurance"
     }
+{% endraw %}
 
 This might result in an executed query that looks like this: `ServiceRequest?id=2347,10948,5881&_include=ServiceRequest:insurance`
 
