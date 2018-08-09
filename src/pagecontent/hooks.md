@@ -3,7 +3,7 @@ This implementation guide relies on the [CDS Hooks Specification](https://cds-ho
 ### Customization
 CDS Hooks is a relatively new technology and, at the time this version of the implementation guide was written, has not yet been officially published as a first release.  It is considered a "Standard for Trial Use", meaning that it will continue to evolve based on implementer feedback and may change in ways that are not compatible with the current draft.  As well, the initial version of the specification has focused on the core architecture and a relatively simple set of capabilities.  Additional capabilities will be introduced in future versions.
 
-To meeting requirements identified by DaVinci project participants, it is necessary to introduce some additional capabilities above and beyond what is currently found in the CDS Hooks specification.  This section of the CRD implementation guide describes those additional capabilities and the mechanism the implementation guide proposes implementing them.  The purpose of these customizations is to enable testing at connectathon and to support feedback into the CDS Hooks design process.
+To meet requirements identified by Da Vinci project participants, it is necessary to introduce some additional capabilities above and beyond what is currently found in the CDS Hooks specification.  This section of the CRD implementation guide describes those additional capabilities and the mechanism the implementation guide proposes to implement them.  The purpose of these customizations is to enable testing at connectathons and to support feedback into the CDS Hooks design process.
 
 Each capability listed here has been proposed to the CDS Hooks community and may well become part of the official specification either in the initial release or in some future release.  However, there is a significant likelihood that the manner in which the requirements are met may vary somewhat from a syntax or even an architectural approach.  Future versions of this implementation guide will be updated to align with how these requirements are addressed in future versions of the CDS Hook specification.  This implementation guide will not be able to be *Normative* (locked into backward compatibility mode) until the underlying CDS Hooks content is also *normative*.
 
@@ -19,7 +19,7 @@ It is possible that the actual list of R4 resources provided for the hooks will 
 #### Additional hooks
 The base CDS hooks specification doesn't formally define any hooks, though three sample hooks are provided that were used in the initial testing of the specification.  The expectation is that new hooks will be defined by and eventually formally approved by the community.  The formal process for this proposal and maturity development process is still evolving.  Individuals interested in this process can provide feedback [here](https://github.com/cds-hooks/docs/issues/195).
 
-Defining new hooks is an expected part of the CDS Hooks specification and there is no need for hooks to be officially registered with the community for them to be used.  However, using registered hooks increases the likelihood of broad adoption by the community - which increases the likelihood of broad uptake of this implementation guide.  The project has therefore proposed hooks that we believe have utility beyond just DaVinci CRD requirements and specified them in a manner to increase the likelihood of wide support.
+Defining new hooks is an expected part of the CDS Hooks specification and there is no need for hooks to be officially registered with the community for them to be used.  However, using registered hooks increases the likelihood of broad adoption by the community - which increases the likelihood of broad uptake of this implementation guide.  The project has therefore proposed hooks that we believe have utility beyond just Da Vinci CRD requirements and specified them in a manner to increase the likelihood of wide support.
 
 The additional hooks proposed for use by this project are detailed below:
 
@@ -32,11 +32,11 @@ NOTE: Even pre-existing hooks are not yet locked down as normative and similar c
 
 
 #### Configuration
-Each hook services provided by a payer might support multiple different types of coverage requirements checking.  For example, a payer might return information about:
+Each CDS Hook service provided by a payer might support multiple different types of coverage requirements checking.  For example, a payer might return information about:
 
 *  Is pre-authorization required?
 *  Are there recommended alternative therapies?
-*  Are there best practices associated with this therapy that are expected to be adhered to
+*  Are there best practices associated with this therapy that are expected to be adhered to?
 *  Are there internal documentation requirements?
 *  Are there forms required for inclusion with pre-auth?
 *  Are there forms required for inclusion with claims submission?
@@ -146,11 +146,11 @@ Notes:
 *  Inclusion of configuration information in a hook call SHALL be optional.  I.e. No hook invocation is permitted to fail because configuration information was not included.
 
 
-**EMR client systems SHOULD provide an ability to leverage the dynamic configuration capabilities of payer services based on practitioner role, individual practitioner and/or hook invocation location as best meets the needs of their providers.**
+**EHR client systems SHOULD provide an ability to leverage the dynamic configuration capabilities of payer services based on practitioner role, individual practitioner and/or hook invocation location as best meets the needs of their providers.**
 
 
 #### Additional Pre-fetch capabilities
-One of the options supported in CDS Hooks is the ability for a service to request that certain data be [prefetched](https://cds-hooks.org/specification/1.0/#prefetch-template) for efficiency reasons and to simplify processing for the server.  However, there is a limit in that in the current CDS Hook specification, prefetch can only use hook context information that is expressed as a simple key value.  It cannot leverage context information passed as resources.
+One of the options supported in CDS Hooks is the ability for a service to request that certain data be [prefetched](https://cds-hooks.org/specification/1.0/#prefetch-template) for efficiency reasons and to simplify processing for the server.  However, there is a limit in that in the current CDS Hooks specification, prefetch can only use hook context information that is expressed as a simple key value.  It cannot leverage context information passed as resources.
 
 A [proposal](https://github.com/cds-hooks/docs/issues/377) has been submitted suggesting how to address this issue.  This ballot version of the implementation guide pre-adopts that proposal.
 
@@ -410,8 +410,8 @@ There are no additional constraints or special rules related to this hook beyond
     <td><a href="profile-Encounter-r4.html">profile-Encounter-r4</a></td>
   </tr>
   <tr>
-    <td><a href="profile-Appointment-stu3.html">profile-Appointement-stu3</a></td>
-    <td><a href="profile-Appointement-r4.html">profile-Appointement-r4</a></td>
+    <td><a href="profile-Appointment-stu3.html">profile-Appointment-stu3</a></td>
+    <td><a href="profile-Appointement-r4.html">profile-Appointment-r4</a></td>
   </tr>
 </table>
 
