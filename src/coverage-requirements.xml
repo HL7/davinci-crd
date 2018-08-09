@@ -186,11 +186,11 @@
         <nameUrl value="index.html"/>
         <title value="CRD IG Home Page"/>
         <generation value="markdown"/>
-<!--        <page>
-          <nameUrl value="background.html"/>
-          <title value="Genomics Primer"/>
-          <generation value="html"/>
-        </page>-->
+        <page>
+          <nameUrl value="hooks.html"/>
+          <title value="CDS Hooks Usage"/>
+          <generation value="markdown"/>
+        </page>
       </page>
       <page>
         <nameUrl value="artifacts.html"/>
