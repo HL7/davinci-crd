@@ -34,11 +34,11 @@ NOTE: Even pre-existing hooks are not yet locked down as normative and similar c
 #### Configuration
 Each hook services provided by a payer might support multiple different types of coverage requirements checking.  For example, a payer might return information about:
 
-*  Is pre-authorization required?
+*  Is preauthorization required?
 *  Are there recommended alternative therapies?
 *  Are there best practices associated with this therapy that are expected to be adhered to
 *  Are there internal documentation requirements?
-*  Are there forms required for inclusion with pre-auth?
+*  Are there forms required for inclusion with preauth?
 *  Are there forms required for inclusion with claims submission?
 
 Not all these cards will necessarily be relevant to all users.  While it might be possible (through negotiation between provider and payer) to configure a service to withhold certain card types from certain practitioner roles, this is unlikely to be sufficiently responsive and places a considerable configuration burden on the payer software.  As well, in some cases, preferences about what information to receive could be specific to the user.  An alternative would be for the payer to host a distinct service for every single card type it was able to return, but this could result in the payer receiving 10+ service calls each time the hook fired and performing considerable redundant processing in each service.  It would therefore be nice if a hook could, upon invocation, indicate what subset of response types were wanted - for that particular hook invocation.  The client system could then dynamically configure the response types based on user type, individual user, location within the workflow where the hook was being fired, whether the hook had previously been fired or other factors.
@@ -65,7 +65,7 @@ For example, a CDS Service within a Discovery Response might look like this:
     {
       "hook": "medication-prescribe",
       "title": "Payer XYZ Medication Coverage Requirements",
-      "description": "Indicates coverage requirements associated with draft medication orders, including expectations for pre-authorization, recommended therapy alternatives, etc.",
+      "description": "Indicates coverage requirements associated with draft medication orders, including expectations for preauthorization, recommended therapy alternatives, etc.",
       "id": "medication-cdr",
       "prefetch": {
         "patient": "Patient/{{context.patientId}}",
@@ -76,14 +76,14 @@ For example, a CDS Service within a Discovery Response might look like this:
           {
             "code": "preauth",
             "type": "boolean",
-            "name": "Pre-authorization",
-            "description": "Provides indications of whether pre-authorization is required for the proposed order"
+            "name": "Preauthorization",
+            "description": "Provides indications of whether preauthorization is required for the proposed order"
           },
           {
             "code": "preauth-form",
             "type": "boolean",
-            "name": "Pre-authorization Forms",
-            "description": "Indicates any forms that should be completed as part of a pre-authorization process"
+            "name": "Preauthorization Forms",
+            "description": "Indicates any forms that should be completed as part of a preauthorization process"
           },
           {
             "code": "alt-drug",
@@ -176,11 +176,109 @@ In addition to this preadoption, this implementation guide presumes support for 
 
 
 #### Additional response capabilities
-The initial version of CDS Hooks allows returning a set of mutually exclusive suggestions for the user to choose between.  However, this is insufficient for CRD (and certain other) decision support processes.  When providing coverage requirements for multi-resource hooks such as `order-review`, a service might have different lists of options for different orders.  As well, even if only one order is specified, a payer might want to provide several **non**-mutually exclusive options, such as "submit form A and submit form B and request pre-authorization".
+CDS Hooks supports suggestions that involve multiple actions.  Coverage requirements discovery is likely to use this in two situations where additional capabilities will be needed:
 
-This issue has been [raised](todo) with the CDS Hook community.
+*  Creating a Task to complete a Questionnaire
+*  Updating the proposed order to point to a "new" preauthorization (ClaimResponse instance) - one the payer was aware of the EMR was not.
 
-For the purposes of this ballot IG version, [TODO: see what initial reaction is from hooks community tomorrow am before deciding approach]...
+In the first case, the creation of the Questionnaire needs to be conditional - it should only occur if that particular Questionnaire version doesn't already exist.  In the second case, the order will need to be updated to point to the "id" assigned by the EHR to the newly persisted ClaimResponse instance.  Both of these capabilities are supported in FHIR's [transaction](http://hl7.org/fhir/http.html#transaction) functionality.  However, not all of the capabilities/guidance included there has been incorporated into CDS Hooks 'suggestions', in part to keep the specification simpler.
+
+For this release of the specification, these requirements will be handled as follows:
+
+##### if-none-exist
+The `suggestion.action` object will use an extension to carry the if-none-exist query as per FHIR's [conditional create](http://build.fhir.org/http.html#ccreate) functionality.  The extension property will be `davinci-crd.if-none-exist`.  For example:
+
+    "suggestions": [
+      {
+        "label": "Add 'completion of the XYZ form' to your task list (possibly for reassignment)",
+        "actions": [{
+          "type": "create",
+          "description": "Add version 2 of the XYZ form to the EHR's repository (if it doesn't already exist)",
+          "resource": {
+            "resourceType": "Questionnaire",
+            "url": "http://example.org/Questionnaire/XYZ",
+            "version": "2",
+            ...
+            },
+          },
+          "extension" : {
+            "davinci-crd.if-none-exist" : "url=http://example.org/Questionnaire/XYZ&version=2"
+          }
+        },{
+          "type": "create",
+          "description": "Add 'Complete XYZ form' to the task list",
+          "resource": {
+            "resourceType": "Task",
+            "instantiatesCanonical": "http://example.org/Questionnaire/XYZ|2",
+            "basedOn": "MedicationRequest/5"
+            "status": "ready",
+            "intent": "order",
+            "code": {
+              "coding": [{
+                "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/task-type",
+                "code": "complete-questionnaire"
+              }]
+            },
+            "description": "Complete XYZ form for inclusion in preauthorization",
+            "for": {
+              "reference": "Patient/some-patient-id"
+            },
+            "authoredOn": "2018-08-09",
+            "reasonCode": {
+              "coding": [{
+                "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/task-reason",
+                "code": "preauth",
+                "display": "Needed for preauthorization"
+              }]
+            }
+          }
+        }]
+      }
+    ]
+
+##### Linkage between created resources
+The linkage between resources by identifier in different Actions within a single Suggestion doesn't actually require any extension to CDS Hooks, but it does require additional guidance.  For the purposes of this implementation guide, the inclusion of the `id` element in 'created' resources and references in created and updated resources within multi-action suggestions SHALL be handled as per FHIR's [transaction processing rules](http://build.fhir.org/http.html#trules).  POST corresponds to an action.type of 'create' and PUT corresponds to an action.type of 'update'.  Specifically, this means that if a FHIR Reference points to the resource type and identifier of a resource of another 'create' Action in the same Suggestion, then the reference to that resource SHALL be updated by the server to point to the identifier assigned by the client when performing the create.  Clients SHALL perform creates in an order that ensures that referenced resources are created prior to referencing resources.
+
+For example, the following suggestion will cause the MedicationRequest to be updated to point to the preauthorization (ClaimResponse) being created.  The ClaimResponse would be created before the MedicationRequest would be updated:
+
+    "suggestions": [
+      {
+        "label": "Update prescription to point to pre-existing preauthorization",
+        "actions": [{
+          "type": "update",
+          "description": "Revise the prescription to include the preauthorization",
+          "resource": {
+            "resourceType": "MedicationRequest",
+            ...
+            "insurance": [{
+              "reference": "ClaimResponse/1"
+            }],
+            ...
+          },
+        },{
+          "type": "create",
+          "description": "Record the pre-existing preauthorization in the EHR",
+          "resource": {
+            "resourceType": "ClaimResponse",
+            "status": "active",
+            "type": {
+              "coding": [{
+                "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+                "code": "pharmacy"
+              }]
+            }
+          },
+          "use": "preauthorization",
+          "patient": {
+            "reference": "Patient/some-patient-d"
+          },
+          "outcome": "complete",
+          "insurance": [{
+            "preAuthRef": ["ABCDE"]
+          }]
+        }]
+      }
+    ]
 
 
 ### Hooks
@@ -421,9 +519,23 @@ There are no additional constraints or special rules related to this hook beyond
 
 
 ### Cards
-Cards are the mechanism used to return coverage requirements from the payer to the client system.  This section describes the different types of cards anticipated to be used when returning coverage requirements and defines expectations for how that information should be represented.
+Cards are the mechanism used to return coverage requirements from the payer to the client system.  This section describes the different types of card responses that can be used when returning coverage requirements and defines expectations for how that information should be represented.  It's possible that some payers and clients might support additional card response patterns than those listed here, but such behavior is outside the scope of this specification.  Future versions of this specification may standardize additional response types.
 
-Systems SHALL support ...
+Of the card types here, conformant client systems SHALL support the [Instructions](#instructions) and [External reference](#external_reference) responses.  They SHOULD support the remainder.  Payer servers SHALL support at least one of these response type and MAY support as many as necessary to convey the requirements of the types of coverage they support.
+
+#### Instructions
+
+#### External Reference
+
+#### Propose alternate request
+
+#### Identify additional orders as companions/pre-requisites for current order
+
+#### Request form completion
+
+#### Create or update Coverage information
+
+#### Launch SMART application
 
 
 ### Pre-fetch
