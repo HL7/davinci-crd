@@ -268,7 +268,7 @@
     </resource>
     <resource>
       <reference>
-        <reference value="ValueSet/locationaddresstype"/>
+        <reference value="ValueSet/locationAddressType"/>
       </reference>
       <name value="CRD Location Address Types"/>
       <description value="TODO"/>

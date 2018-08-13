@@ -133,7 +133,7 @@
     },
     "StructureDefinition/profile-taskquestionnaire-r4":{
     },
-    "ValueSet/locationaddresstype":{
+    "ValueSet/locationAddressType":{
     }
   }
 }

@@ -70,7 +70,7 @@
     
     <resource>
       <reference>
-        <reference value="ValueSet/locationaddresstype"/>
+        <reference value="ValueSet/locationAddressType"/>
       </reference>
       <name value="CRD Location Address Types"/>
       <description value="TODO"/>
@@ -181,7 +181,7 @@
 <generation value="generated"/>
 </page>
 <page>
-<nameUrl value="valueset-locationaddresstype.html"/>
+<nameUrl value="valueset-locationAddressType.html"/>
 <ns15:title xmlns:ns15="http://hl7.org/fhir" value="CRD Location Address Types"/>
 <generation value="generated"/>
 </page>
