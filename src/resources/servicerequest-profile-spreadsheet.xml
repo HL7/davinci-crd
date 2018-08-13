@@ -1082,7 +1082,7 @@
   </WorksheetOptions>
  </Worksheet>
  <Worksheet ss:Name="profile-ServiceRequest-r4">
-  <Table ss:ExpandedColumnCount="24" ss:ExpandedRowCount="33" x:FullColumns="1"
+  <Table ss:ExpandedColumnCount="24" ss:ExpandedRowCount="34" x:FullColumns="1"
    x:FullRows="1" ss:StyleID="s85" ss:DefaultColumnWidth="65"
    ss:DefaultRowHeight="15">
    <Column ss:StyleID="s85" ss:AutoFitWidth="0" ss:Width="122"/>
@@ -1247,7 +1247,7 @@
     <Cell ss:Index="18"><Data ss:Type="String">potentially relevant for CRD in some situations</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">ServiceRequset.requisition</Data></Cell>
+    <Cell ss:Index="4"><Data ss:Type="String">ServiceRequest.requisition</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">ServiceRequest.status</Data></Cell>
@@ -1324,7 +1324,11 @@
     <Cell><Data ss:Type="String">Y</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">ServiceRequest.location[x]</Data></Cell>
+    <Cell ss:Index="4"><Data ss:Type="String">ServiceRequest.locationCode</Data></Cell>
+    <Cell ss:Index="6"><Data ss:Type="String">0..0</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="4"><Data ss:Type="String">ServiceRequest.locationReference</Data></Cell>
     <Cell ss:Index="6"><Data ss:Type="String">1..1</Data></Cell>
     <Cell ss:Index="8"><Data ss:Type="String">Reference(Location) {http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-Location-r4}</Data></Cell>
     <Cell><Data ss:Type="String">Y</Data></Cell>
@@ -1380,8 +1384,8 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>25</ActiveRow>
-     <ActiveCol>7</ActiveCol>
+     <ActiveRow>24</ActiveRow>
+     <ActiveCol>6</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>

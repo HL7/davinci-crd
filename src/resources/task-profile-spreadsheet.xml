@@ -20,7 +20,7 @@
   <WindowWidth>28040</WindowWidth>
   <WindowTopX>11580</WindowTopX>
   <WindowTopY>5460</WindowTopY>
-  <ActiveSheet>1</ActiveSheet>
+  <ActiveSheet>2</ActiveSheet>
   <ProtectStructure>False</ProtectStructure>
   <ProtectWindows>False</ProtectWindows>
  </ExcelWorkbook>
@@ -1054,7 +1054,6 @@
     <HorizontalResolution>600</HorizontalResolution>
     <VerticalResolution>600</VerticalResolution>
    </Print>
-   <Selected/>
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
@@ -1083,7 +1082,7 @@
   </WorksheetOptions>
  </Worksheet>
  <Worksheet ss:Name="profile-Task-r4">
-  <Table ss:ExpandedColumnCount="24" ss:ExpandedRowCount="32" x:FullColumns="1"
+  <Table ss:ExpandedColumnCount="24" ss:ExpandedRowCount="33" x:FullColumns="1"
    x:FullRows="1" ss:StyleID="s85" ss:DefaultColumnWidth="65"
    ss:DefaultRowHeight="15">
    <Column ss:StyleID="s85" ss:AutoFitWidth="0" ss:Width="122"/>
@@ -1224,12 +1223,19 @@
     <Cell><Data ss:Type="String">Y</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4" ss:StyleID="s107"><Data ss:Type="String">Task.instantiates[x]</Data></Cell>
+    <Cell ss:Index="4" ss:StyleID="s107"><Data ss:Type="String">Task.instantiatesCanonical</Data></Cell>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"><Data ss:Type="String">1..1</Data></Cell>
     <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">Reference(ActivityDefinition)</Data></Cell>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">canonical(ActivityDefinition)</Data></Cell>
     <Cell><Data ss:Type="String">Y</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="4" ss:StyleID="s107"><Data ss:Type="String">Task.instantiatesUri</Data></Cell>
+    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">0..0</Data></Cell>
+    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s106"/>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">Task.basedOn</Data></Cell>
@@ -1366,13 +1372,12 @@
     <ValidPrinterInfo/>
     <VerticalResolution>0</VerticalResolution>
    </Print>
-   <LeftColumnVisible>8</LeftColumnVisible>
+   <Selected/>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>5</ActiveRow>
-     <ActiveCol>15</ActiveCol>
-     <RangeSelection>R6C16:R32C16</RangeSelection>
+     <ActiveRow>4</ActiveRow>
+     <ActiveCol>8</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
