@@ -105,56 +105,38 @@
     "task-profile-spreadsheet.xml",
     "servicerequest-profile-spreadsheet.xml",
     "devicerequest-profile-spreadsheet.xml",
-    "communicationrequest-profile-spreadsheet.xml"
+    "communicationrequest-profile-spreadsheet.xml",
+    "supplyrequest-profile-spreadsheet.xml",
+    "medicationrequest-profile-spreadsheet.xml",
+    "nutritionorder-profile-spreadsheet.xml",
+    "appointment-profile-spreadsheet.xml"
   ],
   "resources": {
-    "StructureDefinition/profile-location":{
+    "StructureDefinition/profile-location-r4":{
     },
-    "StructureDefinition/profile-task":{
+    "StructureDefinition/profile-organization-r4":{
     },
-    "StructureDefinition/profile-servicerequest":{
+    "StructureDefinition/profile-task-r4":{
     },
-    "StructureDefinition/profile-devicerequest":{
+    "StructureDefinition/profile-servicerequest-r4":{
     },
-    "StructureDefinition/profile-communicationrequest":{
+    "StructureDefinition/profile-devicerequest-r4":{
     },
-    "StructureDefinition/profile-practitioner":{
+    "StructureDefinition/profile-communicationrequest-r4":{
     },
-    "StructureDefinition/profile-patient":{
+    "StructureDefinition/profile-supplyrequest-r4":{
     },
-    "StructureDefinition/ext-requestType":{
-      "template-base": "../framework/templates/template-ext.html",
-      "template-defns": "../framework/templates/template-ext-definitions.html",
-      "template-mappings": "../framework/templates/template-ext-mappings.html",
-      "template-examples": "",
-      "template-profile-xml": "../framework/templates/template-ext-xml.html",
-      "template-profile-json": "../framework/templates/template-ext-json.html",
-      "template-profile-ttl": "../framework/templates/template-ext-ttl.html",
-      "template-format": "",
-      "base": "extension-{{[id]}}.html",
-      "defns": "extension-{{[id]}}-definitions.html",
-      "mappings": "extension-{{[id]}}-mappings.html",
-      "examples": "extension-{{[id]}}-examples.html",
-      "profile-xml": "extension-{{[id]}}.profile.xml.html",
-      "profile-json": "extension-{{[id]}}.profile.json.html",
-      "profile-ttl": "extension-{{[id]}}.profile.ttl.html"
+    "StructureDefinition/profile-medicationrequest-r4":{
     },
-    "StructureDefinition/ext-serviceInformation":{
-      "template-base": "../framework/templates/template-ext.html",
-      "template-defns": "../framework/templates/template-ext-definitions.html",
-      "template-mappings": "../framework/templates/template-ext-mappings.html",
-      "template-examples": "",
-      "template-profile-xml": "../framework/templates/template-ext-xml.html",
-      "template-profile-json": "../framework/templates/template-ext-json.html",
-      "template-profile-ttl": "../framework/templates/template-ext-ttl.html",
-      "template-format": "",
-      "base": "extension-{{[id]}}.html",
-      "defns": "extension-{{[id]}}-definitions.html",
-      "mappings": "extension-{{[id]}}-mappings.html",
-      "examples": "extension-{{[id]}}-examples.html",
-      "profile-xml": "extension-{{[id]}}.profile.xml.html",
-      "profile-json": "extension-{{[id]}}.profile.json.html",
-      "profile-ttl": "extension-{{[id]}}.profile.ttl.html"
+    "StructureDefinition/profile-nutritionorder-r4":{
+    },
+    "StructureDefinition/profile-appointment-r4":{
+    },
+    "StructureDefinition/profile-practitioner-r4":{
+    },
+    "StructureDefinition/profile-patient-r4":{
+    },
+    "StructureDefinition/profile-relatedperson-r4":{
     },
     "StructureDefinition/ext-coverageDocumentation":{
       "template-base": "../framework/templates/template-ext.html",

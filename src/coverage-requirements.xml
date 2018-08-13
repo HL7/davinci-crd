@@ -50,6 +50,18 @@
     <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
       <valueUri value="communicationrequest-profile-spreadsheet.xml"/>
     </extension>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="supplyrequest-profile-spreadsheet.xml"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="medicationrequest-profile-spreadsheet.xml"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="nutritionorder-profile-spreadsheet.xml"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="appointment-profile-spreadsheet.xml"/>
+    </extension>
     <package id="profiles">
       <name value="Profiles"/>
       <description value="Profiles to be supported by EHRs and payor systems conforming to this implementation guide"/>
@@ -72,7 +84,7 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/profile-location"/>
+        <reference value="StructureDefinition/profile-location-r4"/>
       </reference>
       <name value="CRD Location"/>
       <description value="TODO"/>
@@ -84,7 +96,19 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/profile-task"/>
+        <reference value="StructureDefinition/profile-organization-r4"/>
+      </reference>
+      <name value="CRD Organization"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="profiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/profile-task-r4"/>
       </reference>
       <name value="CRD Task"/>
       <description value="TODO"/>
@@ -96,9 +120,9 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/profile-servicerequest"/>
+        <reference value="StructureDefinition/profile-servicerequest-r4"/>
       </reference>
-      <name value="CRD ServiceRequest"/>
+      <name value="CRD Service Request"/>
       <description value="TODO"/>
       <exampleBoolean value="false"/>
       <package value="profiles"/>
@@ -108,9 +132,9 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/profile-devicerequest"/>
+        <reference value="StructureDefinition/profile-devicerequest-r4"/>
       </reference>
-      <name value="CRD DeviceRequest"/>
+      <name value="CRD Device Request"/>
       <description value="TODO"/>
       <exampleBoolean value="false"/>
       <package value="profiles"/>
@@ -120,9 +144,9 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/profile-communicationrequest"/>
+        <reference value="StructureDefinition/profile-communicationrequest-r4"/>
       </reference>
-      <name value="CRD CommunicationRequest"/>
+      <name value="CRD Communication Request"/>
       <description value="TODO"/>
       <exampleBoolean value="false"/>
       <package value="profiles"/>
@@ -132,7 +156,55 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/profile-practitioner"/>
+        <reference value="StructureDefinition/profile-supplyrequest-r4"/>
+      </reference>
+      <name value="CRD Supply Request"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="profiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/profile-medicationrequest-r4"/>
+      </reference>
+      <name value="CRD Medication Request"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="profiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/profile-nutritionorder-r4"/>
+      </reference>
+      <name value="CRD Nutrition Order"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="profiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/profile-appointment-r4"/>
+      </reference>
+      <name value="CRD Appointment"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="profiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/profile-practitioner-r4"/>
       </reference>
       <name value="CRD Practitioner"/>
       <description value="TODO"/>
@@ -144,7 +216,7 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/profile-patient"/>
+        <reference value="StructureDefinition/profile-patient-r4"/>
       </reference>
       <name value="CRD Patient"/>
       <description value="TODO"/>
@@ -156,21 +228,9 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/ext-requestType"/>
+        <reference value="StructureDefinition/profile-relatedperson-r4"/>
       </reference>
-      <name value="EligibilityRequest type"/>
-      <description value="TODO"/>
-      <exampleBoolean value="false"/>
-      <package value="profiles"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-        <valueBoolean value="true"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/ext-serviceInformation"/>
-      </reference>
-      <name value="EligibilityRequest service information"/>
+      <name value="CRD Related Person"/>
       <description value="TODO"/>
       <exampleBoolean value="false"/>
       <package value="profiles"/>
