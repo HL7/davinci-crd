@@ -20,7 +20,7 @@
   <WindowWidth>28040</WindowWidth>
   <WindowTopX>11580</WindowTopX>
   <WindowTopY>5460</WindowTopY>
-  <ActiveSheet>2</ActiveSheet>
+  <ActiveSheet>1</ActiveSheet>
   <ProtectStructure>False</ProtectStructure>
   <ProtectWindows>False</ProtectWindows>
  </ExcelWorkbook>
@@ -985,7 +985,7 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s72"><Data ss:Type="String">id</Data></Cell>
-    <Cell ss:StyleID="s73"><Data ss:Type="String">profile-Coverage-r4</Data></Cell>
+    <Cell ss:StyleID="s73"><Data ss:Type="String">profile-coverage-r4</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s74"><Data ss:Type="String">name</Data></Cell>
@@ -1025,8 +1025,8 @@
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="59">
     <Cell ss:StyleID="s74"><Data ss:Type="String">extension.uri</Data></Cell>
-    <Cell ss:StyleID="s80" ss:HRef="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-Coverage-r4"><Data
-      ss:Type="String">http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-Coverage-r4</Data></Cell>
+    <Cell ss:StyleID="s80" ss:HRef="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-coverage-r4"><Data
+      ss:Type="String">http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-coverage-r4</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s81"><Data ss:Type="String">introduction</Data></Cell>
@@ -1050,6 +1050,7 @@
     <HorizontalResolution>600</HorizontalResolution>
     <VerticalResolution>600</VerticalResolution>
    </Print>
+   <Selected/>
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
@@ -1069,7 +1070,7 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>11</ActiveRow>
+     <ActiveRow>3</ActiveRow>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -1230,12 +1231,12 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">Coverage.policyHolder</Data></Cell>
-    <Cell ss:Index="8"><Data ss:Type="String">Reference(Patient){http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-Patient-r4} | Reference(RelatedPerson) {http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-RelatedPerson-r4} | Reference(Organization) {http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-Organization-r4}</Data></Cell>
+    <Cell ss:Index="8"><Data ss:Type="String">Reference(Patient){http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-patient-r4} | Reference(RelatedPerson) {http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-relatedperson-r4} | Reference(Organization) {http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-organization-r4}</Data></Cell>
     <Cell><Data ss:Type="String">Y</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">Coverage.subscriber</Data></Cell>
-    <Cell ss:Index="8"><Data ss:Type="String">Reference(Patient){http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-Patient-r4} | Reference(RelatedPerson) {http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-RelatedPerson-r4}</Data></Cell>
+    <Cell ss:Index="8"><Data ss:Type="String">Reference(Patient){http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-patient-r4} | Reference(RelatedPerson) {http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-relatedperson-r4}</Data></Cell>
     <Cell><Data ss:Type="String">Y</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -1244,7 +1245,7 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">Coverage.beneficiary</Data></Cell>
-    <Cell ss:Index="8"><Data ss:Type="String">Reference(Patient){http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-Patient-r4}</Data></Cell>
+    <Cell ss:Index="8"><Data ss:Type="String">Reference(Patient){http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-patient-r4}</Data></Cell>
     <Cell><Data ss:Type="String">Y</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -1261,7 +1262,7 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">Coverage.payor</Data></Cell>
-    <Cell ss:Index="8"><Data ss:Type="String">Reference(Patient){http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-Patient-r4} | Reference(RelatedPerson) {http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-RelatedPerson-r4} | Reference(Organization) {http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-Organization-r4}</Data></Cell>
+    <Cell ss:Index="8"><Data ss:Type="String">Reference(Patient){http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-patient-r4} | Reference(RelatedPerson) {http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-relatedperson-r4} | Reference(Organization) {http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-organization-r4}</Data></Cell>
     <Cell><Data ss:Type="String">Y</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -1325,12 +1326,11 @@
     <ValidPrinterInfo/>
     <VerticalResolution>0</VerticalResolution>
    </Print>
-   <Selected/>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>22</ActiveRow>
-     <ActiveCol>5</ActiveCol>
+     <ActiveRow>12</ActiveRow>
+     <ActiveCol>7</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
