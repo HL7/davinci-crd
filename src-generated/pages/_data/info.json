@@ -1,6 +1,6 @@
 {
   "copyrightyear":"2018+",
-  "excludexml":"No",
+  "excludexml":"Yes",
   "excludejson":"No",
-  "excludettl":"No"
+  "excludettl":"Yes"
 }

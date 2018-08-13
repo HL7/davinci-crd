@@ -1,4 +1,4 @@
 {
-  "redirect": "src-generated/coverage-requirements.json",
+  "redirect": "src-generated/davinci-crd.json",
   "comments": "The IG-configuration file is generated from the IG xml file in src using framework/xslt/igToConfig.xslt.  It should never be edited directly"
 }

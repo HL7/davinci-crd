@@ -1,49 +1,35 @@
+### Overview
+Process of managing billing against patient insurance is a source of significant complexity and cost in the United States.  Different insurance providers - and different plans within the same providers have varying expectations around documentation requirements, the determination of whether a particular treatment or service is necessary or appropriate, whether prior authorizations or other approvals are necessary, etc.  Healthcare providers who fail to adhere to payer expectations may find that costs are not fully covered or not covered at all, resulting in increased costs for patients and/or additional visits to change ordered therapy, resulting in increased costs for everyone.
+
+This implementation guide defines a mechanism for insurance payers to share coverage requirements with EHRs and other clinical systems at the time decisions around treatment are being made.  This ensures that clinicians and administrative staff can make informed decisions and can meet the requirements of the insurance coverage the patient has.
+
+The implementation guide provides both Personal Healthcare Information (PHI)-specific and non-PHI mechanisms as suited to the needs/privileges of the payer organization.  It allows to payers to share a wide variety of information with providers in a context-sensitive manner - including:
+
+* updated coverage information
+* alternative preferred/first-line/lower-cost services/products
+* documents and rules related to coverage
+* forms and templates
+* indications of whether prior atuthorization is required
+
+The implementation guide is designed to allow for initial support of basic capabilities and to subsequently build new features over time.
+
 <blockquote class="stu-note">
-This implementation guide is still under revision.  It is distributed for preliminary review by the community to confirm overall approach.
+<p>
+This specification is currently undergoing ballot and connectathon testing.  It is expected to evolve, possibly significantly, as part of that process.
+</p>
+<p>
+Feedback is welcome and may be submitted through the <a href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">FHIR gForge tracker</a>
+</p>
+
 </blockquote>
-
-### Scope
-Todo
-
-### Understanding FHIR
-
-This implementation guide is based on the HL7 (FHIR)[{{site.data.fhir.path}}index.html] standard.  It uses terminology, notations and design principles that are
-specific to FHIR.  Before reading this implementation guide, it's important to be familiar with some of the basic principles of FHIR as well
-as general guidance on how to read FHIR specifications.  Readers who are unfamiliar with FHIR are encouraged to read (or at least skim) the following
-prior to reading the rest of this implementation guide.
-
-* [FHIR overview]({{site.data.fhir.path}}overview.html)
-* [Developer's introduction]({{site.data.fhir.path}}overview-dev.html)
-* (or [Clinical introduction]({{site.data.fhir.path}}overview-clinical.html))
-* [FHIR data types]({{site.data.fhir.path}}datatypes.html)
-* [Using codes]({{site.data.fhir.path}}terminologies.html)
-* [References between resources]({{site.data.fhir.path}}references.html)
-* [How to read resource & profile definitions]({{site.data.fhir.path}}formats.html)
-* [Base resource]({{site.data.fhir.path}}resource.html)
-
-It's a good idea to also look at the resources used by this implementation guide as well - specifically:
-* TODO
-
-### CDS Hooks
-
-TODO
-
-### FHIR Versions
-
-TODO
 
 ### Content and organization
 
-**Background and use-cases** describes the intent of this implementation guide and provides examples of how this specification can be used by payors
+The implementation guide is organized into the following sections:
 
-**CDS Hooks Considerations** describes how the CDS hooks framework will be used and highlights those portions of the CDS Hooks specifications that systems conformant with this implementaiton guide will need to support, any constraints on the general CDS Hooks framework that will need to be adhered to as well as business processes that will need to be executed between payors and EHRs wishing to leverage this implementation guide
+* [Background and use-cases](background.html) describes the intent of this implementation guide and provides examples of how this specification can be used by payors
+* [Specification](hooks.html) provides the technical conformance details for the specification
+* [STU3 Artifacts](stu3/artifacts.html) and [R4 Artifacts](artifacts.html) define the profiles, search parameters and other FHIR artifacts used in this implementation guide as well as examples
+* [Credits](credits.html) identifies the individuals and organizations involved in developing this implementation guide
 
-**Data standards** Summarizes the resources used by this profile and 
-
-**Hook responses** Describes the types of cards that Payors can return in response to hook invocation and constraints on those responses
-
-**Security and consent** Describes expectations and assumptions around security and consent related to this implementation guide
-
-**Examples** includes a set of examples showing how this specification can be used to solve different business cases
-
-**Credits** Indicates the individuals and organizations involved in developing this implementation guide
+The complete content of this implementation guide can be downloaded [here](full-ig.zip).

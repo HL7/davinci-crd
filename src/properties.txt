@@ -1,5 +1,5 @@
 #guidename must match the id of the implementation guide
-guidename=coverage-requirements
+guidename=davinci-crd
 copyrightyear=2018+
 license=CC0-1.0
 version=current
