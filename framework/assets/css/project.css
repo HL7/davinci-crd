@@ -418,6 +418,7 @@ div.markdown-toc p.link
   margin: 0px;
 }
 /* Common content for section numbering */
+body{counter-reset:section}
 h2{counter-reset:sub-section}
 h3{counter-reset:composite}
 h4{counter-reset:detail}
