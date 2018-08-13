@@ -101,7 +101,8 @@
     "medication-profile-spreadsheet.xml",
     "medicationrequest-profile-spreadsheet.xml",
     "nutritionorder-profile-spreadsheet.xml",
-    "appointment-profile-spreadsheet.xml"
+    "appointment-profile-spreadsheet.xml",
+    "encounter-profile-spreadsheet.xml"
   ],
   "resources": {
     "StructureDefinition/profile-appointment-r4":{
@@ -111,6 +112,8 @@
     "StructureDefinition/profile-device-r4":{
     },
     "StructureDefinition/profile-devicerequest-r4":{
+    },
+    "StructureDefinition/profile-encounter-r4":{
     },
     "StructureDefinition/profile-location-r4":{
     },
@@ -135,6 +138,10 @@
     "StructureDefinition/profile-taskquestionnaire-r4":{
     },
     "ValueSet/locationAddressType":{
+    },
+    "ValueSet/taskCode":{
+    },
+    "ValueSet/taskReasonCode":{
     }
   }
 }

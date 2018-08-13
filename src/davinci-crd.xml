@@ -69,6 +69,9 @@
     <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
       <valueUri value="appointment-profile-spreadsheet.xml"/>
     </extension>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="encounter-profile-spreadsheet.xml"/>
+    </extension>
     <package id="profiles">
       <name value="Profiles"/>
       <description value="Profiles to be supported by EHRs and payor systems conforming to this implementation guide"/>
@@ -130,6 +133,18 @@
         <reference value="StructureDefinition/profile-devicerequest-r4"/>
       </reference>
       <name value="CRD Device Request"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="profiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/profile-encounter-r4"/>
+      </reference>
+      <name value="CRD Encounter"/>
       <description value="TODO"/>
       <exampleBoolean value="false"/>
       <package value="profiles"/>
@@ -271,6 +286,24 @@
         <reference value="ValueSet/locationAddressType"/>
       </reference>
       <name value="CRD Location Address Types"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="terminology"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/taskCode"/>
+      </reference>
+      <name value="CRD Task Types"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="terminology"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/taskReasonCode"/>
+      </reference>
+      <name value="CRD Task Reason Codes"/>
       <description value="TODO"/>
       <exampleBoolean value="false"/>
       <package value="terminology"/>
