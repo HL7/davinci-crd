@@ -163,9 +163,9 @@
       "examples": "{{[id]}}-examples.html"</xsl:text>
     <xsl:if test="$includeXml">,
       "profile-xml": "{{[id]}}.profile.xml.html"</xsl:if>
-    <xsl:if test="$includeXml">,
+    <xsl:if test="$includeJson">,
       "profile-json": "{{[id]}}.profile.json.html"</xsl:if>
-    <xsl:if test="$includeXml">,
+    <xsl:if test="$includeTtl">,
       "profile-ttl": "{{[id]}}.profile.ttl.html"</xsl:if>
     <xsl:text>
     },

@@ -12,6 +12,7 @@
 </p>
 </div>
 <p>This page provides a list of the FHIR artifacts defined as part of this implementation guide.</p>
+<a name="1"> </a>
 <h3>Profiles </h3>
 <p>Profiles to be supported by EHRs and payor systems conforming to this implementation guide</p>
 <p>
@@ -125,6 +126,7 @@
 </tbody>
 </table>
 </p>
+<a name="2"> </a>
 <h3>Extensions </h3>
 <p>Extensions defined as part of this implementation guide</p>
 <p>
@@ -132,6 +134,7 @@
 <tbody/>
 </table>
 </p>
+<a name="3"> </a>
 <h3>Terminology </h3>
 <p>Value Sets and/or code systems defined as part of this implementation guide</p>
 <p>
