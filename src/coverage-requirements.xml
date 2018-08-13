@@ -47,6 +47,9 @@
     <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
       <valueUri value="devicerequest-profile-spreadsheet.xml"/>
     </extension>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="communicationrequest-profile-spreadsheet.xml"/>
+    </extension>
     <package id="profiles">
       <name value="Profiles"/>
       <description value="Profiles to be supported by EHRs and payor systems conforming to this implementation guide"/>
@@ -64,18 +67,6 @@
       <name value="Example(s)"/>
       <description value="Example(s) showing the use of the CG profiles"/>
     </package>-->
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-        <valueBoolean value="true"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/profile-observation"/>
-      </reference>
-      <name value="CRD Observation"/>
-      <description value="TODO"/>
-      <exampleBoolean value="false"/>
-      <package value="profiles"/>
-    </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
         <valueBoolean value="true"/>
@@ -120,6 +111,18 @@
         <reference value="StructureDefinition/profile-devicerequest"/>
       </reference>
       <name value="CRD DeviceRequest"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="profiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/profile-communicationrequest"/>
+      </reference>
+      <name value="CRD CommunicationRequest"/>
       <description value="TODO"/>
       <exampleBoolean value="false"/>
       <package value="profiles"/>

@@ -16,10 +16,10 @@
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>15940</WindowHeight>
-  <WindowWidth>26840</WindowWidth>
-  <WindowTopX>12780</WindowTopX>
-  <WindowTopY>6960</WindowTopY>
+  <WindowHeight>17440</WindowHeight>
+  <WindowWidth>28040</WindowWidth>
+  <WindowTopX>20940</WindowTopX>
+  <WindowTopY>5160</WindowTopY>
   <ActiveSheet>2</ActiveSheet>
   <ProtectStructure>False</ProtectStructure>
   <ProtectWindows>False</ProtectWindows>
@@ -1247,7 +1247,7 @@
     <Cell ss:Index="6"><Data ss:Type="String">0..0</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">ServiceRequset.groupIdentifier</Data></Cell>
+    <Cell ss:Index="4"><Data ss:Type="String">DeviceRequest.groupIdentifier</Data></Cell>
     <Cell ss:Index="18"><Data ss:Type="String">potentially relevant for CRD in some situations</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -1266,7 +1266,7 @@
     <Cell ss:Index="6"><Data ss:Type="String">0..0</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">DeviceRequest.code</Data></Cell>
+    <Cell ss:Index="4"><Data ss:Type="String">DeviceRequest.code[x]</Data></Cell>
     <Cell ss:Index="6"><Data ss:Type="String">1..1</Data></Cell>
     <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
    </Row>
@@ -1304,7 +1304,7 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">DeviceRequest.performer</Data></Cell>
-    <Cell ss:Index="6"><Data ss:Type="String">0..*</Data></Cell>
+    <Cell ss:Index="6"><Data ss:Type="String">0..1</Data></Cell>
     <Cell ss:Index="8"><Data ss:Type="String">Reference(Practitioner) {http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-Practitioner-r4}</Data></Cell>
     <Cell><Data ss:Type="String">Y</Data></Cell>
    </Row>
@@ -1351,8 +1351,8 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>19</ActiveRow>
-     <ActiveCol>7</ActiveCol>
+     <ActiveRow>20</ActiveRow>
+     <ActiveCol>5</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
