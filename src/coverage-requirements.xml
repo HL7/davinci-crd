@@ -105,9 +105,9 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/profile-practitioner"/>
+        <reference value="StructureDefinition/profile-servicerequest"/>
       </reference>
-      <name value="CRD Practitioner"/>
+      <name value="CRD ServiceRequest"/>
       <description value="TODO"/>
       <exampleBoolean value="false"/>
       <package value="profiles"/>
@@ -117,9 +117,21 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/profile-procedure"/>
+        <reference value="StructureDefinition/profile-devicerequest"/>
       </reference>
-      <name value="CRD Procedure"/>
+      <name value="CRD DeviceRequest"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="profiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/profile-practitioner"/>
+      </reference>
+      <name value="CRD Practitioner"/>
       <description value="TODO"/>
       <exampleBoolean value="false"/>
       <package value="profiles"/>
