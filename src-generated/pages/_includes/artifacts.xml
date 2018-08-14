@@ -152,6 +152,13 @@
             <tbody>
                 <tr>
                     <td style="column-width:30%">
+                        <a href="valueset-coverageClass.html">
+                        •  CRD Coverage Classes</a>
+                    </td>
+                    <td>TODO</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
                         <a href="valueset-locationAddressType.html">
                         •  CRD Location Address Types</a>
                     </td>

@@ -105,6 +105,24 @@
                   
             <reference>
                         
+                <reference value="ValueSet/coverageClass"/>
+                      
+            </reference>
+                  
+            <name value="CRD Coverage Classes"/>
+                  
+            <description value="TODO"/>
+                  
+            <exampleBoolean value="false"/>
+                  
+            <package value="terminology"/>
+                
+        </resource>
+            
+        <resource>
+                  
+            <reference>
+                        
                 <reference value="ValueSet/locationAddressType"/>
                       
             </reference>
@@ -292,18 +310,23 @@
                     <generation value="generated"/>
                 </page>
                 <page>
+                    <nameUrl value="valueset-coverageClass.html"/>
+                    <ns16:title xmlns:ns16="http://hl7.org/fhir" value="CRD Coverage Classes"/>
+                    <generation value="generated"/>
+                </page>
+                <page>
                     <nameUrl value="valueset-locationAddressType.html"/>
-                    <ns16:title xmlns:ns16="http://hl7.org/fhir" value="CRD Location Address Types"/>
+                    <ns17:title xmlns:ns17="http://hl7.org/fhir" value="CRD Location Address Types"/>
                     <generation value="generated"/>
                 </page>
                 <page>
                     <nameUrl value="valueset-taskCode.html"/>
-                    <ns17:title xmlns:ns17="http://hl7.org/fhir" value="CRD Task Types"/>
+                    <ns18:title xmlns:ns18="http://hl7.org/fhir" value="CRD Task Types"/>
                     <generation value="generated"/>
                 </page>
                 <page>
                     <nameUrl value="valueset-taskReasonCode.html"/>
-                    <ns18:title xmlns:ns18="http://hl7.org/fhir" value="CRD Task Reason Codes"/>
+                    <ns19:title xmlns:ns19="http://hl7.org/fhir" value="CRD Task Reason Codes"/>
                     <generation value="generated"/>
                 </page>
             </page>

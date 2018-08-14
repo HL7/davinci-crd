@@ -136,6 +136,8 @@
     },
     "StructureDefinition/profile-taskquestionnaire-r4":{
     },
+    "ValueSet/coverageClass":{
+    },
     "ValueSet/locationAddressType":{
     },
     "ValueSet/taskCode":{

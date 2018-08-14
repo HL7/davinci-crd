@@ -283,6 +283,15 @@
     </resource>
     <resource>
       <reference>
+        <reference value="ValueSet/coverageClass"/>
+      </reference>
+      <name value="CRD Coverage Classes"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="terminology"/>
+    </resource>
+    <resource>
+      <reference>
         <reference value="ValueSet/locationAddressType"/>
       </reference>
       <name value="CRD Location Address Types"/>
