@@ -553,13 +553,13 @@ In addition to the [guidance provided](https://cds-hooks.org/specification/1.0/#
 #### Potential CRD Response Types
 This section describes the different types of card responses that can be used when returning coverage requirements and defines expectations for how that information should be represented.  It's possible that some payers and clients might support additional card response patterns than those listed here, but such behavior is outside the scope of this specification.  Future versions of this specification may standardize additional response types.
 
-Of the card types here, conformant client systems SHALL support the [External reference](#external_reference) and [Instructions](#instructions) responses.  They SHOULD support the remainder.  Payer servers SHALL support at least one of these response type and MAY support as many as necessary to convey the requirements of the types of coverage they support.
+Of the card types here, conformant client systems SHALL support the [External reference](#external-reference) and [Instructions](#instructions) responses.  They SHOULD support the remainder.  Payer servers SHALL support at least one of these response type and MAY support as many as necessary to convey the requirements of the types of coverage they support.
 
 Response types are listed from least sophisticated to most sophisticated - and potentially more useful/powerful.  As a rule, the more a card can automate and the more context-specific behavior, the more useful the deision support will be to the clinician and the more likely it will actually be used.
 
 Note: Hook responses will frequently contain multiple cards and those cards may draw from a variety of response types.  For example, providing links, textual guidance as well as suggestions for alternative orders.
 
-Additional Note: The Response Types listed here are *not* the same as the types specified above in [Configuration Options](#Configuration_options).  The same response type could correspond to multiple configuration types.  For example, [External Reference](#External_Reference) could cover clinical practice guidelines, pre-authorization requirements, claims attachment requirmenets and other things.  Similarly, one configuration type could be satisfied with multiple response types.  For example, forms requirements might be expressed through a mixture of [External References](#External_Reference) and explicit [Request Form Completion](#Request_Form_Completion) responses.
+Additional Note: The Response Types listed here are *not* the same as the types specified above in [Configuration Options](#configuration-options).  The same response type could correspond to multiple configuration types.  For example, [External Reference](#external-reference) could cover clinical practice guidelines, pre-authorization requirements, claims attachment requirmenets and other things.  Similarly, one configuration type could be satisfied with multiple response types.  For example, forms requirements might be expressed through a mixture of [External References](#external-reference) and explicit [Request Form Completion](#request-form-completion) responses.
 
 
 ##### External Reference
@@ -724,7 +724,7 @@ TODO: example
 
 
 ##### Request form completion
-A common response type of response is to indicate forms that need completion.  These might be forms needed for pre-authorization or as attachments for claims submission.  They might also just be for internal use to retain as proof of following clinical need protocols and to have available in the event of audit.  While forms can be expressed as static or active PDFs referenced by [External References](#External_Reference), this response type provides the form definition as a FHIR Questionnaire and creates a Task within the EHR allowing the completion of the form to be appropriately scheduled and/or delegated.  Alternatively, the Practitioner could choose to execute the task and fill out the form immediately if that makes more sense from a clinical workflow perspective.
+A common response type of response is to indicate forms that need completion.  These might be forms needed for pre-authorization or as attachments for claims submission.  They might also just be for internal use to retain as proof of following clinical need protocols and to have available in the event of audit.  While forms can be expressed as static or active PDFs referenced by [External References](#external-reference), this response type provides the form definition as a FHIR Questionnaire and creates a Task within the EHR allowing the completion of the form to be appropriately scheduled and/or delegated.  Alternatively, the Practitioner could choose to execute the task and fill out the form immediately if that makes more sense from a clinical workflow perspective.
 
 This suggestion will always include a "create" action for the Task.  The Task will point to the questionnaire to be completed using the `Task.instantiatesUri` property.  That Questionnaire might be included with a separate conditional "create" action, or might be excluded with the presumption it will already be available or retrievable by the client via its canonical URL from the original source or from a local registry.  The `Task.code` will always include the CRD-specific `complete-questionnaire` code.  The reason for completion will be conveyed in `Task.reasonCode`.
 
@@ -738,8 +738,8 @@ When using this response type, the proposed orders (and any associated resources
     </tr>
   </thead>
   <tr>
-    <td><a href="stu3/profile-TaskQuestionnaire-stu3.html">profile-TaskQuestionnaire-stu3</a></td>
-    <td><a href="profile-TaskQuestionnaire-r4.html">profile-TaskQuestionnaire-r4</a></td>
+    <td><a href="stu3/profile-taskquestionnaire-stu3.html">profile-taskquestionnaire-stu3</a></td>
+    <td><a href="profile-taskquestionnaire-r4.html">profile-taskquestionnaire-r4</a></td>
   </tr>
 </table>
   
@@ -842,7 +842,7 @@ SMART apps allow more sophisticated interaction between payers and practitioners
 
 All such apps will need to go through the approval processes for the client's provider organization and typically also the associated software vendor.  This response type can cue the launching of such apps to occur in the context in which they are relevant to patient care and/or to payment-related decision-making.
 
-This type of response is just a modified version of the [External Reference](#External_Reference) response type.  However, the `Link.type` will be "smart" instead of "absolute".  The `Link.appContext` will typically also be present.  For example:
+This type of response is just a modified version of the [External Reference](#external-reference) response type.  However, the `Link.type` will be "smart" instead of "absolute".  The `Link.appContext` will typically also be present.  For example:
 
  {
       "summary": "Launch opiod XYZ-assessment",
@@ -1064,7 +1064,7 @@ In addition to these, this implementation guide imposes the following additional
 
 * All communications between Client and Payer systems and between SMART on FHIR apps and Payer systems SHALL be over dual-certificate mutually authenticated TLS connections
     * This specification does not provide guidance on certificate management between clinical and payer systems, though it has been proposed that Direct certificates could be used for this purpose
-* Client systems SHALL support running applications that adhere to the SMART on FHIR [public app](support-for-public-and-confidential-apps) profile
+* Client systems SHALL support running applications that adhere to the SMART on FHIR [public app](http://www.hl7.org/fhir/smart-app-launch#support-for-public-and-confidential-apps) profile
 * Payer systems that wish to receive Hook invocations that contain PHI SHALL demonstrate at time of registration/configuration that their user agreements give them permission to receive such data in a coverage requirement context.
 * Payer systems SHALL use information received solely for coverage determination purposes and shall not retain received over the CRD interfaces for any purpose other than audit
 * Client systems are the final arbiters of what data can be shared with payer systems.  They MAY filter or withhold any resources or data elements necessary to support their obligations as health data custodians, including legal, policy and patient consent-based restrictions.  However, clients systems witholding information take on the responsibility of ensuring coverage requirements are met, even if discovery is no longer possible through the interfaces provided by this implementation guide.
@@ -1074,7 +1074,7 @@ In addition to these, this implementation guide imposes the following additional
 #### Non-PHI Hook Invocation
 Some payers may not have legal permission to view patient-identifiable healthcare information (PHI) for coverage requirements discovery purposes.  EHR systems SHALL support filtering exposed FHIR resources to be a non-PHI "redacted" view.  This view SHALL ensure that all resources exposed through the CDS Hooks and SMART on FHIR interfaces are filtered as follows:
 
-* The Patient resource adhere's to the STU3 de-identified patient profile or R4 de-identified profile, depending on the version supported
+* The Patient resource adhere's to the [STU3 de-identified patient profile](stu3/profile-patient-deident-stu3.html) or [R4 de-identified profile](profile-patient-deident-r4.html), depending on the version supported
 * All resource narratives are removed
 * All 'text' and 'display' elements are removed
 * All extensions other than those explicitly mentioned in the profiles in this implementation guide are removed

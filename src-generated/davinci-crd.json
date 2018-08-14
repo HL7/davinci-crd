@@ -71,7 +71,8 @@
       "base": "{{[id]}}.html",
       "defns": "{{[id]}}-definitions.html",
       "mappings": "{{[id]}}-mappings.html",
-      "examples": "{{[id]}}-examples.html"
+      "examples": "{{[id]}}-examples.html",
+      "profile-json": "{{[id]}}.profile.json.html"
     },
     "ValueSet": {
       "template-base": "../framework/templates/template-valueset.html",
