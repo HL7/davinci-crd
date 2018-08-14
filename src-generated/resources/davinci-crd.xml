@@ -107,6 +107,132 @@
                   
             <reference>
                         
+                <reference value="SearchParameter/appointment-insurance-r4"/>
+                      
+            </reference>
+                  
+            <name value="CRD Appointment Insurance"/>
+                  
+            <description value="TODO"/>
+                  
+            <exampleBoolean value="false"/>
+                  
+            <package value="search"/>
+                
+        </resource>
+            
+        <resource>
+                  
+            <reference>
+                        
+                <reference value="SearchParameter/encounter-insurance-r4"/>
+                      
+            </reference>
+                  
+            <name value="CRD Encounter Insurance"/>
+                  
+            <description value="TODO"/>
+                  
+            <exampleBoolean value="false"/>
+                  
+            <package value="search"/>
+                
+        </resource>
+            
+        <resource>
+                  
+            <reference>
+                        
+                <reference value="SearchParameter/medicationrequest-insurance-r4"/>
+                      
+            </reference>
+                  
+            <name value="CRD MedicationRequest Insurance"/>
+                  
+            <description value="TODO"/>
+                  
+            <exampleBoolean value="false"/>
+                  
+            <package value="search"/>
+                
+        </resource>
+            
+        <resource>
+                  
+            <reference>
+                        
+                <reference value="SearchParameter/nutritionorder-insurance-r4"/>
+                      
+            </reference>
+                  
+            <name value="CRD NutritionOrder Insurance"/>
+                  
+            <description value="TODO"/>
+                  
+            <exampleBoolean value="false"/>
+                  
+            <package value="search"/>
+                
+        </resource>
+            
+        <resource>
+                  
+            <reference>
+                        
+                <reference value="SearchParameter/servicerequest-insurance-r4"/>
+                      
+            </reference>
+                  
+            <name value="CRD ServiceRequest Insurance"/>
+                  
+            <description value="TODO"/>
+                  
+            <exampleBoolean value="false"/>
+                  
+            <package value="search"/>
+                
+        </resource>
+            
+        <resource>
+                  
+            <reference>
+                        
+                <reference value="SearchParameter/supplyrequest-insurance-r4"/>
+                      
+            </reference>
+                  
+            <name value="CRD SupplyRequest Insurance"/>
+                  
+            <description value="TODO"/>
+                  
+            <exampleBoolean value="false"/>
+                  
+            <package value="search"/>
+                
+        </resource>
+            
+        <resource>
+                  
+            <reference>
+                        
+                <reference value="SearchParameter/supplyrequest-patient-r4"/>
+                      
+            </reference>
+                  
+            <name value="CRD SupplyRequest Patient"/>
+                  
+            <description value="TODO"/>
+                  
+            <exampleBoolean value="false"/>
+                  
+            <package value="search"/>
+                
+        </resource>
+            
+        <resource>
+                  
+            <reference>
+                        
                 <reference value="StructureDefinition/ext-insurance"/>
                       
             </reference>
@@ -340,28 +466,63 @@
                     <generation value="generated"/>
                 </page>
                 <page>
+                    <nameUrl value="appointment-insurance-r4.html"/>
+                    <ns18:title xmlns:ns18="http://hl7.org/fhir" value="CRD Appointment Insurance"/>
+                    <generation value="generated"/>
+                </page>
+                <page>
+                    <nameUrl value="encounter-insurance-r4.html"/>
+                    <ns19:title xmlns:ns19="http://hl7.org/fhir" value="CRD Encounter Insurance"/>
+                    <generation value="generated"/>
+                </page>
+                <page>
+                    <nameUrl value="medicationrequest-insurance-r4.html"/>
+                    <ns20:title xmlns:ns20="http://hl7.org/fhir" value="CRD MedicationRequest Insurance"/>
+                    <generation value="generated"/>
+                </page>
+                <page>
+                    <nameUrl value="nutritionorder-insurance-r4.html"/>
+                    <ns21:title xmlns:ns21="http://hl7.org/fhir" value="CRD NutritionOrder Insurance"/>
+                    <generation value="generated"/>
+                </page>
+                <page>
+                    <nameUrl value="servicerequest-insurance-r4.html"/>
+                    <ns22:title xmlns:ns22="http://hl7.org/fhir" value="CRD ServiceRequest Insurance"/>
+                    <generation value="generated"/>
+                </page>
+                <page>
+                    <nameUrl value="supplyrequest-insurance-r4.html"/>
+                    <ns23:title xmlns:ns23="http://hl7.org/fhir" value="CRD SupplyRequest Insurance"/>
+                    <generation value="generated"/>
+                </page>
+                <page>
+                    <nameUrl value="supplyrequest-patient-r4.html"/>
+                    <ns24:title xmlns:ns24="http://hl7.org/fhir" value="CRD SupplyRequest Patient"/>
+                    <generation value="generated"/>
+                </page>
+                <page>
                     <nameUrl value="extension-ext-insurance.html"/>
-                    <ns18:title xmlns:ns18="http://hl7.org/fhir" value="CRD Insurance Extension"/>
+                    <ns25:title xmlns:ns25="http://hl7.org/fhir" value="CRD Insurance Extension"/>
                     <generation value="generated"/>
                 </page>
                 <page>
                     <nameUrl value="valueset-coverageClass.html"/>
-                    <ns19:title xmlns:ns19="http://hl7.org/fhir" value="CRD Coverage Classes"/>
+                    <ns26:title xmlns:ns26="http://hl7.org/fhir" value="CRD Coverage Classes"/>
                     <generation value="generated"/>
                 </page>
                 <page>
                     <nameUrl value="valueset-locationAddressType.html"/>
-                    <ns20:title xmlns:ns20="http://hl7.org/fhir" value="CRD Location Address Types"/>
+                    <ns27:title xmlns:ns27="http://hl7.org/fhir" value="CRD Location Address Types"/>
                     <generation value="generated"/>
                 </page>
                 <page>
                     <nameUrl value="valueset-taskCode.html"/>
-                    <ns21:title xmlns:ns21="http://hl7.org/fhir" value="CRD Task Types"/>
+                    <ns28:title xmlns:ns28="http://hl7.org/fhir" value="CRD Task Types"/>
                     <generation value="generated"/>
                 </page>
                 <page>
                     <nameUrl value="valueset-taskReasonCode.html"/>
-                    <ns22:title xmlns:ns22="http://hl7.org/fhir" value="CRD Task Reason Codes"/>
+                    <ns29:title xmlns:ns29="http://hl7.org/fhir" value="CRD Task Reason Codes"/>
                     <generation value="generated"/>
                 </page>
             </page>

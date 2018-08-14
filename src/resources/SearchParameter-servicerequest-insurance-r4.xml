@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SearchParameter xmlns="http://hl7.org/fhir">
+	<id value="servicerequest-insurance-r4"/>
+	<url value="http://hl7.org/fhir/us/davinci-crd/SearchParameter/servicerequest-insurance-r4"/>
+	<name value="CRDServiceRequestInsurance"/>
+	<status value="draft"/>
+	
+	<date value="2018-08-14"/>
+	<publisher value="Da Vinci Project"/>
+	<contact>
+		<telecom>
+			<system value="other"/>
+			<value value="http://www.healthit.gov/"/>
+		</telecom>
+	</contact>
+	<code value="insurance"/>
+	<base value="ServiceRequest"/>
+	<type value="reference"/>
+	<description value="Returns service requests that are covered by the specified insurance."/>
+	<expression value="ServiceRequest.insurance.reference"></expression>
+	<xpath value="f:ServiceRequest/f:insurance/f:reference/@value"/>
+	<xpathUsage value="normal"/>
+</SearchParameter>

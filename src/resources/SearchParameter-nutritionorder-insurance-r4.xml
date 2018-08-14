@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SearchParameter xmlns="http://hl7.org/fhir">
+	<id value="nutritionorder-insurance-r4"/>
+	<url value="http://hl7.org/fhir/us/davinci-crd/SearchParameter/nutritionorder-insurance-r4"/>
+	<name value="CRDNutritionOrderInsurance"/>
+	<status value="draft"/>
+	
+	<date value="2018-08-14"/>
+	<publisher value="Da Vinci Project"/>
+	<contact>
+		<telecom>
+			<system value="other"/>
+			<value value="http://www.healthit.gov/"/>
+		</telecom>
+	</contact>
+	<code value="insurance"/>
+	<base value="Encounter"/>
+	<type value="reference"/>
+	<description value="Returns nutrition orders that are covered by the specified insurance."/>
+	<expression value="NutritionOrder.extension.where(url = 'http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-insurance').extension.value.reference"></expression>
+	<xpath value="f:NutritionOrder/f:extension[@url='http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-insurance']/f:extension/f:valueReference/f:reference/@value"/>
+	<xpathUsage value="normal"/>
+</SearchParameter>

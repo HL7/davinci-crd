@@ -307,6 +307,69 @@
     </resource>
     <resource>
       <reference>
+        <reference value="SearchParameter/appointment-insurance-r4"/>
+      </reference>
+      <name value="CRD Appointment Insurance"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="search"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="SearchParameter/encounter-insurance-r4"/>
+      </reference>
+      <name value="CRD Encounter Insurance"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="search"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="SearchParameter/medicationrequest-insurance-r4"/>
+      </reference>
+      <name value="CRD MedicationRequest Insurance"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="search"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="SearchParameter/nutritionorder-insurance-r4"/>
+      </reference>
+      <name value="CRD NutritionOrder Insurance"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="search"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="SearchParameter/servicerequest-insurance-r4"/>
+      </reference>
+      <name value="CRD ServiceRequest Insurance"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="search"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="SearchParameter/supplyrequest-insurance-r4"/>
+      </reference>
+      <name value="CRD SupplyRequest Insurance"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="search"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="SearchParameter/supplyrequest-patient-r4"/>
+      </reference>
+      <name value="CRD SupplyRequest Patient"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="search"/>
+    </resource>
+    <resource>
+      <reference>
         <reference value="StructureDefinition/ext-insurance"/>
       </reference>
       <name value="CRD Insurance Extension"/>

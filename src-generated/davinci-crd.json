@@ -141,6 +141,20 @@
     },
     "StructureDefinition/profile-taskquestionnaire-r4":{
     },
+    "SearchParameter/appointment-insurance-r4":{
+    },
+    "SearchParameter/encounter-insurance-r4":{
+    },
+    "SearchParameter/medicationrequest-insurance-r4":{
+    },
+    "SearchParameter/nutritionorder-insurance-r4":{
+    },
+    "SearchParameter/servicerequest-insurance-r4":{
+    },
+    "SearchParameter/supplyrequest-insurance-r4":{
+    },
+    "SearchParameter/supplyrequest-patient-r4":{
+    },
     "StructureDefinition/ext-insurance":{
       "template-base": "../framework/templates/template-ext.html",
       "template-defns": "../framework/templates/template-ext-definitions.html",
