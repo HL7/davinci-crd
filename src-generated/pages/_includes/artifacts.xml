@@ -158,7 +158,15 @@
     <p>Extensions defined as part of this implementation guide</p>
     <p>
         <table>
-            <tbody/>
+            <tbody>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="extension-ext-insurance.html">
+                        •  CRD Insurance Extension</a>
+                    </td>
+                    <td>TODO</td>
+                </tr>
+            </tbody>
         </table>
     </p>
     <a name="3"> </a>
