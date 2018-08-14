@@ -27,7 +27,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Mon, Aug 13, 2018 15:45+0000 for FHIR v3.4.0 
+  Generated on Tue, Aug 14, 2018 01:26+0000 for FHIR v3.4.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="3.4.0">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -15046,11 +15046,6 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
           <xs:element name="quantity" minOccurs="0" maxOccurs="1" type="Quantity">
             <xs:annotation>
               <xs:documentation xml:lang="en">The quantity of the device present in the packaging (e.g. the number of devices present in a pack, or the number of devices in the same package of the medicinal product).</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="partOf" minOccurs="0" maxOccurs="unbounded" type="BackboneElement">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The device that this component can be part of - a parent device.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="parentDevice" minOccurs="0" maxOccurs="1" type="Reference">
