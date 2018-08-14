@@ -25,6 +25,12 @@
       <valueUri value="coverage-profile-spreadsheet.xml"/>
     </extension>
     <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="appointment-profile-spreadsheet.xml"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="encounter-profile-spreadsheet.xml"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
       <valueUri value="device-profile-spreadsheet.xml"/>
     </extension>
     <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
@@ -66,12 +72,6 @@
     <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
       <valueUri value="nutritionorder-profile-spreadsheet.xml"/>
     </extension>
-    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
-      <valueUri value="appointment-profile-spreadsheet.xml"/>
-    </extension>
-    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
-      <valueUri value="encounter-profile-spreadsheet.xml"/>
-    </extension>
     <package id="profiles">
       <name value="Profiles"/>
       <description value="Profiles to be supported by EHRs and payor systems conforming to this implementation guide"/>
@@ -109,6 +109,18 @@
         <reference value="StructureDefinition/profile-communicationrequest-r4"/>
       </reference>
       <name value="CRD Communication Request"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="profiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/profile-coverage-r4"/>
+      </reference>
+      <name value="CRD Coverage"/>
       <description value="TODO"/>
       <exampleBoolean value="false"/>
       <package value="profiles"/>
@@ -217,6 +229,18 @@
         <reference value="StructureDefinition/profile-patient-r4"/>
       </reference>
       <name value="CRD Patient"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="profiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/profile-patient-deident-r4"/>
+      </reference>
+      <name value="CRD Deidentified Patient"/>
       <description value="TODO"/>
       <exampleBoolean value="false"/>
       <package value="profiles"/>

@@ -1128,6 +1128,7 @@
     <Cell ss:Index="6"><Data ss:Type="String">1..*</Data></Cell>
     <Cell ss:Index="8"><Data ss:Type="String">Identifier</Data></Cell>
     <Cell><Data ss:Type="String">Y</Data></Cell>
+    <Cell ss:Index="18"><Data ss:Type="String">If the organization has an NPI, it SHALL be one of the identifiers.</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">Organization.identifier.system</Data></Cell>
@@ -1199,11 +1200,12 @@
     <VerticalResolution>0</VerticalResolution>
    </Print>
    <Selected/>
+   <LeftColumnVisible>8</LeftColumnVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>13</ActiveRow>
-     <ActiveCol>5</ActiveCol>
+     <ActiveRow>3</ActiveRow>
+     <ActiveCol>17</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>

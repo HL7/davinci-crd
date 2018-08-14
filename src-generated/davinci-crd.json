@@ -87,6 +87,8 @@
   "source": "davinci-crd.xml",
   "spreadsheets": [
     "coverage-profile-spreadsheet.xml",
+    "appointment-profile-spreadsheet.xml",
+    "encounter-profile-spreadsheet.xml",
     "device-profile-spreadsheet.xml",
     "patient-profile-spreadsheet.xml",
     "practitioner-profile-spreadsheet.xml",
@@ -100,14 +102,14 @@
     "supplyrequest-profile-spreadsheet.xml",
     "medication-profile-spreadsheet.xml",
     "medicationrequest-profile-spreadsheet.xml",
-    "nutritionorder-profile-spreadsheet.xml",
-    "appointment-profile-spreadsheet.xml",
-    "encounter-profile-spreadsheet.xml"
+    "nutritionorder-profile-spreadsheet.xml"
   ],
   "resources": {
     "StructureDefinition/profile-appointment-r4":{
     },
     "StructureDefinition/profile-communicationrequest-r4":{
+    },
+    "StructureDefinition/profile-coverage-r4":{
     },
     "StructureDefinition/profile-device-r4":{
     },
@@ -126,6 +128,8 @@
     "StructureDefinition/profile-organization-r4":{
     },
     "StructureDefinition/profile-patient-r4":{
+    },
+    "StructureDefinition/profile-patient-deident-r4":{
     },
     "StructureDefinition/profile-practitioner-r4":{
     },
