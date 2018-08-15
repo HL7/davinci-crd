@@ -75,7 +75,7 @@ For example, a CDS Service within a Discovery Response might look like this:
       "prefetch": {
         "patient": "Patient/{{context.patientId}}",
         "medications": "MedicationOrder?patient={{context.patientId}}"
-      }
+      },
       "extension": {
         "davinci-crd.configuration-options": [
           {
@@ -363,10 +363,10 @@ There are no additional constraints or special rules related to this hook beyond
   </tr>
   <tr>
     <td><a href="stu3/profile-procedurerequest-stu3.html">profile-procedurerequest-stu3</a></td>
+    <td rowspan="2"><a href="profile-servicerequest-r4.html">profile-servicerequest-r4</a></td>
   </tr>
   <tr>
     <td><a href="stu3/profile-referralrequest-stu3.html">profile-referralrequest-stu3</a></td>
-    <td rowspan="2"><a href="profile-servicerequest-r4.html">profile-servicerequest-r4</a></td>
   </tr>
   <tr>
     <td><a href="stu3/profile-supplyrequest-stu3.html">profile-supplyrequest-stu3</a></td>
@@ -626,13 +626,16 @@ When using this response type, the proposed orders (and any associated resources
   <tr>
     <td><a href="stu3/profile-device-stu3.html">profile-device-stu3</a></td>
     <td><a href="profile-device-r4.html">profile-device-r4</a></td>
+    <td/>
   </tr>
   <tr>
     <td><a href="stu3/profile-devicerequest-stu3.html">profile-devicerequest-stu3</a></td>
     <td rowspan="2"><a href="profile-devicerequest-r4.html">profile-devicerequest-r4</a></td>
+    <td/>
   </tr>
   <tr>
     <td><a href="stu3/profile-visionprescription-stu3.html">profile-visionprescription-stu3</a></td>
+    <td/>
   </tr>
   <tr>
     <td><a href="stu3/profile-encounter-stu3.html">profile-encounter-stu3</a></td>
@@ -642,25 +645,31 @@ When using this response type, the proposed orders (and any associated resources
   <tr>
     <td><a href="stu3/profile-medication-stu3.html">profile-medication-stu3</a></td>
     <td><a href="profile-medication-r4.html">profile-medication-r4</a></td>
+    <td/>
   </tr>
   <tr>
     <td><a href="stu3/profile-medicationrequest-stu3.html">profile-medicationrequest-stu3</a></td>
     <td><a href="profile-medicationrequest-r4.html">profile-medicationrequest-r4</a></td>
+    <td/>
   </tr>
   <tr>
     <td><a href="stu3/profile-nutritionorder-stu3.html">profile-nutritionorder-stu3</a></td>
     <td><a href="profile-nutritionorder-r4.html">profile-nutritionorder-r4</a></td>
+    <td/>
   </tr>
   <tr>
     <td><a href="stu3/profile-procedurerequest-stu3.html">profile-procedurerequest-stu3</a></td>
     <td rowspan="2"><a href="profile-servicerequest-r4.html">profile-servicerequest-r4</a></td>
+    <td/>
   </tr>
   <tr>
     <td><a href="stu3/profile-referralrequest-stu3.html">profile-referralrequest-stu3</a></td>
+    <td/>
   </tr>
   <tr>
     <td><a href="stu3/profile-supplyrequest-stu3.html">profile-supplyrequest-stu3</a></td>
     <td><a href="profile-supplyrequest-r4.html">profile-supplyrequest-r4</a></td>
+    <td/>
   </tr>
 </table>
 
@@ -844,7 +853,7 @@ All such apps will need to go through the approval processes for the client's pr
 
 This type of response is just a modified version of the [External Reference](#external-reference) response type.  However, the `Link.type` will be "smart" instead of "absolute".  The `Link.appContext` will typically also be present.  For example:
 
- {
+    {
       "summary": "Launch opiod XYZ-assessment",
       "indicator": "info",
       "detail": "This is an example card.",
@@ -892,6 +901,7 @@ Not all of these will be relevant for all resource types.  And different resourc
 
 The 'standard' prefetch queries for this implementation guide that SHOULD be supported for each type of resource are shown in the table below.  Those search parameters with hyperlinks are defined as part of this implementation guide.  The remainder are defined within their respective version of the FHIR core specification.  These queries leverage the CDS Hook context extension [described above](#additional-pre-fetch-capabilities)
 
+{% raw %}
 <table class="grid">
   <thead>
     <tr>
@@ -905,7 +915,10 @@ The 'standard' prefetch queries for this implementation guide that SHOULD be sup
     <td>Appointment</td>
     <td>STU3</td>
     <td>
-      <code>Appointment?id={{context.orders.Appointment.id}} &_include=Appointment:patient, Appointment:practitioner, Appointment:location, Appointment:<a href="stu3/searchparameter-appointment-insurance-stu3.html">insurance</a>:Coverage</code>
+      <code>Appointment?id={{context.orders.Appointment.id}}<br/>
+      &_include=Appointment:patient, Appointment:practitioner<br/>
+      &_include=Appointment:location<br/>
+      &_include=Appointment:<a href="stu3/searchparameter-appointment-insurance-stu3.html">insurance</a>:Coverage</code>
     </td>
     <td>No requester, no performer organization</td>
   </tr>
@@ -913,7 +926,13 @@ The 'standard' prefetch queries for this implementation guide that SHOULD be sup
     <td>Appointment</td>
     <td>R4</td>
     <td>
-      <code>Appointment?id={{context.orders.Appointment.id}} &_include=Appointment:patient, Appointment:practitioner:PractitionerRole, PractitionerRole:organization, PractitionerRole:practitioner, Appointment:location, Appointment:<a href="appointment-insurance-r4.html">insurance</a>:Coverage</code>
+      <code>Appointment?id={{context.orders.Appointment.id}}<br/>
+      &_include=Appointment:patient<br/>
+      &_include=Appointment:practitioner:PractitionerRole<br/>
+      &_include=PractitionerRole:organization<br/>
+      &_include=PractitionerRole:practitioner<br/>
+      &_include=Appointment:location<br/>
+      &_include=Appointment:<a href="appointment-insurance-r4.html">insurance</a>:Coverage</code>
     </td>
     <td>No requester</td>
   </tr>
@@ -921,7 +940,13 @@ The 'standard' prefetch queries for this implementation guide that SHOULD be sup
     <td>DeviceRequest</td>
     <td>STU3</td>
     <td>
-      <code>DeviceRequest?id={{context.orders.DeviceRequest.id}} &_include=DeviceRequest:patient, DeviceRequest:performer, DeviceRequest:requester, DeviceRequest:device, DeviceRequest:<a href="stu3/searchparameter-devicerequest-on-behalf-stu3.html">on-behalf</a>, DeviceRequest:<a href="stu3/searchparameter-devicerequest-insurance-stu3.html">insurance</a>:Coverage</code>
+      <code>DeviceRequest?id={{context.orders.DeviceRequest.id}}<br/>
+      &_include=DeviceRequest:patient<br/>
+      &_include=DeviceRequest:performer<br/>
+      &_include=DeviceRequest:requester<br/>
+      &_include=DeviceRequest:device<br/>
+      &_include=DeviceRequest:<a href="stu3/searchparameter-devicerequest-on-behalf-stu3.html">on-behalf</a><br/>
+      &_include=DeviceRequest:<a href="stu3/searchparameter-devicerequest-insurance-stu3.html">insurance</a>:Coverage</code>
     </td>
     <td>No performing location</td>
   </tr>
@@ -929,7 +954,14 @@ The 'standard' prefetch queries for this implementation guide that SHOULD be sup
     <td>DeviceRequest</td>
     <td>R4</td>
     <td>
-      <code>DeviceRequest?id={{context.orders.DeviceRequest.id}} &_include=DeviceRequest:patient, DeviceRequest:performer, DeviceRequest:requester, DeviceRequest:device, PractitionerRole:organization, PractitionerRole:practitioner, DeviceRequest:insurance:Coverage</code>
+      <code>DeviceRequest?id={{context.orders.DeviceRequest.id}}<br/>
+      &_include=DeviceRequest:patient<br/>
+      &_include=DeviceRequest:performer<br/>
+      &_include=DeviceRequest:requester<br/>
+      &_include=DeviceRequest:device<br/>
+      &_include=PractitionerRole:organization<br/>
+      &_include=PractitionerRole:practitioner<br/>
+      &_include=DeviceRequest:insurance:Coverage</code>
     </td>
     <td>No performing location</td>
   </tr>
@@ -937,14 +969,24 @@ The 'standard' prefetch queries for this implementation guide that SHOULD be sup
     <td>Encounter</td>
     <td>STU3</td>
     <td>
-      <code>Encounter?id={{context.orders.Encounter.id}} &_include=Encounter:patient, Encounter:service-provider, Encounter:practitioner, Encounter:location, Encounter:<a href="stu3/searchparameter-encounter-insurance-stu3.html">insurance</a>:Coverage</code>
+      <code>Encounter?id={{context.orders.Encounter.id}}<br/>
+      &_include=Encounter:patient<br/>
+      &_include=Encounter:service-provider<br/>
+      &_include=Encounter:practitioner<br/>
+      &_include=Encounter:location<br/>
+      &_include=Encounter:<a href="stu3/searchparameter-encounter-insurance-stu3.html">insurance</a>:Coverage</code>
     </td>
+    <td>No requester</td>
   </tr>
   <tr>
     <td>Encounter</td>
     <td>R4</td>
     <td>
-      <code>Encounter?id={{context.orders.Encounter.id}} &_include=Encounter:patient, Encounter:service-provider, Encounter:practitioner, Encounter:location, Encounter:<a href="encounter-insurance-r4.html">insurance</a>:Coverage</code>
+      <code>Encounter?id={{context.orders.Encounter.id}}<br/>
+      &_include=Encounter:patient&_include=Encounter:service-provider<br/>
+      &_include=Encounter:practitioner<br/>
+      &_include=Encounter:location<br/>
+      &_include=Encounter:<a href="encounter-insurance-r4.html">insurance</a>:Coverage</code>
     </td>
     <td>No requester</td>
   </tr>
@@ -952,7 +994,13 @@ The 'standard' prefetch queries for this implementation guide that SHOULD be sup
     <td>MedicationRequest</td>
     <td>STU3</td>
     <td>
-      <code>MedicationRequest?id={{context.orders.MedicationRequest.id}} &_include=MedicationRequest:patient, MedicationRequest:intended-dispenser, MedicationRequest:requester:Practitioner, MedicationRequest:medication, MedicationRequest:<a href="stu3/searchparameter-medicationrequest-on-behalf-stu3.html">on-behalf</a>, MedicationRequest:<a href="stu3/searchparameter-medicationrequest-insurance-stu3.html">insurance</a>:Coverage</code>
+      <code>MedicationRequest?id={{context.orders.MedicationRequest.id}}<br/>
+      &_include=MedicationRequest:patient<br/>
+      &_include=MedicationRequest:intended-dispenser<br/>
+      &_include=MedicationRequest:requester:Practitioner<br/>
+      &_include=MedicationRequest:medication<br/>
+      &_include=MedicationRequest:<a href="stu3/searchparameter-medicationrequest-on-behalf-stu3.html">on-behalf</a><br/>
+      &_include=MedicationRequest:<a href="stu3/searchparameter-medicationrequest-insurance-stu3.html">insurance</a>:Coverage</code>
     </td>
     <td>No performing location</td>
   </tr>
@@ -960,14 +1008,28 @@ The 'standard' prefetch queries for this implementation guide that SHOULD be sup
     <td>MedicationRequest</td>
     <td>R4</td>
     <td>
-      <code>MedicationRequest?id={{context.orders.MedicationRequest.id}} &_include=MedicationRequest:patient, MedicationRequest:intended-dispenser, MedicationRequest:requester:PractitionerRole, MedicationRequest:medication, PractitionerRole:organization, PractitionerRole:practitioner, MedicationRequest:<a href="medicationrequest-insurance-r4.html">insurance</a>:Coverage</code>
+      <code>MedicationRequest?id={{context.orders.MedicationRequest.id}}<br/>
+      &_include=MedicationRequest:patient<br/>
+      &_include=MedicationRequest:intended-dispenser<br/>
+      &_include=MedicationRequest:requester:PractitionerRole<br/>
+      &_include=MedicationRequest:medication<br/>
+      &_include=PractitionerRole:organization<br/>
+      &_include=PractitionerRole:practitioner<br/>
+      &_include=MedicationRequest:<a href="medicationrequest-insurance-r4.html">insurance</a>:Coverage</code>
     </td>
+    <td>No performing location</td>
   </tr>
   <tr>
     <td>NutritionOrder</td>
     <td>STU3</td>
     <td>
-      <code>NutritionOrder?id={{context.orders.NutritionOrder.id}} &_include=NutritionOrder:patient, NutritionOrder:provider, NutritionOrder:requester, NutritionOrder:encounter, Enconuter:location, NutritionOrder:<a href="stu3/searchparameter-nutritionorder-insurance-stu3.html">insurance</a>:Coverage</code>
+      <code>NutritionOrder?id={{context.orders.NutritionOrder.id}}<br/>
+      &_include=NutritionOrder:patient<br/>
+      &_include=NutritionOrder:provider<br/>
+      &_include=NutritionOrder:requester<br/>
+      &_include=NutritionOrder:encounter<br/>
+      &_include=Enconuter:location<br/>
+      &_include=NutritionOrder:<a href="stu3/searchparameter-nutritionorder-insurance-stu3.html">insurance</a>:Coverage</code>
     </td>
     <td>No organization, location only through request encounter</td>
   </tr>
@@ -975,7 +1037,15 @@ The 'standard' prefetch queries for this implementation guide that SHOULD be sup
     <td>NutritionOrder</td>
     <td>R4</td>
     <td>
-      <code>NutritionOrder?id={{context.orders.NutritionOrder.id}} &_include=NutritionOrder:patient, NutritionOrder:provider, NutritionOrder:requester, PractitionerRole:organization, PractitionerRole:practitioner, NutritionOrder:encounter, Encounter:location, NutritionOrder:<a href="nutritionorder-insurance-r4.html">insurance</a>:Coverage</code>
+      <code>NutritionOrder?id={{context.orders.NutritionOrder.id}}<br/>
+      &_include=NutritionOrder:patient<br/>
+      &_include=NutritionOrder:provider<br/>
+      &_include=NutritionOrder:requester<br/>
+      &_include=PractitionerRole:organization<br/>
+      &_include=PractitionerRole:practitioner<br/>
+      &_include=NutritionOrder:encounter<br/>
+      &_include=Encounter:location<br/>
+      &_include=NutritionOrder:<a href="nutritionorder-insurance-r4.html">insurance</a>:Coverage</code>
     </td>
     <td>Location only through request encounter</td>
   </tr>
@@ -983,7 +1053,12 @@ The 'standard' prefetch queries for this implementation guide that SHOULD be sup
     <td>ProcedureRequest</td>
     <td>STU3</td>
     <td>
-      <code>ProcedureRequest?id={{context.orders.ProcedureRequest.id}} &_include=ProcedureRequest:patient, ProcedureRequest:performer, ProcedureRequest:requester, ProcedureRequest:<a href="stu3/searchparameter-procedurerequest-on-behalf-stu3.html">on-behalf</a>, ProcedureRequest:<a href="stu3/searchparameter-procedurerequest-insurance-stu3.html">insurance</a>:Coverage</code>
+      <code>ProcedureRequest?id={{context.orders.ProcedureRequest.id}}<br/>
+      &_include=ProcedureRequest:patient<br/>
+      &_include=ProcedureRequest:performer<br/>
+      &_include=ProcedureRequest:requester<br/>
+      &_include=ProcedureRequest:<a href="stu3/searchparameter-procedurerequest-on-behalf-stu3.html">on-behalf</a><br/>
+      &_include=ProcedureRequest:<a href="stu3/searchparameter-procedurerequest-insurance-stu3.html">insurance</a>:Coverage</code>
     </td>
     <td>No performer location</td>
   </tr>
@@ -991,7 +1066,12 @@ The 'standard' prefetch queries for this implementation guide that SHOULD be sup
     <td>ReferralRequest</td>
     <td>STU3</td>
     <td>
-      <code>ReferralRequest?id={{context.orders.ReferralRequest.id}} &_include=ReferralRequest:patient, ReferralRequest:recipient, ReferralRequest:requester, ReferralRequest:<a href="stu3/searchparameter-referralrequest-on-behalf-stu3.html">on-behalf</a>, ReferralRequest:<a href="stu3/searchparameter-referralrequest-insurance-stu3.html">insurance</a>:Coverage</code>
+      <code>ReferralRequest?id={{context.orders.ReferralRequest.id}}<br/>
+      &_include=ReferralRequest:patient<br/>
+      &_include=ReferralRequest:recipient<br/>
+      &_include=ReferralRequest:requester<br/>
+      &_include=ReferralRequest:<a href="stu3/searchparameter-referralrequest-on-behalf-stu3.html">on-behalf</a><br/>
+      &_include=ReferralRequest:<a href="stu3/searchparameter-referralrequest-insurance-stu3.html">insurance</a>:Coverage</code>
     </td>
     <td>No performer location</td>
   </tr>
@@ -999,7 +1079,13 @@ The 'standard' prefetch queries for this implementation guide that SHOULD be sup
     <td>ServiceRequest</td>
     <td>R4</td>
     <td>
-      <code>ServiceRequest?id={{context.orders.ServiceRequest.id}} &_include=ServiceRequest:patient, ServiceRequest:performer, ServiceRequest:requester, PractitionerRole:organization, PractitionerRole:practitioner, ServiceRequest:<a href="servicerequest-insurance-r4.html">insurance</a>:Coverage</code>
+      <code>ServiceRequest?id={{context.orders.ServiceRequest.id}}<br/>
+      &_include=ServiceRequest:patient<br/>
+      &_include=ServiceRequest:performer<br/>
+      &_include=ServiceRequest:requester<br/>
+      &_include=PractitionerRole:organization<br/>
+      &_include=PractitionerRole:practitioner<br/>
+      &_include=ServiceRequest:<a href="servicerequest-insurance-r4.html">insurance</a>:Coverage</code>
     </td>
     <td>No performer location</td>
   </tr>
@@ -1007,7 +1093,12 @@ The 'standard' prefetch queries for this implementation guide that SHOULD be sup
     <td>SupplyRequest</td>
     <td>STU3</td>
     <td>
-      <code>SupplyRequest?id={{context.orders.SupplyRequest.id}} &_include=SupplyRequest:<a href="stu3/searchparameter-supplyrequest-patient-stu3.html">patient</a>, SupplyRequest:supplier:Organization, SupplyRequest:requester:Practitioner, SupplyRequest:requester:Organization, SupplyRequest:<a href="stu3/searchparameter-supplyrequest-insurance-stu3.html">insurance</a>:Coverage</code>
+      <code>SupplyRequest?id={{context.orders.SupplyRequest.id}}<br/>
+      &_include=SupplyRequest:<a href="stu3/searchparameter-supplyrequest-patient-stu3.html">patient</a><br/>
+      &_include=SupplyRequest:supplier:Organization<br/>
+      &_include=SupplyRequest:requester:Practitioner<br/>
+      &_include=SupplyRequest:requester:Organization<br/>
+      &_include=SupplyRequest:<a href="stu3/searchparameter-supplyrequest-insurance-stu3.html">insurance</a>:Coverage</code>
     </td>
     <td>No performer location</td>
   </tr>
@@ -1015,7 +1106,15 @@ The 'standard' prefetch queries for this implementation guide that SHOULD be sup
     <td>SupplyRequest</td>
     <td>R4</td>
     <td>
-      <code>SupplyRequest?id={{context.orders.SupplyRequest.id}} &_include=SupplyRequest:<a href="supplyrequest-patient-r4.html">patient</a>, SupplyRequest:supplier:Organization, SupplyRequest:requester:Practitioner, SupplyRequest:requester:Organization,, SupplyRequest:Requester:PractitionerRole, PractitionerRole:organization, PractitionerRole:practitioner, SupplyRequest:<a href="supplyrequest-insurance-r4.html">insurance</a>:Coverage</code>
+      <code>SupplyRequest?id={{context.orders.SupplyRequest.id}}&<br/>
+      _include=SupplyRequest:<a href="supplyrequest-patient-r4.html">patient</a><br/>
+      &_include=SupplyRequest:supplier:Organization<br/>
+      &_include=SupplyRequest:requester:Practitioner<br/>
+      &_include=SupplyRequest:requester:Organization<br/>
+      &_include=SupplyRequest:Requester:PractitionerRole<br/>
+      &_include=PractitionerRole:organization<br/>
+      &_include=PractitionerRole:practitioner<br/>
+      &_include=SupplyRequest:<a href="supplyrequest-insurance-r4.html">insurance</a>:Coverage</code>
     </td>
     <td>No performer location</td>
   </tr>
@@ -1023,11 +1122,15 @@ The 'standard' prefetch queries for this implementation guide that SHOULD be sup
     <td>VisionPrescription</td>
     <td>STU3</td>
     <td>
-      <code>VisionPrescription?id={{context.orders.VisionPrescription.id}} &_include=VisionPrescription:patient, VisionPrescription:prescriber, VisionPrescription:<a href="stu3/searchparameter-visionprescription-insurance-stu3.html">insurance</a>:Coverage</code>
+      <code>VisionPrescription?id={{context.orders.VisionPrescription.id}}<br/>
+      &_include=VisionPrescription:patient<br/>
+      &_include=VisionPrescription:prescriber<br/>
+      &_include=VisionPrescription:<a href="stu3/searchparameter-visionprescription-insurance-stu3.html">insurance</a>:Coverage</code>
     </td>
     <td>No performer, organization or location</td>
   </tr>
 </table>
+{% endraw %}
 
 #### Notes
 *  Executing these queries will bring back a degree of redundant information: repeating the request, Encounter and Appointment resources found in the hook contexts and repeating Patient, Practitioner, Organization and Coverage resources that are common for different request types for the `order-review` hook.  This redundancy is simply the price that must be paid for using the prefetch mechanism and leveraging the benefits of a common standard.  Payers seeking greater efficiency can perform direct queries that are more tuned (e.g. a Batch of queries that search for specific resources by ids based on the context resource information)
