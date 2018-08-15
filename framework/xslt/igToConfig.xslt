@@ -85,6 +85,8 @@
   "suppressedWarningFile": "../src/ignoreWarnings.txt",
   "includeHeadings": false,
   "pre-process": [
+    {"folder": "../framework/config",
+     "relativePath": ""},
     {"folder": "../framework/assets",
      "relativePath": "assets"},
     {"folder": "../framework/includes",
