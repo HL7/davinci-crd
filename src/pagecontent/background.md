@@ -71,10 +71,9 @@ Implementers should also familiarize themselves with the FHIR resources used wit
       <a href="{{site.data.fhir.path}}practitioner.html">Practitioner</a><br/>
       <a href="{{site.data.fhir.path}}practitionerrole.html">PractitionerRole</a><br/>
       <a href="{{site.data.fhir.path}}questionnaire.html">Questionnaire</a><br/>
-      <a href="{{site.data.fhir.path}}servicerequest.html">ReferralRequest</a><br/>
+      <a href="{{site.data.fhir.path}}servicerequest.html">ServiceRequest</a><br/>
       <a href="{{site.data.fhir.path}}supplyrequest.html">SupplyRequest</a><br/>
       <a href="{{site.data.fhir.path}}task.html">Task</a><br/>
-      <a href="{{site.data.fhir.path}}visionprescription.html">VisionPrescription</a>
     </td>
   </tr>
 </table>
