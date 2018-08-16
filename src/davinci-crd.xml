@@ -14,54 +14,45 @@
     </coding>
   </jurisdiction>
   <fhirVersion value="3.4.0"/>
-  <!-- Once US core supports R4, we'll include this
   <dependsOn>
+    <extension url="http://hl7.org/fhir/StructureDefinition/tools-alternateVersion">
+      <valueCode value="STU3"/>
+    </extension>
     <uri value="http://hl7.org/fhir/us/core"/>
     <version value="1.0.1"/>
-  </dependsOn>-->
+  </dependsOn>
   <definition>
     <!-- Note: Order of these spreadsheets matters -->
     <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
-      <valueUri value="coverage-profile-spreadsheet.xml"/>
-    </extension>
-    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
       <valueUri value="appointment-profile-spreadsheet.xml"/>
-    </extension>
-    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
-      <valueUri value="encounter-profile-spreadsheet.xml"/>
-    </extension>
-    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
-      <valueUri value="device-profile-spreadsheet.xml"/>
-    </extension>
-    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
-      <valueUri value="patient-profile-spreadsheet.xml"/>
-    </extension>
-    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
-      <valueUri value="practitioner-profile-spreadsheet.xml"/>
-    </extension>
-    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
-      <valueUri value="practitionerrole-profile-spreadsheet.xml"/>
-    </extension>
-    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
-      <valueUri value="location-profile-spreadsheet.xml"/>
-    </extension>
-    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
-      <valueUri value="organization-profile-spreadsheet.xml"/>
-    </extension>
-    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
-      <valueUri value="task-profile-spreadsheet.xml"/>
-    </extension>
-    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
-      <valueUri value="servicerequest-profile-spreadsheet.xml"/>
-    </extension>
-    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
-      <valueUri value="devicerequest-profile-spreadsheet.xml"/>
     </extension>
     <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
       <valueUri value="communicationrequest-profile-spreadsheet.xml"/>
     </extension>
     <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
-      <valueUri value="supplyrequest-profile-spreadsheet.xml"/>
+      <valueUri value="coverage-profile-spreadsheet.xml"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="device-profile-spreadsheet.xml"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="devicerequest-profile-spreadsheet.xml"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="encounter-profile-spreadsheet.xml"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="location-profile-spreadsheet.xml"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="patient-profile-spreadsheet.xml"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="patient-stu3-profile-spreadsheet.xml">
+        <extension url="http://hl7.org/fhir/StructureDefinition/tools-alternateVersion">
+          <valueCode value="STU3"/>
+        </extension>
+      </valueUri>
     </extension>
     <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
       <valueUri value="medication-profile-spreadsheet.xml"/>
@@ -71,6 +62,24 @@
     </extension>
     <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
       <valueUri value="nutritionorder-profile-spreadsheet.xml"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="organization-profile-spreadsheet.xml"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="practitioner-profile-spreadsheet.xml"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="practitionerrole-profile-spreadsheet.xml"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="servicerequest-profile-spreadsheet.xml"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="supplyrequest-profile-spreadsheet.xml"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="task-profile-spreadsheet.xml"/>
     </extension>
     <package id="profiles">
       <name value="Profiles"/>
@@ -237,10 +246,40 @@
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
         <valueBoolean value="true"/>
       </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/tools-alternateVersion">
+        <valueCode value="STU3"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/profile-patient-stu3"/>
+      </reference>
+      <name value="CRD Patient - STU3"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="profiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
       <reference>
         <reference value="StructureDefinition/profile-patient-deident-r4"/>
       </reference>
       <name value="CRD Deidentified Patient"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="profiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/tools-alternateVersion">
+        <valueCode value="STU3"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/profile-patient-deident-stu3"/>
+      </reference>
+      <name value="CRD Deidentified Patient - STU3"/>
       <description value="TODO"/>
       <exampleBoolean value="false"/>
       <package value="profiles"/>
@@ -355,6 +394,18 @@
         <reference value="SearchParameter/supplyrequest-insurance-r4"/>
       </reference>
       <name value="CRD SupplyRequest Insurance"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="search"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/tools-alternateVersion">
+        <valueCode value="STU3"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/supplyrequest-patient-stu3"/>
+      </reference>
+      <name value="CRD SupplyRequest Patient - STU3"/>
       <description value="TODO"/>
       <exampleBoolean value="false"/>
       <package value="search"/>

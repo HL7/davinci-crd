@@ -3,7 +3,11 @@ guidename=davinci-crd
 copyrightyear=2018+
 license=CC0-1.0
 version=current
+#######################
+# If you change the fhirspec, be sure to delete src-generated/schemas/*
+#######################
 fhirspec=http://build.fhir.org/
+additionalVersion=STU3
 excludexml=Yes
 #excludejson=Yes
 excludettl=Yes
