@@ -7,9 +7,9 @@
   <description value="Reasons for creating tasks in CRD"/>
   <compose>
     <include>
-      <system value="http://terminology.hl7.org/CodeSystem/task-reasons"/>
+      <system value="http://hl7.org/fhir/us/davinci-crd/CodeSystem/task-reason-stu3"/>
       <concept>
-        <code value="sample"/>
+        <code value="prior-auth"/>
       </concept>    
     </include>
   </compose>

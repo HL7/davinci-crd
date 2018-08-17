@@ -877,6 +877,48 @@
     </resource>
     <resource>
       <reference>
+        <reference value="CodeSystem/task-type"/>
+      </reference>
+      <name value="CRD Task Types Code System"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="terminology"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="CodeSystem/task-reason"/>
+      </reference>
+      <name value="CRD Task Reasons Code System"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="terminology"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/tools-alternateVersion">
+        <valueCode value="STU3"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/task-type"/>
+      </reference>
+      <name value="CRD Task Types Code System"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="terminology"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/tools-alternateVersion">
+        <valueCode value="STU3"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/task-reason"/>
+      </reference>
+      <name value="CRD Task Reasons Code System"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="terminology"/>
+    </resource>
+    <resource>
+      <reference>
         <reference value="ValueSet/coverageClass"/>
       </reference>
       <name value="CRD Coverage Classes"/>
