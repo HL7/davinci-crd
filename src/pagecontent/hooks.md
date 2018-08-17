@@ -1177,7 +1177,7 @@ In addition to these, this implementation guide imposes the following additional
 #### Non-PHI Hook Invocation
 Some payers may not have legal permission to view patient-identifiable healthcare information (PHI) for coverage requirements discovery purposes.  EHR systems SHALL support filtering exposed FHIR resources to be a non-PHI "redacted" view.  This view SHALL ensure that all resources exposed through the CDS Hooks and SMART on FHIR interfaces are filtered as follows:
 
-* The Patient resource adhere's to the [STU3 de-identified patient profile](stu3/profile-patient-deident-stu3.html) or [R4 de-identified profile](profile-patient-deident-r4.html), depending on the version supported
+* The Patient resource adhere's to the [STU3 de-identified patient profile](STU3/profile-patient-deident-stu3.html) or [R4 de-identified profile](profile-patient-deident-r4.html), depending on the version supported
 * All resource narratives are removed
 * All 'text' and 'display' elements are removed
 * All extensions other than those explicitly mentioned in the profiles in this implementation guide are removed
