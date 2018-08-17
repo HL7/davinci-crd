@@ -34,6 +34,23 @@
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <package id="profiles">
       <name value="Profiles"/>
       <description value="Profiles to be supported by EHRs and payor systems conforming to this implementation guide"/>
@@ -71,6 +88,21 @@
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <resource>
       <reference>
         <reference value="SearchParameter/appointment-insurance-r4"/>
@@ -80,6 +112,7 @@
       <exampleBoolean value="false"/>
       <package value="search"/>
     </resource>
+    
     <resource>
       <reference>
         <reference value="SearchParameter/encounter-insurance-r4"/>
@@ -89,6 +122,7 @@
       <exampleBoolean value="false"/>
       <package value="search"/>
     </resource>
+    
     <resource>
       <reference>
         <reference value="SearchParameter/medicationrequest-insurance-r4"/>
@@ -98,6 +132,7 @@
       <exampleBoolean value="false"/>
       <package value="search"/>
     </resource>
+    
     <resource>
       <reference>
         <reference value="SearchParameter/nutritionorder-insurance-r4"/>
@@ -107,6 +142,9 @@
       <exampleBoolean value="false"/>
       <package value="search"/>
     </resource>
+    
+    
+    
     <resource>
       <reference>
         <reference value="SearchParameter/servicerequest-insurance-r4"/>
@@ -125,6 +163,7 @@
       <exampleBoolean value="false"/>
       <package value="search"/>
     </resource>
+    
     
     <resource>
       <reference>
@@ -162,6 +201,7 @@
       <exampleBoolean value="false"/>
       <package value="terminology"/>
     </resource>
+    
     <resource>
       <reference>
         <reference value="ValueSet/taskCode"/>
@@ -171,6 +211,7 @@
       <exampleBoolean value="false"/>
       <package value="terminology"/>
     </resource>
+    
     <resource>
       <reference>
         <reference value="ValueSet/taskReasonCode"/>
@@ -180,6 +221,7 @@
       <exampleBoolean value="false"/>
       <package value="terminology"/>
     </resource>
+    
     <page>
       <nameUrl value="toc.html"/>
       <title value="Table of Contents"/>

@@ -312,15 +312,15 @@ There are no constraints or special rules related to this hook beyond the profil
     </tr>
   </thead>
   <tr>
-    <td><a href="stu3/profile-patient-stu3.html">profile-patient-stu3</a></td>
+    <td><a href="STU3/profile-patient-stu3.html">profile-patient-stu3</a></td>
     <td><a href="profile-patient-r4.html">profile-patient-r4</a></td>
   </tr>
   <tr>
-    <td><a href="stu3/profile-encounter-stu3.html">profile-encounter-stu3</a></td>
+    <td><a href="STU3/profile-encounter-stu3.html">profile-encounter-stu3</a></td>
     <td><a href="profile-encounter-r4.html">profile-encounter-r4</a></td>
   </tr>
   <tr>
-    <td><a href="stu3/profile-medicationrequest-stu3.html">profile-medicationrequest-stu3</a></td>
+    <td><a href="STU3/profile-medicationrequest-stu3.html">profile-medicationrequest-stu3</a></td>
     <td><a href="profile-medicationrequest-r4.html">profile-medicationrequest-r4</a></td>
   </tr>
 </table>
@@ -339,37 +339,37 @@ There are no additional constraints or special rules related to this hook beyond
     </tr>
   </thead>
   <tr>
-    <td><a href="stu3/profile-devicerequest-stu3.html">profile-devicerequest-stu3</a></td>
+    <td><a href="STU3/profile-devicerequest-stu3.html">profile-devicerequest-stu3</a></td>
     <td rowspan="2"><a href="profile-devicerequest-r4.html">profile-devicerequest-r4</a></td>
   </tr>
   <tr>
-    <td><a href="stu3/profile-visionprescription-stu3.html">profile-visionprescription-stu3</a></td>
+    <td><a href="STU3/profile-visionprescription-stu3.html">profile-visionprescription-stu3</a></td>
   </tr>
   <tr>
-    <td><a href="stu3/profile-encounter-stu3.html">profile-encounter-stu3</a></td>
+    <td><a href="STU3/profile-encounter-stu3.html">profile-encounter-stu3</a></td>
     <td><a href="profile-encounter-r4.html">profile-encounter-r4</a></td>
   </tr>
   <tr>
-    <td><a href="stu3/profile-medicationrequest-stu3.html">profile-medicationrequest-stu3</a></td>
+    <td><a href="STU3/profile-medicationrequest-stu3.html">profile-medicationrequest-stu3</a></td>
     <td><a href="profile-medicationrequest-r4.html">profile-medicationrequest-r4</a></td>
   </tr>
   <tr>
-    <td><a href="stu3/profile-nutritionorder-stu3.html">profile-nutritionorder-stu3</a></td>
+    <td><a href="STU3/profile-nutritionorder-stu3.html">profile-nutritionorder-stu3</a></td>
     <td><a href="profile-nutritionorder-r4.html">profile-nutritionorder-r4</a></td>
   </tr>
   <tr>
-    <td><a href="stu3/profile-patient-stu3.html">profile-patient-stu3</a></td>
+    <td><a href="STU3/profile-patient-stu3.html">profile-patient-stu3</a></td>
     <td><a href="profile-patient-r4.html">profile-patient-r4</a></td>
   </tr>
   <tr>
-    <td><a href="stu3/profile-procedurerequest-stu3.html">profile-procedurerequest-stu3</a></td>
+    <td><a href="STU3/profile-procedurerequest-stu3.html">profile-procedurerequest-stu3</a></td>
     <td rowspan="2"><a href="profile-servicerequest-r4.html">profile-servicerequest-r4</a></td>
   </tr>
   <tr>
-    <td><a href="stu3/profile-referralrequest-stu3.html">profile-referralrequest-stu3</a></td>
+    <td><a href="STU3/profile-referralrequest-stu3.html">profile-referralrequest-stu3</a></td>
   </tr>
   <tr>
-    <td><a href="stu3/profile-supplyrequest-stu3.html">profile-supplyrequest-stu3</a></td>
+    <td><a href="STU3/profile-supplyrequest-stu3.html">profile-supplyrequest-stu3</a></td>
     <td><a href="profile-supplyrequest-r4.html">profile-supplyrequest-r4</a></td>
   </tr>
 </table>
@@ -434,11 +434,11 @@ There are no additional constraints or special rules related to this hook beyond
     </tr>
   </thead>
   <tr>
-    <td><a href="stu3/profile-encounter-stu3.html">profile-encounter-stu3</a></td>
+    <td><a href="STU3/profile-encounter-stu3.html">profile-encounter-stu3</a></td>
     <td><a href="profile-encounter-r4.html">profile-encounter-r4</a></td>
   </tr>
   <tr>
-    <td><a href="stu3/profile-patient-stu3.html">profile-patient-stu3</a></td>
+    <td><a href="STU3/profile-patient-stu3.html">profile-patient-stu3</a></td>
     <td><a href="profile-patient-r4.html">profile-patient-r4</a></td>
   </tr>
 </table>
@@ -507,15 +507,15 @@ There are no additional constraints or special rules related to this hook beyond
     </tr>
   </thead>
   <tr>
-    <td><a href="stu3/profile-appointment-stu3.html">profile-appointment-stu3</a></td>
+    <td><a href="STU3/profile-appointment-stu3.html">profile-appointment-stu3</a></td>
     <td><a href="profile-appointment-r4.html">profile-appointment-r4</a></td>
   </tr>
   <tr>
-    <td><a href="stu3/profile-encounter-stu3.html">profile-encounter-stu3</a></td>
+    <td><a href="STU3/profile-encounter-stu3.html">profile-encounter-stu3</a></td>
     <td><a href="profile-encounter-r4.html">profile-encounter-r4</a></td>
   </tr>
   <tr>
-    <td><a href="stu3/profile-patient-stu3.html">profile-patient-stu3</a></td>
+    <td><a href="STU3/profile-patient-stu3.html">profile-patient-stu3</a></td>
     <td><a href="profile-patient-r4.html">profile-patient-r4</a></td>
   </tr>
 </table>
@@ -624,50 +624,50 @@ When using this response type, the proposed orders (and any associated resources
     </tr>
   </thead>
   <tr>
-    <td><a href="stu3/profile-device-stu3.html">profile-device-stu3</a></td>
+    <td><a href="STU3/profile-device-stu3.html">profile-device-stu3</a></td>
     <td><a href="profile-device-r4.html">profile-device-r4</a></td>
     <td/>
   </tr>
   <tr>
-    <td><a href="stu3/profile-devicerequest-stu3.html">profile-devicerequest-stu3</a></td>
+    <td><a href="STU3/profile-devicerequest-stu3.html">profile-devicerequest-stu3</a></td>
     <td rowspan="2"><a href="profile-devicerequest-r4.html">profile-devicerequest-r4</a></td>
     <td/>
   </tr>
   <tr>
-    <td><a href="stu3/profile-visionprescription-stu3.html">profile-visionprescription-stu3</a></td>
+    <td><a href="STU3/profile-visionprescription-stu3.html">profile-visionprescription-stu3</a></td>
     <td/>
   </tr>
   <tr>
-    <td><a href="stu3/profile-encounter-stu3.html">profile-encounter-stu3</a></td>
+    <td><a href="STU3/profile-encounter-stu3.html">profile-encounter-stu3</a></td>
     <td><a href="profile-encounter-r4.html">profile-encounter-r4</a></td>
     <td>Only if updating an Encounter - e.g. to add a note</td>
   </tr>
   <tr>
-    <td><a href="stu3/profile-medication-stu3.html">profile-medication-stu3</a></td>
+    <td><a href="STU3/profile-medication-stu3.html">profile-medication-stu3</a></td>
     <td><a href="profile-medication-r4.html">profile-medication-r4</a></td>
     <td/>
   </tr>
   <tr>
-    <td><a href="stu3/profile-medicationrequest-stu3.html">profile-medicationrequest-stu3</a></td>
+    <td><a href="STU3/profile-medicationrequest-stu3.html">profile-medicationrequest-stu3</a></td>
     <td><a href="profile-medicationrequest-r4.html">profile-medicationrequest-r4</a></td>
     <td/>
   </tr>
   <tr>
-    <td><a href="stu3/profile-nutritionorder-stu3.html">profile-nutritionorder-stu3</a></td>
+    <td><a href="STU3/profile-nutritionorder-stu3.html">profile-nutritionorder-stu3</a></td>
     <td><a href="profile-nutritionorder-r4.html">profile-nutritionorder-r4</a></td>
     <td/>
   </tr>
   <tr>
-    <td><a href="stu3/profile-procedurerequest-stu3.html">profile-procedurerequest-stu3</a></td>
+    <td><a href="STU3/profile-procedurerequest-stu3.html">profile-procedurerequest-stu3</a></td>
     <td rowspan="2"><a href="profile-servicerequest-r4.html">profile-servicerequest-r4</a></td>
     <td/>
   </tr>
   <tr>
-    <td><a href="stu3/profile-referralrequest-stu3.html">profile-referralrequest-stu3</a></td>
+    <td><a href="STU3/profile-referralrequest-stu3.html">profile-referralrequest-stu3</a></td>
     <td/>
   </tr>
   <tr>
-    <td><a href="stu3/profile-supplyrequest-stu3.html">profile-supplyrequest-stu3</a></td>
+    <td><a href="STU3/profile-supplyrequest-stu3.html">profile-supplyrequest-stu3</a></td>
     <td><a href="profile-supplyrequest-r4.html">profile-supplyrequest-r4</a></td>
     <td/>
   </tr>
@@ -690,41 +690,41 @@ When using this response type, the proposed orders (and any associated resources
     </tr>
   </thead>
   <tr>
-    <td><a href="stu3/profile-communicationrequest-stu3.html">profile-communicationrequest-stu3</a></td>
+    <td><a href="STU3/profile-communicationrequest-stu3.html">profile-communicationrequest-stu3</a></td>
     <td><a href="profile-communicationrequest-r4.html">profile-communicationrequest-r4</a></td>
   </tr>
   <tr>
-    <td><a href="stu3/profile-device-stu3.html">profile-device-stu3</a></td>
+    <td><a href="STU3/profile-device-stu3.html">profile-device-stu3</a></td>
     <td><a href="profile-device-r4.html">profile-device-r4</a></td>
   </tr>
   <tr>
-    <td><a href="stu3/profile-devicerequest-stu3.html">profile-devicerequest-stu3</a></td>
+    <td><a href="STU3/profile-devicerequest-stu3.html">profile-devicerequest-stu3</a></td>
     <td rowspan="2"><a href="profile-devicerequest-r4.html">profile-devicerequest-r4</a></td>
   </tr>
   <tr>
-    <td><a href="stu3/profile-visionprescription-stu3.html">profile-visionprescription-stu3</a></td>
+    <td><a href="STU3/profile-visionprescription-stu3.html">profile-visionprescription-stu3</a></td>
   </tr>
   <tr>
-    <td><a href="stu3/profile-medication-stu3.html">profile-medication-stu3</a></td>
+    <td><a href="STU3/profile-medication-stu3.html">profile-medication-stu3</a></td>
     <td><a href="profile-medication-r4.html">profile-medication-r4</a></td>
   </tr>
   <tr>
-    <td><a href="stu3/profile-medicationrequest-stu3.html">profile-medicationrequest-stu3</a></td>
+    <td><a href="STU3/profile-medicationrequest-stu3.html">profile-medicationrequest-stu3</a></td>
     <td><a href="profile-medicationrequest-r4.html">profile-medicationrequest-r4</a></td>
   </tr>
   <tr>
-    <td><a href="stu3/profile-nutritionorder-stu3.html">profile-nutritionorder-stu3</a></td>
+    <td><a href="STU3/profile-nutritionorder-stu3.html">profile-nutritionorder-stu3</a></td>
     <td><a href="profile-nutritionorder-r4.html">profile-nutritionorder-r4</a></td>
   </tr>
   <tr>
-    <td><a href="stu3/profile-procedurerequest-stu3.html">profile-procedurerequest-stu3</a></td>
+    <td><a href="STU3/profile-procedurerequest-stu3.html">profile-procedurerequest-stu3</a></td>
     <td rowspan="2"><a href="profile-servicerequest-r4.html">profile-servicerequest-r4</a></td>
   </tr>
   <tr>
-    <td><a href="stu3/profile-referralrequest-stu3.html">profile-referralrequest-stu3</a></td>
+    <td><a href="STU3/profile-referralrequest-stu3.html">profile-referralrequest-stu3</a></td>
   </tr>
   <tr>
-    <td><a href="stu3/profile-supplyrequest-stu3.html">profile-supplyrequest-stu3</a></td>
+    <td><a href="STU3/profile-supplyrequest-stu3.html">profile-supplyrequest-stu3</a></td>
     <td><a href="profile-supplyrequest-r4.html">profile-supplyrequest-r4</a></td>
   </tr>
 </table>
@@ -747,7 +747,7 @@ When using this response type, the proposed orders (and any associated resources
     </tr>
   </thead>
   <tr>
-    <td><a href="stu3/profile-taskquestionnaire-stu3.html">profile-taskquestionnaire-stu3</a></td>
+    <td><a href="STU3/profile-taskquestionnaire-stu3.html">profile-taskquestionnaire-stu3</a></td>
     <td><a href="profile-taskquestionnaire-r4.html">profile-taskquestionnaire-r4</a></td>
   </tr>
 </table>
@@ -918,7 +918,7 @@ The 'standard' prefetch queries for this implementation guide that SHOULD be sup
       <code>Appointment?id={{context.orders.Appointment.id}}<br/>
       &_include=Appointment:patient, Appointment:practitioner<br/>
       &_include=Appointment:location<br/>
-      &_include=Appointment:<a href="stu3/searchparameter-appointment-insurance-stu3.html">insurance</a>:Coverage</code>
+      &_include=Appointment:<a href="STU3/searchparameter-appointment-insurance-stu3.html">insurance</a>:Coverage</code>
     </td>
     <td>No requester, no performer organization</td>
   </tr>
@@ -945,8 +945,8 @@ The 'standard' prefetch queries for this implementation guide that SHOULD be sup
       &_include=DeviceRequest:performer<br/>
       &_include=DeviceRequest:requester<br/>
       &_include=DeviceRequest:device<br/>
-      &_include=DeviceRequest:<a href="stu3/searchparameter-devicerequest-on-behalf-stu3.html">on-behalf</a><br/>
-      &_include=DeviceRequest:<a href="stu3/searchparameter-devicerequest-insurance-stu3.html">insurance</a>:Coverage</code>
+      &_include=DeviceRequest:<a href="STU3/searchparameter-devicerequest-on-behalf-stu3.html">on-behalf</a><br/>
+      &_include=DeviceRequest:<a href="STU3/searchparameter-devicerequest-insurance-stu3.html">insurance</a>:Coverage</code>
     </td>
     <td>No performing location</td>
   </tr>
@@ -974,7 +974,7 @@ The 'standard' prefetch queries for this implementation guide that SHOULD be sup
       &_include=Encounter:service-provider<br/>
       &_include=Encounter:practitioner<br/>
       &_include=Encounter:location<br/>
-      &_include=Encounter:<a href="stu3/searchparameter-encounter-insurance-stu3.html">insurance</a>:Coverage</code>
+      &_include=Encounter:<a href="STU3/searchparameter-encounter-insurance-stu3.html">insurance</a>:Coverage</code>
     </td>
     <td>No requester</td>
   </tr>
@@ -999,8 +999,8 @@ The 'standard' prefetch queries for this implementation guide that SHOULD be sup
       &_include=MedicationRequest:intended-dispenser<br/>
       &_include=MedicationRequest:requester:Practitioner<br/>
       &_include=MedicationRequest:medication<br/>
-      &_include=MedicationRequest:<a href="stu3/searchparameter-medicationrequest-on-behalf-stu3.html">on-behalf</a><br/>
-      &_include=MedicationRequest:<a href="stu3/searchparameter-medicationrequest-insurance-stu3.html">insurance</a>:Coverage</code>
+      &_include=MedicationRequest:<a href="STU3/searchparameter-medicationrequest-on-behalf-stu3.html">on-behalf</a><br/>
+      &_include=MedicationRequest:<a href="STU3/searchparameter-medicationrequest-insurance-stu3.html">insurance</a>:Coverage</code>
     </td>
     <td>No performing location</td>
   </tr>
@@ -1029,7 +1029,7 @@ The 'standard' prefetch queries for this implementation guide that SHOULD be sup
       &_include=NutritionOrder:requester<br/>
       &_include=NutritionOrder:encounter<br/>
       &_include=Enconuter:location<br/>
-      &_include=NutritionOrder:<a href="stu3/searchparameter-nutritionorder-insurance-stu3.html">insurance</a>:Coverage</code>
+      &_include=NutritionOrder:<a href="STU3/searchparameter-nutritionorder-insurance-stu3.html">insurance</a>:Coverage</code>
     </td>
     <td>No organization, location only through request encounter</td>
   </tr>
@@ -1057,8 +1057,8 @@ The 'standard' prefetch queries for this implementation guide that SHOULD be sup
       &_include=ProcedureRequest:patient<br/>
       &_include=ProcedureRequest:performer<br/>
       &_include=ProcedureRequest:requester<br/>
-      &_include=ProcedureRequest:<a href="stu3/searchparameter-procedurerequest-on-behalf-stu3.html">on-behalf</a><br/>
-      &_include=ProcedureRequest:<a href="stu3/searchparameter-procedurerequest-insurance-stu3.html">insurance</a>:Coverage</code>
+      &_include=ProcedureRequest:<a href="STU3/searchparameter-procedurerequest-on-behalf-stu3.html">on-behalf</a><br/>
+      &_include=ProcedureRequest:<a href="STU3/searchparameter-procedurerequest-insurance-stu3.html">insurance</a>:Coverage</code>
     </td>
     <td>No performer location</td>
   </tr>
@@ -1070,8 +1070,8 @@ The 'standard' prefetch queries for this implementation guide that SHOULD be sup
       &_include=ReferralRequest:patient<br/>
       &_include=ReferralRequest:recipient<br/>
       &_include=ReferralRequest:requester<br/>
-      &_include=ReferralRequest:<a href="stu3/searchparameter-referralrequest-on-behalf-stu3.html">on-behalf</a><br/>
-      &_include=ReferralRequest:<a href="stu3/searchparameter-referralrequest-insurance-stu3.html">insurance</a>:Coverage</code>
+      &_include=ReferralRequest:<a href="STU3/searchparameter-referralrequest-on-behalf-stu3.html">on-behalf</a><br/>
+      &_include=ReferralRequest:<a href="STU3/searchparameter-referralrequest-insurance-stu3.html">insurance</a>:Coverage</code>
     </td>
     <td>No performer location</td>
   </tr>
@@ -1094,11 +1094,11 @@ The 'standard' prefetch queries for this implementation guide that SHOULD be sup
     <td>STU3</td>
     <td>
       <code>SupplyRequest?id={{context.orders.SupplyRequest.id}}<br/>
-      &_include=SupplyRequest:<a href="stu3/searchparameter-supplyrequest-patient-stu3.html">patient</a><br/>
+      &_include=SupplyRequest:<a href="STU3/searchparameter-supplyrequest-patient-stu3.html">patient</a><br/>
       &_include=SupplyRequest:supplier:Organization<br/>
       &_include=SupplyRequest:requester:Practitioner<br/>
       &_include=SupplyRequest:requester:Organization<br/>
-      &_include=SupplyRequest:<a href="stu3/searchparameter-supplyrequest-insurance-stu3.html">insurance</a>:Coverage</code>
+      &_include=SupplyRequest:<a href="STU3/searchparameter-supplyrequest-insurance-stu3.html">insurance</a>:Coverage</code>
     </td>
     <td>No performer location</td>
   </tr>
@@ -1125,7 +1125,7 @@ The 'standard' prefetch queries for this implementation guide that SHOULD be sup
       <code>VisionPrescription?id={{context.orders.VisionPrescription.id}}<br/>
       &_include=VisionPrescription:patient<br/>
       &_include=VisionPrescription:prescriber<br/>
-      &_include=VisionPrescription:<a href="stu3/searchparameter-visionprescription-insurance-stu3.html">insurance</a>:Coverage</code>
+      &_include=VisionPrescription:<a href="STU3/searchparameter-visionprescription-insurance-stu3.html">insurance</a>:Coverage</code>
     </td>
     <td>No performer, organization or location</td>
   </tr>

@@ -67,6 +67,7 @@
       <param name="spec" expression="${fhirspec}"/>
       <param name="version" expression="${version}"/>
       <param name="license" expression="${license}"/>
+      <param name="hasAdditional" expression="${additionalVersion}"/>
       <param name="excludexml" expression="${excludexml}"/>
       <param name="excludejson" expression="${excludejson}"/>
       <param name="excludettl" expression="${excludettl}"/>
@@ -133,6 +134,7 @@
     </java>
   </target>
   <target name="publish-ig-once" depends="extra-downloads" unless="continuous" description="--> Run the IG build">
+<fail/>
     <java jar="${dir.srcgenned}/org.hl7.fhir.igpublisher.jar" fork="true" failonerror="true" maxmemory="2048m">
       <jvmarg line="-Dfile.encoding=UTF-8"/>
       <arg line="-ig ${basedir}/${dir.srcgenned}/${guidename}.json ${txParm}"/>

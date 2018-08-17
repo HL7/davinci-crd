@@ -12,7 +12,7 @@
     "resources": ["resourcesSTU3", "../src/resources", "../src/vocabulary", "../src/examples"],
     "pages": ["../src/images", "pagesSTU3"],
     "temp": "../tempSTU3/pages",
-    "output": "../output/STU3",
+    "output": "../temp/pages/STU3",
     "txCache": "txcache",
     "history" : "history.html",
     "qa": "../tempSTU3/qa",
@@ -87,21 +87,86 @@
   "dependencyList": [
     {
       "name" : "core",
-      "version" : "1.0.1",
+      "version" : "current",
       "location" : "http://hl7.org/fhir/us/core",
       "source" : "../../core2/website"
     }
   ],
   "source": "davinci-crd.xml",
   "spreadsheets": [
-    "patient-stu3-profile-spreadsheet.xml"
+    "appointment-stu3-profile-spreadsheet.xml",
+    "communicationrequest-stu3-profile-spreadsheet.xml",
+    "coverage-stu3-profile-spreadsheet.xml",
+    "device-stu3-profile-spreadsheet.xml",
+    "devicerequest-stu3-profile-spreadsheet.xml",
+    "encounter-stu3-profile-spreadsheet.xml",
+    "location-stu3-profile-spreadsheet.xml",
+    "patient-stu3-profile-spreadsheet.xml",
+    "medicationrequest-stu3-profile-spreadsheet.xml",
+    "nutritionorder-stu3-profile-spreadsheet.xml",
+    "organization-stu3-profile-spreadsheet.xml",
+    "practitioner-stu3-profile-spreadsheet.xml",
+    "procedurerequest-stu3-profile-spreadsheet.xml",
+    "referralrequest-stu3-profile-spreadsheet.xml",
+    "supplyrequest-stu3-profile-spreadsheet.xml",
+    "task-stu3-profile-spreadsheet.xml"
   ],
   "resources": {
+    "StructureDefinition/profile-appointment-stu3":{
+    },
+    "StructureDefinition/profile-communicationrequest-stu3":{
+    },
+    "StructureDefinition/profile-coverage-stu3":{
+    },
+    "StructureDefinition/profile-device-stu3":{
+    },
+    "StructureDefinition/profile-devicerequest-stu3":{
+    },
+    "StructureDefinition/profile-encounter-stu3":{
+    },
+    "StructureDefinition/profile-location-stu3":{
+    },
+    "StructureDefinition/profile-medicationrequest-stu3":{
+    },
+    "StructureDefinition/profile-nutritionorder-stu3":{
+    },
+    "StructureDefinition/profile-organization-stu3":{
+    },
     "StructureDefinition/profile-patient-stu3":{
     },
     "StructureDefinition/profile-patient-deident-stu3":{
     },
+    "StructureDefinition/profile-practitioner-stu3":{
+    },
+    "StructureDefinition/profile-procedurerequest-stu3":{
+    },
+    "StructureDefinition/profile-referralrequest-stu3":{
+    },
+    "StructureDefinition/profile-supplyrequest-stu3":{
+    },
+    "StructureDefinition/profile-taskquestionnaire-stu3":{
+    },
+    "SearchParameter/appointment-insurance-stu3":{
+    },
+    "SearchParameter/encounter-insurance-stu3":{
+    },
+    "SearchParameter/medicationrequest-insurance-stu3":{
+    },
+    "SearchParameter/nutritionorder-insurance-stu3":{
+    },
+    "SearchParameter/procedureequest-insurance-stu3":{
+    },
+    "SearchParameter/referralrequest-insurance-stu3":{
+    },
+    "SearchParameter/supplyrequest-insurance-stu3":{
+    },
     "SearchParameter/supplyrequest-patient-stu3":{
+    },
+    "ValueSet/locationAddressType-stu3":{
+    },
+    "ValueSet/taskCode-stu3":{
+    },
+    "ValueSet/taskReasonCode-stu3":{
     }
   }
 }

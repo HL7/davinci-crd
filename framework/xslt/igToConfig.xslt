@@ -7,6 +7,7 @@
   <xsl:param name="version"/>
   <xsl:param name="license"/>
   <xsl:param name="additional"/>
+  <xsl:param name="hasAdditional"/>
   <xsl:param name="fhirVersion" select="/f:ImplementationGuide/f:fhirVersion/@value"/>
   <xsl:param name="snomedRelease">
     <xsl:choose>
@@ -57,7 +58,12 @@
     <xsl:text>{
   "DO_NOT_EDIT_THIS_FILE": "This file is generated.  Any edits made will be overwritten",
   "tool": "jekyll",
-  "logging": ["html"],
+  "logging": ["html"],</xsl:text>
+  <xsl:if test="$hasAdditional">
+    <xsl:value-of select="concat('&#xa;  &quot;nestedIgConfig&quot;:&quot;', f:id/@value, $hasAdditional, '.json&quot;,')"/>
+    <xsl:value-of select="concat('&#xa;  &quot;nestedIgOutput&quot;:&quot;', $hasAdditional, '&quot;,')"/>
+  </xsl:if>
+  <xsl:text>
   "version": "</xsl:text>
     <xsl:value-of select="$fhirVersion"/>
     <xsl:text>",
@@ -91,10 +97,13 @@
       <xsl:value-of select="$additional"/>
     </xsl:if>
     <xsl:text>/pages",
-    "output": "../output</xsl:text>
-    <xsl:if test="$additional">
-      <xsl:value-of select="concat('/', $additional)"/>
-    </xsl:if>
+    "output": "../</xsl:text>
+    <xsl:choose>
+      <xsl:when test="$additional">
+        <xsl:value-of select="concat('temp/pages/', $additional)"/>
+      </xsl:when>
+      <xsl:otherwise>output</xsl:otherwise>
+    </xsl:choose>
     <text>",
     "txCache": "txcache",
     "history" : "history.html",

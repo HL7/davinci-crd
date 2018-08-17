@@ -20,6 +20,76 @@
 <tbody>
 <tr>
 <td style="column-width:30%">
+<a href="profile-appointment-stu3.html">
+                        •  CRD Appointment - STU3</a>
+</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td style="column-width:30%">
+<a href="profile-communicationrequest-stu3.html">
+                        •  CRD CommunicationRequest - STU3</a>
+</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td style="column-width:30%">
+<a href="profile-coverage-stu3.html">
+                        •  CRD Coverage - STU3</a>
+</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td style="column-width:30%">
+<a href="profile-device-stu3.html">
+                        •  CRD Device - STU3</a>
+</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td style="column-width:30%">
+<a href="profile-devicerequest-stu3.html">
+                        •  CRD Device Request - STU3</a>
+</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td style="column-width:30%">
+<a href="profile-encounter-stu3.html">
+                        •  CRD Encounter - STU3</a>
+</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td style="column-width:30%">
+<a href="profile-location-stu3.html">
+                        •  CRD Location - STU3</a>
+</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td style="column-width:30%">
+<a href="profile-medicationrequest-stu3.html">
+                        •  CRD MedicationRequest - STU3</a>
+</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td style="column-width:30%">
+<a href="profile-nutritionorder-stu3.html">
+                        •  CRD Nutrition Order - STU3</a>
+</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td style="column-width:30%">
+<a href="profile-organization-stu3.html">
+                        •  CRD Organization - STU3</a>
+</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td style="column-width:30%">
 <a href="profile-patient-stu3.html">
                         •  CRD Patient - STU3</a>
 </td>
@@ -29,6 +99,41 @@
 <td style="column-width:30%">
 <a href="profile-patient-deident-stu3.html">
                         •  CRD Deidentified Patient - STU3</a>
+</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td style="column-width:30%">
+<a href="profile-practitioner-stu3.html">
+                        •  CRD Practitioner - STU3</a>
+</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td style="column-width:30%">
+<a href="profile-procedurerequest-stu3.html">
+                        •  CRD Procedure Request - STU3</a>
+</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td style="column-width:30%">
+<a href="profile-referralrequest-stu3.html">
+                        •  CRD Referral Request - STU3</a>
+</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td style="column-width:30%">
+<a href="profile-supplyrequest-stu3.html">
+                        •  CRD Supply Request - STU3</a>
+</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td style="column-width:30%">
+<a href="profile-taskquestionnaire-stu3.html">
+                        •  CRD Questionnaire Task - STU3</a>
 </td>
 <td>TODO</td>
 </tr>
@@ -48,7 +153,29 @@
 <p>Value Sets and/or code systems defined as part of this implementation guide</p>
 <p>
 <table>
-<tbody/>
+<tbody>
+<tr>
+<td style="column-width:30%">
+<a href="valueset-locationAddressType-stu3.html">
+                        •  CRD STU3 Location Address Types</a>
+</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td style="column-width:30%">
+<a href="valueset-taskCode-stu3.html">
+                        •  CRD STU3 Task Types</a>
+</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td style="column-width:30%">
+<a href="valueset-taskReasonCode-stu3.html">
+                        •  CRD STU3 Task Reason Codes</a>
+</td>
+<td>TODO</td>
+</tr>
+</tbody>
 </table>
 </p>
 </div>
