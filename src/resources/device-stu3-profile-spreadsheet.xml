@@ -966,7 +966,7 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s72"><Data ss:Type="String">id</Data></Cell>
-    <Cell ss:StyleID="s73"><Data ss:Type="String">profile-device-r4</Data></Cell>
+    <Cell ss:StyleID="s73"><Data ss:Type="String">profile-device-stu3</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s74"><Data ss:Type="String">name</Data></Cell>
@@ -986,7 +986,7 @@
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="69">
     <Cell ss:StyleID="s74"><Data ss:Type="String">description</Data></Cell>
-    <Cell ss:StyleID="s78"><Data ss:Type="String">CRD Device</Data></Cell>
+    <Cell ss:StyleID="s78"><Data ss:Type="String">CRD Device based on US Core Device</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s74"><Data ss:Type="String">status</Data></Cell>
@@ -998,11 +998,11 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s74"><Data ss:Type="String">published.structure</Data></Cell>
-    <Cell ss:StyleID="s77"><Data ss:Type="String">profile-device-r4</Data></Cell>
+    <Cell ss:StyleID="s77"><Data ss:Type="String">profile-device-stu3</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s74"><Data ss:Type="String">version</Data></Cell>
-    <Cell ss:StyleID="s77"><Data ss:Type="String">current</Data></Cell>
+    <Cell ss:StyleID="s77"><Data ss:Type="String">3.0.1</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="59">
     <Cell ss:StyleID="s74"><Data ss:Type="String">extension.uri</Data></Cell>
@@ -1050,7 +1050,7 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>10</ActiveRow>
+     <ActiveRow>11</ActiveRow>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -1058,8 +1058,8 @@
    <x:PageLayoutZoom>0</x:PageLayoutZoom>
   </WorksheetOptions>
  </Worksheet>
- <Worksheet ss:Name="profile-device-r4">
-  <Table ss:ExpandedColumnCount="24" ss:ExpandedRowCount="10" x:FullColumns="1"
+ <Worksheet ss:Name="profile-device-stu3">
+  <Table ss:ExpandedColumnCount="24" ss:ExpandedRowCount="3" x:FullColumns="1"
    x:FullRows="1" ss:StyleID="s85" ss:DefaultColumnWidth="65"
    ss:DefaultRowHeight="15">
    <Column ss:StyleID="s85" ss:AutoFitWidth="0" ss:Width="122"/>
@@ -1173,7 +1173,7 @@
     <Cell ss:StyleID="s96"/>
     <Cell ss:StyleID="s96"/>
     <Cell ss:StyleID="s96"/>
-    <Cell ss:StyleID="s96"><Data ss:Type="String">Device</Data></Cell>
+    <Cell ss:StyleID="s96"><Data ss:Type="String">Device{http://hl7.org/fhir/us/core/StructureDefinition/us-core-device}</Data></Cell>
     <Cell ss:StyleID="s97"/>
     <Cell ss:StyleID="s97"/>
     <Cell ss:StyleID="s97"/>
@@ -1192,39 +1192,8 @@
     <Cell ss:StyleID="s104"/>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Device.udiCarrier</Data></Cell>
-    <Cell ss:Index="6"><Data ss:Type="String">1..1</Data></Cell>
-    <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Device.udiCarrier.deviceIdentifier</Data></Cell>
+    <Cell ss:Index="4"><Data ss:Type="String">Device.udi.deviceIdentifier</Data></Cell>
     <Cell ss:Index="6"><Data ss:Type="String">0..1</Data></Cell>
-    <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Device.type</Data></Cell>
-    <Cell ss:Index="6"><Data ss:Type="String">1..1</Data></Cell>
-    <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
-    <Cell><Data ss:Type="String">fhir-device</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Device.type.coding</Data></Cell>
-    <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Device.type.coding.system</Data></Cell>
-    <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Device.type.coding.code</Data></Cell>
-    <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Device.property</Data></Cell>
-    <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Device.parent</Data></Cell>
     <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
    </Row>
   </Table>
@@ -1244,7 +1213,7 @@
     <Pane>
      <Number>3</Number>
      <ActiveRow>3</ActiveRow>
-     <ActiveCol>5</ActiveCol>
+     <ActiveCol>3</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>

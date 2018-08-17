@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemasSTU3/fhir-single.xsd">
+  <id value="taskCode-stu3"/>
+  <url value="http://hl7.org/fhir/us/davinci-crd/ValueSet/taskCode-stu3"/>
+  <name value="CRD Task Codes"/>
+  <status value="draft"/>
+  <description value="Types of tasks that will be created in CRD"/>
+</ValueSet>

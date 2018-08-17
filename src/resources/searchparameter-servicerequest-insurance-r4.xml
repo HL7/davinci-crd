@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SearchParameter xmlns="http://hl7.org/fhir">
+<SearchParameter xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
 	<id value="servicerequest-insurance-r4"/>
 	<url value="http://hl7.org/fhir/us/davinci-crd/SearchParameter/servicerequest-insurance-r4"/>
 	<name value="CRDServiceRequestInsurance"/>
@@ -13,10 +13,10 @@
 			<value value="http://www.healthit.gov/"/>
 		</telecom>
 	</contact>
+	<description value="Returns service requests that are covered by the specified insurance."/>
 	<code value="insurance"/>
 	<base value="ServiceRequest"/>
 	<type value="reference"/>
-	<description value="Returns service requests that are covered by the specified insurance."/>
 	<expression value="ServiceRequest.insurance.reference"></expression>
 	<xpath value="f:ServiceRequest/f:insurance/f:reference/@value"/>
 	<xpathUsage value="normal"/>
