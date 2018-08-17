@@ -19,7 +19,7 @@
   <WindowHeight>17440</WindowHeight>
   <WindowWidth>28040</WindowWidth>
   <WindowTopX>2780</WindowTopX>
-  <WindowTopY>2020</WindowTopY>
+  <WindowTopY>1560</WindowTopY>
   <ActiveSheet>3</ActiveSheet>
   <RefModeR1C1/>
   <ProtectStructure>False</ProtectStructure>
@@ -1519,7 +1519,7 @@
     <Cell ss:Index="6"><Data ss:Type="String">1..1</Data></Cell>
     <Cell ss:Index="8"><Data ss:Type="String">Coding</Data></Cell>
     <Cell><Data ss:Type="String">Y</Data></Cell>
-    <Cell ss:Index="11"><Data ss:Type="String">&lt;type&gt;&lt;system value=&quot;hhttp://terminology.hl7.org/CodeSystem/coverage-class&quot; /&gt; &lt;code value=&quot;plan&quot; /&gt;&lt;/type&gt;</Data></Cell>
+    <Cell ss:Index="11"><Data ss:Type="String">&lt;type&gt;&lt;system value='http://terminology.hl7.org/CodeSystem/coverage-class'/&gt; &lt;code value='plan'/&gt;&lt;/type&gt;</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">Coverage.class.value</Data></Cell>
@@ -1561,7 +1561,7 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>14</ActiveRow>
+     <ActiveRow>15</ActiveRow>
      <ActiveCol>10</ActiveCol>
     </Pane>
    </Panes>
