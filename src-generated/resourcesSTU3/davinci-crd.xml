@@ -21,14 +21,14 @@
       <name value="Terminology"/>
       <description value="Value Sets and/or code systems defined as part of this implementation guide"/>
     <resource>
-<name value="CRD Task Types Code System"/>
+<name value="CRD STU3 Task Types Code System"/>
 <description value="TODO"/>
 <sourceReference>
         <reference value="CodeSystem/task-type"/>
       </sourceReference>
 </resource>
 <resource>
-<name value="CRD Task Reasons Code System"/>
+<name value="CRD STU3 Task Reasons Code System"/>
 <description value="TODO"/>
 <sourceReference>
         <reference value="CodeSystem/task-reason"/>
@@ -58,7 +58,7 @@
 </package>
 <page>
 <source value="artifacts.html"/>
-<title value="Artifact List for STU3"/>
+<title value="Artifact List for FHIR STU3"/>
 <kind value="page"/>
 <format value="text/html"/>
 <page>
@@ -225,13 +225,13 @@
 </page>
 <page>
 <source value="task-type.html"/>
-<ns27:title xmlns:ns27="http://hl7.org/fhir" value="CRD Task Types Code System"/>
+<ns27:title xmlns:ns27="http://hl7.org/fhir" value="CRD STU3 Task Types Code System"/>
 <kind value="resource"/>
 <format value="generated"/>
 </page>
 <page>
 <source value="task-reason.html"/>
-<ns28:title xmlns:ns28="http://hl7.org/fhir" value="CRD Task Reasons Code System"/>
+<ns28:title xmlns:ns28="http://hl7.org/fhir" value="CRD STU3 Task Reasons Code System"/>
 <kind value="resource"/>
 <format value="generated"/>
 </page>

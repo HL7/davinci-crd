@@ -254,21 +254,16 @@
         <nameUrl value="index.html"/>
         <title value="CRD IG Home Page"/>
         <generation value="markdown"/>
-        <page>
-          <nameUrl value="background.html"/>
-          <title value="Background and Use Cases"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <nameUrl value="hooks.html"/>
-          <title value="CDS Hooks Usage"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <nameUrl value="credits.html"/>
-          <title value="Credits"/>
-          <generation value="markdown"/>
-        </page>
+      </page>
+      <page>
+        <nameUrl value="background.html"/>
+        <title value="Background and Use Cases"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="hooks.html"/>
+        <title value="CRD specification"/>
+        <generation value="markdown"/>
       </page>
       <page>
         <nameUrl value="resources.html"/>
@@ -276,7 +271,7 @@
         <generation value="markdown"/>
         <page>
           <nameUrl value="artifacts.html"/>
-          <title value="Artifact List"/>
+          <title value="Artifact List for FHIR R4"/>
           <generation value="html"/>
         <page>
 <nameUrl value="profile-appointment-r4.html"/>
@@ -445,6 +440,16 @@
 </page>
 </page>
         
+      </page>
+      <page>
+        <nameUrl value="downloads.html"/>
+        <title value="Downloads"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="credits.html"/>
+        <title value="Credits"/>
+        <generation value="markdown"/>
       </page>
     </page>
   </definition>
