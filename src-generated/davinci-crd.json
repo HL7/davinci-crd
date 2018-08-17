@@ -177,6 +177,10 @@
       "examples": "extension-{{[id]}}-examples.html",
       "profile-json": "extension-{{[id]}}.profile.json.html"
     },
+    "CodeSystem/task-type":{
+    },
+    "CodeSystem/task-reason":{
+    },
     "ValueSet/coverageClass":{
     },
     "ValueSet/locationAddressType":{

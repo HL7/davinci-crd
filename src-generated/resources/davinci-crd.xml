@@ -51,6 +51,7 @@
     
     
     
+    
     <package id="profiles">
       <name value="Profiles"/>
       <description value="Profiles to be supported by EHRs and payor systems conforming to this implementation guide"/>
@@ -68,6 +69,7 @@
       <name value="Example(s)"/>
       <description value="Example(s) showing the use of the CG profiles"/>
     </package>-->
+    
     
     
     
@@ -185,6 +187,26 @@
       <exampleBoolean value="false"/>
       <package value="extensions"/>
     </resource>
+    <resource>
+      <reference>
+        <reference value="CodeSystem/task-type"/>
+      </reference>
+      <name value="CRD Task Types Code System"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="terminology"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="CodeSystem/task-reason"/>
+      </reference>
+      <name value="CRD Task Reasons Code System"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="terminology"/>
+    </resource>
+    
+    
     <resource>
       <reference>
         <reference value="ValueSet/coverageClass"/>
@@ -392,23 +414,33 @@
 <generation value="generated"/>
 </page>
 <page>
+<nameUrl value="task-type.html"/>
+<ns27:title xmlns:ns27="http://hl7.org/fhir" value="CRD Task Types Code System"/>
+<generation value="generated"/>
+</page>
+<page>
+<nameUrl value="task-reason.html"/>
+<ns28:title xmlns:ns28="http://hl7.org/fhir" value="CRD Task Reasons Code System"/>
+<generation value="generated"/>
+</page>
+<page>
 <nameUrl value="valueset-coverageClass.html"/>
-<ns27:title xmlns:ns27="http://hl7.org/fhir" value="CRD Coverage Classes"/>
+<ns29:title xmlns:ns29="http://hl7.org/fhir" value="CRD Coverage Classes"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="valueset-locationAddressType.html"/>
-<ns28:title xmlns:ns28="http://hl7.org/fhir" value="CRD Location Address Types"/>
+<ns30:title xmlns:ns30="http://hl7.org/fhir" value="CRD Location Address Types"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="valueset-taskCode.html"/>
-<ns29:title xmlns:ns29="http://hl7.org/fhir" value="CRD Task Types"/>
+<ns31:title xmlns:ns31="http://hl7.org/fhir" value="CRD Task Types"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="valueset-taskReasonCode.html"/>
-<ns30:title xmlns:ns30="http://hl7.org/fhir" value="CRD Task Reason Codes"/>
+<ns32:title xmlns:ns32="http://hl7.org/fhir" value="CRD Task Reason Codes"/>
 <generation value="generated"/>
 </page>
 </page>

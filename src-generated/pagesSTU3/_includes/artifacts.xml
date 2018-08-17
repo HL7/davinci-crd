@@ -27,7 +27,7 @@
 </tr>
 <tr>
 <td style="column-width:30%">
-<a href="profile-communicationrequest-stu3.html">
+<a href="profile-communicationreq-stu3.html">
                         •  CRD CommunicationRequest - STU3</a>
 </td>
 <td>TODO</td>
@@ -144,6 +144,13 @@
 </td>
 <td>TODO</td>
 </tr>
+<tr>
+<td style="column-width:30%">
+<a href="profile-visionprescription-stu3.html">
+                        •  CRD Vision Prescription - STU3</a>
+</td>
+<td>TODO</td>
+</tr>
 </tbody>
 </table>
 </p>
@@ -161,6 +168,20 @@
 <p>
 <table>
 <tbody>
+<tr>
+<td style="column-width:30%">
+<a href="task-type.html">
+                        •  CRD Task Types Code System</a>
+</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td style="column-width:30%">
+<a href="task-reason.html">
+                        •  CRD Task Reasons Code System</a>
+</td>
+<td>TODO</td>
+</tr>
 <tr>
 <td style="column-width:30%">
 <a href="valueset-locationAddressType-stu3.html">

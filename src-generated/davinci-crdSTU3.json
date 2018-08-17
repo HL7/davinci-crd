@@ -109,12 +109,13 @@
     "procedurerequest-stu3-profile-spreadsheet.xml",
     "referralrequest-stu3-profile-spreadsheet.xml",
     "supplyrequest-stu3-profile-spreadsheet.xml",
-    "task-stu3-profile-spreadsheet.xml"
+    "task-stu3-profile-spreadsheet.xml",
+    "visionprescription-stu3-profile-spreadsheet.xml"
   ],
   "resources": {
     "StructureDefinition/profile-appointment-stu3":{
     },
-    "StructureDefinition/profile-communicationrequest-stu3":{
+    "StructureDefinition/profile-communicationreq-stu3":{
     },
     "StructureDefinition/profile-coverage-stu3":{
     },
@@ -148,6 +149,8 @@
     },
     "StructureDefinition/profile-taskquestionnaire-stu3":{
     },
+    "StructureDefinition/profile-visionprescription-stu3":{
+    },
     "SearchParameter/appointment-insurance-stu3":{
     },
     "SearchParameter/encounter-insurance-stu3":{
@@ -163,6 +166,10 @@
     "SearchParameter/supplyrequest-insurance-stu3":{
     },
     "SearchParameter/supplyrequest-patient-stu3":{
+    },
+    "CodeSystem/task-type":{
+    },
+    "CodeSystem/task-reason":{
     },
     "ValueSet/locationAddressType-stu3":{
     },
