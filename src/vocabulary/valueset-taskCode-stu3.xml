@@ -5,4 +5,12 @@
   <name value="CRD Task Codes"/>
   <status value="draft"/>
   <description value="Types of tasks that will be created in CRD"/>
+  <compose>
+    <include>
+      <system value="http://hl7.org/fhir/us/davinci-crd/CodeSystem/task-type-stu3"/>
+      <concept>
+        <code value="complete-questionnaire"/>
+      </concept>    
+    </include>
+  </compose>
 </ValueSet>

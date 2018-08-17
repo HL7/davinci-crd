@@ -192,6 +192,13 @@
         </extension>
       </valueUri>
     </extension>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="visionprescription-stu3-profile-spreadsheet.xml">
+        <extension url="http://hl7.org/fhir/StructureDefinition/tools-alternateVersion">
+          <valueCode value="STU3"/>
+        </extension>
+      </valueUri>
+    </extension>
     <package id="profiles">
       <name value="Profiles"/>
       <description value="Profiles to be supported by EHRs and payor systems conforming to this implementation guide"/>
@@ -256,7 +263,7 @@
         <valueCode value="STU3"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/profile-communicationrequest-stu3"/>
+        <reference value="StructureDefinition/profile-communicationreq-stu3"/>
       </reference>
       <name value="CRD CommunicationRequest - STU3"/>
       <description value="TODO"/>
@@ -708,6 +715,21 @@
       <package value="profiles"/>
     </resource>
     <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/tools-alternateVersion">
+        <valueCode value="STU3"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/profile-visionprescription-stu3"/>
+      </reference>
+      <name value="CRD Vision Prescription - STU3"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="profiles"/>
+    </resource>
+    <resource>
       <reference>
         <reference value="SearchParameter/appointment-insurance-r4"/>
       </reference>
@@ -874,6 +896,48 @@
       <description value="TODO"/>
       <exampleBoolean value="false"/>
       <package value="extensions"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="CodeSystem/task-type"/>
+      </reference>
+      <name value="CRD Task Types Code System"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="terminology"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="CodeSystem/task-reason"/>
+      </reference>
+      <name value="CRD Task Reasons Code System"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="terminology"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/tools-alternateVersion">
+        <valueCode value="STU3"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/task-type"/>
+      </reference>
+      <name value="CRD Task Types Code System"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="terminology"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/tools-alternateVersion">
+        <valueCode value="STU3"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/task-reason"/>
+      </reference>
+      <name value="CRD Task Reasons Code System"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="terminology"/>
     </resource>
     <resource>
       <reference>

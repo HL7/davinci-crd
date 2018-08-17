@@ -134,7 +134,6 @@
     </java>-->
   </target>
   <target name="publish-ig-once" depends="extra-downloads" unless="continuous" description="--> Run the IG build">
-<fail/>
     <java jar="${dir.srcgenned}/org.hl7.fhir.igpublisher.jar" fork="true" failonerror="true" maxmemory="2048m">
       <jvmarg line="-Dfile.encoding=UTF-8"/>
       <arg line="-ig ${basedir}/${dir.srcgenned}/${guidename}.json ${txParm}"/>
