@@ -950,7 +950,7 @@
       <reference>
         <reference value="CodeSystem/task-reason-stu3"/>
       </reference>
-      <name value="CRD STU3Task Reasons Code System"/>
+      <name value="CRD STU3 Task Reasons Code System"/>
       <description value="TODO"/>
       <exampleBoolean value="false"/>
       <package value="terminology"/>
@@ -1035,21 +1035,16 @@
         <nameUrl value="index.html"/>
         <title value="CRD IG Home Page"/>
         <generation value="markdown"/>
-        <page>
-          <nameUrl value="background.html"/>
-          <title value="Background and Use Cases"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <nameUrl value="hooks.html"/>
-          <title value="CDS Hooks Usage"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <nameUrl value="credits.html"/>
-          <title value="Credits"/>
-          <generation value="markdown"/>
-        </page>
+      </page>
+      <page>
+        <nameUrl value="background.html"/>
+        <title value="Background and Use Cases"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="hooks.html"/>
+        <title value="CRD specification"/>
+        <generation value="markdown"/>
       </page>
       <page>
         <nameUrl value="resources.html"/>
@@ -1057,14 +1052,24 @@
         <generation value="markdown"/>
         <page>
           <nameUrl value="artifacts.html"/>
-          <title value="Artifact List"/>
+          <title value="Artifact List for FHIR R4"/>
           <generation value="html"/>
         </page>
         <page>
           <nameUrl value="STU3/artifacts.html"/>
-          <title value="Artifact List for STU3"/>
+          <title value="Artifact List for FHIR STU3"/>
           <generation value="html"/>
         </page>
+      </page>
+      <page>
+        <nameUrl value="downloads.html"/>
+        <title value="Downloads"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="credits.html"/>
+        <title value="Credits"/>
+        <generation value="markdown"/>
       </page>
     </page>
   </definition>

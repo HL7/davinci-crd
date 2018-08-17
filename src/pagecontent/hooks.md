@@ -71,7 +71,7 @@ For example, a CDS Service within a Discovery Response might look like this:
       "hook": "medication-prescribe",
       "title": "Payer XYZ Medication Coverage Requirements",
       "description": "Indicates coverage requirements associated with draft medication orders, including expectations for prior authorization, recommended therapy alternatives, etc.",
-      "id": "medication-cdr",
+      "id": "medication-crd",
       "prefetch": {
         "patient": "Patient/{{context.patientId}}",
         "medications": "MedicationOrder?patient={{context.patientId}}"
@@ -375,7 +375,7 @@ There are no additional constraints or special rules related to this hook beyond
 </table>
 
 #### New hooks
-These hooks are newly proposed.  The proposals were submitted as part of the DaVinci-CRD project.  However, the hooks have been defined in a generic manner and may be relevant for a variety of use-cases.  Because they have not yet seen use at connectathon or review by the community, they are more vulnerable to change than pre-existing hooks.
+These hooks are newly proposed.  The proposals were submitted as part of the Da Vinci CRD project.  However, the hooks have been defined in a generic manner and may be relevant for a variety of use-cases.  Because they have not yet seen use at connectathon or review by the community, they are more vulnerable to change than pre-existing hooks.
 
 ##### patient-discharge
 This new hook has been proposed [here](todo).  Because the hook description may evolve independently of this implementation guide, a snapshot of the hook proposal is included here to ensure consistent implementation for systems conforming to this version of the implementation guide.
@@ -1152,7 +1152,7 @@ The solution to this need to perform coverage discovery "any time" is the use of
 
 Clients conforming with this application SHALL support the SMART on FHIR interface, allow launching of SMART apps from within their application and be capable of providing the SMART app access to the same resources it exposes to payer systems using the CDS Hooks interface.
 
-The current version of the Da Vinci CDR SMART app can be found [TODO](todo).
+The current version of the Da Vinci CRD SMART app can be found [TODO](todo).
 
 
 ### Privacy, Security and Safety
