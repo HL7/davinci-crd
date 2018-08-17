@@ -207,6 +207,10 @@
       <name value="Extensions"/>
       <description value="Extensions defined as part of this implementation guide"/>
     </package>
+    <package id="search">
+      <name value="Search Parameters"/>
+      <description value="Search Parameters defined as part of this implementation guide"/>
+    </package>
     <package id="terminology">
       <name value="Terminology"/>
       <description value="Value Sets and/or code systems defined as part of this implementation guide"/>
@@ -818,7 +822,7 @@
         <valueCode value="STU3"/>
       </extension>
       <reference>
-        <reference value="SearchParameter/procedureequest-insurance-stu3"/>
+        <reference value="SearchParameter/procedurerequest-insurance-stu3"/>
       </reference>
       <name value="CRD Procedure Request Insurance - STU3"/>
       <description value="TODO"/>
@@ -889,6 +893,18 @@
       <package value="search"/>
     </resource>
     <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/tools-alternateVersion">
+        <valueCode value="STU3"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/visionprescription-insurance-stu3"/>
+      </reference>
+      <name value="CRD VisionPrescription Insurance - STU3"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="search"/>
+    </resource>
+    <resource>
       <reference>
         <reference value="StructureDefinition/ext-insurance"/>
       </reference>
@@ -920,9 +936,9 @@
         <valueCode value="STU3"/>
       </extension>
       <reference>
-        <reference value="CodeSystem/task-type"/>
+        <reference value="CodeSystem/task-type-stu3"/>
       </reference>
-      <name value="CRD Task Types Code System"/>
+      <name value="CRD STU3 Task Types Code System"/>
       <description value="TODO"/>
       <exampleBoolean value="false"/>
       <package value="terminology"/>
@@ -932,9 +948,9 @@
         <valueCode value="STU3"/>
       </extension>
       <reference>
-        <reference value="CodeSystem/task-reason"/>
+        <reference value="CodeSystem/task-reason-stu3"/>
       </reference>
-      <name value="CRD Task Reasons Code System"/>
+      <name value="CRD STU3Task Reasons Code System"/>
       <description value="TODO"/>
       <exampleBoolean value="false"/>
       <package value="terminology"/>
