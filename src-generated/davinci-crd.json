@@ -4,6 +4,7 @@
   "logging": ["html"],
   "nestedIgConfig":"davinci-crdSTU3.json",
   "nestedIgOutput":"STU3",
+  "igArtifactsPage":"artifacts.html",
   "version": "3.4.0",
   "fixed-business-version": "current",
   "html-template": "template-page.html",
@@ -116,6 +117,8 @@
     "StructureDefinition/profile-communicationrequest-r4":{
     },
     "StructureDefinition/profile-coverage-r4":{
+    },
+    "StructureDefinition/profile-coverage-deident-r4":{
     },
     "StructureDefinition/profile-device-r4":{
     },

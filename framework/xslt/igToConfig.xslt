@@ -62,6 +62,7 @@
   <xsl:if test="$hasAdditional">
     <xsl:value-of select="concat('&#xa;  &quot;nestedIgConfig&quot;:&quot;', f:id/@value, $hasAdditional, '.json&quot;,')"/>
     <xsl:value-of select="concat('&#xa;  &quot;nestedIgOutput&quot;:&quot;', $hasAdditional, '&quot;,')"/>
+    <xsl:text>&#xa;  "igArtifactsPage":"artifacts.html",</xsl:text>
   </xsl:if>
   <xsl:text>
   "version": "</xsl:text>

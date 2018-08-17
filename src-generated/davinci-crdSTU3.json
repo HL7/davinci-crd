@@ -118,6 +118,8 @@
     },
     "StructureDefinition/profile-coverage-stu3":{
     },
+    "StructureDefinition/profile-coverage-deident-stu3":{
+    },
     "StructureDefinition/profile-device-stu3":{
     },
     "StructureDefinition/profile-devicerequest-stu3":{

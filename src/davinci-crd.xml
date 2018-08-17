@@ -972,14 +972,19 @@
         </page>
       </page>
       <page>
-        <nameUrl value="artifacts.html"/>
-        <title value="Artifact List"/>
-        <generation value="html"/>
-      </page>
-      <page>
-        <nameUrl value="STU3/artifacts.html"/>
-        <title value="Artifact List for STU3"/>
-        <generation value="html"/>
+        <nameUrl value="resources.html"/>
+        <title value="FHIR Resources"/>
+        <generation value="markdown"/>
+        <page>
+          <nameUrl value="artifacts.html"/>
+          <title value="Artifact List"/>
+          <generation value="html"/>
+        </page>
+        <page>
+          <nameUrl value="STU3/artifacts.html"/>
+          <title value="Artifact List for STU3"/>
+          <generation value="html"/>
+        </page>
       </page>
     </page>
   </definition>

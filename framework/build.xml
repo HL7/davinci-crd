@@ -128,10 +128,10 @@
     <get src="${otherfhirspec}xmldsig-core-schema.xsd" dest="${dir.schemas}${additionalVersion}" usetimestamp="true"/>
   </target>
   <target name="publish-ig-continuous" depends="extra-downloads" if="continuous" description="--> Run the IG build">
-    <java jar="${dir.srcgenned}/org.hl7.fhir.igpublisher.jar" fork="true" failonerror="true" maxmemory="2048m">
+<!--    <java jar="${dir.srcgenned}/org.hl7.fhir.igpublisher.jar" fork="true" failonerror="true" maxmemory="2048m">
       <jvmarg line="-Dfile.encoding=UTF-8"/>
       <arg line="-ig ${basedir}/${dir.srcgenned}/${guidename}.json ${txParm} -watch"/>
-    </java>
+    </java>-->
   </target>
   <target name="publish-ig-once" depends="extra-downloads" unless="continuous" description="--> Run the IG build">
 <fail/>
@@ -141,10 +141,10 @@
     </java>
   </target>
   <target name="publish-ig-once-additional" depends="publish-ig-once" if="additionalVersion" unless="continuous" description="--> Run the IG build">
-    <java jar="${dir.srcgenned}/org.hl7.fhir.igpublisher.jar" fork="true" failonerror="true" maxmemory="2048m">
+<!--    <java jar="${dir.srcgenned}/org.hl7.fhir.igpublisher.jar" fork="true" failonerror="true" maxmemory="2048m">
       <jvmarg line="-Dfile.encoding=UTF-8"/>
       <arg line="-ig ${basedir}/${dir.srcgenned}/${guidename}${additionalVersion}.json ${txParm}"/>
-    </java>
+    </java>-->
   </target>
   <target name="publish-ig" depends="publish-ig-once-additional, publish-ig-continuous"/>
   <target name="clean">
