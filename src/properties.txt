@@ -9,6 +9,7 @@ license=CC0-1.0
 version=current
 fhirspec=http://build.fhir.org/
 additionalVersion=STU3
+childHeadingOffset=2.2
 excludexml=Yes
 #excludejson=Yes
 excludettl=Yes

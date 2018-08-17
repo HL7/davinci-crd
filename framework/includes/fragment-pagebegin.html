@@ -34,8 +34,8 @@
   </head>
   <body>
 {% assign label = {{site.data.pages[page.path].label}} | split: '.0' %}
-    <style type="text/css">h2{--heading-prefix:"{{label}}"}
-    h3,h4,h5,h6{--heading-prefix:"{{site.data.pages[page.path].label}}"}</style>
+    <style type="text/css">h2{--heading-prefix:"{{site.data.info.headingOffset}}{{label}}"}
+    h3,h4,h5,h6{--heading-prefix:"{{site.data.info.headingOffset}}{{site.data.pages[page.path].label}}"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <a id="logo" no-external="true" href="http://hl7.org/fhir"><img alt="logo fhir" src="{{site.data.info.assets}}assets/images/fhir-logo-www.png"/> </a>

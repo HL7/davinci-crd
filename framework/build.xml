@@ -57,7 +57,8 @@
   "excludexml":"${excludexml}",
   "excludejson":"${excludejson}",
   "excludettl":"${excludettl}",
-  "assets":""
+  "assets":"",
+  "headingOffset":""
 }</echo>
     <xslt in="${dir.src}/${guidename}.xml" out="${dir.includes}/artifacts.xml" style="${dir.xslt}/createArtifactSummary.xslt"/>
     <xslt in="${dir.src}/${guidename}.xml" out="${dir.resources}/${guidename}.xml" style="${dir.xslt}/fixIg.xslt">
@@ -100,7 +101,8 @@
   "excludexml":"${excludexml}",
   "excludejson":"${excludejson}",
   "excludettl":"${excludettl}",
-  "assets":"../"
+  "assets":"../",
+  "headingOffset":"${childHeadingOffset}."
 }</echo>
     <xslt in="${dir.src}/${guidename}.xml" out="${dir.altincludes}/artifacts.xml" style="${dir.xslt}/createArtifactSummary.xslt">
       <param name="version" expression="${additionalVersion}"/>
