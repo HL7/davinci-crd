@@ -9,7 +9,7 @@
   <Author>Grahame</Author>
   <LastAuthor>Jean Duteau</LastAuthor>
   <Created>2012-03-19T11:12:07Z</Created>
-  <LastSaved>2018-08-13T17:49:24Z</LastSaved>
+  <LastSaved>2018-08-16T21:37:06Z</LastSaved>
   <Version>16.00</Version>
  </DocumentProperties>
  <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
@@ -20,7 +20,7 @@
   <WindowWidth>28040</WindowWidth>
   <WindowTopX>2780</WindowTopX>
   <WindowTopY>1560</WindowTopY>
-  <ActiveSheet>2</ActiveSheet>
+  <ActiveSheet>5</ActiveSheet>
   <RefModeR1C1/>
   <ProtectStructure>False</ProtectStructure>
   <ProtectWindows>False</ProtectWindows>
@@ -627,17 +627,6 @@
    <NumberFormat/>
    <Protection/>
   </Style>
-  <Style ss:ID="s131">
-   <Alignment ss:Horizontal="Left" ss:Vertical="Top" ss:ShrinkToFit="1"
-    ss:WrapText="1"/>
-   <Borders>
-    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
-    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
-   </Borders>
-   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"
-    ss:Bold="1"/>
-   <Interior/>
-  </Style>
   <Style ss:ID="s132">
    <Alignment ss:Horizontal="Left" ss:Vertical="Top" ss:ShrinkToFit="1"
     ss:WrapText="1"/>
@@ -983,11 +972,11 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s72"><Data ss:Type="String">id</Data></Cell>
-    <Cell ss:StyleID="s73"><Data ss:Type="String">profile-appointment-r4</Data></Cell>
+    <Cell ss:StyleID="s73"><Data ss:Type="String">profile-condition-r4</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s74"><Data ss:Type="String">name</Data></Cell>
-    <Cell ss:StyleID="s75"><Data ss:Type="String">CRD Appointment</Data></Cell>
+    <Cell ss:StyleID="s75"><Data ss:Type="String">CRD Condition</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s74"><Data ss:Type="String">author.name</Data></Cell>
@@ -1003,7 +992,7 @@
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="69">
     <Cell ss:StyleID="s74"><Data ss:Type="String">description</Data></Cell>
-    <Cell ss:StyleID="s78"><Data ss:Type="String">Constraints on Appointment</Data></Cell>
+    <Cell ss:StyleID="s78"><Data ss:Type="String">Constraints on Condition</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s74"><Data ss:Type="String">status</Data></Cell>
@@ -1015,7 +1004,7 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s74"><Data ss:Type="String">published.structure</Data></Cell>
-    <Cell ss:StyleID="s77"><Data ss:Type="String">profile-appointment-r4</Data></Cell>
+    <Cell ss:StyleID="s77"><Data ss:Type="String">profile-condition-r4</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s74"><Data ss:Type="String">version</Data></Cell>
@@ -1067,7 +1056,7 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>10</ActiveRow>
+     <ActiveRow>11</ActiveRow>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -1075,8 +1064,8 @@
    <x:PageLayoutZoom>0</x:PageLayoutZoom>
   </WorksheetOptions>
  </Worksheet>
- <Worksheet ss:Name="profile-appointment-r4">
-  <Table ss:ExpandedColumnCount="24" ss:ExpandedRowCount="29" x:FullColumns="1"
+ <Worksheet ss:Name="profile-condition-r4">
+  <Table ss:ExpandedColumnCount="24" ss:ExpandedRowCount="7" x:FullColumns="1"
    x:FullRows="1" ss:StyleID="s85" ss:DefaultColumnWidth="65"
    ss:DefaultRowHeight="15">
    <Column ss:StyleID="s85" ss:AutoFitWidth="0" ss:Width="122"/>
@@ -1140,8 +1129,9 @@
       ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40">        <Font
         html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">Binding for coded data - either from local Bindings tab or declared elsewhere</Font>       </ss:Data></Comment></Cell>
     <Cell ss:StyleID="s89"><Data ss:Type="String">Value</Data><Comment ss:Author=""><ss:Data
-       xmlns="http://www.w3.org/TR/REC-html40">        <Font html:Face="Tahoma"
-        x:Family="Swiss" html:Size="8" html:Color="#000000">The fixed value for this element.  XML for complex elements, string for simple data types</Font>       </ss:Data></Comment></Cell>
+       xmlns="http://www.w3.org/TR/REC-html40"><Font html:Face="Tahoma"
+        x:Family="Swiss" html:Size="8" html:Color="#000000">The fixed value for this element.  XML for complex elements, string for simple data types</Font><Font
+        html:Color="#000000">       </Font></ss:Data></Comment></Cell>
     <Cell ss:StyleID="s89"><Data ss:Type="String">Pattern</Data><Comment
       ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40">        <Font
         html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">Like 'value' however while instance values must contain the specified components, they may contain others.</Font>       </ss:Data></Comment></Cell>
@@ -1186,11 +1176,11 @@
     <Cell ss:StyleID="s93"/>
     <Cell ss:StyleID="s94"/>
     <Cell ss:StyleID="s94"/>
-    <Cell ss:StyleID="s95"><Data ss:Type="String">Appointment</Data></Cell>
+    <Cell ss:StyleID="s95"><Data ss:Type="String">Condition</Data></Cell>
     <Cell ss:StyleID="s96"/>
     <Cell ss:StyleID="s96"/>
     <Cell ss:StyleID="s96"/>
-    <Cell ss:StyleID="s96"><Data ss:Type="String">Appointment</Data></Cell>
+    <Cell ss:StyleID="s96"><Data ss:Type="String">Condition</Data></Cell>
     <Cell ss:StyleID="s97"/>
     <Cell ss:StyleID="s97"/>
     <Cell ss:StyleID="s97"/>
@@ -1209,121 +1199,32 @@
     <Cell ss:StyleID="s104"/>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell><Data ss:Type="String">CRD-Insurance</Data></Cell>
-    <Cell ss:Index="4"><Data ss:Type="String">Appointment.extension</Data></Cell>
-    <Cell ss:Index="6"><Data ss:Type="String">0..*</Data></Cell>
-    <Cell ss:Index="8"><Data ss:Type="String">Extension{#insurance}</Data></Cell>
-    <Cell><Data ss:Type="String">Y</Data></Cell>
+    <Cell ss:Index="4"><Data ss:Type="String">Condition.clinicalStatus</Data></Cell>
+    <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4" ss:StyleID="s105"><Data ss:Type="String">Appointment.identifier</Data></Cell>
+    <Cell ss:Index="4" ss:StyleID="s105"><Data ss:Type="String">Condition.verificationStatus</Data></Cell>
     <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">1..1</Data></Cell>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
     <Cell><Data ss:Type="String">Y</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Appointment.status</Data></Cell>
+    <Cell ss:Index="4"><Data ss:Type="String">Condition.category</Data></Cell>
+    <Cell ss:Index="6"><Data ss:Type="String">1..*</Data></Cell>
+    <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="4"><Data ss:Type="String">Condition.code</Data></Cell>
     <Cell ss:Index="6"><Data ss:Type="String">1..1</Data></Cell>
-    <Cell ss:Index="8"><Data ss:Type="String">code</Data></Cell>
+    <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
+    <Cell ss:Index="18"><Data ss:Type="String">potentially relevant for CRD in some situations</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="4"><Data ss:Type="String">Condition.subject</Data></Cell>
+    <Cell ss:Index="8"><Data ss:Type="String">Reference(Patient) {http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-patient-r4}</Data></Cell>
     <Cell><Data ss:Type="String">Y</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Appointment.serviceCategory</Data></Cell>
-    <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Appointment.serviceType</Data></Cell>
-    <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Appointment.specialty</Data></Cell>
-    <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Appointment.appointmentType</Data></Cell>
-    <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Appointment.reason</Data></Cell>
-    <Cell ss:Index="18"><Data ss:Type="String">potentially relevant for CRD in some situations</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Appointment.indication</Data></Cell>
-    <Cell ss:Index="8"><Data ss:Type="String">Reference(Condition) {http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-condition-r4} | Reference(Procedure)</Data></Cell>
-    <Cell><Data ss:Type="String">Y</Data></Cell>
-    <Cell ss:Index="18"><Data ss:Type="String">potentially relevant for CRD in some situations</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Appointment.priority</Data></Cell>
-    <Cell ss:Index="18"><Data ss:Type="String">potentially relevant for CRD in some situations</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Appointment.description</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Appointment.supportingInformation</Data></Cell>
-    <Cell ss:Index="18"><Data ss:Type="String">potentially relevant for CRD in some situations</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Appointment.start</Data></Cell>
-    <Cell ss:Index="6"><Data ss:Type="String">1..1</Data></Cell>
-    <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Appointment.end</Data></Cell>
-    <Cell ss:Index="6"><Data ss:Type="String">1..1</Data></Cell>
-    <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Appointment.minutesDuration</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Appointment.slot</Data></Cell>
-    <Cell ss:Index="18"><Data ss:Type="String">potentially relevant for CRD in some situations</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Appointment.created</Data></Cell>
-    <Cell ss:Index="18"><Data ss:Type="String">potentially relevant for CRD in some situations</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Appointment.comment</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Appointment.patientInstruction</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Appointment.basedOn</Data></Cell>
-    <Cell ss:Index="8"><Data ss:Type="String">Reference(ServiceRequest) {http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-servicerequest-r4}</Data></Cell>
-    <Cell ss:Index="18"><Data ss:Type="String">potentially relevant for CRD in some situations</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Appointment.participant</Data></Cell>
-    <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Appointment.participant.type</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Appointment.participant.actor</Data></Cell>
-    <Cell ss:Index="8"><Data ss:Type="String">Reference(Patient) {http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-patient-r4} | Reference(Practitioner) {http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-practitioner-r4} | Reference(Location) {http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-location-r4}</Data></Cell>
-    <Cell><Data ss:Type="String">Y</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Appointment.participant.required</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Appointment.participant.status</Data></Cell>
-    <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Appointment.participant.period</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Appointment.requestedPeriod</Data></Cell>
-    <Cell ss:Index="6"><Data ss:Type="String">1..1</Data></Cell>
-    <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
    </Row>
   </Table>
   <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
@@ -1337,13 +1238,11 @@
     <ValidPrinterInfo/>
     <VerticalResolution>0</VerticalResolution>
    </Print>
-   <Selected/>
-   <LeftColumnVisible>1</LeftColumnVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>11</ActiveRow>
-     <ActiveCol>7</ActiveCol>
+     <ActiveRow>7</ActiveRow>
+     <ActiveCol>3</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -4631,10 +4530,10 @@
  </Worksheet>
  <Worksheet ss:Name="Extensions">
   <Names>
-   <NamedRange ss:Name="_FilterDatabase" ss:RefersTo="=Extensions!R1C1:R40C23"
+   <NamedRange ss:Name="_FilterDatabase" ss:RefersTo="=Extensions!R1C1:R39C23"
     ss:Hidden="1"/>
   </Names>
-  <Table ss:ExpandedColumnCount="23" ss:ExpandedRowCount="41" x:FullColumns="1"
+  <Table ss:ExpandedColumnCount="23" ss:ExpandedRowCount="40" x:FullColumns="1"
    x:FullRows="1" ss:StyleID="s85" ss:DefaultColumnWidth="65"
    ss:DefaultRowHeight="15">
    <Column ss:StyleID="s86" ss:Width="227"/>
@@ -4752,39 +4651,6 @@
       ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40">        <Font
         html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">Not published</Font>       </ss:Data></Comment><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s131"><Data ss:Type="String">insurance</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s98"><Data ss:Type="String">Resource</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s98"><Data ss:Type="String">Appointment</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s98"><Data ss:Type="String">CRD Insurance</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s98"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s98"><Data ss:Type="String">1..1</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s98"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s98"><Data ss:Type="String">Reference(Coverage) {http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-coverage-r4}</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s98"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s98"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s98"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s98"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s98"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s98"><Data ss:Type="String">Insurance</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s99"><Data ss:Type="String">Indicates coverage relevant to the appointment</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s100"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s99"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s100"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s102"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s102"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s102"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s102"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s104"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s132"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -5750,6 +5616,7 @@
     <HorizontalResolution>600</HorizontalResolution>
     <VerticalResolution>600</VerticalResolution>
    </Print>
+   <Selected/>
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
@@ -5769,13 +5636,15 @@
     </Pane>
     <Pane>
      <Number>0</Number>
+     <ActiveRow>2</ActiveRow>
+     <ActiveCol>0</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
    <ProtectScenarios>False</ProtectScenarios>
    <x:PageLayoutZoom>0</x:PageLayoutZoom>
   </WorksheetOptions>
-  <AutoFilter x:Range="R1C1:R40C23"
+  <AutoFilter x:Range="R1C1:R39C23"
    xmlns="urn:schemas-microsoft-com:office:excel">
   </AutoFilter>
  </Worksheet>

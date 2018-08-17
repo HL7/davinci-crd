@@ -20,7 +20,7 @@
   <WindowWidth>28040</WindowWidth>
   <WindowTopX>2780</WindowTopX>
   <WindowTopY>1560</WindowTopY>
-  <ActiveSheet>8</ActiveSheet>
+  <ActiveSheet>2</ActiveSheet>
   <RefModeR1C1/>
   <ProtectStructure>False</ProtectStructure>
   <ProtectWindows>False</ProtectWindows>
@@ -1306,8 +1306,7 @@
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">Task.requester</Data></Cell>
     <Cell ss:Index="6"><Data ss:Type="String">1..1</Data></Cell>
-    <Cell ss:Index="8"><Data ss:Type="String">Reference(Practitioner) {http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-practitioner-stu3}</Data></Cell>
-    <Cell><Data ss:Type="String">Y</Data></Cell>
+    <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">Task.requester.agent</Data></Cell>
@@ -1373,11 +1372,12 @@
     <ValidPrinterInfo/>
     <VerticalResolution>0</VerticalResolution>
    </Print>
+   <Selected/>
    <LeftColumnVisible>2</LeftColumnVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>15</ActiveRow>
+     <ActiveRow>21</ActiveRow>
      <ActiveCol>7</ActiveCol>
     </Pane>
    </Panes>
@@ -7278,7 +7278,6 @@
     <HorizontalResolution>600</HorizontalResolution>
     <VerticalResolution>600</VerticalResolution>
    </Print>
-   <Selected/>
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
