@@ -18,8 +18,8 @@
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
   <WindowHeight>17440</WindowHeight>
   <WindowWidth>28040</WindowWidth>
-  <WindowTopX>21520</WindowTopX>
-  <WindowTopY>4000</WindowTopY>
+  <WindowTopX>2780</WindowTopX>
+  <WindowTopY>1560</WindowTopY>
   <ActiveSheet>2</ActiveSheet>
   <RefModeR1C1/>
   <ProtectStructure>False</ProtectStructure>
@@ -1219,7 +1219,7 @@
     <Cell ss:Index="11"><Data ss:Type="String">draft</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">VisionPrescription.subject</Data></Cell>
+    <Cell ss:Index="4"><Data ss:Type="String">VisionPrescription.patient</Data></Cell>
     <Cell ss:Index="6"><Data ss:Type="String">1..1</Data></Cell>
     <Cell ss:Index="8"><Data ss:Type="String">Reference(Patient) {http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-patient-stu3}</Data></Cell>
     <Cell><Data ss:Type="String">Y</Data></Cell>
@@ -1274,7 +1274,7 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>8</ActiveRow>
+     <ActiveRow>5</ActiveRow>
      <ActiveCol>3</ActiveCol>
     </Pane>
    </Panes>
