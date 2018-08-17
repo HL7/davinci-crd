@@ -643,7 +643,7 @@ When using this response type, the proposed orders (and any associated resources
     <td>Only if updating an Encounter - e.g. to add a note</td>
   </tr>
   <tr>
-    <td><a href="STU3/profile-medication-stu3.html">profile-medication-stu3</a></td>
+    <td><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-medication.html">us-core-medication</a></td>
     <td><a href="profile-medication-r4.html">profile-medication-r4</a></td>
     <td/>
   </tr>
@@ -690,7 +690,7 @@ When using this response type, the proposed orders (and any associated resources
     </tr>
   </thead>
   <tr>
-    <td><a href="STU3/profile-communicationrequest-stu3.html">profile-communicationrequest-stu3</a></td>
+    <td><a href="STU3/profile-communicationreq-stu3.html">profile-communicationreq-stu3</a></td>
     <td><a href="profile-communicationrequest-r4.html">profile-communicationrequest-r4</a></td>
   </tr>
   <tr>
@@ -705,7 +705,7 @@ When using this response type, the proposed orders (and any associated resources
     <td><a href="STU3/profile-visionprescription-stu3.html">profile-visionprescription-stu3</a></td>
   </tr>
   <tr>
-    <td><a href="STU3/profile-medication-stu3.html">profile-medication-stu3</a></td>
+    <td><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-medication.html">us-core-medication</a></td>
     <td><a href="profile-medication-r4.html">profile-medication-r4</a></td>
   </tr>
   <tr>

@@ -256,7 +256,7 @@
         <valueCode value="STU3"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/profile-communicationrequest-stu3"/>
+        <reference value="StructureDefinition/profile-communicationreq-stu3"/>
       </reference>
       <name value="CRD CommunicationRequest - STU3"/>
       <description value="TODO"/>

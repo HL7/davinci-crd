@@ -5,4 +5,12 @@
   <name value="CRD Task Codes"/>
   <status value="draft"/>
   <description value="Types of tasks that will be created in CRD"/>
+  <compose>
+    <include>
+      <system value="http://terminology.hl7.org/CodeSystem/task-types"/>
+      <concept>
+        <code value="sample"/>
+      </concept>    
+    </include>
+  </compose>
 </ValueSet>

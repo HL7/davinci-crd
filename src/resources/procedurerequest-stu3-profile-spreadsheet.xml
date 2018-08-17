@@ -16,10 +16,10 @@
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>16440</WindowHeight>
-  <WindowWidth>27240</WindowWidth>
-  <WindowTopX>3580</WindowTopX>
-  <WindowTopY>2560</WindowTopY>
+  <WindowHeight>17440</WindowHeight>
+  <WindowWidth>28040</WindowWidth>
+  <WindowTopX>17040</WindowTopX>
+  <WindowTopY>9540</WindowTopY>
   <ActiveSheet>2</ActiveSheet>
   <RefModeR1C1/>
   <ProtectStructure>False</ProtectStructure>
@@ -1335,7 +1335,7 @@
     <Cell ss:Index="18"><Data ss:Type="String">potentially relevant for CRD in some situations</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">ProcedureRequet.specimen</Data></Cell>
+    <Cell ss:Index="4"><Data ss:Type="String">ProcedureRequest.specimen</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">ProcedureRequest.bodySite</Data></Cell>
@@ -1372,8 +1372,8 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>24</ActiveRow>
-     <ActiveCol>7</ActiveCol>
+     <ActiveRow>26</ActiveRow>
+     <ActiveCol>3</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
