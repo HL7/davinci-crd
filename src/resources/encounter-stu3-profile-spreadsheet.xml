@@ -18,8 +18,8 @@
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
   <WindowHeight>17440</WindowHeight>
   <WindowWidth>28040</WindowWidth>
-  <WindowTopX>13080</WindowTopX>
-  <WindowTopY>1820</WindowTopY>
+  <WindowTopX>2780</WindowTopX>
+  <WindowTopY>1560</WindowTopY>
   <ActiveSheet>2</ActiveSheet>
   <RefModeR1C1/>
   <ProtectStructure>False</ProtectStructure>
@@ -1253,7 +1253,8 @@
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">Encounter.diagnosis.condition</Data></Cell>
     <Cell ss:Index="6"><Data ss:Type="String">1..1</Data></Cell>
-    <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
+    <Cell ss:Index="8" ss:StyleID="Default"><Data ss:Type="String">Reference(Condition) {http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition} | Reference(Procedure) {http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure}</Data></Cell>
+    <Cell><Data ss:Type="String">Y</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">Encounter.hospitalization</Data></Cell>
@@ -1298,8 +1299,8 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>2</ActiveRow>
-     <ActiveCol>3</ActiveCol>
+     <ActiveRow>15</ActiveRow>
+     <ActiveCol>7</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>

@@ -295,6 +295,33 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/profile-coverage-deident-r4"/>
+      </reference>
+      <name value="CRD Deidentified Coverage"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="profiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/tools-alternateVersion">
+        <valueCode value="STU3"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/profile-coverage-deident-stu3"/>
+      </reference>
+      <name value="CRD Deidentified Coverage - STU3"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="profiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/profile-device-r4"/>
       </reference>
       <name value="CRD Device"/>

@@ -16,10 +16,10 @@
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>17440</WindowHeight>
-  <WindowWidth>28040</WindowWidth>
-  <WindowTopX>2780</WindowTopX>
-  <WindowTopY>1560</WindowTopY>
+  <WindowHeight>16440</WindowHeight>
+  <WindowWidth>27240</WindowWidth>
+  <WindowTopX>3580</WindowTopX>
+  <WindowTopY>2560</WindowTopY>
   <ActiveSheet>2</ActiveSheet>
   <RefModeR1C1/>
   <ProtectStructure>False</ProtectStructure>
@@ -1293,6 +1293,8 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">MedicationRequest.reasonReference</Data></Cell>
+    <Cell ss:Index="8"><Data ss:Type="String">Reference(Condition) {http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition} | Reference(Observation) {http://hl7.org/fhir/us/core/StructureDefinition/us-core-observationresults}</Data></Cell>
+    <Cell><Data ss:Type="String">Y</Data></Cell>
     <Cell ss:Index="18"><Data ss:Type="String">potentially relevant for CRD in some situations</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -1345,7 +1347,7 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>4</ActiveRow>
+     <ActiveRow>20</ActiveRow>
      <ActiveCol>7</ActiveCol>
     </Pane>
    </Panes>
