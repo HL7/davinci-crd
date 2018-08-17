@@ -56,10 +56,13 @@
   "copyrightyear":"${copyrightyear}",
   "excludexml":"${excludexml}",
   "excludejson":"${excludejson}",
-  "excludettl":"${excludettl}"
+  "excludettl":"${excludettl}",
+  "assets":""
 }</echo>
     <xslt in="${dir.src}/${guidename}.xml" out="${dir.includes}/artifacts.xml" style="${dir.xslt}/createArtifactSummary.xslt"/>
-    <xslt in="${dir.src}/${guidename}.xml" out="${dir.resources}/${guidename}.xml" style="${dir.xslt}/fixIg.xslt"/>
+    <xslt in="${dir.src}/${guidename}.xml" out="${dir.resources}/${guidename}.xml" style="${dir.xslt}/fixIg.xslt">
+      <param name="alternate" expression="${additionalVersion}"/>
+    </xslt>
     <xslt in="${dir.src}/${guidename}.xml" out="${dir.srcgenned}/${guidename}.json" style="${dir.xslt}/igToConfig.xslt">
       <param name="spec" expression="${fhirspec}"/>
       <param name="version" expression="${version}"/>
@@ -70,6 +73,8 @@
     </xslt>
   </target>
   <target name="extraVersion" depends="publisher-setup" if="additionalVersion" description="--> Prep for second IG">
+    <property name="dir.altincludes" value="${dir.pages}${additionalVersion}/_includes"/>
+    <property name="dir.altdata" value="${dir.pages}${additionalVersion}/_data"/>
     <condition property="additionVNumber" value="1.0.2">
       <equals arg1="${additionalVersion}" arg2="STU2"/>
     </condition>
@@ -89,15 +94,24 @@
     <condition property="otherfhirspec" value="http://build.fhir.org/" else="http://hl7.org/fhir/${additionalVersion}/">
       <equals arg1="${additionalVersion}" arg2="current"/>
     </condition>
-    <xslt in="${dir.src}/${guidename}.xml" out="${dir.includes}${additionalVersion}/artifacts.xml" style="${dir.xslt}/createArtifactSummary.xslt">
+    <echo file="${dir.altdata}/info.json">{
+  "copyrightyear":"${copyrightyear}",
+  "excludexml":"${excludexml}",
+  "excludejson":"${excludejson}",
+  "excludettl":"${excludettl}",
+  "assets":"../"
+}</echo>
+    <xslt in="${dir.src}/${guidename}.xml" out="${dir.altincludes}/artifacts.xml" style="${dir.xslt}/createArtifactSummary.xslt">
       <param name="version" expression="${additionalVersion}"/>
     </xslt>
     <xslt in="${dir.src}/${guidename}.xml" out="${dir.resources}${additionalVersion}/${guidename}.xml" style="${dir.xslt}/fixIg.xslt">
       <param name="version" expression="${additionalVersion}"/>
+      <param name="altVNumber" expression="${additionalVNumber}"/>
     </xslt>
     <xslt in="${dir.src}/${guidename}.xml" out="${dir.srcgenned}/${guidename}${additionalVersion}.json" style="${dir.xslt}/igToConfig.xslt">
       <param name="spec" expression="${otherfhirspec}"/>
       <param name="version" expression="${additionalVNumber}"/>
+      <param name="fhirVersion" expression="${additionalVNumber}"/>
       <param name="additional" expression="${additionalVersion}"/>
       <param name="license" expression="${license}"/>
       <param name="excludexml" expression="${excludexml}"/>

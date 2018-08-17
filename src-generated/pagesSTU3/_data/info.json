@@ -3,5 +3,5 @@
   "excludexml":"Yes",
   "excludejson":"No",
   "excludettl":"Yes",
-  "assets":""
+  "assets":"../"
 }

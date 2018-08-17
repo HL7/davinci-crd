@@ -70,13 +70,22 @@
     <xsl:value-of select="concat('&quot;license&quot;: &quot;', $license, '&quot;,&#xa;  ')"/>
     <xsl:variable name="address" select="substring-before(substring-after(/f:ImplementationGuide/f:url/@value, '//'), '/')"/>
     <xsl:variable name="prefix" select="substring-before($address, '.')"/>
-    <xsl:value-of select="concat('&quot;npm-name&quot;: &quot;', $prefix, '.fhir.', $realm, '.', f:id/@value, '&quot;,&#xa;  ')"/>
+    <xsl:variable name="suffix">
+      <xsl:if test="$additional">
+        <xsl:value-of select="concat('.', translate($additional, $uppercase, $lowercase))"/>
+      </xsl:if>
+    </xsl:variable>
+    <xsl:value-of select="concat('&quot;npm-name&quot;: &quot;', $prefix, '.fhir.', $realm, '.', f:id/@value, $suffix, '&quot;,&#xa;  ')"/>
     <xsl:text>"paths": {&#xa;    "resources": ["resources</xsl:text>
     <xsl:if test="$additional">
       <xsl:value-of select="$additional"/>
     </xsl:if>
     <xsl:text>", "../src/resources", "../src/vocabulary", "../src/examples"],
-    "pages": ["../src/images", "pages"],
+    "pages": ["../src/images", "pages</xsl:text>
+    <xsl:if test="$additional">
+      <xsl:value-of select="$additional"/>
+    </xsl:if>
+    <xsl:text>"],
     "temp": "../temp</xsl:text>
     <xsl:if test="$additional">
       <xsl:value-of select="$additional"/>
@@ -91,7 +100,7 @@
     "history" : "history.html",
     "qa": "../temp</text>
     <xsl:if test="$additional">
-      <xsl:value-of select="concat('/', $additional)"/>
+      <xsl:value-of select="$additional"/>
     </xsl:if>
     <xsl:text>/qa",
     "specification": "</xsl:text>

@@ -12,120 +12,33 @@
       <code value="US"/>
     </coding>
   </jurisdiction>
-  <fhirVersion value="3.4.0"/>
-  <dependsOn>
-    
-    <uri value="http://hl7.org/fhir/us/core"/>
-    <version value="1.0.1"/>
-  </dependsOn>
-  <definition>
-    <!-- Note: Order of these spreadsheets matters -->
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <package id="profiles">
-      <name value="Profiles"/>
-      <description value="Profiles to be supported by EHRs and payor systems conforming to this implementation guide"/>
-    </package>
-    <package id="extensions">
-      <name value="Extensions"/>
-      <description value="Extensions defined as part of this implementation guide"/>
-    </package>
-    <package id="terminology">
-      <name value="Terminology"/>
-      <description value="Value Sets and/or code systems defined as part of this implementation guide"/>
-    </package>
-    <!-- Uncomment when we have some
-    <package id="examples">
-      <name value="Example(s)"/>
-      <description value="Example(s) showing the use of the CG profiles"/>
-    </package>-->
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <resource>
-      
-      <reference>
-        <reference value="SearchParameter/supplyrequest-patient-stu3"/>
-      </reference>
-      <name value="CRD SupplyRequest Patient - STU3"/>
-      <description value="TODO"/>
-      <exampleBoolean value="false"/>
-      <package value="search"/>
-    </resource>
-    
-    
-    
-    
-    
-    
-    <page>
-      <nameUrl value="toc.html"/>
-      <title value="Table of Contents"/>
-      <generation value="html"/>
-      <page>
-        <nameUrl value="index.html"/>
-        <title value="CRD IG Home Page"/>
-        <generation value="markdown"/>
-        <page>
-          <nameUrl value="background.html"/>
-          <title value="Background and Use Cases"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <nameUrl value="hooks.html"/>
-          <title value="CDS Hooks Usage"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <nameUrl value="credits.html"/>
-          <title value="Credits"/>
-          <generation value="markdown"/>
-        </page>
-      </page>
-      <page>
-        <nameUrl value="artifacts.html"/>
-        <title value="Artifact List"/>
-        <generation value="html"/>
-      </page>
-    </page>
-  </definition>
+  <fhirVersion value="3.0.1"/>
+  <dependency>
+<type value="reference"/>
+<uri value="http://hl7.org/fhir/us/core"/>
+</dependency>
+  <page>
+<source value="artifacts.html"/>
+<title value="Artifact List for STU3"/>
+<kind value="page"/>
+<format value="text/html"/>
+<page>
+<source value="profile-patient-stu3.html"/>
+<ns0:title xmlns:ns0="http://hl7.org/fhir" value="CRD Patient - STU3"/>
+<kind value="resource"/>
+<format value="generated"/>
+</page>
+<page>
+<source value="profile-patient-deident-stu3.html"/>
+<ns1:title xmlns:ns1="http://hl7.org/fhir" value="CRD Deidentified Patient - STU3"/>
+<kind value="resource"/>
+<format value="generated"/>
+</page>
+<page>
+<source value="supplyrequest-patient-stu3.html"/>
+<ns2:title xmlns:ns2="http://hl7.org/fhir" value="CRD SupplyRequest Patient - STU3"/>
+<kind value="example"/>
+<format value="generated-resource"/>
+</page>
+</page>
 </ImplementationGuide>

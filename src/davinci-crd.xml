@@ -493,6 +493,11 @@
         <title value="Artifact List"/>
         <generation value="html"/>
       </page>
+      <page>
+        <nameUrl value="STU3/artifacts.html"/>
+        <title value="Artifact List for STU3"/>
+        <generation value="html"/>
+      </page>
     </page>
   </definition>
 </ImplementationGuide>
