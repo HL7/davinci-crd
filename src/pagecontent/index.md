@@ -46,5 +46,5 @@ The implementation guide is organized into the following sections:
 * [Background and use-cases](background.html) describes the intent of this implementation guide and provides examples of how this specification can be used by payors
 * [Specification](hooks.html) provides the technical conformance details for the specification
 * [Resources](resources.html) introduces and provides links to the FHIR [STU3](STU3/artifacts.html) and [R4](artifacts.html) profiles, search parameters and other FHIR artifacts used in this implementation guide as well as examples
-* [Downloads](downloads.html) 
+* [Downloads](downloads.html) allows download of this and other specifications as well as other useful files
 * [Credits](credits.html) identifies the individuals and organizations involved in developing this implementation guide
