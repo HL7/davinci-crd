@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (x64) (http://www.altova.com) by Lloyd McKenzie (private) -->
 <ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../src-generated/schemas/fhir-single.xsd">
   <id value="davinci-crd"/>
   <url value="http://hl7.org/fhir/us/davinci-crd/ImplementationGuide/davinci-crd"/>
-  <name value="Coverage Requirements Discovery"/>
+  <name value="CoverageRequirementsDiscovery"/>
+  <title value="Da Vinci - Coverage Requirements Discovery"/>
   <status value="draft"/>
   <experimental value="false"/>
   <publisher value="HL7 Davinci Project"/>
@@ -776,10 +778,46 @@
       <package value="search"/>
     </resource>
     <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/tools-alternateVersion">
+        <valueCode value="STU3"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/devicerequest-insurance-stu3"/>
+      </reference>
+      <name value="CRD Device Request Insurance - STU3"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="search"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/tools-alternateVersion">
+        <valueCode value="STU3"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/devicerequest-onbehalfof-stu3"/>
+      </reference>
+      <name value="CRD Device Request On Behalf Of - STU3"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="search"/>
+    </resource>
+    <resource>
       <reference>
         <reference value="SearchParameter/medicationrequest-insurance-r4"/>
       </reference>
       <name value="CRD MedicationRequest Insurance"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="search"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/tools-alternateVersion">
+        <valueCode value="STU3"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/medicationrequest-onbehalfof-stu3"/>
+      </reference>
+      <name value="CRD Medication Request On Behalf Of - STU3"/>
       <description value="TODO"/>
       <exampleBoolean value="false"/>
       <package value="search"/>
@@ -834,9 +872,33 @@
         <valueCode value="STU3"/>
       </extension>
       <reference>
+        <reference value="SearchParameter/procedurerequest-onbehalfof-stu3"/>
+      </reference>
+      <name value="CRD Procedure Request On Behalf Of - STU3"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="search"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/tools-alternateVersion">
+        <valueCode value="STU3"/>
+      </extension>
+      <reference>
         <reference value="SearchParameter/referralrequest-insurance-stu3"/>
       </reference>
       <name value="CRD Referral Request Insurance - STU3"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <package value="search"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/tools-alternateVersion">
+        <valueCode value="STU3"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/referralrequest-onbehalfof-stu3"/>
+      </reference>
+      <name value="CRD Referral Request On Behalf Of - STU3"/>
       <description value="TODO"/>
       <exampleBoolean value="false"/>
       <package value="search"/>

@@ -4,15 +4,14 @@
 	<url value="http://hl7.org/fhir/us/davinci-crd/SearchParameter/supplyrequest-patient-r4"/>
 	<name value="CRDSupplyRequestPatient"/>
 	<status value="draft"/>
-	
 	<date value="2018-08-14"/>
-	<publisher value="Da Vinci Project"/>
-	<contact>
-		<telecom>
-			<system value="other"/>
-			<value value="http://www.healthit.gov/"/>
-		</telecom>
-	</contact>
+  <publisher value="HL7 Da Vinci Project"/>
+  <contact>
+    <telecom>
+      <system value="other"/>
+      <value value="http://www.hl7.org/about/davinci"/>
+    </telecom>
+  </contact>
 	<description value="Returns supply requests that are delivered to the specified patient."/>
 	<code value="deliverTo"/>
 	<base value="SupplyRequest"/>

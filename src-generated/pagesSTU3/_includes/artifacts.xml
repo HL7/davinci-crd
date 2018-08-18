@@ -8,7 +8,10 @@
             <a href="#2">Extensions</a>
 </p>
 <p class="link">-
-            <a href="#3">Terminology</a>
+            <a href="#3">Search Parameters</a>
+</p>
+<p class="link">-
+            <a href="#4">Terminology</a>
 </p>
 </div>
 <p>This page provides a list of the FHIR artifacts defined as part of this implementation guide.</p>
@@ -163,6 +166,113 @@
 </table>
 </p>
 <a name="3"> </a>
+<h3>Search Parameters </h3>
+<p>Search Parameters defined as part of this implementation guide</p>
+<p>
+<table>
+<tbody>
+<tr>
+<td style="column-width:30%">
+<a href="appointment-insurance-stu3.html">
+                        •  CRD Appointment Insurance - STU3</a>
+</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td style="column-width:30%">
+<a href="encounter-insurance-stu3.html">
+                        •  CRD Encounter Insurance - STU3</a>
+</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td style="column-width:30%">
+<a href="devicerequest-insurance-stu3.html">
+                        •  CRD Device Request Insurance - STU3</a>
+</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td style="column-width:30%">
+<a href="devicerequest-onbehalfof-stu3.html">
+                        •  CRD Device Request On Behalf Of - STU3</a>
+</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td style="column-width:30%">
+<a href="medicationrequest-onbehalfof-stu3.html">
+                        •  CRD Medication Request On Behalf Of - STU3</a>
+</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td style="column-width:30%">
+<a href="medicationrequest-insurance-stu3.html">
+                        •  CRD Medication Request Insurance - STU3</a>
+</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td style="column-width:30%">
+<a href="nutritionorder-insurance-stu3.html">
+                        •  CRD Nutrition Order Insurance - STU3</a>
+</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td style="column-width:30%">
+<a href="procedurerequest-insurance-stu3.html">
+                        •  CRD Procedure Request Insurance - STU3</a>
+</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td style="column-width:30%">
+<a href="procedurerequest-onbehalfof-stu3.html">
+                        •  CRD Procedure Request On Behalf Of - STU3</a>
+</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td style="column-width:30%">
+<a href="referralrequest-insurance-stu3.html">
+                        •  CRD Referral Request Insurance - STU3</a>
+</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td style="column-width:30%">
+<a href="referralrequest-onbehalfof-stu3.html">
+                        •  CRD Referral Request On Behalf Of - STU3</a>
+</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td style="column-width:30%">
+<a href="supplyrequest-insurance-stu3.html">
+                        •  CRD SupplyRequest Insurance - STU3</a>
+</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td style="column-width:30%">
+<a href="supplyrequest-patient-stu3.html">
+                        •  CRD SupplyRequest Patient - STU3</a>
+</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td style="column-width:30%">
+<a href="visionprescription-insurance-stu3.html">
+                        •  CRD VisionPrescription Insurance - STU3</a>
+</td>
+<td>TODO</td>
+</tr>
+</tbody>
+</table>
+</p>
+<a name="4"> </a>
 <h3>Terminology </h3>
 <p>Value Sets and/or code systems defined as part of this implementation guide</p>
 <p>
@@ -170,14 +280,14 @@
 <tbody>
 <tr>
 <td style="column-width:30%">
-<a href="task-type.html">
+<a href="task-type-stu3.html">
                         •  CRD STU3 Task Types Code System</a>
 </td>
 <td>TODO</td>
 </tr>
 <tr>
 <td style="column-width:30%">
-<a href="task-reason.html">
+<a href="task-reason-stu3.html">
                         •  CRD STU3 Task Reasons Code System</a>
 </td>
 <td>TODO</td>

@@ -4,15 +4,14 @@
 	<url value="http://hl7.org/fhir/us/davinci-crd/SearchParameter/nutritionorder-insurance-r4"/>
 	<name value="CRDNutritionOrderInsurance"/>
 	<status value="draft"/>
-	
 	<date value="2018-08-14"/>
-	<publisher value="Da Vinci Project"/>
-	<contact>
-		<telecom>
-			<system value="other"/>
-			<value value="http://www.healthit.gov/"/>
-		</telecom>
-	</contact>
+  <publisher value="HL7 Da Vinci Project"/>
+  <contact>
+    <telecom>
+      <system value="other"/>
+      <value value="http://www.hl7.org/about/davinci"/>
+    </telecom>
+  </contact>
 	<description value="Returns nutrition orders that are covered by the specified insurance."/>
 	<code value="insurance"/>
 	<base value="Encounter"/>

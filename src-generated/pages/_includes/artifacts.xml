@@ -8,7 +8,10 @@
             <a href="#2">Extensions</a>
 </p>
 <p class="link">-
-            <a href="#3">Terminology</a>
+            <a href="#3">Search Parameters</a>
+</p>
+<p class="link">-
+            <a href="#4">Terminology</a>
 </p>
 </div>
 <p>This page provides a list of the FHIR artifacts defined as part of this implementation guide.</p>
@@ -171,6 +174,64 @@
 </table>
 </p>
 <a name="3"> </a>
+<h3>Search Parameters </h3>
+<p>Search Parameters defined as part of this implementation guide</p>
+<p>
+<table>
+<tbody>
+<tr>
+<td style="column-width:30%">
+<a href="appointment-insurance-r4.html">
+                        •  CRD Appointment Insurance</a>
+</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td style="column-width:30%">
+<a href="encounter-insurance-r4.html">
+                        •  CRD Encounter Insurance</a>
+</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td style="column-width:30%">
+<a href="medicationrequest-insurance-r4.html">
+                        •  CRD MedicationRequest Insurance</a>
+</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td style="column-width:30%">
+<a href="nutritionorder-insurance-r4.html">
+                        •  CRD NutritionOrder Insurance</a>
+</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td style="column-width:30%">
+<a href="servicerequest-insurance-r4.html">
+                        •  CRD ServiceRequest Insurance</a>
+</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td style="column-width:30%">
+<a href="supplyrequest-insurance-r4.html">
+                        •  CRD SupplyRequest Insurance</a>
+</td>
+<td>TODO</td>
+</tr>
+<tr>
+<td style="column-width:30%">
+<a href="supplyrequest-patient-r4.html">
+                        •  CRD SupplyRequest Patient</a>
+</td>
+<td>TODO</td>
+</tr>
+</tbody>
+</table>
+</p>
+<a name="4"> </a>
 <h3>Terminology </h3>
 <p>Value Sets and/or code systems defined as part of this implementation guide</p>
 <p>

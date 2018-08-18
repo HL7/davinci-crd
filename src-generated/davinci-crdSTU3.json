@@ -155,21 +155,33 @@
     },
     "SearchParameter/encounter-insurance-stu3":{
     },
+    "SearchParameter/devicerequest-insurance-stu3":{
+    },
+    "SearchParameter/devicerequest-onbehalfof-stu3":{
+    },
+    "SearchParameter/medicationrequest-onbehalfof-stu3":{
+    },
     "SearchParameter/medicationrequest-insurance-stu3":{
     },
     "SearchParameter/nutritionorder-insurance-stu3":{
     },
-    "SearchParameter/procedureequest-insurance-stu3":{
+    "SearchParameter/procedurerequest-insurance-stu3":{
+    },
+    "SearchParameter/procedurerequest-onbehalfof-stu3":{
     },
     "SearchParameter/referralrequest-insurance-stu3":{
+    },
+    "SearchParameter/referralrequest-onbehalfof-stu3":{
     },
     "SearchParameter/supplyrequest-insurance-stu3":{
     },
     "SearchParameter/supplyrequest-patient-stu3":{
     },
-    "CodeSystem/task-type":{
+    "SearchParameter/visionprescription-insurance-stu3":{
     },
-    "CodeSystem/task-reason":{
+    "CodeSystem/task-type-stu3":{
+    },
+    "CodeSystem/task-reason-stu3":{
     },
     "ValueSet/locationAddressType-stu3":{
     },

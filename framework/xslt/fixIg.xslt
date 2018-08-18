@@ -32,6 +32,7 @@
       <xsl:apply-templates mode="STU3" select="@*|node()"/>
     </xsl:copy>
   </xsl:template>
+  <xsl:template mode="STU3" match="f:title"/>
   <xsl:template mode="STU3" match="f:fhirVersion/@value">
     <xsl:attribute name="value">
       <xsl:value-of select="$altVNumber"/>
