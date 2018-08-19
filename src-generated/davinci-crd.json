@@ -5,7 +5,7 @@
   "nestedIgConfig":"davinci-crdSTU3.json",
   "nestedIgOutput":"STU3",
   "igArtifactsPage":"artifacts.html",
-  "version": "3.4.0",
+  "version": "3.5.0",
   "fixed-business-version": "current",
   "html-template": "template-page.html",
   "md-template": "template-page-md.html",
