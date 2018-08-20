@@ -13,7 +13,7 @@
       <code value="US"/>
     </coding>
   </jurisdiction>
-  <fhirVersion value="3.4.0"/>
+  <fhirVersion value="3.5.0"/>
   
   <definition>
     <!-- Note: Order of these spreadsheets matters -->

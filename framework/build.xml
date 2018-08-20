@@ -89,7 +89,7 @@
     <condition property="additionalVNumber" value="4.0.0">
       <equals arg1="${additionalVersion}" arg2="R4"/>
     </condition>
-    <condition property="additionalVNumber" value="3.4.0">
+    <condition property="additionalVNumber" value="3.5.0">
       <equals arg1="${additionalVersion}" arg2="current"/>
     </condition>
     <fail unless="additionalVNumber" message="additionalVersion of '${additionalVersion}' is not supported.  Must be DSTU2, 2016May, STU3, R4 or current"/>
