@@ -1023,8 +1023,8 @@
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="59">
     <Cell ss:StyleID="s74"><Data ss:Type="String">extension.uri</Data></Cell>
-    <Cell ss:StyleID="s80" ss:HRef="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-"><Data
-      ss:Type="String">http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-</Data></Cell>
+    <Cell ss:StyleID="s80" ss:HRef="http://hl7.org/fhir/us/davinci-crd/STU3/StructureDefinition/ext-"><Data
+      ss:Type="String">http://hl7.org/fhir/us/davinci-crd/STU3/StructureDefinition/ext-</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s81"><Data ss:Type="String">introduction</Data></Cell>
@@ -1226,7 +1226,7 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">CommunicationRequest.replaces</Data></Cell>
-    <Cell ss:Index="8"><Data ss:Type="String">Reference(CommunicationRequest) {http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-communicationreq-stu3}</Data></Cell>
+    <Cell ss:Index="8"><Data ss:Type="String">Reference(CommunicationRequest) {http://hl7.org/fhir/us/davinci-crd/STU3/StructureDefinition/profile-communicationreq-stu3}</Data></Cell>
     <Cell ss:Index="18"><Data ss:Type="String">potentially relevant for CRD in some situations</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -1252,13 +1252,13 @@
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">CommunicationRequest.subject</Data></Cell>
     <Cell ss:Index="6"><Data ss:Type="String">1..1</Data></Cell>
-    <Cell ss:Index="8"><Data ss:Type="String">Reference(Patient) {http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-patient-stu3}</Data></Cell>
+    <Cell ss:Index="8"><Data ss:Type="String">Reference(Patient) {http://hl7.org/fhir/us/davinci-crd/STU3/StructureDefinition/profile-patient-stu3}</Data></Cell>
     <Cell><Data ss:Type="String">Y</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">CommunicationRequest.recipient</Data></Cell>
     <Cell ss:Index="6"><Data ss:Type="String">0..*</Data></Cell>
-    <Cell ss:Index="8"><Data ss:Type="String">Reference(Practitioner) {http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-practitioner-stu3}</Data></Cell>
+    <Cell ss:Index="8"><Data ss:Type="String">Reference(Practitioner) {http://hl7.org/fhir/us/davinci-crd/STU3/StructureDefinition/profile-practitioner-stu3}</Data></Cell>
     <Cell><Data ss:Type="String">Y</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -1267,7 +1267,7 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">CommunicationRequest.context</Data></Cell>
-    <Cell ss:Index="8"><Data ss:Type="String">Reference(Encounter) {http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-encounter-stu3}</Data></Cell>
+    <Cell ss:Index="8"><Data ss:Type="String">Reference(Encounter) {http://hl7.org/fhir/us/davinci-crd/STU3/StructureDefinition/profile-encounter-stu3}</Data></Cell>
     <Cell ss:Index="18"><Data ss:Type="String">potentially relevant for CRD in some situations</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -1285,7 +1285,7 @@
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">CommunicationRequest.sender</Data></Cell>
     <Cell ss:Index="6"><Data ss:Type="String">0..1</Data></Cell>
-    <Cell ss:Index="8"><Data ss:Type="String">Reference(Practitioner) {http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-practitioner-stu3} </Data></Cell>
+    <Cell ss:Index="8"><Data ss:Type="String">Reference(Practitioner) {http://hl7.org/fhir/us/davinci-crd/STU3/StructureDefinition/profile-practitioner-stu3} </Data></Cell>
     <Cell><Data ss:Type="String">Y</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -1294,7 +1294,7 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">CommunicationRequest.requester.agent</Data></Cell>
-    <Cell ss:Index="8"><Data ss:Type="String">Reference(Practitioner) {http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-practitioner-stu3} </Data></Cell>
+    <Cell ss:Index="8"><Data ss:Type="String">Reference(Practitioner) {http://hl7.org/fhir/us/davinci-crd/STU3/StructureDefinition/profile-practitioner-stu3} </Data></Cell>
     <Cell><Data ss:Type="String">Y</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">

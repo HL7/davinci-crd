@@ -1022,8 +1022,8 @@
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="59">
     <Cell ss:StyleID="s74"><Data ss:Type="String">extension.uri</Data></Cell>
-    <Cell ss:StyleID="s80" ss:HRef="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-"><Data
-      ss:Type="String">http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-</Data></Cell>
+    <Cell ss:StyleID="s80" ss:HRef="http://hl7.org/fhir/us/davinci-crd/STU3/StructureDefinition/ext-"><Data
+      ss:Type="String">http://hl7.org/fhir/us/davinci-crd/STU3/StructureDefinition/ext-</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s81"><Data ss:Type="String">introduction</Data></Cell>

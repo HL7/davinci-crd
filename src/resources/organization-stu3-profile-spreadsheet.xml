@@ -922,8 +922,8 @@
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="59">
     <Cell ss:StyleID="s73"><Data ss:Type="String">extension.uri</Data></Cell>
-    <Cell ss:StyleID="s79" ss:HRef="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-"><Data
-      ss:Type="String">http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-</Data></Cell>
+    <Cell ss:StyleID="s79" ss:HRef="http://hl7.org/fhir/us/davinci-crd/STU3/StructureDefinition/ext-"><Data
+      ss:Type="String">http://hl7.org/fhir/us/davinci-crd/STU3/StructureDefinition/ext-</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s80"><Data ss:Type="String">introduction</Data></Cell>
@@ -1114,7 +1114,7 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">Organization.partOf</Data></Cell>
-    <Cell ss:Index="8"><Data ss:Type="String">Reference(Organization){http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-organization-stu3}</Data></Cell>
+    <Cell ss:Index="8"><Data ss:Type="String">Reference(Organization){http://hl7.org/fhir/us/davinci-crd/STU3/StructureDefinition/profile-organization-stu3}</Data></Cell>
    </Row>
   </Table>
   <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">

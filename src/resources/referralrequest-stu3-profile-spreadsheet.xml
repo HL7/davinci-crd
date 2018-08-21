@@ -1030,8 +1030,8 @@
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="59">
     <Cell ss:StyleID="s74"><Data ss:Type="String">extension.uri</Data></Cell>
-    <Cell ss:StyleID="s80" ss:HRef="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-"><Data
-      ss:Type="String">http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-</Data></Cell>
+    <Cell ss:StyleID="s80" ss:HRef="http://hl7.org/fhir/us/davinci-crd/STU3/StructureDefinition/ext-"><Data
+      ss:Type="String">http://hl7.org/fhir/us/davinci-crd/STU3/StructureDefinition/ext-</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s81"><Data ss:Type="String">introduction</Data></Cell>
@@ -1235,7 +1235,7 @@
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">ReferralRequest.basedOn</Data></Cell>
     <Cell ss:Index="6"><Data ss:Type="String">1..1</Data></Cell>
-    <Cell ss:Index="8"><Data ss:Type="String">Reference(ReferralRequest) {http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-ReferralRequest-stu3} | Reference(ProcedureRequest) {http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-procedurerequest-stu3}</Data></Cell>
+    <Cell ss:Index="8"><Data ss:Type="String">Reference(ReferralRequest) {http://hl7.org/fhir/us/davinci-crd/STU3/StructureDefinition/profile-ReferralRequest-stu3} | Reference(ProcedureRequest) {http://hl7.org/fhir/us/davinci-crd/STU3/StructureDefinition/profile-procedurerequest-stu3}</Data></Cell>
     <Cell><Data ss:Type="String">Y</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -1270,12 +1270,12 @@
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">ReferralRequest.subject</Data></Cell>
     <Cell ss:Index="6"><Data ss:Type="String">1..1</Data></Cell>
-    <Cell ss:Index="8"><Data ss:Type="String">Reference(Patient) {http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-patient-stu3}</Data></Cell>
+    <Cell ss:Index="8"><Data ss:Type="String">Reference(Patient) {http://hl7.org/fhir/us/davinci-crd/STU3/StructureDefinition/profile-patient-stu3}</Data></Cell>
     <Cell><Data ss:Type="String">Y</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">ReferralRequest.context</Data></Cell>
-    <Cell ss:Index="8"><Data ss:Type="String">Reference(Encounter) {http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-encounter-stu3}</Data></Cell>
+    <Cell ss:Index="8"><Data ss:Type="String">Reference(Encounter) {http://hl7.org/fhir/us/davinci-crd/STU3/StructureDefinition/profile-encounter-stu3}</Data></Cell>
     <Cell ss:Index="18"><Data ss:Type="String">potentially relevant for CRD in some situations</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -1295,7 +1295,7 @@
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">ReferralRequest.requester.agent</Data></Cell>
     <Cell ss:Index="6"><Data ss:Type="String">1..1</Data></Cell>
-    <Cell ss:Index="8"><Data ss:Type="String">Reference(Practitioner) {http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-practitioner-stu3}</Data></Cell>
+    <Cell ss:Index="8"><Data ss:Type="String">Reference(Practitioner) {http://hl7.org/fhir/us/davinci-crd/STU3/StructureDefinition/profile-practitioner-stu3}</Data></Cell>
     <Cell><Data ss:Type="String">Y</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -1309,7 +1309,7 @@
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">ReferralRequest.recipient</Data></Cell>
     <Cell ss:Index="6"><Data ss:Type="String">0..*</Data></Cell>
-    <Cell ss:Index="8"><Data ss:Type="String">Reference(Practitioner) {http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-practitioner-stu3}</Data></Cell>
+    <Cell ss:Index="8"><Data ss:Type="String">Reference(Practitioner) {http://hl7.org/fhir/us/davinci-crd/STU3/StructureDefinition/profile-practitioner-stu3}</Data></Cell>
     <Cell><Data ss:Type="String">Y</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -1341,7 +1341,7 @@
     <Cell><Data ss:Type="String">ReferralRequestInsurance</Data></Cell>
     <Cell ss:Index="4"><Data ss:Type="String">ReferralRequest.extension</Data></Cell>
     <Cell ss:Index="6"><Data ss:Type="String">0..*</Data></Cell>
-    <Cell ss:Index="8"><Data ss:Type="String">Extension{http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-insurance}</Data></Cell>
+    <Cell ss:Index="8"><Data ss:Type="String">Extension{http://hl7.org/fhir/us/davinci-crd/STU3/StructureDefinition/ext-insurance}</Data></Cell>
     <Cell><Data ss:Type="String">Y</Data></Cell>
    </Row>
   </Table>

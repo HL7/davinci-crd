@@ -83,7 +83,7 @@
   },
   "sct-edition" : "http://snomed.info/sct/731000124108",
   "no-inactive-codes" : "true",
-  "canonicalBase": "http://hl7.org/fhir/us/davinci-crd",
+  "canonicalBase": "http://hl7.org/fhir/us/davinci-crd/STU3",
   "dependencyList": [
     {
       "name" : "core",
