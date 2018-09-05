@@ -33,6 +33,11 @@
     <link rel="shortcut icon" href="{{site.data.info.assets}}assets/ico/favicon.png"/>  
   </head>
   <body>
+{% if site.data.info.ballotstatus != '' %}
+{% assign status = site.data.info.ballotstatus %}
+{% else %}
+{% assign status = site.data.fhir.ig.status %}
+{% endif %}
 {% assign label = {{site.data.pages[page.path].label}} | split: '.0' %}
     <style type="text/css">h2{--heading-prefix:"{{site.data.info.headingOffset}}{{label}}"}
     h3,h4,h5,h6{--heading-prefix:"{{site.data.info.headingOffset}}{{site.data.pages[page.path].label}}"}</style>
@@ -40,7 +45,7 @@
       <div class="container">  <!-- container -->
         <a id="logo" no-external="true" href="http://hl7.org/fhir"><img alt="logo fhir" src="{{site.data.info.assets}}assets/images/fhir-logo-www.png"/> </a>
         <div id="hl7-status">
-          <b>{{site.data.fhir.ig.name}}</b> {{site.data.fhir.ig.version}} - STU1 Ballot 1</b> <i>(for FHIR {{site.data.fhir.version}})</i>
+          <b>{{site.data.fhir.ig.name}}</b> {{site.data.fhir.ig.version}} - {{status}} 
         </div>
     
         <div id="hl7-nav">

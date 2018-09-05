@@ -6,7 +6,7 @@
   "nestedIgOutput":"STU3",
   "igArtifactsPage":"artifacts.html",
   "version": "3.5.0",
-  "fixed-business-version": "0.1.0",
+  "fixed-business-version": "0.2.0",
   "html-template": "template-page.html",
   "md-template": "template-page-md.html",
   "license": "CC0-1.0",

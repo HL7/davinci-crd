@@ -6,7 +6,8 @@
 guidename=davinci-crd
 copyrightyear=2018+
 license=CC0-1.0
-version=current
+version=0.2.0
+ballotstatus=Continuous Build
 fhirspec=http://build.fhir.org/
 additionalVersion=STU3
 childHeadingOffset=2.2

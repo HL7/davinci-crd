@@ -8,6 +8,7 @@
   <xsl:param name="license"/>
   <xsl:param name="additional"/>
   <xsl:param name="hasAdditional"/>
+  <xsl:param name="additionalVersion"/>
   <xsl:param name="fhirVersion" select="/f:ImplementationGuide/f:fhirVersion/@value"/>
   <xsl:param name="snomedRelease">
     <xsl:choose>
@@ -59,9 +60,9 @@
   "DO_NOT_EDIT_THIS_FILE": "This file is generated.  Any edits made will be overwritten",
   "tool": "jekyll",
   "logging": ["html"],</xsl:text>
-  <xsl:if test="$hasAdditional">
-    <xsl:value-of select="concat('&#xa;  &quot;nestedIgConfig&quot;:&quot;', f:id/@value, $hasAdditional, '.json&quot;,')"/>
-    <xsl:value-of select="concat('&#xa;  &quot;nestedIgOutput&quot;:&quot;', $hasAdditional, '&quot;,')"/>
+  <xsl:if test="$hasAdditional='Y'">
+    <xsl:value-of select="concat('&#xa;  &quot;nestedIgConfig&quot;:&quot;', f:id/@value, $additionalVersion, '.json&quot;,')"/>
+    <xsl:value-of select="concat('&#xa;  &quot;nestedIgOutput&quot;:&quot;', $additionalVersion, '&quot;,')"/>
     <xsl:text>&#xa;  "igArtifactsPage":"artifacts.html",</xsl:text>
   </xsl:if>
   <xsl:text>
@@ -219,6 +220,9 @@
   "no-inactive-codes" : "true",
   "canonicalBase": "</xsl:text>
     <xsl:value-of select="substring-before(/f:ImplementationGuide/f:url/@value, '/ImplementationGuide')"/>
+    <xsl:if test="$additional">
+      <xsl:value-of select="concat('/', $additional)"/>
+    </xsl:if>
     <xsl:text>",&#xa;  </xsl:text>
     <xsl:if test="f:*[(self::f:dependency and f:type/@value='reference') or self::f:dependsOn][not(f:extension[@url='http://hl7.org/fhir/StructureDefinition/tools-alternateVersion'] or $additional) or (f:extension[@url='http://hl7.org/fhir/StructureDefinition/tools-alternateVersion']/f:valueCode/@value=$additional)]">
       <xsl:text>&quot;dependencyList&quot;: [&#xa;</xsl:text>

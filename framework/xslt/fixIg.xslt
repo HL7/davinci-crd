@@ -33,6 +33,11 @@
     </xsl:copy>
   </xsl:template>
   <xsl:template mode="STU3" match="f:title"/>
+  <xsl:template mode="STU3" match="f:url/@value">
+    <xsl:attribute name="value">
+      <xsl:value-of select="concat(substring-before(., 'ImplementationGuide'), 'STU3/ImplementationGuide/', ancestor::f:ImplementationGuide/f:id/@value)"/>
+    </xsl:attribute>
+  </xsl:template>
   <xsl:template mode="STU3" match="f:fhirVersion/@value">
     <xsl:attribute name="value">
       <xsl:value-of select="$altVNumber"/>

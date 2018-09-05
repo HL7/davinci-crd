@@ -57,6 +57,6 @@ v: {
 v: {
   "display" : "",
   "severity" : "error",
-  "error" : "Unable to provide support for code system "
+  "error" : "Unable to find value set http://hl7.org/fhir/ValueSet/usps-state"
 }
 -------------------------------------------------------------------------------------

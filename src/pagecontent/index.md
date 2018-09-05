@@ -1,5 +1,11 @@
 {% raw %}
 {% endraw %}
+<!--ReleaseHeader-->
+<p style="background-color: yellow; border: 1px solid maroon; padding: 5px;">
+  This is the {{site.data.info.ballotstatus}} version of the {{site.data.fhir.igName}} Implementation Guide,  based on <a href="{{site.data.fhir.path}}">FHIR Version {{site.data.fhir.version}}</a>.  
+  See the <a href="{{site.data.fhir.canonical}}/history.html">Directory of published versions</a> for other versions and for a change history.
+</p>
+<!--EndReleaseHeader-->
 <blockquote class="stu-note">
 <p>
 This specification is currently undergoing ballot and connectathon testing.  It is expected to evolve, possibly significantly, as part of that process.
