@@ -13,6 +13,7 @@
       <code value="US"/>
     </coding>
   </jurisdiction>
+  <packageId value="hl7.fhir.us.davinci.crd"/>
   <fhirVersion value="3.6.0"/>
   
   <definition>
@@ -53,27 +54,27 @@
     
     
     
-    <package id="profiles">
+    <grouping id="profiles">
       <name value="Profiles"/>
       <description value="Profiles to be supported by EHRs and payor systems conforming to this implementation guide"/>
-    </package>
-    <package id="extensions">
+    </grouping>
+    <grouping id="extensions">
       <name value="Extensions"/>
       <description value="Extensions defined as part of this implementation guide"/>
-    </package>
-    <package id="search">
+    </grouping>
+    <grouping id="search">
       <name value="Search Parameters"/>
       <description value="Search Parameters defined as part of this implementation guide"/>
-    </package>
-    <package id="terminology">
+    </grouping>
+    <grouping id="terminology">
       <name value="Terminology"/>
       <description value="Value Sets and/or code systems defined as part of this implementation guide"/>
-    </package>
+    </grouping>
     <!-- Uncomment when we have some
-    <package id="examples">
+    <grouping id="examples">
       <name value="Example(s)"/>
       <description value="Example(s) showing the use of the CG profiles"/>
-    </package>-->
+    </grouping>-->
     
     
     
@@ -119,7 +120,7 @@
       <name value="CRD Appointment Insurance"/>
       <description value="TODO"/>
       <exampleBoolean value="false"/>
-      <package value="search"/>
+      <groupingId value="search"/>
     </resource>
     
     <resource>
@@ -129,7 +130,7 @@
       <name value="CRD Encounter Insurance"/>
       <description value="TODO"/>
       <exampleBoolean value="false"/>
-      <package value="search"/>
+      <groupingId value="search"/>
     </resource>
     
     
@@ -141,7 +142,7 @@
       <name value="CRD MedicationRequest Insurance"/>
       <description value="TODO"/>
       <exampleBoolean value="false"/>
-      <package value="search"/>
+      <groupingId value="search"/>
     </resource>
     
     
@@ -152,7 +153,7 @@
       <name value="CRD NutritionOrder Insurance"/>
       <description value="TODO"/>
       <exampleBoolean value="false"/>
-      <package value="search"/>
+      <groupingId value="search"/>
     </resource>
     
     
@@ -166,7 +167,7 @@
       <name value="CRD ServiceRequest Insurance"/>
       <description value="TODO"/>
       <exampleBoolean value="false"/>
-      <package value="search"/>
+      <groupingId value="search"/>
     </resource>
     <resource>
       <reference>
@@ -175,7 +176,7 @@
       <name value="CRD SupplyRequest Insurance"/>
       <description value="TODO"/>
       <exampleBoolean value="false"/>
-      <package value="search"/>
+      <groupingId value="search"/>
     </resource>
     
     
@@ -186,7 +187,7 @@
       <name value="CRD SupplyRequest Patient"/>
       <description value="TODO"/>
       <exampleBoolean value="false"/>
-      <package value="search"/>
+      <groupingId value="search"/>
     </resource>
     
     <resource>
@@ -196,7 +197,7 @@
       <name value="CRD Insurance Extension"/>
       <description value="TODO"/>
       <exampleBoolean value="false"/>
-      <package value="extensions"/>
+      <groupingId value="extensions"/>
     </resource>
     <resource>
       <reference>
@@ -205,7 +206,7 @@
       <name value="CRD Task Types Code System"/>
       <description value="TODO"/>
       <exampleBoolean value="false"/>
-      <package value="terminology"/>
+      <groupingId value="terminology"/>
     </resource>
     <resource>
       <reference>
@@ -214,7 +215,7 @@
       <name value="CRD Task Reasons Code System"/>
       <description value="TODO"/>
       <exampleBoolean value="false"/>
-      <package value="terminology"/>
+      <groupingId value="terminology"/>
     </resource>
     
     
@@ -225,7 +226,7 @@
       <name value="CRD Coverage Classes"/>
       <description value="TODO"/>
       <exampleBoolean value="false"/>
-      <package value="terminology"/>
+      <groupingId value="terminology"/>
     </resource>
     <resource>
       <reference>
@@ -234,7 +235,7 @@
       <name value="CRD Location Address Types"/>
       <description value="TODO"/>
       <exampleBoolean value="false"/>
-      <package value="terminology"/>
+      <groupingId value="terminology"/>
     </resource>
     
     <resource>
@@ -244,7 +245,7 @@
       <name value="CRD Task Types"/>
       <description value="TODO"/>
       <exampleBoolean value="false"/>
-      <package value="terminology"/>
+      <groupingId value="terminology"/>
     </resource>
     
     <resource>
@@ -254,7 +255,7 @@
       <name value="CRD Task Reason Codes"/>
       <description value="TODO"/>
       <exampleBoolean value="false"/>
-      <package value="terminology"/>
+      <groupingId value="terminology"/>
     </resource>
     
     <page>

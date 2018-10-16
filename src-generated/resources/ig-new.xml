@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ImplementationGuide xmlns="http://hl7.org/fhir">
+  <id value="davinci-crd"/>
+  <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
+    <valueString value="C:\Users\lloyd\Documents\SVN\davinci-crd\src-generated\resources"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
+    <valueString value="C:\Users\lloyd\Documents\SVN\davinci-crd\src\resources"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
+    <valueString value="C:\Users\lloyd\Documents\SVN\davinci-crd\src\vocabulary"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
+    <valueString value="C:\Users\lloyd\Documents\SVN\davinci-crd\src\examples"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages">
+    <valueString value="C:\Users\lloyd\Documents\SVN\davinci-crd\src\images"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages">
+    <valueString value="C:\Users\lloyd\Documents\SVN\davinci-crd\src-generated\pages"/>
+  </extension>
+  <url value="http://hl7.org/fhir/us/davinci-crd/ImplementationGuide/davinci-crd"/>
+  <version value="0.2.0"/>
+  <name value="CoverageRequirementsDiscovery"/>
+  <title value="Da Vinci - Coverage Requirements Discovery"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <publisher value="HL7 Davinci Project"/>
+  <description value="Guidelines for conveying coverage requirements to clinicians when planning treatment"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+    </coding>
+  </jurisdiction>
+  <packageId value="hl7.fhir.us.davinci.crd"/>
+  <license value="CC0-1.0"/>
+  <fhirVersion value="3.6.0"/>
+  <fhirVersion value="3.6.0"/>
+  <definition>
+    <grouping id="profiles">
+      <name value="Profiles"/>
+      <description value="Profiles to be supported by EHRs and payor systems conforming to this implementation guide"/>
+    </grouping>
+    <grouping id="extensions">
+      <name value="Extensions"/>
+      <description value="Extensions defined as part of this implementation guide"/>
+    </grouping>
+    <grouping id="search">
+      <name value="Search Parameters"/>
+      <description value="Search Parameters defined as part of this implementation guide"/>
+    </grouping>
+    <grouping id="terminology">
+      <name value="Terminology"/>
+      <description value="Value Sets and/or code systems defined as part of this implementation guide"/>
+    </grouping>
+    <resource>
+      <reference>
+        <reference value="SearchParameter/appointment-insurance-r4"/>
+      </reference>
+      <name value="CRD Appointment Insurance"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="search"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="SearchParameter/encounter-insurance-r4"/>
+      </reference>
+      <name value="CRD Encounter Insurance"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="search"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="SearchParameter/medicationrequest-insurance-r4"/>
+      </reference>
+      <name value="CRD MedicationRequest Insurance"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="search"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="SearchParameter/nutritionorder-insurance-r4"/>
+      </reference>
+      <name value="CRD NutritionOrder Insurance"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="search"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="SearchParameter/servicerequest-insurance-r4"/>
+      </reference>
+      <name value="CRD ServiceRequest Insurance"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="search"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="SearchParameter/supplyrequest-insurance-r4"/>
+      </reference>
+      <name value="CRD SupplyRequest Insurance"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="search"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="SearchParameter/supplyrequest-patient-r4"/>
+      </reference>
+      <name value="CRD SupplyRequest Patient"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="search"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/ext-insurance"/>
+      </reference>
+      <name value="CRD Insurance Extension"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="extensions"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="CodeSystem/task-type"/>
+      </reference>
+      <name value="CRD Task Types Code System"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="terminology"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="CodeSystem/task-reason"/>
+      </reference>
+      <name value="CRD Task Reasons Code System"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="terminology"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/coverageClass"/>
+      </reference>
+      <name value="CRD Coverage Classes"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="terminology"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/locationAddressType"/>
+      </reference>
+      <name value="CRD Location Address Types"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="terminology"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/taskCode"/>
+      </reference>
+      <name value="CRD Task Types"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="terminology"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/taskReasonCode"/>
+      </reference>
+      <name value="CRD Task Reason Codes"/>
+      <description value="TODO"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="terminology"/>
+    </resource>
+    <page>
+      <nameUrl value="toc.html"/>
+      <title value="Table of Contents"/>
+      <generation value="html"/>
+      <page>
+        <nameUrl value="index.html"/>
+        <title value="CRD IG Home Page"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="background.html"/>
+        <title value="Background and Use Cases"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="hooks.html"/>
+        <title value="CRD specification"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="resources.html"/>
+        <title value="FHIR Resources"/>
+        <generation value="markdown"/>
+        <page>
+          <nameUrl value="artifacts.html"/>
+          <title value="Artifact List for FHIR R4"/>
+          <generation value="html"/>
+          <page>
+            <nameUrl value="profile-appointment-r4.html"/>
+            <title value="CRD Appointment"/>
+            <generation value="generated"/>
+          </page>
+          <page>
+            <nameUrl value="profile-communicationrequest-r4.html"/>
+            <title value="CRD Communication Request"/>
+            <generation value="generated"/>
+          </page>
+          <page>
+            <nameUrl value="profile-coverage-r4.html"/>
+            <title value="CRD Coverage"/>
+            <generation value="generated"/>
+          </page>
+          <page>
+            <nameUrl value="profile-coverage-deident-r4.html"/>
+            <title value="CRD Deidentified Coverage"/>
+            <generation value="generated"/>
+          </page>
+          <page>
+            <nameUrl value="profile-device-r4.html"/>
+            <title value="CRD Device"/>
+            <generation value="generated"/>
+          </page>
+          <page>
+            <nameUrl value="profile-devicerequest-r4.html"/>
+            <title value="CRD Device Request"/>
+            <generation value="generated"/>
+          </page>
+          <page>
+            <nameUrl value="profile-encounter-r4.html"/>
+            <title value="CRD Encounter"/>
+            <generation value="generated"/>
+          </page>
+          <page>
+            <nameUrl value="profile-location-r4.html"/>
+            <title value="CRD Location"/>
+            <generation value="generated"/>
+          </page>
+          <page>
+            <nameUrl value="profile-medication-r4.html"/>
+            <title value="CRD Medication"/>
+            <generation value="generated"/>
+          </page>
+          <page>
+            <nameUrl value="profile-medicationrequest-r4.html"/>
+            <title value="CRD Medication Request"/>
+            <generation value="generated"/>
+          </page>
+          <page>
+            <nameUrl value="profile-nutritionorder-r4.html"/>
+            <title value="CRD Nutrition Order"/>
+            <generation value="generated"/>
+          </page>
+          <page>
+            <nameUrl value="profile-organization-r4.html"/>
+            <title value="CRD Organization"/>
+            <generation value="generated"/>
+          </page>
+          <page>
+            <nameUrl value="profile-patient-r4.html"/>
+            <title value="CRD Patient"/>
+            <generation value="generated"/>
+          </page>
+          <page>
+            <nameUrl value="profile-patient-deident-r4.html"/>
+            <title value="CRD Deidentified Patient"/>
+            <generation value="generated"/>
+          </page>
+          <page>
+            <nameUrl value="profile-practitioner-r4.html"/>
+            <title value="CRD Practitioner"/>
+            <generation value="generated"/>
+          </page>
+          <page>
+            <nameUrl value="profile-practitionerrole-r4.html"/>
+            <title value="CRD PractitionerRole"/>
+            <generation value="generated"/>
+          </page>
+          <page>
+            <nameUrl value="profile-servicerequest-r4.html"/>
+            <title value="CRD Service Request"/>
+            <generation value="generated"/>
+          </page>
+          <page>
+            <nameUrl value="profile-supplyrequest-r4.html"/>
+            <title value="CRD Supply Request"/>
+            <generation value="generated"/>
+          </page>
+          <page>
+            <nameUrl value="profile-taskquestionnaire-r4.html"/>
+            <title value="CRD Questionnaire Task"/>
+            <generation value="generated"/>
+          </page>
+          <page>
+            <nameUrl value="appointment-insurance-r4.html"/>
+            <title value="CRD Appointment Insurance"/>
+            <generation value="generated"/>
+          </page>
+          <page>
+            <nameUrl value="encounter-insurance-r4.html"/>
+            <title value="CRD Encounter Insurance"/>
+            <generation value="generated"/>
+          </page>
+          <page>
+            <nameUrl value="medicationrequest-insurance-r4.html"/>
+            <title value="CRD MedicationRequest Insurance"/>
+            <generation value="generated"/>
+          </page>
+          <page>
+            <nameUrl value="nutritionorder-insurance-r4.html"/>
+            <title value="CRD NutritionOrder Insurance"/>
+            <generation value="generated"/>
+          </page>
+          <page>
+            <nameUrl value="servicerequest-insurance-r4.html"/>
+            <title value="CRD ServiceRequest Insurance"/>
+            <generation value="generated"/>
+          </page>
+          <page>
+            <nameUrl value="supplyrequest-insurance-r4.html"/>
+            <title value="CRD SupplyRequest Insurance"/>
+            <generation value="generated"/>
+          </page>
+          <page>
+            <nameUrl value="supplyrequest-patient-r4.html"/>
+            <title value="CRD SupplyRequest Patient"/>
+            <generation value="generated"/>
+          </page>
+          <page>
+            <nameUrl value="extension-ext-insurance.html"/>
+            <title value="CRD Insurance Extension"/>
+            <generation value="generated"/>
+          </page>
+          <page>
+            <nameUrl value="task-type.html"/>
+            <title value="CRD Task Types Code System"/>
+            <generation value="generated"/>
+          </page>
+          <page>
+            <nameUrl value="task-reason.html"/>
+            <title value="CRD Task Reasons Code System"/>
+            <generation value="generated"/>
+          </page>
+          <page>
+            <nameUrl value="valueset-coverageClass.html"/>
+            <title value="CRD Coverage Classes"/>
+            <generation value="generated"/>
+          </page>
+          <page>
+            <nameUrl value="valueset-locationAddressType.html"/>
+            <title value="CRD Location Address Types"/>
+            <generation value="generated"/>
+          </page>
+          <page>
+            <nameUrl value="valueset-taskCode.html"/>
+            <title value="CRD Task Types"/>
+            <generation value="generated"/>
+          </page>
+          <page>
+            <nameUrl value="valueset-taskReasonCode.html"/>
+            <title value="CRD Task Reason Codes"/>
+            <generation value="generated"/>
+          </page>
+        </page>
+      </page>
+      <page>
+        <nameUrl value="downloads.html"/>
+        <title value="Downloads"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="credits.html"/>
+        <title value="Credits"/>
+        <generation value="markdown"/>
+      </page>
+    </page>
+    <parameter>
+      <code value="apply"/>
+      <value value="version"/>
+    </parameter>
+    <parameter>
+      <code value="html-template"/>
+      <value value="template-page.html"/>
+    </parameter>
+    <parameter>
+      <code value="generate-json"/>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code value="generate-xml"/>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code value="generate-turtle"/>
+      <value value="true"/>
+    </parameter>
+  </definition>
+</ImplementationGuide>

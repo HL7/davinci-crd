@@ -32,7 +32,7 @@
       <xsl:apply-templates mode="STU3" select="@*|node()"/>
     </xsl:copy>
   </xsl:template>
-  <xsl:template mode="STU3" match="f:title"/>
+  <xsl:template mode="STU3" match="f:title|f:ImplementationGuide/f:packageId"/>
   <xsl:template mode="STU3" match="f:url/@value">
     <xsl:attribute name="value">
       <xsl:value-of select="concat(substring-before(., 'ImplementationGuide'), 'STU3/ImplementationGuide/', ancestor::f:ImplementationGuide/f:id/@value)"/>
@@ -62,7 +62,7 @@
     </xsl:if>
   </xsl:template>
   <xsl:template mode="STU3" match="f:definition">
-    <xsl:apply-templates mode="STU3" select="f:package|descendant::f:page[f:nameUrl/@value='STU3/artifacts.html'][1]"/>
+    <xsl:apply-templates mode="STU3" select="f:package|f:grouping|descendant::f:page[f:nameUrl/@value='STU3/artifacts.html'][1]"/>
   </xsl:template>
   <xsl:template match="f:resource">
     <xsl:if test="not(f:extension[@url='http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile' and f:valueBoolean/@value=true()])">
@@ -73,12 +73,12 @@
       </xsl:if>
     </xsl:if>
   </xsl:template>
-  <xsl:template mode="STU3" match="f:package">
+  <xsl:template mode="STU3" match="f:grouping">
     <xsl:variable name="relevant">
       <xsl:for-each select="parent::*/f:resource[not(f:extension[@url='http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile' and f:valueBoolean/@value=true()]) and f:extension[@url='http://hl7.org/fhir/StructureDefinition/tools-alternateVersion']/f:valueCode/@value=$version and f:package/@value=current()/@id]">content</xsl:for-each>
     </xsl:variable>
     <xsl:if test="not($relevant='')">
-      <xsl:copy>
+      <package xmlns="http://hl7.org/fhir">
         <xsl:apply-templates select="@*|node()"/>
         <xsl:for-each select="parent::*/f:resource[not(f:extension[@url='http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile' and f:valueBoolean/@value=true()]) and f:extension[@url='http://hl7.org/fhir/StructureDefinition/tools-alternateVersion']/f:valueCode/@value=$version and f:package/@value=current()/@id]">
           <xsl:copy>
@@ -94,7 +94,7 @@
             </xsl:for-each>
           </xsl:copy>
         </xsl:for-each>
-      </xsl:copy>
+      </package>
     </xsl:if>
   </xsl:template>
   <xsl:template match="f:page">
@@ -161,7 +161,7 @@
           <xsl:variable name="id" select="substring-after(*[self::f:sourceReference or self::f:reference]/f:reference/@value, '/')"/>
           <xsl:variable name="value">
             <xsl:choose>
-              <xsl:when test="starts-with($id, 'ext-') or contains(f:package/@value, 'xtension')">
+              <xsl:when test="starts-with($id, 'ext-') or contains(f:package/@value, 'xtension') or contains(f:groupingId/@value, 'xtension')">
                 <xsl:value-of select="concat('extension-', $id, '.html')"/>
               </xsl:when>
               <xsl:when test="$type='ValueSet' and not(f:example/@value='true' or f:exampleBoolean/@value='true' or f:exampleReference or f:exampleCanonical or f:purpose/@value='example')">

@@ -1,0 +1,419 @@
+{
+  "resourceType" : "ImplementationGuide",
+  "id" : "davinci-crd",
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
+    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\davinci-crd\\src-generated\\resources"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
+    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\davinci-crd\\src\\resources"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
+    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\davinci-crd\\src\\vocabulary"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
+    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\davinci-crd\\src\\examples"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
+    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\davinci-crd\\src\\images"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
+    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\davinci-crd\\src-generated\\pages"
+  }],
+  "url" : "http://hl7.org/fhir/us/davinci-crd/ImplementationGuide/davinci-crd",
+  "version" : "0.2.0",
+  "name" : "CoverageRequirementsDiscovery",
+  "title" : "Da Vinci - Coverage Requirements Discovery",
+  "status" : "draft",
+  "experimental" : false,
+  "publisher" : "HL7 Davinci Project",
+  "description" : "Guidelines for conveying coverage requirements to clinicians when planning treatment",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US"
+    }]
+  }],
+  "packageId" : "hl7.fhir.us.davinci.crd",
+  "license" : "CC0-1.0",
+  "fhirVersion" : ["3.6.0",
+  "3.6.0"],
+  "definition" : {
+    "grouping" : [{
+      "id" : "profiles",
+      "name" : "Profiles",
+      "description" : "Profiles to be supported by EHRs and payor systems conforming to this implementation guide"
+    },
+    {
+      "id" : "extensions",
+      "name" : "Extensions",
+      "description" : "Extensions defined as part of this implementation guide"
+    },
+    {
+      "id" : "search",
+      "name" : "Search Parameters",
+      "description" : "Search Parameters defined as part of this implementation guide"
+    },
+    {
+      "id" : "terminology",
+      "name" : "Terminology",
+      "description" : "Value Sets and/or code systems defined as part of this implementation guide"
+    }],
+    "resource" : [{
+      "reference" : {
+        "reference" : "SearchParameter/appointment-insurance-r4"
+      },
+      "name" : "CRD Appointment Insurance",
+      "description" : "TODO",
+      "exampleBoolean" : false,
+      "groupingId" : "search"
+    },
+    {
+      "reference" : {
+        "reference" : "SearchParameter/encounter-insurance-r4"
+      },
+      "name" : "CRD Encounter Insurance",
+      "description" : "TODO",
+      "exampleBoolean" : false,
+      "groupingId" : "search"
+    },
+    {
+      "reference" : {
+        "reference" : "SearchParameter/medicationrequest-insurance-r4"
+      },
+      "name" : "CRD MedicationRequest Insurance",
+      "description" : "TODO",
+      "exampleBoolean" : false,
+      "groupingId" : "search"
+    },
+    {
+      "reference" : {
+        "reference" : "SearchParameter/nutritionorder-insurance-r4"
+      },
+      "name" : "CRD NutritionOrder Insurance",
+      "description" : "TODO",
+      "exampleBoolean" : false,
+      "groupingId" : "search"
+    },
+    {
+      "reference" : {
+        "reference" : "SearchParameter/servicerequest-insurance-r4"
+      },
+      "name" : "CRD ServiceRequest Insurance",
+      "description" : "TODO",
+      "exampleBoolean" : false,
+      "groupingId" : "search"
+    },
+    {
+      "reference" : {
+        "reference" : "SearchParameter/supplyrequest-insurance-r4"
+      },
+      "name" : "CRD SupplyRequest Insurance",
+      "description" : "TODO",
+      "exampleBoolean" : false,
+      "groupingId" : "search"
+    },
+    {
+      "reference" : {
+        "reference" : "SearchParameter/supplyrequest-patient-r4"
+      },
+      "name" : "CRD SupplyRequest Patient",
+      "description" : "TODO",
+      "exampleBoolean" : false,
+      "groupingId" : "search"
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/ext-insurance"
+      },
+      "name" : "CRD Insurance Extension",
+      "description" : "TODO",
+      "exampleBoolean" : false,
+      "groupingId" : "extensions"
+    },
+    {
+      "reference" : {
+        "reference" : "CodeSystem/task-type"
+      },
+      "name" : "CRD Task Types Code System",
+      "description" : "TODO",
+      "exampleBoolean" : false,
+      "groupingId" : "terminology"
+    },
+    {
+      "reference" : {
+        "reference" : "CodeSystem/task-reason"
+      },
+      "name" : "CRD Task Reasons Code System",
+      "description" : "TODO",
+      "exampleBoolean" : false,
+      "groupingId" : "terminology"
+    },
+    {
+      "reference" : {
+        "reference" : "ValueSet/coverageClass"
+      },
+      "name" : "CRD Coverage Classes",
+      "description" : "TODO",
+      "exampleBoolean" : false,
+      "groupingId" : "terminology"
+    },
+    {
+      "reference" : {
+        "reference" : "ValueSet/locationAddressType"
+      },
+      "name" : "CRD Location Address Types",
+      "description" : "TODO",
+      "exampleBoolean" : false,
+      "groupingId" : "terminology"
+    },
+    {
+      "reference" : {
+        "reference" : "ValueSet/taskCode"
+      },
+      "name" : "CRD Task Types",
+      "description" : "TODO",
+      "exampleBoolean" : false,
+      "groupingId" : "terminology"
+    },
+    {
+      "reference" : {
+        "reference" : "ValueSet/taskReasonCode"
+      },
+      "name" : "CRD Task Reason Codes",
+      "description" : "TODO",
+      "exampleBoolean" : false,
+      "groupingId" : "terminology"
+    }],
+    "page" : {
+      "nameUrl" : "toc.html",
+      "title" : "Table of Contents",
+      "generation" : "html",
+      "page" : [{
+        "nameUrl" : "index.html",
+        "title" : "CRD IG Home Page",
+        "generation" : "markdown"
+      },
+      {
+        "nameUrl" : "background.html",
+        "title" : "Background and Use Cases",
+        "generation" : "markdown"
+      },
+      {
+        "nameUrl" : "hooks.html",
+        "title" : "CRD specification",
+        "generation" : "markdown"
+      },
+      {
+        "nameUrl" : "resources.html",
+        "title" : "FHIR Resources",
+        "generation" : "markdown",
+        "page" : [{
+          "nameUrl" : "artifacts.html",
+          "title" : "Artifact List for FHIR R4",
+          "generation" : "html",
+          "page" : [{
+            "nameUrl" : "profile-appointment-r4.html",
+            "title" : "CRD Appointment",
+            "generation" : "generated"
+          },
+          {
+            "nameUrl" : "profile-communicationrequest-r4.html",
+            "title" : "CRD Communication Request",
+            "generation" : "generated"
+          },
+          {
+            "nameUrl" : "profile-coverage-r4.html",
+            "title" : "CRD Coverage",
+            "generation" : "generated"
+          },
+          {
+            "nameUrl" : "profile-coverage-deident-r4.html",
+            "title" : "CRD Deidentified Coverage",
+            "generation" : "generated"
+          },
+          {
+            "nameUrl" : "profile-device-r4.html",
+            "title" : "CRD Device",
+            "generation" : "generated"
+          },
+          {
+            "nameUrl" : "profile-devicerequest-r4.html",
+            "title" : "CRD Device Request",
+            "generation" : "generated"
+          },
+          {
+            "nameUrl" : "profile-encounter-r4.html",
+            "title" : "CRD Encounter",
+            "generation" : "generated"
+          },
+          {
+            "nameUrl" : "profile-location-r4.html",
+            "title" : "CRD Location",
+            "generation" : "generated"
+          },
+          {
+            "nameUrl" : "profile-medication-r4.html",
+            "title" : "CRD Medication",
+            "generation" : "generated"
+          },
+          {
+            "nameUrl" : "profile-medicationrequest-r4.html",
+            "title" : "CRD Medication Request",
+            "generation" : "generated"
+          },
+          {
+            "nameUrl" : "profile-nutritionorder-r4.html",
+            "title" : "CRD Nutrition Order",
+            "generation" : "generated"
+          },
+          {
+            "nameUrl" : "profile-organization-r4.html",
+            "title" : "CRD Organization",
+            "generation" : "generated"
+          },
+          {
+            "nameUrl" : "profile-patient-r4.html",
+            "title" : "CRD Patient",
+            "generation" : "generated"
+          },
+          {
+            "nameUrl" : "profile-patient-deident-r4.html",
+            "title" : "CRD Deidentified Patient",
+            "generation" : "generated"
+          },
+          {
+            "nameUrl" : "profile-practitioner-r4.html",
+            "title" : "CRD Practitioner",
+            "generation" : "generated"
+          },
+          {
+            "nameUrl" : "profile-practitionerrole-r4.html",
+            "title" : "CRD PractitionerRole",
+            "generation" : "generated"
+          },
+          {
+            "nameUrl" : "profile-servicerequest-r4.html",
+            "title" : "CRD Service Request",
+            "generation" : "generated"
+          },
+          {
+            "nameUrl" : "profile-supplyrequest-r4.html",
+            "title" : "CRD Supply Request",
+            "generation" : "generated"
+          },
+          {
+            "nameUrl" : "profile-taskquestionnaire-r4.html",
+            "title" : "CRD Questionnaire Task",
+            "generation" : "generated"
+          },
+          {
+            "nameUrl" : "appointment-insurance-r4.html",
+            "title" : "CRD Appointment Insurance",
+            "generation" : "generated"
+          },
+          {
+            "nameUrl" : "encounter-insurance-r4.html",
+            "title" : "CRD Encounter Insurance",
+            "generation" : "generated"
+          },
+          {
+            "nameUrl" : "medicationrequest-insurance-r4.html",
+            "title" : "CRD MedicationRequest Insurance",
+            "generation" : "generated"
+          },
+          {
+            "nameUrl" : "nutritionorder-insurance-r4.html",
+            "title" : "CRD NutritionOrder Insurance",
+            "generation" : "generated"
+          },
+          {
+            "nameUrl" : "servicerequest-insurance-r4.html",
+            "title" : "CRD ServiceRequest Insurance",
+            "generation" : "generated"
+          },
+          {
+            "nameUrl" : "supplyrequest-insurance-r4.html",
+            "title" : "CRD SupplyRequest Insurance",
+            "generation" : "generated"
+          },
+          {
+            "nameUrl" : "supplyrequest-patient-r4.html",
+            "title" : "CRD SupplyRequest Patient",
+            "generation" : "generated"
+          },
+          {
+            "nameUrl" : "extension-ext-insurance.html",
+            "title" : "CRD Insurance Extension",
+            "generation" : "generated"
+          },
+          {
+            "nameUrl" : "task-type.html",
+            "title" : "CRD Task Types Code System",
+            "generation" : "generated"
+          },
+          {
+            "nameUrl" : "task-reason.html",
+            "title" : "CRD Task Reasons Code System",
+            "generation" : "generated"
+          },
+          {
+            "nameUrl" : "valueset-coverageClass.html",
+            "title" : "CRD Coverage Classes",
+            "generation" : "generated"
+          },
+          {
+            "nameUrl" : "valueset-locationAddressType.html",
+            "title" : "CRD Location Address Types",
+            "generation" : "generated"
+          },
+          {
+            "nameUrl" : "valueset-taskCode.html",
+            "title" : "CRD Task Types",
+            "generation" : "generated"
+          },
+          {
+            "nameUrl" : "valueset-taskReasonCode.html",
+            "title" : "CRD Task Reason Codes",
+            "generation" : "generated"
+          }]
+        }]
+      },
+      {
+        "nameUrl" : "downloads.html",
+        "title" : "Downloads",
+        "generation" : "markdown"
+      },
+      {
+        "nameUrl" : "credits.html",
+        "title" : "Credits",
+        "generation" : "markdown"
+      }]
+    },
+    "parameter" : [{
+      "code" : "apply",
+      "value" : "version"
+    },
+    {
+      "code" : "html-template",
+      "value" : "template-page.html"
+    },
+    {
+      "code" : "generate-json",
+      "value" : "true"
+    },
+    {
+      "code" : "generate-xml",
+      "value" : "true"
+    },
+    {
+      "code" : "generate-turtle",
+      "value" : "true"
+    }]
+  }
+}
