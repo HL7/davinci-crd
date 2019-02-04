@@ -26,7 +26,7 @@ Project participants included:
 * Cerner (Hans Buitendijk, Kevin Shekleton, Michelle Miller)
 * Epic (Danielle Friend, Isaac Vetter)
 * Health Care Data Standards (Mary Kay McDaniel)
-* Mitre (Andrew Gregorowitz)
+* Mitre (Andrew Gregorowicz)
 * Optum (Linda Michaelsen, Nicholas Radov)
 
 Our thanks to these and to the many others not explicitly listed who contributed their time, enthusiasm and expertise to this work.

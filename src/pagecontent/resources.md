@@ -27,6 +27,6 @@ The artifacts are of four types:
 * [Search Parameters]({{site.data.fhir.path}}searchparameter.html) defines additional search criteria needed to allow filtering of FHIR resources to those relevant for CRD use-cases
 
 
-For the purpose of this implementation guide, [Must Support]({{site.data.fhir}}profiling.html#mustsupport) means that client systems must be capable of exposing the data to at least some payer systems.  Payer systems are not obligated to make use of Must Support elements in performing their coverage requirements determination processes.
+For the purpose of this implementation guide, [Must Support]({{site.data.fhir.path}}profiling.html#mustsupport) means that client systems must be capable of exposing the data to at least some payer systems.  Payer systems are not obligated to make use of Must Support elements in performing their coverage requirements determination processes.
 
 <!-- Todo: examples, capabilitystatement, TestScenario? -->

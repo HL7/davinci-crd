@@ -3,27 +3,27 @@
   "id" : "davinci-crd",
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\davinci-crd\\src-generated\\resources"
+    "valueString" : "/Users/jeanduteau/Documents/DDIWork/Gevity/davinci-crd/src-generated/resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\davinci-crd\\src\\resources"
+    "valueString" : "/Users/jeanduteau/Documents/DDIWork/Gevity/davinci-crd/src/resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\davinci-crd\\src\\vocabulary"
+    "valueString" : "/Users/jeanduteau/Documents/DDIWork/Gevity/davinci-crd/src/vocabulary"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\davinci-crd\\src\\examples"
+    "valueString" : "/Users/jeanduteau/Documents/DDIWork/Gevity/davinci-crd/src/examples"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\davinci-crd\\src\\images"
+    "valueString" : "/Users/jeanduteau/Documents/DDIWork/Gevity/davinci-crd/src/images"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\davinci-crd\\src-generated\\pages"
+    "valueString" : "/Users/jeanduteau/Documents/DDIWork/Gevity/davinci-crd/src-generated/pages"
   }],
   "url" : "http://hl7.org/fhir/us/davinci-crd/ImplementationGuide/davinci-crd",
   "version" : "0.2.0",
@@ -41,8 +41,8 @@
   }],
   "packageId" : "hl7.fhir.us.davinci.crd",
   "license" : "CC0-1.0",
-  "fhirVersion" : ["3.6.0",
-  "3.6.0"],
+  "fhirVersion" : ["4.0.0",
+  "4.0.0"],
   "definition" : {
     "grouping" : [{
       "id" : "profiles",
@@ -201,12 +201,17 @@
       },
       {
         "nameUrl" : "background.html",
-        "title" : "Background and Use Cases",
+        "title" : "Background",
+        "generation" : "markdown"
+      },
+      {
+        "nameUrl" : "usecases.html",
+        "title" : "Use Cases",
         "generation" : "markdown"
       },
       {
         "nameUrl" : "hooks.html",
-        "title" : "CRD specification",
+        "title" : "CRD Specification",
         "generation" : "markdown"
       },
       {

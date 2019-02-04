@@ -5,7 +5,7 @@
   "nestedIgConfig":"davinci-crdSTU3.json",
   "nestedIgOutput":"STU3",
   "igArtifactsPage":"artifacts.html",
-  "version": "3.6.0",
+  "version": "4.0.0",
   "fixed-business-version": "0.2.0",
   "html-template": "template-page.html",
   "md-template": "template-page-md.html",
@@ -19,7 +19,7 @@
     "txCache": "txcache",
     "history" : "history.html",
     "qa": "../temp/qa",
-    "specification": "http://build.fhir.org/"
+    "specification": "http://fhir.hl7.org/"
   },
   "suppressedWarningFile": "../src/ignoreWarnings.txt",
   "includeHeadings": false,

@@ -3,22 +3,22 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir">
   <id value="davinci-crd"/>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="C:\Users\lloyd\Documents\SVN\davinci-crd\src-generated\resources"/>
+    <valueString value="/Users/jeanduteau/Documents/DDIWork/Gevity/davinci-crd/src-generated/resources"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="C:\Users\lloyd\Documents\SVN\davinci-crd\src\resources"/>
+    <valueString value="/Users/jeanduteau/Documents/DDIWork/Gevity/davinci-crd/src/resources"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="C:\Users\lloyd\Documents\SVN\davinci-crd\src\vocabulary"/>
+    <valueString value="/Users/jeanduteau/Documents/DDIWork/Gevity/davinci-crd/src/vocabulary"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="C:\Users\lloyd\Documents\SVN\davinci-crd\src\examples"/>
+    <valueString value="/Users/jeanduteau/Documents/DDIWork/Gevity/davinci-crd/src/examples"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages">
-    <valueString value="C:\Users\lloyd\Documents\SVN\davinci-crd\src\images"/>
+    <valueString value="/Users/jeanduteau/Documents/DDIWork/Gevity/davinci-crd/src/images"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages">
-    <valueString value="C:\Users\lloyd\Documents\SVN\davinci-crd\src-generated\pages"/>
+    <valueString value="/Users/jeanduteau/Documents/DDIWork/Gevity/davinci-crd/src-generated/pages"/>
   </extension>
   <url value="http://hl7.org/fhir/us/davinci-crd/ImplementationGuide/davinci-crd"/>
   <version value="0.2.0"/>
@@ -36,8 +36,8 @@
   </jurisdiction>
   <packageId value="hl7.fhir.us.davinci.crd"/>
   <license value="CC0-1.0"/>
-  <fhirVersion value="3.6.0"/>
-  <fhirVersion value="3.6.0"/>
+  <fhirVersion value="4.0.0"/>
+  <fhirVersion value="4.0.0"/>
   <definition>
     <grouping id="profiles">
       <name value="Profiles"/>
@@ -192,12 +192,17 @@
       </page>
       <page>
         <nameUrl value="background.html"/>
-        <title value="Background and Use Cases"/>
+        <title value="Background"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="usecases.html"/>
+        <title value="Use Cases"/>
         <generation value="markdown"/>
       </page>
       <page>
         <nameUrl value="hooks.html"/>
-        <title value="CRD specification"/>
+        <title value="CRD Specification"/>
         <generation value="markdown"/>
       </page>
       <page>
