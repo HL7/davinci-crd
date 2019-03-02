@@ -192,11 +192,11 @@ For example, a prefetch for `order-review` might look like this:
 
 {% raw %}
     "prefetch": {
-      "ins-sr": "ServiceRequest?id={{context.orders.ServiceRequest.id}}&_include=ServiceRequest:insurance"
+      "ins-sr": "ServiceRequest?_id={{context.orders.ServiceRequest.id}}&_include=ServiceRequest:insurance"
     }
 {% endraw %}
 
-This might result in an executed query that looks like this: `ServiceRequest?id=2347,10948,5881&_include=ServiceRequest:insurance`
+This might result in an executed query that looks like this: `ServiceRequest?_id=2347,10948,5881&_include=ServiceRequest:insurance`
 
 BALLOT NOTE: This proposal pre-adoption is not CDS Hooks conformant.  It is possible that the CDS Hooks community will adopt an alternative solution or may even choose not to make any changes.  This implementation guide will be updated to align with the decision of the community and may, if necessary, fall back to the use of extensions if CDS Hooks does not choose to support prefetch based on context resources and the payer community determines that prefetch is still required.
 
@@ -1034,7 +1034,7 @@ EHR implementations should not expect standardized prefetch key names.  EHRs sup
     <td>Appointment</td>
     <td>STU3</td>
     <td>
-      <code>Appointment?id={{context.orders.Appointment.id}}<br/>
+      <code>Appointment?_id={{context.orders.Appointment.id}}<br/>
       &_include=Appointment:patient, Appointment:practitioner<br/>
       &_include=Appointment:location<br/>
       &_include=Appointment:<a href="STU3/appointment-insurance-stu3.html">insurance</a>:Coverage</code>
@@ -1045,7 +1045,7 @@ EHR implementations should not expect standardized prefetch key names.  EHRs sup
     <td>Appointment</td>
     <td>R4</td>
     <td>
-      <code>Appointment?id={{context.orders.Appointment.id}}<br/>
+      <code>Appointment?_id={{context.orders.Appointment.id}}<br/>
       &_include=Appointment:patient<br/>
       &_include=Appointment:practitioner:PractitionerRole<br/>
       &_include=PractitionerRole:organization<br/>
@@ -1059,7 +1059,7 @@ EHR implementations should not expect standardized prefetch key names.  EHRs sup
     <td>DeviceRequest</td>
     <td>STU3</td>
     <td>
-      <code>DeviceRequest?id={{context.orders.DeviceRequest.id}}<br/>
+      <code>DeviceRequest?_id={{context.orders.DeviceRequest.id}}<br/>
       &_include=DeviceRequest:patient<br/>
       &_include=DeviceRequest:performer<br/>
       &_include=DeviceRequest:requester<br/>
@@ -1073,7 +1073,7 @@ EHR implementations should not expect standardized prefetch key names.  EHRs sup
     <td>DeviceRequest</td>
     <td>R4</td>
     <td>
-      <code>DeviceRequest?id={{context.orders.DeviceRequest.id}}<br/>
+      <code>DeviceRequest?_id={{context.orders.DeviceRequest.id}}<br/>
       &_include=DeviceRequest:patient<br/>
       &_include=DeviceRequest:performer<br/>
       &_include=DeviceRequest:requester<br/>
@@ -1088,7 +1088,7 @@ EHR implementations should not expect standardized prefetch key names.  EHRs sup
     <td>Encounter</td>
     <td>STU3</td>
     <td>
-      <code>Encounter?id={{context.orders.Encounter.id}}<br/>
+      <code>Encounter?_id={{context.orders.Encounter.id}}<br/>
       &_include=Encounter:patient<br/>
       &_include=Encounter:service-provider<br/>
       &_include=Encounter:practitioner<br/>
@@ -1101,7 +1101,7 @@ EHR implementations should not expect standardized prefetch key names.  EHRs sup
     <td>Encounter</td>
     <td>R4</td>
     <td>
-      <code>Encounter?id={{context.orders.Encounter.id}}<br/>
+      <code>Encounter?_id={{context.orders.Encounter.id}}<br/>
       &_include=Encounter:patient&_include=Encounter:service-provider<br/>
       &_include=Encounter:practitioner<br/>
       &_include=Encounter:location<br/>
@@ -1113,7 +1113,7 @@ EHR implementations should not expect standardized prefetch key names.  EHRs sup
     <td>MedicationRequest</td>
     <td>STU3</td>
     <td>
-      <code>MedicationRequest?id={{context.medications.MedicationRequest.id}}<br/>
+      <code>MedicationRequest?_id={{context.medications.MedicationRequest.id}}<br/>
       &_include=MedicationRequest:patient<br/>
       &_include=MedicationRequest:intended-dispenser<br/>
       &_include=MedicationRequest:requester:Practitioner<br/>
@@ -1127,7 +1127,7 @@ EHR implementations should not expect standardized prefetch key names.  EHRs sup
     <td>MedicationRequest</td>
     <td>R4</td>
     <td>
-      <code>MedicationRequest?id={{context.medications.MedicationRequest.id}}<br/>
+      <code>MedicationRequest?_id={{context.medications.MedicationRequest.id}}<br/>
       &_include=MedicationRequest:patient<br/>
       &_include=MedicationRequest:intended-dispenser<br/>
       &_include=MedicationRequest:requester:PractitionerRole<br/>
@@ -1142,7 +1142,7 @@ EHR implementations should not expect standardized prefetch key names.  EHRs sup
     <td>MedicationRequest</td>
     <td>STU3</td>
     <td>
-      <code>MedicationRequest?id={{context.orders.MedicationRequest.id}}<br/>
+      <code>MedicationRequest?_id={{context.orders.MedicationRequest.id}}<br/>
       &_include=MedicationRequest:patient<br/>
       &_include=MedicationRequest:intended-dispenser<br/>
       &_include=MedicationRequest:requester:Practitioner<br/>
@@ -1156,7 +1156,7 @@ EHR implementations should not expect standardized prefetch key names.  EHRs sup
     <td>MedicationRequest</td>
     <td>R4</td>
     <td>
-      <code>MedicationRequest?id={{context.orders.MedicationRequest.id}}<br/>
+      <code>MedicationRequest?_id={{context.orders.MedicationRequest.id}}<br/>
       &_include=MedicationRequest:patient<br/>
       &_include=MedicationRequest:intended-dispenser<br/>
       &_include=MedicationRequest:requester:PractitionerRole<br/>
@@ -1171,7 +1171,7 @@ EHR implementations should not expect standardized prefetch key names.  EHRs sup
     <td>NutritionOrder</td>
     <td>STU3</td>
     <td>
-      <code>NutritionOrder?id={{context.orders.NutritionOrder.id}}<br/>
+      <code>NutritionOrder?_id={{context.orders.NutritionOrder.id}}<br/>
       &_include=NutritionOrder:patient<br/>
       &_include=NutritionOrder:provider<br/>
       &_include=NutritionOrder:requester<br/>
@@ -1185,7 +1185,7 @@ EHR implementations should not expect standardized prefetch key names.  EHRs sup
     <td>NutritionOrder</td>
     <td>R4</td>
     <td>
-      <code>NutritionOrder?id={{context.orders.NutritionOrder.id}}<br/>
+      <code>NutritionOrder?_id={{context.orders.NutritionOrder.id}}<br/>
       &_include=NutritionOrder:patient<br/>
       &_include=NutritionOrder:provider<br/>
       &_include=NutritionOrder:requester<br/>
@@ -1201,7 +1201,7 @@ EHR implementations should not expect standardized prefetch key names.  EHRs sup
     <td>ProcedureRequest</td>
     <td>STU3</td>
     <td>
-      <code>ProcedureRequest?id={{context.orders.ProcedureRequest.id}}<br/>
+      <code>ProcedureRequest?_id={{context.orders.ProcedureRequest.id}}<br/>
       &_include=ProcedureRequest:patient<br/>
       &_include=ProcedureRequest:performer<br/>
       &_include=ProcedureRequest:requester<br/>
@@ -1214,7 +1214,7 @@ EHR implementations should not expect standardized prefetch key names.  EHRs sup
     <td>ReferralRequest</td>
     <td>STU3</td>
     <td>
-      <code>ReferralRequest?id={{context.orders.ReferralRequest.id}}<br/>
+      <code>ReferralRequest?_id={{context.orders.ReferralRequest.id}}<br/>
       &_include=ReferralRequest:patient<br/>
       &_include=ReferralRequest:recipient<br/>
       &_include=ReferralRequest:requester<br/>
@@ -1227,7 +1227,7 @@ EHR implementations should not expect standardized prefetch key names.  EHRs sup
     <td>ServiceRequest</td>
     <td>R4</td>
     <td>
-      <code>ServiceRequest?id={{context.orders.ServiceRequest.id}}<br/>
+      <code>ServiceRequest?_id={{context.orders.ServiceRequest.id}}<br/>
       &_include=ServiceRequest:patient<br/>
       &_include=ServiceRequest:performer<br/>
       &_include=ServiceRequest:requester<br/>
@@ -1241,7 +1241,7 @@ EHR implementations should not expect standardized prefetch key names.  EHRs sup
     <td>SupplyRequest</td>
     <td>STU3</td>
     <td>
-      <code>SupplyRequest?id={{context.orders.SupplyRequest.id}}<br/>
+      <code>SupplyRequest?_id={{context.orders.SupplyRequest.id}}<br/>
       &_include=SupplyRequest:<a href="STU3/supplyrequest-patient-stu3.html">patient</a><br/>
       &_include=SupplyRequest:supplier:Organization<br/>
       &_include=SupplyRequest:requester:Practitioner<br/>
@@ -1254,7 +1254,7 @@ EHR implementations should not expect standardized prefetch key names.  EHRs sup
     <td>SupplyRequest</td>
     <td>R4</td>
     <td>
-      <code>SupplyRequest?id={{context.orders.SupplyRequest.id}}&<br/>
+      <code>SupplyRequest?_id={{context.orders.SupplyRequest.id}}&<br/>
       _include=SupplyRequest:<a href="supplyrequest-patient-r4.html">patient</a><br/>
       &_include=SupplyRequest:supplier:Organization<br/>
       &_include=SupplyRequest:requester:Practitioner<br/>
@@ -1270,7 +1270,7 @@ EHR implementations should not expect standardized prefetch key names.  EHRs sup
     <td>VisionPrescription</td>
     <td>STU3</td>
     <td>
-      <code>VisionPrescription?id={{context.orders.VisionPrescription.id}}<br/>
+      <code>VisionPrescription?_id={{context.orders.VisionPrescription.id}}<br/>
       &_include=VisionPrescription:patient<br/>
       &_include=VisionPrescription:prescriber<br/>
       &_include=VisionPrescription:<a href="STU3/visionprescription-insurance-stu3.html">insurance</a>:Coverage</code>
