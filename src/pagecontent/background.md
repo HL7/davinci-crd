@@ -21,9 +21,9 @@ prior to reading the rest of this implementation guide.
 * [How to read resource & profile definitions]({{site.data.fhir.path}}formats.html)
 * [Base resource]({{site.data.fhir.path}}resource.html)
 
-This implementation guide also leverages the US Core set of profiles defined by HL7 for sharing human EHR data in the US.  Additional information is located at: [US-Core]({{site.data.fhir.path}}hooks.html#us-core)
+This implementation guide also leverages the US Core set of profiles defined by HL7 for sharing human EMR data in the US.  Additional information is located at: [US-Core]({{site.data.fhir.path}}hooks.html#us-core)
 
-This implementation guide supports the [STU3](http://hl7.org/fhir/STU3) and [R4]({{site.data.fhir.path}}index.html) versions of the FHIR standard. FHIR services based on STU3 are being moved into production by EHR vendors. R4 is just recently published and the goal is to ensure the implementation guide is aligned with the current direction of the FHIR standard. Initial implementations will focus on STU3.
+This implementation guide supports the [STU3](http://hl7.org/fhir/STU3) and [R4]({{site.data.fhir.path}}index.html) versions of the FHIR standard. FHIR services based on STU3 are being moved into production by EMR vendors. R4 is just recently published and the goal is to ensure the implementation guide is aligned with the current direction of the FHIR standard. Initial implementations will focus on STU3.
 
 This implementation guide also builds on the US Core Implementation Guide and implementers need to familiarize themselves with the profiles in those Implementation Guides:
 <table>
@@ -96,4 +96,4 @@ Clinical systems will use the specification and workflows defined by [CDS Hooks]
 
 
 #### SMART on FHIR
-Client systems conformant to this implementation guide SHALL also serve as a SMART on FHIR client.  This is to allow coverage discovery functionality to be invoked outside of regular clinical workflows using a SMART on FHIR application to provide a consistent way of edvaluating "what if?" scenarios across EHR implementations.  As such client implementers will also need to be familiar with the [SMART on FHIR](http://hl7.org/fhir/smart-app-launch) specification.  Because the SMART on FHIR app will interact with payer systems through the CDS Hooks interface, payer implementers only need to be familiar with the SMART on FHIR specification if they plan to develop SMART apps for launch by CDS Hooks or for other purposes.
+Client systems conformant to this implementation guide SHALL also serve as a SMART on FHIR client.  This is to allow coverage discovery functionality to be invoked outside of regular clinical workflows using a SMART on FHIR application to provide a consistent way of edvaluating "what if?" scenarios across EMR implementations.  As such client implementers will also need to be familiar with the [SMART on FHIR](http://hl7.org/fhir/smart-app-launch) specification.  Because the SMART on FHIR app will interact with payer systems through the CDS Hooks interface, payer implementers only need to be familiar with the SMART on FHIR specification if they plan to develop SMART apps for launch by CDS Hooks or for other purposes.

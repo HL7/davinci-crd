@@ -204,7 +204,7 @@
     </extension>
     <grouping id="profiles">
       <name value="Profiles"/>
-      <description value="Profiles to be supported by EHRs and payor systems conforming to this implementation guide"/>
+      <description value="Profiles to be supported by EMRs and payor systems conforming to this implementation guide"/>
     </grouping>
     <grouping id="extensions">
       <name value="Extensions"/>

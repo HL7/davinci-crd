@@ -15,13 +15,13 @@ The full set of profiles defined in this implementation guide can be found on th
 
 
 #### US Core
-This implementation guide also leverages the [US Core](http://hl7.org/fhir/us/core) set of profiles defined by HL7 for sharing human EHR data in the US.  Where US Core profiles exist, this Guide either leverages them directly or uses them as a base for any additional constraints needed to support the coverage requirements discovery use-case for STU3 profiles.  If no constraints are needed, this IG doesn't define any profiles.  However, all US Core profiles are deemed to be part of this IG and available for use in CRD communications.  For example, the Observation and Condition profiles, which are likely to be of interest in at least some CRD scenarios.
+This implementation guide also leverages the [US Core](http://hl7.org/fhir/us/core) set of profiles defined by HL7 for sharing human EMR data in the US.  Where US Core profiles exist, this Guide either leverages them directly or uses them as a base for any additional constraints needed to support the coverage requirements discovery use-case for STU3 profiles.  If no constraints are needed, this IG doesn't define any profiles.  However, all US Core profiles are deemed to be part of this IG and available for use in CRD communications.  For example, the Observation and Condition profiles, which are likely to be of interest in at least some CRD scenarios.
 
 Where US Core profiles do not yet exist (e.g. for several of the 'Request' resources), profiles have been created that try to align with existing US Core profiles in terms of elements exposed and terminologies used.  There is not yet a US Core implementation guide for R4.  Therefore, R4 profiles have been created that attempt to align with the equivalent R3 profiles.
 
 There is one exception to the use of or alignment with US Core profiles.  The [non-PHI](#non-phi-hook-invocation) interfaces are not based on US Core because the US Core profiles expect support for and sometimes demand the sharing of patient-identifying information.
 
-Note that in some cases the US Core profiles require the support of data elements that may not be relevant to the coverage requirements discovery use-case.  It was felt that leveraging existing standard interfaces would promote greater (and quicker) interoperability than a more tuned custom interface.  EHR systems may still choose to restrict what information is exposed to payer systems based on their internal data access and governance rules.
+Note that in some cases the US Core profiles require the support of data elements that may not be relevant to the coverage requirements discovery use-case.  It was felt that leveraging existing standard interfaces would promote greater (and quicker) interoperability than a more tuned custom interface.  EMR systems may still choose to restrict what information is exposed to payer systems based on their internal data access and governance rules.
 
 ### CDS Hooks
 
@@ -69,7 +69,7 @@ Each CDS Hook service provided by a payer might support multiple different types
 
 Not all these cards will necessarily be relevant to all users.  While it might be possible (through negotiation between provider and payer) to configure a service to withhold certain card types from certain practitioner roles, this is unlikely to be sufficiently responsive and places a considerable configuration burden on the payer software.  As well, in some cases, preferences about what information to receive could be specific to the user.  An alternative would be for the payer to host a distinct service for every single card type it was able to return, but this could result in the payer receiving 10+ service calls each time the hook fired and performing considerable redundant processing in each service.  It would therefore be nice if a hook could, upon invocation, indicate what subset of response types were wanted - for that specific hook invocation.  The client system could then dynamically configure the response types based on user type, individual user, location within the workflow where the hook was being fired, whether the hook had previously been fired or other factors.
 
-It is not clear whether this capability will be of interest to EHR systems or to other types of decision support services.  Therefore, rather than proposing a change to the base CDS Hook specification, this IG will leverage the CDS Hook extension mechanism.  After connectathon and implementation experience, if this proves to be a useful feature, a change may be requested, and this will become a core portion of the CDS Hook environment.
+It is not clear whether this capability will be of interest to EMR systems or to other types of decision support services.  Therefore, rather than proposing a change to the base CDS Hook specification, this IG will leverage the CDS Hook extension mechanism.  After connectathon and implementation experience, if this proves to be a useful feature, a change may be requested, and this will become a core portion of the CDS Hook environment.
 
 Extensions will be enabled in two places:
 
@@ -176,7 +176,7 @@ Notes:
 *  Payer systems may receive configuration information that they do not support.  In this case, the payer system SHALL ignore the unsupported configuration information.
 
 
-**EHR client systems SHOULD provide an ability to leverage the dynamic configuration capabilities of payer services based on practitioner role, individual practitioner and/or hook invocation location as best meets the needs of their providers.**
+**EMR client systems SHOULD provide an ability to leverage the dynamic configuration capabilities of payer services based on practitioner role, individual practitioner and/or hook invocation location as best meets the needs of their providers.**
 
 
 ##### Additional Pre-fetch capabilities
@@ -209,7 +209,7 @@ CDS Hooks supports suggestions that involve multiple actions.  Coverage requirem
 *  Creating a Task to complete a Questionnaire
 *  Updating the proposed order to point to a "new" prior authorization (ClaimResponse instance) - one the payer was aware of the EMR was not.
 
-In the first case, the creation of the Questionnaire needs to be conditional - it should only occur if that specific Questionnaire version doesn't already exist.  In the second case, the order will need to be updated to point to the "id" assigned by the EHR to the newly persisted ClaimResponse instance.  Both of these capabilities are supported in FHIR's [transaction]({{site.data.fhir.path}}http.html#transaction)  functionality.  However, not all the capabilities/guidance included there has been incorporated into CDS Hooks 'suggestions', in part to keep the specification simpler.
+In the first case, the creation of the Questionnaire needs to be conditional - it should only occur if that specific Questionnaire version doesn't already exist.  In the second case, the order will need to be updated to point to the "id" assigned by the EMR to the newly persisted ClaimResponse instance.  Both of these capabilities are supported in FHIR's [transaction]({{site.data.fhir.path}}http.html#transaction)  functionality.  However, not all the capabilities/guidance included there has been incorporated into CDS Hooks 'suggestions', in part to keep the specification simpler.
 
 For this release of the specification, these requirements will be handled as follows:
 
@@ -223,7 +223,7 @@ For example, this [CDS Hook Suggestion](https://cds-hooks.hl7.org/specification/
         "label": "Add 'completion of the XYZ form' to your task list (possibly for reassignment)",
         "actions": [{
           "type": "create",
-          "description": "Add version 2 of the XYZ form to the EHR's repository (if it doesn't already exist)",
+          "description": "Add version 2 of the XYZ form to the EMR's repository (if it doesn't already exist)",
           "resource": {
             "resourceType": "Questionnaire",
             "url": "http://example.org/Questionnaire/XYZ",
@@ -287,7 +287,7 @@ For example, the following [CDS Hook Suggestion](https://cds-hooks.hl7.org/speci
           },
         },{
           "type": "create",
-          "description": "Record the pre-existing prior authorization in the EHR",
+          "description": "Record the pre-existing prior authorization in the EMR",
           "resource": {
             "resourceType": "ClaimResponse",
             "status": "active",
@@ -362,7 +362,7 @@ There are no constraints or special rules related to this hook beyond the profil
   </tr>
 </table>
 
-Note: While this hook is defined for use when prescribing, it is still relevant when proposing (e.g. as part of a consult note) or planning (e.g. as part of a care plan) the use of a medication.  The MedicationRequest resource supports differentiating between plans, proposal and orders.  Where EHRs have an appropriate workflow and data capture mechanism, this hook could be used in scenarios that don't involve creating a true prescription.
+Note: While this hook is defined for use when prescribing, it is still relevant when proposing (e.g. as part of a consult note) or planning (e.g. as part of a care plan) the use of a medication.  The MedicationRequest resource supports differentiating between plans, proposal and orders.  Where EMRs have an appropriate workflow and data capture mechanism, this hook could be used in scenarios that don't involve creating a true prescription.
 
 
 ###### order-review
@@ -414,7 +414,7 @@ There are no additional constraints or special rules related to this hook beyond
   </tr>
 </table>
 
-Note: This hook is defined for use when reviewing a set of orders.  However, it is potentially also relevant when proposing (e.g. as part of a consult note) or planning (e.g. as part of a care plan) one or more interventions or diagnostic steps.  The different 'Request' resources support differentiating between plans, proposal and orders.  Where EHRs have an appropriate workflow and data capture mechanism, this hook could be used in scenarios that don't involve creating true 'orders'.
+Note: This hook is defined for use when reviewing a set of orders.  However, it is potentially also relevant when proposing (e.g. as part of a consult note) or planning (e.g. as part of a care plan) one or more interventions or diagnostic steps.  The different 'Request' resources support differentiating between plans, proposal and orders.  Where EMRs have an appropriate workflow and data capture mechanism, this hook could be used in scenarios that don't involve creating true 'orders'.
 
 
 ##### New hooks
@@ -850,7 +850,7 @@ TODO: example
 
 
 ###### Request form completion
-A common type of response is to indicate forms that need completion.  These might be forms needed for pre-authorization or as attachments for claims submission.  They might also just be for internal use to retain as proof of following clinical need protocols and to have available in the event of audit.  While forms can be expressed as static or active PDFs referenced by [External References](#external-reference), this response type provides the form definition as a FHIR Questionnaire and creates a Task within the EHR allowing the completion of the form to be appropriately scheduled and/or delegated.  Alternatively, the Practitioner could choose to execute the task and fill out the form immediately if that makes more sense from a clinical workflow perspective.
+A common type of response is to indicate forms that need completion.  These might be forms needed for pre-authorization or as attachments for claims submission.  They might also just be for internal use to retain as proof of following clinical need protocols and to have available in the event of audit.  While forms can be expressed as static or active PDFs referenced by [External References](#external-reference), this response type provides the form definition as a FHIR Questionnaire and creates a Task within the EMR allowing the completion of the form to be appropriately scheduled and/or delegated.  Alternatively, the Practitioner could choose to execute the task and fill out the form immediately if that makes more sense from a clinical workflow perspective.
 
 This suggestion will always include a "create" action for the Task.  The Task will point to the questionnaire to be completed using the `Task.input` property with a `Task.input.name` of "questionnaire".  That Questionnaire might be included with a separate conditional "create" action or might be excluded with the presumption it will already be available or retrievable by the client via its canonical URL from the original source or from a local registry.  The `Task.code` will always include the CRD-specific `complete-questionnaire` code.  The reason for completion will be conveyed in `Task.reasonCode`.
 
@@ -869,7 +869,7 @@ When using this response type, the proposed orders (and any associated resources
   </tr>
 </table>
   
-No profile is provided for the Questionnaires pointed to by the Task.  Payers SHOULD use questionnaires that are compliant with either the [Argonaut Questionnaire profiles](https://github.com/argonautproject/questionnaire) (for forms to be completed within the EHR) or the [Structured Data Capture profiles](http://hl7.org/fhir/us/sdc) (for more sophisticated forms to be created within a SMART on FHIR app or through an external service).
+No profile is provided for the Questionnaires pointed to by the Task.  Payers SHOULD use questionnaires that are compliant with either the [Argonaut Questionnaire profiles](https://github.com/argonautproject/questionnaire) (for forms to be completed within the EMR) or the [Structured Data Capture profiles](http://hl7.org/fhir/us/sdc) (for more sophisticated forms to be created within a SMART on FHIR app or through an external service).
 
 The following is an example CDS Hook [Suggestion](https://cds-hooks.hl7.org/specification/1.0/#suggestion) where the specified questionnaire is either expected to be available within the client system or available for retrieval through its canonical URL.  As such, the [Action](https://cds-hooks.hl7.org/specification/1.0/#action) only contains the FHIR [Task]({{site.data.fhir.path}}task.html) resource.  An example showing inclusion of both the Task and the referenced Questionnaire can be found [above](#if-none-exist).
 
@@ -918,7 +918,7 @@ This response will contain a single suggestion.  The primary action within it wi
 For example, this CDS Hook [Card](https://cds-hooks.hl7.org/specification/1.0/#card-attributes) includes a single [Suggestion](https://cds-hooks.hl7.org/specification/1.0/#suggestion) with two [Actions](https://cds-hooks.hl7.org/specification/1.0/#action) - one is to update the FHIR [Coverage]({{site.data.fhir.path}}coverage.html) and the second is to update the draft order [MedicationRequest]({{site.data.fhir.path}}medicationrequest.html) to reference the existing Coverage.
 
     {
-      "summary": "EHR coverage information is incomplete",
+      "summary": "EMR coverage information is incomplete",
       "indicator": "info",
       "source": {
         "label": "Some Payer",
@@ -1018,7 +1018,7 @@ Not all of these will be relevant for all resource types.  And different resourc
 
 The 'standard' prefetch queries for this implementation guide that SHOULD be supported for each type of resource are shown in the table below.  Those search parameters with hyperlinks are defined as part of this implementation guide.  The remainder are defined within their respective version of the FHIR core specification.  These queries leverage the CDS Hook context extension [described above](#additional-pre-fetch-capabilities)
 
-EHR implementations should not expect standardized prefetch key names.  EHRs supporting prefetch SHALL inspect the CDS Hooks Discovery Endpoint to determine exact prefetch key names and queries.
+EMR implementations should not expect standardized prefetch key names.  EMRs supporting prefetch SHALL inspect the CDS Hooks Discovery Endpoint to determine exact prefetch key names and queries.
 
 {% raw %}
 <table class="grid">
@@ -1296,7 +1296,7 @@ TODO - Batch example, query examples
 ### SMART on FHIR Hook Invocation
 In addition to the real-time decision support provided by CDS Hooks, practitioners will sometimes need to seek coverage requirements information without invoking the workflow of their clinical system to actively create an order, appointment, encounter, etc.  For example, if exploring a "what if" scenario, when answering a patient question or when needing to retrieve a guidance document they had seen in a previous card and now need to review/dig deeper.
 
-The solution to this need to perform coverage discovery "any time" is the use of a SMART on FHIR app.  Many EHR systems provide support for SMART on FHIR.  That standard allows independently developed applications to be launched from within the EHR (possibly within the EHR's user interface) and to interact with the EHR's data repository.  As part of its scope, this project will, through the Da Vinci organization, develop an open source SMART on FHIR application that allows a user to invoke solicit coverage requirements from payer systems "at will".  The SMART on FHIR app will interact with the payer systems using the existing SMART on FHIR interface.
+The solution to this need to perform coverage discovery "any time" is the use of a SMART on FHIR app.  Many EMR systems provide support for SMART on FHIR.  That standard allows independently developed applications to be launched from within the EMR (possibly within the EMR's user interface) and to interact with the EMR's data repository.  As part of its scope, this project will, through the Da Vinci organization, develop an open source SMART on FHIR application that allows a user to invoke solicit coverage requirements from payer systems "at will".  The SMART on FHIR app will interact with the payer systems using the existing SMART on FHIR interface.
 
 Clients conforming with this application SHALL support the SMART on FHIR interface, allow launching of SMART apps from within their application and be capable of providing the SMART app access to the same resources it exposes to payer systems using the CDS Hooks interface.
 
@@ -1323,7 +1323,7 @@ In addition to these, this implementation guide imposes the following additional
 
 
 #### Non-PHI Hook Invocation
-Some payers may not have legal permission to view patient-identifiable healthcare information (PHI) for coverage requirements discovery purposes.  EHR systems SHALL support filtering exposed FHIR resources to be a non-PHI "redacted" view.  This view SHALL ensure that all resources exposed through the CDS Hooks and SMART on FHIR interfaces are filtered as follows:
+Some payers may not have legal permission to view patient-identifiable healthcare information (PHI) for coverage requirements discovery purposes.  EMR systems SHALL support filtering exposed FHIR resources to be a non-PHI "redacted" view.  This view SHALL ensure that all resources exposed through the CDS Hooks and SMART on FHIR interfaces are filtered as follows:
 
 * The Patient resource adheres to the [STU3 de-identified patient profile](STU3/profile-patient-deident-stu3.html) or [R4 de-identified profile](profile-patient-deident-r4.html), depending on the version supported
 * The Coverage resources adhere to the [STU3 de-identified coverage profile](STU3/profile-coverage-deident-stu3.html) or [R4 de-identified profile](profile-coverage-deident-r4.html), depending on the version supported
