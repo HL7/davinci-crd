@@ -267,7 +267,7 @@ For example, this [CDS Hook Suggestion](https://cds-hooks.hl7.org/specification/
     ]
 
 ###### Linkage between created resources
-The linkage between resources by identifier in different Actions within a single Suggestion doesn't require any extension to CDS Hooks, but it does require additional guidance.  For the purposes of this implementation guide, the inclusion of the `id` element in 'created' resources and references in created and updated resources within multi-action suggestions SHALL be handled as per FHIR's [transaction processing rules]({{site.data.fhir.path}}http.html#trules).  POST corresponds to an `action.type` of 'create' and PUT corresponds to an action.type of 'update'.  Specifically, this means that if a FHIR Reference points to the resource type and identifier of a resource of another 'create' Action in the same Suggestion, then the reference to that resource SHALL be updated by the server to point to the identifier assigned by the client when performing the create.  Clients SHALL perform creates in an order that ensures that referenced resources are created prior to referencing resources.
+The linkage between resources by identifier in different Actions within a single Suggestion doesn't require any extension to CDS Hooks, but it does require additional guidance.  For the purposes of this implementation guide, the inclusion of the `id` element in 'created' resources and references in created and updated resources within multi-action suggestions SHALL be handled as per FHIR's [transaction processing rules]({{site.data.fhir.path}}http.html#trules), treating each requested action as being an entry in a FHIR transaction bundle where the base URL is the base URL of the EMR server.  POST corresponds to an `action.type` of 'create' and PUT corresponds to an action.type of 'update'.  Specifically, this means that if a FHIR Reference points to the resource type and identifier of a resource of another 'create' Action in the same Suggestion, then the reference to that resource SHALL be updated by the server to point to the identifier assigned by the client when performing the create.  Clients SHALL perform creates in an order that ensures that referenced resources are created prior to referencing resources.
 
 For example, the following [CDS Hook Suggestion](https://cds-hooks.hl7.org/specification/1.0/#suggestion) will cause the FHIR [MedicationRequest]({{site.data.fhir.path}}medicationrequest.html) to be updated to point to the prior authorization ([ClaimResponse]({{site.data.fhir.path}}claimresponse.html) resource) being created.  The ClaimResponse would be created before the MedicationRequest would be updated:
 
@@ -281,7 +281,7 @@ For example, the following [CDS Hook Suggestion](https://cds-hooks.hl7.org/speci
             "resourceType": "MedicationRequest",
             ...
             "insurance": [{
-              "reference": "ClaimResponse/1"
+              "reference": "ClaimResponse/cr1"
             }],
             ...
           },
@@ -290,6 +290,7 @@ For example, the following [CDS Hook Suggestion](https://cds-hooks.hl7.org/speci
           "description": "Record the pre-existing prior authorization in the EMR",
           "resource": {
             "resourceType": "ClaimResponse",
+            "id": "cr1",
             "status": "active",
             "type": {
               "coding": [{
