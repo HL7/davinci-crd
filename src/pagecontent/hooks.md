@@ -1334,8 +1334,9 @@ Some payers may not have legal permission to view patient-identifiable healthcar
 
 Client systems SHALL determine whether a payer system should receive the PHI or non-PHI version of the CRD interface at the time the payer is configured to have access to their system.
 
-NOTE: The non-PHI information exchanged is considered "de-identified, but potentially re-identifiable".  As such, when retaining this information for audit purposes, access to the information SHALL be restricted and itself audited as would access to PHI log information.
-
+NOTES: 
+* The non-PHI information exchanged is considered "de-identified, but potentially re-identifiable".  As such, when retaining this information for audit purposes, access to the information SHALL be restricted and itself audited as would access to PHI log information.
+* For the purposes of non-PHI interactions, this specification does not consider the Patient resource id as PHI. If organizational policy requires the Patient.id to be treated as PHI, implementers will need to anonymize the id and support query of the patient's related resources by the anonymized id.
 
 ### Additional Considerations
 
