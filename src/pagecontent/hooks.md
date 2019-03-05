@@ -73,8 +73,8 @@ It is not clear whether this capability will be of interest to EMR systems or to
 
 Extensions will be enabled in two places:
 
-1.  On the `CDS Service Discovery Response` object describing the service's capabilities will be an extension that describes what "configuration options" can be set
-2.  On the hook's `HTTP Request` object passing specific configuration settings as part of the hook invocation
+1.  On the [CDS Service Discovery Response](https://cds-hooks.org/specification/1.0/#response) object describing the service's capabilities will be an extension that describes what "configuration options" can be set
+2.  On the hook's [HTTP Request](https://cds-hooks.org/specification/1.0/#http-request_1) object passing specific configuration settings as part of the hook invocation
 
 
 ###### Configuration options
@@ -144,7 +144,7 @@ Notes:
 
 *  Codes SHALL be valid JSON property names
 
-*  Codes, names and descriptions SHALL be unique within a CDS Service definition.  They SHOULD be consistent across different hooks supported by the same payer when dealing with the same types of configuration options.
+*  Codes, names and descriptions SHALL be unique within a [CDS Service](https://cds-hooks.hl7.org/specification/1.0/#response) definition.  They SHOULD be consistent across different hooks supported by the same payer when dealing with the same types of configuration options.
 
 **Payer services providing more than one type of coverage requirement information/guidance SHOULD expose configuration options allowing clients to dynamically control what information is returned by the service.**
 
