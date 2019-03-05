@@ -92,7 +92,7 @@
       </xsl:choose>
     </xsl:variable>
     <xsl:if test="not(preceding-sibling::*[1][self::html:a[@name]])">
-      <a name="{$hierarchy}">&#x20;</a>
+<!--      <a name="{$hierarchy}">&#x20;</a>-->
     </xsl:if>
     <xsl:element name="{local-name(.)}" namespace="http://www.w3.org/1999/xhtml">
       <xsl:apply-templates select="@*"/>

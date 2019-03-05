@@ -3,27 +3,27 @@
   "id" : "davinci-crd",
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/jeanduteau/Documents/DDIWork/Gevity/davinci-crd/src-generated/resources"
+    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\davinci-crd\\src-generated\\resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/jeanduteau/Documents/DDIWork/Gevity/davinci-crd/src/resources"
+    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\davinci-crd\\src\\resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/jeanduteau/Documents/DDIWork/Gevity/davinci-crd/src/vocabulary"
+    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\davinci-crd\\src\\vocabulary"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/jeanduteau/Documents/DDIWork/Gevity/davinci-crd/src/examples"
+    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\davinci-crd\\src\\examples"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "/Users/jeanduteau/Documents/DDIWork/Gevity/davinci-crd/src/images"
+    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\davinci-crd\\src\\images"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "/Users/jeanduteau/Documents/DDIWork/Gevity/davinci-crd/src-generated/pages"
+    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\davinci-crd\\src-generated\\pages"
   }],
   "url" : "http://hl7.org/fhir/us/davinci-crd/ImplementationGuide/davinci-crd",
   "version" : "0.2.0",
@@ -47,7 +47,7 @@
     "grouping" : [{
       "id" : "profiles",
       "name" : "Profiles",
-      "description" : "Profiles to be supported by EHRs and payor systems conforming to this implementation guide"
+      "description" : "Profiles to be supported by EMRs and payor systems conforming to this implementation guide"
     },
     {
       "id" : "extensions",
@@ -215,8 +215,8 @@
         "generation" : "markdown"
       },
       {
-        "nameUrl" : "resources.html",
-        "title" : "FHIR Resources",
+        "nameUrl" : "allartifacts.html",
+        "title" : "FHIR Artifacts",
         "generation" : "markdown",
         "page" : [{
           "nameUrl" : "artifacts.html",

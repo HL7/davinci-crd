@@ -19,7 +19,7 @@
     "txCache": "txcache",
     "history" : "history.html",
     "qa": "../temp/qa",
-    "specification": "http://fhir.hl7.org/"
+    "specification": "http://hl7.org/fhir/"
   },
   "suppressedWarningFile": "../src/ignoreWarnings.txt",
   "includeHeadings": false,
