@@ -11,7 +11,7 @@ The requirements and expectations described here are not intended to be exhausti
 ### Profiles
 This specification makes significant use of FHIR profiles, search parameter definitions and terminology artifacts to describe the content to be supported for the different resources exchanged as part of CDS Hook calls.  The implementation guide supports two versions of FHIR: [STU3](http://hl7.org/fhir/STU3) and [R4]({{site.data.fhir.path}}).  The latter is still in development and resources and other artifacts may change prior to the final publication of the specification at the end of 2018.  An updated version of this guide will be published accomodating any such changes.
 
-The full set of profiles defined in this implementation guide can be found on the [Resources](resources.html) page.
+The full set of profiles defined in this implementation guide can be found by following the links on the [Artifacts](allartifacts.html) page.
 
 
 #### US Core

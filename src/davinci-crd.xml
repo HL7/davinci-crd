@@ -1115,8 +1115,8 @@
         <generation value="markdown"/>
       </page>
       <page>
-        <nameUrl value="resources.html"/>
-        <title value="FHIR Resources"/>
+        <nameUrl value="allartifacts.html"/>
+        <title value="FHIR Artifacts"/>
         <generation value="markdown"/>
         <page>
           <nameUrl value="artifacts.html"/>
