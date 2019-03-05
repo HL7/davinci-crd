@@ -20,8 +20,7 @@ as general guidance on how to read FHIR specifications.  Readers who are unfamil
 prior to reading the rest of this implementation guide.
 
 * [FHIR overview]({{site.data.fhir.path}}overview.html)
-* [Developer's introduction]({{site.data.fhir.path}}overview-dev.html)
-* (or [Clinical introduction]({{site.data.fhir.path}}overview-clinical.html))
+* [Developer's introduction]({{site.data.fhir.path}}overview-dev.html) (or [Clinical introduction]({{site.data.fhir.path}}overview-clinical.html))
 * [FHIR data types]({{site.data.fhir.path}}datatypes.html)
 * [Using codes]({{site.data.fhir.path}}terminologies.html)
 * [References between resources]({{site.data.fhir.path}}references.html)
