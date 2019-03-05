@@ -1,3 +1,10 @@
+### Systems
+The CRD implementation guide defines the responsibilities of the two types of systems involved in a CRD solution:
+
+**Client systems** are typically Electronic Medical Record (EMR) systems but could theoretically be any system responsible for making clinical and administrative systems with respect to a patient that might be informed by information held by payer systems.  (E.g. pharmacy systems, dental systems, etc.)
+
+**Payer systems** (or servers) are systems that act on behalf of payer organizations to share relevant information with clients about care for patients who are covered by health insurance plans by that payer.
+
 ### Underlying technologies
 
 This guide is based on the [HL7 FHIR]({{site.data.fhir.path}}index.html) standard, as well as the [CDS Hooks](https://cds-hooks.hl7.org) and [SMART on FHIR](http://hl7.org/fhir/smart-app-launch) specifications, which build additional capabilities on top of FHIR.  This architecture is intended to maximize the number of clinical systems that conform to this guide as well as to allow for easy growth and extensibility of system capabilities in the future.
