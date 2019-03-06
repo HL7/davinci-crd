@@ -138,7 +138,13 @@ Notes:
 
 *  This version of the implementation guide is not proposing to standardize the codes, names, types or descriptions for payer response types.  This is something that could be considered for future implementation guides once it is clear what groupings of response types are useful to enable/disable together - and which response types should be configurable at all.
 
-*  There is no mechanism to express co-occurrence rules amongst configuration options.  Guidance can be given about allowed combinations in descriptions, but payer services must gracefully handle disallowed/nonsensical combinations
+*  There is no mechanism to express co-occurrence rules amongst configuration options.  Guidance can be given about allowed combinations in descriptions, but payer services must gracefully handle disallowed/nonsensical combinations.  I.e. the payer system should:
+
+**  allow for the possibility that EHR systems might not adhere to their co-occurrence rules,
+
+**  include explicit checks of inbound data for adherence to rules; and
+
+**  indicate that CRD checking could not be done and log appropriate information to allow engagement with EHR systems to address any payer-specific needs.
 
 *  No default values are declared as the default might vary by client or other contextual information based on server configuration
 
