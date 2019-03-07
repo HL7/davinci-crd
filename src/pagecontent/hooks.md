@@ -138,7 +138,7 @@ Notes:
 
 *  This version of the implementation guide is not proposing to standardize the codes, names, types or descriptions for payer response types.  This is something that could be considered for future implementation guides once it is clear what groupings of response types are useful to enable/disable together - and which response types should be configurable at all.
 
-*  There is no mechanism to express co-occurrence rules amongst configuration options.  Guidance can be given about allowed combinations in descriptions, but payer services must gracefully handle disallowed/nonsensical combinations.  I.e. the payer system should:
+*  There is no mechanism to express co-occurrence rules amongst configuration options.  Guidance can be given about allowed combinations in descriptions, but payer services **SHALL** gracefully handle disallowed/nonsensical combinations.  I.e. the payer system should:
 
 **  allow for the possibility that EHR systems might not adhere to their co-occurrence rules,
 
@@ -148,11 +148,11 @@ Notes:
 
 *  No default values are declared as the default might vary by client or other contextual information based on server configuration
 
-*  Codes SHALL be valid JSON property names
+*  Codes **SHALL** be valid JSON property names
 
-*  Codes, names and descriptions SHALL be unique within a [CDS Service](https://cds-hooks.hl7.org/specification/1.0/#response) definition.  They SHOULD be consistent across different hooks supported by the same payer when dealing with the same types of configuration options.
+*  Codes, names and descriptions **SHALL** be unique within a [CDS Service](https://cds-hooks.hl7.org/specification/1.0/#response) definition.  They **SHOULD** be consistent across different hooks supported by the same payer when dealing with the same types of configuration options.
 
-**Payer services providing more than one type of coverage requirement information/guidance SHOULD expose configuration options allowing clients to dynamically control what information is returned by the service.**
+Payer services providing more than one type of coverage requirement information/guidance **SHOULD** expose configuration options allowing clients to dynamically control what information is returned by the service.
 
 
 ###### Hook configuration
@@ -177,12 +177,12 @@ Notes:
 
 *  This specification provides no guidance on exactly when/how hook clients should manage hook configuration.  This could be done at the level of practitioner roles, individual practitioners, location from which the hook is invoked or other means.  Clients can experiment and determine what types of configuration make the most sense and at what levels they can support managing/persisting configuration information.
 
-*  Inclusion of configuration information in a hook call SHALL be optional (i.e. no hook invocation is permitted to fail because configuration information was not included).
+*  Inclusion of configuration information in a hook call **SHALL** be optional (i.e. no hook invocation is permitted to fail because configuration information was not included).
 
-*  Payer systems may receive configuration information that they do not support.  In this case, the payer system SHALL ignore the unsupported configuration information.
+*  Payer systems may receive configuration information that they do not support.  In this case, the payer system **SHALL** ignore the unsupported configuration information.
 
 
-**EMR client systems SHOULD provide an ability to leverage the dynamic configuration capabilities of payer services based on practitioner role, individual practitioner and/or hook invocation location as best meets the needs of their providers.**
+EMR client systems **SHOULD** provide an ability to leverage the dynamic configuration capabilities of payer services based on practitioner role, individual practitioner and/or hook invocation location as best meets the needs of their providers.
 
 
 ##### Additional Pre-fetch capabilities
@@ -190,7 +190,7 @@ One of the options supported in CDS Hooks is the ability for a service to reques
 
 A [proposal](https://github.com/cds-hooks/docs/issues/377) has been submitted suggesting how to address this issue.  This ballot version of the implementation guide pre-adopts that proposal.
 
-Specifically, where a hook defines a context element that consists of a resource or collection of resources (e.g. [medication-prescribe.medications](https://cds-hooks.hl7.org/hooks/medication-prescribe/#context) or [order-review.orders](https://cds-hooks.hl7.org/hooks/order-review/#context)), systems SHALL recognize context tokens of the form `context.<context property>.<FHIR resource name>.id` in prefetch queries.  Those tokens SHALL evaluate to a comma-separated list of the identifiers of all resources of the specified type within that context key.
+Specifically, where a hook defines a context element that consists of a resource or collection of resources (e.g. [medication-prescribe.medications](https://cds-hooks.hl7.org/hooks/medication-prescribe/#context) or [order-review.orders](https://cds-hooks.hl7.org/hooks/order-review/#context)), systems **SHALL** recognize context tokens of the form `context.<context property>.<FHIR resource name>.id` in prefetch queries.  Those tokens **SHALL** evaluate to a comma-separated list of the identifiers of all resources of the specified type within that context key.
 
 Note: Recognizing these tokens doesn't mean the client must support prefetch or the requested prefetch query, only that it recognizes the token, not treat it as an error and, if it supports the query, substitute the token correctly.
 
@@ -273,7 +273,7 @@ For example, this [CDS Hook Suggestion](https://cds-hooks.hl7.org/specification/
     ]
 
 ###### Linkage between created resources
-The linkage between resources by identifier in different Actions within a single Suggestion doesn't require any extension to CDS Hooks, but it does require additional guidance.  For the purposes of this implementation guide, the inclusion of the `id` element in 'created' resources and references in created and updated resources within multi-action suggestions SHALL be handled as per FHIR's [transaction processing rules]({{site.data.fhir.path}}http.html#trules), treating each requested action as being an entry in a FHIR transaction bundle where the base URL is the base URL of the EMR server.  POST corresponds to an `action.type` of 'create' and PUT corresponds to an action.type of 'update'.  Specifically, this means that if a FHIR Reference points to the resource type and identifier of a resource of another 'create' Action in the same Suggestion, then the reference to that resource SHALL be updated by the server to point to the identifier assigned by the client when performing the create.  Clients SHALL perform creates in an order that ensures that referenced resources are created prior to referencing resources.
+The linkage between resources by identifier in different Actions within a single Suggestion doesn't require any extension to CDS Hooks, but it does require additional guidance.  For the purposes of this implementation guide, the inclusion of the `id` element in 'created' resources and references in created and updated resources within multi-action suggestions **SHALL** be handled as per FHIR's [transaction processing rules]({{site.data.fhir.path}}http.html#trules), treating each requested action as being an entry in a FHIR transaction bundle where the base URL is the base URL of the EMR server.  POST corresponds to an `action.type` of 'create' and PUT corresponds to an action.type of 'update'.  Specifically, this means that if a FHIR Reference points to the resource type and identifier of a resource of another 'create' Action in the same Suggestion, then the reference to that resource **SHALL** be updated by the server to point to the identifier assigned by the client when performing the create.  Clients **SHALL** perform creates in an order that ensures that referenced resources are created prior to referencing resources.
 
 For example, the following [CDS Hook Suggestion](https://cds-hooks.hl7.org/specification/1.0/#suggestion) will cause the FHIR [MedicationRequest]({{site.data.fhir.path}}medicationrequest.html) to be updated to point to the prior authorization ([ClaimResponse]({{site.data.fhir.path}}claimresponse.html) resource) being created.  The ClaimResponse would be created before the MedicationRequest would be updated:
 
@@ -324,18 +324,18 @@ hook fires whenever a user is in the process of ordering a medication.  In many 
 
 This version of the implementation guide has identified five hooks that cover the main situations where coverage requirements discovery is likely to be needed.  Two of these are "standard" hooks - [medication-prescribe](#medication-prescribe) and [order-review](#order-review).  The other three are new proposed hooks - [appointment-booking](#appointment-booking), [encounter-start](#encounter-start) and [encounter-discharge](#encounter-discharge).
 
-Not all client systems will support all hook types.  For example, community EMR systems will not support `encounter-discharge`.  Community pharmacy systems would not likely support `appointment-booking`.  **Client systems conforming to this implementation guide SHALL support at least one of the hooks listed below and SHOULD support all that apply to the context of their system.**
+Not all client systems will support all hook types.  For example, community EMR systems will not support `encounter-discharge`.  Community pharmacy systems would not likely support `appointment-booking`.  Client systems conforming to this implementation guide **SHALL** support at least one of the hooks listed below and **SHOULD** support all that apply to the context of their system.
 
-Similarly, not all payers will necessarily provide coverage that is relevant to all hook types.  For example, a payer that only provides drug coverage would never have coverage information to return on an `encounter-discharge` event.  **Payer systems conforming to this implementation guide SHALL provide a service for at least one of the hook types listed below and SHOULD support all hooks relevant to the types of coverage they provide.**
+Similarly, not all payers will necessarily provide coverage that is relevant to all hook types.  For example, a payer that only provides drug coverage would never have coverage information to return on an `encounter-discharge` event.  Payer systems conforming to this implementation guide **SHALL** provide a service for at least one of the hook types listed below and **SHOULD** support all hooks relevant to the types of coverage they provide.
 
-Clients and payers MAY choose to support additional hooks that are relevant to Coverage Requirements Discovery as well - both standard hooks and custom hooks.  If this occurs, they SHOULD adhere to the same expectations as defined in this specification for standard hooks.
+Clients and payers **MAY** choose to support additional hooks that are relevant to Coverage Requirements Discovery as well - both standard hooks and custom hooks.  If this occurs, they **SHOULD** adhere to the same expectations as defined in this specification for standard hooks.
 
-In the absence of guidance from the CDS Hooks specification, the Server systems shall conform to the following rules when responding to requests from a client system:
+In the absence of guidance from the CDS Hooks specification, the Server systems are expected to conform to the following rules when responding to requests from a client system:
 
-* If the Server system encounters a error when processing the request, the system SHALL return an appropriate error HTTP Response Code, starting with the digit "4" or "5", indicating that there was an error. 
-* The payer SHOULD provide an OperationOutcome for internal issue tracking by the client system. 
-* The client SHOULD display to the user that the Server Coverage Requirements Discovery Service is unavailable.
-* While any 4xx or 5xx response code could be raised, the Server SHALL use the 400 and 422 codes in a manner consistent with the FHIR RESTful Create Action, specifically:
+* If the Server system encounters a error when processing the request, the system **SHALL** return an appropriate error HTTP Response Code, starting with the digit "4" or "5", indicating that there was an error. 
+* The payer **SHOULD** provide an OperationOutcome for internal issue tracking by the client system. 
+* The client **SHOULD** display to the user that the Server Coverage Requirements Discovery Service is unavailable.
+* While any 4xx or 5xx response code could be raised, the Server **SHALL** use the 400 and 422 codes in a manner consistent with the FHIR RESTful Create Action, specifically:
     * 400 - Bad Request - The request is not parsable as JSON
     * 422 - Unprocessable Entity - The request is valid JSON, but is not conformant to CDS Hooks, FHIR Resources or required profiles
 
@@ -375,7 +375,7 @@ Note: While this hook is defined for use when prescribing, it is still relevant 
 ###### order-review
 This hook is described in the CDS Hook specification [here](https://cds-hooks.hl7.org/hooks/order-review).
 
-This hook supports multiple resource types.  Servers SHALL ignore resources they don't have associated coverage support for.  Clients and servers SHALL support at least one of the resource types and SHOULD support all resource types that they have corresponding content for in their systems/coverage types.
+This hook supports multiple resource types.  Servers **SHALL** ignore resources they don't have associated coverage support for.  Clients and servers **SHALL** support at least one of the resource types and **SHOULD** support all resource types that they have corresponding content for in their systems/coverage types.
 
 There are no additional constraints or special rules related to this hook beyond the profiles expected to be used for the resources resolved to by the patientId or encounterId or in the `orders` context element:
 <table class="grid">
@@ -671,7 +671,7 @@ In addition to the [guidance provided in the CDS Hooks specification](https://cd
 ##### Potential CRD Response Types
 This section describes the different types of card responses that can be used when returning coverage requirements and defines expectations for how that information should be represented.  It's possible that some payers and clients might support additional card response patterns than those listed here, but such behavior is outside the scope of this specification.  Future versions of this specification may standardize additional response types.
 
-Of the card types here, conformant client systems SHALL support the [External reference](#external-reference) and [Instructions](#instructions) responses.  They SHOULD support the remainder.  Payer servers SHALL support at least one of these response type and MAY support as many as necessary to convey the requirements of the types of coverage they support.
+Of the card types here, conformant client systems **SHALL** support the [External reference](#external-reference) and [Instructions](#instructions) responses.  They **SHOULD** support the remainder.  Payer servers **SHALL** support at least one of these response type and **MAY** support as many as necessary to convey the requirements of the types of coverage they support.
 
 Response types are listed from least sophisticated to most sophisticated - and potentially more useful/powerful.  As a rule, the more a card can automate and the more context-specific behavior, the more useful the decision support will be to the clinician and the more likely it will be used.
 
@@ -737,7 +737,7 @@ Multiple alternatives can be proposed by providing multiple suggestions.  Each s
 
 The choice of "update" vs. "delete + create" should be based on how significant the change is - and how relevant other decision support on the original request will still be.  If cards returned by other service providers might still be relevant (e.g. because there was just a small change in dose or frequency), then performing an 'update' will allow updates from other decision support cards to also be applied.  If the change is significant enough that other decision support will not be relevant, a delete + create will allow the client to suppress decision support cards that no longer apply.
 
-When using this response type, the proposed orders (and any associated resources) SHALL comply with the following profiles:
+When using this response type, the proposed orders (and any associated resources) **SHALL** comply with the following profiles:
 
 <table class="grid">
   <thead>
@@ -804,7 +804,7 @@ TODO: example
 ###### Identify additional orders as companions/pre-requisites for current order
 In this case, rather than proposing a change to the current proposed order [Propose Alternate Request](#propose-alternate-request), the service recommends the introduction of additional orders.  For example, ensuring that lab tests are ordered along with a medication known to affect liver function.  This will normally involve additional "create" actions.  The fact there is no "delete" for the original order conveys that these are supplemental actions rather than replacement actions.  As with the previous response type, in some cases multiple resources will need to be created to convey the full suggestion (e.g. Medication, Device, etc.)
 
-When using this response type, the proposed orders (and any associated resources) SHALL comply with the following profiles:
+When using this response type, the proposed orders (and any associated resources) **SHALL** comply with the following profiles:
 
 <table class="grid">
   <thead>
@@ -861,7 +861,7 @@ A common type of response is to indicate forms that need completion.  These migh
 
 This suggestion will always include a "create" action for the Task.  The Task will point to the questionnaire to be completed using the `Task.input` property with a `Task.input.name` of "questionnaire".  That Questionnaire might be included with a separate conditional "create" action or might be excluded with the presumption it will already be available or retrievable by the client via its canonical URL from the original source or from a local registry.  The `Task.code` will always include the CRD-specific `complete-questionnaire` code.  The reason for completion will be conveyed in `Task.reasonCode`.
 
-When using this response type, the proposed orders (and any associated resources) SHALL comply with the following profiles:
+When using this response type, the proposed orders (and any associated resources) **SHALL** comply with the following profiles:
 
 <table class="grid">
   <thead>
@@ -876,7 +876,7 @@ When using this response type, the proposed orders (and any associated resources
   </tr>
 </table>
   
-No profile is provided for the Questionnaires pointed to by the Task.  Payers SHOULD use questionnaires that are compliant with either the [Argonaut Questionnaire profiles](https://github.com/argonautproject/questionnaire) (for forms to be completed within the EMR) or the [Structured Data Capture profiles](http://hl7.org/fhir/us/sdc) (for more sophisticated forms to be created within a SMART on FHIR app or through an external service).
+No profile is provided for the Questionnaires pointed to by the Task.  Payers **SHOULD** use questionnaires that are compliant with either the [Argonaut Questionnaire profiles](https://github.com/argonautproject/questionnaire) (for forms to be completed within the EMR) or the [Structured Data Capture profiles](http://hl7.org/fhir/us/sdc) (for more sophisticated forms to be created within a SMART on FHIR app or through an external service).
 
 The following is an example CDS Hook [Suggestion](https://cds-hooks.hl7.org/specification/1.0/#suggestion) where the specified questionnaire is either expected to be available within the client system or available for retrieval through its canonical URL.  As such, the [Action](https://cds-hooks.hl7.org/specification/1.0/#action) only contains the FHIR [Task]({{site.data.fhir.path}}task.html) resource.  An example showing inclusion of both the Task and the referenced Questionnaire can be found [above](#if-none-exist).
 
@@ -920,7 +920,7 @@ The following is an example CDS Hook [Suggestion](https://cds-hooks.hl7.org/spec
 ###### Create or update Coverage information
 This response is used when the payer is aware of additional coverage that is relevant to the current/proposed activity or has updates/corrections to make to the information held by the client system.  For example, the client system might be aware that a patient has coverage with a provider, but not know the plan number, member identifier or other relevant information.  This response allows the payer to convey that information to the client system and link it to the current/proposed action.  In theory, this type of response could also be used to convey corrected/additional pre-authorization information the payer was aware of, however that functionality is out-of-scope for this release of the implementation guide.
 
-This response will contain a single suggestion.  The primary action within it will either be an "update" of an existing client Coverage instance (if the client already has one) or a "create" of a new Coverage instance if the payer is aware of Coverage that the client system is not.  In addition, the suggestion MAY include updates on all relevant Request resources to add or remove links to Coverage instances, reflecting which Coverages are relevant to which types of requests.
+This response will contain a single suggestion.  The primary action within it will either be an "update" of an existing client Coverage instance (if the client already has one) or a "create" of a new Coverage instance if the payer is aware of Coverage that the client system is not.  In addition, the suggestion **MAY** include updates on all relevant Request resources to add or remove links to Coverage instances, reflecting which Coverages are relevant to which types of requests.
 
 For example, this CDS Hook [Card](https://cds-hooks.hl7.org/specification/1.0/#card-attributes) includes a single [Suggestion](https://cds-hooks.hl7.org/specification/1.0/#suggestion) with two [Actions](https://cds-hooks.hl7.org/specification/1.0/#action) - one is to update the FHIR [Coverage]({{site.data.fhir.path}}coverage.html) and the second is to update the draft order [MedicationRequest]({{site.data.fhir.path}}medicationrequest.html) to reference the existing Coverage.
 
@@ -1001,7 +1001,7 @@ Prefetch is an optional capability of CDS Hooks that allows the client to perfor
 
 In the CRD implementation guide, there's a common set of queries that define data that most, if not all, payers will need to perform their requirements assessment.  This section defines those queries.
 
-For this release of the implementation guide, conformant clients SHOULD support the CDS Hooks prefetch capability and be able to perform all the prefetch queries defined here.  However, each payer will define the prefetch requests for their service based on what information they need to provide coverage requirements.  They may include more and/or less than described in this section.  Prefetch requests SHOULD only include information that is always expected to be needed for each hook information as information should not be accessed that is not necessary to perform the coverage requirements function.  Information relevant to the context of a specific hook invocation SHOULD always be queried using the provided token, not included in prefetch.  Payers should recognize that not all clients will support all prefetch requests.
+For this release of the implementation guide, conformant clients **SHOULD** support the CDS Hooks prefetch capability and be able to perform all the prefetch queries defined here.  However, each payer will define the prefetch requests for their service based on what information they need to provide coverage requirements.  They may include more and/or less than described in this section.  Prefetch requests **SHOULD** only include information that is always expected to be needed for each hook information as information should not be accessed that is not necessary to perform the coverage requirements function.  Information relevant to the context of a specific hook invocation **SHOULD** always be queried using the provided token, not included in prefetch.  Payers should recognize that not all clients will support all prefetch requests.
 
 <blockquote class="stu-note">
 In future releases of this specification, this requirement may become a 'SHALL'.  Implementers are encouraged to provide feedback about this possibility as part of their ballot feedback.
@@ -1023,9 +1023,9 @@ Not all of these will be relevant for all resource types.  And different resourc
 
 ##### Queries
 
-The 'standard' prefetch queries for this implementation guide that SHOULD be supported for each type of resource are shown in the table below.  Those search parameters with hyperlinks are defined as part of this implementation guide.  The remainder are defined within their respective version of the FHIR core specification.  These queries leverage the CDS Hook context extension [described above](#additional-pre-fetch-capabilities)
+The 'standard' prefetch queries for this implementation guide that **SHOULD** be supported for each type of resource are shown in the table below.  Those search parameters with hyperlinks are defined as part of this implementation guide.  The remainder are defined within their respective version of the FHIR core specification.  These queries leverage the CDS Hook context extension [described above](#additional-pre-fetch-capabilities)
 
-EMR implementations should not expect standardized prefetch key names.  EMRs supporting prefetch SHALL inspect the CDS Hooks Discovery Endpoint to determine exact prefetch key names and queries.
+EMR implementations should not expect standardized prefetch key names.  EMRs supporting prefetch **SHALL** inspect the CDS Hooks Discovery Endpoint to determine exact prefetch key names and queries.
 
 {% raw %}
 <table class="grid">
@@ -1292,9 +1292,9 @@ EMR implementations should not expect standardized prefetch key names.  EMRs sup
 
 * The queries use the defined search parameter names from the respective FHIR specification versions. If parties processing these queries have varied from these ‘standard’ search parameter names, they will be responsible for translating the parameters into their local names.
 
-* When full prefetch as defined here is not supported, client systems SHALL, at minimum, support the batch query syntax shown at the end of this section.  Payer systems may choose to support the batch query mechanism, perform client-specific queries as necessary or return no results when a client does not support its prefetch requirements.
+* When full prefetch as defined here is not supported, client systems **SHALL**, at minimum, support the batch query syntax shown at the end of this section.  Payer systems may choose to support the batch query mechanism, perform client-specific queries as necessary or return no results when a client does not support its prefetch requirements.
 
-* While these queries attempt to bring back all the potentially relevant information, not all information will necessarily exist for all requests or events, particularly at the time the hook is called.  Services SHOULD provide what coverage requirements they can based on the information available.
+* While these queries attempt to bring back all the potentially relevant information, not all information will necessarily exist for all requests or events, particularly at the time the hook is called.  Services **SHOULD** provide what coverage requirements they can based on the information available.
 
 ##### Examples
 
@@ -1305,14 +1305,14 @@ In addition to the real-time decision support provided by CDS Hooks, practitione
 
 The solution to this need to perform coverage discovery "any time" is the use of a SMART on FHIR app.  Many EMR systems provide support for SMART on FHIR.  That standard allows independently developed applications to be launched from within the EMR (possibly within the EMR's user interface) and to interact with the EMR's data repository.  As part of its scope, this project will, through the Da Vinci organization, develop an open source SMART on FHIR application that allows a user to invoke solicit coverage requirements from payer systems "at will".  The SMART on FHIR app will interact with the payer systems using the existing SMART on FHIR interface.
 
-Clients conforming with this application SHALL support the SMART on FHIR interface, allow launching of SMART apps from within their application and be capable of providing the SMART app access to the same resources it exposes to payer systems using the CDS Hooks interface.
+Clients conforming with this application **SHALL** support the SMART on FHIR interface, allow launching of SMART apps from within their application and be capable of providing the SMART app access to the same resources it exposes to payer systems using the CDS Hooks interface.
 
 The current version of the Da Vinci CRD SMART app can be found [TODO](todo).
 
 
 ### Privacy, Security and Safety
 
-Guidance and conformance expectations around privacy and security are provided by all three specifications this implementation guide relies on.  Implementers SHALL be familiar with and adhere to any security and privacy rules defined by:
+Guidance and conformance expectations around privacy and security are provided by all three specifications this implementation guide relies on.  Implementers **SHALL** be familiar with and adhere to any security and privacy rules defined by:
 
 * FHIR core: [Security & Privacy module]({{site.data.fhir.path}}secpriv-module.html), [Security Principles]({{site.data.fhir.path}}security.html) and [Implementer's Checklist]({{site.data.fhir.path}}safety.html)
 * CDS Hooks: [Security & Safety](https://cds-hooks.hl7.org/specification/1.0/#security-and-safety)
@@ -1320,17 +1320,17 @@ Guidance and conformance expectations around privacy and security are provided b
 
 In addition to these, this implementation guide imposes the following additional rules:
 
-* Communications between providers and payers SHOULD use mutually authenticated TLS. Some payers may require mutually authenticated TLS.
+* Communications between providers and payers **SHOULD** use mutually authenticated TLS. Some payers may require mutually authenticated TLS.
     * This specification does not provide guidance on certificate management between clinical and payer systems, though it has been proposed that Direct certificates could be used for this purpose
-* Client systems SHALL support running applications that adhere to the SMART on FHIR [public app](http://www.hl7.org/fhir/smart-app-launch#support-for-public-and-confidential-apps) profile
-* Payer systems that wish to receive Hook invocations that contain PHI SHALL demonstrate at time of registration/configuration that their user agreements give them permission to receive such data in a coverage requirement context.
-* Payer systems SHALL use information received solely for coverage determination purposes and shall not retain received over the CRD interfaces for any purpose other than audit
-* Client systems are the final arbiters of what data can be shared with payer systems.  They MAY filter or withhold any resources or data elements necessary to support their obligations as health data custodians, including legal, policy and patient consent-based restrictions.  However, client systems withholding information take on the responsibility of ensuring coverage requirements are met, even if discovery is no longer possible through the interfaces provided by this implementation guide.
-* Client systems SHALL ensure that the resource identifiers exposed over the CRD interface are distinct from and have no determinable relationship with any business identifiers associated with those records.  E.g. the Patient.id element cannot be the same as or contain in some fashion a patient's social security number or medical record number.
+* Client systems **SHALL** support running applications that adhere to the SMART on FHIR [public app](http://www.hl7.org/fhir/smart-app-launch#support-for-public-and-confidential-apps) profile
+* Payer systems that wish to receive Hook invocations that contain PHI **SHALL** demonstrate at time of registration/configuration that their user agreements give them permission to receive such data in a coverage requirement context.
+* Payer systems **SHALL** use information received solely for coverage determination purposes and **SHALL NOT** retain received over the CRD interfaces for any purpose other than audit
+* Client systems are the final arbiters of what data can be shared with payer systems.  They **MAY** filter or withhold any resources or data elements necessary to support their obligations as health data custodians, including legal, policy and patient consent-based restrictions.  However, client systems withholding information take on the responsibility of ensuring coverage requirements are met, even if discovery is no longer possible through the interfaces provided by this implementation guide.
+* Client systems **SHALL** ensure that the resource identifiers exposed over the CRD interface are distinct from and have no determinable relationship with any business identifiers associated with those records.  E.g. the Patient.id element cannot be the same as or contain in some fashion a patient's social security number or medical record number.
 
 
 #### Non-PHI Hook Invocation
-Some payers may not have legal permission to view patient-identifiable healthcare information (PHI) for coverage requirements discovery purposes.  EMR systems SHALL support filtering exposed FHIR resources to be a non-PHI "redacted" view.  This view SHALL ensure that all resources exposed through the CDS Hooks and SMART on FHIR interfaces are filtered as follows:
+Some payers may not have legal permission to view patient-identifiable healthcare information (PHI) for coverage requirements discovery purposes.  EMR systems **SHALL** support filtering exposed FHIR resources to be a non-PHI "redacted" view.  This view **SHALL** ensure that all resources exposed through the CDS Hooks and SMART on FHIR interfaces are filtered as follows:
 
 * The Patient resource adheres to the [STU3 de-identified patient profile](STU3/profile-patient-deident-stu3.html) or [R4 de-identified profile](profile-patient-deident-r4.html), depending on the version supported
 * The Coverage resources adhere to the [STU3 de-identified coverage profile](STU3/profile-coverage-deident-stu3.html) or [R4 de-identified profile](profile-coverage-deident-r4.html), depending on the version supported
@@ -1338,17 +1338,17 @@ Some payers may not have legal permission to view patient-identifiable healthcar
 * All markdown elements and all string elements that could potentially support free-text (e.g. 'text', 'display', 'comment' and similar elements) are removed
 * All extensions other than those explicitly mentioned in the profiles in this implementation guide are removed
 
-Client systems SHALL determine whether a payer system should receive the PHI or non-PHI version of the CRD interface at the time the payer is configured to have access to their system.
+Client systems **SHALL** determine whether a payer system should receive the PHI or non-PHI version of the CRD interface at the time the payer is configured to have access to their system.
 
 NOTES: 
-* The non-PHI information exchanged is considered "de-identified, but potentially re-identifiable".  As such, when retaining this information for audit purposes, access to the information SHALL be restricted and itself audited as would access to PHI log information.
+* The non-PHI information exchanged is considered "de-identified, but potentially re-identifiable".  As such, when retaining this information for audit purposes, access to the information **SHALL** be restricted and itself audited as would access to PHI log information.
 * For the purposes of non-PHI interactions, this specification does not consider the Patient resource id as PHI. If organizational policy requires the Patient.id to be treated as PHI, implementers will need to anonymize the id and support query of the patient's related resources by the anonymized id.
 
 ### Additional Considerations
 
-1. Practitioners will rely on the information provided by the Coverage Requirements Discovery process to determine if there are any special steps they need to take such as requesting prior authorization.  As a result, it's important to them to know definitively whether requirements exist or not.  While potentially noisy, payers SHALL provide a message that says "No coverage requirements for [ABC]" if it is definitively known that there are no requirements for the proposed action or "Unable to determine coverage requirements for [ABC] - please review [XYZ]" or some equivalent when processing errors (e.g. unrecognized service code) prevent the payer from determining coverage requirements.
+1. Practitioners will rely on the information provided by the Coverage Requirements Discovery process to determine if there are any special steps they need to take such as requesting prior authorization.  As a result, it's important to them to know definitively whether requirements exist or not.  While potentially noisy, payers **SHALL** provide a message that says "No coverage requirements for [ABC]" if it is definitively known that there are no requirements for the proposed action or "Unable to determine coverage requirements for [ABC] - please review [XYZ]" or some equivalent when processing errors (e.g. unrecognized service code) prevent the payer from determining coverage requirements.
 
-2. The receipt of coverage requirements (be it "no requirements" or specific requirements/recommendations) has financial implications for both practitioners and payers.  If a practitioner receives a message of "no requirements" and subsequently has a claim denied because of unmet requirements, it will be necessary for both sides to be able to confirm whether a "no requirements" response was sent and what information was in the hook invocation that led to that request.  Therefore, in addition to any logging performed for security purposes both clients and servers SHALL retain logs of all CRD-related hook invocations and their responses that can be accessed in the event of a dispute by authorized personnel.  As well, all `Card.suggestion` elements SHALL populate the `Suggestion.uuid` element to aid in logging.
+2. The receipt of coverage requirements (be it "no requirements" or specific requirements/recommendations) has financial implications for both practitioners and payers.  If a practitioner receives a message of "no requirements" and subsequently has a claim denied because of unmet requirements, it will be necessary for both sides to be able to confirm whether a "no requirements" response was sent and what information was in the hook invocation that led to that request.  Therefore, in addition to any logging performed for security purposes both clients and servers **SHALL** retain logs of all CRD-related hook invocations and their responses that can be accessed in the event of a dispute by authorized personnel.  As well, all `Card.suggestion` elements **SHALL** populate the `Suggestion.uuid` element to aid in logging.
 
     NOTE: Because the information in these logs will often contain PHI, access to the logs themselves will need to be logged for security purposes.
 
@@ -1356,6 +1356,6 @@ NOTES:
 
 4. Most implementation guides provide JSON, XML and Turtle representations of artifacts.  However, because this guide is primarily using CDS Hooks (which only supports JSON) and SMART on FHIR (which primarily uses JSON), this implementation guide only publishes the JSON version of artifacts.
 
-5. The examples in this guide use whitespace for readability.  Conformance systems SHOULD omit non-significant whitespace for performance reasons
+5. The examples in this guide use whitespace for readability.  Conformance systems **SHOULD** omit non-significant whitespace for performance reasons
 
 6. Examples provided within this specification strive to be realistic, but may not reflect accurate/current coverage requirements

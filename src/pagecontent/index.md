@@ -55,3 +55,6 @@ The implementation guide is organized into the following sections:
 * [Artifacts](allartifacts.html) introduces and provides links to the FHIR [STU3](STU3/artifacts.html) and [R4](artifacts.html) profiles, search parameters and other FHIR artifacts used in this implementation guide as well as examples
 * [Downloads](downloads.html) allows download of this and other specifications as well as other useful files
 * [Credits](credits.html) identifies the individuals and organizations involved in developing this implementation guide
+
+### Conventions
+This implementation guide uses the term **SHALL** to designate system behaviors that are mandatory to be conformant with the specification.  It uses the term **SHOULD** to designate behaviors that are strongly recommended (and which may result in interoperability issues or sub-optimal behavior if not adhered to) but which do not, for this verion of the specification, affect the determination of specification conformance.  It uses the term **MAY** to describe optional behaviors that may exist which systems are free to consider but where the is no recommendation for or against adoption.
