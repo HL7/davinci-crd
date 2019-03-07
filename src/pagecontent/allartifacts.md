@@ -1,13 +1,23 @@
-### Quick Links
+Complying with this implementation guide means complying with a number of profiles, extensions, value sets and custom search parameters.  This page provides an overview of where this information can be found.
+
+The FHIR artifacts used by CRD are organized according to two axes: 
+
+* is the content intended for use in FHIR STU3 implementations or R4 implementations?
+
+* is the content developed as part of the US Core implementation guides or is it Da Vinci-specific?
+
+As a result, there are 4 different lists of artifacts - one for each of the STU3 and R4 representations of the US Core and Da Vinci implementation guides.
+
+### Artifact Lists
 <table>
   <tr>
-    <td><a href="artifacts.html">FHIR R4 Artifacts</a></td>
+    <td><a href="artifacts.html">FHIR R4 CRD-specific Artifacts</a></td>
   </tr>
   <tr>
     <td>FHIR R4 US Core (not yet created)</td>
   </tr>
   <tr>
-    <td><a href="STU3/artifacts.html">FHIR STU3 Artifacts</a></td>
+    <td><a href="STU3/artifacts.html">FHIR STU3 CRD-specific Artifacts</a></td>
   </tr>
   <tr>
     <td><a href="http://hl7.org/fhir/us/core/1.0.1">FHIR STU3 US Core (1.0.1)</a></td>
@@ -22,6 +32,7 @@ These FHIR artifacts define the clinical data that can be queried (or retrieved 
 The artifacts are of four types:
 
 * [Profiles]({{site.data.fhir.path}}profiling.html) constrain FHIR resources to reflect CRD requirements
+* [Extensions]({{site.data.fhir.path}}extensibility.html) define additional data elements that can be conveyed as part of a resource
 * [Code Systems]({{site.data.fhir.path}}codesystem.html) define CRD-specific terminologies to be used in one or more of those profiles
 * [Value Sets]({{site.data.fhir.path}}valueset.html) define the specific subsets of both CRD-defined and other code systems that can be (or are recommended to be) used within one or more profile elements
 * [Search Parameters]({{site.data.fhir.path}}searchparameter.html) defines additional search criteria needed to allow filtering of FHIR resources to those relevant for CRD use-cases
