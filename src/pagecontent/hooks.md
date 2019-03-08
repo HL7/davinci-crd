@@ -1307,7 +1307,9 @@ The solution to this need to perform coverage discovery "any time" is the use of
 
 Clients conforming with this application **SHALL** support the SMART on FHIR interface, allow launching of SMART apps from within their application and be capable of providing the SMART app access to the same resources it exposes to payer systems using the CDS Hooks interface.
 
-The current version of the Da Vinci CRD SMART app can be found [TODO](todo).
+Note that this use of SMART is distinct from the use of SMART envisioned in CDS Hooks.  This isn't launching a SMART app based on a returned card, it's instead using SMART to invoke a CDS hook in place of the EHR to artificially simulate being in a workflow that would normally trigger a hook.
+
+The Da Vinci CRD SMART app has not yet been developed.  Once it exists, a link will be provided beneath the [CRD Confluence page](https://confluence.hl7.org/display/DVP/Coverage+Requirements+Discovery).
 
 
 ### Privacy, Security and Safety

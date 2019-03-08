@@ -103,6 +103,13 @@ Implementers should also familiarize themselves with the FHIR resources used wit
 #### CDS Hooks
 Clinical systems will use the specification and workflows defined by [CDS Hooks](https://cds-hooks.hl7.org) to initiate Coverage Requirements Discovery with the payers. Implementers should be familiar with this specification.
 
-
 #### SMART on FHIR
-Client systems conformant to this implementation guide **SHALL** also serve as a SMART on FHIR client.  This is to allow coverage discovery functionality to be invoked outside of regular clinical workflows using a SMART on FHIR application to provide a consistent way of edvaluating "what if?" scenarios across EMR implementations.  As such client implementers will also need to be familiar with the [SMART on FHIR](http://hl7.org/fhir/smart-app-launch) specification.  Because the SMART on FHIR app will interact with payer systems through the CDS Hooks interface, payer implementers only need to be familiar with the SMART on FHIR specification if they plan to develop SMART apps for launch by CDS Hooks or for other purposes.
+Client systems conformant to this implementation guide **SHALL** also serve as a SMART on FHIR client.  SMART on FHIR is expected to be used in two principle ways:
+
+##### Ad-hoc Coverage Requirements Discovery
+CDS Hooks provides a mechanism for payers to advise clinicians on coverage requirements as part of their regular workflow - when ordering medications, making referrals, scheduling appointments, discharging patients, etc.  However, sometimes clinicians may be interested in learning about coverage requirements without actually going through the workflow steps within their EMR.  I.e. they don't want to actually create a referral, they just want to ask the question "what would the requirements be if I *wanted* to create a referral?
+
+Discussion of how a SMART on FHIR app can be used to trigger CDS Hooks from within an EMR to perform such what-if scenarios is [here](hooks.md#SMART_on_FHIR_Hook_Invocation).  EMRs can use the general open source SMART app.  Payers might also choose to develop their own using the open source SMART app as a base to inform their own development.  This might be an appropriate option if there's a need for a additional elements to be included in certain resources to determine full coverage requirements.
+
+##### Hook actions
+When a server responds to a CDS hook, one of the possible actions is to allow the user to [invoke a SMART App](https://cds-hooks.org/specification/1.0/#link).  Support for this option by payer systems is optional.  Doing so allows the payer to provide a custom user interface to complete forms, navigate through decision support, review subsets of EHR and/or payer data, etc.  The Da Vinci [Documentation Templates and Rules](http://www.hl7.org/fhir/us/davinci-dtr) implementation guide provides additional guidance and expectations on the use of CDS Hook cards to launch SMART Apps and how payer-provided SMART Apps should function.
