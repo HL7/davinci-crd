@@ -101,10 +101,10 @@ Implementers should also familiarize themselves with the FHIR resources used wit
 </table>
 
 #### CDS Hooks
-Clinical systems will use the specification and workflows defined by [CDS Hooks](https://cds-hooks.hl7.org) to initiate Coverage Requirements Discovery with the payers. Implementers should be familiar with this specification.
+Clinical systems will use the specification and workflows defined by [CDS Hooks](https://cds-hooks.hl7.org) to initiate Coverage Requirements Discovery with the payers. Implementers must be familiar with all aspects of this specification.
 
 #### SMART on FHIR
-Client systems conformant to this implementation guide **SHALL** also serve as a SMART on FHIR client.  SMART on FHIR is expected to be used in two principle ways:
+SMART on FHIR is expected to be used in two principle ways:
 
 ##### Ad-hoc Coverage Requirements Discovery
 CDS Hooks provides a mechanism for payers to advise clinicians on coverage requirements as part of their regular workflow - when ordering medications, making referrals, scheduling appointments, discharging patients, etc.  However, sometimes clinicians may be interested in learning about coverage requirements without actually going through the workflow steps within their EMR.  I.e. they don't want to actually create a referral, they just want to ask the question "what would the requirements be if I *wanted* to create a referral?

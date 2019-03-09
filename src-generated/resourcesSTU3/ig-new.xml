@@ -128,11 +128,6 @@
         <generation value="generated"/>
       </page>
       <page>
-        <nameUrl value="profile-supplyrequest-stu3.html"/>
-        <title value="CRD Supply Request - STU3"/>
-        <generation value="generated"/>
-      </page>
-      <page>
         <nameUrl value="profile-taskquestionnaire-stu3.html"/>
         <title value="CRD Questionnaire Task - STU3"/>
         <generation value="generated"/>
@@ -195,16 +190,6 @@
       <page>
         <nameUrl value="referralrequest-onbehalfof-stu3.html"/>
         <title value="CRD Referral Request On Behalf Of - STU3"/>
-        <generation value="generated"/>
-      </page>
-      <page>
-        <nameUrl value="supplyrequest-insurance-stu3.html"/>
-        <title value="CRD SupplyRequest Insurance - STU3"/>
-        <generation value="generated"/>
-      </page>
-      <page>
-        <nameUrl value="supplyrequest-patient-stu3.html"/>
-        <title value="CRD SupplyRequest Patient - STU3"/>
         <generation value="generated"/>
       </page>
       <page>

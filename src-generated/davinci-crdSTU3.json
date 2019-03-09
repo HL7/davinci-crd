@@ -145,8 +145,6 @@
     },
     "StructureDefinition/profile-referralrequest-stu3":{
     },
-    "StructureDefinition/profile-supplyrequest-stu3":{
-    },
     "StructureDefinition/profile-taskquestionnaire-stu3":{
     },
     "StructureDefinition/profile-visionprescription-stu3":{
@@ -172,10 +170,6 @@
     "SearchParameter/referralrequest-insurance-stu3":{
     },
     "SearchParameter/referralrequest-onbehalfof-stu3":{
-    },
-    "SearchParameter/supplyrequest-insurance-stu3":{
-    },
-    "SearchParameter/supplyrequest-patient-stu3":{
     },
     "SearchParameter/visionprescription-insurance-stu3":{
     },

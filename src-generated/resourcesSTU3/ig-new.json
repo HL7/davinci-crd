@@ -134,11 +134,6 @@
         "generation" : "generated"
       },
       {
-        "nameUrl" : "profile-supplyrequest-stu3.html",
-        "title" : "CRD Supply Request - STU3",
-        "generation" : "generated"
-      },
-      {
         "nameUrl" : "profile-taskquestionnaire-stu3.html",
         "title" : "CRD Questionnaire Task - STU3",
         "generation" : "generated"
@@ -201,16 +196,6 @@
       {
         "nameUrl" : "referralrequest-onbehalfof-stu3.html",
         "title" : "CRD Referral Request On Behalf Of - STU3",
-        "generation" : "generated"
-      },
-      {
-        "nameUrl" : "supplyrequest-insurance-stu3.html",
-        "title" : "CRD SupplyRequest Insurance - STU3",
-        "generation" : "generated"
-      },
-      {
-        "nameUrl" : "supplyrequest-patient-stu3.html",
-        "title" : "CRD SupplyRequest Patient - STU3",
         "generation" : "generated"
       },
       {

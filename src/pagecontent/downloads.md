@@ -9,4 +9,4 @@ This implementation guide is web-based and is intended to be browsed online.  Ho
 * The [SMART on FHIR](http://www.hl7.org/fhir/smart-app-launch/full-ig.zip) specification
 * A [validator]({{site.data.fhir.path}}validator) that can be used to check FHIR resource instance validity
 
-<!-- Todo: SMART App, reference implementations -->
+<!-- Todo: reference implementations -->

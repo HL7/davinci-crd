@@ -24,9 +24,6 @@ This implementation guide is dependent on other specifications.  Please submit a
 <p>
 Individuals interested in participating in the Coverage Requirements Discovery or  other HL7 Da Vinci projects can find information about Da Vinci [here](http://www.hl7.org/about/davinci).
 </p>
-<p>
-There are a few places in this implementation guide marked as 'ToDo'.  All such areas represent supplementary content such as examples, additional background or context or other non-definitional content (i.e. they do not change any of the conformance expectations on implementers).  Where ToDo appears, such content will be created and included in the implementation guide prior to publication as a Standard for Trial Use.
-</p>
 </blockquote>
 
 
@@ -49,10 +46,10 @@ The implementation guide is designed to allow for initial support of basic capab
 ### Content and organization
 The implementation guide is organized into the following sections:
 
-* [Background](background.html) describes the intent of this implementation guide 
-* [Specification](hooks.html) provides the technical conformance details for the specification
-* [Use Cases](usecases.html) provides examples of how this specification can be used by payers
-* [Artifacts](allartifacts.html) introduces and provides links to the FHIR [STU3](STU3/artifacts.html) and [R4](artifacts.html) profiles, search parameters and other FHIR artifacts used in this implementation guide as well as examples
+* [Use Cases & Overview](usecases.html) describes the intent of the implementation guide, gives examples of its use and provides a high-level overview of expected process flow
+* [Technical Background](background.html) describes the different specifications this implementation guide relies on and indicates what developers should read and understand prior to implementing this specification
+* [Formal Specification](hooks.html) covers the detailed implementation requirements and conformance expectation
+* [Artifacts](allartifacts.html) introduces and provides links to the FHIR [STU3](STU3/artifacts.html) and [R4](artifacts.html) profiles, search parameters and other FHIR artifacts used in this implementation guide
 * [Downloads](downloads.html) allows download of this and other specifications as well as other useful files
 * [Credits](credits.html) identifies the individuals and organizations involved in developing this implementation guide
 
@@ -66,5 +63,4 @@ This implementation guide relies on the following other specifications:
 * **[CDS Hooks Registry](https://cds-hooks.hl7.org)** - The CDS Hooks project maintains a registry of common hooks.  This implementation guide leverages several of them.
 * **[SMART on FHIR](http://hl7.org/fhir/smart-app-launch)** - Payers can use CRD to allow users to launch SMART apps to help meet coverage requirements
 
-### Conventions
-This implementation guide uses the term **SHALL** to designate system behaviors that are mandatory to be conformant with the specification.  It uses the term **SHOULD** to designate behaviors that are strongly recommended (and which may result in interoperability issues or sub-optimal behavior if not adhered to) but which do not, for this verion of the specification, affect the determination of specification conformance.  It uses the term **MAY** to describe optional behaviors that may exist which systems are free to consider but where the is no recommendation for or against adoption.
+This implementation guide defines additional constraints and usage expectations above and beyond the information found in these base specifications.

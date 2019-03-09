@@ -1,5 +1,28 @@
 This section of the implementation guide defines the specific conformance requirements for systems wishing to conform to this Coverage Requirements Discovery implementation guide.  The bulk of it focuses on the implementation of  the [CDS Hooks Specification](https://cds-hooks.hl7.org/specification/1.0) to meet CRD use-cases.  It also describes the use of [SMART on FHIR](http://hl7.org/fhir/smart-app-launch) and provides guidance on privacy, security and other implementation requirements.
 
+
+### Context
+
+#### Pre-reading
+Before reading this formal specification, implementers should first familiarize themselves with two other key portions of the specification:
+
+* The [Use Cases & Overview](usecases.html) page provides context for what this formal specification is trying to accomplish and will give a sense of both the business context and general process flow enabled by the formal specification below.
+
+* The [Technical Background](background.html) page provides information about the underlying specifications and indicates what portions of them should be read and understood to have necessary foundation to understand the constraints and usage guidance described here.
+
+
+#### Conventions
+This implementation guide uses specific terminology to flag statements that have relevance for the evaluation of conformance with the guide:
+
+* **SHALL** indicates requirements that must be met to be conformant with the specification.
+
+* **SHOULD** indicates behaviors that are strongly recommended (and which may result in interoperability issues or sub-optimal behavior if not adhered to) but which do not, for this verion of the specification, affect the determination of specification conformance.
+
+* **MAY** describes optional behaviors that are free to consider but where the is no recommendation for or against adoption.
+
+
+#### Systems
+
 This implementation guide sets expectations for two types of systems:
 
 * **Client** systems are electronic medical records, pharmacy systems and other clinical and administrative systems responsible for the ordering and execution of patient-related services.  These are systems whose users have a need for coverage requirements information
@@ -8,8 +31,8 @@ This implementation guide sets expectations for two types of systems:
 The requirements and expectations described here are not intended to be exhaustive.  Payers and clients could potentially support additional hooks, additional card patterns, additional resources, additional extensions, etc.  The purpose of this implementation guide is to establish a baseline of expected behavior that communication partners can rely on and then build from.  Future versions of this specification will evolve based on implementer feedback.
 
 
-### Profiles
-This specification makes significant use of [FHIR profiles]({{site.data.fhir.path}}profiling.html), search parameter definitions and terminology artifacts to describe the content to be supported for the different resources exchanged as part of CDS Hook calls.  The implementation guide supports two versions of FHIR: [STU3](http://hl7.org/fhir/STU3) and [R4]({{site.data.fhir.path}}).  The latter is still in development and resources and other artifacts may change prior to the final publication of the specification at the end of 2018.  An updated version of this guide will be published accomodating any such changes.
+#### Profiles
+This specification makes significant use of [FHIR profiles]({{site.data.fhir.path}}profiling.html), search parameter definitions and terminology artifacts to describe the content to be shared as part of CDS Hook calls.  The implementation guide supports two versions of FHIR: [STU3](http://hl7.org/fhir/STU3) and [R4]({{site.data.fhir.path}}) and profiles for both are listed for each type of hook.  This version of the specification does not (yet) provide guidance for DSTU2 resources.
 
 The full set of profiles defined in this implementation guide can be found by following the links on the [Artifacts](allartifacts.html) page.
 
@@ -17,11 +40,12 @@ The full set of profiles defined in this implementation guide can be found by fo
 #### US Core
 This implementation guide also leverages the [US Core](http://hl7.org/fhir/us/core) set of profiles defined by HL7 for sharing non-veterinary EMR individual health data in the U.S.  Where US Core profiles exist, this Guide either leverages them directly or uses them as a base for any additional constraints needed to support the coverage requirements discovery use-case for STU3 profiles.  If no constraints are needed, this IG doesn't define any profiles.  However, all US Core profiles are deemed to be part of this IG and available for use in CRD communications.  For example, the Observation and Condition profiles, which are likely to be of interest in at least some CRD scenarios.
 
-Where US Core profiles do not yet exist (e.g. for several of the 'Request' resources), profiles have been created that try to align with existing US Core profiles in terms of elements exposed and terminologies used.  There is not yet a US Core implementation guide for R4.  Therefore, R4 profiles have been created that attempt to align with the equivalent R3 profiles.
+Where US Core profiles do not yet exist (e.g. for several of the 'Request' resources), profiles have been created that try to align with existing US Core profiles in terms of elements exposed and terminologies used.  The US Core implementation guide for R4 is not yet finalized.  However, the draft R4 profiles have been referenced where appropriate.
 
 There is one exception to the use of or alignment with US Core profiles.  The [non-PHI](#non-phi-hook-invocation) interfaces are not based on US Core because the US Core profiles expect support for and sometimes demand the sharing of patient-identifying information.
 
 Note that in some cases the US Core profiles require the support of data elements that may not be relevant to the coverage requirements discovery use-case.  It was felt that leveraging existing standard interfaces would promote greater (and quicker) interoperability than a more tuned custom interface.  EMR systems may still choose to restrict what information is exposed to payer systems based on their internal data access and governance rules.
+
 
 ### CDS Hooks
 
@@ -30,31 +54,21 @@ CDS Hooks is a relatively new technology and, at the time this version of the im
 
 To meet requirements identified by Da Vinci project participants, it is necessary to introduce additional capabilities above and beyond what is currently found in the CDS Hooks specification.  This section of the CRD implementation guide describes those additional capabilities and the mechanism the implementation guide proposes to implement them.  The purpose of these customizations is to enable testing at connectathons and to support feedback into the CDS Hooks design process.
 
-Each capability listed here has been proposed to the CDS Hooks community and may become part of the official specification either in the initial release or in some future release.  However, there is a significant likelihood that the manner in which the requirements are met may vary from a syntax or even an architectural approach.  Future versions of this implementation guide will be updated to align with how these requirements are addressed in future versions of the CDS Hook specification.  Until the underlying CDS Hooks content is *Normative* (locked into backward compatibility mode), the CRD implementation guide will remain as STU.
+Each capability listed here has been proposed to the CDS Hooks community and may become part of the official specification in a future release.  However, there is a significant likelihood that the manner in which the requirements are met may vary from a syntax or even an architectural approach.  Future versions of this implementation guide will be updated to align with how these requirements are addressed in future versions of the CDS Hook specification.  Until the both the CDS Hooks content and the FHIR and US Core content underlying this specification is *Normative* (locked into backward compatibility mode), the CRD implementation guide will remain as STU.
 
-This implementation guide extends/customizes CDS Hooks in 5 ways: support for R4, new hooks, a hook configuration mechanism, additional pre-fetch capabilities and additional response capabilities.  Each are described below:
-
-
-##### Support for FHIR R4
-The hooks published in the registry published alongside the CDS Hooks specification provide a list of context resources for the DSTU2 and STU3 versions of FHIR.  The CDS Hook specification won't be updated to include R4 resources until after R4 is finalized.  Because this implementation guide is being written to support FHIR R4 as well STU3, it provides guidance on what R4 resources are relevant for each hook (both pre-existing hooks as well as newly proposed hooks).
-
-It is possible that the actual list of R4 resources provided for the hooks will differ from that proposed in this IG.  Future versions of the implementation guide will be adjusted accordingly.
+This implementation guide extends/customizes CDS Hooks in 4 ways: additional hook resources, a hook configuration mechanism, additional pre-fetch capabilities and additional response capabilities.  Each are described below:
 
 
-##### Additional hooks
-The base CDS hooks specification doesn't formally define any hooks, though three sample hooks are provided that were used in the initial testing of the specification.  The expectation is that new hooks will be defined and approved by the community.  The formal process for this proposal and maturity development process is still evolving.  Individuals interested in this process can provide feedback [here](https://github.com/cds-hooks/docs/issues/195).
+##### Hook resources
+Two of the hooks used by this specification (_order-select_ and _order-sign_) identify specific "order" resources that can be passed as part of the hook invocation.  CRD has use-cases for additional resource types to be passed to this hook.  Specifically:
 
-The CDS Hooks specification allows for new hooks to be defined and used without any updates to the CDS Hooks specification, and even without publishing them in the registry hosted alongside the CDS Hooks specification.  However, using registered hooks increases the likelihood of broad adoption by the community - which increases the likelihood of broad uptake of this implementation guide.  The project has therefore proposed hooks that we believe have utility beyond just Da Vinci CRD requirements and specified them in a manner to increase the likelihood of wide support.
+* [DeviceRequest]({{site.data.fhir.path}}devicerequest.html) - Needed to trigger CRD when ordering prosthetics, wheelchairs, CPAP devices and other types of durable medical equipment
 
-The additional hooks proposed for use by this project are detailed below:
+* [CommunicationRequest]({{site.data.fhir.path}}communicationrequest.html) - providers often impose charges to transfer patient data to external organizations and agencies.  Some of these charges can be covered by a patient's insurance and be subject to coverage requirements
 
-*  [appointment-booking](#appointment-booking)
-*  [encounter-start](#encounter-start)
-*  [encounter-discharge](#encounter-discharge)
+* [Task]({{site.data.fhir.path}}task.html) - Task is used to seek fulfillment of orders from particular service providers.  Because coverage can be influenced by who is asked to perform an order, coverage requirements can be relevant here.  As well, task is used to request changes to existing therapies (e.g. stopping a medication, suspending a therapy, etc.) and changes to therapy can also have impacts on coverage requirements.
 
-It is possible these hooks will change over the course of the review/approval process, including changes to the names of the hooks, their context parameters or other information.  Future versions of this implementation guide will be updated to align with such changes.
-
-NOTE: Even pre-existing hooks are not yet locked down as normative and similar changes are possible, though perhaps less likely.
+The proposal to add these resources to the existing hook definitions [can be found]() on the CDS hooks [issue tracker]().
 
 
 ##### Configuration
@@ -89,10 +103,10 @@ For example, a [CDS Service](https://cds-hooks.hl7.org/specification/1.0/#respon
 
 {% raw %}
     {
-      "hook": "medication-prescribe",
-      "title": "Payer XYZ Medication Coverage Requirements",
-      "description": "Indicates coverage requirements associated with draft medication orders, including expectations for prior authorization, recommended therapy alternatives, etc.",
-      "id": "medication-crd",
+      "hook": "order-select",
+      "title": "Payer XYZ Order Selection Requirements",
+      "description": "Indicates coverage requirements associated with draft orders, including expectations for prior authorization, recommended therapy alternatives, etc.",
+      "id": "order-select-crd",
       "prefetch": {
         "patient": "Patient/{{context.patientId}}",
         "medications": "MedicationOrder?patient={{context.patientId}}"
@@ -162,7 +176,7 @@ For example, the hook [HTTP Request](https://cds-hooks.hl7.org/specification/1.0
 
     {
        ...
-       "hook" : "medication-prescribe",
+       "hook" : "order-select",
        ...
        "extension" : {
          "davinci-crd.configuration" : {
@@ -190,21 +204,21 @@ One of the options supported in CDS Hooks is the ability for a service to reques
 
 A [proposal](https://github.com/cds-hooks/docs/issues/377) has been submitted suggesting how to address this issue.  This ballot version of the implementation guide pre-adopts that proposal.
 
-Specifically, where a hook defines a context element that consists of a resource or collection of resources (e.g. [medication-prescribe.medications](https://cds-hooks.hl7.org/hooks/medication-prescribe/#context) or [order-review.orders](https://cds-hooks.hl7.org/hooks/order-review/#context)), systems **SHALL** recognize context tokens of the form `context.<context property>.<FHIR resource name>.id` in prefetch queries.  Those tokens **SHALL** evaluate to a comma-separated list of the identifiers of all resources of the specified type within that context key.
+Specifically, where a hook defines a context element that consists of a resource or collection of resources (e.g. [order-select.draftOrders](https://cds-hooks.hl7.org/hooks/order-select/#context) or [order-sign.draftOrders](https://cds-hooks.hl7.org/hooks/order-sign/#context)), systems **SHALL** recognize context tokens of the form `context.<context property>.<FHIR resource name>.id` in prefetch queries.  Those tokens **SHALL** evaluate to a comma-separated list of the identifiers of all resources of the specified type within that context key.
 
-Note: Recognizing these tokens doesn't mean the client must support prefetch or the requested prefetch query, only that it recognizes the token, not treat it as an error and, if it supports the query, substitute the token correctly.
+Note: Recognizing these tokens doesn't mean the client must support prefetch or the requested prefetch query, only that it recognizes the token, doesn't treat it as an error and - if it supports the query - substitutes the token correctly.
 
-For example, a prefetch for `order-review` might look like this:
+For example, a prefetch for `order-select` might look like this:
 
 {% raw %}
     "prefetch": {
-      "ins-sr": "ServiceRequest?_id={{context.orders.ServiceRequest.id}}&_include=ServiceRequest:insurance"
+      "ins-sr": "ServiceRequest?_id={{context.draftOrders.ServiceRequest.id}}&_include=ServiceRequest:insurance"
     }
 {% endraw %}
 
 This might result in an executed query that looks like this: `ServiceRequest?_id=2347,10948,5881&_include=ServiceRequest:insurance`
 
-BALLOT NOTE: This proposal pre-adoption is not CDS Hooks conformant.  It is possible that the CDS Hooks community will adopt an alternative solution or may even choose not to make any changes.  This implementation guide will be updated to align with the decision of the community and may, if necessary, fall back to the use of extensions if CDS Hooks does not choose to support prefetch based on context resources and the payer community determines that prefetch is still required.
+BALLOT NOTE: This proposed pre-adoption is not CDS Hooks conformant.  It is possible that the CDS Hooks community will adopt an alternative solution or may even choose not to make any changes.  Community discussion about this proposal can be found on the CDS Hooks issue list [here](https://github.com/cds-hooks/docs/issues/377).  This implementation guide will be updated to align with the decision of the community and may, if necessary, fall back to the use of extensions if CDS Hooks does not choose to support prefetch based on context resources and the payer community determines that prefetch is still required.
 
 In addition to this preadoption, this implementation guide presumes support for prefetch query capabilities more sophisticated than the recommended [prefetch query restrictions](https://cds-hooks.hl7.org/specification/1.0/#prefetch-query-restrictions) in the CDS Hooks specification.  Specifically, the use of [_include]({{site.data.fhir.path}}search.html#include), as seen in the example above.
 
@@ -213,7 +227,7 @@ In addition to this preadoption, this implementation guide presumes support for 
 CDS Hooks supports suggestions that involve multiple actions.  Coverage requirements discovery uses this in two situations where additional capabilities will be needed:
 
 *  Creating a Task to complete a Questionnaire
-*  Updating the proposed order to point to a "new" prior authorization (ClaimResponse instance) - one the payer was aware of the EMR was not.
+*  Updating the proposed order to point to a "new" prior authorization (ClaimResponse instance) - one the payer was aware of that the EMR was not.
 
 In the first case, the creation of the Questionnaire needs to be conditional - it should only occur if that specific Questionnaire version doesn't already exist.  In the second case, the order will need to be updated to point to the "id" assigned by the EMR to the newly persisted ClaimResponse instance.  Both of these capabilities are supported in FHIR's [transaction]({{site.data.fhir.path}}http.html#transaction)  functionality.  However, not all the capabilities/guidance included there has been incorporated into CDS Hooks 'suggestions', in part to keep the specification simpler.
 
@@ -319,16 +333,16 @@ Note: Sending existing prior authorizations is not in scope for this version of 
 
 
 #### CDS Hooks
-Each CDS Hook defines a workflow/business process location within the client system where a specific type of decision support is relevant.  For example, the `medication-prescribe`  
-hook fires whenever a user is in the process of ordering a medication.  In many clients, the same hook might fire in multiple locations.  For example, an EMR might have different screens for ordering regular medications vs. vaccinations vs. chemotherapy and might also have a screen for care-planning that could include plans for medications.  The same hook might be initiated from all these locations.
+Each CDS Hook defines a workflow/business process location within the client system where a specific type of decision support is relevant.  For example, the `order-select`  
+hook fires whenever a user is in the process of creating new orders or referrals.  In many clients, the same hook might fire in multiple locations.  For example, an EMR might have different screens for ordering regular medications vs. vaccinations vs. chemotherapy, not to mention distinct screens for lab orders, imaging orders and referrals.  The same hook might be initiated from all these locations.
 
-This version of the implementation guide has identified five hooks that cover the main situations where coverage requirements discovery is likely to be needed.  Two of these are "standard" hooks - [medication-prescribe](#medication-prescribe) and [order-review](#order-review).  The other three are new proposed hooks - [appointment-booking](#appointment-booking), [encounter-start](#encounter-start) and [encounter-discharge](#encounter-discharge).
+This version of the implementation guide has identified five hooks that cover the main situations where coverage requirements discovery is likely to be needed: [appointment-book](#appointment-book), [encounter-start](#encounter-start), [encounter-discharge](#encounter-discharge), [order-select](#order-select), and [order-sign](order-sign).
 
-Not all client systems will support all hook types.  For example, community EMR systems will not support `encounter-discharge`.  Community pharmacy systems would not likely support `appointment-booking`.  Client systems conforming to this implementation guide **SHALL** support at least one of the hooks listed below and **SHOULD** support all that apply to the context of their system.
+Not all client systems will support all hook types.  For example, community EMR systems will not likely support `encounter-discharge`.  Community pharmacy systems would not likely support `appointment-book`.  Client systems conforming to this implementation guide **SHALL** support at least one of the hooks listed below and **SHOULD** support all that apply to the context of their system.
 
 Similarly, not all payers will necessarily provide coverage that is relevant to all hook types.  For example, a payer that only provides drug coverage would never have coverage information to return on an `encounter-discharge` event.  Payer systems conforming to this implementation guide **SHALL** provide a service for at least one of the hook types listed below and **SHOULD** support all hooks relevant to the types of coverage they provide.
 
-Clients and payers **MAY** choose to support additional hooks that are relevant to Coverage Requirements Discovery as well - both standard hooks and custom hooks.  If this occurs, they **SHOULD** adhere to the same expectations as defined in this specification for standard hooks.
+Clients and payers **MAY** choose to support additional hooks that are relevant to Coverage Requirements Discovery as well - both hooks appearing in the registry on the [CDS Hooks website](https://cds-hooks.org) and custom hooks defined elsewhere.  If this occurs, they **SHOULD** adhere to the same expectations as defined in this specification for those hooks listed here.
 
 In the absence of guidance from the CDS Hooks specification, the Server systems are expected to conform to the following rules when responding to requests from a client system:
 
@@ -341,13 +355,26 @@ In the absence of guidance from the CDS Hooks specification, the Server systems 
 
 The following sections describe the hooks covered by this implementation guide and describes any constraints, profiles and R4 resources expected to be supported by conformant implementations.
 
-##### Pre-existing hooks
-These hooks are defined within the [CDS Hook specification](https://cds-hooks.hl7.org/hooks) and have been through multiple connectathons and review by the community.  As such, they are relatively stable, though still potentially subject to change
+The hooks listed on the CDS hooks website are subject to update by the community at any time until they go through the ballot process.  However, all substantive changes are noted in the _changes_ section at the bottom of each hook.  For each hook listed below, this specification identifies a specific version.  For the sake of interoperability, implementers are expected to adhere to the interface defined in the specified version of each hook, though compatible changes from future versions can also be supported.  Servers **SHALL** handle unrecognized context elements by ignoring them.
 
-###### medication-prescribe
-This hook is described in the CDS Hook specification [here](https://cds-hooks.hl7.org/hooks/medication-prescribe).
+##### appointment-book
+This hook is described in the CDS Hook specification [here](https://cds-hooks.hl7.org/hooks/appointment-book).  This version of the CRD implementation guide refers to version 1.0.
 
-There are no constraints or special rules related to this hook beyond the profiles expected to be used for the resources resolved to by the patientId or encounterId or in the `medications` context element:
+This hook would be triggered when a provider books a future appointment for the patient with themselves or their own organization as well as when they book an appointment for a patient with someone else.  (Whether the workflow will be one of creating an appointment or creating a ServiceRequest - and triggering the 'order' hooks - may vary depending on both the service and the organizations involved.)
+
+Potentially relevant CRD advice related to this hook might include:
+
+* Requirements related to the intended location and/or participants (e.g. warnings about out-of-network)
+
+* Requirements related to the service being booked (e.g. is prior authorization needed?, is the service covered?, is the indication appropriate?, is special documantation required?)
+
+* Requirements related to the timing of the service (e.g. is the coverage still expected to be in effect? is the service too soon since the last service of that type?
+
+* Reminders about additional services that should be scheduled or booked for the same patient - either as part of the scheduled encounter or as part of additional appointments that could be created at the same time.
+
+While this hook supports useIds of Patient and RelatedPerson, for CRD purposes it is sufficient to support Practitioner and PractitionerRole.  Support for Patient and RelatedPerson as users is optional.  (Note that Practitioner includes both licensed healthcare professionals as well as administrative staff.)
+
+The profiles expected to be used for the resources resolved to by the userId, patientId and encounterId and in the `appointments` context elements are as follows:
 <table class="grid">
   <thead>
     <tr>
@@ -356,28 +383,142 @@ There are no constraints or special rules related to this hook beyond the profil
     </tr>
   </thead>
   <tr>
-    <td><a href="STU3/profile-patient-stu3.html">profile-patient-stu3</a></td>
-    <td><a href="profile-patient-r4.html">profile-patient-r4</a></td>
+    <td><a href="STU3/profile-appointment-stu3.html">profile-appointment-stu3</a></td>
+    <td><a href="profile-appointment-r4.html">profile-appointment-r4</a></td>
   </tr>
   <tr>
     <td><a href="STU3/profile-encounter-stu3.html">profile-encounter-stu3</a></td>
     <td><a href="profile-encounter-r4.html">profile-encounter-r4</a></td>
   </tr>
   <tr>
-    <td><a href="STU3/profile-medicationrequest-stu3.html">profile-medicationrequest-stu3</a></td>
-    <td><a href="profile-medicationrequest-r4.html">profile-medicationrequest-r4</a></td>
+    <td><a href="STU3/profile-patient-stu3.html">profile-patient-stu3</a></td>
+    <td><a href="profile-patient-r4.html">profile-patient-r4</a></td>
+  </tr>
+  <tr>
+    <td><a href="STU3/profile-practitioner-stu3.html">profile-practitioner-stu3</a></td>
+    <td><a href="profile-practitioner-r4.html">profile-practitioner-r4</a></td>
+  </tr>
+  <tr>
+    <td><a href="STU3/profile-practitionerrole-stu3.html">profile-practitionerrole-stu3</a></td>
+    <td><a href="profile-practitionerrole-r4.html">profile-practitionerrole-r4</a></td>
   </tr>
 </table>
 
-Note: While this hook is defined for use when prescribing, it is still relevant when proposing (e.g. as part of a consult note) or planning (e.g. as part of a care plan) the use of a medication.  The MedicationRequest resource supports differentiating between plans, proposal and orders.  Where EMRs have an appropriate workflow and data capture mechanism, this hook could be used in scenarios that don't involve creating a true prescription.
+
+##### encounter-start
+This hook is described in the CDS Hook specification [here](https://cds-hooks.hl7.org/hooks/encounter-start).  This version of the CRD implementation guide refers to version 1.0.
+
+This hook would be triggered when a patient is admitted, a patient arrives for an out-patient visit and/or when a provider first engages with a patient during an encounter.  It serves a similar purpose to [appointment-book](#appointment-book), though it provides less lead time to react to recommendations.  If the purpose of the appointment is to perform a service that requires a 2-week prior authorization process, it's a bit late, though it still might be better to cancel the appointment and re-schedule for later.
+
+The advice returned for this hook would include the same sorts of advice as provided for [appointement-book](#appointment-book).  However, the hook is still necessary because not all encounters will be the result of appointments, not all systems that schedule appointments will necessarily have checked for coverage requirements and the patient's circumstances and/or coverage as well as the payer's guidelines may have evolved since the appointment was scheduled.
+
+Note that when Practitioner and PractitionerRole are used to identify the user, they may represent licensed healthcare professionals as well as administrative staff.
+
+The profiles expected to be used for the resources resolved to by the userId, patientId and encounterId context references are as follows:
 
 
-###### order-review
-This hook is described in the CDS Hook specification [here](https://cds-hooks.hl7.org/hooks/order-review).
+<table class="grid">
+  <thead>
+    <tr>
+      <th>STU3 Profile</th>
+      <th>R4 Profile</th>
+    </tr>
+  </thead>
+  <tr>
+    <td><a href="STU3/profile-encounter-stu3.html">profile-encounter-stu3</a></td>
+    <td><a href="profile-encounter-r4.html">profile-encounter-r4</a></td>
+  </tr>
+  <tr>
+    <td><a href="STU3/profile-patient-stu3.html">profile-patient-stu3</a></td>
+    <td><a href="profile-patient-r4.html">profile-patient-r4</a></td>
+  </tr>
+  <tr>
+    <td><a href="STU3/profile-practitioner-stu3.html">profile-practitioner-stu3</a></td>
+    <td><a href="profile-practitioner-r4.html">profile-practitioner-r4</a></td>
+  </tr>
+  <tr>
+    <td><a href="STU3/profile-practitionerrole-stu3.html">profile-practitionerrole-stu3</a></td>
+    <td><a href="profile-practitionerrole-r4.html">profile-practitionerrole-r4</a></td>
+  </tr>
+</table>
 
-This hook supports multiple resource types.  Servers **SHALL** ignore resources they don't have associated coverage support for.  Clients and servers **SHALL** support at least one of the resource types and **SHOULD** support all resource types that they have corresponding content for in their systems/coverage types.
 
-There are no additional constraints or special rules related to this hook beyond the profiles expected to be used for the resources resolved to by the patientId or encounterId or in the `orders` context element:
+##### encounter-discharge
+This hook is described in the CDS Hook specification [here](https://cds-hooks.hl7.org/hooks/encounter-discharge).  This version of the CRD implementation guide refers to version 1.0.
+
+This hook would generally be in-patient specific and would fire when a provider is performing the discharge process within their EMR.
+
+Potentially relevant CRD advice related to this hook might include:
+
+* Verifying that documentation requirements for the services performed have been applied to ensure they can be reimbursed
+
+* Ensuring that required follow-on planning is complete and appropriate transfer of care has been arranged, particularly for accountable care models
+
+
+The profiles expected to be used for the resources resolved to by the userId, patientId and encounterId and in the `appointments` context elements are as follows:
+<table class="grid">
+  <thead>
+    <tr>
+      <th>STU3 Profile</th>
+      <th>R4 Profile</th>
+    </tr>
+  </thead>
+  <tr>
+    <td><a href="STU3/profile-encounter-stu3.html">profile-encounter-stu3</a></td>
+    <td><a href="profile-encounter-r4.html">profile-encounter-r4</a></td>
+  </tr>
+  <tr>
+    <td><a href="STU3/profile-patient-stu3.html">profile-patient-stu3</a></td>
+    <td><a href="profile-patient-r4.html">profile-patient-r4</a></td>
+  </tr>
+  <tr>
+    <td><a href="STU3/profile-practitioner-stu3.html">profile-practitioner-stu3</a></td>
+    <td><a href="profile-practitioner-r4.html">profile-practitioner-r4</a></td>
+  </tr>
+  <tr>
+    <td><a href="STU3/profile-practitionerrole-stu3.html">profile-practitionerrole-stu3</a></td>
+    <td><a href="profile-practitionerrole-r4.html">profile-practitionerrole-r4</a></td>
+  </tr>
+</table>
+
+##### order-select
+This hook is described in the CDS Hook specification [here](https://cds-hooks.hl7.org/hooks/order-select).  This version of the CRD implementation guide refers to version 1.0.
+
+This is probably the most important of the hooks for CRD and will be the most widely used as it is fired while orders are being created and decisions are being made about what medications, devices, services, etc. are going to be provided.  This hook may be fired multiple times as additional information is gathered.  Services **SHALL NOT** return warnings indicating that insufficient information is available to determine coverage when returning coverage requirement cards.  It is to be expected that not all information will be available initially.  If the user decides that the order is 'complete' when not enough information is available, that will be caught by the [order-sign](#order-sign) hook.
+
+While it might be possible to not support this hook and only use the order-sign hook, this hook has the benefit that it allows altering the provider's behavior before they've gone too far.  It's much less aggravation for the provider if they're prompted to change an ordered drug when they've just picked the drug and haven't filled in all of the dosage instructions than when everything is complete and they're just about to sign.
+
+This hook allows multiple resource types to be present.  Depending on the EMR, all provided resources might be of the same type or there might be a mixture of types.  Coverage requirements should be limited only to those resources that are included in the `selected` context, though the content of other resources should be taken into account before making recommendations about what additional actions are necessary.  (I.e. don't recommend an action if there's already a draft order to perform that action.)  The different types are relevant as follows:
+
+**DeviceRequest**: Used for all type of durable medical equipment orders, such as wheelchairs, prosthetics, diabetic supplies, etc.  It can also be used to order glasses and other vision-correction devices
+
+**VisionPrescription**: Used in STU3 to order glasses, contacts, etc.
+
+**MedicationRequest**: Used to order inpatient and outpatient medications.  Can also be used to order vaccinations
+
+**ProcedureRequest**: Used in STU3 to order lab tests, imaging studies, other assessments, surgery, transfusions, physiotherapy, councelling, education, etc.  Can also be used to order changes to the patient's environment (e.g. installation of a ramp, low-barrier tub, etc.)
+
+**ReferralRequest**: Used in STU3 to solicit advice from or transfer of care to another service provider
+
+**ServiceRequest**: Used in R4 to cover the use cases of both ProcedureRequest and ReferralRequest
+
+**NutritionOrder**: Used to order the preparation of specific meal types.  Generally for in-patient care, but potentially also relevant for home-care.
+
+**SupplyRequest**: Allows the bulk order of healthcare-related supplies on a non-patient-specific basis.
+
+
+Coverage requirement responses might include:
+
+* Information about pre authorization and clinical documentation requirements, including forms to be completed
+
+* Alternative therapies that are covered or required first-line therapies
+
+* Potential drug-drug interactions based on exiting payer knowledge
+
+* Recommendations about in-network vs. out-of-network providers for referrals
+
+
+There are no constraints or special rules related to this hook beyond the profiles expected to be used for the resources resolved to by the patientId or encounterId or in the `draft-orders` context element:
 <table class="grid">
   <thead>
     <tr>
@@ -387,7 +528,7 @@ There are no additional constraints or special rules related to this hook beyond
   </thead>
   <tr>
     <td><a href="STU3/profile-devicerequest-stu3.html">profile-devicerequest-stu3</a></td>
-    <td rowspan="2"><a href="profile-devicerequest-r4.html">profile-devicerequest-r4</a></td>
+    <td rowspan="2"><a href="profile-devicerequest-r4.html">profile-devicerequest-r4</a><sup>†</sup></td>
   </tr>
   <tr>
     <td><a href="STU3/profile-visionprescription-stu3.html">profile-visionprescription-stu3</a></td>
@@ -409,6 +550,14 @@ There are no additional constraints or special rules related to this hook beyond
     <td><a href="profile-patient-r4.html">profile-patient-r4</a></td>
   </tr>
   <tr>
+    <td><a href="STU3/profile-practitioner-stu3.html">profile-practitioner-stu3</a></td>
+    <td><a href="profile-practitioner-r4.html">profile-practitioner-r4</a></td>
+  </tr>
+  <tr>
+    <td><a href="STU3/profile-practitionerrole-stu3.html">profile-practitionerrole-stu3</a><sup>‡</sup></td>
+    <td><a href="profile-practitionerrole-r4.html">profile-practitionerrole-r4</a><sup>‡</sup></td>
+  </tr>
+  <tr>
     <td><a href="STU3/profile-procedurerequest-stu3.html">profile-procedurerequest-stu3</a></td>
     <td rowspan="2"><a href="profile-servicerequest-r4.html">profile-servicerequest-r4</a></td>
   </tr>
@@ -416,227 +565,24 @@ There are no additional constraints or special rules related to this hook beyond
     <td><a href="STU3/profile-referralrequest-stu3.html">profile-referralrequest-stu3</a></td>
   </tr>
   <tr>
-    <td><a href="STU3/profile-supplyrequest-stu3.html">profile-supplyrequest-stu3</a></td>
-    <td><a href="profile-supplyrequest-r4.html">profile-supplyrequest-r4</a></td>
+    <td><a href="STU3/profile-supplyrequest-stu3.html">profile-supplyrequest-stu3</a><sup>†</sup></td>
+    <td><a href="profile-supplyrequest-r4.html">profile-supplyrequest-r4</a><sup>†</sup></td>
   </tr>
 </table>
 
-Note: This hook is defined for use when reviewing a set of orders.  However, it is potentially also relevant when proposing (e.g. as part of a consult note) or planning (e.g. as part of a care plan) one or more interventions or diagnostic steps.  The different 'Request' resources support differentiating between plans, proposal and orders.  Where EMRs have an appropriate workflow and data capture mechanism, this hook could be used in scenarios that don't involve creating true 'orders'.
+<sup>†</sup> DeviceRequest and SupplyRequest are not currently supported by the order-select and order-sign hooks.  A [proposal]() has been submitted to add them.  CRD implementers **SHALL NOT** treat the presence of these resources in the `draftOrders` Bundle as an error and **SHOULD** support these resource types if relevant to their operations.
+
+<sup>‡</sup> While this hook does not explicitly list PractitionerRole as an expected resource type for userId, it is not prohibited and is included to allow linking the user to a Practitioner in a specific role acting on behalf of a specific Organization.
+
+Note: While this hook is defined for use when ordering, it is still relevant when proposing (e.g. as part of a consult note) or planning (e.g. as part of a care plan) the use of an intervention.  All of the 'Request' resources support differentiating between plans, proposal and orders.  Where EMRs have an appropriate workflow and data capture mechanism, this hook could be used in scenarios that don't involve creating a true order.
 
 
-##### New hooks
-These hooks are newly proposed.  The proposals were submitted as part of the Da Vinci CRD project.  However, the hooks have been defined in a generic manner and may be relevant for a variety of use-cases.  Because they have not yet seen use at connectathon or review by the community, they are more vulnerable to change than pre-existing hooks.
+##### order-sign
+This hook is described in the CDS Hook specification [here](https://cds-hooks.hl7.org/hooks/order-sign).  This version of the CRD implementation guide refers to version 1.0.
 
+This hook serves a very similar purpose to [order-select](#order-select).  The main difference is that all of the listed draft orders are considered to be 'complete'.  That means that it's appropriate to provide warnings if there is insufficient information to determine coverage requirements.  As well, all of the `draftOrders` are appropriate to comment on as there is no `selected` filter.
 
-###### appointment-booking
-This new hook has been proposed to the CDS Hook community.  Because the hook description may evolve independently of this implementation guide, a snapshot of the hook proposal is included here to ensure consistent implementation for systems conforming to this version of the implementation guide.
-
-<table class="grid">
-  <thead>
-    <th>Metadata</th>
-    <th>Value</th>
-  </thead>
-  <tr>
-    <td>specificationVersion</td>
-    <td>1.0</td>
-  </tr>
-  <tr>
-    <td>hookVersion</td>
-    <td>0.1</td>
-  </tr>
-</table>
-
-####### Workflow
-This hook is invoked when the user is scheduling one or more future encounters/visits for the patient.  It may be invoked at the start and end of the booking process and/or any time between those two points.  It allows hook services to intervene in the decision of when future appointments should be scheduled, where they should be scheduled, what services should be booked, to identify actions that need to occur prior to scheduled appointments, etc.
-
-####### Context
-
-<table class="grid">
-  <thead>
-    <th>Field</th>
-    <th>Optionality</th>
-    <th>Prefetch Token</th>
-    <th>Type</th>
-    <th>Description</th>
-  </thead>
-  <tr>
-    <td>patientId</td>
-    <td>REQUIRED</td>
-    <td>Yes</td>
-    <td><i>string</i></td>
-    <td>The FHIR <code>Patient.id</code> of Patient appointment(s) is/are for</td>
-  </tr>
-  <tr>
-    <td>encounterId</td>
-    <td>OPTIONAL</td>
-    <td>Yes</td>
-    <td><i>string</i></td>
-    <td>The FHIR <code>Encounter.id</code> of Encounter where booking was initiated</td>
-  </tr>
-  <tr>
-    <td>appointments</td>
-    <td>REQUIRED</td>
-    <td>Yes</td>
-    <td><i>object</i></td>
-    <td>DSTU2/STU3/R4 - FHIR Bundle of Appointments in 'proposed' state</td>
-  </tr>
-</table>
-
-There are no additional constraints or special rules related to this hook beyond the profiles expected to be used for the resources resolved to by the patientId or encounterId or in the `appointments` context element:
-<table class="grid">
-  <thead>
-    <tr>
-      <th>STU3 Profile</th>
-      <th>R4 Profile</th>
-    </tr>
-  </thead>
-  <tr>
-    <td><a href="STU3/profile-appointment-stu3.html">profile-appointment-stu3</a></td>
-    <td><a href="profile-appointment-r4.html">profile-appointment-r4</a></td>
-  </tr>
-  <tr>
-    <td><a href="STU3/profile-encounter-stu3.html">profile-encounter-stu3</a></td>
-    <td><a href="profile-encounter-r4.html">profile-encounter-r4</a></td>
-  </tr>
-  <tr>
-    <td><a href="STU3/profile-patient-stu3.html">profile-patient-stu3</a></td>
-    <td><a href="profile-patient-r4.html">profile-patient-r4</a></td>
-  </tr>
-</table>
-
-
-###### encounter-start
-This new hook has been proposed to the CDS Hook community.  Because the hook description may evolve independently of this implementation guide, a snapshot of the hook proposal is included here to ensure consistent implementation for systems conforming to this version of the implementation guide.
-
-<table class="grid">
-  <thead>
-    <th>Metadata</th>
-    <th>Value</th>
-  </thead>
-  <tr>
-    <td>specificationVersion</td>
-    <td>1.0</td>
-  </tr>
-  <tr>
-    <td>hookVersion</td>
-    <td>0.1</td>
-  </tr>
-</table>
-
-####### Workflow
-This hook is invoked when the user is initiating a new encounter.  In an inpatient setting, this would be the time of admission.  In an outpatient/community environment, this would be the time of patient-check-in for a face-to-face or equivalent for a virtual/telephone encounter.  The Encounter should either be in one of the following states: `planned` | `arrived` | `triaged` | `in-progress`.  Note that there can be multiple 'starts' for the same encounter as each user becomes engaged.  For example, when a scheduled encounter is presented at the beginning of the day for planning purposes, when the patient arrives, when the patient first encounters a clinician, etc.  CDS Hooks may present different information depending on user role and `Encounter.status`.  The intention is that the cards from any invoked hooks are available at the time when decisions are being made about what actions are going to occur during this encounter.  For example, identifying that the patient is due for certain diagnostic tests or interventions, identifying additional information that should be collected to comply with protocols associated with clinical studies the patient is enrolled in, identifying any documentation or other requirements associated with patient insurance, etc.
-
-####### Context
-
-<table class="grid">
-  <thead>
-    <th>Field</th>
-    <th>Optionality</th>
-    <th>Prefetch Token</th>
-    <th>Type</th>
-    <th>Description</th>
-  </thead>
-  <tr>
-    <td>patientId</td>
-    <td>REQUIRED</td>
-    <td>Yes</td>
-    <td><i>string</i></td>
-    <td>The FHIR <code>Patient.id</code> of the Patient the Encounter is for</td>
-  </tr>
-  <tr>
-    <td>encounterId</td>
-    <td>REQUIRED</td>
-    <td>Yes</td>
-    <td><i>string</i></td>
-    <td>The FHIR <code>Encounter.id</code> of the Encounter being started</td>
-  </tr>
-</table>
-
-
-There are no additional constraints or special rules related to this hook beyond the profiles expected to be used when retrieving the Patient or Encounter associated with the specified ids:
-<table class="grid">
-  <thead>
-    <tr>
-      <th>STU3 Profile</th>
-      <th>R4 Profile</th>
-    </tr>
-  </thead>
-  <tr>
-    <td><a href="STU3/profile-encounter-stu3.html">profile-encounter-stu3</a></td>
-    <td><a href="profile-encounter-r4.html">profile-encounter-r4</a></td>
-  </tr>
-  <tr>
-    <td><a href="STU3/profile-patient-stu3.html">profile-patient-stu3</a></td>
-    <td><a href="profile-patient-r4.html">profile-patient-r4</a></td>
-  </tr>
-</table>
-
-
-###### encounter-discharge
-This new hook has been proposed to the CDS Hook community.  Because the hook description may evolve independently of this implementation guide, a snapshot of the hook proposal is included here to ensure consistent implementation for systems conforming to this version of the implementation guide.
-
-<table class="grid">
-  <thead>
-    <th>Metadata</th>
-    <th>Value</th>
-  </thead>
-  <tr>
-    <td>specificationVersion</td>
-    <td>1.0</td>
-  </tr>
-  <tr>
-    <td>hookVersion</td>
-    <td>0.1</td>
-  </tr>
-</table>
-
-####### Workflow
-This hook is invoked when the user is completing the discharge process for an encounter where the notion of 'discharge' is relevant - typically an inpatient encounter.  It may be invoked at the start and end of the discharge process or any time between those two points.  It allows hook services to intervene in the decision of whether discharge is appropriate, to verify discharge medications, to check for continuity of care planning, to ensure necessary documentation is present for discharge processing, etc.
-
-####### Context
-
-<table class="grid">
-  <thead>
-    <th>Field</th>
-    <th>Optionality</th>
-    <th>Prefetch Token</th>
-    <th>Type</th>
-    <th>Description</th>
-  </thead>
-  <tr>
-    <td>patientId</td>
-    <td>REQUIRED</td>
-    <td>Yes</td>
-    <td><i>string</i></td>
-    <td>The FHIR <code>Patient.id</code> of the Patient being discharged</td>
-  </tr>
-  <tr>
-    <td>encounterId</td>
-    <td>REQUIRED</td>
-    <td>Yes</td>
-    <td><i>string</i></td>
-    <td>The FHIR <code>Encounter.id</code> of the Encounter being ended</td>
-  </tr>
-</table>
-
-
-There are no additional constraints or special rules related to this hook beyond the profiles expected to be used when retrieving the Patient or Encounter associated with the specified ids:
-<table class="grid">
-  <thead>
-    <tr>
-      <th>STU3 Profile</th>
-      <th>R4 Profile</th>
-    </tr>
-  </thead>
-  <tr>
-    <td><a href="STU3/profile-encounter-stu3.html">profile-encounter-stu3</a></td>
-    <td><a href="profile-encounter-r4.html">profile-encounter-r4</a></td>
-  </tr>
-  <tr>
-    <td><a href="STU3/profile-patient-stu3.html">profile-patient-stu3</a></td>
-    <td><a href="profile-patient-r4.html">profile-patient-r4</a></td>
-  </tr>
-</table>
+The same use cases and profiles apply here as for the preceding hook.
 
 
 #### Cards
@@ -797,8 +743,77 @@ When using this response type, the proposed orders (and any associated resources
   </tr>
 </table>
 
-
-TODO: example
+For example, this FHIR R4 card proposes replacing the draft prescription for a brand-name drug (shown only as the 'resourceType' and 'id' from the `draftOrders` entry) and instead creating an equivalent prescription with a generic medication.
+<pre>
+    "suggestions": [
+      {
+        "label": "Change to generic (name brand not covered)",
+        "actions": [{
+          "type": "delete",
+          "description": "Remove name-brand prescription",
+          "resource": {
+            "resourceType": "MedicationRequest",
+            "id": "draftrx1"
+          }
+        }, {
+          "type": "create",
+          "description": "Add equivalent generic prescription",
+          "resource": {
+            "resourceType": "MedicationRequest",
+            "status": "draft",
+            "intent": "initial-order",
+            "medicationCodeableConcept":{
+              "coding":{
+                "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                "code": "392151",
+                "display": "Amoxicillin 200 MG Oral Tablet"
+              }
+            },
+            "subject":{
+              "reference": "Patient/123",
+              "display": "Jane Smith"
+            },
+            "encounter": {
+              "reference": "Encounter/ABC"
+            },
+            "authoredOn": "2019-02-15",
+            "performer": {
+              "reference": "PractitionerRole/987",
+              "display": "Dr. Jones"
+            },
+            "dosageInstruction":{
+              "text": "1 tablet ever 8 hours for 10 days.  Take for full 10 days, even if symptoms improve",
+              "timing":{
+                "repeat":{
+                  "boundsDuration":{
+                    "value": 10,
+                    "unit": "days",
+                    "code": "d",
+                    "system": "http://unitsofmeasure.org"
+                  },
+                  "frequency": 1,
+                  "period": 8,
+                  "periodUnit": "h"
+                }
+              },
+              "doseAndRate"{
+                "doseQuantity"{
+                  "value": 1,
+                  "unit": "tablet"
+                }
+              }
+            },
+            "dispenseRequest":{
+              "quantity":{
+                "value": 30,
+                "unit": "tablets"
+              }
+            }
+          }
+        }]
+      }
+    ]
+</pre>
 
 
 ###### Identify additional orders as companions/pre-requisites for current order
@@ -853,7 +868,60 @@ When using this response type, the proposed orders (and any associated resources
   </tr>
 </table>
 
-TODO: example
+This R4 example proposes adding a monthly test to check liver function
+<pre>
+    "suggestions": [
+      {
+        "label": "Add monthly AST test for 1st 3 months",
+        "actions": [{
+          "type": "create",
+          "description": "Add order for AST test",
+          "resource": {
+            "resourceType": "ServiceRequest",
+            "status": "draft",
+            "intent": "initial-order",
+            "category":{
+              "coding":{
+                "system": "http://snomed.info/sct",
+                "code": "108252007",
+                "display": "Laboratory procedure"
+              }
+            },
+            "code":{
+              "coding":{
+                "system": "htp://loinc.org",
+                "code": "1916-6",
+                "display": "AST/Alanine aminotransferase [Catalytic ratio]"
+              }
+            },
+            "subject":{
+              "reference": "Patient/123",
+              "display": "Jane Smith"
+            },
+            "encounter":{
+              "reference": "Encounter/ABC"
+            },
+            "occurrence":{
+              "boundsDuration":{
+                "value": 3,
+                "unit": "months",
+                "code": "mo",
+                "system": "http://unitsofmeasure.org"
+              },
+              "frequency": 1,
+              "period": 1,
+              "periodUnit": "mo"
+            }
+            "authoredOn": "2019-02-15",
+            "requester": {
+              "reference": "PractitionerRole/987",
+              "display": "Dr. Jones"
+            }
+          }
+        }]
+      }
+    ]
+</pre>
 
 
 ###### Request form completion
@@ -942,7 +1010,7 @@ For example, this CDS Hook [Card](https://cds-hooks.hl7.org/specification/1.0/#c
             "resource": {
               "resourceType": "Coverage",
               "id": "1234",
-              "subscriberId": "",
+              "subscriberId": "192837",
               "class": {
                 "type": "group",
                 "value": "A1"
@@ -1022,8 +1090,10 @@ The base requirement for each query, whether based on Encounter or one of the re
 Not all of these will be relevant for all resource types.  And different resources have differently named data elements and search parameters for them.  In some cases, support only exists as extensions or does not exist at all.  Where necessary, this implementation guide defines additional extensions and/or SearchParameter instances to support retrieval of these elements.  The intention is for both extensions and search parameters to eventually migrate into the core FHIR specification.
 
 ##### Queries
+The context information provided as part of hook invocation will often not be sufficient for a CRD service to fully determine coverage requirements.  There are two possible mechanisms that can be used by the service to gather the information needed: Pre-fetch and query against the EMR.  Both of these mechanisms are defined as part of the [CDS Hooks specification](https://cds-hooks.org/specification/1.0/#providing-fhir-resources-to-a-cds-service).  In some cases, a mixture of both approaches may be necessary.
 
-The 'standard' prefetch queries for this implementation guide that **SHOULD** be supported for each type of resource are shown in the table below.  Those search parameters with hyperlinks are defined as part of this implementation guide.  The remainder are defined within their respective version of the FHIR core specification.  These queries leverage the CDS Hook context extension [described above](#additional-pre-fetch-capabilities)
+###### Pre-fetch
+In addition to the [base pre-fetch capabilities](https://cds-hooks.org/specification/1.0/#prefetch-template) defined in the CDS Hooks specification, systems that support pre-fetch **SHOULD** support the additional pre-fetch capabilities [defined earlier in this spec.](Additional_Pre-fetch_capabilities).  The following table defines the 'standard' prefetch queries for this implementation guide that **SHOULD** be supported for each type of resource are shown in the table below.  Those search parameters with hyperlinks are defined as part of this implementation guide.  The remainder are defined within their respective version of the FHIR core specification.
 
 EMR implementations should not expect standardized prefetch key names.  EMRs supporting prefetch **SHALL** inspect the CDS Hooks Discovery Endpoint to determine exact prefetch key names and queries.
 
@@ -1041,7 +1111,7 @@ EMR implementations should not expect standardized prefetch key names.  EMRs sup
     <td>Appointment</td>
     <td>STU3</td>
     <td>
-      <code>Appointment?_id={{context.orders.Appointment.id}}<br/>
+      <code>Appointment?_id={{context.appointments.Appointment.id}}<br/>
       &_include=Appointment:patient, Appointment:practitioner<br/>
       &_include=Appointment:location<br/>
       &_include=Appointment:<a href="STU3/appointment-insurance-stu3.html">insurance</a>:Coverage</code>
@@ -1052,7 +1122,7 @@ EMR implementations should not expect standardized prefetch key names.  EMRs sup
     <td>Appointment</td>
     <td>R4</td>
     <td>
-      <code>Appointment?_id={{context.orders.Appointment.id}}<br/>
+      <code>Appointment?_id={{context.appointments.Appointment.id}}<br/>
       &_include=Appointment:patient<br/>
       &_include=Appointment:practitioner:PractitionerRole<br/>
       &_include=PractitionerRole:organization<br/>
@@ -1066,7 +1136,7 @@ EMR implementations should not expect standardized prefetch key names.  EMRs sup
     <td>DeviceRequest</td>
     <td>STU3</td>
     <td>
-      <code>DeviceRequest?_id={{context.orders.DeviceRequest.id}}<br/>
+      <code>DeviceRequest?_id={{context.draftOrders.DeviceRequest.id}}<br/>
       &_include=DeviceRequest:patient<br/>
       &_include=DeviceRequest:performer<br/>
       &_include=DeviceRequest:requester<br/>
@@ -1080,7 +1150,7 @@ EMR implementations should not expect standardized prefetch key names.  EMRs sup
     <td>DeviceRequest</td>
     <td>R4</td>
     <td>
-      <code>DeviceRequest?_id={{context.orders.DeviceRequest.id}}<br/>
+      <code>DeviceRequest?_id={{context.draftOrders.DeviceRequest.id}}<br/>
       &_include=DeviceRequest:patient<br/>
       &_include=DeviceRequest:performer<br/>
       &_include=DeviceRequest:requester<br/>
@@ -1095,7 +1165,7 @@ EMR implementations should not expect standardized prefetch key names.  EMRs sup
     <td>Encounter</td>
     <td>STU3</td>
     <td>
-      <code>Encounter?_id={{context.orders.Encounter.id}}<br/>
+      <code>Encounter?_id={{context.encounterId}}<br/>
       &_include=Encounter:patient<br/>
       &_include=Encounter:service-provider<br/>
       &_include=Encounter:practitioner<br/>
@@ -1108,7 +1178,7 @@ EMR implementations should not expect standardized prefetch key names.  EMRs sup
     <td>Encounter</td>
     <td>R4</td>
     <td>
-      <code>Encounter?_id={{context.orders.Encounter.id}}<br/>
+      <code>Encounter?_id={{context.encounterId}}<br/>
       &_include=Encounter:patient&_include=Encounter:service-provider<br/>
       &_include=Encounter:practitioner<br/>
       &_include=Encounter:location<br/>
@@ -1149,7 +1219,7 @@ EMR implementations should not expect standardized prefetch key names.  EMRs sup
     <td>MedicationRequest</td>
     <td>STU3</td>
     <td>
-      <code>MedicationRequest?_id={{context.orders.MedicationRequest.id}}<br/>
+      <code>MedicationRequest?_id={{context.draftOrders.MedicationRequest.id}}<br/>
       &_include=MedicationRequest:patient<br/>
       &_include=MedicationRequest:intended-dispenser<br/>
       &_include=MedicationRequest:requester:Practitioner<br/>
@@ -1163,7 +1233,7 @@ EMR implementations should not expect standardized prefetch key names.  EMRs sup
     <td>MedicationRequest</td>
     <td>R4</td>
     <td>
-      <code>MedicationRequest?_id={{context.orders.MedicationRequest.id}}<br/>
+      <code>MedicationRequest?_id={{context.draftOrders.MedicationRequest.id}}<br/>
       &_include=MedicationRequest:patient<br/>
       &_include=MedicationRequest:intended-dispenser<br/>
       &_include=MedicationRequest:requester:PractitionerRole<br/>
@@ -1178,7 +1248,7 @@ EMR implementations should not expect standardized prefetch key names.  EMRs sup
     <td>NutritionOrder</td>
     <td>STU3</td>
     <td>
-      <code>NutritionOrder?_id={{context.orders.NutritionOrder.id}}<br/>
+      <code>NutritionOrder?_id={{context.draftOrders.NutritionOrder.id}}<br/>
       &_include=NutritionOrder:patient<br/>
       &_include=NutritionOrder:provider<br/>
       &_include=NutritionOrder:requester<br/>
@@ -1192,7 +1262,7 @@ EMR implementations should not expect standardized prefetch key names.  EMRs sup
     <td>NutritionOrder</td>
     <td>R4</td>
     <td>
-      <code>NutritionOrder?_id={{context.orders.NutritionOrder.id}}<br/>
+      <code>NutritionOrder?_id={{context.draftOrders.NutritionOrder.id}}<br/>
       &_include=NutritionOrder:patient<br/>
       &_include=NutritionOrder:provider<br/>
       &_include=NutritionOrder:requester<br/>
@@ -1208,7 +1278,7 @@ EMR implementations should not expect standardized prefetch key names.  EMRs sup
     <td>ProcedureRequest</td>
     <td>STU3</td>
     <td>
-      <code>ProcedureRequest?_id={{context.orders.ProcedureRequest.id}}<br/>
+      <code>ProcedureRequest?_id={{context.draftOrders.ProcedureRequest.id}}<br/>
       &_include=ProcedureRequest:patient<br/>
       &_include=ProcedureRequest:performer<br/>
       &_include=ProcedureRequest:requester<br/>
@@ -1221,7 +1291,7 @@ EMR implementations should not expect standardized prefetch key names.  EMRs sup
     <td>ReferralRequest</td>
     <td>STU3</td>
     <td>
-      <code>ReferralRequest?_id={{context.orders.ReferralRequest.id}}<br/>
+      <code>ReferralRequest?_id={{context.draftOrders.ReferralRequest.id}}<br/>
       &_include=ReferralRequest:patient<br/>
       &_include=ReferralRequest:recipient<br/>
       &_include=ReferralRequest:requester<br/>
@@ -1234,7 +1304,7 @@ EMR implementations should not expect standardized prefetch key names.  EMRs sup
     <td>ServiceRequest</td>
     <td>R4</td>
     <td>
-      <code>ServiceRequest?_id={{context.orders.ServiceRequest.id}}<br/>
+      <code>ServiceRequest?_id={{context.draftOrders.ServiceRequest.id}}<br/>
       &_include=ServiceRequest:patient<br/>
       &_include=ServiceRequest:performer<br/>
       &_include=ServiceRequest:requester<br/>
@@ -1248,7 +1318,7 @@ EMR implementations should not expect standardized prefetch key names.  EMRs sup
     <td>SupplyRequest</td>
     <td>STU3</td>
     <td>
-      <code>SupplyRequest?_id={{context.orders.SupplyRequest.id}}<br/>
+      <code>SupplyRequest?_id={{context.draftOrders.SupplyRequest.id}}<br/>
       &_include=SupplyRequest:<a href="STU3/supplyrequest-patient-stu3.html">patient</a><br/>
       &_include=SupplyRequest:supplier:Organization<br/>
       &_include=SupplyRequest:requester:Practitioner<br/>
@@ -1261,7 +1331,7 @@ EMR implementations should not expect standardized prefetch key names.  EMRs sup
     <td>SupplyRequest</td>
     <td>R4</td>
     <td>
-      <code>SupplyRequest?_id={{context.orders.SupplyRequest.id}}&<br/>
+      <code>SupplyRequest?_id={{context.draftOrders.SupplyRequest.id}}&<br/>
       _include=SupplyRequest:<a href="supplyrequest-patient-r4.html">patient</a><br/>
       &_include=SupplyRequest:supplier:Organization<br/>
       &_include=SupplyRequest:requester:Practitioner<br/>
@@ -1274,10 +1344,46 @@ EMR implementations should not expect standardized prefetch key names.  EMRs sup
     <td>No performer location</td>
   </tr>
   <tr>
+    <td>Task</td>
+    <td>STU3</td>
+    <td>
+      <code>Task?_id={{context.draftOrders.Task.id}}&<br/>
+      _include=Task:patient<br/>
+      &_include=Task:requester:Practitioner<br/>
+      &_include=Task:requester:Organization<br/>
+      &_include=Task:owner:Practitioner<br/>
+      &_include=Task:owner:Organization<br/>
+      &_include=Task:location<br/>
+      &_include=PractitionerRole:organization<br/>
+      &_include=PractitionerRole:practitioner<br/>
+      &_include=Task:insurance<a href="task-insurance-stu3.html">insurance</a>:Coverage</code>
+    </td>
+    <td>No support for location</td>
+  </tr>
+  <tr>
+    <td>Task</td>
+    <td>R4</td>
+    <td>
+      <code>Task?_id={{context.draftOrders.Task.id}}&<br/>
+      _include=Task:patient<br/>
+      &_include=Task:requester:Practitioner<br/>
+      &_include=Task:requester:Organization<br/>
+      &_include=Task:requester:PractitionerRole<br/>
+      &_include=Task:owner:Practitioner<br/>
+      &_include=Task:owner:Organization<br/>
+      &_include=Task:owner:PractitionerRole<br/>
+      &_include=Task:location<br/>
+      &_include=PractitionerRole:organization<br/>
+      &_include=PractitionerRole:practitioner<br/>
+      &_include=Task:insurance<a href="task-insurance-r4.html">insurance</a>:Coverage</code>
+    </td>
+    <td></td>
+  </tr>
+  <tr>
     <td>VisionPrescription</td>
     <td>STU3</td>
     <td>
-      <code>VisionPrescription?_id={{context.orders.VisionPrescription.id}}<br/>
+      <code>VisionPrescription?_id={{context.draftOrders.VisionPrescription.id}}<br/>
       &_include=VisionPrescription:patient<br/>
       &_include=VisionPrescription:prescriber<br/>
       &_include=VisionPrescription:<a href="STU3/visionprescription-insurance-stu3.html">insurance</a>:Coverage</code>
@@ -1287,27 +1393,213 @@ EMR implementations should not expect standardized prefetch key names.  EMRs sup
 </table>
 {% endraw %}
 
-##### Notes
-*  Executing these queries will bring back a degree of redundant information: repeating the request, Encounter and Appointment resources found in the hook contexts and repeating Patient, Practitioner, Organization and Coverage resources that are common for different request types for the `order-review` hook.  This redundancy is the cost of using the prefetch mechanism and leveraging the benefits of a common standard.  Payers seeking greater efficiency can perform direct queries that are more tuned (e.g. a Batch of queries that search for specific resources by ids based on the context resource information).
+###### FHIR Resource Access
+If information needed is not provided by pre-fetch, the server can query it directly using the [FHIR resource access](https://cds-hooks.org/specification/1.0/#fhir-resource-access) mechanism defined in the CDS Hooks specification.
 
-* The queries use the defined search parameter names from the respective FHIR specification versions. If parties processing these queries have varied from these ‘standard’ search parameter names, they will be responsible for translating the parameters into their local names.
+This can be done either by using individual queries or by invoking a batch of separate queries.  In either case, the HTTP call that performs the query or executes the batch must pass the `fhirAuthorization.accessToken` in the Authorization header as defined in the [OAuth specification](https://www.oauth.com/oauth2-servers/accessing-data/making-api-requests).
 
-* When full prefetch as defined here is not supported, client systems **SHALL**, at minimum, support the batch query syntax shown at the end of this section.  Payer systems may choose to support the batch query mechanism, perform client-specific queries as necessary or return no results when a client does not support its prefetch requirements.
+The following two examples show a batch query that could retrieve all CRD-relevant resources as well as the structure of the corresponding batch response.
+
+**Query Batch Request**<br/>
+This query presumes that a hook has been invoked and the following information has been passed in as context:
+<code>
+  "userId": "PractitionerRole":"ABC",
+  "patientId": "123",
+  "encounterId": "987"
+</code>
+
+As well, the `draftOrders` Bundle includes MedicationRequests that reference 2 formulary medications (in addition to just pointing to medications by RxNorm code), ask for fulfillment by one pharmacy Organization (456) and are all ordered by the same PractitionerRole ABC.  Most importantly, they are all tied to the same Coverage record DEF.
+
+Note: This query also presumes that all of this information would be relevant to the CRD service.  In practice, the service would only query the information actually needed to determine coverage requirements.  Also, the server will only be able to query data where the scopes made available in the `fhirAuthorization.scope` actually allow the desired queries.
+
+The bundle uses a mixture of 'read' and 'search' operations to retrieve the relevant resources.  The fragments shown are generic and should work with both STU3 and R4.
+
+<pre>
+{
+  "resourceType": "Bundle",
+  "type": "batch",
+  "entry": [{
+    "request":{
+      "method": "GET",
+      "url": "PractitionerRole?_id=123&_include=PractitionerRole:organization&_include=PractitionerRole:practitioner"
+    }
+  },{
+    "request":{
+      "method": "GET",
+      "url": "Patient/123"
+    }
+  },{
+    "request":{
+      "method": "GET",
+      "url": "Encounter/987"
+    }
+  },{
+    "request":{
+      "method": "GET",
+      "url": "Medication?_id=MED1,MED2"
+    }
+  },{
+    "request":{
+      "method": "GET",
+      "url": "Organization/456"
+    }
+  },{
+    "request":{
+      "method": "GET",
+      "url": "Coverage/DEF"
+    }
+  }]
+}
+</pre>
+
+**Query Batch Response**<br/>
+The response is a batch-response Bundle, each containing a query response Bundle with the results of the previous query with each entry in the response Bundle corresponding to the query in the request Bundle.
+
+<pre>
+{
+  "resourceType": "Bundle",
+  "type": "batch-response",
+  "entry": [{
+    "resource": {
+      "resourceType": "Bundle",
+      "id": "ee0d8bb2-f7a1-4b53-bfff-902dd4513b07",
+      "meta": {
+        "lastUpdated": "2019-03-15T15:38:13.011Z"
+      },
+      "type": "searchset",
+      "total": 1,
+      "link": [
+        {
+          "relation": "self",
+          "url": "http://someemr.org/fhir/r4/PractitionerRole??_id=123&_include=PractitionerRole:organization&_include=PractitionerRole:practitioner&_sort=_id"
+        }
+      ],
+      "entry": [{
+        "resource": {
+          "resourceType": "PractitionerRole",
+          "id": "123",
+          "meta": {
+            "lastUpdated": "2016-02-29T23:52:32.387Z"
+          },
+          "practitioner":"Practitioner/DEF",
+          "organization":"Organization/GHI",
+          ...
+        },
+        "search": {
+          "mode": "match"
+        }
+      },{
+        "resource": {
+          "resourceType": "Practitioner",
+          "id": "DEF",
+          ...
+        },
+        "search": {
+          "mode": "include"
+        }
+      },{
+        "resource": {
+          "resourceType": "Organization",
+          "id": "GHI",
+          ...
+        },
+        "search": {
+          "mode": "include"
+        }
+      }]
+    },
+    "response": {
+      "status": "200",
+      "lastModified": "2019-03-15T15:38:13.011Z"
+    }
+  },{
+    "resource": {
+      "resourceType": "Patient",
+      "id": "123",
+      ...
+    },
+    "response": {
+      "status": "200",
+      "lastModified": "2019-03-15T15:38:13.028Z"
+    }
+  },{
+    "resource": {
+      "resourceType": "Encounter",
+      "id": "987",
+      ...
+    },
+    "response": {
+      "status": "200",
+      "lastModified": "2019-03-15T15:38:13.028Z"
+    }
+  },{
+    "resource":{
+      "resourceType": "Bundle",
+      "id": "dc616366-2f3f-4cca-b02c-0f80981770db",
+      "meta": {
+        "lastUpdated": "2019-03-15T15:38:13.037Z"
+      },
+      "type": "searchset",
+      "total": 2,
+      "link": [
+        {
+          "relation": "self",
+          "url": "http://someemr.org/fhir/r4/Medication?_id=MED1,MED2&_sort=_id"
+        }
+      ],
+      "entry": [{
+        "resource": {
+          "resourceType": "Medication",
+          "id": "MED1",
+          ...
+        },
+        "search": {
+          "mode": "match"
+        }
+      },{
+        "resource": {
+          "resourceType": "Medication",
+          "id": "MED2",
+          ...
+        },
+        "search": {
+          "mode": "match"
+        }
+      }]
+    }
+    "response": {
+      "status": "200",
+      "lastModified": "2019-03-15T15:38:13.037Z"
+    }
+  },{
+    .
+    .
+    .
+  }]
+}
+</pre>
+
+
+###### Query Notes
+*  Executing these queries in either batch or pre-fetch will bring back a degree of redundant information: repeating the request, Encounter and Appointment resources found in the hook contexts and repeating Patient, Practitioner, Organization and Coverage resources that are common for different request types for the `order-review` hook.  This redundancy is the cost of using the prefetch mechanism or batch mechanism.  Payers seeking greater efficiency can perform direct queries that are more tuned at the cost of needing to make multiple service calls.
+
+* The queries use the defined search parameter names from the respective FHIR specification versions. If parties processing these queries have varied from these 'standard' search parameter names, they will be responsible for translating the parameters into their local names.
+
+* When full prefetch as defined here is not supported, client systems **SHALL**, at minimum, support the batch query syntax shown above.  Payer systems may choose to support the batch query mechanism, perform client-specific queries as necessary or return no results when a client does not support its prefetch requirements.
 
 * While these queries attempt to bring back all the potentially relevant information, not all information will necessarily exist for all requests or events, particularly at the time the hook is called.  Services **SHOULD** provide what coverage requirements they can based on the information available.
 
-##### Examples
+* When processing data from query responses, always check the 'self' link to ensure that the server actually executed what was requested and process the data as necessary- or try querying by a different mechanism (e.g. multiple queries rather than relying on _include).
 
-TODO - Batch example, query examples
 
 ### SMART on FHIR Hook Invocation
 In addition to the real-time decision support provided by CDS Hooks, practitioners will sometimes need to seek coverage requirements information without invoking the workflow of their clinical system to actively create an order, appointment, encounter, etc.  For example, if exploring a "what if" scenario, when answering a patient question or when needing to retrieve a guidance document they had seen in a previous card and now need to review/dig deeper.
 
 The solution to this need to perform coverage discovery "any time" is the use of a SMART on FHIR app.  Many EMR systems provide support for SMART on FHIR.  That standard allows independently developed applications to be launched from within the EMR (possibly within the EMR's user interface) and to interact with the EMR's data repository.  As part of its scope, this project will, through the Da Vinci organization, develop an open source SMART on FHIR application that allows a user to invoke solicit coverage requirements from payer systems "at will".  The SMART on FHIR app will interact with the payer systems using the existing SMART on FHIR interface.
 
-Clients conforming with this application **SHALL** support the SMART on FHIR interface, allow launching of SMART apps from within their application and be capable of providing the SMART app access to the same resources it exposes to payer systems using the CDS Hooks interface.
-
 Note that this use of SMART is distinct from the use of SMART envisioned in CDS Hooks.  This isn't launching a SMART app based on a returned card, it's instead using SMART to invoke a CDS hook in place of the EHR to artificially simulate being in a workflow that would normally trigger a hook.
+
+Clients conforming with this application **SHALL** support the SMART on FHIR interface, allow launching of SMART apps from within their application and be capable of providing the SMART app access to the same resources it exposes to payer systems using the CDS Hooks interface.
 
 The Da Vinci CRD SMART app has not yet been developed.  Once it exists, a link will be provided beneath the [CRD Confluence page](https://confluence.hl7.org/display/DVP/Coverage+Requirements+Discovery).
 

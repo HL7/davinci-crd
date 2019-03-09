@@ -69,7 +69,7 @@
         "reference" : "SearchParameter/appointment-insurance-r4"
       },
       "name" : "CRD Appointment Insurance",
-      "description" : "TODO",
+      "description" : "Custom CRD R4 search parameter allowing search for appointments based on the associated insurance - allows use of _include to retrieve insurance when querying an appointment",
       "exampleBoolean" : false,
       "groupingId" : "search"
     },
@@ -78,7 +78,7 @@
         "reference" : "SearchParameter/encounter-insurance-r4"
       },
       "name" : "CRD Encounter Insurance",
-      "description" : "TODO",
+      "description" : "Custom CRD R4 search parameter allowing search for encounters based on the associated insurance - allows use of _include to retrieve insurance when querying an encounter",
       "exampleBoolean" : false,
       "groupingId" : "search"
     },
@@ -87,7 +87,7 @@
         "reference" : "SearchParameter/medicationrequest-insurance-r4"
       },
       "name" : "CRD MedicationRequest Insurance",
-      "description" : "TODO",
+      "description" : "Custom CRD R4 search parameter allowing search for medication requests based on the associated insurance - allows use of _include to retrieve insurance when querying a medication request",
       "exampleBoolean" : false,
       "groupingId" : "search"
     },
@@ -96,7 +96,7 @@
         "reference" : "SearchParameter/nutritionorder-insurance-r4"
       },
       "name" : "CRD NutritionOrder Insurance",
-      "description" : "TODO",
+      "description" : "Custom CRD R4 search parameter allowing search for nutrition orders based on the associated insurance - allows use of _include to retrieve insurance when querying a nutrition order",
       "exampleBoolean" : false,
       "groupingId" : "search"
     },
@@ -105,25 +105,7 @@
         "reference" : "SearchParameter/servicerequest-insurance-r4"
       },
       "name" : "CRD ServiceRequest Insurance",
-      "description" : "TODO",
-      "exampleBoolean" : false,
-      "groupingId" : "search"
-    },
-    {
-      "reference" : {
-        "reference" : "SearchParameter/supplyrequest-insurance-r4"
-      },
-      "name" : "CRD SupplyRequest Insurance",
-      "description" : "TODO",
-      "exampleBoolean" : false,
-      "groupingId" : "search"
-    },
-    {
-      "reference" : {
-        "reference" : "SearchParameter/supplyrequest-patient-r4"
-      },
-      "name" : "CRD SupplyRequest Patient",
-      "description" : "TODO",
+      "description" : "Custom CRD R4 search parameter allowing search for service requests based on the associated insurance - allows use of _include to retrieve insurance when querying a service request",
       "exampleBoolean" : false,
       "groupingId" : "search"
     },
@@ -132,7 +114,7 @@
         "reference" : "StructureDefinition/ext-insurance"
       },
       "name" : "CRD Insurance Extension",
-      "description" : "TODO",
+      "description" : "Custom CRD extension that allows conveying insurance information associated with a request when the request resouce doesn't have a core element that supports capturing such information.",
       "exampleBoolean" : false,
       "groupingId" : "extensions"
     },
@@ -141,7 +123,7 @@
         "reference" : "CodeSystem/task-type"
       },
       "name" : "CRD Task Types Code System",
-      "description" : "TODO",
+      "description" : "Codes for use with FHIR R4 to identify types of tasks relevant to coverage requirement discovery",
       "exampleBoolean" : false,
       "groupingId" : "terminology"
     },
@@ -150,7 +132,7 @@
         "reference" : "CodeSystem/task-reason"
       },
       "name" : "CRD Task Reasons Code System",
-      "description" : "TODO",
+      "description" : "Codes for use with FHIR R4 to identify reasons for task performance relevant to coverage requirement discovery",
       "exampleBoolean" : false,
       "groupingId" : "terminology"
     },
@@ -159,7 +141,7 @@
         "reference" : "ValueSet/coverageClass"
       },
       "name" : "CRD Coverage Classes",
-      "description" : "TODO",
+      "description" : "The subset of coverage classes relevant for coverage requirement discovery",
       "exampleBoolean" : false,
       "groupingId" : "terminology"
     },
@@ -168,7 +150,7 @@
         "reference" : "ValueSet/locationAddressType"
       },
       "name" : "CRD Location Address Types",
-      "description" : "TODO",
+      "description" : "The subset of FHIR R4 location address types relevant for coverage requirement discovery",
       "exampleBoolean" : false,
       "groupingId" : "terminology"
     },
@@ -177,7 +159,7 @@
         "reference" : "ValueSet/taskCode"
       },
       "name" : "CRD Task Types",
-      "description" : "TODO",
+      "description" : "All FHIR R4 task codes relevant to coverage requirements discovery",
       "exampleBoolean" : false,
       "groupingId" : "terminology"
     },
@@ -186,7 +168,7 @@
         "reference" : "ValueSet/taskReasonCode"
       },
       "name" : "CRD Task Reason Codes",
-      "description" : "TODO",
+      "description" : "All FHIR R4 task reasons relevant to coverage requirements discovery",
       "exampleBoolean" : false,
       "groupingId" : "terminology"
     }],
@@ -200,18 +182,18 @@
         "generation" : "markdown"
       },
       {
-        "nameUrl" : "background.html",
-        "title" : "Background",
+        "nameUrl" : "usecases.html",
+        "title" : "Use Cases & Overview",
         "generation" : "markdown"
       },
       {
-        "nameUrl" : "usecases.html",
-        "title" : "Use Cases",
+        "nameUrl" : "background.html",
+        "title" : "Technical Background",
         "generation" : "markdown"
       },
       {
         "nameUrl" : "hooks.html",
-        "title" : "CRD Specification",
+        "title" : "Formal Specification",
         "generation" : "markdown"
       },
       {
@@ -308,11 +290,6 @@
             "generation" : "generated"
           },
           {
-            "nameUrl" : "profile-supplyrequest-r4.html",
-            "title" : "CRD Supply Request",
-            "generation" : "generated"
-          },
-          {
             "nameUrl" : "profile-taskquestionnaire-r4.html",
             "title" : "CRD Questionnaire Task",
             "generation" : "generated"
@@ -340,16 +317,6 @@
           {
             "nameUrl" : "servicerequest-insurance-r4.html",
             "title" : "CRD ServiceRequest Insurance",
-            "generation" : "generated"
-          },
-          {
-            "nameUrl" : "supplyrequest-insurance-r4.html",
-            "title" : "CRD SupplyRequest Insurance",
-            "generation" : "generated"
-          },
-          {
-            "nameUrl" : "supplyrequest-patient-r4.html",
-            "title" : "CRD SupplyRequest Patient",
             "generation" : "generated"
           },
           {

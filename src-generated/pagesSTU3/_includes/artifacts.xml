@@ -14,133 +14,126 @@
 <a href="profile-appointment-stu3.html">
                         •  CRD Appointment - STU3</a>
 </td>
-<td>TODO</td>
+<td>CRD constraints on STU3 Appointment resource mandating support for elements relevant to coverage requirements discovery</td>
 </tr>
 <tr>
 <td style="column-width:30%">
 <a href="profile-communicationreq-stu3.html">
                         •  CRD CommunicationRequest - STU3</a>
 </td>
-<td>TODO</td>
+<td>CRD constraints on STU3 CommunicationRequest resource mandating support for elements relevant to inclusion in coverage requirements discovery proposed actions</td>
 </tr>
 <tr>
 <td style="column-width:30%">
 <a href="profile-coverage-stu3.html">
                         •  CRD Coverage - STU3</a>
 </td>
-<td>TODO</td>
+<td>CRD constraints on STU3 Coverage resource mandating support for elements relevant to identification of a patient's coverage in coverage requirements queries</td>
 </tr>
 <tr>
 <td style="column-width:30%">
 <a href="profile-coverage-deident-stu3.html">
                         •  CRD Deidentified Coverage - STU3</a>
 </td>
-<td>TODO</td>
+<td>CRD constraints on STU3 Coverage resource mandating support for elements relevant to identification of a coverage plan type without exposing patient identity</td>
 </tr>
 <tr>
 <td style="column-width:30%">
 <a href="profile-device-stu3.html">
                         •  CRD Device - STU3</a>
 </td>
-<td>TODO</td>
+<td>CRD constraints on STU3 Device resource mandating support for elements relevant to identification and description of a device referenced by a DeviceRequest or other CRD-relevant resource</td>
 </tr>
 <tr>
 <td style="column-width:30%">
 <a href="profile-devicerequest-stu3.html">
                         •  CRD Device Request - STU3</a>
 </td>
-<td>TODO</td>
+<td>CRD constraints on STU3 DeviceRequest resource mandating support for elements relevant to coverage requirements discovery</td>
 </tr>
 <tr>
 <td style="column-width:30%">
 <a href="profile-encounter-stu3.html">
                         •  CRD Encounter - STU3</a>
 </td>
-<td>TODO</td>
+<td>CRD constraints on STU3 Encounter resource mandating support for elements relevant to identification and description of an encounter</td>
 </tr>
 <tr>
 <td style="column-width:30%">
 <a href="profile-location-stu3.html">
                         •  CRD Location - STU3</a>
 </td>
-<td>TODO</td>
+<td>CRD constraints on STU3 Location resource mandating support for elements relevant to identification and description of the location of an event or ordered event</td>
 </tr>
 <tr>
 <td style="column-width:30%">
 <a href="profile-medicationrequest-stu3.html">
                         •  CRD MedicationRequest - STU3</a>
 </td>
-<td>TODO</td>
+<td>CRD constraints on STU3 MedicationRequest resource mandating support for elements relevant to coverage requirements discovery</td>
 </tr>
 <tr>
 <td style="column-width:30%">
 <a href="profile-nutritionorder-stu3.html">
                         •  CRD Nutrition Order - STU3</a>
 </td>
-<td>TODO</td>
+<td>CRD constraints on STU3 NutritionOrder resource mandating support for elements relevant to coverage requirements discovery</td>
 </tr>
 <tr>
 <td style="column-width:30%">
 <a href="profile-organization-stu3.html">
                         •  CRD Organization - STU3</a>
 </td>
-<td>TODO</td>
+<td>CRD constraints on STU3 Organization resource mandating support for elements relevant to identification and description of the organization responsible for ordering or performing an activity</td>
 </tr>
 <tr>
 <td style="column-width:30%">
 <a href="profile-patient-stu3.html">
                         •  CRD Patient - STU3</a>
 </td>
-<td>TODO</td>
+<td>CRD constraints on STU3 Patient resource mandating support for elements relevant to identification and description of the patient  for whom coverage requirements are being discovered</td>
 </tr>
 <tr>
 <td style="column-width:30%">
 <a href="profile-patient-deident-stu3.html">
                         •  CRD Deidentified Patient - STU3</a>
 </td>
-<td>TODO</td>
+<td>CRD constraints on STU3 Patient resource mandating support for elements relevant to sharing demographics relevant to coverage evaluation without revealing patient identity</td>
 </tr>
 <tr>
 <td style="column-width:30%">
 <a href="profile-practitioner-stu3.html">
                         •  CRD Practitioner - STU3</a>
 </td>
-<td>TODO</td>
+<td>CRD constraints on STU3 Practitioner resource mandating support for elements relevant to identifying and describing a healthcare provider or administrative staff involved in performing a coverage requirement discovery-related action</td>
 </tr>
 <tr>
 <td style="column-width:30%">
 <a href="profile-procedurerequest-stu3.html">
                         •  CRD Procedure Request - STU3</a>
 </td>
-<td>TODO</td>
+<td>CRD constraints on STU3 ProcedureRequest resource mandating support for elements relevant to coverage requirements discovery</td>
 </tr>
 <tr>
 <td style="column-width:30%">
 <a href="profile-referralrequest-stu3.html">
                         •  CRD Referral Request - STU3</a>
 </td>
-<td>TODO</td>
-</tr>
-<tr>
-<td style="column-width:30%">
-<a href="profile-supplyrequest-stu3.html">
-                        •  CRD Supply Request - STU3</a>
-</td>
-<td>TODO</td>
+<td>CRD constraints on STU3 ReferralRequest resource mandating support for elements relevant to coverage requirements discovery</td>
 </tr>
 <tr>
 <td style="column-width:30%">
 <a href="profile-taskquestionnaire-stu3.html">
                         •  CRD Questionnaire Task - STU3</a>
 </td>
-<td>TODO</td>
+<td>CRD constraints on STU3 Task resource describing how to request that a Questionnaire be completed</td>
 </tr>
 <tr>
 <td style="column-width:30%">
 <a href="profile-visionprescription-stu3.html">
                         •  CRD Vision Prescription - STU3</a>
 </td>
-<td>TODO</td>
+<td>CRD constraints on STU3 VisionPrescription resource mandating support for elements relevant to coverage requirements discovery</td>
 </tr>
 </tbody>
 </table>
@@ -164,98 +157,84 @@
 <a href="appointment-insurance-stu3.html">
                         •  CRD Appointment Insurance - STU3</a>
 </td>
-<td>TODO</td>
+<td>Custom CRD STU3 search parameter allowing search for appointments based on the associated insurance - allows use of _include to retrieve insurance when querying an appointment</td>
 </tr>
 <tr>
 <td style="column-width:30%">
 <a href="encounter-insurance-stu3.html">
                         •  CRD Encounter Insurance - STU3</a>
 </td>
-<td>TODO</td>
+<td>Custom CRD STU3 search parameter allowing search for encounters based on the associated insurance - allows use of _include to retrieve insurance when querying an encounter</td>
 </tr>
 <tr>
 <td style="column-width:30%">
 <a href="devicerequest-insurance-stu3.html">
                         •  CRD Device Request Insurance - STU3</a>
 </td>
-<td>TODO</td>
+<td>Custom CRD STU3 search parameter allowing search for device requests based on the associated insurance - allows use of _include to retrieve insurance when querying a device request</td>
 </tr>
 <tr>
 <td style="column-width:30%">
 <a href="devicerequest-onbehalfof-stu3.html">
                         •  CRD Device Request On Behalf Of - STU3</a>
 </td>
-<td>TODO</td>
+<td>Custom CRD STU3 search parameter allowing search for device requests based on the organization on whose behalf the order was placed - allows use of _include to retrieve the organization when querying a device request</td>
 </tr>
 <tr>
 <td style="column-width:30%">
 <a href="medicationrequest-onbehalfof-stu3.html">
                         •  CRD Medication Request On Behalf Of - STU3</a>
 </td>
-<td>TODO</td>
+<td>Custom CRD STU3 search parameter allowing search for medication requests based on the organization on whose behalf the order was placed - allows use of _include to retrieve the organization when querying a medication request</td>
 </tr>
 <tr>
 <td style="column-width:30%">
 <a href="medicationrequest-insurance-stu3.html">
                         •  CRD Medication Request Insurance - STU3</a>
 </td>
-<td>TODO</td>
+<td>Custom CRD STU3 search parameter allowing search for medication requests based on the associated insurance - allows use of _include to retrieve insurance when querying a medication request</td>
 </tr>
 <tr>
 <td style="column-width:30%">
 <a href="nutritionorder-insurance-stu3.html">
                         •  CRD Nutrition Order Insurance - STU3</a>
 </td>
-<td>TODO</td>
+<td>Custom CRD STU3 search parameter allowing search for nutrition orders based on the associated insurance - allows use of _include to retrieve insurance when querying a nutrition order</td>
 </tr>
 <tr>
 <td style="column-width:30%">
 <a href="procedurerequest-insurance-stu3.html">
                         •  CRD Procedure Request Insurance - STU3</a>
 </td>
-<td>TODO</td>
+<td>Custom CRD STU3 search parameter allowing search for procedure requests based on the associated insurance - allows use of _include to retrieve insurance when querying a procedure request</td>
 </tr>
 <tr>
 <td style="column-width:30%">
 <a href="procedurerequest-onbehalfof-stu3.html">
                         •  CRD Procedure Request On Behalf Of - STU3</a>
 </td>
-<td>TODO</td>
+<td>Custom CRD STU3 search parameter allowing search for procedure requests based on the organization on whose behalf the order was placed - allows use of _include to retrieve the organization when querying a procedure request</td>
 </tr>
 <tr>
 <td style="column-width:30%">
 <a href="referralrequest-insurance-stu3.html">
                         •  CRD Referral Request Insurance - STU3</a>
 </td>
-<td>TODO</td>
+<td>Custom CRD STU3 search parameter allowing search for referral requests based on the associated insurance - allows use of _include to retrieve insurance when querying a referral request</td>
 </tr>
 <tr>
 <td style="column-width:30%">
 <a href="referralrequest-onbehalfof-stu3.html">
                         •  CRD Referral Request On Behalf Of - STU3</a>
 </td>
-<td>TODO</td>
-</tr>
-<tr>
-<td style="column-width:30%">
-<a href="supplyrequest-insurance-stu3.html">
-                        •  CRD SupplyRequest Insurance - STU3</a>
-</td>
-<td>TODO</td>
-</tr>
-<tr>
-<td style="column-width:30%">
-<a href="supplyrequest-patient-stu3.html">
-                        •  CRD SupplyRequest Patient - STU3</a>
-</td>
-<td>TODO</td>
+<td>Custom CRD STU3 search parameter allowing search for referral requests based on the organization on whose behalf the order was placed - allows use of _include to retrieve the organization when querying a referral request</td>
 </tr>
 <tr>
 <td style="column-width:30%">
 <a href="visionprescription-insurance-stu3.html">
                         •  CRD VisionPrescription Insurance - STU3</a>
 </td>
-<td>TODO</td>
+<td>Custom CRD STU3 search parameter allowing search for vision prescriptions based on the associated insurance - allows use of _include to retrieve insurance when querying a vision prescription</td>
 </tr>
 </tbody>
 </table>
@@ -271,35 +250,35 @@
 <a href="task-type-stu3.html">
                         •  CRD STU3 Task Types Code System</a>
 </td>
-<td>TODO</td>
+<td>Codes for use with FHIR STU3 to identify types of tasks relevant to coverage requirement discovery</td>
 </tr>
 <tr>
 <td style="column-width:30%">
 <a href="task-reason-stu3.html">
                         •  CRD STU3 Task Reasons Code System</a>
 </td>
-<td>TODO</td>
+<td>Codes for use with FHIR STU3 to identify reasons for task performance relevant to coverage requirement discovery</td>
 </tr>
 <tr>
 <td style="column-width:30%">
 <a href="valueset-locationAddressType-stu3.html">
                         •  CRD STU3 Location Address Types</a>
 </td>
-<td>TODO</td>
+<td>The subset of FHIR STU3 location address types relevant for coverage requirement discovery</td>
 </tr>
 <tr>
 <td style="column-width:30%">
 <a href="valueset-taskCode-stu3.html">
                         •  CRD STU3 Task Types</a>
 </td>
-<td>TODO</td>
+<td>All FHIR STU3 task codes relevant to coverage requirements discovery</td>
 </tr>
 <tr>
 <td style="column-width:30%">
 <a href="valueset-taskReasonCode-stu3.html">
                         •  CRD STU3 Task Reason Codes</a>
 </td>
-<td>TODO</td>
+<td>All FHIR STU3 task reasons relevant to coverage requirements discovery</td>
 </tr>
 </tbody>
 </table>
