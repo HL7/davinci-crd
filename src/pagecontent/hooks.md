@@ -1125,8 +1125,8 @@ EMR implementations should not expect standardized prefetch key names.  EMRs sup
       <code>Appointment?_id={{context.appointments.Appointment.id}}<br/>
       &_include=Appointment:patient<br/>
       &_include=Appointment:practitioner:PractitionerRole<br/>
-      &_include=PractitionerRole:organization<br/>
-      &_include=PractitionerRole:practitioner<br/>
+      &_include:iterate=PractitionerRole:organization<br/>
+      &_include:iterate=PractitionerRole:practitioner<br/>
       &_include=Appointment:location<br/>
       &_include=Appointment:<a href="appointment-insurance-r4.html">insurance</a>:Coverage</code>
     </td>
@@ -1155,8 +1155,8 @@ EMR implementations should not expect standardized prefetch key names.  EMRs sup
       &_include=DeviceRequest:performer<br/>
       &_include=DeviceRequest:requester<br/>
       &_include=DeviceRequest:device<br/>
-      &_include=PractitionerRole:organization<br/>
-      &_include=PractitionerRole:practitioner<br/>
+      &_include:iterate=PractitionerRole:organization<br/>
+      &_include:iterate=PractitionerRole:practitioner<br/>
       &_include=DeviceRequest:insurance:Coverage</code>
     </td>
     <td>No performing location</td>
@@ -1209,8 +1209,8 @@ EMR implementations should not expect standardized prefetch key names.  EMRs sup
       &_include=MedicationRequest:intended-dispenser<br/>
       &_include=MedicationRequest:requester:PractitionerRole<br/>
       &_include=MedicationRequest:medication<br/>
-      &_include=PractitionerRole:organization<br/>
-      &_include=PractitionerRole:practitioner<br/>
+      &_include:iterate=PractitionerRole:organization<br/>
+      &_include:iterate=PractitionerRole:practitioner<br/>
       &_include=MedicationRequest:<a href="medicationrequest-insurance-r4.html">insurance</a>:Coverage</code>
     </td>
     <td>No performing location</td>
@@ -1238,8 +1238,8 @@ EMR implementations should not expect standardized prefetch key names.  EMRs sup
       &_include=MedicationRequest:intended-dispenser<br/>
       &_include=MedicationRequest:requester:PractitionerRole<br/>
       &_include=MedicationRequest:medication<br/>
-      &_include=PractitionerRole:organization<br/>
-      &_include=PractitionerRole:practitioner<br/>
+      &_include:iterate=PractitionerRole:organization<br/>
+      &_include:iterate=PractitionerRole:practitioner<br/>
       &_include=MedicationRequest:<a href="medicationrequest-insurance-r4.html">insurance</a>:Coverage</code>
     </td>
     <td>No performing location</td>
@@ -1253,7 +1253,7 @@ EMR implementations should not expect standardized prefetch key names.  EMRs sup
       &_include=NutritionOrder:provider<br/>
       &_include=NutritionOrder:requester<br/>
       &_include=NutritionOrder:encounter<br/>
-      &_include=Enconuter:location<br/>
+      &_include:recurse=Encounter:location<br/>
       &_include=NutritionOrder:<a href="STU3/nutritionorder-insurance-stu3.html">insurance</a>:Coverage</code>
     </td>
     <td>No organization, location only through request encounter</td>
@@ -1266,10 +1266,10 @@ EMR implementations should not expect standardized prefetch key names.  EMRs sup
       &_include=NutritionOrder:patient<br/>
       &_include=NutritionOrder:provider<br/>
       &_include=NutritionOrder:requester<br/>
-      &_include=PractitionerRole:organization<br/>
-      &_include=PractitionerRole:practitioner<br/>
+      &_include:iterate=PractitionerRole:organization<br/>
+      &_include:iterate=PractitionerRole:practitioner<br/>
       &_include=NutritionOrder:encounter<br/>
-      &_include=Encounter:location<br/>
+      &_include:iterate=Encounter:location<br/>
       &_include=NutritionOrder:<a href="nutritionorder-insurance-r4.html">insurance</a>:Coverage</code>
     </td>
     <td>Location only through request encounter</td>
@@ -1308,13 +1308,13 @@ EMR implementations should not expect standardized prefetch key names.  EMRs sup
       &_include=ServiceRequest:patient<br/>
       &_include=ServiceRequest:performer<br/>
       &_include=ServiceRequest:requester<br/>
-      &_include=PractitionerRole:organization<br/>
-      &_include=PractitionerRole:practitioner<br/>
+      &_include:iterate=PractitionerRole:organization<br/>
+      &_include:iterate=PractitionerRole:practitioner<br/>
       &_include=ServiceRequest:<a href="servicerequest-insurance-r4.html">insurance</a>:Coverage</code>
     </td>
     <td>No performer location</td>
   </tr>
-  <tr>
+<!--  <tr>
     <td>SupplyRequest</td>
     <td>STU3</td>
     <td>
@@ -1337,48 +1337,12 @@ EMR implementations should not expect standardized prefetch key names.  EMRs sup
       &_include=SupplyRequest:requester:Practitioner<br/>
       &_include=SupplyRequest:requester:Organization<br/>
       &_include=SupplyRequest:Requester:PractitionerRole<br/>
-      &_include=PractitionerRole:organization<br/>
-      &_include=PractitionerRole:practitioner<br/>
+      &_include:iterate=PractitionerRole:organization<br/>
+      &_include:iterate=PractitionerRole:practitioner<br/>
       &_include=SupplyRequest:<a href="supplyrequest-insurance-r4.html">insurance</a>:Coverage</code>
     </td>
     <td>No performer location</td>
-  </tr>
-  <tr>
-    <td>Task</td>
-    <td>STU3</td>
-    <td>
-      <code>Task?_id={{context.draftOrders.Task.id}}&<br/>
-      _include=Task:patient<br/>
-      &_include=Task:requester:Practitioner<br/>
-      &_include=Task:requester:Organization<br/>
-      &_include=Task:owner:Practitioner<br/>
-      &_include=Task:owner:Organization<br/>
-      &_include=Task:location<br/>
-      &_include=PractitionerRole:organization<br/>
-      &_include=PractitionerRole:practitioner<br/>
-      &_include=Task:insurance<a href="task-insurance-stu3.html">insurance</a>:Coverage</code>
-    </td>
-    <td>No support for location</td>
-  </tr>
-  <tr>
-    <td>Task</td>
-    <td>R4</td>
-    <td>
-      <code>Task?_id={{context.draftOrders.Task.id}}&<br/>
-      _include=Task:patient<br/>
-      &_include=Task:requester:Practitioner<br/>
-      &_include=Task:requester:Organization<br/>
-      &_include=Task:requester:PractitionerRole<br/>
-      &_include=Task:owner:Practitioner<br/>
-      &_include=Task:owner:Organization<br/>
-      &_include=Task:owner:PractitionerRole<br/>
-      &_include=Task:location<br/>
-      &_include=PractitionerRole:organization<br/>
-      &_include=PractitionerRole:practitioner<br/>
-      &_include=Task:insurance<a href="task-insurance-r4.html">insurance</a>:Coverage</code>
-    </td>
-    <td></td>
-  </tr>
+  </tr>-->
   <tr>
     <td>VisionPrescription</td>
     <td>STU3</td>
