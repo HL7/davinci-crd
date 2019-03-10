@@ -1578,7 +1578,8 @@ Guidance and conformance expectations around privacy and security are provided b
 
 In addition to these, this implementation guide imposes the following additional rules:
 
-* Communications between providers and payers **SHOULD** use mutually authenticated TLS. Some payers may require mutually authenticated TLS.
+* Communications between providers and payers **SHALL** use mutually authenticated TLS.
+** Systems **SHOULD** comply with the most recent set of NIST guidelines and **SHALL** comply with at least the next most recent guidelines.  At the time this IG is written, the current guidelines can be found [here](https://csrc.nist.gov/CSRC/media/Publications/sp/800-52/rev-2/draft/documents/sp800-52r2-draft2.pdf).
     * This specification does not provide guidance on certificate management between clinical and payer systems, though it has been proposed that Direct certificates could be used for this purpose
 * Client systems **SHALL** support running applications that adhere to the SMART on FHIR [public app](http://www.hl7.org/fhir/smart-app-launch#support-for-public-and-confidential-apps) profile
 * Payer systems that wish to receive Hook invocations that contain PHI **SHALL** demonstrate at time of registration/configuration that their user agreements give them permission to receive such data in a coverage requirement context.
