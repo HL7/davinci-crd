@@ -111,7 +111,6 @@
     "nutritionorder-profile-spreadsheet.xml",
     "organization-profile-spreadsheet.xml",
     "practitioner-profile-spreadsheet.xml",
-    "practitionerrole-profile-spreadsheet.xml",
     "servicerequest-profile-spreadsheet.xml",
     "supplyrequest-profile-spreadsheet.xml",
     "task-profile-spreadsheet.xml"
@@ -145,11 +144,7 @@
     },
     "StructureDefinition/profile-practitioner-r4":{
     },
-    "StructureDefinition/profile-practitionerrole-r4":{
-    },
     "StructureDefinition/profile-servicerequest-r4":{
-    },
-    "StructureDefinition/profile-supplyrequest-r4":{
     },
     "StructureDefinition/profile-taskquestionnaire-r4":{
     },

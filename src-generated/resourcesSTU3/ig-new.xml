@@ -3,22 +3,22 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir">
   <id value="davinci-crd"/>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="C:\Users\lloyd\Documents\SVN\davinci-crd\src-generated\resourcesSTU3"/>
+    <valueString value="/Users/jeanduteau/Documents/DDIWork/Gevity/davinci-crd/src-generated/resourcesSTU3"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="C:\Users\lloyd\Documents\SVN\davinci-crd\src\resources"/>
+    <valueString value="/Users/jeanduteau/Documents/DDIWork/Gevity/davinci-crd/src/resources"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="C:\Users\lloyd\Documents\SVN\davinci-crd\src\vocabulary"/>
+    <valueString value="/Users/jeanduteau/Documents/DDIWork/Gevity/davinci-crd/src/vocabulary"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="C:\Users\lloyd\Documents\SVN\davinci-crd\src\examples"/>
+    <valueString value="/Users/jeanduteau/Documents/DDIWork/Gevity/davinci-crd/src/examples"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages">
-    <valueString value="C:\Users\lloyd\Documents\SVN\davinci-crd\src\images"/>
+    <valueString value="/Users/jeanduteau/Documents/DDIWork/Gevity/davinci-crd/src/images"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages">
-    <valueString value="C:\Users\lloyd\Documents\SVN\davinci-crd\src-generated\pagesSTU3"/>
+    <valueString value="/Users/jeanduteau/Documents/DDIWork/Gevity/davinci-crd/src-generated/pagesSTU3"/>
   </extension>
   <url value="http://hl7.org/fhir/us/davinci-crd/STU3/ImplementationGuide/davinci-crd"/>
   <version value="3.0.1"/>

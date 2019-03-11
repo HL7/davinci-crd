@@ -3,22 +3,22 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir">
   <id value="davinci-crd"/>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="C:\Users\lloyd\Documents\SVN\davinci-crd\src-generated\resources"/>
+    <valueString value="/Users/jeanduteau/Documents/DDIWork/Gevity/davinci-crd/src-generated/resources"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="C:\Users\lloyd\Documents\SVN\davinci-crd\src\resources"/>
+    <valueString value="/Users/jeanduteau/Documents/DDIWork/Gevity/davinci-crd/src/resources"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="C:\Users\lloyd\Documents\SVN\davinci-crd\src\vocabulary"/>
+    <valueString value="/Users/jeanduteau/Documents/DDIWork/Gevity/davinci-crd/src/vocabulary"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="C:\Users\lloyd\Documents\SVN\davinci-crd\src\examples"/>
+    <valueString value="/Users/jeanduteau/Documents/DDIWork/Gevity/davinci-crd/src/examples"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages">
-    <valueString value="C:\Users\lloyd\Documents\SVN\davinci-crd\src\images"/>
+    <valueString value="/Users/jeanduteau/Documents/DDIWork/Gevity/davinci-crd/src/images"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages">
-    <valueString value="C:\Users\lloyd\Documents\SVN\davinci-crd\src-generated\pages"/>
+    <valueString value="/Users/jeanduteau/Documents/DDIWork/Gevity/davinci-crd/src-generated/pages"/>
   </extension>
   <url value="http://hl7.org/fhir/us/davinci-crd/ImplementationGuide/davinci-crd"/>
   <version value="0.2.0"/>
@@ -39,9 +39,9 @@
   <fhirVersion value="4.0.0"/>
   <fhirVersion value="4.0.0"/>
   <dependsOn id="core">
-    <uri value="http://hl7.org/fhir/us/core"/>
-    <packageId value="hl7.fhir.us.core"/>
-    <version value="dev"/>
+    <uri value="http://hl7.org/fhir/us/core-r4"/>
+    <packageId value="hl7.fhir.us.core.r4"/>
+    <version value="current"/>
   </dependsOn>
   <definition>
     <grouping id="profiles">
@@ -241,11 +241,6 @@
             <generation value="generated"/>
           </page>
           <page>
-            <nameUrl value="profile-medication-r4.html"/>
-            <title value="CRD Medication"/>
-            <generation value="generated"/>
-          </page>
-          <page>
             <nameUrl value="profile-medicationrequest-r4.html"/>
             <title value="CRD Medication Request"/>
             <generation value="generated"/>
@@ -273,11 +268,6 @@
           <page>
             <nameUrl value="profile-practitioner-r4.html"/>
             <title value="CRD Practitioner"/>
-            <generation value="generated"/>
-          </page>
-          <page>
-            <nameUrl value="profile-practitionerrole-r4.html"/>
-            <title value="CRD PractitionerRole"/>
             <generation value="generated"/>
           </page>
           <page>

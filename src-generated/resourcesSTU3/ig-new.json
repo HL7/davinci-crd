@@ -3,27 +3,27 @@
   "id" : "davinci-crd",
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\davinci-crd\\src-generated\\resourcesSTU3"
+    "valueString" : "/Users/jeanduteau/Documents/DDIWork/Gevity/davinci-crd/src-generated/resourcesSTU3"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\davinci-crd\\src\\resources"
+    "valueString" : "/Users/jeanduteau/Documents/DDIWork/Gevity/davinci-crd/src/resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\davinci-crd\\src\\vocabulary"
+    "valueString" : "/Users/jeanduteau/Documents/DDIWork/Gevity/davinci-crd/src/vocabulary"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\davinci-crd\\src\\examples"
+    "valueString" : "/Users/jeanduteau/Documents/DDIWork/Gevity/davinci-crd/src/examples"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\davinci-crd\\src\\images"
+    "valueString" : "/Users/jeanduteau/Documents/DDIWork/Gevity/davinci-crd/src/images"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\davinci-crd\\src-generated\\pagesSTU3"
+    "valueString" : "/Users/jeanduteau/Documents/DDIWork/Gevity/davinci-crd/src-generated/pagesSTU3"
   }],
   "url" : "http://hl7.org/fhir/us/davinci-crd/STU3/ImplementationGuide/davinci-crd",
   "version" : "3.0.1",
