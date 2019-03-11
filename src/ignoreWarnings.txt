@@ -1,42 +1,42 @@
 // The build process ought to be generating narrative for profiles - it used to...
-A resource should have narrative for robust management [text.div.exists()]
+//A resource should have narrative for robust management [text.div.exists()]
 
 //These all resolve but are reported as broken links
-The link 'http://hl7.org/fhir/R4/fhir-spec-r4.zip' for "R4" cannot be resolved
-The link 'http://hl7.org/fhir/STU3/fhir-spec.zip' for "STU3" cannot be resolved
-The link 'http://hl7.org/fhir/smart-app-launch' for "SMART on FHIR" cannot be resolved
-The link 'http://hl7.org/fhir/smart-app-launch/index.html' for "SMART on FHIR null" cannot be resolved
-The link 'http://hl7.org/fhir/smart-app-launch/index.html' for "SMART on FHIR" cannot be resolved
-The link 'http://hl7.org/fhir/us/core/2019Jan' for "US Core (2.1.0 - R4 based)" cannot be resolved
-The link 'http://hl7.org/fhir/us/core/2019Jan' for "US Core STU3 - draft null" cannot be resolved
-The link 'http://hl7.org/fhir/us/core/2019Jan' for "US Core STU3 - draft" cannot be resolved
-The link 'http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-medication.html' for "us-core-medication (FHIR R4)" cannot be resolved
-The link 'http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-practitionerrole.html' for "us-core-practitionerrole (FHIR R4)" cannot be resolved
-The link 'http://hl7.org/fhir/us/core/STU2' for "(2.0.0 - STU3 based)" cannot be resolved
-The link 'http://hl7.org/fhir/us/core/STU2' for "US Core (2.0.0 - STU3 based)" cannot be resolved
-The link 'http://hl7.org/fhir/us/davinci-crd/STU3/history.html' for "Version History" cannot be resolved
-The link 'http://hl7.org/fhir/us/sdc/index.html' for "Structured Data Capture profiles" cannot be resolved
-The link 'http://hl7.org/fhir/validator' for "validator" cannot be resolved
+//The link 'http://hl7.org/fhir/R4/fhir-spec-r4.zip' for "R4" cannot be resolved
+//The link 'http://hl7.org/fhir/STU3/fhir-spec.zip' for "STU3" cannot be resolved
+//The link 'http://hl7.org/fhir/smart-app-launch' for "SMART on FHIR" cannot be resolved
+//The link 'http://hl7.org/fhir/smart-app-launch/index.html' for "SMART on FHIR null" cannot be resolved
+//The link 'http://hl7.org/fhir/smart-app-launch/index.html' for "SMART on FHIR" cannot be resolved
+//The link 'http://hl7.org/fhir/us/core/2019Jan' for "US Core (2.1.0 - R4 based)" cannot be resolved
+//The link 'http://hl7.org/fhir/us/core/2019Jan' for "US Core STU3 - draft null" cannot be resolved
+//The link 'http://hl7.org/fhir/us/core/2019Jan' for "US Core STU3 - draft" cannot be resolved
+//The link 'http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-medication.html' for "us-core-medication (FHIR R4)" cannot be resolved
+//The link 'http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-practitionerrole.html' for "us-core-practitionerrole (FHIR R4)" cannot be resolved
+//The link 'http://hl7.org/fhir/us/core/STU2' for "(2.0.0 - STU3 based)" cannot be resolved
+//The link 'http://hl7.org/fhir/us/core/STU2' for "US Core (2.0.0 - STU3 based)" cannot be resolved
+//The link 'http://hl7.org/fhir/us/davinci-crd/STU3/history.html' for "Version History" cannot be resolved
+//The link 'http://hl7.org/fhir/us/sdc/index.html' for "Structured Data Capture profiles" cannot be resolved
+//The link 'http://hl7.org/fhir/validator' for "validator" cannot be resolved
 
 // These should be resolving to the core spec (though in some cases even the right URLs don't exist because the core spec itself is wrong)
-The link 'http://hl7.org/fhir/us/core/extension-rendered-value.html' for "Rendered Value extension" cannot be resolved
-The link 'http://hl7.org/fhir/us/core/device.html#5.11.3.2.2' for "UDI" cannot be resolved
-The link 'http://hl7.org/fhir/us/core/device.html#5.11.3.2.2' for "Unique device identifier (UDI)" cannot be resolved
-The link 'http://hl7.org/fhir/us/core/device-mappings.html#udi' for "UDI mappings" cannot be resolved
+//The link 'http://hl7.org/fhir/us/core/extension-rendered-value.html' for "Rendered Value extension" cannot be resolved
+//The link 'http://hl7.org/fhir/us/core/device.html#5.11.3.2.2' for "UDI" cannot be resolved
+//The link 'http://hl7.org/fhir/us/core/device.html#5.11.3.2.2' for "Unique device identifier (UDI)" cannot be resolved
+//The link 'http://hl7.org/fhir/us/core/device-mappings.html#udi' for "UDI mappings" cannot be resolved
 
 // The narrative generator is creating links for these for some reason when it doesn't create them for the search parameters created against the IG base URL.  Not sure why.
-The link 'http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/encounter-insurance-stu3' for "http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/encounter-insurance-stu3" cannot be resolved
-The link 'http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/medicationrequest-onbehalfof-stu3' for "http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/medicationrequest-onbehalfof-stu3" cannot be resolved
-The link 'http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/devicerequest-insurance-stu3' for "http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/devicerequest-insurance-stu3" cannot be resolved
-The link 'http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/referralrequest-onbehalfof-stu3' for "http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/referralrequest-onbehalfof-stu3" cannot be resolved
-The link 'http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/nutritionorder-insurance-stu3' for "http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/nutritionorder-insurance-stu3" cannot be resolved
-The link 'http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/procedurerequest-onbehalfof-stu3' for "http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/procedurerequest-onbehalfof-stu3" cannot be resolved
-The link 'http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/devicerequest-onbehalfof-stu3' for "http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/devicerequest-onbehalfof-stu3" cannot be resolved
-The link 'http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/appointment-insurance-stu3' for "http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/appointment-insurance-stu3" cannot be resolved
-The link 'http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/referralrequest-insurance-stu3' for "http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/referralrequest-insurance-stu3" cannot be resolved
-The link 'http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/visionprescription-insurance-stu3' for "http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/visionprescription-insurance-stu3" cannot be resolved
-The link 'http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/medicationrequest-insurance-stu3' for "http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/medicationrequest-insurance-stu3" cannot be resolved
-The link 'http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/procedurerequest-insurance-stu3' for "http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/procedurerequest-insurance-stu3" cannot be resolved
+//The link 'http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/encounter-insurance-stu3' for "http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/encounter-insurance-stu3" cannot be resolved
+//The link 'http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/medicationrequest-onbehalfof-stu3' for "http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/medicationrequest-onbehalfof-stu3" cannot be resolved
+//The link 'http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/devicerequest-insurance-stu3' for "http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/devicerequest-insurance-stu3" cannot be resolved
+//The link 'http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/referralrequest-onbehalfof-stu3' for "http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/referralrequest-onbehalfof-stu3" cannot be resolved
+//The link 'http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/nutritionorder-insurance-stu3' for "http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/nutritionorder-insurance-stu3" cannot be resolved
+//The link 'http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/procedurerequest-onbehalfof-stu3' for "http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/procedurerequest-onbehalfof-stu3" cannot be resolved
+//The link 'http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/devicerequest-onbehalfof-stu3' for "http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/devicerequest-onbehalfof-stu3" cannot be resolved
+//The link 'http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/appointment-insurance-stu3' for "http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/appointment-insurance-stu3" cannot be resolved
+//The link 'http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/referralrequest-insurance-stu3' for "http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/referralrequest-insurance-stu3" cannot be resolved
+//The link 'http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/visionprescription-insurance-stu3' for "http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/visionprescription-insurance-stu3" cannot be resolved
+//The link 'http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/medicationrequest-insurance-stu3' for "http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/medicationrequest-insurance-stu3" cannot be resolved
+//The link 'http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/procedurerequest-insurance-stu3' for "http://hl7.org/fhir/us/davinci-crd/STU3/SearchParameter/procedurerequest-insurance-stu3" cannot be resolved
 
 // These are just info messages and aren't relevant
 INFORMATION: CRD Appointment: Resources generated by processing appointment-profile-spreadsheet:  http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-insurance ("Insurance")  http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-appointment-r4 ("CRD Appointment")
