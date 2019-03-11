@@ -10,6 +10,8 @@ The link 'http://hl7.org/fhir/smart-app-launch/index.html' for "SMART on FHIR" c
 The link 'http://hl7.org/fhir/us/core/2019Jan' for "US Core (2.1.0 - R4 based)" cannot be resolved
 The link 'http://hl7.org/fhir/us/core/2019Jan' for "US Core STU3 - draft null" cannot be resolved
 The link 'http://hl7.org/fhir/us/core/2019Jan' for "US Core STU3 - draft" cannot be resolved
+The link 'http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-medication.html' for "us-core-medication (FHIR R4)" cannot be resolved
+The link 'http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-practitionerrole.html' for "us-core-practitionerrole (FHIR R4)" cannot be resolved
 The link 'http://hl7.org/fhir/us/core/STU2' for "(2.0.0 - STU3 based)" cannot be resolved
 The link 'http://hl7.org/fhir/us/core/STU2' for "US Core (2.0.0 - STU3 based)" cannot be resolved
 The link 'http://hl7.org/fhir/us/davinci-crd/STU3/history.html' for "Version History" cannot be resolved

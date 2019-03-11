@@ -111,7 +111,6 @@
     "nutritionorder-profile-spreadsheet.xml",
     "organization-profile-spreadsheet.xml",
     "practitioner-profile-spreadsheet.xml",
-    "practitionerrole-profile-spreadsheet.xml",
     "servicerequest-profile-spreadsheet.xml",
     "task-profile-spreadsheet.xml"
   ],
@@ -132,8 +131,6 @@
     },
     "StructureDefinition/profile-location-r4":{
     },
-    "StructureDefinition/profile-medication-r4":{
-    },
     "StructureDefinition/profile-medicationrequest-r4":{
     },
     "StructureDefinition/profile-nutritionorder-r4":{
@@ -146,21 +143,9 @@
     },
     "StructureDefinition/profile-practitioner-r4":{
     },
-    "StructureDefinition/profile-practitionerrole-r4":{
-    },
     "StructureDefinition/profile-servicerequest-r4":{
     },
     "StructureDefinition/profile-taskquestionnaire-r4":{
-    },
-    "SearchParameter/appointment-insurance-r4":{
-    },
-    "SearchParameter/encounter-insurance-r4":{
-    },
-    "SearchParameter/medicationrequest-insurance-r4":{
-    },
-    "SearchParameter/nutritionorder-insurance-r4":{
-    },
-    "SearchParameter/servicerequest-insurance-r4":{
     },
     "StructureDefinition/ext-insurance":{
       "template-base": "../framework/templates/template-ext.html",
@@ -174,6 +159,16 @@
       "mappings": "extension-{{[id]}}-mappings.html",
       "examples": "extension-{{[id]}}-examples.html",
       "profile-json": "extension-{{[id]}}.profile.json.html"
+    },
+    "SearchParameter/appointment-insurance-r4":{
+    },
+    "SearchParameter/encounter-insurance-r4":{
+    },
+    "SearchParameter/medicationrequest-insurance-r4":{
+    },
+    "SearchParameter/nutritionorder-insurance-r4":{
+    },
+    "SearchParameter/servicerequest-insurance-r4":{
     },
     "CodeSystem/task-type":{
     },

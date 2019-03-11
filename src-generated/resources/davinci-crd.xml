@@ -49,7 +49,6 @@
     
     
     
-    
 <!--    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
       <valueUri value="supplyrequest-profile-spreadsheet.xml"/>
     </extension>
@@ -115,8 +114,6 @@
     
     
     
-    
-    
     <!--    <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
         <valueBoolean value="true"/>
@@ -144,6 +141,8 @@
       <exampleBoolean value="false"/>
       <groupingId value="profiles"/>
     </resource>-->
+    
+    
     
     
     
@@ -246,15 +245,6 @@
       <groupingId value="search"/>
     </resource>-->
     
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/ext-insurance"/>
-      </reference>
-      <name value="CRD Insurance Extension"/>
-      <description value="Custom CRD extension that allows conveying insurance information associated with a request when the request resouce doesn't have a core element that supports capturing such information."/>
-      <exampleBoolean value="false"/>
-      <groupingId value="extensions"/>
-    </resource>
     <resource>
       <reference>
         <reference value="CodeSystem/task-type"/>
@@ -387,113 +377,103 @@
 <generation value="generated"/>
 </page>
 <page>
-<nameUrl value="profile-medication-r4.html"/>
-<ns8:title xmlns:ns8="http://hl7.org/fhir" value="CRD Medication"/>
-<generation value="generated"/>
-</page>
-<page>
 <nameUrl value="profile-medicationrequest-r4.html"/>
-<ns9:title xmlns:ns9="http://hl7.org/fhir" value="CRD Medication Request"/>
+<ns8:title xmlns:ns8="http://hl7.org/fhir" value="CRD Medication Request"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="profile-nutritionorder-r4.html"/>
-<ns10:title xmlns:ns10="http://hl7.org/fhir" value="CRD Nutrition Order"/>
+<ns9:title xmlns:ns9="http://hl7.org/fhir" value="CRD Nutrition Order"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="profile-organization-r4.html"/>
-<ns11:title xmlns:ns11="http://hl7.org/fhir" value="CRD Organization"/>
+<ns10:title xmlns:ns10="http://hl7.org/fhir" value="CRD Organization"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="profile-patient-r4.html"/>
-<ns12:title xmlns:ns12="http://hl7.org/fhir" value="CRD Patient"/>
+<ns11:title xmlns:ns11="http://hl7.org/fhir" value="CRD Patient"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="profile-patient-deident-r4.html"/>
-<ns13:title xmlns:ns13="http://hl7.org/fhir" value="CRD Deidentified Patient"/>
+<ns12:title xmlns:ns12="http://hl7.org/fhir" value="CRD Deidentified Patient"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="profile-practitioner-r4.html"/>
-<ns14:title xmlns:ns14="http://hl7.org/fhir" value="CRD Practitioner"/>
-<generation value="generated"/>
-</page>
-<page>
-<nameUrl value="profile-practitionerrole-r4.html"/>
-<ns15:title xmlns:ns15="http://hl7.org/fhir" value="CRD PractitionerRole"/>
+<ns13:title xmlns:ns13="http://hl7.org/fhir" value="CRD Practitioner"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="profile-servicerequest-r4.html"/>
-<ns16:title xmlns:ns16="http://hl7.org/fhir" value="CRD Service Request"/>
+<ns14:title xmlns:ns14="http://hl7.org/fhir" value="CRD Service Request"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="profile-taskquestionnaire-r4.html"/>
-<ns17:title xmlns:ns17="http://hl7.org/fhir" value="CRD Questionnaire Task"/>
-<generation value="generated"/>
-</page>
-<page>
-<nameUrl value="appointment-insurance-r4.html"/>
-<ns18:title xmlns:ns18="http://hl7.org/fhir" value="CRD Appointment Insurance"/>
-<generation value="generated"/>
-</page>
-<page>
-<nameUrl value="encounter-insurance-r4.html"/>
-<ns19:title xmlns:ns19="http://hl7.org/fhir" value="CRD Encounter Insurance"/>
-<generation value="generated"/>
-</page>
-<page>
-<nameUrl value="medicationrequest-insurance-r4.html"/>
-<ns20:title xmlns:ns20="http://hl7.org/fhir" value="CRD MedicationRequest Insurance"/>
-<generation value="generated"/>
-</page>
-<page>
-<nameUrl value="nutritionorder-insurance-r4.html"/>
-<ns21:title xmlns:ns21="http://hl7.org/fhir" value="CRD NutritionOrder Insurance"/>
-<generation value="generated"/>
-</page>
-<page>
-<nameUrl value="servicerequest-insurance-r4.html"/>
-<ns22:title xmlns:ns22="http://hl7.org/fhir" value="CRD ServiceRequest Insurance"/>
+<ns15:title xmlns:ns15="http://hl7.org/fhir" value="CRD Questionnaire Task"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="extension-ext-insurance.html"/>
-<ns23:title xmlns:ns23="http://hl7.org/fhir" value="CRD Insurance Extension"/>
+<ns16:title xmlns:ns16="http://hl7.org/fhir" value="CRD Insurance Extension - R4"/>
+<generation value="generated"/>
+</page>
+<page>
+<nameUrl value="appointment-insurance-r4.html"/>
+<ns17:title xmlns:ns17="http://hl7.org/fhir" value="CRD Appointment Insurance"/>
+<generation value="generated"/>
+</page>
+<page>
+<nameUrl value="encounter-insurance-r4.html"/>
+<ns18:title xmlns:ns18="http://hl7.org/fhir" value="CRD Encounter Insurance"/>
+<generation value="generated"/>
+</page>
+<page>
+<nameUrl value="medicationrequest-insurance-r4.html"/>
+<ns19:title xmlns:ns19="http://hl7.org/fhir" value="CRD MedicationRequest Insurance"/>
+<generation value="generated"/>
+</page>
+<page>
+<nameUrl value="nutritionorder-insurance-r4.html"/>
+<ns20:title xmlns:ns20="http://hl7.org/fhir" value="CRD NutritionOrder Insurance"/>
+<generation value="generated"/>
+</page>
+<page>
+<nameUrl value="servicerequest-insurance-r4.html"/>
+<ns21:title xmlns:ns21="http://hl7.org/fhir" value="CRD ServiceRequest Insurance"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="task-type.html"/>
-<ns24:title xmlns:ns24="http://hl7.org/fhir" value="CRD Task Types Code System"/>
+<ns22:title xmlns:ns22="http://hl7.org/fhir" value="CRD Task Types Code System"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="task-reason.html"/>
-<ns25:title xmlns:ns25="http://hl7.org/fhir" value="CRD Task Reasons Code System"/>
+<ns23:title xmlns:ns23="http://hl7.org/fhir" value="CRD Task Reasons Code System"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="coverageClass.html"/>
-<ns26:title xmlns:ns26="http://hl7.org/fhir" value="CRD Coverage Classes"/>
+<ns24:title xmlns:ns24="http://hl7.org/fhir" value="CRD Coverage Classes"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="locationAddressType.html"/>
-<ns27:title xmlns:ns27="http://hl7.org/fhir" value="CRD Location Address Types"/>
+<ns25:title xmlns:ns25="http://hl7.org/fhir" value="CRD Location Address Types"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="taskCode.html"/>
-<ns28:title xmlns:ns28="http://hl7.org/fhir" value="CRD Task Types"/>
+<ns26:title xmlns:ns26="http://hl7.org/fhir" value="CRD Task Types"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="taskReasonCode.html"/>
-<ns29:title xmlns:ns29="http://hl7.org/fhir" value="CRD Task Reason Codes"/>
+<ns27:title xmlns:ns27="http://hl7.org/fhir" value="CRD Task Reason Codes"/>
 <generation value="generated"/>
 </page>
 </page>

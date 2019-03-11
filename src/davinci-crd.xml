@@ -152,9 +152,6 @@
       </valueUri>
     </extension>
     <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
-      <valueUri value="practitionerrole-profile-spreadsheet.xml"/>
-    </extension>
-    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
       <valueUri value="procedurerequest-stu3-profile-spreadsheet.xml">
         <extension url="http://hl7.org/fhir/StructureDefinition/tools-alternateVersion">
           <valueCode value="STU3"/>
@@ -440,18 +437,6 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/profile-medication-r4"/>
-      </reference>
-      <name value="CRD Medication"/>
-      <description value="CRD constraints on R4 Medication resource mandating support for elements relevant to identification and description of a medication referenced by a MedicationRequest or other CRD-relevant resource"/>
-      <exampleBoolean value="false"/>
-      <groupingId value="profiles"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-        <valueBoolean value="true"/>
-      </extension>
-      <reference>
         <reference value="StructureDefinition/profile-medicationrequest-r4"/>
       </reference>
       <name value="CRD Medication Request"/>
@@ -613,18 +598,6 @@
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
         <valueBoolean value="true"/>
       </extension>
-      <reference>
-        <reference value="StructureDefinition/profile-practitionerrole-r4"/>
-      </reference>
-      <name value="CRD PractitionerRole"/>
-      <description value="CRD constraints on R4 PractitionerRole resource mandating support for elements relevant to identifying and describing a healthcare provider or administrative staff along with their role and responsible organization involved in performing a coverage requirement discovery-related action"/>
-      <exampleBoolean value="false"/>
-      <groupingId value="profiles"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-        <valueBoolean value="true"/>
-      </extension>
       <extension url="http://hl7.org/fhir/StructureDefinition/tools-alternateVersion">
         <valueCode value="STU3"/>
       </extension>
@@ -731,6 +704,33 @@
       <description value="CRD constraints on STU3 VisionPrescription resource mandating support for elements relevant to coverage requirements discovery"/>
       <exampleBoolean value="false"/>
       <groupingId value="profiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/tools-alternateVersion">
+        <valueCode value="STU3"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ext-insurance"/>
+      </reference>
+      <name value="CRD Insurance Extension - STU3"/>
+      <description value="Custom CRD STU3 extension that allows conveying insurance information associated with a request when the request resouce doesn't have a core element that supports capturing such information."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="extensions"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ext-insurance"/>
+      </reference>
+      <name value="CRD Insurance Extension - R4"/>
+      <description value="Custom CRD R4 extension that allows conveying insurance information associated with a request when the request resouce doesn't have a core element that supports capturing such information."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="extensions"/>
     </resource>
     <resource>
       <reference>
@@ -962,15 +962,6 @@
       <description value="Custom CRD STU3 search parameter allowing search for vision prescriptions based on the associated insurance - allows use of _include to retrieve insurance when querying a vision prescription"/>
       <exampleBoolean value="true"/>
       <groupingId value="search"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/ext-insurance"/>
-      </reference>
-      <name value="CRD Insurance Extension"/>
-      <description value="Custom CRD extension that allows conveying insurance information associated with a request when the request resouce doesn't have a core element that supports capturing such information."/>
-      <exampleBoolean value="false"/>
-      <groupingId value="extensions"/>
     </resource>
     <resource>
       <reference>

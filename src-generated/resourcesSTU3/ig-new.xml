@@ -299,6 +299,11 @@
         <generation value="generated"/>
       </page>
       <page>
+        <nameUrl value="extension-ext-insurance.html"/>
+        <title value="CRD Insurance Extension - STU3"/>
+        <generation value="generated"/>
+      </page>
+      <page>
         <nameUrl value="appointment-insurance-stu3.html"/>
         <title value="CRD Appointment Insurance - STU3"/>
         <generation value="generated"/>

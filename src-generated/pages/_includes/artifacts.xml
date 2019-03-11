@@ -67,13 +67,6 @@
 </tr>
 <tr>
 <td style="column-width:30%">
-<a href="profile-medication-r4.html">
-                        •  CRD Medication</a>
-</td>
-<td>CRD constraints on R4 Medication resource mandating support for elements relevant to identification and description of a medication referenced by a MedicationRequest or other CRD-relevant resource</td>
-</tr>
-<tr>
-<td style="column-width:30%">
 <a href="profile-medicationrequest-r4.html">
                         •  CRD Medication Request</a>
 </td>
@@ -116,13 +109,6 @@
 </tr>
 <tr>
 <td style="column-width:30%">
-<a href="profile-practitionerrole-r4.html">
-                        •  CRD PractitionerRole</a>
-</td>
-<td>CRD constraints on R4 PractitionerRole resource mandating support for elements relevant to identifying and describing a healthcare provider or administrative staff along with their role and responsible organization involved in performing a coverage requirement discovery-related action</td>
-</tr>
-<tr>
-<td style="column-width:30%">
 <a href="profile-servicerequest-r4.html">
                         •  CRD Service Request</a>
 </td>
@@ -147,9 +133,9 @@
 <tr>
 <td style="column-width:30%">
 <a href="extension-ext-insurance.html">
-                        •  CRD Insurance Extension</a>
+                        •  CRD Insurance Extension - R4</a>
 </td>
-<td>Custom CRD extension that allows conveying insurance information associated with a request when the request resouce doesn't have a core element that supports capturing such information.</td>
+<td>Custom CRD R4 extension that allows conveying insurance information associated with a request when the request resouce doesn't have a core element that supports capturing such information.</td>
 </tr>
 </tbody>
 </table>

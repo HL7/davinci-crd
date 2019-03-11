@@ -307,6 +307,11 @@
         "generation" : "generated"
       },
       {
+        "nameUrl" : "extension-ext-insurance.html",
+        "title" : "CRD Insurance Extension - STU3",
+        "generation" : "generated"
+      },
+      {
         "nameUrl" : "appointment-insurance-stu3.html",
         "title" : "CRD Appointment Insurance - STU3",
         "generation" : "generated"

@@ -117,15 +117,6 @@
     },
     {
       "reference" : {
-        "reference" : "StructureDefinition/ext-insurance"
-      },
-      "name" : "CRD Insurance Extension",
-      "description" : "Custom CRD extension that allows conveying insurance information associated with a request when the request resouce doesn't have a core element that supports capturing such information.",
-      "exampleBoolean" : false,
-      "groupingId" : "extensions"
-    },
-    {
-      "reference" : {
         "reference" : "CodeSystem/task-type"
       },
       "name" : "CRD Task Types Code System",
@@ -251,11 +242,6 @@
             "generation" : "generated"
           },
           {
-            "nameUrl" : "profile-medication-r4.html",
-            "title" : "CRD Medication",
-            "generation" : "generated"
-          },
-          {
             "nameUrl" : "profile-medicationrequest-r4.html",
             "title" : "CRD Medication Request",
             "generation" : "generated"
@@ -286,11 +272,6 @@
             "generation" : "generated"
           },
           {
-            "nameUrl" : "profile-practitionerrole-r4.html",
-            "title" : "CRD PractitionerRole",
-            "generation" : "generated"
-          },
-          {
             "nameUrl" : "profile-servicerequest-r4.html",
             "title" : "CRD Service Request",
             "generation" : "generated"
@@ -298,6 +279,11 @@
           {
             "nameUrl" : "profile-taskquestionnaire-r4.html",
             "title" : "CRD Questionnaire Task",
+            "generation" : "generated"
+          },
+          {
+            "nameUrl" : "extension-ext-insurance.html",
+            "title" : "CRD Insurance Extension - R4",
             "generation" : "generated"
           },
           {
@@ -323,11 +309,6 @@
           {
             "nameUrl" : "servicerequest-insurance-r4.html",
             "title" : "CRD ServiceRequest Insurance",
-            "generation" : "generated"
-          },
-          {
-            "nameUrl" : "extension-ext-insurance.html",
-            "title" : "CRD Insurance Extension",
             "generation" : "generated"
           },
           {

@@ -107,15 +107,6 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/ext-insurance"/>
-      </reference>
-      <name value="CRD Insurance Extension"/>
-      <description value="Custom CRD extension that allows conveying insurance information associated with a request when the request resouce doesn&#39;t have a core element that supports capturing such information."/>
-      <exampleBoolean value="false"/>
-      <groupingId value="extensions"/>
-    </resource>
-    <resource>
-      <reference>
         <reference value="CodeSystem/task-type"/>
       </reference>
       <name value="CRD Task Types Code System"/>
@@ -241,11 +232,6 @@
             <generation value="generated"/>
           </page>
           <page>
-            <nameUrl value="profile-medication-r4.html"/>
-            <title value="CRD Medication"/>
-            <generation value="generated"/>
-          </page>
-          <page>
             <nameUrl value="profile-medicationrequest-r4.html"/>
             <title value="CRD Medication Request"/>
             <generation value="generated"/>
@@ -276,11 +262,6 @@
             <generation value="generated"/>
           </page>
           <page>
-            <nameUrl value="profile-practitionerrole-r4.html"/>
-            <title value="CRD PractitionerRole"/>
-            <generation value="generated"/>
-          </page>
-          <page>
             <nameUrl value="profile-servicerequest-r4.html"/>
             <title value="CRD Service Request"/>
             <generation value="generated"/>
@@ -288,6 +269,11 @@
           <page>
             <nameUrl value="profile-taskquestionnaire-r4.html"/>
             <title value="CRD Questionnaire Task"/>
+            <generation value="generated"/>
+          </page>
+          <page>
+            <nameUrl value="extension-ext-insurance.html"/>
+            <title value="CRD Insurance Extension - R4"/>
             <generation value="generated"/>
           </page>
           <page>
@@ -313,11 +299,6 @@
           <page>
             <nameUrl value="servicerequest-insurance-r4.html"/>
             <title value="CRD ServiceRequest Insurance"/>
-            <generation value="generated"/>
-          </page>
-          <page>
-            <nameUrl value="extension-ext-insurance.html"/>
-            <title value="CRD Insurance Extension"/>
             <generation value="generated"/>
           </page>
           <page>

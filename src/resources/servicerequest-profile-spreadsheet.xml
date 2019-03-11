@@ -1310,7 +1310,7 @@
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">ServiceRequest.requester</Data></Cell>
     <Cell ss:Index="6"><Data ss:Type="String">1..1</Data></Cell>
-    <Cell ss:Index="8"><Data ss:Type="String">Reference(Practitioner) {http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-practitioner-r4} | Reference(PractitionerRole) {http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-practitionerrole-r4}</Data></Cell>
+    <Cell ss:Index="8"><Data ss:Type="String">Reference(Practitioner) {http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-practitioner-r4} | Reference(PractitionerRole) {http://hl7.org/fhir/us/core-r4/StructureDefinition/us-core-practitionerrole}</Data></Cell>
     <Cell><Data ss:Type="String">Y</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -1320,7 +1320,7 @@
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">ServiceRequest.performer</Data></Cell>
     <Cell ss:Index="6"><Data ss:Type="String">0..*</Data></Cell>
-    <Cell ss:Index="8"><Data ss:Type="String">Reference(Practitioner) {http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-practitioner-r4} | Reference(PractitionerRole) {http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-practitionerrole-r4}</Data></Cell>
+    <Cell ss:Index="8"><Data ss:Type="String">Reference(Practitioner) {http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-practitioner-r4} | Reference(PractitionerRole) {http://hl7.org/fhir/us/core-r4/StructureDefinition/us-core-practitionerrole}</Data></Cell>
     <Cell><Data ss:Type="String">Y</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -1338,7 +1338,7 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">ServiceRequest.reasonReference</Data></Cell>
-    <Cell ss:Index="8"><Data ss:Type="String">Reference(Condition) {http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-condition-r4} | Reference(Observation) {http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-observation-r4}</Data></Cell>
+    <Cell ss:Index="8"><Data ss:Type="String">Reference(Condition) {http://hl7.org/fhir/us/core-r4/StructureDefinition/us-core-condition} | Reference(Observation) {http://hl7.org/fhir/us/core-r4/StructureDefinition/us-core-observationresults}</Data></Cell>
     <Cell><Data ss:Type="String">Y</Data></Cell>
     <Cell ss:Index="18"><Data ss:Type="String">potentially relevant for CRD in some situations</Data></Cell>
    </Row>

@@ -400,7 +400,7 @@ The profiles expected to be used for the resources resolved to by the userId, pa
   </tr>
   <tr>
     <td></td>
-    <td><a href="profile-practitionerrole-r4.html">profile-practitionerrole-r4</a></td>
+    <td><a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-practitionerrole.html">us-core-practitionerrole (FHIR R4)</a></td>
   </tr>
 </table>
 
@@ -438,7 +438,7 @@ The profiles expected to be used for the resources resolved to by the userId, pa
   </tr>
   <tr>
     <td></td>
-    <td><a href="profile-practitionerrole-r4.html">profile-practitionerrole-r4</a></td>
+    <td><a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-practitionerrole.html">us-core-practitionerrole (FHIR R4)</a></td>
   </tr>
 </table>
 
@@ -477,7 +477,7 @@ The profiles expected to be used for the resources resolved to by the userId, pa
   </tr>
   <tr>
     <td></td>
-    <td><a href="profile-practitionerrole-r4.html">profile-practitionerrole-r4</a></td>
+    <td><a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-practitionerrole.html">us-core-practitionerrole (FHIR R4)</a></td>
   </tr>
 </table>
 
@@ -555,7 +555,7 @@ There are no constraints or special rules related to this hook beyond the profil
   </tr>
   <tr>
     <td></td>
-    <td><a href="profile-practitionerrole-r4.html">profile-practitionerrole-r4</a><sup>‡</sup></td>
+    <td><a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-practitionerrole.html">us-core-practitionerrole (FHIR R4)</a></td>
   </tr>
   <tr>
     <td><a href="STU3\profile-procedurerequest-stu3.html">profile-procedurerequest-stu3</a></td>
@@ -713,8 +713,8 @@ When using this response type, the proposed orders (and any associated resources
     <td>Only if updating an Encounter - e.g. to add a note</td>
   </tr>
   <tr>
-    <td><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-medication.html">us-core-medication</a></td>
-    <td><a href="profile-medication-r4.html">profile-medication-r4</a></td>
+    <td><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-medication.html">us-core-medication (FHIR STU3)</a></td>
+    <td><a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-medication.html">us-core-medication (FHIR R4)</a></td>
     <td/>
   </tr>
   <tr>
@@ -844,8 +844,8 @@ When using this response type, the proposed orders (and any associated resources
     <td><a href="STU3\profile-visionprescription-stu3.html">profile-visionprescription-stu3</a></td>
   </tr>
   <tr>
-    <td><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-medication.html">us-core-medication</a></td>
-    <td><a href="profile-medication-r4.html">profile-medication-r4</a></td>
+    <td><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-medication.html">us-core-medication (FHIR STU3)</a></td>
+    <td><a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-medication.html">us-core-medication (FHIR R4)</a></td>
   </tr>
   <tr>
     <td><a href="STU3\profile-medicationrequest-stu3.html">profile-medicationrequest-stu3</a></td>
