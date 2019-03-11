@@ -16,10 +16,10 @@
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>17440</WindowHeight>
-  <WindowWidth>28040</WindowWidth>
-  <WindowTopX>11580</WindowTopX>
-  <WindowTopY>5460</WindowTopY>
+  <WindowHeight>16440</WindowHeight>
+  <WindowWidth>27240</WindowWidth>
+  <WindowTopX>3580</WindowTopX>
+  <WindowTopY>2560</WindowTopY>
   <ActiveSheet>2</ActiveSheet>
   <RefModeR1C1/>
   <ProtectStructure>False</ProtectStructure>
@@ -1079,7 +1079,7 @@
   </WorksheetOptions>
  </Worksheet>
  <Worksheet ss:Name="profile-location-r4">
-  <Table ss:ExpandedColumnCount="24" ss:ExpandedRowCount="14" x:FullColumns="1"
+  <Table ss:ExpandedColumnCount="24" ss:ExpandedRowCount="6" x:FullColumns="1"
    x:FullRows="1" ss:StyleID="s85" ss:DefaultColumnWidth="65"
    ss:DefaultRowHeight="15">
    <Column ss:StyleID="s85" ss:AutoFitWidth="0" ss:Width="122"/>
@@ -1193,7 +1193,7 @@
     <Cell ss:StyleID="s96"/>
     <Cell ss:StyleID="s96"/>
     <Cell ss:StyleID="s96"/>
-    <Cell ss:StyleID="s96"><Data ss:Type="String">Location</Data></Cell>
+    <Cell ss:StyleID="s96"><Data ss:Type="String">Location{http://hl7.org/fhir/us/core-r4/StructureDefinition/us-core-location}</Data></Cell>
     <Cell ss:StyleID="s97"/>
     <Cell ss:StyleID="s97"/>
     <Cell ss:StyleID="s97"/>
@@ -1211,31 +1211,31 @@
     <Cell ss:StyleID="s103"/>
     <Cell ss:StyleID="s104"/>
    </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Location.status</Data></Cell>
-    <Cell ss:Index="6"><Data ss:Type="String">0..1</Data></Cell>
-    <Cell ss:Index="8"><Data ss:Type="String">code</Data></Cell>
-    <Cell><Data ss:Type="String">Y</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Location.name</Data></Cell>
-    <Cell ss:Index="6"><Data ss:Type="String">1..1</Data></Cell>
-    <Cell ss:Index="8"><Data ss:Type="String">string</Data></Cell>
-    <Cell><Data ss:Type="String">Y</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Location.telecom</Data></Cell>
-    <Cell ss:Index="6"><Data ss:Type="String">0..*</Data></Cell>
-    <Cell ss:Index="8"><Data ss:Type="String">ContactPoint</Data></Cell>
-    <Cell><Data ss:Type="String">Y</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4" ss:StyleID="s105"><Data ss:Type="String">Location.address</Data></Cell>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">1..1</Data></Cell>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">Address</Data></Cell>
-    <Cell><Data ss:Type="String">Y</Data></Cell>
+   <Row>
+    <Cell ss:StyleID="Default"/>
+    <Cell ss:StyleID="s64"/>
+    <Cell ss:StyleID="s64"/>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">Location.address</Data></Cell>
+    <Cell ss:StyleID="Default"/>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">1..1</Data></Cell>
+    <Cell ss:StyleID="Default"/>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">Address</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">Y</Data></Cell>
+    <Cell ss:StyleID="Default"/>
+    <Cell ss:StyleID="Default"/>
+    <Cell ss:StyleID="Default"/>
+    <Cell ss:StyleID="Default"/>
+    <Cell ss:StyleID="Default"/>
+    <Cell ss:StyleID="Default"/>
+    <Cell ss:StyleID="Default"/>
+    <Cell ss:StyleID="Default"/>
+    <Cell ss:StyleID="Default"/>
+    <Cell ss:StyleID="Default"/>
+    <Cell ss:StyleID="Default"/>
+    <Cell ss:StyleID="Default"/>
+    <Cell ss:StyleID="Default"/>
+    <Cell ss:StyleID="Default"/>
+    <Cell ss:StyleID="Default"/>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4" ss:StyleID="s105"><Data ss:Type="String">Location.address.type</Data></Cell>
@@ -1247,26 +1247,6 @@
     <Cell><Data ss:Type="String">crd-addresstype</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Location.address.line</Data></Cell>
-    <Cell ss:Index="6"><Data ss:Type="String">1..*</Data></Cell>
-    <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Location.address.city</Data></Cell>
-    <Cell ss:Index="6"><Data ss:Type="String">1..1</Data></Cell>
-    <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Location.address.state</Data></Cell>
-    <Cell ss:Index="6"><Data ss:Type="String">1..1</Data></Cell>
-    <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Location.address.postalCode</Data></Cell>
-    <Cell ss:Index="6"><Data ss:Type="String">1..1</Data></Cell>
-    <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">Location.managingOrganization</Data></Cell>
     <Cell ss:Index="6"><Data ss:Type="String">1..1</Data></Cell>
     <Cell ss:Index="8"><Data ss:Type="String">Reference(Organization) {http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-organization-r4}</Data></Cell>
@@ -1275,9 +1255,6 @@
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">Location.partOf</Data></Cell>
     <Cell ss:Index="8"><Data ss:Type="String">Reference(Location) {http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-location-r4}</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">Location.endpoint</Data></Cell>
    </Row>
   </Table>
   <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
@@ -1295,8 +1272,8 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>13</ActiveRow>
-     <ActiveCol>3</ActiveCol>
+     <ActiveRow>12</ActiveRow>
+     <ActiveCol>7</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>

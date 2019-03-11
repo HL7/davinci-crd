@@ -92,8 +92,8 @@
   "dependencyList": [
     {
       "name" : "core",
-      "version" : "dev",
-      "location" : "http://hl7.org/fhir/us/core",
+      "version" : "current",
+      "location" : "http://hl7.org/fhir/us/core-r4",
       "source" : "../../core2/website"
     }
   ],
@@ -101,15 +101,12 @@
   "spreadsheets": [
     "appointment-profile-spreadsheet.xml",
     "communicationrequest-profile-spreadsheet.xml",
-    "condition-profile-spreadsheet.xml",
     "coverage-profile-spreadsheet.xml",
     "device-profile-spreadsheet.xml",
     "devicerequest-profile-spreadsheet.xml",
     "encounter-profile-spreadsheet.xml",
     "location-profile-spreadsheet.xml",
-    "observation-profile-spreadsheet.xml",
     "patient-profile-spreadsheet.xml",
-    "medication-profile-spreadsheet.xml",
     "medicationrequest-profile-spreadsheet.xml",
     "nutritionorder-profile-spreadsheet.xml",
     "organization-profile-spreadsheet.xml",
@@ -136,8 +133,6 @@
     },
     "StructureDefinition/profile-location-r4":{
     },
-    "StructureDefinition/profile-medication-r4":{
-    },
     "StructureDefinition/profile-medicationrequest-r4":{
     },
     "StructureDefinition/profile-nutritionorder-r4":{
@@ -153,6 +148,8 @@
     "StructureDefinition/profile-practitionerrole-r4":{
     },
     "StructureDefinition/profile-servicerequest-r4":{
+    },
+    "StructureDefinition/profile-supplyrequest-r4":{
     },
     "StructureDefinition/profile-taskquestionnaire-r4":{
     },
