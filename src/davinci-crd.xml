@@ -28,8 +28,7 @@
   <dependsOn>
     <uri value="http://hl7.org/fhir/us/core-r4"/>
     <packageId value="hl7.fhir.us.core.r4"/>
-    <version value="current"/>
-  </dependsOn>
+    <version value="current"/>  </dependsOn>
   <definition>
     <!-- Note: Order of these spreadsheets matters -->
     <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
@@ -51,9 +50,6 @@
           <valueCode value="STU3"/>
         </extension>
       </valueUri>
-    </extension>
-    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
-      <valueUri value="condition-profile-spreadsheet.xml"/>
     </extension>
     <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
       <valueUri value="coverage-profile-spreadsheet.xml"/>
@@ -106,9 +102,6 @@
       </valueUri>
     </extension>
     <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
-      <valueUri value="observation-profile-spreadsheet.xml"/>
-    </extension>
-    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
       <valueUri value="patient-profile-spreadsheet.xml"/>
     </extension>
     <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
@@ -117,9 +110,6 @@
           <valueCode value="STU3"/>
         </extension>
       </valueUri>
-    </extension>
-    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
-      <valueUri value="medication-profile-spreadsheet.xml"/>
     </extension>
     <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
       <valueUri value="medicationrequest-profile-spreadsheet.xml"/>
