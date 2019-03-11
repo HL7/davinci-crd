@@ -3,27 +3,27 @@
   "id" : "davinci-crd",
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\davinci-crd\\src-generated\\resources"
+    "valueString" : "/Users/jeanduteau/Documents/DDIWork/Gevity/davinci-crd/src-generated/resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\davinci-crd\\src\\resources"
+    "valueString" : "/Users/jeanduteau/Documents/DDIWork/Gevity/davinci-crd/src/resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\davinci-crd\\src\\vocabulary"
+    "valueString" : "/Users/jeanduteau/Documents/DDIWork/Gevity/davinci-crd/src/vocabulary"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\davinci-crd\\src\\examples"
+    "valueString" : "/Users/jeanduteau/Documents/DDIWork/Gevity/davinci-crd/src/examples"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\davinci-crd\\src\\images"
+    "valueString" : "/Users/jeanduteau/Documents/DDIWork/Gevity/davinci-crd/src/images"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\davinci-crd\\src-generated\\pages"
+    "valueString" : "/Users/jeanduteau/Documents/DDIWork/Gevity/davinci-crd/src-generated/pages"
   }],
   "url" : "http://hl7.org/fhir/us/davinci-crd/ImplementationGuide/davinci-crd",
   "version" : "0.2.0",
@@ -45,9 +45,9 @@
   "4.0.0"],
   "dependsOn" : [{
     "id" : "core",
-    "uri" : "http://hl7.org/fhir/us/core",
-    "packageId" : "hl7.fhir.us.core",
-    "version" : "dev"
+    "uri" : "http://hl7.org/fhir/us/core-r4",
+    "packageId" : "hl7.fhir.us.core.r4",
+    "version" : "current"
   }],
   "definition" : {
     "grouping" : [{
@@ -251,11 +251,6 @@
             "generation" : "generated"
           },
           {
-            "nameUrl" : "profile-medication-r4.html",
-            "title" : "CRD Medication",
-            "generation" : "generated"
-          },
-          {
             "nameUrl" : "profile-medicationrequest-r4.html",
             "title" : "CRD Medication Request",
             "generation" : "generated"
@@ -283,11 +278,6 @@
           {
             "nameUrl" : "profile-practitioner-r4.html",
             "title" : "CRD Practitioner",
-            "generation" : "generated"
-          },
-          {
-            "nameUrl" : "profile-practitionerrole-r4.html",
-            "title" : "CRD PractitionerRole",
             "generation" : "generated"
           },
           {

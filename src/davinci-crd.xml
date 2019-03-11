@@ -153,9 +153,6 @@
       </valueUri>
     </extension>
     <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
-      <valueUri value="practitionerrole-profile-spreadsheet.xml"/>
-    </extension>
-    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
       <valueUri value="procedurerequest-stu3-profile-spreadsheet.xml">
         <extension url="http://hl7.org/fhir/StructureDefinition/tools-alternateVersion">
           <valueCode value="STU3"/>
@@ -441,18 +438,6 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/profile-medication-r4"/>
-      </reference>
-      <name value="CRD Medication"/>
-      <description value="CRD constraints on R4 Medication resource mandating support for elements relevant to identification and description of a medication referenced by a MedicationRequest or other CRD-relevant resource"/>
-      <exampleBoolean value="false"/>
-      <groupingId value="profiles"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-        <valueBoolean value="true"/>
-      </extension>
-      <reference>
         <reference value="StructureDefinition/profile-medicationrequest-r4"/>
       </reference>
       <name value="CRD Medication Request"/>
@@ -607,18 +592,6 @@
       </reference>
       <name value="CRD Practitioner - STU3"/>
       <description value="CRD constraints on STU3 Practitioner resource mandating support for elements relevant to identifying and describing a healthcare provider or administrative staff involved in performing a coverage requirement discovery-related action"/>
-      <exampleBoolean value="false"/>
-      <groupingId value="profiles"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-        <valueBoolean value="true"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/profile-practitionerrole-r4"/>
-      </reference>
-      <name value="CRD PractitionerRole"/>
-      <description value="CRD constraints on R4 PractitionerRole resource mandating support for elements relevant to identifying and describing a healthcare provider or administrative staff along with their role and responsible organization involved in performing a coverage requirement discovery-related action"/>
       <exampleBoolean value="false"/>
       <groupingId value="profiles"/>
     </resource>
