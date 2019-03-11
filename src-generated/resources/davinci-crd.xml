@@ -19,13 +19,9 @@
   <dependsOn>
     <uri value="http://hl7.org/fhir/us/core-r4"/>
     <packageId value="hl7.fhir.us.core.r4"/>
-    <version value="current"/>
-  </dependsOn>
+    <version value="current"/>  </dependsOn>
   <definition>
     <!-- Note: Order of these spreadsheets matters -->
-    
-    
-    
     
     
     
