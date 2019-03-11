@@ -220,28 +220,28 @@
 </tr>
 <tr>
 <td style="column-width:30%">
-<a href="valueset-coverageClass.html">
+<a href="coverageClass.html">
                         •  CRD Coverage Classes</a>
 </td>
 <td>The subset of coverage classes relevant for coverage requirement discovery</td>
 </tr>
 <tr>
 <td style="column-width:30%">
-<a href="valueset-locationAddressType.html">
+<a href="locationAddressType.html">
                         •  CRD Location Address Types</a>
 </td>
 <td>The subset of FHIR R4 location address types relevant for coverage requirement discovery</td>
 </tr>
 <tr>
 <td style="column-width:30%">
-<a href="valueset-taskCode.html">
+<a href="taskCode.html">
                         •  CRD Task Types</a>
 </td>
 <td>All FHIR R4 task codes relevant to coverage requirements discovery</td>
 </tr>
 <tr>
 <td style="column-width:30%">
-<a href="valueset-taskReasonCode.html">
+<a href="taskReasonCode.html">
                         •  CRD Task Reason Codes</a>
 </td>
 <td>All FHIR R4 task reasons relevant to coverage requirements discovery</td>

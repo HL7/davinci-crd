@@ -11,7 +11,7 @@
         <a href="{{site.data.info.assets}}index.html">CRD Home Page</a>
       </li>
       <li>
-        <a href="{{site.data.info.assets}}usecases.html">Use Cases &amp; Overview</a>
+        <a href="{{site.data.info.assets}}usecases.html">Use Cases and Overview</a>
       </li>
       <li>
         <a href="{{site.data.info.assets}}background.html">Technical Background</a>
@@ -38,10 +38,10 @@
         <a href="{{site.data.info.assets}}allartifacts.html">Artifacts Overview</a>
       </li>
       <li>
-        <a href="artifacts.html">FHIR R4 CRD-specific Artifacts</a>
+        <a href="{{site.data.info.assets}}artifacts.html">FHIR R4 CRD-specific Artifacts</a>
       </li>
       <li>
-        <a href="STU3/artifacts.html">FHIR STU3 CRD-specific Artifacts</a>
+        <a href="{{site.data.info.child}}artifacts.html">FHIR STU3 CRD-specific Artifacts</a>
       </li>
       <li>
         <a href="http://hl7.org/fhir/us/core/STU2">US Core (2.0.0 - STU3 based)</a>
@@ -72,7 +72,7 @@
         <a target="_blank" href="https://cds-hooks.org/specification/1.0">CDS Hooks <img src="external.png" style="text-align: baseline"/></a>
       </li>
       <li>
-        <a target="_blank" href="http://hl7.org/fhir/smart-app-launch">SMART on FHIR <img src="external.png" style="text-align: baseline"/></a>
+        <a target="_blank" href="http://hl7.org/fhir/smart-app-launch/index.html">SMART on FHIR <img src="external.png" style="text-align: baseline"/></a>
       </li>
     </ul>
   </li>

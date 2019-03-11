@@ -89,6 +89,14 @@
   "sct-edition" : "http://snomed.info/sct/731000124108",
   "no-inactive-codes" : "true",
   "canonicalBase": "http://hl7.org/fhir/us/davinci-crd",
+  "dependencyList": [
+    {
+      "name" : "core",
+      "version" : "dev",
+      "location" : "http://hl7.org/fhir/us/core",
+      "source" : "../../core2/website"
+    }
+  ],
   "source": "davinci-crd.xml",
   "spreadsheets": [
     "appointment-profile-spreadsheet.xml",
@@ -176,12 +184,24 @@
     "CodeSystem/task-reason":{
     },
     "ValueSet/coverageClass":{
-    },
+    "template-base": "../framework/templates/template-instance-base.html",
+    "template-format": "../framework/templates/template-instance-format.html",
+      "base": "{{[id]}}.html",
+      "format": "{{[id]}}.{{[fmt]}}.html"    },
     "ValueSet/locationAddressType":{
-    },
+    "template-base": "../framework/templates/template-instance-base.html",
+    "template-format": "../framework/templates/template-instance-format.html",
+      "base": "{{[id]}}.html",
+      "format": "{{[id]}}.{{[fmt]}}.html"    },
     "ValueSet/taskCode":{
-    },
+    "template-base": "../framework/templates/template-instance-base.html",
+    "template-format": "../framework/templates/template-instance-format.html",
+      "base": "{{[id]}}.html",
+      "format": "{{[id]}}.{{[fmt]}}.html"    },
     "ValueSet/taskReasonCode":{
-    }
+    "template-base": "../framework/templates/template-instance-base.html",
+    "template-format": "../framework/templates/template-instance-format.html",
+      "base": "{{[id]}}.html",
+      "format": "{{[id]}}.{{[fmt]}}.html"    }
   }
 }

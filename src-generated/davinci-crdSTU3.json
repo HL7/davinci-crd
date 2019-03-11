@@ -87,7 +87,7 @@
   "dependencyList": [
     {
       "name" : "core",
-      "version" : "current",
+      "version" : "2.0.0",
       "location" : "http://hl7.org/fhir/us/core",
       "source" : "../../core2/website"
     }
@@ -178,10 +178,19 @@
     "CodeSystem/task-reason-stu3":{
     },
     "ValueSet/locationAddressType-stu3":{
-    },
+    "template-base": "../framework/templates/template-instance-base.html",
+    "template-format": "../framework/templates/template-instance-format.html",
+      "base": "{{[id]}}.html",
+      "format": "{{[id]}}.{{[fmt]}}.html"    },
     "ValueSet/taskCode-stu3":{
-    },
+    "template-base": "../framework/templates/template-instance-base.html",
+    "template-format": "../framework/templates/template-instance-format.html",
+      "base": "{{[id]}}.html",
+      "format": "{{[id]}}.{{[fmt]}}.html"    },
     "ValueSet/taskReasonCode-stu3":{
-    }
+    "template-base": "../framework/templates/template-instance-base.html",
+    "template-format": "../framework/templates/template-instance-format.html",
+      "base": "{{[id]}}.html",
+      "format": "{{[id]}}.{{[fmt]}}.html"    }
   }
 }

@@ -16,6 +16,11 @@
   <packageId value="hl7.fhir.us.davinci.crd"/>
   <fhirVersion value="4.0.0"/>
   
+  <dependsOn>
+    <uri value="http://hl7.org/fhir/us/core"/>
+    <packageId value="hl7.fhir.us.core"/>
+    <version value="dev"/>
+  </dependsOn>
   <definition>
     <!-- Note: Order of these spreadsheets matters -->
     
@@ -108,7 +113,7 @@
     
     
     
-<!--    <resource>
+    <!--    <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
         <valueBoolean value="true"/>
       </extension>
@@ -144,7 +149,7 @@
       </reference>
       <name value="CRD Appointment Insurance"/>
       <description value="Custom CRD R4 search parameter allowing search for appointments based on the associated insurance - allows use of _include to retrieve insurance when querying an appointment"/>
-      <exampleBoolean value="false"/>
+      <exampleBoolean value="true"/>
       <groupingId value="search"/>
     </resource>
     
@@ -154,7 +159,7 @@
       </reference>
       <name value="CRD Encounter Insurance"/>
       <description value="Custom CRD R4 search parameter allowing search for encounters based on the associated insurance - allows use of _include to retrieve insurance when querying an encounter"/>
-      <exampleBoolean value="false"/>
+      <exampleBoolean value="true"/>
       <groupingId value="search"/>
     </resource>
     
@@ -166,7 +171,7 @@
       </reference>
       <name value="CRD MedicationRequest Insurance"/>
       <description value="Custom CRD R4 search parameter allowing search for medication requests based on the associated insurance - allows use of _include to retrieve insurance when querying a medication request"/>
-      <exampleBoolean value="false"/>
+      <exampleBoolean value="true"/>
       <groupingId value="search"/>
     </resource>
     
@@ -177,7 +182,7 @@
       </reference>
       <name value="CRD NutritionOrder Insurance"/>
       <description value="Custom CRD R4 search parameter allowing search for nutrition orders based on the associated insurance - allows use of _include to retrieve insurance when querying a nutrition order"/>
-      <exampleBoolean value="false"/>
+      <exampleBoolean value="true"/>
       <groupingId value="search"/>
     </resource>
     
@@ -191,16 +196,16 @@
       </reference>
       <name value="CRD ServiceRequest Insurance"/>
       <description value="Custom CRD R4 search parameter allowing search for service requests based on the associated insurance - allows use of _include to retrieve insurance when querying a service request"/>
-      <exampleBoolean value="false"/>
+      <exampleBoolean value="true"/>
       <groupingId value="search"/>
     </resource>
-<!--    <resource>
+    <!--    <resource>
       <reference>
         <reference value="SearchParameter/supplyrequest-insurance-r4"/>
       </reference>
       <name value="CRD SupplyRequest Insurance"/>
       <description value="TODO"/>
-      <exampleBoolean value="false"/>
+      <exampleBoolean value="true"/>
       <groupingId value="search"/>
     </resource>
     <resource>
@@ -212,7 +217,7 @@
       </reference>
       <name value="CRD SupplyRequest Insurance - STU3"/>
       <description value="TODO"/>
-      <exampleBoolean value="false"/>
+      <exampleBoolean value="true"/>
       <groupingId value="search"/>
     </resource>
     <resource>
@@ -224,7 +229,7 @@
       </reference>
       <name value="CRD SupplyRequest Patient - STU3"/>
       <description value="TODO"/>
-      <exampleBoolean value="false"/>
+      <exampleBoolean value="true"/>
       <groupingId value="search"/>
     </resource>
     <resource>
@@ -233,7 +238,7 @@
       </reference>
       <name value="CRD SupplyRequest Patient"/>
       <description value="TODO"/>
-      <exampleBoolean value="false"/>
+      <exampleBoolean value="true"/>
       <groupingId value="search"/>
     </resource>-->
     
@@ -252,7 +257,7 @@
       </reference>
       <name value="CRD Task Types Code System"/>
       <description value="Codes for use with FHIR R4 to identify types of tasks relevant to coverage requirement discovery"/>
-      <exampleBoolean value="false"/>
+      <exampleBoolean value="true"/>
       <groupingId value="terminology"/>
     </resource>
     <resource>
@@ -261,7 +266,7 @@
       </reference>
       <name value="CRD Task Reasons Code System"/>
       <description value="Codes for use with FHIR R4 to identify reasons for task performance relevant to coverage requirement discovery"/>
-      <exampleBoolean value="false"/>
+      <exampleBoolean value="true"/>
       <groupingId value="terminology"/>
     </resource>
     
@@ -272,7 +277,7 @@
       </reference>
       <name value="CRD Coverage Classes"/>
       <description value="The subset of coverage classes relevant for coverage requirement discovery"/>
-      <exampleBoolean value="false"/>
+      <exampleBoolean value="true"/>
       <groupingId value="terminology"/>
     </resource>
     <resource>
@@ -281,7 +286,7 @@
       </reference>
       <name value="CRD Location Address Types"/>
       <description value="The subset of FHIR R4 location address types relevant for coverage requirement discovery"/>
-      <exampleBoolean value="false"/>
+      <exampleBoolean value="true"/>
       <groupingId value="terminology"/>
     </resource>
     
@@ -291,7 +296,7 @@
       </reference>
       <name value="CRD Task Types"/>
       <description value="All FHIR R4 task codes relevant to coverage requirements discovery"/>
-      <exampleBoolean value="false"/>
+      <exampleBoolean value="true"/>
       <groupingId value="terminology"/>
     </resource>
     
@@ -301,7 +306,7 @@
       </reference>
       <name value="CRD Task Reason Codes"/>
       <description value="All FHIR R4 task reasons relevant to coverage requirements discovery"/>
-      <exampleBoolean value="false"/>
+      <exampleBoolean value="true"/>
       <groupingId value="terminology"/>
     </resource>
     
@@ -316,7 +321,7 @@
       </page>
       <page>
         <nameUrl value="usecases.html"/>
-        <title value="Use Cases &amp; Overview"/>
+        <title value="Use Cases and Overview"/>
         <generation value="markdown"/>
       </page>
       <page>
@@ -468,22 +473,22 @@
 <generation value="generated"/>
 </page>
 <page>
-<nameUrl value="valueset-coverageClass.html"/>
+<nameUrl value="coverageClass.html"/>
 <ns26:title xmlns:ns26="http://hl7.org/fhir" value="CRD Coverage Classes"/>
 <generation value="generated"/>
 </page>
 <page>
-<nameUrl value="valueset-locationAddressType.html"/>
+<nameUrl value="locationAddressType.html"/>
 <ns27:title xmlns:ns27="http://hl7.org/fhir" value="CRD Location Address Types"/>
 <generation value="generated"/>
 </page>
 <page>
-<nameUrl value="valueset-taskCode.html"/>
+<nameUrl value="taskCode.html"/>
 <ns28:title xmlns:ns28="http://hl7.org/fhir" value="CRD Task Types"/>
 <generation value="generated"/>
 </page>
 <page>
-<nameUrl value="valueset-taskReasonCode.html"/>
+<nameUrl value="taskReasonCode.html"/>
 <ns29:title xmlns:ns29="http://hl7.org/fhir" value="CRD Task Reason Codes"/>
 <generation value="generated"/>
 </page>

@@ -19,7 +19,152 @@
 <type value="reference"/>
 <uri value="http://hl7.org/fhir/us/core"/>
 </dependency>
-  <page>
+  
+  <package id="search">
+      <name value="Search Parameters"/>
+      <description value="Search Parameters defined as part of this implementation guide"/>
+    <resource>
+<example value="true"/>
+<name value="CRD Appointment Insurance - STU3"/>
+<description value="Custom CRD STU3 search parameter allowing search for appointments based on the associated insurance - allows use of _include to retrieve insurance when querying an appointment"/>
+<sourceReference>
+        <reference value="SearchParameter/appointment-insurance-stu3"/>
+      </sourceReference>
+</resource>
+<resource>
+<example value="true"/>
+<name value="CRD Encounter Insurance - STU3"/>
+<description value="Custom CRD STU3 search parameter allowing search for encounters based on the associated insurance - allows use of _include to retrieve insurance when querying an encounter"/>
+<sourceReference>
+        <reference value="SearchParameter/encounter-insurance-stu3"/>
+      </sourceReference>
+</resource>
+<resource>
+<example value="true"/>
+<name value="CRD Device Request Insurance - STU3"/>
+<description value="Custom CRD STU3 search parameter allowing search for device requests based on the associated insurance - allows use of _include to retrieve insurance when querying a device request"/>
+<sourceReference>
+        <reference value="SearchParameter/devicerequest-insurance-stu3"/>
+      </sourceReference>
+</resource>
+<resource>
+<example value="true"/>
+<name value="CRD Device Request On Behalf Of - STU3"/>
+<description value="Custom CRD STU3 search parameter allowing search for device requests based on the organization on whose behalf the order was placed - allows use of _include to retrieve the organization when querying a device request"/>
+<sourceReference>
+        <reference value="SearchParameter/devicerequest-onbehalfof-stu3"/>
+      </sourceReference>
+</resource>
+<resource>
+<example value="true"/>
+<name value="CRD Medication Request On Behalf Of - STU3"/>
+<description value="Custom CRD STU3 search parameter allowing search for medication requests based on the organization on whose behalf the order was placed - allows use of _include to retrieve the organization when querying a medication request"/>
+<sourceReference>
+        <reference value="SearchParameter/medicationrequest-onbehalfof-stu3"/>
+      </sourceReference>
+</resource>
+<resource>
+<example value="true"/>
+<name value="CRD Medication Request Insurance - STU3"/>
+<description value="Custom CRD STU3 search parameter allowing search for medication requests based on the associated insurance - allows use of _include to retrieve insurance when querying a medication request"/>
+<sourceReference>
+        <reference value="SearchParameter/medicationrequest-insurance-stu3"/>
+      </sourceReference>
+</resource>
+<resource>
+<example value="true"/>
+<name value="CRD Nutrition Order Insurance - STU3"/>
+<description value="Custom CRD STU3 search parameter allowing search for nutrition orders based on the associated insurance - allows use of _include to retrieve insurance when querying a nutrition order"/>
+<sourceReference>
+        <reference value="SearchParameter/nutritionorder-insurance-stu3"/>
+      </sourceReference>
+</resource>
+<resource>
+<example value="true"/>
+<name value="CRD Procedure Request Insurance - STU3"/>
+<description value="Custom CRD STU3 search parameter allowing search for procedure requests based on the associated insurance - allows use of _include to retrieve insurance when querying a procedure request"/>
+<sourceReference>
+        <reference value="SearchParameter/procedurerequest-insurance-stu3"/>
+      </sourceReference>
+</resource>
+<resource>
+<example value="true"/>
+<name value="CRD Procedure Request On Behalf Of - STU3"/>
+<description value="Custom CRD STU3 search parameter allowing search for procedure requests based on the organization on whose behalf the order was placed - allows use of _include to retrieve the organization when querying a procedure request"/>
+<sourceReference>
+        <reference value="SearchParameter/procedurerequest-onbehalfof-stu3"/>
+      </sourceReference>
+</resource>
+<resource>
+<example value="true"/>
+<name value="CRD Referral Request Insurance - STU3"/>
+<description value="Custom CRD STU3 search parameter allowing search for referral requests based on the associated insurance - allows use of _include to retrieve insurance when querying a referral request"/>
+<sourceReference>
+        <reference value="SearchParameter/referralrequest-insurance-stu3"/>
+      </sourceReference>
+</resource>
+<resource>
+<example value="true"/>
+<name value="CRD Referral Request On Behalf Of - STU3"/>
+<description value="Custom CRD STU3 search parameter allowing search for referral requests based on the organization on whose behalf the order was placed - allows use of _include to retrieve the organization when querying a referral request"/>
+<sourceReference>
+        <reference value="SearchParameter/referralrequest-onbehalfof-stu3"/>
+      </sourceReference>
+</resource>
+<resource>
+<example value="true"/>
+<name value="CRD VisionPrescription Insurance - STU3"/>
+<description value="Custom CRD STU3 search parameter allowing search for vision prescriptions based on the associated insurance - allows use of _include to retrieve insurance when querying a vision prescription"/>
+<sourceReference>
+        <reference value="SearchParameter/visionprescription-insurance-stu3"/>
+      </sourceReference>
+</resource>
+</package>
+<package id="terminology">
+      <name value="Terminology"/>
+      <description value="Value Sets and/or code systems defined as part of this implementation guide"/>
+    <resource>
+<example value="true"/>
+<name value="CRD STU3 Task Types Code System"/>
+<description value="Codes for use with FHIR STU3 to identify types of tasks relevant to coverage requirement discovery"/>
+<sourceReference>
+        <reference value="CodeSystem/task-type-stu3"/>
+      </sourceReference>
+</resource>
+<resource>
+<example value="true"/>
+<name value="CRD STU3 Task Reasons Code System"/>
+<description value="Codes for use with FHIR STU3 to identify reasons for task performance relevant to coverage requirement discovery"/>
+<sourceReference>
+        <reference value="CodeSystem/task-reason-stu3"/>
+      </sourceReference>
+</resource>
+<resource>
+<example value="true"/>
+<name value="CRD STU3 Location Address Types"/>
+<description value="The subset of FHIR STU3 location address types relevant for coverage requirement discovery"/>
+<sourceReference>
+        <reference value="ValueSet/locationAddressType-stu3"/>
+      </sourceReference>
+</resource>
+<resource>
+<example value="true"/>
+<name value="CRD STU3 Task Types"/>
+<description value="All FHIR STU3 task codes relevant to coverage requirements discovery"/>
+<sourceReference>
+        <reference value="ValueSet/taskCode-stu3"/>
+      </sourceReference>
+</resource>
+<resource>
+<example value="true"/>
+<name value="CRD STU3 Task Reason Codes"/>
+<description value="All FHIR STU3 task reasons relevant to coverage requirements discovery"/>
+<sourceReference>
+        <reference value="ValueSet/taskReasonCode-stu3"/>
+      </sourceReference>
+</resource>
+</package>
+<page>
 <source value="artifacts.html"/>
 <title value="Artifact List for FHIR STU3"/>
 <kind value="page"/>
@@ -217,19 +362,19 @@
 <format value="generated"/>
 </page>
 <page>
-<source value="valueset-locationAddressType-stu3.html"/>
+<source value="locationAddressType-stu3.html"/>
 <ns32:title xmlns:ns32="http://hl7.org/fhir" value="CRD STU3 Location Address Types"/>
 <kind value="resource"/>
 <format value="generated"/>
 </page>
 <page>
-<source value="valueset-taskCode-stu3.html"/>
+<source value="taskCode-stu3.html"/>
 <ns33:title xmlns:ns33="http://hl7.org/fhir" value="CRD STU3 Task Types"/>
 <kind value="resource"/>
 <format value="generated"/>
 </page>
 <page>
-<source value="valueset-taskReasonCode-stu3.html"/>
+<source value="taskReasonCode-stu3.html"/>
 <ns34:title xmlns:ns34="http://hl7.org/fhir" value="CRD STU3 Task Reason Codes"/>
 <kind value="resource"/>
 <format value="generated"/>

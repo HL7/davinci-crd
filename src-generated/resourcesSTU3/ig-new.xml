@@ -40,9 +40,170 @@
   <dependsOn id="core">
     <uri value="http://hl7.org/fhir/us/core"/>
     <packageId value="hl7.fhir.us.core"/>
-    <version value="current"/>
+    <version value="2.0.0"/>
   </dependsOn>
   <definition>
+    <grouping id="search">
+      <name value="Search Parameters"/>
+      <description value="Search Parameters defined as part of this implementation guide"/>
+    </grouping>
+    <grouping id="terminology">
+      <name value="Terminology"/>
+      <description value="Value Sets and/or code systems defined as part of this implementation guide"/>
+    </grouping>
+    <resource>
+      <reference>
+        <reference value="SearchParameter/appointment-insurance-stu3"/>
+      </reference>
+      <name value="CRD Appointment Insurance - STU3"/>
+      <description value="Custom CRD STU3 search parameter allowing search for appointments based on the associated insurance - allows use of _include to retrieve insurance when querying an appointment"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="search"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="SearchParameter/encounter-insurance-stu3"/>
+      </reference>
+      <name value="CRD Encounter Insurance - STU3"/>
+      <description value="Custom CRD STU3 search parameter allowing search for encounters based on the associated insurance - allows use of _include to retrieve insurance when querying an encounter"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="search"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="SearchParameter/devicerequest-insurance-stu3"/>
+      </reference>
+      <name value="CRD Device Request Insurance - STU3"/>
+      <description value="Custom CRD STU3 search parameter allowing search for device requests based on the associated insurance - allows use of _include to retrieve insurance when querying a device request"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="search"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="SearchParameter/devicerequest-onbehalfof-stu3"/>
+      </reference>
+      <name value="CRD Device Request On Behalf Of - STU3"/>
+      <description value="Custom CRD STU3 search parameter allowing search for device requests based on the organization on whose behalf the order was placed - allows use of _include to retrieve the organization when querying a device request"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="search"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="SearchParameter/medicationrequest-onbehalfof-stu3"/>
+      </reference>
+      <name value="CRD Medication Request On Behalf Of - STU3"/>
+      <description value="Custom CRD STU3 search parameter allowing search for medication requests based on the organization on whose behalf the order was placed - allows use of _include to retrieve the organization when querying a medication request"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="search"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="SearchParameter/medicationrequest-insurance-stu3"/>
+      </reference>
+      <name value="CRD Medication Request Insurance - STU3"/>
+      <description value="Custom CRD STU3 search parameter allowing search for medication requests based on the associated insurance - allows use of _include to retrieve insurance when querying a medication request"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="search"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="SearchParameter/nutritionorder-insurance-stu3"/>
+      </reference>
+      <name value="CRD Nutrition Order Insurance - STU3"/>
+      <description value="Custom CRD STU3 search parameter allowing search for nutrition orders based on the associated insurance - allows use of _include to retrieve insurance when querying a nutrition order"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="search"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="SearchParameter/procedurerequest-insurance-stu3"/>
+      </reference>
+      <name value="CRD Procedure Request Insurance - STU3"/>
+      <description value="Custom CRD STU3 search parameter allowing search for procedure requests based on the associated insurance - allows use of _include to retrieve insurance when querying a procedure request"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="search"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="SearchParameter/procedurerequest-onbehalfof-stu3"/>
+      </reference>
+      <name value="CRD Procedure Request On Behalf Of - STU3"/>
+      <description value="Custom CRD STU3 search parameter allowing search for procedure requests based on the organization on whose behalf the order was placed - allows use of _include to retrieve the organization when querying a procedure request"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="search"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="SearchParameter/referralrequest-insurance-stu3"/>
+      </reference>
+      <name value="CRD Referral Request Insurance - STU3"/>
+      <description value="Custom CRD STU3 search parameter allowing search for referral requests based on the associated insurance - allows use of _include to retrieve insurance when querying a referral request"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="search"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="SearchParameter/referralrequest-onbehalfof-stu3"/>
+      </reference>
+      <name value="CRD Referral Request On Behalf Of - STU3"/>
+      <description value="Custom CRD STU3 search parameter allowing search for referral requests based on the organization on whose behalf the order was placed - allows use of _include to retrieve the organization when querying a referral request"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="search"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="SearchParameter/visionprescription-insurance-stu3"/>
+      </reference>
+      <name value="CRD VisionPrescription Insurance - STU3"/>
+      <description value="Custom CRD STU3 search parameter allowing search for vision prescriptions based on the associated insurance - allows use of _include to retrieve insurance when querying a vision prescription"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="search"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="CodeSystem/task-type-stu3"/>
+      </reference>
+      <name value="CRD STU3 Task Types Code System"/>
+      <description value="Codes for use with FHIR STU3 to identify types of tasks relevant to coverage requirement discovery"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="terminology"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="CodeSystem/task-reason-stu3"/>
+      </reference>
+      <name value="CRD STU3 Task Reasons Code System"/>
+      <description value="Codes for use with FHIR STU3 to identify reasons for task performance relevant to coverage requirement discovery"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="terminology"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/locationAddressType-stu3"/>
+      </reference>
+      <name value="CRD STU3 Location Address Types"/>
+      <description value="The subset of FHIR STU3 location address types relevant for coverage requirement discovery"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="terminology"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/taskCode-stu3"/>
+      </reference>
+      <name value="CRD STU3 Task Types"/>
+      <description value="All FHIR STU3 task codes relevant to coverage requirements discovery"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="terminology"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/taskReasonCode-stu3"/>
+      </reference>
+      <name value="CRD STU3 Task Reason Codes"/>
+      <description value="All FHIR STU3 task reasons relevant to coverage requirements discovery"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="terminology"/>
+    </resource>
     <page>
       <nameUrl value="artifacts.html"/>
       <title value="Artifact List for FHIR STU3"/>
@@ -208,17 +369,17 @@
         <generation value="generated"/>
       </page>
       <page>
-        <nameUrl value="valueset-locationAddressType-stu3.html"/>
+        <nameUrl value="locationAddressType-stu3.html"/>
         <title value="CRD STU3 Location Address Types"/>
         <generation value="generated"/>
       </page>
       <page>
-        <nameUrl value="valueset-taskCode-stu3.html"/>
+        <nameUrl value="taskCode-stu3.html"/>
         <title value="CRD STU3 Task Types"/>
         <generation value="generated"/>
       </page>
       <page>
-        <nameUrl value="valueset-taskReasonCode-stu3.html"/>
+        <nameUrl value="taskReasonCode-stu3.html"/>
         <title value="CRD STU3 Task Reason Codes"/>
         <generation value="generated"/>
       </page>

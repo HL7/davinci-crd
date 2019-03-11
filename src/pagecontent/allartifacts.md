@@ -14,13 +14,14 @@ As a result, there are 4 different lists of artifacts - one for each of the STU3
     <td><a href="artifacts.html">FHIR R4 CRD-specific Artifacts</a></td>
   </tr>
   <tr>
+    <td><a href="http://hl7.org/fhir/us/core/2019Jan">US Core (2.1.0 - R4 based)</a></td>
     <td>FHIR R4 US Core (not yet created)</td>
   </tr>
   <tr>
     <td><a href="STU3/artifacts.html">FHIR STU3 CRD-specific Artifacts</a></td>
   </tr>
   <tr>
-    <td><a href="http://hl7.org/fhir/us/core/1.0.1">FHIR STU3 US Core (1.0.1)</a></td>
+    <td><a href="http://hl7.org/fhir/us/core/STU2">(2.0.0 - STU3 based)</a></td>
   </tr>
 </table>
 

@@ -1,4 +1,4 @@
-This section of the implementation guide defines the specific conformance requirements for systems wishing to conform to this Coverage Requirements Discovery implementation guide.  The bulk of it focuses on the implementation of  the [CDS Hooks Specification](https://cds-hooks.hl7.org/specification/1.0) to meet CRD use-cases.  It also describes the use of [SMART on FHIR](http://hl7.org/fhir/smart-app-launch) and provides guidance on privacy, security and other implementation requirements.
+This section of the implementation guide defines the specific conformance requirements for systems wishing to conform to this Coverage Requirements Discovery implementation guide.  The bulk of it focuses on the implementation of  the [CDS Hooks Specification](https://cds-hooks.hl7.org/specification/1.0) to meet CRD use-cases.  It also describes the use of [SMART on FHIR](http://hl7.org/fhir/smart-app-launch/index.html) and provides guidance on privacy, security and other implementation requirements.
 
 
 ### Context
@@ -68,7 +68,7 @@ Two of the hooks used by this specification (_order-select_ and _order-sign_) id
 
 * [Task]({{site.data.fhir.path}}task.html) - Task is used to seek fulfillment of orders from particular service providers.  Because coverage can be influenced by who is asked to perform an order, coverage requirements can be relevant here.  As well, task is used to request changes to existing therapies (e.g. stopping a medication, suspending a therapy, etc.) and changes to therapy can also have impacts on coverage requirements.
 
-The proposal to add these resources to the existing hook definitions [can be found]() on the CDS hooks [issue tracker]().
+The proposal to add these resources to the existing hook definitions [can be found](https://github.com/cds-hooks/docs/issues/396) on the CDS hooks [issue tracker](https://github.com/cds-hooks/docs/issues).
 
 
 ##### Configuration
@@ -336,7 +336,7 @@ Note: Sending existing prior authorizations is not in scope for this version of 
 Each CDS Hook defines a workflow/business process location within the client system where a specific type of decision support is relevant.  For example, the `order-select`  
 hook fires whenever a user is in the process of creating new orders or referrals.  In many clients, the same hook might fire in multiple locations.  For example, an EMR might have different screens for ordering regular medications vs. vaccinations vs. chemotherapy, not to mention distinct screens for lab orders, imaging orders and referrals.  The same hook might be initiated from all these locations.
 
-This version of the implementation guide has identified five hooks that cover the main situations where coverage requirements discovery is likely to be needed: [appointment-book](#appointment-book), [encounter-start](#encounter-start), [encounter-discharge](#encounter-discharge), [order-select](#order-select), and [order-sign](order-sign).
+This version of the implementation guide has identified five hooks that cover the main situations where coverage requirements discovery is likely to be needed: [appointment-book](#appointment-book), [encounter-start](#encounter-start), [encounter-discharge](#encounter-discharge), [order-select](#order-select), and [order-sign](#order-sign).
 
 Not all client systems will support all hook types.  For example, community EMR systems will not likely support `encounter-discharge`.  Community pharmacy systems would not likely support `appointment-book`.  Client systems conforming to this implementation guide **SHALL** support at least one of the hooks listed below and **SHOULD** support all that apply to the context of their system.
 
@@ -383,23 +383,23 @@ The profiles expected to be used for the resources resolved to by the userId, pa
     </tr>
   </thead>
   <tr>
-    <td><a href="STU3/profile-appointment-stu3.html">profile-appointment-stu3</a></td>
+    <td><a href="STU3\profile-appointment-stu3.html">profile-appointment-stu3</a></td>
     <td><a href="profile-appointment-r4.html">profile-appointment-r4</a></td>
   </tr>
   <tr>
-    <td><a href="STU3/profile-encounter-stu3.html">profile-encounter-stu3</a></td>
+    <td><a href="STU3\profile-encounter-stu3.html">profile-encounter-stu3</a></td>
     <td><a href="profile-encounter-r4.html">profile-encounter-r4</a></td>
   </tr>
   <tr>
-    <td><a href="STU3/profile-patient-stu3.html">profile-patient-stu3</a></td>
+    <td><a href="STU3\profile-patient-stu3.html">profile-patient-stu3</a></td>
     <td><a href="profile-patient-r4.html">profile-patient-r4</a></td>
   </tr>
   <tr>
-    <td><a href="STU3/profile-practitioner-stu3.html">profile-practitioner-stu3</a></td>
+    <td><a href="STU3\profile-practitioner-stu3.html">profile-practitioner-stu3</a></td>
     <td><a href="profile-practitioner-r4.html">profile-practitioner-r4</a></td>
   </tr>
   <tr>
-    <td><a href="STU3/profile-practitionerrole-stu3.html">profile-practitionerrole-stu3</a></td>
+    <td></td>
     <td><a href="profile-practitionerrole-r4.html">profile-practitionerrole-r4</a></td>
   </tr>
 </table>
@@ -425,19 +425,19 @@ The profiles expected to be used for the resources resolved to by the userId, pa
     </tr>
   </thead>
   <tr>
-    <td><a href="STU3/profile-encounter-stu3.html">profile-encounter-stu3</a></td>
+    <td><a href="STU3\profile-encounter-stu3.html">profile-encounter-stu3</a></td>
     <td><a href="profile-encounter-r4.html">profile-encounter-r4</a></td>
   </tr>
   <tr>
-    <td><a href="STU3/profile-patient-stu3.html">profile-patient-stu3</a></td>
+    <td><a href="STU3\profile-patient-stu3.html">profile-patient-stu3</a></td>
     <td><a href="profile-patient-r4.html">profile-patient-r4</a></td>
   </tr>
   <tr>
-    <td><a href="STU3/profile-practitioner-stu3.html">profile-practitioner-stu3</a></td>
+    <td><a href="STU3\profile-practitioner-stu3.html">profile-practitioner-stu3</a></td>
     <td><a href="profile-practitioner-r4.html">profile-practitioner-r4</a></td>
   </tr>
   <tr>
-    <td><a href="STU3/profile-practitionerrole-stu3.html">profile-practitionerrole-stu3</a></td>
+    <td></td>
     <td><a href="profile-practitionerrole-r4.html">profile-practitionerrole-r4</a></td>
   </tr>
 </table>
@@ -464,19 +464,19 @@ The profiles expected to be used for the resources resolved to by the userId, pa
     </tr>
   </thead>
   <tr>
-    <td><a href="STU3/profile-encounter-stu3.html">profile-encounter-stu3</a></td>
+    <td><a href="STU3\profile-encounter-stu3.html">profile-encounter-stu3</a></td>
     <td><a href="profile-encounter-r4.html">profile-encounter-r4</a></td>
   </tr>
   <tr>
-    <td><a href="STU3/profile-patient-stu3.html">profile-patient-stu3</a></td>
+    <td><a href="STU3\profile-patient-stu3.html">profile-patient-stu3</a></td>
     <td><a href="profile-patient-r4.html">profile-patient-r4</a></td>
   </tr>
   <tr>
-    <td><a href="STU3/profile-practitioner-stu3.html">profile-practitioner-stu3</a></td>
+    <td><a href="STU3\profile-practitioner-stu3.html">profile-practitioner-stu3</a></td>
     <td><a href="profile-practitioner-r4.html">profile-practitioner-r4</a></td>
   </tr>
   <tr>
-    <td><a href="STU3/profile-practitionerrole-stu3.html">profile-practitionerrole-stu3</a></td>
+    <td></td>
     <td><a href="profile-practitionerrole-r4.html">profile-practitionerrole-r4</a></td>
   </tr>
 </table>
@@ -527,50 +527,50 @@ There are no constraints or special rules related to this hook beyond the profil
     </tr>
   </thead>
   <tr>
-    <td><a href="STU3/profile-devicerequest-stu3.html">profile-devicerequest-stu3</a></td>
+    <td><a href="STU3\profile-devicerequest-stu3.html">profile-devicerequest-stu3</a></td>
     <td rowspan="2"><a href="profile-devicerequest-r4.html">profile-devicerequest-r4</a><sup>†</sup></td>
   </tr>
   <tr>
-    <td><a href="STU3/profile-visionprescription-stu3.html">profile-visionprescription-stu3</a></td>
+    <td><a href="STU3\profile-visionprescription-stu3.html">profile-visionprescription-stu3</a></td>
   </tr>
   <tr>
-    <td><a href="STU3/profile-encounter-stu3.html">profile-encounter-stu3</a></td>
+    <td><a href="STU3\profile-encounter-stu3.html">profile-encounter-stu3</a></td>
     <td><a href="profile-encounter-r4.html">profile-encounter-r4</a></td>
   </tr>
   <tr>
-    <td><a href="STU3/profile-medicationrequest-stu3.html">profile-medicationrequest-stu3</a></td>
+    <td><a href="STU3\profile-medicationrequest-stu3.html">profile-medicationrequest-stu3</a></td>
     <td><a href="profile-medicationrequest-r4.html">profile-medicationrequest-r4</a></td>
   </tr>
   <tr>
-    <td><a href="STU3/profile-nutritionorder-stu3.html">profile-nutritionorder-stu3</a></td>
+    <td><a href="STU3\profile-nutritionorder-stu3.html">profile-nutritionorder-stu3</a></td>
     <td><a href="profile-nutritionorder-r4.html">profile-nutritionorder-r4</a></td>
   </tr>
   <tr>
-    <td><a href="STU3/profile-patient-stu3.html">profile-patient-stu3</a></td>
+    <td><a href="STU3\profile-patient-stu3.html">profile-patient-stu3</a></td>
     <td><a href="profile-patient-r4.html">profile-patient-r4</a></td>
   </tr>
   <tr>
-    <td><a href="STU3/profile-practitioner-stu3.html">profile-practitioner-stu3</a></td>
+    <td><a href="STU3\profile-practitioner-stu3.html">profile-practitioner-stu3</a></td>
     <td><a href="profile-practitioner-r4.html">profile-practitioner-r4</a></td>
   </tr>
   <tr>
-    <td><a href="STU3/profile-practitionerrole-stu3.html">profile-practitionerrole-stu3</a><sup>‡</sup></td>
+    <td></td>
     <td><a href="profile-practitionerrole-r4.html">profile-practitionerrole-r4</a><sup>‡</sup></td>
   </tr>
   <tr>
-    <td><a href="STU3/profile-procedurerequest-stu3.html">profile-procedurerequest-stu3</a></td>
+    <td><a href="STU3\profile-procedurerequest-stu3.html">profile-procedurerequest-stu3</a></td>
     <td rowspan="2"><a href="profile-servicerequest-r4.html">profile-servicerequest-r4</a></td>
   </tr>
   <tr>
-    <td><a href="STU3/profile-referralrequest-stu3.html">profile-referralrequest-stu3</a></td>
+    <td><a href="STU3\profile-referralrequest-stu3.html">profile-referralrequest-stu3</a></td>
   </tr>
   <tr>
-    <td><a href="STU3/profile-supplyrequest-stu3.html">profile-supplyrequest-stu3</a><sup>†</sup></td>
+    <td><a href="STU3\profile-supplyrequest-stu3.html">profile-supplyrequest-stu3</a><sup>†</sup></td>
     <td><a href="profile-supplyrequest-r4.html">profile-supplyrequest-r4</a><sup>†</sup></td>
   </tr>
 </table>
 
-<sup>†</sup> DeviceRequest and SupplyRequest are not currently supported by the order-select and order-sign hooks.  A [proposal]() has been submitted to add them.  CRD implementers **SHALL NOT** treat the presence of these resources in the `draftOrders` Bundle as an error and **SHOULD** support these resource types if relevant to their operations.
+<sup>†</sup> DeviceRequest and SupplyRequest are not currently supported by the order-select and order-sign hooks.  A [proposal](https://github.com/cds-hooks/docs/issues/396) has been submitted to add them.  CRD implementers **SHALL NOT** treat the presence of these resources in the `draftOrders` Bundle as an error and **SHOULD** support these resource types if relevant to their operations.
 
 <sup>‡</sup> While this hook does not explicitly list PractitionerRole as an expected resource type for userId, it is not prohibited and is included to allow linking the user to a Practitioner in a specific role acting on behalf of a specific Organization.
 
@@ -694,21 +694,21 @@ When using this response type, the proposed orders (and any associated resources
     </tr>
   </thead>
   <tr>
-    <td><a href="STU3/profile-device-stu3.html">profile-device-stu3</a></td>
+    <td><a href="STU3\profile-device-stu3.html">profile-device-stu3</a></td>
     <td><a href="profile-device-r4.html">profile-device-r4</a></td>
     <td/>
   </tr>
   <tr>
-    <td><a href="STU3/profile-devicerequest-stu3.html">profile-devicerequest-stu3</a></td>
+    <td><a href="STU3\profile-devicerequest-stu3.html">profile-devicerequest-stu3</a></td>
     <td rowspan="2"><a href="profile-devicerequest-r4.html">profile-devicerequest-r4</a></td>
     <td/>
   </tr>
   <tr>
-    <td><a href="STU3/profile-visionprescription-stu3.html">profile-visionprescription-stu3</a></td>
+    <td><a href="STU3\profile-visionprescription-stu3.html">profile-visionprescription-stu3</a></td>
     <td/>
   </tr>
   <tr>
-    <td><a href="STU3/profile-encounter-stu3.html">profile-encounter-stu3</a></td>
+    <td><a href="STU3\profile-encounter-stu3.html">profile-encounter-stu3</a></td>
     <td><a href="profile-encounter-r4.html">profile-encounter-r4</a></td>
     <td>Only if updating an Encounter - e.g. to add a note</td>
   </tr>
@@ -718,26 +718,26 @@ When using this response type, the proposed orders (and any associated resources
     <td/>
   </tr>
   <tr>
-    <td><a href="STU3/profile-medicationrequest-stu3.html">profile-medicationrequest-stu3</a></td>
+    <td><a href="STU3\profile-medicationrequest-stu3.html">profile-medicationrequest-stu3</a></td>
     <td><a href="profile-medicationrequest-r4.html">profile-medicationrequest-r4</a></td>
     <td/>
   </tr>
   <tr>
-    <td><a href="STU3/profile-nutritionorder-stu3.html">profile-nutritionorder-stu3</a></td>
+    <td><a href="STU3\profile-nutritionorder-stu3.html">profile-nutritionorder-stu3</a></td>
     <td><a href="profile-nutritionorder-r4.html">profile-nutritionorder-r4</a></td>
     <td/>
   </tr>
   <tr>
-    <td><a href="STU3/profile-procedurerequest-stu3.html">profile-procedurerequest-stu3</a></td>
+    <td><a href="STU3\profile-procedurerequest-stu3.html">profile-procedurerequest-stu3</a></td>
     <td rowspan="2"><a href="profile-servicerequest-r4.html">profile-servicerequest-r4</a></td>
     <td/>
   </tr>
   <tr>
-    <td><a href="STU3/profile-referralrequest-stu3.html">profile-referralrequest-stu3</a></td>
+    <td><a href="STU3\profile-referralrequest-stu3.html">profile-referralrequest-stu3</a></td>
     <td/>
   </tr>
   <tr>
-    <td><a href="STU3/profile-supplyrequest-stu3.html">profile-supplyrequest-stu3</a></td>
+    <td><a href="STU3\profile-supplyrequest-stu3.html">profile-supplyrequest-stu3</a></td>
     <td><a href="profile-supplyrequest-r4.html">profile-supplyrequest-r4</a></td>
     <td/>
   </tr>
@@ -829,41 +829,41 @@ When using this response type, the proposed orders (and any associated resources
     </tr>
   </thead>
   <tr>
-    <td><a href="STU3/profile-communicationreq-stu3.html">profile-communicationreq-stu3</a></td>
+    <td><a href="STU3\profile-communicationreq-stu3.html">profile-communicationreq-stu3</a></td>
     <td><a href="profile-communicationrequest-r4.html">profile-communicationrequest-r4</a></td>
   </tr>
   <tr>
-    <td><a href="STU3/profile-device-stu3.html">profile-device-stu3</a></td>
+    <td><a href="STU3\profile-device-stu3.html">profile-device-stu3</a></td>
     <td><a href="profile-device-r4.html">profile-device-r4</a></td>
   </tr>
   <tr>
-    <td><a href="STU3/profile-devicerequest-stu3.html">profile-devicerequest-stu3</a></td>
+    <td><a href="STU3\profile-devicerequest-stu3.html">profile-devicerequest-stu3</a></td>
     <td rowspan="2"><a href="profile-devicerequest-r4.html">profile-devicerequest-r4</a></td>
   </tr>
   <tr>
-    <td><a href="STU3/profile-visionprescription-stu3.html">profile-visionprescription-stu3</a></td>
+    <td><a href="STU3\profile-visionprescription-stu3.html">profile-visionprescription-stu3</a></td>
   </tr>
   <tr>
     <td><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-medication.html">us-core-medication</a></td>
     <td><a href="profile-medication-r4.html">profile-medication-r4</a></td>
   </tr>
   <tr>
-    <td><a href="STU3/profile-medicationrequest-stu3.html">profile-medicationrequest-stu3</a></td>
+    <td><a href="STU3\profile-medicationrequest-stu3.html">profile-medicationrequest-stu3</a></td>
     <td><a href="profile-medicationrequest-r4.html">profile-medicationrequest-r4</a></td>
   </tr>
   <tr>
-    <td><a href="STU3/profile-nutritionorder-stu3.html">profile-nutritionorder-stu3</a></td>
+    <td><a href="STU3\profile-nutritionorder-stu3.html">profile-nutritionorder-stu3</a></td>
     <td><a href="profile-nutritionorder-r4.html">profile-nutritionorder-r4</a></td>
   </tr>
   <tr>
-    <td><a href="STU3/profile-procedurerequest-stu3.html">profile-procedurerequest-stu3</a></td>
+    <td><a href="STU3\profile-procedurerequest-stu3.html">profile-procedurerequest-stu3</a></td>
     <td rowspan="2"><a href="profile-servicerequest-r4.html">profile-servicerequest-r4</a></td>
   </tr>
   <tr>
-    <td><a href="STU3/profile-referralrequest-stu3.html">profile-referralrequest-stu3</a></td>
+    <td><a href="STU3\profile-referralrequest-stu3.html">profile-referralrequest-stu3</a></td>
   </tr>
   <tr>
-    <td><a href="STU3/profile-supplyrequest-stu3.html">profile-supplyrequest-stu3</a></td>
+    <td><a href="STU3\profile-supplyrequest-stu3.html">profile-supplyrequest-stu3</a></td>
     <td><a href="profile-supplyrequest-r4.html">profile-supplyrequest-r4</a></td>
   </tr>
 </table>
@@ -939,12 +939,12 @@ When using this response type, the proposed orders (and any associated resources
     </tr>
   </thead>
   <tr>
-    <td><a href="STU3/profile-taskquestionnaire-stu3.html">profile-taskquestionnaire-stu3</a></td>
+    <td><a href="STU3\profile-taskquestionnaire-stu3.html">profile-taskquestionnaire-stu3</a></td>
     <td><a href="profile-taskquestionnaire-r4.html">profile-taskquestionnaire-r4</a></td>
   </tr>
 </table>
   
-No profile is provided for the Questionnaires pointed to by the Task.  Payers **SHOULD** use questionnaires that are compliant with either the [Argonaut Questionnaire profiles](https://github.com/argonautproject/questionnaire) (for forms to be completed within the EMR) or the [Structured Data Capture profiles](http://hl7.org/fhir/us/sdc) (for more sophisticated forms to be created within a SMART on FHIR app or through an external service).
+No profile is provided for the Questionnaires pointed to by the Task.  Payers **SHOULD** use questionnaires that are compliant with either the [Argonaut Questionnaire profiles](https://github.com/argonautproject/questionnaire) (for forms to be completed within the EMR) or the [Structured Data Capture profiles](http://hl7.org/fhir/us/sdc/index.html) (for more sophisticated forms to be created within a SMART on FHIR app or through an external service).
 
 The following is an example CDS Hook [Suggestion](https://cds-hooks.hl7.org/specification/1.0/#suggestion) where the specified questionnaire is either expected to be available within the client system or available for retrieval through its canonical URL.  As such, the [Action](https://cds-hooks.hl7.org/specification/1.0/#action) only contains the FHIR [Task]({{site.data.fhir.path}}task.html) resource.  An example showing inclusion of both the Task and the referenced Questionnaire can be found [above](#if-none-exist).
 
@@ -1093,7 +1093,7 @@ Not all of these will be relevant for all resource types.  And different resourc
 The context information provided as part of hook invocation will often not be sufficient for a CRD service to fully determine coverage requirements.  There are two possible mechanisms that can be used by the service to gather the information needed: Pre-fetch and query against the EMR.  Both of these mechanisms are defined as part of the [CDS Hooks specification](https://cds-hooks.org/specification/1.0/#providing-fhir-resources-to-a-cds-service).  In some cases, a mixture of both approaches may be necessary.
 
 ###### Pre-fetch
-In addition to the [base pre-fetch capabilities](https://cds-hooks.org/specification/1.0/#prefetch-template) defined in the CDS Hooks specification, systems that support pre-fetch **SHOULD** support the additional pre-fetch capabilities [defined earlier in this spec.](Additional_Pre-fetch_capabilities).  The following table defines the 'standard' prefetch queries for this implementation guide that **SHOULD** be supported for each type of resource are shown in the table below.  Those search parameters with hyperlinks are defined as part of this implementation guide.  The remainder are defined within their respective version of the FHIR core specification.
+In addition to the [base pre-fetch capabilities](https://cds-hooks.org/specification/1.0/#prefetch-template) defined in the CDS Hooks specification, systems that support pre-fetch **SHOULD** support the additional pre-fetch capabilities [defined earlier in this spec.](#additional-pre-fetch-capabilities).  The following table defines the 'standard' prefetch queries for this implementation guide that **SHOULD** be supported for each type of resource are shown in the table below.  Those search parameters with hyperlinks are defined as part of this implementation guide.  The remainder are defined within their respective version of the FHIR core specification.
 
 EMR implementations should not expect standardized prefetch key names.  EMRs supporting prefetch **SHALL** inspect the CDS Hooks Discovery Endpoint to determine exact prefetch key names and queries.
 
@@ -1114,7 +1114,7 @@ EMR implementations should not expect standardized prefetch key names.  EMRs sup
       <code>Appointment?_id={{context.appointments.Appointment.id}}<br/>
       &_include=Appointment:patient, Appointment:practitioner<br/>
       &_include=Appointment:location<br/>
-      &_include=Appointment:<a href="STU3/appointment-insurance-stu3.html">insurance</a>:Coverage</code>
+      &_include=Appointment:<a href="STU3\appointment-insurance-stu3.html">insurance</a>:Coverage</code>
     </td>
     <td>No requester, no performer organization</td>
   </tr>
@@ -1141,8 +1141,8 @@ EMR implementations should not expect standardized prefetch key names.  EMRs sup
       &_include=DeviceRequest:performer<br/>
       &_include=DeviceRequest:requester<br/>
       &_include=DeviceRequest:device<br/>
-      &_include=DeviceRequest:<a href="STU3/devicerequest-onbehalfof-stu3.html">on-behalf</a><br/>
-      &_include=DeviceRequest:<a href="STU3/devicerequest-insurance-stu3.html">insurance</a>:Coverage</code>
+      &_include=DeviceRequest:<a href="STU3\devicerequest-onbehalfof-stu3.html">on-behalf</a><br/>
+      &_include=DeviceRequest:<a href="STU3\devicerequest-insurance-stu3.html">insurance</a>:Coverage</code>
     </td>
     <td>No performing location</td>
   </tr>
@@ -1170,7 +1170,7 @@ EMR implementations should not expect standardized prefetch key names.  EMRs sup
       &_include=Encounter:service-provider<br/>
       &_include=Encounter:practitioner<br/>
       &_include=Encounter:location<br/>
-      &_include=Encounter:<a href="STU3/encounter-insurance-stu3.html">insurance</a>:Coverage</code>
+      &_include=Encounter:<a href="STU3\encounter-insurance-stu3.html">insurance</a>:Coverage</code>
     </td>
     <td>No requester</td>
   </tr>
@@ -1195,8 +1195,8 @@ EMR implementations should not expect standardized prefetch key names.  EMRs sup
       &_include=MedicationRequest:intended-dispenser<br/>
       &_include=MedicationRequest:requester:Practitioner<br/>
       &_include=MedicationRequest:medication<br/>
-      &_include=MedicationRequest:<a href="STU3/medicationrequest-onbehalfof-stu3.html">on-behalf</a><br/>
-      &_include=MedicationRequest:<a href="STU3/medicationrequest-insurance-stu3.html">insurance</a>:Coverage</code>
+      &_include=MedicationRequest:<a href="STU3\medicationrequest-onbehalfof-stu3.html">on-behalf</a><br/>
+      &_include=MedicationRequest:<a href="STU3\medicationrequest-insurance-stu3.html">insurance</a>:Coverage</code>
     </td>
     <td>No performing location</td>
   </tr>
@@ -1224,8 +1224,8 @@ EMR implementations should not expect standardized prefetch key names.  EMRs sup
       &_include=MedicationRequest:intended-dispenser<br/>
       &_include=MedicationRequest:requester:Practitioner<br/>
       &_include=MedicationRequest:medication<br/>
-      &_include=MedicationRequest:<a href="STU3/medicationrequest-onbehalfof-stu3.html">on-behalf</a><br/>
-      &_include=MedicationRequest:<a href="STU3/medicationrequest-insurance-stu3.html">insurance</a>:Coverage</code>
+      &_include=MedicationRequest:<a href="STU3\medicationrequest-onbehalfof-stu3.html">on-behalf</a><br/>
+      &_include=MedicationRequest:<a href="STU3\medicationrequest-insurance-stu3.html">insurance</a>:Coverage</code>
     </td>
     <td>No performing location</td>
   </tr>
@@ -1254,7 +1254,7 @@ EMR implementations should not expect standardized prefetch key names.  EMRs sup
       &_include=NutritionOrder:requester<br/>
       &_include=NutritionOrder:encounter<br/>
       &_include:recurse=Encounter:location<br/>
-      &_include=NutritionOrder:<a href="STU3/nutritionorder-insurance-stu3.html">insurance</a>:Coverage</code>
+      &_include=NutritionOrder:<a href="STU3\nutritionorder-insurance-stu3.html">insurance</a>:Coverage</code>
     </td>
     <td>No organization, location only through request encounter</td>
   </tr>
@@ -1282,8 +1282,8 @@ EMR implementations should not expect standardized prefetch key names.  EMRs sup
       &_include=ProcedureRequest:patient<br/>
       &_include=ProcedureRequest:performer<br/>
       &_include=ProcedureRequest:requester<br/>
-      &_include=ProcedureRequest:<a href="STU3/procedurerequest-onbehalfof-stu3.html">on-behalf</a><br/>
-      &_include=ProcedureRequest:<a href="STU3/procedurerequest-insurance-stu3.html">insurance</a>:Coverage</code>
+      &_include=ProcedureRequest:<a href="STU3\procedurerequest-onbehalfof-stu3.html">on-behalf</a><br/>
+      &_include=ProcedureRequest:<a href="STU3\procedurerequest-insurance-stu3.html">insurance</a>:Coverage</code>
     </td>
     <td>No performer location</td>
   </tr>
@@ -1295,8 +1295,8 @@ EMR implementations should not expect standardized prefetch key names.  EMRs sup
       &_include=ReferralRequest:patient<br/>
       &_include=ReferralRequest:recipient<br/>
       &_include=ReferralRequest:requester<br/>
-      &_include=ReferralRequest:<a href="STU3/referralrequest-onbehalfof-stu3.html">on-behalf</a><br/>
-      &_include=ReferralRequest:<a href="STU3/referralrequest-insurance-stu3.html">insurance</a>:Coverage</code>
+      &_include=ReferralRequest:<a href="STU3\referralrequest-onbehalfof-stu3.html">on-behalf</a><br/>
+      &_include=ReferralRequest:<a href="STU3\referralrequest-insurance-stu3.html">insurance</a>:Coverage</code>
     </td>
     <td>No performer location</td>
   </tr>
@@ -1319,11 +1319,11 @@ EMR implementations should not expect standardized prefetch key names.  EMRs sup
     <td>STU3</td>
     <td>
       <code>SupplyRequest?_id={{context.draftOrders.SupplyRequest.id}}<br/>
-      &_include=SupplyRequest:<a href="STU3/supplyrequest-patient-stu3.html">patient</a><br/>
+      &_include=SupplyRequest:<a href="STU3\supplyrequest-patient-stu3.html">patient</a><br/>
       &_include=SupplyRequest:supplier:Organization<br/>
       &_include=SupplyRequest:requester:Practitioner<br/>
       &_include=SupplyRequest:requester:Organization<br/>
-      &_include=SupplyRequest:<a href="STU3/supplyrequest-insurance-stu3.html">insurance</a>:Coverage</code>
+      &_include=SupplyRequest:<a href="STU3\supplyrequest-insurance-stu3.html">insurance</a>:Coverage</code>
     </td>
     <td>No performer location</td>
   </tr>
@@ -1350,7 +1350,7 @@ EMR implementations should not expect standardized prefetch key names.  EMRs sup
       <code>VisionPrescription?_id={{context.draftOrders.VisionPrescription.id}}<br/>
       &_include=VisionPrescription:patient<br/>
       &_include=VisionPrescription:prescriber<br/>
-      &_include=VisionPrescription:<a href="STU3/visionprescription-insurance-stu3.html">insurance</a>:Coverage</code>
+      &_include=VisionPrescription:<a href="STU3\visionprescription-insurance-stu3.html">insurance</a>:Coverage</code>
     </td>
     <td>No performer, organization or location</td>
   </tr>
@@ -1591,8 +1591,8 @@ In addition to these, this implementation guide imposes the following additional
 #### Non-PHI Hook Invocation
 Some payers may not have legal permission to view patient-identifiable healthcare information (PHI) for coverage requirements discovery purposes.  EMR systems **SHALL** support filtering exposed FHIR resources to be a non-PHI "redacted" view.  This view **SHALL** ensure that all resources exposed through the CDS Hooks and SMART on FHIR interfaces are filtered as follows:
 
-* The Patient resource adheres to the [STU3 de-identified patient profile](STU3/profile-patient-deident-stu3.html) or [R4 de-identified profile](profile-patient-deident-r4.html), depending on the version supported
-* The Coverage resources adhere to the [STU3 de-identified coverage profile](STU3/profile-coverage-deident-stu3.html) or [R4 de-identified profile](profile-coverage-deident-r4.html), depending on the version supported
+* The Patient resource adheres to the [STU3 de-identified patient profile](STU3\profile-patient-deident-stu3.html) or [R4 de-identified profile](profile-patient-deident-r4.html), depending on the version supported
+* The Coverage resources adhere to the [STU3 de-identified coverage profile](STU3\profile-coverage-deident-stu3.html) or [R4 de-identified profile](profile-coverage-deident-r4.html), depending on the version supported
 * All resource narratives are removed
 * All markdown elements and all string elements that could potentially support free-text (e.g. 'text', 'display', 'comment' and similar elements) are removed
 * All extensions other than those explicitly mentioned in the profiles in this implementation guide are removed

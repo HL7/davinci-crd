@@ -46,9 +46,172 @@
     "id" : "core",
     "uri" : "http://hl7.org/fhir/us/core",
     "packageId" : "hl7.fhir.us.core",
-    "version" : "current"
+    "version" : "2.0.0"
   }],
   "definition" : {
+    "grouping" : [{
+      "id" : "search",
+      "name" : "Search Parameters",
+      "description" : "Search Parameters defined as part of this implementation guide"
+    },
+    {
+      "id" : "terminology",
+      "name" : "Terminology",
+      "description" : "Value Sets and/or code systems defined as part of this implementation guide"
+    }],
+    "resource" : [{
+      "reference" : {
+        "reference" : "SearchParameter/appointment-insurance-stu3"
+      },
+      "name" : "CRD Appointment Insurance - STU3",
+      "description" : "Custom CRD STU3 search parameter allowing search for appointments based on the associated insurance - allows use of _include to retrieve insurance when querying an appointment",
+      "exampleBoolean" : true,
+      "groupingId" : "search"
+    },
+    {
+      "reference" : {
+        "reference" : "SearchParameter/encounter-insurance-stu3"
+      },
+      "name" : "CRD Encounter Insurance - STU3",
+      "description" : "Custom CRD STU3 search parameter allowing search for encounters based on the associated insurance - allows use of _include to retrieve insurance when querying an encounter",
+      "exampleBoolean" : true,
+      "groupingId" : "search"
+    },
+    {
+      "reference" : {
+        "reference" : "SearchParameter/devicerequest-insurance-stu3"
+      },
+      "name" : "CRD Device Request Insurance - STU3",
+      "description" : "Custom CRD STU3 search parameter allowing search for device requests based on the associated insurance - allows use of _include to retrieve insurance when querying a device request",
+      "exampleBoolean" : true,
+      "groupingId" : "search"
+    },
+    {
+      "reference" : {
+        "reference" : "SearchParameter/devicerequest-onbehalfof-stu3"
+      },
+      "name" : "CRD Device Request On Behalf Of - STU3",
+      "description" : "Custom CRD STU3 search parameter allowing search for device requests based on the organization on whose behalf the order was placed - allows use of _include to retrieve the organization when querying a device request",
+      "exampleBoolean" : true,
+      "groupingId" : "search"
+    },
+    {
+      "reference" : {
+        "reference" : "SearchParameter/medicationrequest-onbehalfof-stu3"
+      },
+      "name" : "CRD Medication Request On Behalf Of - STU3",
+      "description" : "Custom CRD STU3 search parameter allowing search for medication requests based on the organization on whose behalf the order was placed - allows use of _include to retrieve the organization when querying a medication request",
+      "exampleBoolean" : true,
+      "groupingId" : "search"
+    },
+    {
+      "reference" : {
+        "reference" : "SearchParameter/medicationrequest-insurance-stu3"
+      },
+      "name" : "CRD Medication Request Insurance - STU3",
+      "description" : "Custom CRD STU3 search parameter allowing search for medication requests based on the associated insurance - allows use of _include to retrieve insurance when querying a medication request",
+      "exampleBoolean" : true,
+      "groupingId" : "search"
+    },
+    {
+      "reference" : {
+        "reference" : "SearchParameter/nutritionorder-insurance-stu3"
+      },
+      "name" : "CRD Nutrition Order Insurance - STU3",
+      "description" : "Custom CRD STU3 search parameter allowing search for nutrition orders based on the associated insurance - allows use of _include to retrieve insurance when querying a nutrition order",
+      "exampleBoolean" : true,
+      "groupingId" : "search"
+    },
+    {
+      "reference" : {
+        "reference" : "SearchParameter/procedurerequest-insurance-stu3"
+      },
+      "name" : "CRD Procedure Request Insurance - STU3",
+      "description" : "Custom CRD STU3 search parameter allowing search for procedure requests based on the associated insurance - allows use of _include to retrieve insurance when querying a procedure request",
+      "exampleBoolean" : true,
+      "groupingId" : "search"
+    },
+    {
+      "reference" : {
+        "reference" : "SearchParameter/procedurerequest-onbehalfof-stu3"
+      },
+      "name" : "CRD Procedure Request On Behalf Of - STU3",
+      "description" : "Custom CRD STU3 search parameter allowing search for procedure requests based on the organization on whose behalf the order was placed - allows use of _include to retrieve the organization when querying a procedure request",
+      "exampleBoolean" : true,
+      "groupingId" : "search"
+    },
+    {
+      "reference" : {
+        "reference" : "SearchParameter/referralrequest-insurance-stu3"
+      },
+      "name" : "CRD Referral Request Insurance - STU3",
+      "description" : "Custom CRD STU3 search parameter allowing search for referral requests based on the associated insurance - allows use of _include to retrieve insurance when querying a referral request",
+      "exampleBoolean" : true,
+      "groupingId" : "search"
+    },
+    {
+      "reference" : {
+        "reference" : "SearchParameter/referralrequest-onbehalfof-stu3"
+      },
+      "name" : "CRD Referral Request On Behalf Of - STU3",
+      "description" : "Custom CRD STU3 search parameter allowing search for referral requests based on the organization on whose behalf the order was placed - allows use of _include to retrieve the organization when querying a referral request",
+      "exampleBoolean" : true,
+      "groupingId" : "search"
+    },
+    {
+      "reference" : {
+        "reference" : "SearchParameter/visionprescription-insurance-stu3"
+      },
+      "name" : "CRD VisionPrescription Insurance - STU3",
+      "description" : "Custom CRD STU3 search parameter allowing search for vision prescriptions based on the associated insurance - allows use of _include to retrieve insurance when querying a vision prescription",
+      "exampleBoolean" : true,
+      "groupingId" : "search"
+    },
+    {
+      "reference" : {
+        "reference" : "CodeSystem/task-type-stu3"
+      },
+      "name" : "CRD STU3 Task Types Code System",
+      "description" : "Codes for use with FHIR STU3 to identify types of tasks relevant to coverage requirement discovery",
+      "exampleBoolean" : true,
+      "groupingId" : "terminology"
+    },
+    {
+      "reference" : {
+        "reference" : "CodeSystem/task-reason-stu3"
+      },
+      "name" : "CRD STU3 Task Reasons Code System",
+      "description" : "Codes for use with FHIR STU3 to identify reasons for task performance relevant to coverage requirement discovery",
+      "exampleBoolean" : true,
+      "groupingId" : "terminology"
+    },
+    {
+      "reference" : {
+        "reference" : "ValueSet/locationAddressType-stu3"
+      },
+      "name" : "CRD STU3 Location Address Types",
+      "description" : "The subset of FHIR STU3 location address types relevant for coverage requirement discovery",
+      "exampleBoolean" : true,
+      "groupingId" : "terminology"
+    },
+    {
+      "reference" : {
+        "reference" : "ValueSet/taskCode-stu3"
+      },
+      "name" : "CRD STU3 Task Types",
+      "description" : "All FHIR STU3 task codes relevant to coverage requirements discovery",
+      "exampleBoolean" : true,
+      "groupingId" : "terminology"
+    },
+    {
+      "reference" : {
+        "reference" : "ValueSet/taskReasonCode-stu3"
+      },
+      "name" : "CRD STU3 Task Reason Codes",
+      "description" : "All FHIR STU3 task reasons relevant to coverage requirements discovery",
+      "exampleBoolean" : true,
+      "groupingId" : "terminology"
+    }],
     "page" : {
       "nameUrl" : "artifacts.html",
       "title" : "Artifact List for FHIR STU3",
@@ -214,17 +377,17 @@
         "generation" : "generated"
       },
       {
-        "nameUrl" : "valueset-locationAddressType-stu3.html",
+        "nameUrl" : "locationAddressType-stu3.html",
         "title" : "CRD STU3 Location Address Types",
         "generation" : "generated"
       },
       {
-        "nameUrl" : "valueset-taskCode-stu3.html",
+        "nameUrl" : "taskCode-stu3.html",
         "title" : "CRD STU3 Task Types",
         "generation" : "generated"
       },
       {
-        "nameUrl" : "valueset-taskReasonCode-stu3.html",
+        "nameUrl" : "taskReasonCode-stu3.html",
         "title" : "CRD STU3 Task Reason Codes",
         "generation" : "generated"
       }]

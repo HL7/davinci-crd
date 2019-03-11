@@ -261,21 +261,21 @@
 </tr>
 <tr>
 <td style="column-width:30%">
-<a href="valueset-locationAddressType-stu3.html">
+<a href="locationAddressType-stu3.html">
                         •  CRD STU3 Location Address Types</a>
 </td>
 <td>The subset of FHIR STU3 location address types relevant for coverage requirement discovery</td>
 </tr>
 <tr>
 <td style="column-width:30%">
-<a href="valueset-taskCode-stu3.html">
+<a href="taskCode-stu3.html">
                         •  CRD STU3 Task Types</a>
 </td>
 <td>All FHIR STU3 task codes relevant to coverage requirements discovery</td>
 </tr>
 <tr>
 <td style="column-width:30%">
-<a href="valueset-taskReasonCode-stu3.html">
+<a href="taskReasonCode-stu3.html">
                         •  CRD STU3 Task Reason Codes</a>
 </td>
 <td>All FHIR STU3 task reasons relevant to coverage requirements discovery</td>

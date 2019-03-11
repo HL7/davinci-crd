@@ -43,6 +43,12 @@
   "license" : "CC0-1.0",
   "fhirVersion" : ["4.0.0",
   "4.0.0"],
+  "dependsOn" : [{
+    "id" : "core",
+    "uri" : "http://hl7.org/fhir/us/core",
+    "packageId" : "hl7.fhir.us.core",
+    "version" : "dev"
+  }],
   "definition" : {
     "grouping" : [{
       "id" : "profiles",
@@ -70,7 +76,7 @@
       },
       "name" : "CRD Appointment Insurance",
       "description" : "Custom CRD R4 search parameter allowing search for appointments based on the associated insurance - allows use of _include to retrieve insurance when querying an appointment",
-      "exampleBoolean" : false,
+      "exampleBoolean" : true,
       "groupingId" : "search"
     },
     {
@@ -79,7 +85,7 @@
       },
       "name" : "CRD Encounter Insurance",
       "description" : "Custom CRD R4 search parameter allowing search for encounters based on the associated insurance - allows use of _include to retrieve insurance when querying an encounter",
-      "exampleBoolean" : false,
+      "exampleBoolean" : true,
       "groupingId" : "search"
     },
     {
@@ -88,7 +94,7 @@
       },
       "name" : "CRD MedicationRequest Insurance",
       "description" : "Custom CRD R4 search parameter allowing search for medication requests based on the associated insurance - allows use of _include to retrieve insurance when querying a medication request",
-      "exampleBoolean" : false,
+      "exampleBoolean" : true,
       "groupingId" : "search"
     },
     {
@@ -97,7 +103,7 @@
       },
       "name" : "CRD NutritionOrder Insurance",
       "description" : "Custom CRD R4 search parameter allowing search for nutrition orders based on the associated insurance - allows use of _include to retrieve insurance when querying a nutrition order",
-      "exampleBoolean" : false,
+      "exampleBoolean" : true,
       "groupingId" : "search"
     },
     {
@@ -106,7 +112,7 @@
       },
       "name" : "CRD ServiceRequest Insurance",
       "description" : "Custom CRD R4 search parameter allowing search for service requests based on the associated insurance - allows use of _include to retrieve insurance when querying a service request",
-      "exampleBoolean" : false,
+      "exampleBoolean" : true,
       "groupingId" : "search"
     },
     {
@@ -124,7 +130,7 @@
       },
       "name" : "CRD Task Types Code System",
       "description" : "Codes for use with FHIR R4 to identify types of tasks relevant to coverage requirement discovery",
-      "exampleBoolean" : false,
+      "exampleBoolean" : true,
       "groupingId" : "terminology"
     },
     {
@@ -133,7 +139,7 @@
       },
       "name" : "CRD Task Reasons Code System",
       "description" : "Codes for use with FHIR R4 to identify reasons for task performance relevant to coverage requirement discovery",
-      "exampleBoolean" : false,
+      "exampleBoolean" : true,
       "groupingId" : "terminology"
     },
     {
@@ -142,7 +148,7 @@
       },
       "name" : "CRD Coverage Classes",
       "description" : "The subset of coverage classes relevant for coverage requirement discovery",
-      "exampleBoolean" : false,
+      "exampleBoolean" : true,
       "groupingId" : "terminology"
     },
     {
@@ -151,7 +157,7 @@
       },
       "name" : "CRD Location Address Types",
       "description" : "The subset of FHIR R4 location address types relevant for coverage requirement discovery",
-      "exampleBoolean" : false,
+      "exampleBoolean" : true,
       "groupingId" : "terminology"
     },
     {
@@ -160,7 +166,7 @@
       },
       "name" : "CRD Task Types",
       "description" : "All FHIR R4 task codes relevant to coverage requirements discovery",
-      "exampleBoolean" : false,
+      "exampleBoolean" : true,
       "groupingId" : "terminology"
     },
     {
@@ -169,7 +175,7 @@
       },
       "name" : "CRD Task Reason Codes",
       "description" : "All FHIR R4 task reasons relevant to coverage requirements discovery",
-      "exampleBoolean" : false,
+      "exampleBoolean" : true,
       "groupingId" : "terminology"
     }],
     "page" : {
@@ -183,7 +189,7 @@
       },
       {
         "nameUrl" : "usecases.html",
-        "title" : "Use Cases & Overview",
+        "title" : "Use Cases and Overview",
         "generation" : "markdown"
       },
       {
@@ -335,22 +341,22 @@
             "generation" : "generated"
           },
           {
-            "nameUrl" : "valueset-coverageClass.html",
+            "nameUrl" : "coverageClass.html",
             "title" : "CRD Coverage Classes",
             "generation" : "generated"
           },
           {
-            "nameUrl" : "valueset-locationAddressType.html",
+            "nameUrl" : "locationAddressType.html",
             "title" : "CRD Location Address Types",
             "generation" : "generated"
           },
           {
-            "nameUrl" : "valueset-taskCode.html",
+            "nameUrl" : "taskCode.html",
             "title" : "CRD Task Types",
             "generation" : "generated"
           },
           {
-            "nameUrl" : "valueset-taskReasonCode.html",
+            "nameUrl" : "taskReasonCode.html",
             "title" : "CRD Task Reason Codes",
             "generation" : "generated"
           }]
