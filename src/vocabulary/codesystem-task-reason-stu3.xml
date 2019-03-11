@@ -2,7 +2,8 @@
 <CodeSystem xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemasSTU3/fhir-single.xsd">
   <id value="task-reason-stu3"/>
   <url value="http://hl7.org/fhir/us/davinci-crd/STU3/CodeSystem/task-reason-stu3"/>
-  <name value="CRD Reason Codes"/>
+  <name value="CRDReasonCodes"/>
+  <title value="CRD Reason Codes"/>
   <status value="draft"/>
   <description value="Reasons for creating tasks in CRD"/>
   <content value="complete"/>

@@ -564,10 +564,10 @@ There are no constraints or special rules related to this hook beyond the profil
   <tr>
     <td><a href="STU3\profile-referralrequest-stu3.html">profile-referralrequest-stu3</a></td>
   </tr>
-  <tr>
+<!--  <tr>
     <td><a href="STU3\profile-supplyrequest-stu3.html">profile-supplyrequest-stu3</a><sup>†</sup></td>
     <td><a href="profile-supplyrequest-r4.html">profile-supplyrequest-r4</a><sup>†</sup></td>
-  </tr>
+  </tr>-->
 </table>
 
 <sup>†</sup> DeviceRequest and SupplyRequest are not currently supported by the order-select and order-sign hooks.  A [proposal](https://github.com/cds-hooks/docs/issues/396) has been submitted to add them.  CRD implementers **SHALL NOT** treat the presence of these resources in the `draftOrders` Bundle as an error and **SHOULD** support these resource types if relevant to their operations.
@@ -736,11 +736,11 @@ When using this response type, the proposed orders (and any associated resources
     <td><a href="STU3\profile-referralrequest-stu3.html">profile-referralrequest-stu3</a></td>
     <td/>
   </tr>
-  <tr>
+<!--  <tr>
     <td><a href="STU3\profile-supplyrequest-stu3.html">profile-supplyrequest-stu3</a></td>
     <td><a href="profile-supplyrequest-r4.html">profile-supplyrequest-r4</a></td>
     <td/>
-  </tr>
+  </tr>-->
 </table>
 
 For example, this FHIR R4 card proposes replacing the draft prescription for a brand-name drug (shown only as the 'resourceType' and 'id' from the `draftOrders` entry) and instead creating an equivalent prescription with a generic medication.
@@ -862,10 +862,10 @@ When using this response type, the proposed orders (and any associated resources
   <tr>
     <td><a href="STU3\profile-referralrequest-stu3.html">profile-referralrequest-stu3</a></td>
   </tr>
-  <tr>
+<!--  <tr>
     <td><a href="STU3\profile-supplyrequest-stu3.html">profile-supplyrequest-stu3</a></td>
     <td><a href="profile-supplyrequest-r4.html">profile-supplyrequest-r4</a></td>
-  </tr>
+  </tr>-->
 </table>
 
 This R4 example proposes adding a monthly test to check liver function

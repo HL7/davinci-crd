@@ -35,10 +35,10 @@ This implementation guide supports the [STU3](http://hl7.org/fhir/STU3) and [R4]
 This implementation guide also builds on the US Core Implementation Guide and implementers need to familiarize themselves with the profiles in those Implementation Guides:
 <table>
   <tr>
-    <td><a href="http://hl7.org/fhir/us/core/2019Jan/index.html">US Core (1.1.0) - based on FHIR R4</a></td>
+    <td><a href="http://hl7.org/fhir/us/core/2019Jan">US Core (2.1.0 - R4 based)</a></td>
   </tr>
   <tr>
-    <td><a href="http://hl7.org/fhir/us/core/STU2/index.html">US Core (1.0.1) - based on FHIR STU3</a></td>
+    <td><a href="http://hl7.org/fhir/us/core/STU2">US Core (2.0.0 - STU3 based)</a></td>
   </tr>
 </table>
 

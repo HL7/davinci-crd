@@ -38,10 +38,10 @@
   <license value="CC0-1.0"/>
   <fhirVersion value="4.0.0"/>
   <fhirVersion value="4.0.0"/>
-  <dependsOn id="core">
-    <uri value="http://hl7.org/fhir/us/core"/>
-    <packageId value="hl7.fhir.us.core"/>
-    <version value="dev"/>
+  <dependsOn id="core_r4">
+    <uri value="http://hl7.org/fhir/us/core-r4"/>
+    <packageId value="hl7.fhir.us.core.r4"/>
+    <version value="current"/>
   </dependsOn>
   <definition>
     <grouping id="profiles">

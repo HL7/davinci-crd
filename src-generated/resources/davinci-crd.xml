@@ -17,9 +17,9 @@
   <fhirVersion value="4.0.0"/>
   
   <dependsOn>
-    <uri value="http://hl7.org/fhir/us/core"/>
-    <packageId value="hl7.fhir.us.core"/>
-    <version value="dev"/>
+    <uri value="http://hl7.org/fhir/us/core-r4"/>
+    <packageId value="hl7.fhir.us.core.r4"/>
+    <version value="current"/>
   </dependsOn>
   <definition>
     <!-- Note: Order of these spreadsheets matters -->
@@ -54,8 +54,16 @@
     
     
     
-    
-    
+<!--    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="supplyrequest-profile-spreadsheet.xml"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="supplyrequest-stu3-profile-spreadsheet.xml">
+        <extension url="http://hl7.org/fhir/StructureDefinition/tools-alternateVersion">
+          <valueCode value="STU3"/>
+        </extension>
+      </valueUri>
+    </extension>-->
     
     
     

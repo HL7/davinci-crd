@@ -91,10 +91,10 @@
   "canonicalBase": "http://hl7.org/fhir/us/davinci-crd",
   "dependencyList": [
     {
-      "name" : "core",
-      "version" : "dev",
-      "location" : "http://hl7.org/fhir/us/core",
-      "source" : "../../core2/website"
+      "name" : "core_r4",
+      "version" : "current",
+      "location" : "http://hl7.org/fhir/us/core-r4",
+      "source" : "../../core-r42/website"
     }
   ],
   "source": "davinci-crd.xml",
@@ -116,7 +116,6 @@
     "practitioner-profile-spreadsheet.xml",
     "practitionerrole-profile-spreadsheet.xml",
     "servicerequest-profile-spreadsheet.xml",
-    "supplyrequest-profile-spreadsheet.xml",
     "task-profile-spreadsheet.xml"
   ],
   "resources": {
