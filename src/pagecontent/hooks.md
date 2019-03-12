@@ -1091,7 +1091,7 @@ The base requirement for each query, whether based on Encounter or one of the re
 *  associated Medication (if any)
 *  associated Device (if any)
 
-Not all of these will be relevant for all resource types.  And different resources have differently named data elements and search parameters for them.  In some cases, support only exists as extensions or does not exist at all.  Where necessary, this implementation guide defines additional extensions and/or SearchParameter instances to support retrieval of these elements.  The intention is for both extensions and search parameters to eventually migrate into the core FHIR specification.
+Not all these will be relevant for all resource types.  And different resources have differently named data elements and search parameters for them.  In some cases, support only exists as extensions or does not exist at all.  Where necessary, this implementation guide defines additional extensions and/or SearchParameter instances to support retrieval of these elements.  The intention is for both extensions and search parameters to eventually migrate into the core FHIR specification.
 
 ##### Queries
 The context information provided as part of hook invocation will often not be enough for a CRD service to fully determine coverage requirements.  There are two possible mechanisms that can be used by the service to gather the information needed: Pre-fetch and query against the EMR.  Both of these mechanisms are defined as part of the [CDS Hooks specification](https://cds-hooks.org/specification/1.0/#providing-fhir-resources-to-a-cds-service).  In some cases, a mixture of both approaches may be necessary.
@@ -1379,7 +1379,7 @@ This query presumes that a hook has been invoked and the following information h
 
 As well, the `draftOrders` Bundle includes MedicationRequests that reference 2 formulary medications (in addition to just pointing to medications by RxNorm code), ask for fulfillment by one pharmacy Organization (456) and are all ordered by the same PractitionerRole ABC.  Most importantly, they are all tied to the same Coverage record DEF.
 
-Note: This query also presumes that all of this information would be relevant to the CRD service.  In practice, the service would only query the information actually needed to determine coverage requirements.  Also, the server will only be able to query data where the scopes made available in the `fhirAuthorization.scope` actually allow the desired queries.
+Note: This query also presumes that all this information would be relevant to the CRD service.  In practice, the service would only query the information needed to determine coverage requirements.  Also, the server will only be able to query data where the scopes made available in the `fhirAuthorization.scope` permit the desired queries.
 
 The bundle uses a mixture of 'read' and 'search' operations to retrieve the relevant resources.  The fragments shown are generic and should work with both STU3 and R4.
 
@@ -1558,7 +1558,7 @@ The response is a batch-response Bundle, each containing a query response Bundle
 
 * While these queries attempt to bring back all the potentially relevant information, not all information will necessarily exist for all requests or events, particularly at the time the hook is called.  Services **SHOULD** provide what coverage requirements they can based on the information available.
 
-* When processing data from query responses, always check the 'self' link to ensure that the server actually executed what was requested and process the data as necessary- or try querying by a different mechanism (e.g. multiple queries rather than relying on _include).
+* When processing data from query responses, always check the 'self' link to ensure that the server executed what was requested and process the data as necessary- or try querying by a different mechanism (e.g. multiple queries rather than relying on _include).
 
 
 ### SMART on FHIR Hook Invocation
@@ -1584,7 +1584,8 @@ Guidance and conformance expectations around privacy and security are provided b
 In addition to these, this implementation guide imposes the following additional rules:
 
 * Communications between providers and payers **SHALL** use mutually authenticated TLS.
-** Systems **SHOULD** comply with the most recent set of NIST guidelines and **SHALL** comply with at least the next most recent guidelines.  At the time this IG is written, the current guidelines can be found [here](https://csrc.nist.gov/CSRC/media/Publications/sp/800-52/rev-2/draft/documents/sp800-52r2-draft2.pdf).
+** Systems **SHOULD** comply with the most recent set of NIST guidelines and **SHALL** 
+comply with at least the next most recent guidelines.  At the time this IG is written, the current guidelines can be found [here](https://csrc.nist.gov/CSRC/media/Publications/sp/800-52/rev-2/draft/documents/sp800-52r2-draft2.pdf).
     * This specification does not provide guidance on certificate management between clinical and payer systems, though it has been proposed that Direct certificates could be used for this purpose
 * Client systems **SHALL** support running applications that adhere to the SMART on FHIR [public app](http://www.hl7.org/fhir/smart-app-launch#support-for-public-and-confidential-apps) profile
 * Payer systems that wish to receive Hook invocations that contain PHI **SHALL** demonstrate at time of registration/configuration that their user agreements give them permission to receive such data in a coverage requirement context.
