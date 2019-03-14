@@ -1178,7 +1178,7 @@
     <Cell ss:StyleID="s96"/>
     <Cell ss:StyleID="s96"/>
     <Cell ss:StyleID="s96"/>
-    <Cell ss:StyleID="s96"><Data ss:Type="String">Encounter{http://hl7.org/fhir/us/core-r4/StructureDefinition/us-core-encounter}</Data></Cell>
+    <Cell ss:StyleID="s96"><Data ss:Type="String">Encounter{http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter}</Data></Cell>
     <Cell ss:StyleID="s97"/>
     <Cell ss:StyleID="s97"/>
     <Cell ss:StyleID="s97"/>

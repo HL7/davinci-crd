@@ -3,22 +3,22 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir">
   <id value="davinci-crd"/>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="C:\Users\lloyd\Documents\SVN\davinci-crd\src-generated\resources"/>
+    <valueString value="C:\work\org.hl7.fhir.igs\davinci-crd\src-generated\resources"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="C:\Users\lloyd\Documents\SVN\davinci-crd\src\resources"/>
+    <valueString value="C:\work\org.hl7.fhir.igs\davinci-crd\src\resources"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="C:\Users\lloyd\Documents\SVN\davinci-crd\src\vocabulary"/>
+    <valueString value="C:\work\org.hl7.fhir.igs\davinci-crd\src\vocabulary"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="C:\Users\lloyd\Documents\SVN\davinci-crd\src\examples"/>
+    <valueString value="C:\work\org.hl7.fhir.igs\davinci-crd\src\examples"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages">
-    <valueString value="C:\Users\lloyd\Documents\SVN\davinci-crd\src\images"/>
+    <valueString value="C:\work\org.hl7.fhir.igs\davinci-crd\src\images"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages">
-    <valueString value="C:\Users\lloyd\Documents\SVN\davinci-crd\src-generated\pages"/>
+    <valueString value="C:\work\org.hl7.fhir.igs\davinci-crd\src-generated\pages"/>
   </extension>
   <url value="http://hl7.org/fhir/us/davinci-crd/ImplementationGuide/davinci-crd"/>
   <version value="0.2.0"/>
@@ -39,8 +39,8 @@
   <fhirVersion value="4.0.0"/>
   <fhirVersion value="4.0.0"/>
   <dependsOn id="core_r4">
-    <uri value="http://hl7.org/fhir/us/core-r4"/>
-    <packageId value="hl7.fhir.us.core.r4"/>
+    <uri value="http://hl7.org/fhir/us/core"/>
+    <packageId value="hl7.fhir.us.core"/>
     <version value="current"/>
   </dependsOn>
   <definition>

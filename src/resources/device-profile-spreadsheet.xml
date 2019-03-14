@@ -1173,7 +1173,7 @@
     <Cell ss:StyleID="s96"/>
     <Cell ss:StyleID="s96"/>
     <Cell ss:StyleID="s96"/>
-    <Cell ss:StyleID="s96"><Data ss:Type="String">Device{http://hl7.org/fhir/us/core-r4/StructureDefinition/us-core-device}</Data></Cell>
+    <Cell ss:StyleID="s96"><Data ss:Type="String">Device{http://hl7.org/fhir/us/core/StructureDefinition/us-core-device}</Data></Cell>
     <Cell ss:StyleID="s97"/>
     <Cell ss:StyleID="s97"/>
     <Cell ss:StyleID="s97"/>

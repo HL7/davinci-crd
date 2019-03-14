@@ -3,27 +3,27 @@
   "id" : "davinci-crd",
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\davinci-crd\\src-generated\\resources"
+    "valueString" : "C:\\work\\org.hl7.fhir.igs\\davinci-crd\\src-generated\\resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\davinci-crd\\src\\resources"
+    "valueString" : "C:\\work\\org.hl7.fhir.igs\\davinci-crd\\src\\resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\davinci-crd\\src\\vocabulary"
+    "valueString" : "C:\\work\\org.hl7.fhir.igs\\davinci-crd\\src\\vocabulary"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\davinci-crd\\src\\examples"
+    "valueString" : "C:\\work\\org.hl7.fhir.igs\\davinci-crd\\src\\examples"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\davinci-crd\\src\\images"
+    "valueString" : "C:\\work\\org.hl7.fhir.igs\\davinci-crd\\src\\images"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\davinci-crd\\src-generated\\pages"
+    "valueString" : "C:\\work\\org.hl7.fhir.igs\\davinci-crd\\src-generated\\pages"
   }],
   "url" : "http://hl7.org/fhir/us/davinci-crd/ImplementationGuide/davinci-crd",
   "version" : "0.2.0",
@@ -45,8 +45,8 @@
   "4.0.0"],
   "dependsOn" : [{
     "id" : "core_r4",
-    "uri" : "http://hl7.org/fhir/us/core-r4",
-    "packageId" : "hl7.fhir.us.core.r4",
+    "uri" : "http://hl7.org/fhir/us/core",
+    "packageId" : "hl7.fhir.us.core",
     "version" : "current"
   }],
   "definition" : {

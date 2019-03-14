@@ -1089,7 +1089,7 @@
     <Cell ss:StyleID="s95"/>
     <Cell ss:StyleID="s95"/>
     <Cell ss:StyleID="s95"/>
-    <Cell ss:StyleID="s95"><Data ss:Type="String">Organization{http://hl7.org/fhir/us/core-r4/StructureDefinition/us-core-organization}</Data></Cell>
+    <Cell ss:StyleID="s95"><Data ss:Type="String">Organization{http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization}</Data></Cell>
     <Cell ss:StyleID="s96"/>
     <Cell ss:StyleID="s96"/>
     <Cell ss:StyleID="s96"/>

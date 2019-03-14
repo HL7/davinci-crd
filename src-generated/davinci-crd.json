@@ -93,7 +93,7 @@
     {
       "name" : "core_r4",
       "version" : "current",
-      "location" : "http://hl7.org/fhir/us/core-r4",
+      "location" : "http://hl7.org/fhir/us/core",
       "source" : "../../core-r42/website"
     }
   ],
