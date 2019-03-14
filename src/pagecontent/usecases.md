@@ -12,7 +12,7 @@ Providers need to easily discover which payer covered services or devices have:
 
 With a FHIR based API, providers can discover in real-time specific payer requirements that may affect the ability to have certain services or devices covered by the responsible payer.  The discovery may be based on:
 
-* Plan conditions only (i.e. no need for Protected Health InformationPHI)
+* Plan conditions only (i.e. no need for Protected Health Information - PHI)
 
 * Member identification (PHI) and potentially other clinical information to guide discovery
 
@@ -24,7 +24,7 @@ The payer response might include:
 
 * A list of services, templates, documents, rules that do apply
 
-* URI to retrive specific items (e.g. templates or forms)
+* URI to retrieve specific items (e.g. templates or forms)
 
 * The ability to launch an application to further explore or complete requirements
 
@@ -32,7 +32,7 @@ The payer response might include:
 ### Example CRD "success" Scenarios
 
 #### Scenario 1
-Mrs. Jones is a 35 year old, previously healthy female who is seen by Dr. Good for a new onset headache that began abruptly 2 weeks prior to her visit. They are severe at times, last several hours and have been occurring with increasing frequency. Now they are occurring daily. Her physical including neurologic exam is normal. Dr. Good is concerned about an intracranial process.
+Mrs. Jones is a 35-year-old, previously healthy female who is seen by Dr. Good for a new onset headache that began abruptly 2 weeks prior to her visit. They are severe at times, last several hours and have been occurring with increasing frequency. Now they are occurring daily. Her physical including neurologic exam is normal. Dr. Good is concerned about an intracranial process.
 
 Dr. Good wants to order a head CT to check for any masses but is unsure whether the service would be covered by Mrs. Jones' insurance, and if so, whether special authorization or documentation is needed.  
 
@@ -41,19 +41,19 @@ Dr. Good launches an app within his Electronic Medical Record (EMR) and indicate
 (optional) – The application also provides Dr. Good a list of nearby imaging centers that are on Mrs. Jones' plan.
 
 #### Scenario 2
-Mrs. Smith is an 75 year-old on Medicare Fee-For-Service with long standing chronic obstructive pulmonary disease (COPD) who has had slowly and progressively worsening shortness of breath with activity. In the office, her room air saturation after a 5 minute walk is 84%. She has additional evaluation that reveals no new findings. Dr. Good wants to initiate home oxygen therapy for Mrs. Smith.
+Mrs. Smith is a 75-year-old on Medicare Fee-For-Service with long standing chronic obstructive pulmonary disease (COPD) who has had slowly and progressively worsening shortness of breath with activity. In the office, her room air saturation after a 5-minute walk is 84%. She has additional evaluation that reveals no new findings. Dr. Good wants to initiate home oxygen therapy for Mrs. Smith.
 
 As Dr. Good begins crafting the order in his EMR, it notes that Mrs. Smith has Medicare coverage and initiates automatically queries the CMS (Centers for Medicare/Medicaid Services) server passing the code for home oxygen therapy.  An alert appears at the bottom of order entry screen appears alerting Dr. Good that specific testing and documentation is required to substantiate the need for home oxygen therapy.
 
 Dr. Good retrieves the documentation templates which are prepopulated from the EHR and completes any remaining documentation requirements, signs the documentation and includes it in Mrs. Smith's medical record.
 
 #### Scenario 3
-Mr. Light is a 45 year old generally healthy male who presents for an annual exam. His physical exam is normal. Dr. Good checks a basic metabolic panel and determines that Mr. Light's kidney function is diminished (Creatinine of 2.5) which is new compared to his function one year prior (Creatinine of 1). Dr. Good wants to refer Mr. Light to a nephrologist for further evaluation.
+Mr. Light is a 45-year-old generally healthy male who presents for an annual exam. His physical exam is normal. Dr. Good checks a basic metabolic panel and determines that Mr. Light's kidney function is diminished (Creatinine of 2.5) which is new compared to his function one year prior (Creatinine of 1). Dr. Good wants to refer Mr. Light to a nephrologist for further evaluation.
 
-As Dr. Good is completing the referral, his EMR contacts Mr. Light's server which identifies that for the referral to be covered under Mr. Light's coverage, a specific form must be completed and specific medication documentation must be provided as part of a prior-authorization.  The EMR provides a link to an insurer-provided app that displays the form, partly populated with information from his EMR and guides him through the process of completing the information needed for the prior-authorization.
+As Dr. Good is completing the referral, his EMR contacts Mr. Light's server which identifies that, for the referral to be covered under Mr. Light's coverage, the physician must complete a form and provide specific medication documentation as part of a prior-authorization.  The EMR provides a link to an insurer-provided app that displays the form, partly populated with information from his EMR and guides him through the process of completing the information needed for the prior-authorization.
 
 ### CRD workflow
-The high level workflow for CRD is envisioned to work as follows:
+The high-level workflow for CRD is envisioned to work as follows:
 
 {::options parse_block_html="false" /}
 <figure>
@@ -82,12 +82,12 @@ The provider uses their EMR to initiate the clinical action - i.e. starts to adm
 The provider uses their EMR to launch a 'What if?' CRD app that allows them to explore payer coverage requirements.  The provider indicates the type of action they're considering and the CRD app prompts for additional information relevant to coverage determination, such as the proposed drug, type of referral or appointment, etc.
 
 **3. Provider checks Payer CRD needs**<br/>
-The EMR or CRD app checks the the CRD requirements of the Payer service - particularly whether it needs protected health information (PHI) to evaluate coverage requirements or whether a simple coverage type and the proposed clinical action is sufficient.  The provider application might also indicate what configuration options are available, such as control over the types of coverage requirements returned, the number of requirements returned, etc.
+The EMR or CRD app checks the CRD requirements of the Payer service - particularly whether it needs protected health information (PHI) to evaluate coverage requirements or whether a simple coverage type and the proposed clinical action is enough.  The provider application might also indicate what configuration options are available, such as control over the types of coverage requirements returned, the number of requirements returned, etc.
 
 NOTE: this won't necessarily occur each time the EMR or CRD app makes a call to the server as the payer server requirements are expected to be static and can therefore be cached.
 
 **4. System starts CRD query**<br/>
-The EMR (in the background as the provider is typing) or the CRD app (once sufficient information has been provided) initiates a CRD query to the payer service providing coverage type and/or patient identity and information about the proposed clincial action.  It might also provide one or more of the following:
+The EMR (in the background as the provider is typing) or the CRD app (once enough information has been provided) initiates a CRD query to the payer service providing coverage type and/or patient identity and information about the proposed clinical action.  It might also provide one or more of the following:
 
 * a 'token' that temporarily allows the payer to securely query the EMR for additional patient information relevant to determining coverage requirements
 
@@ -111,7 +111,7 @@ Based on the information provided/retrieved, the payer returns guidance to the p
 
 * Links to substitute the planned action for a different action and/or to add additional actions (e.g. to add a concurrent medication, additional diagnostic tests, etc.)  For example, a proposal to change the proposed drug to a required first-line treatment or to one that is covered by the patient's plan.
 
-The requirements themselves might include needs for pre-authorization, particular forms that must be completed, medical documentation that must exist or be provided, recommendations on alternative therapies, etc.
+The requirements themselves might include needs for pre-authorization, forms that must be completed, medical documentation that must exist or be provided, recommendations on alternative therapies, etc.
 
 **7. Provider invokes links**
 If the response included links to additional information or apps, the Provider can direct EMR to interact further with the Payer system by retrieving the linked-to information or launching the provided application.
@@ -119,7 +119,7 @@ If the response included links to additional information or apps, the Provider c
 
 #### Considerations
 
-* The scenario above uses the term 'Provider'.  Typically that would be a physician, but in some cases it could be a nurse, clerk or other individual.
+* The scenario above uses the term 'Provider'.  Typically, that would be a physician, but in some cases, it could be a nurse, clerk, or other individual.
 
 * The EMR would only communicate to Payer systems they have specifically authenticated and have a trust relationship with.
 
