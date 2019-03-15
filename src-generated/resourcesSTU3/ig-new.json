@@ -3,34 +3,40 @@
   "id" : "davinci-crd",
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "C:\\work\\org.hl7.fhir.igs\\davinci-crd\\src-generated\\resourcesSTU3"
+    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\davinci-crd\\src-generated\\resourcesSTU3"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "C:\\work\\org.hl7.fhir.igs\\davinci-crd\\src\\resources"
+    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\davinci-crd\\src\\resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "C:\\work\\org.hl7.fhir.igs\\davinci-crd\\src\\vocabulary"
+    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\davinci-crd\\src\\vocabulary"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "C:\\work\\org.hl7.fhir.igs\\davinci-crd\\src\\examples"
+    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\davinci-crd\\src\\examples"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "C:\\work\\org.hl7.fhir.igs\\davinci-crd\\src\\images"
+    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\davinci-crd\\src\\images"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "C:\\work\\org.hl7.fhir.igs\\davinci-crd\\src-generated\\pagesSTU3"
+    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\davinci-crd\\src-generated\\pagesSTU3"
   }],
   "url" : "http://hl7.org/fhir/us/davinci-crd/STU3/ImplementationGuide/davinci-crd",
   "version" : "3.0.1",
   "name" : "CoverageRequirementsDiscovery",
   "status" : "draft",
   "experimental" : false,
-  "publisher" : "HL7 Davinci Project",
+  "publisher" : "HL7 International - Financial Management Work Group",
+  "contact" : [{
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://www.hl7.org/Special/committees/fm"
+    }]
+  }],
   "description" : "Guidelines for conveying coverage requirements to clinicians when planning treatment",
   "jurisdiction" : [{
     "coding" : [{

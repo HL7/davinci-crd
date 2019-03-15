@@ -5,7 +5,13 @@
   <title value="Da Vinci - Coverage Requirements Discovery"/>
   <status value="draft"/>
   <experimental value="false"/>
-  <publisher value="HL7 Davinci Project"/>
+  <publisher value="HL7 International - Financial Management Work Group"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/fm"/>
+    </telecom>
+  </contact>
   <description value="Guidelines for conveying coverage requirements to clinicians when planning treatment"/>
   <jurisdiction>
     <coding>

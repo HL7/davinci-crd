@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2014 rel. 2 sp1 (x64) (http://www.altova.com) by Lloyd McKenzie (private) -->
 <ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../src-generated/schemas/fhir-single.xsd">
   <id value="davinci-crd"/>
   <url value="http://hl7.org/fhir/us/davinci-crd/ImplementationGuide/davinci-crd"/>
@@ -7,7 +6,13 @@
   <title value="Da Vinci - Coverage Requirements Discovery"/>
   <status value="draft"/>
   <experimental value="false"/>
-  <publisher value="HL7 Davinci Project"/>
+  <publisher value="HL7 International - Financial Management Work Group"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/fm"/>
+    </telecom>
+  </contact>
   <description value="Guidelines for conveying coverage requirements to clinicians when planning treatment"/>
   <jurisdiction>
     <coding>

@@ -3,30 +3,36 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir">
   <id value="davinci-crd"/>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="C:\work\org.hl7.fhir.igs\davinci-crd\src-generated\resources"/>
+    <valueString value="C:\Users\lloyd\Documents\SVN\davinci-crd\src-generated\resources"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="C:\work\org.hl7.fhir.igs\davinci-crd\src\resources"/>
+    <valueString value="C:\Users\lloyd\Documents\SVN\davinci-crd\src\resources"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="C:\work\org.hl7.fhir.igs\davinci-crd\src\vocabulary"/>
+    <valueString value="C:\Users\lloyd\Documents\SVN\davinci-crd\src\vocabulary"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="C:\work\org.hl7.fhir.igs\davinci-crd\src\examples"/>
+    <valueString value="C:\Users\lloyd\Documents\SVN\davinci-crd\src\examples"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages">
-    <valueString value="C:\work\org.hl7.fhir.igs\davinci-crd\src\images"/>
+    <valueString value="C:\Users\lloyd\Documents\SVN\davinci-crd\src\images"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages">
-    <valueString value="C:\work\org.hl7.fhir.igs\davinci-crd\src-generated\pages"/>
+    <valueString value="C:\Users\lloyd\Documents\SVN\davinci-crd\src-generated\pages"/>
   </extension>
   <url value="http://hl7.org/fhir/us/davinci-crd/ImplementationGuide/davinci-crd"/>
-  <version value="0.2.0"/>
+  <version value="0.3.0"/>
   <name value="CoverageRequirementsDiscovery"/>
   <title value="Da Vinci - Coverage Requirements Discovery"/>
   <status value="draft"/>
   <experimental value="false"/>
-  <publisher value="HL7 Davinci Project"/>
+  <publisher value="HL7 International - Financial Management Work Group"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/fm"/>
+    </telecom>
+  </contact>
   <description value="Guidelines for conveying coverage requirements to clinicians when planning treatment"/>
   <jurisdiction>
     <coding>
@@ -38,7 +44,7 @@
   <license value="CC0-1.0"/>
   <fhirVersion value="4.0.0"/>
   <fhirVersion value="4.0.0"/>
-  <dependsOn id="core_r4">
+  <dependsOn id="core">
     <uri value="http://hl7.org/fhir/us/core"/>
     <packageId value="hl7.fhir.us.core"/>
     <version value="current"/>

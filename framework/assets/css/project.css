@@ -115,6 +115,12 @@ body {
 #logo img {
   max-width: 100%;
 }
+#fhir-nav {
+  line-height: 50px;
+  float: right;
+  margin-top: 16px;
+  color: #808080;
+}
 #hl7-nav {
   line-height: 50px;
   float: right;
@@ -130,7 +136,7 @@ body {
   margin-top: 16px;
   color: maroon;
   text-align: center;
-  width: 60%;
+  width: 50%;
 }
 #hl7-search {
   line-height: 50px;

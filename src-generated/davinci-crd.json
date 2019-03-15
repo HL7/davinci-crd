@@ -6,7 +6,7 @@
   "nestedIgOutput":"STU3",
   "igArtifactsPage":"artifacts.html",
   "version": "4.0.0",
-  "fixed-business-version": "0.2.0",
+  "fixed-business-version": "0.3.0",
   "html-template": "template-page.html",
   "md-template": "template-page-md.html",
   "license": "CC0-1.0",
@@ -91,10 +91,10 @@
   "canonicalBase": "http://hl7.org/fhir/us/davinci-crd",
   "dependencyList": [
     {
-      "name" : "core_r4",
+      "name" : "core",
       "version" : "current",
       "location" : "http://hl7.org/fhir/us/core",
-      "source" : "../../core-r42/website"
+      "source" : "../../core2/website"
     }
   ],
   "source": "davinci-crd.xml",
