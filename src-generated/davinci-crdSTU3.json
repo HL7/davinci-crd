@@ -7,7 +7,7 @@
   "html-template": "template-page.html",
   "md-template": "template-page-md.html",
   "license": "CC0-1.0",
-  "npm-name": "hl7.fhir.us.davinci.crd",
+  "npm-name": "hl7.fhir.us.davinci-crd",
   "paths": {
     "resources": ["resourcesSTU3", "../src/resources", "../src/vocabulary", "../src/examples"],
     "pages": ["../src/images", "pagesSTU3"],

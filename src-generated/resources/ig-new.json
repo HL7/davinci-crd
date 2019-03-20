@@ -45,7 +45,7 @@
       "code" : "US"
     }]
   }],
-  "packageId" : "hl7.fhir.us.davinci.crd",
+  "packageId" : "hl7.fhir.us.davinci-crd",
   "license" : "CC0-1.0",
   "fhirVersion" : ["4.0.0",
   "4.0.0"],
