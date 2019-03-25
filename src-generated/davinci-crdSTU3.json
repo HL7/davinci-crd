@@ -14,7 +14,7 @@
     "temp": "../tempSTU3/pages",
     "output": "../temp/pages/STU3",
     "txCache": "txcache",
-    "history" : "history.html",
+    "history" : "http://hl7.org/fhir/us/davinci-crd/STU3/history.cfml",
     "qa": "../tempSTU3/qa",
     "specification": "http://hl7.org/fhir/STU3/"
   },
