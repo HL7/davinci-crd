@@ -12,7 +12,7 @@
 			"current": true
 		}, {
 			"version": "0.3.0",
-			"date": "2019-03-01",
+			"date": "2019-03-27",
 			"descmd": "Second ballot incorporating feedback from the first ballot.  Significant changes include:\r\n\r\n* updating to point to draft US Core profiles based on FHIR R4\r\n* adjusting to reflect changes to CDS Hooks, including the official publication of CRD-proposed hooks\r\n* adjusting profiles to reflect changes in the final FHIR R4 specification\r\n* completed examples and background documentation that had previously been marked as \"to do\"\r\n* numerous changes to improve clarity of the specification",
 			"path": "http://hl7.org/fhir/us/davinci-crd/2019May",
 			"status": "ballot",
