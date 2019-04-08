@@ -21,7 +21,7 @@
     <valueString value="C:\Users\lloyd\Documents\SVN\davinci-crd\src-generated\pagesSTU3"/>
   </extension>
   <url value="http://hl7.org/fhir/us/davinci-crd/STU3/ImplementationGuide/davinci-crd"/>
-  <version value="3.0.1"/>
+  <version value="0.3.0"/>
   <name value="CoverageRequirementsDiscovery"/>
   <status value="draft"/>
   <experimental value="false"/>

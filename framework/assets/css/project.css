@@ -163,6 +163,11 @@ body {
 #notes a {
   color: #555555;
 }
+#publish-box {
+  background-color: yellow;
+  border: 1px solid maroon;
+  padding: 5px;
+}
 /* GENERIC OBJECTS
 ----------------------------------------------------------------------------------------*/
 .navbar {

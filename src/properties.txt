@@ -6,9 +6,9 @@
 guidename=davinci-crd
 copyrightyear=2018+
 license=CC0-1.0
-version=0.3.0
-ballotstatus=Second STU ballot
-fhirspec=http://hl7.org/fhir/
+version=0.4.0
+ballotstatus=Continuous build
+fhirspec=http://build.fhir.org/
 additionalVersion=STU3
 childHeadingOffset=5.2
 excludexml=Yes

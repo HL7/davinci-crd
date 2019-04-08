@@ -77,10 +77,6 @@
     <xsl:variable name="relevant">
       <xsl:for-each select="parent::*/f:resource[not(f:extension[@url='http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile' and f:valueBoolean/@value=true()]) and f:extension[@url='http://hl7.org/fhir/StructureDefinition/tools-alternateVersion']/f:valueCode/@value=$version and f:groupingId/@value=current()/@id]">content</xsl:for-each>
     </xsl:variable>
-<xsl:message>
-<xsl:value-of select="@id"/>
-<xsl:copy-of select="$relevant"/>
-</xsl:message>
     <xsl:if test="not($relevant='')">
       <package xmlns="http://hl7.org/fhir">
         <xsl:apply-templates select="@*|node()"/>

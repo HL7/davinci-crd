@@ -26,7 +26,7 @@
     "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\davinci-crd\\src-generated\\pages"
   }],
   "url" : "http://hl7.org/fhir/us/davinci-crd/ImplementationGuide/davinci-crd",
-  "version" : "0.3.0",
+  "version" : "0.4.0",
   "name" : "CoverageRequirementsDiscovery",
   "title" : "Da Vinci - Coverage Requirements Discovery",
   "status" : "draft",
