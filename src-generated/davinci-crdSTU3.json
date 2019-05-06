@@ -3,7 +3,7 @@
   "tool": "jekyll",
   "logging": ["html"],
   "version": "3.0.1",
-  "fixed-business-version": "0.3.0",
+  "fixed-business-version": "3.0.1",
   "html-template": "template-page.html",
   "md-template": "template-page-md.html",
   "license": "CC0-1.0",
@@ -88,7 +88,7 @@
     {
       "name" : "core",
       "version" : "2.0.0",
-      "location" : "http://hl7.org/fhir/us/core",
+      "package" : "hl7.fhir.us.core",
       "source" : "../../core2/website"
     }
   ],
