@@ -46,7 +46,7 @@
   <fhirVersion value="4.0.0"/>
   <dependsOn id="core">
     <uri value="http://hl7.org/fhir/us/core"/>
-    <packageId value="hl7.fhir.us.core"/>
+    <packageId value="hl7.fhir.us.core.r4"/>
     <version value="current"/>
   </dependsOn>
   <definition>

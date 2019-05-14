@@ -239,7 +239,7 @@
           </xsl:call-template>
         </xsl:variable>
         <xsl:value-of select="concat('    {&#xa;      &quot;name&quot; : &quot;', translate($code, '-', '_'), '&quot;,&#xa;      &quot;version&quot; : &quot;', f:version/@value, 
-        '&quot;,&#xa;      &quot;location&quot; : &quot;', f:uri/@value, 
+        '&quot;,&#xa;      &quot;package&quot; : &quot;', f:packageId/@value, 
         '&quot;,&#xa;      &quot;source&quot; : &quot;../../', $code, '2/website&quot;&#xa;    }')"/>
         <xsl:if test="position()!=last()">
           <xsl:text>,&#xa;</xsl:text>

@@ -93,7 +93,7 @@
     {
       "name" : "core",
       "version" : "current",
-      "location" : "http://hl7.org/fhir/us/core",
+      "package" : "hl7.fhir.us.core.r4",
       "source" : "../../core2/website"
     }
   ],
