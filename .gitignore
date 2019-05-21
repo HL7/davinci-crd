@@ -5,3 +5,11 @@ output
 src/.DS_Store
 .DS_Store
 tempSTU3
+/src-generated/resources/ig-new.json
+/src-generated/resources/ig-new.xml
+/src-generated/resources/ig-validation-parameters.json
+/src-generated/resources/ig-expansion-parameters.json
+/src-generated/resourcesSTU3/ig-expansion-parameters.json
+/src-generated/resourcesSTU3/ig-new.json
+/src-generated/resourcesSTU3/ig-new.xml
+/src-generated/resourcesSTU3/ig-validation-parameters.json

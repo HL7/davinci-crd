@@ -93,9 +93,7 @@
     {
       "name" : "core",
       "version" : "current",
-      "package" : "hl7.fhir.us.core.r4",
-      "source" : "../../core2/website"
-    }
+      "package" : "hl7.fhir.us.core.r4"}
   ],
   "source": "davinci-crd.xml",
   "spreadsheets": [
