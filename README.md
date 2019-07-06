@@ -1,2 +1,2 @@
 # davinci-crd
-DaVinci Coverage Requirements Discovery Implementation Guide
+Da Vinci Coverage Requirements Discovery Implementation Guide
