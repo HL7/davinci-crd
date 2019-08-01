@@ -59,7 +59,7 @@ This implementation guide relies on the following other specifications:
 * **[FHIR R4]({{site.data.fhir.path}})** - The 'current' official version of FHIR as of the time this implementation guide was published.  See the [background page](background.html#fhir) for key pieces of this specification implementers should be familiar with.
 * **[FHIR STU3](http://hl7.org/fhir/STU3)** - The prior official version of FHIR, also supported as part of this implementation guide and has differences in the resource structures, data elements and terminologies from the R4 release
 * **[US Core STU2](http://hl7.org/fhir/us/core)** - Defines profiles on FHIR STU3 that constrain it for use in the U.S. context
-* **[US Core STU3 - draft](http://hl7.org/fhir/us/core/2019Jan)** - The balloted version of US Core based on FHIR R4.  This implementation guide will be updated to be based on the final R4 release once it is published.
+* **[US Core STU3](http://hl7.org/fhir/us/core/STU3)** - The version of US Core based on FHIR R4.
 * **[CDS Hooks 1.0](https://cds-hooks.hl7.org/1.0)** - This is the primary standard for exchange used by this implementation guide
 * **[CDS Hooks Registry](https://cds-hooks.hl7.org)** - The CDS Hooks project maintains a registry of common hooks.  This implementation guide leverages several of them.
 * **[SMART on FHIR](http://hl7.org/fhir/smart-app-launch)** - Payers can use CRD to allow users to launch SMART apps to help meet coverage requirements

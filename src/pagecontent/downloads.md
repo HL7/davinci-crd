@@ -7,6 +7,6 @@ This implementation guide is web-based and is intended to be browsed online.  Ho
 * The full FHIR [STU3](http://hl7.org/fhir/STU3/fhir-spec.zip) and [R4]({{site.data.fhir.path}}R4/fhir-spec-r4.zip) specifications
 * The [CDS Hooks](https://github.com/cds-hooks/docs/archive/master.zip) specification
 * The [SMART on FHIR](http://www.hl7.org/fhir/smart-app-launch/full-ig.zip) specification
-* A [validator]({{site.data.fhir.path}}validator) that can be used to check FHIR resource instance validity
+* A [validator](https://fhir.github.io/latest-ig-validator/org.hl7.fhir.validator.jar) that can be used to check FHIR resource instance validity
 
 <!-- Todo: reference implementations -->
