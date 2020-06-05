@@ -1,0 +1,8 @@
+== Suppressed Messages ==
+
+# We have no ability to point to a single example for both a profile and an extension yet
+WARNING: http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-insurance: The Implementation Guide contains no examples for this extension
+
+# De-identified patient specifically *cannot* be based on US-Core patient because US-Core patients have to be identifiable
+WARNING: http://hl7.org/fhir/us/davinci-crd/StructureDefinition/: US FHIR Usage rules require that all profiles on Patient derive from the core US profile
+

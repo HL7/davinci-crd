@@ -1,0 +1,27 @@
+-------------------------------------------------------------------------------------
+{"hierarchical" : true, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://www.ama-assn.org/go/cpt"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "filter" : [{
+        "property" : "concept",
+        "op" : "is-a",
+        "value" : "71388002"
+      }]
+    },
+    {
+      "system" : "urn:oid:2.16.840.1.113883.6.285"
+    },
+    {
+      "system" : "http://loinc.org"
+    }]
+  }
+}}####
+e: {
+  "error" : "Error from server: Unable to provide support for code system http://www.ama-assn.org/go/cpt"
+}
+-------------------------------------------------------------------------------------

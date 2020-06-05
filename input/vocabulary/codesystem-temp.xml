@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="temp"/>
+  <url value="http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp"/>
+  <name value="CRDTempCodes"/>
+  <title value="CRD Temporary Codes"/>
+  <status value="draft"/>
+  <description value="Codes temporarily defined as part of the CRD implementation guide.  These will eventually migrate into an officially maintained terminology (likely either SNOMED CT or HL7's UTG code systems)."/>
+  <content value="complete"/>
+  <concept>
+    <code value="prior-auth"/>
+    <display value="Include in prior authorization"/>
+  </concept>
+  <concept>
+    <code value="initial-claim"/>
+    <display value="Include in initial claim submission"/>
+  </concept>
+  <concept>
+    <code value="all-claims"/>
+    <display value="Include in all claim submissions"/>
+  </concept>
+  <concept>
+    <code value="to-endpoint"/>
+    <display value="Send to specified endpoint"/>
+  </concept>
+  <concept>
+    <code value="reason-prior-auth"/>
+    <display value="Needed for prior authorization"/>
+  </concept>
+  <concept>
+    <code value="after-completion-action"/>
+    <display value="A task input indicating an action that should be taken after a QuestionnaireResponse has been completed on a specified Questionnaire.  (Multiple completion actions can be specified.)"/>
+  </concept>
+</CodeSystem>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="coverageClass"/>
+  <url value="http://hl7.org/fhir/us/davinci-crd/ValueSet/coverageClass"/>
+  <name value="CRDCoverageClasses"/>
+  <title value="CRD Coverage Classes"/>
+  <status value="draft"/>
+  <description value="Restriction of coverage classes for CRD purposes"/>
+  <compose>
+    <include>
+      <system value="http://terminology.hl7.org/CodeSystem/coverage-class"/>
+      <concept>
+        <code value="group"/>
+      </concept>
+      <concept>
+        <code value="subgroup"/>
+      </concept>
+      <concept>
+        <code value="plan"/>
+      </concept>
+      <concept>
+        <code value="subplan"/>
+      </concept>
+      <concept>
+        <code value="class"/>
+      </concept>
+      <concept>
+        <code value="subclass"/>
+      </concept>
+      <concept>
+        <code value="sequence"/>
+      </concept>
+    </include>
+  </compose>
+</ValueSet>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SearchParameter xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+	<id value="servicerequest-insurance"/>
+	<url value="http://hl7.org/fhir/us/davinci-crd/SearchParameter/servicerequest-insurance"/>
+	<name value="CRDServiceRequestInsurance"/>
+	<status value="draft"/>
+	<date value="2018-08-14"/>
+  <publisher value="HL7 Da Vinci Project"/>
+  <contact>
+    <telecom>
+      <system value="other"/>
+      <value value="http://www.hl7.org/about/davinci"/>
+    </telecom>
+  </contact>
+	<description value="Defines an index that can be used to filter or sort ServiceRequest resources and to enable the inclusion search for coverage information."/>
+	<code value="insurance"/>
+	<base value="ServiceRequest"/>
+	<type value="reference"/>
+	<expression value="ServiceRequest.insurance.reference"></expression>
+	<xpath value="f:ServiceRequest/f:insurance/f:reference/@value"/>
+	<xpathUsage value="normal"/>
+</SearchParameter>

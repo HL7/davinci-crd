@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../input-cache/schemas/R5/fhir-single.xsd">
+	<id value="davinci-crd"/>
+	<url value="http://hl7.org/fhir/us/davinci-crd/ImplementationGuide/davinci-crd"/>
+	<version value="0.4.1"/>
+	<name value="CoverageRequirementsDiscovery"/>
+	<title value="Da Vinci - Coverage Requirements Discovery"/>
+	<status value="draft"/>
+	<experimental value="false"/>
+	<publisher value="HL7 International - Financial Management Work Group"/>
+	<contact>
+		<telecom>
+			<system value="url"/>
+			<value value="http://www.hl7.org/Special/committees/fm"/>
+		</telecom>
+	</contact>
+	<description value="Guidelines for conveying coverage requirements to clinicians when planning treatment"/>
+	<jurisdiction>
+		<coding>
+			<system value="urn:iso:std:iso:3166"/>
+			<code value="US"/>
+		</coding>
+	</jurisdiction>
+	<packageId value="hl7.fhir.us.davinci-crd"/>
+	<fhirVersion value="4.0.1"/>
+	<!-- <dependsOn>
+    <extension url="http://hl7.org/fhir/StructureDefinition/tools-alternateVersion">
+      <valueCode value="STU3"/>
+    </extension>
+    <uri value="http://hl7.org/fhir/us/core"/>
+    <packageId value="hl7.fhir.us.core"/>
+    <version value="2.0.0"/>
+  </dependsOn> -->
+	<dependsOn>
+		<uri value="http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core"/>
+		<packageId value="hl7.fhir.us.core"/>
+		<version value="3.0.0"/>
+	</dependsOn>
+	<definition>
+<!--		<grouping id="profiles">
+			<name value="Profiles"/>
+			<description value="Profiles to be supported by EMRs and payor systems conforming to this implementation guide"/>
+		</grouping>
+		<grouping id="extensions">
+			<name value="Extensions"/>
+			<description value="Extensions defined as part of this implementation guide"/>
+		</grouping>
+		<grouping id="search">
+			<name value="Search Parameters"/>
+			<description value="Search Parameters defined as part of this implementation guide"/>
+		</grouping>
+		<grouping id="terminology">
+			<name value="Terminology"/>
+			<description value="Value Sets and/or code systems defined as part of this implementation guide"/>
+		</grouping>
+		<grouping id="examples">
+			<name value="Example(s)"/>
+			<description value="Example(s) showing the use of the CG profiles"/>
+		</grouping>
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/profile-appointment"/>
+			</reference>
+			<name value="Appointment Profile"/>
+			<description value="Profile specifies extensions and constraints on the Appointment resource to support coverage requirements discovery."/>
+			<exampleBoolean value="false"/>
+			<groupingId value="profiles"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/profile-communicationrequest"/>
+			</reference>
+			<name value="Communication Request Profile"/>
+			<description value="Profile specifies constraints on the CommunicationRequest resource to support coverage requirements discovery."/>
+			<exampleBoolean value="false"/>
+			<groupingId value="profiles"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/profile-coverage"/>
+			</reference>
+			<name value="Coverage Profile"/>
+			<description value="Profile specifies constraints on the Coverage resource to support coverage requirements discovery."/>
+			<exampleBoolean value="false"/>
+			<groupingId value="profiles"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/profile-coverage-deident"/>
+			</reference>
+			<name value="Deidentified Coverage Profile"/>
+			<description value="Profile specifies constraints on the Coverage resource to support coverage requirements discovery without revealing patient identity."/>
+			<exampleBoolean value="false"/>
+			<groupingId value="profiles"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/profile-device"/>
+			</reference>
+			<name value="Device Profile"/>
+			<description value="Profile specifies additional constraints on the US Core Device Profile to support coverage requirements discovery."/>
+			<exampleBoolean value="false"/>
+			<groupingId value="profiles"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/profile-devicerequest"/>
+			</reference>
+			<name value="Device Request Profile"/>
+			<description value="Profile specifies extensions and constraints on the DeviceRequest resource to support coverage requirements discovery."/>
+			<exampleBoolean value="false"/>
+			<groupingId value="profiles"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/profile-encounter"/>
+			</reference>
+			<name value="Encounter Profile"/>
+			<description value="Profile specifies additional extensions and constraints on the US Core Encounter profile to support coverage requirements discovery."/>
+			<exampleBoolean value="false"/>
+			<groupingId value="profiles"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/profile-location"/>
+			</reference>
+			<name value="Location Profile"/>
+			<description value="Profile specifies additional constraints on the US Core Location profile to support coverage requirements discovery."/>
+			<exampleBoolean value="false"/>
+			<groupingId value="profiles"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/profile-medicationrequest"/>
+			</reference>
+			<name value="Medication Request Profile"/>
+			<description value="Profile specifies additional constraints on the US Core MedicationRequest profile to support coverage requirements discovery."/>
+			<exampleBoolean value="false"/>
+			<groupingId value="profiles"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/profile-nutritionorder"/>
+			</reference>
+			<name value="Nutrition Order Profile"/>
+			<description value="Profile specifies extensions and constraints on the NutritionOrder resource to support coverage requirements discovery."/>
+			<exampleBoolean value="false"/>
+			<groupingId value="profiles"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/profile-organization"/>
+			</reference>
+			<name value="Organization Profile"/>
+			<description value="Profile specifies additional constraints on the US Core Organization profile to support coverage requirements discovery."/>
+			<exampleBoolean value="false"/>
+			<groupingId value="profiles"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/profile-patient"/>
+			</reference>
+			<name value="Patient Profile"/>
+			<description value="Profile specifies additional constraints on the US Core Patient profile to support coverage requirements discovery."/>
+			<exampleBoolean value="false"/>
+			<groupingId value="profiles"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/profile-patient-deident"/>
+			</reference>
+			<name value="Deidentified Patient Profile"/>
+			<description value="Profile specifies additional constraints on the US Core Patient profile to support coverage requirements discovery without revealing patient identity."/>
+			<exampleBoolean value="false"/>
+			<groupingId value="profiles"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/profile-practitioner"/>
+			</reference>
+			<name value="Practitioner Profile"/>
+			<description value="Profile specifies constraints on the Practitioner resource to support coverage requirements discovery."/>
+			<exampleBoolean value="false"/>
+			<groupingId value="profiles"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/profile-servicerequest"/>
+			</reference>
+			<name value="Service Request Profile"/>
+			<description value="Profile specifies constraints on the ServiceRequest resource to support coverage requirements discovery."/>
+			<exampleBoolean value="false"/>
+			<groupingId value="profiles"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/profile-taskquestionnaire"/>
+			</reference>
+			<name value="Questionnaire Task Profile"/>
+			<description value="Profile specifies constraints on the Task resource to support the creation of tasks for practitioners to complete forms (Questionnaires)."/>
+			<exampleBoolean value="false"/>
+			<groupingId value="profiles"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/ext-insurance"/>
+			</reference>
+			<name value="Insurance Extension"/>
+			<description value="Extension enables relevant insurance coverage information to be associated with Appointments, CommunicationRequests, DeviceRequests, Encounters and NutritionOrders."/>
+			<exampleBoolean value="false"/>
+			<groupingId value="extensions"/>
+		</resource>-->
+		<resource>
+			<reference>
+				<reference value="SearchParameter/appointment-insurance"/>
+			</reference>
+			<name value="Appointment Insurance Search Parameter"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="SearchParameter/communicationrequest-insurance"/>
+			</reference>
+			<name value="CommunicationRequest Insurance Search Parameter"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="SearchParameter/devicerequest-insurance"/>
+			</reference>
+			<name value="DeviceRequest Insurance Search Parameter"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="SearchParameter/encounter-insurance"/>
+			</reference>
+			<name value="Encounter Insurance Search Parameter"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="SearchParameter/medicationrequest-insurance"/>
+			</reference>
+			<name value="MedicationRequest Insurance Search Parameter"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="SearchParameter/nutritionorder-insurance"/>
+			</reference>
+			<name value="NutritionOrder Insurance Search Parameter"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="SearchParameter/servicerequest-insurance"/>
+			</reference>
+			<name value="ServiceRequest Insurance Search Parameter"/>
+		</resource>
+<!--		<resource>
+			<reference>
+				<reference value="CodeSystem/temp"/>
+			</reference>
+			<name value="After Completion Code System"/>
+			<description value="Code system specifies codes for actions that may be taken after completing a form."/>
+			<exampleBoolean value="true"/>
+			<groupingId value="terminology"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="CodeSystem/task-reason"/>
+			</reference>
+			<name value="Task Reason Code System"/>
+			<description value="Code system specifies codes used to identify reasons for performing task."/>
+			<exampleBoolean value="true"/>
+			<groupingId value="terminology"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="CodeSystem/task-type"/>
+			</reference>
+			<name value="Task Type Code System"/>
+			<description value="Code system specifies codes used to identify types of tasks."/>
+			<exampleBoolean value="true"/>
+			<groupingId value="terminology"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="ValueSet/afterCompletionCode"/>
+			</reference>
+			<name value="After Completion Code Value Set"/>
+			<description value="Value set specifies the set of after completion action codes relevant for coverage requirement discovery."/>
+			<exampleBoolean value="true"/>
+			<groupingId value="terminology"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="ValueSet/coverageClass"/>
+			</reference>
+			<name value="Coverage Class Value Set"/>
+			<description value="Value set specifies the subset of coverage classes relevant for coverage requirement discovery."/>
+			<exampleBoolean value="true"/>
+			<groupingId value="terminology"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="ValueSet/locationAddressType"/>
+			</reference>
+			<name value="Location Address Type Value Set"/>
+			<description value="Value set specifies the subset of location address types relevant for coverage requirement discovery."/>
+			<exampleBoolean value="true"/>
+			<groupingId value="terminology"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="ValueSet/serviceRequestCodes"/>
+			</reference>
+			<name value="Service Request Code Value Set"/>
+			<description value="Value set specifies the set of codes that can be used to identify a requested service  for coverage requirement discovery."/>
+			<exampleBoolean value="true"/>
+			<groupingId value="terminology"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="ValueSet/taskCode"/>
+			</reference>
+			<name value="Task Code Value Set"/>
+			<description value="Value set specifies the set of task codes relevant to coverage requirements discovery."/>
+			<exampleBoolean value="true"/>
+			<groupingId value="terminology"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="ValueSet/taskReasonCode"/>
+			</reference>
+			<name value="Task Reason Code Value Set"/>
+			<description value="Value set specifies the set of task reason codes relevant to coverage requirements discovery."/>
+			<exampleBoolean value="true"/>
+			<groupingId value="terminology"/>
+		</resource>-->
+		<page>
+			<nameUrl value="toc.html"/>
+			<title value="Table of Contents"/>
+			<generation value="html"/>
+			<page>
+				<nameUrl value="index.html"/>
+				<title value="CRD IG Home Page"/>
+				<generation value="markdown"/>
+			</page>
+			<page>
+				<nameUrl value="usecases.html"/>
+				<title value="Use Cases and Overview"/>
+				<generation value="markdown"/>
+			</page>
+			<page>
+				<nameUrl value="background.html"/>
+				<title value="Technical Background"/>
+				<generation value="markdown"/>
+			</page>
+			<page>
+				<nameUrl value="hooks.html"/>
+				<title value="Formal Specification"/>
+				<generation value="markdown"/>
+			</page>
+			<page>
+				<nameUrl value="allartifacts.html"/>
+				<title value="FHIR Artifacts"/>
+				<generation value="markdown"/>
+				<page>
+					<nameUrl value="artifacts.html"/>
+					<title value="Artifact List"/>
+					<generation value="html"/>
+				</page>
+			</page>
+			<page>
+				<nameUrl value="downloads.html"/>
+				<title value="Downloads"/>
+				<generation value="markdown"/>
+			</page>
+			<page>
+				<nameUrl value="credits.html"/>
+				<title value="Credits"/>
+				<generation value="markdown"/>
+			</page>
+		</page>
+		<parameter>
+			<code value="copyrightyear"/>
+			<value value="2019+"/>
+		</parameter>
+		<parameter>
+			<code value="releaselabel"/>
+			<value value="CI Build"/>
+		</parameter>
+		<parameter>
+			<code value="find-other-resources"/>
+			<value value="true"/>
+		</parameter>
+		<parameter>
+			<code value="excludexml"/>
+			<value value="true"/>
+		</parameter>
+		<parameter>
+			<code value="excludettl"/>
+			<value value="true"/>
+		</parameter>
+	</definition>
+</ImplementationGuide>
