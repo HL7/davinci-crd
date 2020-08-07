@@ -1120,11 +1120,23 @@ This type of response is just a modified version of the [External Reference](#ex
         {
           "label": "Opioid XYZ-assessment",
           "url": "https://example.org/opioid-assessment",
-          "type": "smart"
+          "type": "smart",
+          "appContext": "{\"questionnaire\":\"https://example.org/fhir/Questionnaire/OP123\",
+              \"questionnaireToken\":\"a1235abe399...\",
+              \"context\":\"{\"patientId\": \"123\",...}\"
+          }"
         }
       ]
     }
 ```
+
+The `appContext` in the above example follows a pattern used for invoking a [Da Vinci Documentation Templates &amp; Rules (DTR)](http://hl7.org/fhir/us/davinci-dtr) SMART app.  While the appContext can contain any information desired and coordinated between the designers of the CDS Hook service and the designers of the launched SMART App, Da Vinci DTR intends to support the use of 'common' SMART apps that can be used by multiple payers, such that the SMART apps can be interchangeable and the EHR might choose to launch a common app in place of the specific SMART app URL specified.
+
+To support this behavior, the appContext **SHOULD** include the following properties:
+
+* `questionnaire`: 1..1 - The canonical URL (potentially version-specific) for the Questionnaire to be completed by the form
+* `questionnaireToken`: 0..1 - A JWT to be passed as a security token when querying for the Questionnaire in situations where 'permission' is needed to access the Questionnaire
+* `context`: 1..1 - a copy of the `context` object that was passed to the service on invocation of the hook
 
 #### Additional data retrieval
 The context information provided as part of hook invocation will often not be enough for a CRD service to fully determine coverage requirements.  This guide describes a common set of queries that define data that most, if not all, CRD Services will need to perform their requirements assessment.  This section defines those queries.
