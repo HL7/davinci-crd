@@ -2,8 +2,8 @@
 
 SETLOCAL
 
-SET dlurl=https://storage.googleapis.com/ig-build/org.hl7.fhir.publisher.jar
-SET publisher_jar=org.hl7.fhir.publisher.jar
+SET dlurl=https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar
+SET publisher_jar=publisher.jar
 SET input_cache_path=%CD%\input-cache\
 SET skipPrompts=false
 
@@ -19,7 +19,7 @@ IF "%~1"=="/f" SET skipPrompts=true
 
 ECHO.
 ECHO Checking internet connection...
-PING tx.fhir.org -n 1 -w 1000 | FINDSTR TTL && GOTO isonline
+PING tx.fhir.org -4 -n 1 -w 1000 | FINDSTR TTL && GOTO isonline
 ECHO We're offline, nothing to do...
 GOTO end
 

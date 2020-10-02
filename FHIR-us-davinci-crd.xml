@@ -1,117 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-               url="http://hl7.org/fhir/us/davinci-crd"
-               ciUrl="https://build.fhir.org/ig/HL7/davinci-crd"
-               defaultWorkgroup="fm"
-               defaultVersion="current"
-               xsi:noNamespaceSchemaLocation="../schemas/specification.xsd"
-               ballotUrl="http://hl7.org/fhir/us/davinci-crd/2019May">
-   <version code="current" url="https://build.fhir.org/ig/HL7/davinci-crd"/>
-   <version code="0.3.0" url="http://hl7.org/fhir/us/davinci-crd/2019May"/>
-   <artifactPageExtension value="-definitions"/>
-   <artifactPageExtension value="-examples"/>
-   <artifactPageExtension value="-mappings"/>
-   <artifact name="Appointment Insurance Search Parameter"
-             key="SearchParameter-appointment-insurance"
-             id="SearchParameter/appointment-insurance"/>
-   <artifact name="CommunicationRequest Insurance Search Parameter"
-             key="SearchParameter-communicationrequest-insurance"
-             id="SearchParameter/communicationrequest-insurance"/>
-   <artifact name="DeviceRequest Insurance Search Parameter"
-             key="SearchParameter-devicerequest-insurance"
-             id="SearchParameter/devicerequest-insurance"/>
-   <artifact name="Encounter Insurance Search Parameter"
-             key="SearchParameter-encounter-insurance"
-             id="SearchParameter/encounter-insurance"/>
-   <artifact name="MedicationRequest Insurance Search Parameter"
-             key="SearchParameter-medicationrequest-insurance"
-             id="SearchParameter/medicationrequest-insurance"/>
-   <artifact name="NutritionOrder Insurance Search Parameter"
-             key="SearchParameter-nutritionorder-insurance"
-             id="SearchParameter/nutritionorder-insurance"/>
-   <artifact name="ServiceRequest Insurance Search Parameter"
-             key="SearchParameter-servicerequest-insurance"
-             id="SearchParameter/servicerequest-insurance"/>
-   <artifact name="CRD Location Address Types"
-             key="ValueSet-locationAddressType"
-             id="ValueSet/locationAddressType"/>
-   <artifact name="CRD Reason Codes"
-             key="ValueSet-taskReasonCode"
-             id="ValueSet/taskReasonCode"/>
-   <artifact name="CRD After Completion Code"
-             key="ValueSet-afterCompletionCode"
-             id="ValueSet/afterCompletionCode"/>
-   <artifact name="CRD Coverage Classes"
-             key="ValueSet-coverageClass"
-             id="ValueSet/coverageClass"/>
-   <artifact name="CRD Service Request Codes"
-             key="ValueSet-serviceRequestCodes"
-             id="ValueSet/serviceRequestCodes"/>
-   <artifact name="CRD Temporary Codes"
-             key="CodeSystem-temp"
-             id="CodeSystem/temp"/>
-   <artifact name="InsuranceExtension"
-             key="StructureDefinition-ext-insurance"
-             id="StructureDefinition/ext-insurance"/>
-   <artifact name="Appointment"
-             key="StructureDefinition-profile-appointment"
-             id="StructureDefinition/profile-appointment"/>
-   <artifact name="CommunicationRequest"
-             key="StructureDefinition-profile-communicationrequest"
-             id="StructureDefinition/profile-communicationrequest"/>
-   <artifact name="Coverage"
-             key="StructureDefinition-profile-coverage"
-             id="StructureDefinition/profile-coverage"/>
-   <artifact name="CoverageDeident"
-             key="StructureDefinition-profile-coverage-deident"
-             id="StructureDefinition/profile-coverage-deident"/>
-   <artifact name="Device"
-             key="StructureDefinition-profile-device"
-             id="StructureDefinition/profile-device"/>
-   <artifact name="DeviceRequest"
-             key="StructureDefinition-profile-devicerequest"
-             id="StructureDefinition/profile-devicerequest"/>
-   <artifact name="Encounter"
-             key="StructureDefinition-profile-encounter"
-             id="StructureDefinition/profile-encounter"/>
-   <artifact name="Location"
-             key="StructureDefinition-profile-location"
-             id="StructureDefinition/profile-location"/>
-   <artifact name="MedicationRequest"
-             key="StructureDefinition-profile-medicationrequest"
-             id="StructureDefinition/profile-medicationrequest"/>
-   <artifact name="NutritionOrder"
-             key="StructureDefinition-profile-nutritionorder"
-             id="StructureDefinition/profile-nutritionorder"/>
-   <artifact name="Organization"
-             key="StructureDefinition-profile-organization"
-             id="StructureDefinition/profile-organization"/>
-   <artifact name="Patient"
-             key="StructureDefinition-profile-patient"
-             id="StructureDefinition/profile-patient"/>
-   <artifact name="PatientDident"
-             key="StructureDefinition-profile-patient-deident"
-             id="StructureDefinition/profile-patient-deident"/>
-   <artifact name="Practitioner"
-             key="StructureDefinition-profile-practitioner"
-             id="StructureDefinition/profile-practitioner"/>
-   <artifact name="ServiceRequest"
-             key="StructureDefinition-profile-servicerequest"
-             id="StructureDefinition/profile-servicerequest"/>
-   <artifact name="TaskQuestionnaire"
-             key="StructureDefinition-profile-taskquestionnaire"
-             id="StructureDefinition/profile-taskquestionnaire"/>
-   <artifact name="SupplyRequest" key="SupplyRequest" deprecated="true"/>
-   <page name="(NA)" key="NA"/>
-   <page name="(many)" key="many"/>
-   <page name="Table of Contents" key="toc"/>
-   <page name="CRD IG Home Page" key="index"/>
-   <page name="Use Cases and Overview" key="usecases"/>
-   <page name="Technical Background" key="background"/>
-   <page name="Formal Specification" key="hooks"/>
-   <page name="FHIR Artifacts" key="allartifacts"/>
-   <page name="Artifact List" key="artifacts"/>
-   <page name="Downloads" key="downloads"/>
-   <page name="Credits" key="credits"/>
-   <page name="(profiles)" key="profiles" deprecated="true"/>
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/us/davinci-crd/2019May" ciUrl="https://build.fhir.org/ig/HL7/davinci-crd" defaultVersion="current" defaultWorkgroup="fm" gitUrl="https://github.com/HL7/davinci-crd" xsi:noNamespaceSchemaLocation="../schemas/specification.xsd" url="http://hl7.org/fhir/us/davinci-crd"><version code="current" url="https://build.fhir.org/ig/HL7/davinci-crd"/>
+<version code="0.3.0" url="http://hl7.org/fhir/us/davinci-crd/2019May"/>
+<version code="0.1" deprecated="true"/>
+<artifactPageExtension value="-definitions"/>
+<artifactPageExtension value="-examples"/>
+<artifactPageExtension value="-mappings"/>
+<artifact id="StructureDefinition/profile-appointment" key="StructureDefinition-profile-appointment" name="Appointment"/>
+<artifact id="SearchParameter/appointment-insurance" key="SearchParameter-appointment-insurance" name="Appointment Insurance Search Parameter"/>
+<artifact id="ValueSet/afterCompletionCode" key="ValueSet-afterCompletionCode" name="CRD After Completion Code"/>
+<artifact id="ValueSet/coverageClass" key="ValueSet-coverageClass" name="CRD Coverage Classes"/>
+<artifact id="ValueSet/locationAddressType" key="ValueSet-locationAddressType" name="CRD Location Address Types"/>
+<artifact id="ValueSet/taskReasonCode" key="ValueSet-taskReasonCode" name="CRD Reason Codes"/>
+<artifact id="ValueSet/serviceRequestCodes" key="ValueSet-serviceRequestCodes" name="CRD Service Request Codes"/>
+<artifact id="CodeSystem/temp" key="CodeSystem-temp" name="CRD Temporary Codes"/>
+<artifact id="StructureDefinition/profile-communicationrequest" key="StructureDefinition-profile-communicationrequest" name="CommunicationRequest"/>
+<artifact id="SearchParameter/communicationrequest-insurance" key="SearchParameter-communicationrequest-insurance" name="CommunicationRequest Insurance Search Parameter"/>
+<artifact id="StructureDefinition/profile-coverage" key="StructureDefinition-profile-coverage" name="Coverage"/>
+<artifact id="StructureDefinition/profile-coverage-deident" key="StructureDefinition-profile-coverage-deident" name="CoverageDeident"/>
+<artifact id="StructureDefinition/profile-device" key="StructureDefinition-profile-device" name="Device"/>
+<artifact id="StructureDefinition/profile-devicerequest" key="StructureDefinition-profile-devicerequest" name="DeviceRequest"/>
+<artifact id="SearchParameter/devicerequest-insurance" key="SearchParameter-devicerequest-insurance" name="DeviceRequest Insurance Search Parameter"/>
+<artifact id="StructureDefinition/profile-encounter" key="StructureDefinition-profile-encounter" name="Encounter"/>
+<artifact id="SearchParameter/encounter-insurance" key="SearchParameter-encounter-insurance" name="Encounter Insurance Search Parameter"/>
+<artifact id="StructureDefinition/ext-insurance" key="StructureDefinition-ext-insurance" name="InsuranceExtension"/>
+<artifact id="StructureDefinition/profile-location" key="StructureDefinition-profile-location" name="Location"/>
+<artifact id="StructureDefinition/profile-medicationrequest" key="StructureDefinition-profile-medicationrequest" name="MedicationRequest"/>
+<artifact id="SearchParameter/medicationrequest-insurance" key="SearchParameter-medicationrequest-insurance" name="MedicationRequest Insurance Search Parameter"/>
+<artifact id="StructureDefinition/profile-nutritionorder" key="StructureDefinition-profile-nutritionorder" name="NutritionOrder"/>
+<artifact id="SearchParameter/nutritionorder-insurance" key="SearchParameter-nutritionorder-insurance" name="NutritionOrder Insurance Search Parameter"/>
+<artifact id="StructureDefinition/profile-organization" key="StructureDefinition-profile-organization" name="Organization"/>
+<artifact id="StructureDefinition/profile-patient" key="StructureDefinition-profile-patient" name="Patient"/>
+<artifact id="StructureDefinition/profile-patient-deident" key="StructureDefinition-profile-patient-deident" name="PatientDident"/>
+<artifact id="StructureDefinition/profile-practitioner" key="StructureDefinition-profile-practitioner" name="Practitioner"/>
+<artifact id="StructureDefinition/profile-servicerequest" key="StructureDefinition-profile-servicerequest" name="ServiceRequest"/>
+<artifact id="SearchParameter/servicerequest-insurance" key="SearchParameter-servicerequest-insurance" name="ServiceRequest Insurance Search Parameter"/>
+<artifact deprecated="true" key="SupplyRequest" name="SupplyRequest"/>
+<artifact id="StructureDefinition/profile-taskquestionnaire" key="StructureDefinition-profile-taskquestionnaire" name="TaskQuestionnaire"/>
+<page key="NA" name="(NA)"/>
+<page key="many" name="(many)"/>
+<page deprecated="true" key="profiles" name="(profiles)"/>
+<page key="artifacts" name="Artifact List"/>
+<page key="index" name="CRD IG Home Page"/>
+<page key="credits" name="Credits"/>
+<page key="downloads" name="Downloads"/>
+<page key="allartifacts" name="FHIR Artifacts"/>
+<page key="hooks" name="Formal Specification"/>
+<page key="toc" name="Table of Contents"/>
+<page key="background" name="Technical Background"/>
+<page key="usecases" name="Use Cases and Overview"/>
 </specification>
