@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Tue, Sep 29, 2020 19:10+0000 for FHIR v4.5.0 
+  Generated on Wed, Oct 7, 2020 09:34+0000 for FHIR v4.5.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="4.5.0">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -6017,7 +6017,7 @@ A coverage may only be responsible for specific types of charges, and the sequen
           </xs:element>
           <xs:element name="device" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Accompanying device.</xs:documentation>
+              <xs:documentation xml:lang="en">A device that is integral to the medication item, in effect being considered as an &quot;ingredient&quot; of the pharmaceutical product. This is not intended for devices that are just co-packaged.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="property" type="AdministrableProductDefinition.Property" minOccurs="0" maxOccurs="unbounded">
@@ -33226,7 +33226,7 @@ The primary difference between a medicationusage and a medicationadministration 
           </xs:element>
           <xs:element name="status" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The status within the lifecycle of this product. A high level status, this is not intended to duplicate details carried elswhere such as legal status, or authorization status.</xs:documentation>
+              <xs:documentation xml:lang="en">The status within the lifecycle of this product. A high level status, this is not intended to duplicate details carried elsewhere such as legal status, or authorization status.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="statusDate" minOccurs="0" maxOccurs="1" type="dateTime">
@@ -33276,17 +33276,12 @@ The primary difference between a medicationusage and a medicationadministration 
           </xs:element>
           <xs:element name="characteristic" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Allows the key product features to be recorded, such as &quot;suger free&quot;, &quot;modified release&quot;, &quot;parallel import&quot;.</xs:documentation>
+              <xs:documentation xml:lang="en">Allows the key product features to be recorded, such as &quot;sugar free&quot;, &quot;modified release&quot;, &quot;parallel import&quot;.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="marketingStatus" minOccurs="0" maxOccurs="unbounded" type="MarketingStatus">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Marketing status of the medicinal product, in contrast to marketing authorizaton.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="pharmaceuticalProduct" minOccurs="0" maxOccurs="unbounded" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Pharmaceutical aspects of product.</xs:documentation>
+              <xs:documentation xml:lang="en">Marketing status of the medicinal product, in contrast to marketing authorization.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="packagedMedicinalProduct" minOccurs="0" maxOccurs="unbounded" type="CodeableReference">
@@ -33336,7 +33331,12 @@ The primary difference between a medicationusage and a medicationadministration 
           </xs:element>
           <xs:element name="manufacturingBusinessOperation" type="MedicinalProductDefinition.ManufacturingBusinessOperation" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">An operation applied to the product, for manufacturing or adminsitrative purpose.</xs:documentation>
+              <xs:documentation xml:lang="en">An operation applied to the product, for manufacturing or administrative purpose.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="administrableProduct" type="MedicinalProductDefinition.AdministrableProduct" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The product in its final form, mixed from its components if necessary, and ready to be administered to the patient. Also known as the 'Pharmaceutical Product'. Can repeat, for cases where the product has components that result in more than one administrable item.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -33352,7 +33352,7 @@ The primary difference between a medicationusage and a medicationadministration 
         <xs:sequence>
           <xs:element name="type" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Allows the contact to be classified, for example QPPV, Pharmacovigilence Enquiry Information.</xs:documentation>
+              <xs:documentation xml:lang="en">Allows the contact to be classified, for example QPPV, Pharmacovigilance Enquiry Information.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="contact" minOccurs="1" maxOccurs="1" type="Reference">
@@ -33409,7 +33409,7 @@ The primary difference between a medicationusage and a medicationadministration 
           </xs:element>
           <xs:element name="type" minOccurs="1" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Idenifying type for this part of the name (e.g. strength part).</xs:documentation>
+              <xs:documentation xml:lang="en">Identifying type for this part of the name (e.g. strength part).</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -33487,12 +33487,33 @@ The primary difference between a medicationusage and a medicationadministration 
           </xs:element>
           <xs:element name="authorization" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">An authorization for this process, either as a logical reference, holding just an identifier, or a full refererence to a resource that captures the details. The authorization mayu possibly apply to several products or a wider scope of process of which this is a part.</xs:documentation>
+              <xs:documentation xml:lang="en">An authorization for this process, either as a logical reference, holding just an identifier, or a full reference to a resource that captures the details. The authorization may possibly apply to several products or a wider scope of process of which this is a part.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="confidentialityIndicator" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">To indicate if this proces is commercially confidential.</xs:documentation>
+              <xs:documentation xml:lang="en">To indicate if this process is commercially confidential.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MedicinalProductDefinition.AdministrableProduct">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Detailed definition of a medicinal product, typically for uses other than direct patient care (e.g. regulatory use, drug catalogs).</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="route" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The path by which the pharmaceutical product is taken into or makes contact with the body. Usually a licensed route.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="product" minOccurs="0" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Full description of the administrable product.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
