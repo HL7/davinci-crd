@@ -2,7 +2,7 @@
 {% endraw %}
 <blockquote class="stu-note">
 <p>
-This specification is a Standard for Trial Use.  It continues to go through connectathon testing and early adoption.  It is expected to evolve as part of that process.
+This specification is a Standard for Trial Use.  It is expected to continue to evolve and improve through connectathon testing and feedback from early adopters.
 </p>
 <p>
 Feedback is welcome and may be submitted through the <a href="http://hl7.org/fhir-issues">FHIR change tracker</a> indicating "US Da Vinci CRD" as the specification.
@@ -22,7 +22,7 @@ Individuals interested in participating in the Coverage Requirements Discovery o
 
 
 ### Overview
-The process of managing billing for patient insurance is a significant source of complexity and cost in the United States.  Healthcare providers work with a range of different health insurers and payers who cover the services the providers supply to patients.  Different payers and plans provide different levels of coverage with different processes to determine whether services are necessary or are appropriate with documentation, prior authorization or other approval requirements.  Providers who fail to adhere to payer or coverage expectations may find that costs for a given service are not covered or not completely covered.  The outcome of this failure to conform to payer requirements can be increased out of pocket costs for patients, additional visits and changes in ordered therapy, and increased costs for everyone.
+The process of managing billing for patient insurance is a significant source of complexity and cost in the United States.  Healthcare providers work with a range of different health insurers and payers who cover the services the providers supply to patients.  Different payers and plans provide different levels of coverage for healthcare services with different processes for determining whether services are necessary or are appropriate.  Different processess have different requirements for documentation, prior authorization or other approvals.  Providers who fail to adhere to payer or coverage expectations may find that costs for a given service are not covered or are only partially covered.  The outcome of this failure to conform to payer requirements can be: increased out of pocket costs for patients, additional visits, changes to ordered therapy and increased costs for both patients and providers.
 
 This Coverage Requirements Discovery (CRD) implementation guide defines a workflow to allow payers to provide information about coverage requirements to healthcare providers through their clinical systems at the time treatment decisions are being made.  This will ensure that clinicians and administrative staff have the capability to make informed decisions and meet the requirements of the patient's insurance coverage.
 
@@ -41,7 +41,7 @@ The implementation guide is designed to allow for initial support of basic capab
 The implementation guide is organized into the following sections:
 
 * [Use Cases and Overview](usecases.html) describes the intent of the implementation guide, gives examples of its use and provides a high-level overview of expected process flow
-* [Technical Background](background.html) describes the different specifications this implementation guide relies on and indicates what developers should read and understand prior to implementing this specification
+* [Technical Background](background.html) identifies related specifications that this implementation guide builds upon and which developers should read and understand prior to implementing this specification
 * [Formal Specification](hooks.html) covers the detailed implementation requirements and conformance expectation
 * [Artifacts](allartifacts.html) introduces and provides links to the profiles, search parameters and other FHIR artifacts used in this implementation guide
 * [Downloads](downloads.html) allows download of this and other specifications as well as other useful files
@@ -53,6 +53,7 @@ This implementation guide relies on the following other specifications:
 * **[US Core STU3](http://hl7.org/fhir/us/core/STU3)** - The version of US Core based on FHIR R4.
 * **[CDS Hooks CI Build](https://cds-hooks.org/specification/current/)** - The community release that defines the hooks used by this implementation guide
 * **[CDS Hooks 1.0](https://cds-hooks.hl7.org/1.0)** - The official standard for trial use publication of CDS Hooks that defines the CDS Hooks protocol and interfaces used by this implementation guide
-* **[SMART on FHIR](http://hl7.org/fhir/smart-app-launch)** - The specification that SMART apps used to evaluate coverage requirement "what-if" scenarios or to help providers meet documentation or prior authorization coverage requirements must comply with
+* **[SMART on FHIR](http://hl7.org/fhir/smart-app-launch)** - The specification provides a reliable, secure authorization protocol for SMART apps launched from a clinical system to support coverage requirements discovery (e.g., what-if scenarios).
+
 
 This implementation guide defines additional constraints and usage expectations above and beyond the information found in these base specifications.

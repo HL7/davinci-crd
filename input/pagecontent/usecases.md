@@ -11,7 +11,7 @@ This implementation guide defines a FHIR based API that providers can use to dis
 * Plan conditions only (i.e. without Protected Health Information - PHI), or also
 * Plan member identification (PHI) and, potentially, clinical information needed to determine requirements.
 
-When needed, the API will allow payers with authorization to query provider systems for additional patient information needed inform the guidance provided - for example by determining what information already exists or steps have already occurred.
+When needed, the API will allow payers with authorization to query provider systems for additional patient information needed inform the guidance provided - for example by determining what information already exists or what steps have already occurred.
 
 The payer response to a CRD request might include:
 * An indication that no coverage requirements exist
@@ -29,7 +29,7 @@ Dr. Good wants to order a head CT to check for any masses but is unsure whether 
 
 Dr. Good launches an app within his Electronic Medical Record (EMR) and indicates that he wants to see coverage requirements for Mrs. Jones' plan for a 'head CT'.  The app sends a query to a CRD Service used by Mrs. Jones' payer asking for any requirements corresponding to her coverage.  The CRD service returns information within a few seconds identifying a prior authorization form that must be completed and submitted as well as the additional clinical documentation required (Progress Note, prior studies, etc.).  It also provides a link to the required form.  Dr. Good completes the necessary paperwork to initiate a prior authorization and sends the relevant supporting information to the imaging center as part of the referral.
 
-(optional) – The app also provides Dr. Good a list of nearby imaging centers that are on Mrs. Jones' plan.
+Note: An app may also provide Dr. Good additional useful information such as a list of nearby imaging centers that are on Mrs. Jones' plan.
 
 #### Scenario 2
 Mrs. Smith is a 75-year-old female on a Medicare Fee-For-Service plan with long standing chronic obstructive pulmonary disease (COPD) who has had slowly and progressively worsening shortness of breath with activity.  In the office, her room air saturation after a 5-minute walk is found to be 84%.  She has additional evaluation that reveals no new findings.  Dr. Good wants to initiate home oxygen therapy for Mrs. Smith.
