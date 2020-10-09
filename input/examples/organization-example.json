@@ -1,0 +1,40 @@
+{
+  "resourceType": "Organization",
+  "id": "organization-example",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-nutritionorder"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://www.acme.org.au/units",
+      "value": "Gastro"
+    }
+  ],
+  "active": true,
+  "name": "Gastroenterology",
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "+1 555 234 3523",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "gastro@acme.org",
+      "use": "work"
+    },
+    "address": [
+      {
+        "use": "work",
+        "line": [
+          "Galapagosweg 91"
+        ],
+        "city": "San Francisco",
+        "postalCode": "94107",
+        "country": "US"
+      }
+    ]
+  ]
+}

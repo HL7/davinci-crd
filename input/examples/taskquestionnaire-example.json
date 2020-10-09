@@ -1,0 +1,48 @@
+{
+  "resourceType": "Task",
+  "id": "taskquestionnaire-example",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-taskquestionnaire"
+    ]
+  },
+  "basedOn": "MedicationRequest/5",
+  "status": "ready",
+  "intent": "order",
+  "code": {
+    "coding": [{
+      "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/task-type",
+      "code": "complete-questionnaire"
+    }]
+  },
+  "description": "Complete XYZ form for inclusion in prior authorization",
+  "for": {
+    "reference": "Patient/some-patient-id"
+  },
+  "authoredOn": "2018-08-09",
+  "reasonCode": {
+    "coding": [{
+      "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/task-reason",
+      "code": "prior-auth",
+      "display": "Needed for prior authorization"
+    }]
+  },
+  "input": [{
+    "type": {
+      "text": "questionnaire"
+    },
+    "valueCanonical": "http://example.org/Questionnaire/XYZ|2"
+  },
+  {
+    "type": {
+      "text": "afterCompletion"
+    },
+    "valueCodeableConcept": {
+      "coding": [{
+        "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/after-completion",
+        "code": "prior-auth",
+        "display": "Include in prior authorization"
+      }]
+    }
+  }]
+}

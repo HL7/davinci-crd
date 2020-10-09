@@ -1,0 +1,15 @@
+{
+  "resourceType": "Device",
+  "id": "device-example",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-device"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://goodcare.org/devices/id",
+      "value": "345675"
+    }
+  ]
+}

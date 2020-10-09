@@ -1,0 +1,53 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "servicerequest-example",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-servicerequest"
+    ]
+  },
+  "instantiatesCanonical": [
+    {
+      "display": "ActivityDefinition"
+    }
+  ],
+  "basedOn": [
+    {
+      "display": "EligibilityRequest"
+    }
+  ],
+  "status": "draft",
+  "intent": "order",
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "25267002",
+        "display": "Insertion of intracardiac pacemaker (procedure)"
+      }
+    ],
+    "text": "Implant Pacemaker"
+  },
+  "subject": {
+    "reference": "Patient/example"
+  },
+  "authoredOn": "2015-03-30",
+  "requester": {
+    "reference": "Practitioner/3ad0687e-f477-468c-afd5-fcc2bf897809",
+    "display": "Dr. Beverly Crusher"
+  },
+  "performer": [
+    {
+      "reference": "Practitioner/example",
+      "display": "Dr Cecil Surgeon"
+    }
+  ],
+  "locationReference": {
+    "reference": "Location/example"
+  },
+  "reasonCode": [
+    {
+      "text": "Bradycardia"
+    }
+  ]
+}
