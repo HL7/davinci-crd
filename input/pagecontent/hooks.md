@@ -266,7 +266,7 @@ One of the options supported in CDS Hooks is the ability for a service to reques
 
 A [proposal](https://github.com/cds-hooks/docs/issues/377) has been submitted suggesting how to address this issue.  This ballot version of the implementation guide pre-adopts that proposal.
 
-Specifically, where a hook defines a context element that consists of a resource or collection of resources (e.g., [order-select.draftOrders](https://cds-hooks.org/hooks/order-select/#context) or [order-sign.draftOrders](https://cds-hooks.org/hooks/order-sign/#context)), systems **SHALL** recognize context tokens of the form `context.<context property>.<FHIR resource name>.id` in prefetch queries.  Those tokens **SHALL** evaluate to a comma-separated list of the identifiers of all resources of the specified type within that context key.
+Specifically, where a hook defines a context element that consists of a resource or collection of resources (e.g., [order-select.draftOrders](https://cds-hooks.hl7.org/hooks/order-select/2020May/order-select//#context) or [order-sign.draftOrders](https://cds-hooks.hl7.org/hooks/order-sign/2020May/order-sign//#context)), systems **SHALL** recognize context tokens of the form `context.<context property>.<FHIR resource name>.id` in prefetch queries.  Those tokens **SHALL** evaluate to a comma-separated list of the identifiers of all resources of the specified type within that context key.
 
 Note: Recognizing these tokens doesn't mean the client must support prefetch or the requested prefetch query, only that it recognizes the token, doesn't treat it as an error and - if it supports the query - substitutes the token correctly.
 
@@ -445,7 +445,7 @@ The following sections describe the hooks covered by this implementation guide a
 The hooks listed on the CDS hooks website are subject to update by the community at any time until they go through the ballot process.  However, all substantive changes are noted in the *Change Log* section at the bottom of the page describing each hook.  For each hook listed below, this specification identifies a specific version.  For the sake of interoperability, implementers are expected to adhere to the interface defined in the specified version of each hook, though compatible changes from future versions can also be supported.  CRD Services **SHALL** handle unrecognized context elements by ignoring them.
 
 ##### appointment-book
-This hook is described in the CDS Hook specification [here](https://cds-hooks.org/hooks/appointment-book).  This version of the CRD implementation guide refers to version 1.0 of the hook.
+This hook is described in the CDS Hook specification [here](https://cds-hooks.hl7.org/hooks/appointment-book/2020May/appointment-book/).  This version of the CRD implementation guide refers to version 1.0 of the hook.
 
 This hook would be triggered when the user of a CRD Client books a future appointment for a patient with themselves, with someone else within their organization or with another organization.  (Note that whether the CRD Client will create an appointment - triggering the `appointment-book` hook - or a ServiceRequest - triggering an `order-select` or `order-sign` hook - can vary depending on the service being booked and the organizations involved.)
 
@@ -494,7 +494,7 @@ The profiles expected to be used for the resources resolved to by the userId, pa
 
 
 ##### encounter-start
-This hook is described in the CDS Hook specification [here](https://cds-hooks.org/hooks/encounter-start).  This version of the CRD implementation guide refers to version 1.0 of the hook.
+This hook is described in the CDS Hook specification [here](https://cds-hooks.hl7.org/hooks/encounter-start/2020May/encounter-start/).  This version of the CRD implementation guide refers to version 1.0 of the hook.
 
 This hook would be triggered when a patient is admitted, a patient arrives for an out-patient visit and/or when a provider first engages with a patient during an encounter.  The `encounter-start` hook serves a similar purpose to the [appointment-book](#appointment-book) hook, though it provides less lead time to react to recommendations. If the purpose of the appointment is to perform a service that requires a 2-week prior authorization process, it is more efficient to find prior-authorization requirements proactively though the use of appointment-book to prevent the patient from showing up for an appointment that will need to be cancelled and rescheduled.
 
@@ -532,7 +532,7 @@ The profiles expected to be used for the resources resolved to by the userId, pa
 
 
 ##### encounter-discharge
-This hook is described in the CDS Hook specification [here](https://cds-hooks.org/hooks/encounter-discharge).  This version of the CRD implementation guide refers to version 1.0 of the hook.
+This hook is described in the CDS Hook specification [here](https://cds-hooks.hl7.org/hooks/encounter-discharge/2020May/encounter-discharge/).  This version of the CRD implementation guide refers to version 1.0 of the hook.
 
 This hook would generally be specific to an in-patient encounter and would fire when a provider is performing the discharge process within the CRD Client.
 
@@ -570,11 +570,11 @@ The profiles expected to be used for the resources resolved to by the userId, pa
 </table>
 
 ##### order-select
-This hook is described in the CDS Hook specification [here](https://cds-hooks.org/hooks/order-select).  This version of the CRD implementation guide refers to version 1.0 of the hook.
+This hook is described in the CDS Hook specification [here](https://cds-hooks.hl7.org/hooks/order-select/2020May/order-select/).  This version of the CRD implementation guide refers to version 1.0 of the hook.
 
 This will probably be the most important and widely used hook for CRD as it will be fired as orders are created for medications, devices, services, etc. within the CRD Client.  The hook could fire multiple times as additional information is gathered and entered.  Services **SHALL NOT** return warnings indicating that insufficient information is available to determine coverage when returning coverage requirement cards.  It is to be expected that not all information will be available initially.  If the user decides that an order is 'complete' when not enough information is available, that will be caught by the [order-sign](#order-sign) hook.
 
-While it might be possible to not support this hook and only use the order-sign hook, the benefit of supporting [order-select](https://cds-hooks.org/hooks/order-select) is that information may be provided to alter a provider's behavior before they've gone very far in the authoring process.  It will be less aggravating for the provider to be prompted to change a medical equipment order when they've just picked the device and haven't filled in all the usage instructions than when everything is complete and they're just about to sign.
+While it might be possible to not support this hook and only use the order-sign hook, the benefit of supporting [order-select](https://cds-hooks.hl7.org/hooks/order-select/2020May/order-select/) is that information may be provided to alter a provider's behavior before they've gone very far in the authoring process.  It will be less aggravating for the provider to be prompted to change a medical equipment order when they've just picked the device and haven't filled in all the usage instructions than when everything is complete and they're just about to sign.
 
 This hook allows multiple resource types to be present. Resources provided could be all of the same type or a mixture of types.  Coverage requirements **SHOULD** be limited only to those resources that are included in the `selections` context, though the content of other resources **SHOULD** also be considered before making recommendations about what additional actions are necessary.  (I.e. don't recommend an action if there's already a draft order to perform that action.)  
 
@@ -653,9 +653,9 @@ Note: While this hook is defined for use when ordering, it is still relevant whe
 
 
 ##### order-sign
-This hook is described in the CDS Hook specification [here](https://cds-hooks.org/hooks/order-sign).  This version of the CRD implementation guide refers to version 1.0 of the hook.
+This hook is described in the CDS Hook specification [here](https://cds-hooks.hl7.org/hooks/order-sign/2020May/order-sign/).  This version of the CRD implementation guide refers to version 1.0 of the hook.
 
-This hook serves a very similar purpose to [order-select](#order-select).  The main difference is that all the listed draft orders are considered 'complete'.  That means that it's appropriate to provide warnings if there is insufficient information to determine coverage requirements.  As well, all `draftOrders` are appropriate to comment on when using [order-sign](https://cds-hooks.org/hooks/order-sign) as the `selections` field in [order-select](https://cds-hooks.org/hooks/order-select) is absent.
+This hook serves a very similar purpose to [order-select](#order-select).  The main difference is that all the listed draft orders are considered 'complete'.  That means that it's appropriate to provide warnings if there is insufficient information to determine coverage requirements.  As well, all `draftOrders` are appropriate to comment on when using [order-sign](https://cds-hooks.hl7.org/hooks/order-sign/2020May/order-sign/) as the `selections` field in [order-select](https://cds-hooks.hl7.org/hooks/order-select/2020May/order-select/) is absent.
 
 Use and profiles for [order-select](#order-select) also apply to `order-sign`.
 
