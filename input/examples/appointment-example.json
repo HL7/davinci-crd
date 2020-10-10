@@ -1,6 +1,6 @@
 {
   "resourceType": "Appointment",
-  "id": "appointment-example",
+  "id": "example",
   "meta": {
     "profile": [
       "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-appointment"
@@ -9,7 +9,7 @@
   "extension": [
     {
       "url": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-insurance",
-      "valueReference": "Coverage/1234"
+      "valueReference": "Coverage/example"
     }
   ],
   "status": "proposed",
@@ -57,7 +57,7 @@
   "reasonReference": [
     {
       "reference": "Condition/example",
-      "display": "Severe burn of left ear"
+      "display": "Heart problem"  
     }
   ],
   "priority": 5,
@@ -68,14 +68,14 @@
   "comment": "Further expand on the results of the MRI and determine the next actions that may be appropriate.",
   "basedOn": [
     {
-      "reference": "ServiceRequest/myringotomy"
+      "reference": "ServiceRequest/example"
     }
   ],
   "participant": [
     {
       "actor": {
         "reference": "Patient/example",
-        "display": "Peter James Chalmers"
+        "display": "Amy Baxter"
       },
       "required": "required",
       "status": "accepted"

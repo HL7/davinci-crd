@@ -1,6 +1,6 @@
 {
   "resourceType": "ServiceRequest",
-  "id": "servicerequest-example",
+  "id": "example",
   "meta": {
     "profile": [
       "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-servicerequest"
@@ -33,12 +33,12 @@
   },
   "authoredOn": "2015-03-30",
   "requester": {
-    "reference": "Practitioner/3ad0687e-f477-468c-afd5-fcc2bf897809",
+    "reference": "Practitioner/example",
     "display": "Dr. Beverly Crusher"
   },
   "performer": [
     {
-      "reference": "Practitioner/example",
+      "reference": "Practitioner/example2",
       "display": "Dr Cecil Surgeon"
     }
   ],

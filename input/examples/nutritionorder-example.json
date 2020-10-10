@@ -1,6 +1,6 @@
 {
   "resourceType": "NutritionOrder",
-  "id": "nutritionorder-example",
+  "id": "example",
   "meta": {
     "profile": [
       "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-nutritionorder"
@@ -9,7 +9,7 @@
   "extension": [
     {
       "url": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-insurance",
-      "valueReference": "Coverage/1234"
+      "valueReference": "Coverage/example"
     }
   ],
   "identifier": [
@@ -21,17 +21,14 @@
   "status": "draft",
   "intent": "order",
   "patient": {
-    "reference": "Patient/example",
-    "display": "Peter Chalmers"
+    "reference": "Patient/example"
   },
   "encounter": {
-    "reference": "Encounter/example",
-    "display": "Inpatient"
+    "reference": "Encounter/example"
   },
   "dateTime": "2014-09-17",
   "orderer": {
-    "reference": "Practitioner/example",
-    "display": "Dr Adam Careful"
+    "reference": "Practitioner/example"
   },
   "allergyIntolerance": [
     {

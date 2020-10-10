@@ -1,6 +1,6 @@
 {
   "resourceType": "Location",
-  "id": "1",
+  "id": "example",
   "meta": {
     "profile": [
       "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-location"
@@ -14,8 +14,8 @@
   "status": "active",
   "name": "South Wing, second floor",
   "alias": [
-    "BU MC, SW, F2",
-    "Burgers University Medical Center, South Wing, second floor"
+    "MC, SW, F2",
+    "University Medical Center, South Wing, second floor"
   ],
   "description": "Second floor of the Old South Wing, formerly in use by Psychiatry",
   "mode": "instance",
@@ -46,6 +46,7 @@
       "Galapagosweg 91, Building A"
     ],
     "city": "San Francisco",
+    "state": "CA",
     "postalCode": "94107",
     "country": "US"
   },
@@ -59,7 +60,7 @@
     ]
   },
   "managingOrganization": {
-    "reference": "Organization/f001"
+    "reference": "Organization/example"
   },
   "endpoint": [
     {

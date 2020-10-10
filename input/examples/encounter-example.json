@@ -1,6 +1,6 @@
 {
   "resourceType": "Encounter",
-  "id": "encounter-example",
+  "id": "example",
   "meta": {
     "profile": [
       "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-encounter"
@@ -9,7 +9,7 @@
   "extension": [
     {
       "url": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-insurance",
-      "valueReference": "Coverage/1234"
+      "valueReference": "Coverage/example"
     }
   ],
   "identifier": [
@@ -46,14 +46,12 @@
     ]
   },
   "subject": {
-    "reference": "Patient/f001",
-    "display": "P. van de Heuvel"
+    "reference": "Patient/example"
   },
   "participant": [
     {
       "individual": {
-        "reference": "Practitioner/f002",
-        "display": "P. Voigt"
+        "reference": "Practitioner/example"
       }
     }
   ],
@@ -100,7 +98,7 @@
     }
   },
   "serviceProvider": {
-    "reference": "Organization/f001",
-    "display": "Burgers University Medical Center"
+    "reference": "Organization/example",
+    "display": "University Medical Center"
   }
 }

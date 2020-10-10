@@ -1,6 +1,6 @@
 {
   "resourceType": "CommunicationRequest",
-  "id": "communicationrequest-example",
+  "id": "example",
   "meta": {
     "profile": [
       "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-communicationrequest"
@@ -40,7 +40,7 @@
   "extension": [
     {
       "url": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-insurance",
-      "valueReference": "Coverage/1234"
+      "valueReference": "Coverage/example"
     }
   ],
   "identifier": [
@@ -87,8 +87,7 @@
     }
   ],
   "subject": {
-    "reference": "Patient/example",
-    "display": "Peter James Chalmers"
+    "reference": "Patient/example"
   },
   "encounter": {
     "reference": "Encounter/example"

@@ -1,6 +1,6 @@
 {
   "resourceType": "Coverage",
-  "id": "coverage-example",
+  "id": "example",
   "meta": {
     "profile": [
       "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-coverage"
@@ -26,10 +26,10 @@
     "reference": "http://benefitsinc.com/FHIR/Organization/CBI35"
   },
   "subscriber": {
-    "reference": "Patient/4"
+    "reference": "Patient/example"
   },
   "beneficiary": {
-    "reference": "Patient/4"
+    "reference": "Patient/example"
   },
   "dependent": "0",
   "relationship": {
@@ -45,7 +45,8 @@
   },
   "payor": [
     {
-      "reference": "Organization/2"
+      "reference": "Organization/example-payer",
+      "diplay": "Payer XYZ"
     }
   ],
   "class": [

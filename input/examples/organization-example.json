@@ -1,9 +1,9 @@
 {
   "resourceType": "Organization",
-  "id": "organization-example",
+  "id": "example",
   "meta": {
     "profile": [
-      "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-nutritionorder"
+      "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-organization"
     ]
   },
   "identifier": [
@@ -13,7 +13,7 @@
     }
   ],
   "active": true,
-  "name": "Gastroenterology",
+  "name": "University Medical Center",
   "telecom": [
     {
       "system": "phone",
@@ -22,9 +22,9 @@
     },
     {
       "system": "email",
-      "value": "gastro@acme.org",
+      "value": "info@acme.org",
       "use": "work"
-    },
+    }],
     "address": [
       {
         "use": "work",
@@ -32,9 +32,8 @@
           "Galapagosweg 91"
         ],
         "city": "San Francisco",
+        "state": "CA",
         "postalCode": "94107",
         "country": "US"
-      }
-    ]
-  ]
-}
+      ]
+    }

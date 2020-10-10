@@ -1,6 +1,6 @@
 {
   "resourceType": "MedicationRequest",
-  "id": "medicationrequest-example",
+  "id": "example",
   "meta": {
     "profile": [
       "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-medicationrequest"
@@ -24,7 +24,7 @@
   "extension": [
     {
       "url": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-insurance",
-      "valueReference": "Coverage/1234"
+      "valueReference": "Coverage/example"
     }
   ],
   "identifier": [
@@ -40,22 +40,19 @@
     "reference": "#med0320"
   },
   "subject": {
-    "reference": "Patient/pat1",
-    "display": "Donald Duck"
+    "reference": "Patient/example"
   },
   "encounter": {
-    "reference": "Encounter/f001",
-    "display": "encounter who leads to this prescription"
+    "reference": "Encounter/example"
   },
   "supportingInformation": [
     {
-      "reference": "Coverage/SP1234"
+      "reference": "Coverage/example"
     }
   ],
   "authoredOn": "2015-01-15",
   "requester": {
-    "reference": "Practitioner/f007",
-    "display": "Patrick Pump"
+    "reference": "Practitioner/example"
   },
   "reasonCode": [
     {
