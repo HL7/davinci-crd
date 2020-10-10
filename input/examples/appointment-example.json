@@ -9,7 +9,9 @@
   "extension": [
     {
       "url": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-insurance",
-      "valueReference": "Coverage/example"
+      "valueReference": {
+        "reference": "Coverage/example"
+      }
     }
   ],
   "status": "proposed",
@@ -17,8 +19,8 @@
     {
       "coding": [
         {
-          "system": "http://example.org/service-category",
-          "code": "gp",
+          "system": "http://terminology.hl7.org/CodeSystem/service-category",
+          "code": "17",
           "display": "General Practice"
         }
       ]
@@ -28,8 +30,9 @@
     {
       "coding": [
         {
-          "code": "52",
-          "display": "General Discussion"
+          "system": "http://terminology.hl7.org/CodeSystem/service-type",
+          "code": "124",
+          "display": "General Practice"
         }
       ]
     }
@@ -57,7 +60,7 @@
   "reasonReference": [
     {
       "reference": "Condition/example",
-      "display": "Heart problem"  
+      "display": "Heart problem"
     }
   ],
   "priority": 5,
@@ -100,11 +103,15 @@
     },
     {
       "actor": {
-        "reference": "Location/1",
+        "reference": "Location/example",
         "display": "South Wing, second floor"
       },
       "required": "required",
       "status": "accepted"
     }
+  ],
+  "requestedPeriod": []
+    "start": "2020-11-01",
+    "end": "2020-12-15"
   ]
 }

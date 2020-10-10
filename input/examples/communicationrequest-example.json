@@ -40,7 +40,9 @@
   "extension": [
     {
       "url": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-insurance",
-      "valueReference": "Coverage/example"
+      "valueReference": {
+        "reference": "Coverage/example"
+      }
     }
   ],
   "identifier": [
@@ -67,8 +69,8 @@
     {
       "coding": [
         {
-          "system": "http://acme.org/messagetypes",
-          "code": "SolicitedAttachmentRequest"
+          "system": "http://terminology.hl7.org/CodeSystem/communication-category",
+          "code": "instruction"
         }
       ]
     }

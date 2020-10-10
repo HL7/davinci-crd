@@ -9,13 +9,13 @@
   "extension": [
     {
       "url": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-insurance",
-      "valueReference": "Coverage/example"
+      "valueReference": {
+        "reference": "Coverage/example"
+      }
     }
   ],
   "instantiatesCanonical": [
-    {
-      "display": "ActivityDefinition"
-    }
+    "display": "ActivityDefinition"
   ],
   "basedOn": [
     {
