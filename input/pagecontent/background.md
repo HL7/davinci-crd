@@ -10,6 +10,31 @@ The process that Da Vinci has adopted includes:
 
 Additional information about Da Vinci, its members, the use cases and the implementation guides being developed can all be found on the [HL7 website](http://www.hl7.org/about/davinci). Meeting minutes and other materials can be found on the [Da Vinci Confluence page](https://confluence.hl7.org/display/DVP).
 
+#### Da Vinci Burden Reduction
+This implementation guide is part of a set of interrelated implementation guides that are focused on reducing clinician and payer burden.  The Da Vinci 'Burden Reduction' implementation guides are:
+
+1. [Coverage Requirements Discovery (CRD)](http://hl7.org/fhir/us/davinci-crd) which provides decision support to providers at the time they're ordering drugs and labs, making referrals, scheduling appointments, etc.
+2. [Documentation Templates and Rules (DTR)](http://hl7.org/fhir/us/davinci-dtr) which allows providers to download 'smart' questionnaires (and a [SMART on FHIR](http://www.hl7.org/fhir/smart-app-launch/) app that executes them to gather information relevant to a performed or planned service.
+3. [Prior Authorization Support (PAS)](http://hl7.org/fhir/us/davinci-pas) allows provider systems to send (and payer systems to receive) prior authorization requests using FHIR, while still meeting regulatory mandates to have X12 278 used to transport the prior authorization, potentially simplifying processing for either or both exchange partner.
+
+The guides overlap in the following ways:
+
+* CRD can indicate whether prior authorization is or is not required and whether there are or are not 'special documentation requirements' related to the planned service.  The CDS Hook cards returned by CRD can include a link to the DTR SMART application that will then guide the clinician in capturing the relevant information
+* DTR can be triggered by a CRD hook.  It allows captures of information needed to support prior authorization requests and that can be included as part of the request
+* PAS can be used to submit a prior authorization based on a requirement identified by CRD and using information gathered by DTR
+
+All three implementation guides can be used together and intersect in that they perform business functions related to prior authorization.  However the first two IGs also offer functionality that's
+unrelated to prior authorization.  The guides can function independently in a number of ways:
+
+* CRD can provide information unrelated to prior authorization and 'special documentation'.  For example, indicating whether or not a therapy is covered, providing an estimate of patient cost, identifying duplicate therapies, etc.
+* CRD can identify a need for prior authorization and/or special documentation but, instead of linking to a DTR solution, might simply point to a website or other documentation with guidance on the appropriate forms to complete
+* DTR might be invoked directly by a clinician who either knows or is informed by means other than CRD about the requirement to gather additional documentation
+* Information gathered by DTR might be used for direct submission of prior authorizations using X12 278 transactions or using alternative submission means (e.g. fax, mail) if supported/required by the relevant payer
+* PAS can be used for prior authorization submissions where the need to submit a prior authorization was identified without CRD (either known in advance or identified by other means) and/or the supplemental information to be provided was identified and gathered outside of or in addition to DTR.
+
+As such, implementers can choose to roll out these three implementation guides in whatever order or combination best meets their particular business objectives - though obviously coordinating with their communication partners so that there are other systems to interoperate with will also be important.
+
+
 ### Systems
 The CRD implementation guide defines the responsibilities of the two types of systems involved in a CRD solution:
 
@@ -75,3 +100,12 @@ Discussion of how a SMART on FHIR app can be used to trigger CDS Hooks from with
 
 ##### Hook actions
 When a server responds to a CDS hook, one of the possible actions is to allow the user to [invoke a SMART App](https://cds-hooks.hl7.org/1.0/#link).  Support for this option by payer systems is optional.  Doing so allows the payer to provide a custom user interface to complete forms, navigate through decision support, review subsets of EHR and/or payer data, etc.  The Da Vinci [Documentation Templates and Rules](http://www.hl7.org/fhir/us/davinci-dtr) implementation guide provides additional guidance and expectations on the use of CDS Hook cards to launch SMART Apps and how payer-provided SMART Apps should function.
+
+### Architectural approach
+The approach taken to meet the requirements of the Coverage Requirements Discovery use-case was selected after evaluating the various interoperability choices provided by FHIR.  Specifically, the project team evaluated the possible architectural approaches as described in the HRex specification's [Approaches to Exchanging FHIR Data]({{site.data.fhir.ver.hrex}}/exchanging.html) guide.  The following bullets describe the path choices driven by use-case requirements:
+
+* *Direct Connection* - Yes, it was presumed that EHR systems could connect directly either with the payer or with a payer-provided service
+* *Consumer initiates?* - Yes - the clinical system needing decision support would trigger the support, because only the clinical system would know when support was needed.
+* *Human intervention?* - No - there was no expectation that a human would need to be involved on the data source (payer) side to determine what guidance should be provided back.  The requirement was for real-time guidance, which meant any guidance provided had to be automatic.
+* *Is data pre-existing?* - No - in decision support, we're generating context-specific guidance that didn't previously exist, even if some of the resources pointed to might have been pre-existing
+* *CDS-hooks?* - Yes - CDS hooks was a good fit for the workflow we needed.  There was no need to define custom operations or messages to meet our use-cases

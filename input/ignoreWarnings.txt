@@ -32,6 +32,7 @@ INFORMATION: MedicationRequest/example: MedicationRequest.contained.ofType(Medic
 
 # Each of the examples are being validated against their corresponding profile
 INFORMATION: Appointment/example: Appointment: Validate resource against profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-appointment
+INFORMATION: ClaimResponse/priorauth-example: ClaimResponse: Validate resource against profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-claimresponse
 INFORMATION: CommunicationRequest/example: CommunicationRequest: Validate resource against profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-communicationrequest
 INFORMATION: Coverage/deident-example: Coverage: Validate resource against profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-coverage-deident
 INFORMATION: Coverage/example: Coverage: Validate resource against profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-coverage
@@ -48,7 +49,9 @@ INFORMATION: Practitioner/example: Practitioner: Validate resource against profi
 INFORMATION: ServiceRequest/example: ServiceRequest: Validate resource against profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-servicerequest
 INFORMATION: Task/questionnaire-example: Task: Validate resource against profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-taskquestionnaire
 
-
 # This identifier is intended to show that identifiers that *aren't* in one of the slices are also valid
 INFORMATION: Practitioner/example: Practitioner.identifier[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-practitioner
 
+# These code systems are made up and aren't expected to be evaluated
+Code System URI 'http://example.org/fhir/modifiers' is unknown so the code cannot be validated
+Code System URI 'http://example.org/fhir/oralservicecodes' is unknown so the code cannot be validated

@@ -92,6 +92,14 @@
 		</resource>
 		<resource>
 			<reference>
+				<reference value="ClaimResponse/priorauth-example"/>
+			</reference>
+			<name value="Prior Authorization example"/>
+			<description value="Example prior authorization populated based on CRD profile"/>
+			<exampleCanonical value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-claimresponse"/>
+		</resource>
+		<resource>
+			<reference>
 				<reference value="CommunicationRequest/example"/>
 			</reference>
 			<name value="CommunicationRequest example"/>

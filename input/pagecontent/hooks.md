@@ -51,6 +51,7 @@ Note that, in some cases, the US Core profiles require support for data elements
 Guidance and conformance expectations around privacy and security are provided by all three specifications this implementation guide relies on.  Implementers **SHALL** adhere to any security and privacy rules defined by:
 
 * FHIR core: [Security & Privacy module]({{site.data.fhir.path}}secpriv-module.html), [Security Principles]({{site.data.fhir.path}}security.html) and [Implementer's Checklist]({{site.data.fhir.path}}safety.html)
+* HRex: [Privacy & Security page]({{site.data.fhir.ver.hrex}}/security.html)
 * CDS Hooks: [Security & Safety](https://cds-hooks.hl7.org/1.0/#security-and-safety)
 * SMART on FHIR: [SMART App Launch](http://www.hl7.org/fhir/smart-app-launch)
 
@@ -1101,7 +1102,11 @@ SMART apps allow more sophisticated interaction between payers and providers.  T
 
 All such apps will need to go through the approval processes for the client's provider organization and typically also the associated software vendor.  This response type can cue the launching of such apps to occur in the context in which they are relevant to patient care and/or to payment-related decision-making.
 
-This response type is just a modified version of the [External Reference](#external-reference) response type.  However, the `Link.type` will be "smart" instead of "absolute".  The `Link.appContext` will typically also be present.  For example, this [Card](https://cds-hooks.hl7.org/1.0/#cds-service-response) contains a SMART App [Link](https://cds-hooks.hl7.org/1.0/#link) to perform an opioid assessment.
+This response type is just a modified version of the [External Reference](#external-reference) response type.  However, the `Link.type` will be "smart" instead of "absolute".  The `Link.appContext` will typically also be present.  
+
+This card type also provides the mechanism to transition from CRD to the behavior defined in the [Documentation, Templates, and Rules (DTR) Implementation Guide](http://hl7.org/fhir/us/davinci-dtr).  The SMART app link returned is the one the payer uses to guide providers through filling out relevant forms and is capable of both retrieving the relevant CQL from the payer to determine (and where appropriate, automatically populate) payer-sourced templates and documentation as well as retrieving information from the provider via queries authorized by the token used to launch the SMART app.  The card includes the complete app context needed for the CRD client to launch the SMART application (information gleaned by the CRD server either as data passed as part of hook invocation or subsequent querying by the service.
+
+For example, this [Card](https://cds-hooks.hl7.org/1.0/#cds-service-response) contains a SMART App [Link](https://cds-hooks.hl7.org/1.0/#link) to perform an opioid assessment.
 
 ```
     {
@@ -1134,6 +1139,41 @@ To support this behavior, the appContext **SHOULD** include the following proper
 * `questionnaire`: 1..1 - The canonical URL (potentially version-specific) for the Questionnaire to be completed by the form
 * `questionnaireToken`: 0..1 - A JWT to be passed as a security token when querying for the Questionnaire in situations where 'permission' is needed to access the Questionnaire
 * `context`: 1..1 - a copy of the `context` object that was passed to the service on invocation of the hook
+
+###### Provide unsolicited prior authorization
+This response type is used when the payer determines that prior authorization is necessary in order to cover the service described by the invoked hook, and that the information necessary to grant the prior authorization is already available.  Rather than requiring the provider to submit a prior authorization request, the payer generates a prior authorization response pre-emptively, indicating exactly what is covered and providing a prior authorization reference that can be communicated to downstream service providers.
+
+The card will contain a single "create" action with a ClaimResponse instance complying with the [Da Vinci prior authorization profile](StructureDefinition-profile-claimresponse.html) (the resource used by FHIR to represent prior authorizations) - one per authorization.  (Multiple cards can be provided in the event that multiple prior authorizations are produced, as the provider must choose independently which ones they wish to store.
+
+For example, this CDS Hook [Card](https://cds-hooks.hl7.org/1.0/#cds-service-response) includes a single [Suggestion](https://cds-hooks.hl7.org/1.0/#suggestion) with the necessary 'create' [Action](https://cds-hooks.hl7.org/1.0/#action).  For size reasons, the full content of the prior authorization is omitted, however an example prior authorization can be seen [here](ClaimResponse-priorauth-example.json).
+
+```
+    {
+      "summary": "Store prior payer-generated authorization for this service",
+      "indicator": "info",
+      "source": {
+        "label": "Some Payer",
+        "url": "https://example.com",
+        "icon": "https://example.com/img/icon-100px.png"
+      },
+      "suggestions": [
+        {
+          "label": "Store the prior authorization in the EHR",
+          "uuid": "23d5f278-a742-4cb7-801b-ea32c2ae2ccf",
+          "actions": [{
+            "type": "create",
+            "description": "Stor prior authorization record",
+            "resource": {
+              "resourceType": "Coverage",
+              "id": "UR3503",
+              "status": "active",
+              ...
+            }
+          }]
+        }
+      ]
+    }
+```
 
 #### Additional data retrieval
 The context information provided as part of hook invocation will often not be enough for a CRD service to fully determine coverage requirements.  This section of the guide describes a common set of queries that define data that most, if not all, CRD Services will need to perform their requirements assessment.
