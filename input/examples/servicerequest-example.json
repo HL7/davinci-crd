@@ -1,19 +1,9 @@
 {
   "resourceType": "ServiceRequest",
   "id": "example",
-  "meta": {
-    "profile": [
-      "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-servicerequest"
-    ]
-  },
-  "instantiatesCanonical": [
-    {
-      "display": "ActivityDefinition"
-    }
-  ],
   "basedOn": [
     {
-      "display": "EligibilityRequest"
+      "reference": "http://example.org/fhir/ServiceRequest/someReferral"
     }
   ],
   "status": "draft",
@@ -38,13 +28,15 @@
   },
   "performer": [
     {
-      "reference": "Practitioner/example2",
+      "reference": "http://example.org/fhir/Practitioner/example2",
       "display": "Dr Cecil Surgeon"
     }
   ],
-  "locationReference": {
-    "reference": "Location/example"
-  },
+  "locationReference": [
+    {
+      "reference": "Location/example"
+    }
+  ],
   "reasonCode": [
     {
       "text": "Bradycardia"

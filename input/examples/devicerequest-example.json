@@ -1,11 +1,6 @@
 {
   "resourceType": "DeviceRequest",
   "id": "example",
-  "meta": {
-    "profile": [
-      "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-devicerequest"
-    ]
-  },
   "extension": [
     {
       "url": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-insurance",
@@ -14,12 +9,9 @@
       }
     }
   ],
-  "instantiatesCanonical": [
-    "display": "ActivityDefinition"
-  ],
   "basedOn": [
     {
-      "display": "EligibilityRequest"
+      "reference": "http://example.org/fhir/ServiceRequest/someReferral"
     }
   ],
   "status": "draft",
@@ -32,6 +24,6 @@
   },
   "authoredOn": "2016-06-10T11:01:10-08:00",
   "requester": {
-    "reference": "#requester"
+    "reference": "Practitioner/example"
   }
 }

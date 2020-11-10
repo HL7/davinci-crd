@@ -1,11 +1,6 @@
 {
   "resourceType": "MedicationRequest",
   "id": "example",
-  "meta": {
-    "profile": [
-      "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-medicationrequest"
-    ]
-  },
   "contained": [
     {
       "resourceType": "Medication",
@@ -15,17 +10,9 @@
           {
             "system": "http://snomed.info/sct",
             "code": "324252006",
-            "display": "Azithromycin 250mg capsule (product)"
+            "display": "Azithromycin (as azithromycin dihydrate) 250 mg oral capsule"
           }
         ]
-      }
-    }
-  ],
-  "extension": [
-    {
-      "url": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-insurance",
-      "valueReference": {
-        "reference": "Coverage/example"
       }
     }
   ],
@@ -62,7 +49,7 @@
         {
           "system": "http://snomed.info/sct",
           "code": "11840006",
-          "display": "Traveller's Diarrhea (disorder)"
+          "display": "Traveler's Diarrhea (disorder)"
         }
       ]
     }
@@ -181,6 +168,11 @@
           }
         }
       ]
+    }
+  ],
+  "insurance": [
+    {
+      "reference": "Coverage/example"
     }
   ],
   "dispenseRequest": {

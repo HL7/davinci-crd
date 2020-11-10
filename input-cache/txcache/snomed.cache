@@ -35,8 +35,8 @@ e: {
       "url" : "http://hl7.org/fhir/StructureDefinition/valueset-unclosed",
       "valueBoolean" : true
     }],
-    "identifier" : "urn:uuid:428fe685-1a6c-4fb7-a555-4848cf285f09",
-    "timestamp" : "2020-10-07T15:46:11.872Z",
+    "identifier" : "urn:uuid:b9950a6d-c1cb-43b8-9e15-5f0a2dc421c3",
+    "timestamp" : "2020-11-10T04:35:25.308Z",
     "parameter" : [{
       "name" : "limitedExpansion",
       "valueBoolean" : true
@@ -47,7 +47,7 @@ e: {
     },
     {
       "name" : "version",
-      "valueString" : "http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20200309"
+      "valueString" : "http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20200731"
     }],
     "contains" : [{
       "system" : "http://snomed.info/sct",
@@ -843,11 +843,6 @@ e: {
       "system" : "http://snomed.info/sct",
       "code" : "23973005",
       "display" : "Indwelling urinary catheter"
-    },
-    {
-      "system" : "http://snomed.info/sct",
-      "code" : "24073000",
-      "display" : "Artificial cardiac valve prosthesis"
     },
     {
       "system" : "http://snomed.info/sct",
@@ -2503,11 +2498,6 @@ e: {
       "system" : "http://snomed.info/sct",
       "code" : "76123001",
       "display" : "Glass tube"
-    },
-    {
-      "system" : "http://snomed.info/sct",
-      "code" : "76428000",
-      "display" : "Elbow prosthesis"
     },
     {
       "system" : "http://snomed.info/sct",
@@ -4476,11 +4466,6 @@ e: {
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "183236009",
-      "display" : "Breast non-surgical prosthesis"
-    },
-    {
-      "system" : "http://snomed.info/sct",
       "code" : "183240000",
       "display" : "Self-propelled wheelchair"
     },
@@ -5048,9 +5033,1360 @@ e: {
       "system" : "http://snomed.info/sct",
       "code" : "257193001",
       "display" : "Loupes"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "257194007",
+      "display" : "Video"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "257211007",
+      "display" : "Cylinder cutter"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "257212000",
+      "display" : "Rotary cutter"
     }]
   }
 },
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://snomed.info/sct",
+  "code" : "394814009"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://snomed.info/sct",
+      "concept" : [{
+        "code" : "408467006",
+        "display" : "Adult mental illness"
+      },
+      {
+        "code" : "394577000",
+        "display" : "Anesthetics"
+      },
+      {
+        "code" : "394578005",
+        "display" : "Audiological medicine"
+      },
+      {
+        "code" : "421661004",
+        "display" : "Blood banking and transfusion medicine"
+      },
+      {
+        "code" : "408462000",
+        "display" : "Burns care"
+      },
+      {
+        "code" : "394579002",
+        "display" : "Cardiology"
+      },
+      {
+        "code" : "394804000",
+        "display" : "Clinical cytogenetics and molecular genetics"
+      },
+      {
+        "code" : "394580004",
+        "display" : "Clinical genetics"
+      },
+      {
+        "code" : "394803006",
+        "display" : "Clinical hematology"
+      },
+      {
+        "code" : "408480009",
+        "display" : "Clinical immunology"
+      },
+      {
+        "code" : "408454008",
+        "display" : "Clinical microbiology"
+      },
+      {
+        "code" : "394809005",
+        "display" : "Clinical neuro-physiology"
+      },
+      {
+        "code" : "394592004",
+        "display" : "Clinical oncology"
+      },
+      {
+        "code" : "394600006",
+        "display" : "Clinical pharmacology"
+      },
+      {
+        "code" : "394601005",
+        "display" : "Clinical physiology"
+      },
+      {
+        "code" : "394581000",
+        "display" : "Community medicine"
+      },
+      {
+        "code" : "408478003",
+        "display" : "Critical care medicine"
+      },
+      {
+        "code" : "394812008",
+        "display" : "Dental medicine specialties"
+      },
+      {
+        "code" : "408444009",
+        "display" : "Dental-General dental practice"
+      },
+      {
+        "code" : "394582007",
+        "display" : "Dermatology"
+      },
+      {
+        "code" : "408475000",
+        "display" : "Diabetic medicine"
+      },
+      {
+        "code" : "410005002",
+        "display" : "Dive medicine"
+      },
+      {
+        "code" : "394583002",
+        "display" : "Endocrinology"
+      },
+      {
+        "code" : "419772000",
+        "display" : "Family practice"
+      },
+      {
+        "code" : "394584008",
+        "display" : "Gastroenterology"
+      },
+      {
+        "code" : "408443003",
+        "display" : "General medical practice"
+      },
+      {
+        "code" : "394802001",
+        "display" : "General medicine"
+      },
+      {
+        "code" : "394915009",
+        "display" : "General pathology"
+      },
+      {
+        "code" : "394814009",
+        "display" : "General practice"
+      },
+      {
+        "code" : "394808002",
+        "display" : "Genito-urinary medicine"
+      },
+      {
+        "code" : "394811001",
+        "display" : "Geriatric medicine"
+      },
+      {
+        "code" : "408446006",
+        "display" : "Gynecological oncology"
+      },
+      {
+        "code" : "394586005",
+        "display" : "Gynecology"
+      },
+      {
+        "code" : "394916005",
+        "display" : "Hematopathology"
+      },
+      {
+        "code" : "408472002",
+        "display" : "Hepatology"
+      },
+      {
+        "code" : "394597005",
+        "display" : "Histopathology"
+      },
+      {
+        "code" : "394598000",
+        "display" : "Immunopathology"
+      },
+      {
+        "code" : "394807007",
+        "display" : "Infectious diseases"
+      },
+      {
+        "code" : "419192003",
+        "display" : "Internal medicine"
+      },
+      {
+        "code" : "408468001",
+        "display" : "Learning disability"
+      },
+      {
+        "code" : "394593009",
+        "display" : "Medical oncology"
+      },
+      {
+        "code" : "394813003",
+        "display" : "Medical ophthalmology"
+      },
+      {
+        "code" : "410001006",
+        "display" : "Military medicine"
+      },
+      {
+        "code" : "394589003",
+        "display" : "Nephrology"
+      },
+      {
+        "code" : "394591006",
+        "display" : "Neurology"
+      },
+      {
+        "code" : "394599008",
+        "display" : "Neuropathology"
+      },
+      {
+        "code" : "394649004",
+        "display" : "Nuclear medicine"
+      },
+      {
+        "code" : "408470005",
+        "display" : "Obstetrics"
+      },
+      {
+        "code" : "394585009",
+        "display" : "Obstetrics and gynecology"
+      },
+      {
+        "code" : "394821009",
+        "display" : "Occupational medicine"
+      },
+      {
+        "code" : "422191005",
+        "display" : "Ophthalmic surgery"
+      },
+      {
+        "code" : "394594003",
+        "display" : "Ophthalmology"
+      },
+      {
+        "code" : "416304004",
+        "display" : "Osteopathic manipulative medicine"
+      },
+      {
+        "code" : "418960008",
+        "display" : "Otolaryngology"
+      },
+      {
+        "code" : "394882004",
+        "display" : "Pain management"
+      },
+      {
+        "code" : "394806003",
+        "display" : "Palliative medicine"
+      },
+      {
+        "code" : "394588006",
+        "display" : "Pediatric (Child and adolescent) psychiatry"
+      },
+      {
+        "code" : "408459003",
+        "display" : "Pediatric cardiology"
+      },
+      {
+        "code" : "394607009",
+        "display" : "Pediatric dentistry"
+      },
+      {
+        "code" : "419610006",
+        "display" : "Pediatric endocrinology"
+      },
+      {
+        "code" : "418058008",
+        "display" : "Pediatric gastroenterology"
+      },
+      {
+        "code" : "420208008",
+        "display" : "Pediatric genetics"
+      },
+      {
+        "code" : "418652005",
+        "display" : "Pediatric hematology"
+      },
+      {
+        "code" : "418535003",
+        "display" : "Pediatric immunology"
+      },
+      {
+        "code" : "418862001",
+        "display" : "Pediatric infectious diseases"
+      },
+      {
+        "code" : "419365004",
+        "display" : "Pediatric nephrology"
+      },
+      {
+        "code" : "418002000",
+        "display" : "Pediatric oncology"
+      },
+      {
+        "code" : "419983000",
+        "display" : "Pediatric ophthalmology"
+      },
+      {
+        "code" : "419170002",
+        "display" : "Pediatric pulmonology"
+      },
+      {
+        "code" : "419472004",
+        "display" : "Pediatric rheumatology"
+      },
+      {
+        "code" : "394539006",
+        "display" : "Pediatric surgery"
+      },
+      {
+        "code" : "420112009",
+        "display" : "Pediatric surgery-bone marrow transplantation"
+      },
+      {
+        "code" : "409968004",
+        "display" : "Preventive medicine"
+      },
+      {
+        "code" : "394587001",
+        "display" : "Psychiatry"
+      },
+      {
+        "code" : "394913002",
+        "display" : "Psychotherapy"
+      },
+      {
+        "code" : "408440000",
+        "display" : "Public health medicine"
+      },
+      {
+        "code" : "418112009",
+        "display" : "Pulmonary medicine"
+      },
+      {
+        "code" : "419815003",
+        "display" : "Radiation oncology"
+      },
+      {
+        "code" : "394914008",
+        "display" : "Radiology"
+      },
+      {
+        "code" : "408455009",
+        "display" : "Radiology-Interventional radiology"
+      },
+      {
+        "code" : "394602003",
+        "display" : "Rehabilitation"
+      },
+      {
+        "code" : "408447002",
+        "display" : "Respite care"
+      },
+      {
+        "code" : "394810000",
+        "display" : "Rheumatology"
+      },
+      {
+        "code" : "408450004",
+        "display" : "Sleep studies"
+      },
+      {
+        "code" : "408476004",
+        "display" : "Surgery-Bone and marrow transplantation"
+      },
+      {
+        "code" : "408469009",
+        "display" : "Surgery-Breast surgery"
+      },
+      {
+        "code" : "408466002",
+        "display" : "Surgery-Cardiac surgery"
+      },
+      {
+        "code" : "408471009",
+        "display" : "Surgery-Cardiothoracic transplantation"
+      },
+      {
+        "code" : "408464004",
+        "display" : "Surgery-Colorectal surgery"
+      },
+      {
+        "code" : "408441001",
+        "display" : "Surgery-Dental-Endodontics"
+      },
+      {
+        "code" : "408465003",
+        "display" : "Surgery-Dental-Oral and maxillofacial surgery"
+      },
+      {
+        "code" : "394605001",
+        "display" : "Surgery-Dental-Oral surgery"
+      },
+      {
+        "code" : "394608004",
+        "display" : "Surgery-Dental-Orthodontics"
+      },
+      {
+        "code" : "408461007",
+        "display" : "Surgery-Dental-Periodontal surgery"
+      },
+      {
+        "code" : "408460008",
+        "display" : "Surgery-Dental-Prosthetic dentistry (Prosthodontics)"
+      },
+      {
+        "code" : "408460008",
+        "display" : "Surgery-Dental-surgical-Prosthodontics"
+      },
+      {
+        "code" : "394606000",
+        "display" : "Surgery-Dentistry-Restorative dentistry"
+      },
+      {
+        "code" : "408449004",
+        "display" : "Surgery-Dentistry--surgical"
+      },
+      {
+        "code" : "394608004",
+        "display" : "Surgery-Dentistry-surgical-Orthodontics"
+      },
+      {
+        "code" : "418018006",
+        "display" : "Surgery-Dermatologic surgery"
+      },
+      {
+        "code" : "394604002",
+        "display" : "Surgery-Ear, nose and throat surgery"
+      },
+      {
+        "code" : "394609007",
+        "display" : "Surgery-general"
+      },
+      {
+        "code" : "408474001",
+        "display" : "Surgery-Hepatobiliary and pancreatic surgery"
+      },
+      {
+        "code" : "394610002",
+        "display" : "Surgery-Neurosurgery"
+      },
+      {
+        "code" : "394611003",
+        "display" : "Surgery-Plastic surgery"
+      },
+      {
+        "code" : "408477008",
+        "display" : "Surgery-Transplantation surgery"
+      },
+      {
+        "code" : "394801008",
+        "display" : "Surgery-Trauma and orthopedics"
+      },
+      {
+        "code" : "408463005",
+        "display" : "Surgery-Vascular"
+      },
+      {
+        "code" : "419321007",
+        "display" : "Surgical oncology"
+      },
+      {
+        "code" : "394576009",
+        "display" : "Surgical-Accident & emergency"
+      },
+      {
+        "code" : "394590007",
+        "display" : "Thoracic medicine"
+      },
+      {
+        "code" : "409967009",
+        "display" : "Toxicology"
+      },
+      {
+        "code" : "408448007",
+        "display" : "Tropical medicine"
+      },
+      {
+        "code" : "419043006",
+        "display" : "Urological oncology"
+      },
+      {
+        "code" : "394612005",
+        "display" : "Urology"
+      },
+      {
+        "code" : "394733009",
+        "display" : "Medical specialty--OTHER--NOT LISTED"
+      },
+      {
+        "code" : "394732004",
+        "display" : "Surgical specialty--OTHER-NOT LISTED"
+      }]
+    }]
+  }
+}, "lang":"null", "useServer":"true", "useClient":"false", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "General practice (specialty) (qualifier value)",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://snomed.info/sct",
+  "code" : "394814009",
+  "display" : "General practice (specialty)"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://snomed.info/sct",
+      "concept" : [{
+        "code" : "408467006",
+        "display" : "Adult mental illness"
+      },
+      {
+        "code" : "394577000",
+        "display" : "Anesthetics"
+      },
+      {
+        "code" : "394578005",
+        "display" : "Audiological medicine"
+      },
+      {
+        "code" : "421661004",
+        "display" : "Blood banking and transfusion medicine"
+      },
+      {
+        "code" : "408462000",
+        "display" : "Burns care"
+      },
+      {
+        "code" : "394579002",
+        "display" : "Cardiology"
+      },
+      {
+        "code" : "394804000",
+        "display" : "Clinical cytogenetics and molecular genetics"
+      },
+      {
+        "code" : "394580004",
+        "display" : "Clinical genetics"
+      },
+      {
+        "code" : "394803006",
+        "display" : "Clinical hematology"
+      },
+      {
+        "code" : "408480009",
+        "display" : "Clinical immunology"
+      },
+      {
+        "code" : "408454008",
+        "display" : "Clinical microbiology"
+      },
+      {
+        "code" : "394809005",
+        "display" : "Clinical neuro-physiology"
+      },
+      {
+        "code" : "394592004",
+        "display" : "Clinical oncology"
+      },
+      {
+        "code" : "394600006",
+        "display" : "Clinical pharmacology"
+      },
+      {
+        "code" : "394601005",
+        "display" : "Clinical physiology"
+      },
+      {
+        "code" : "394581000",
+        "display" : "Community medicine"
+      },
+      {
+        "code" : "408478003",
+        "display" : "Critical care medicine"
+      },
+      {
+        "code" : "394812008",
+        "display" : "Dental medicine specialties"
+      },
+      {
+        "code" : "408444009",
+        "display" : "Dental-General dental practice"
+      },
+      {
+        "code" : "394582007",
+        "display" : "Dermatology"
+      },
+      {
+        "code" : "408475000",
+        "display" : "Diabetic medicine"
+      },
+      {
+        "code" : "410005002",
+        "display" : "Dive medicine"
+      },
+      {
+        "code" : "394583002",
+        "display" : "Endocrinology"
+      },
+      {
+        "code" : "419772000",
+        "display" : "Family practice"
+      },
+      {
+        "code" : "394584008",
+        "display" : "Gastroenterology"
+      },
+      {
+        "code" : "408443003",
+        "display" : "General medical practice"
+      },
+      {
+        "code" : "394802001",
+        "display" : "General medicine"
+      },
+      {
+        "code" : "394915009",
+        "display" : "General pathology"
+      },
+      {
+        "code" : "394814009",
+        "display" : "General practice"
+      },
+      {
+        "code" : "394808002",
+        "display" : "Genito-urinary medicine"
+      },
+      {
+        "code" : "394811001",
+        "display" : "Geriatric medicine"
+      },
+      {
+        "code" : "408446006",
+        "display" : "Gynecological oncology"
+      },
+      {
+        "code" : "394586005",
+        "display" : "Gynecology"
+      },
+      {
+        "code" : "394916005",
+        "display" : "Hematopathology"
+      },
+      {
+        "code" : "408472002",
+        "display" : "Hepatology"
+      },
+      {
+        "code" : "394597005",
+        "display" : "Histopathology"
+      },
+      {
+        "code" : "394598000",
+        "display" : "Immunopathology"
+      },
+      {
+        "code" : "394807007",
+        "display" : "Infectious diseases"
+      },
+      {
+        "code" : "419192003",
+        "display" : "Internal medicine"
+      },
+      {
+        "code" : "408468001",
+        "display" : "Learning disability"
+      },
+      {
+        "code" : "394593009",
+        "display" : "Medical oncology"
+      },
+      {
+        "code" : "394813003",
+        "display" : "Medical ophthalmology"
+      },
+      {
+        "code" : "410001006",
+        "display" : "Military medicine"
+      },
+      {
+        "code" : "394589003",
+        "display" : "Nephrology"
+      },
+      {
+        "code" : "394591006",
+        "display" : "Neurology"
+      },
+      {
+        "code" : "394599008",
+        "display" : "Neuropathology"
+      },
+      {
+        "code" : "394649004",
+        "display" : "Nuclear medicine"
+      },
+      {
+        "code" : "408470005",
+        "display" : "Obstetrics"
+      },
+      {
+        "code" : "394585009",
+        "display" : "Obstetrics and gynecology"
+      },
+      {
+        "code" : "394821009",
+        "display" : "Occupational medicine"
+      },
+      {
+        "code" : "422191005",
+        "display" : "Ophthalmic surgery"
+      },
+      {
+        "code" : "394594003",
+        "display" : "Ophthalmology"
+      },
+      {
+        "code" : "416304004",
+        "display" : "Osteopathic manipulative medicine"
+      },
+      {
+        "code" : "418960008",
+        "display" : "Otolaryngology"
+      },
+      {
+        "code" : "394882004",
+        "display" : "Pain management"
+      },
+      {
+        "code" : "394806003",
+        "display" : "Palliative medicine"
+      },
+      {
+        "code" : "394588006",
+        "display" : "Pediatric (Child and adolescent) psychiatry"
+      },
+      {
+        "code" : "408459003",
+        "display" : "Pediatric cardiology"
+      },
+      {
+        "code" : "394607009",
+        "display" : "Pediatric dentistry"
+      },
+      {
+        "code" : "419610006",
+        "display" : "Pediatric endocrinology"
+      },
+      {
+        "code" : "418058008",
+        "display" : "Pediatric gastroenterology"
+      },
+      {
+        "code" : "420208008",
+        "display" : "Pediatric genetics"
+      },
+      {
+        "code" : "418652005",
+        "display" : "Pediatric hematology"
+      },
+      {
+        "code" : "418535003",
+        "display" : "Pediatric immunology"
+      },
+      {
+        "code" : "418862001",
+        "display" : "Pediatric infectious diseases"
+      },
+      {
+        "code" : "419365004",
+        "display" : "Pediatric nephrology"
+      },
+      {
+        "code" : "418002000",
+        "display" : "Pediatric oncology"
+      },
+      {
+        "code" : "419983000",
+        "display" : "Pediatric ophthalmology"
+      },
+      {
+        "code" : "419170002",
+        "display" : "Pediatric pulmonology"
+      },
+      {
+        "code" : "419472004",
+        "display" : "Pediatric rheumatology"
+      },
+      {
+        "code" : "394539006",
+        "display" : "Pediatric surgery"
+      },
+      {
+        "code" : "420112009",
+        "display" : "Pediatric surgery-bone marrow transplantation"
+      },
+      {
+        "code" : "409968004",
+        "display" : "Preventive medicine"
+      },
+      {
+        "code" : "394587001",
+        "display" : "Psychiatry"
+      },
+      {
+        "code" : "394913002",
+        "display" : "Psychotherapy"
+      },
+      {
+        "code" : "408440000",
+        "display" : "Public health medicine"
+      },
+      {
+        "code" : "418112009",
+        "display" : "Pulmonary medicine"
+      },
+      {
+        "code" : "419815003",
+        "display" : "Radiation oncology"
+      },
+      {
+        "code" : "394914008",
+        "display" : "Radiology"
+      },
+      {
+        "code" : "408455009",
+        "display" : "Radiology-Interventional radiology"
+      },
+      {
+        "code" : "394602003",
+        "display" : "Rehabilitation"
+      },
+      {
+        "code" : "408447002",
+        "display" : "Respite care"
+      },
+      {
+        "code" : "394810000",
+        "display" : "Rheumatology"
+      },
+      {
+        "code" : "408450004",
+        "display" : "Sleep studies"
+      },
+      {
+        "code" : "408476004",
+        "display" : "Surgery-Bone and marrow transplantation"
+      },
+      {
+        "code" : "408469009",
+        "display" : "Surgery-Breast surgery"
+      },
+      {
+        "code" : "408466002",
+        "display" : "Surgery-Cardiac surgery"
+      },
+      {
+        "code" : "408471009",
+        "display" : "Surgery-Cardiothoracic transplantation"
+      },
+      {
+        "code" : "408464004",
+        "display" : "Surgery-Colorectal surgery"
+      },
+      {
+        "code" : "408441001",
+        "display" : "Surgery-Dental-Endodontics"
+      },
+      {
+        "code" : "408465003",
+        "display" : "Surgery-Dental-Oral and maxillofacial surgery"
+      },
+      {
+        "code" : "394605001",
+        "display" : "Surgery-Dental-Oral surgery"
+      },
+      {
+        "code" : "394608004",
+        "display" : "Surgery-Dental-Orthodontics"
+      },
+      {
+        "code" : "408461007",
+        "display" : "Surgery-Dental-Periodontal surgery"
+      },
+      {
+        "code" : "408460008",
+        "display" : "Surgery-Dental-Prosthetic dentistry (Prosthodontics)"
+      },
+      {
+        "code" : "408460008",
+        "display" : "Surgery-Dental-surgical-Prosthodontics"
+      },
+      {
+        "code" : "394606000",
+        "display" : "Surgery-Dentistry-Restorative dentistry"
+      },
+      {
+        "code" : "408449004",
+        "display" : "Surgery-Dentistry--surgical"
+      },
+      {
+        "code" : "394608004",
+        "display" : "Surgery-Dentistry-surgical-Orthodontics"
+      },
+      {
+        "code" : "418018006",
+        "display" : "Surgery-Dermatologic surgery"
+      },
+      {
+        "code" : "394604002",
+        "display" : "Surgery-Ear, nose and throat surgery"
+      },
+      {
+        "code" : "394609007",
+        "display" : "Surgery-general"
+      },
+      {
+        "code" : "408474001",
+        "display" : "Surgery-Hepatobiliary and pancreatic surgery"
+      },
+      {
+        "code" : "394610002",
+        "display" : "Surgery-Neurosurgery"
+      },
+      {
+        "code" : "394611003",
+        "display" : "Surgery-Plastic surgery"
+      },
+      {
+        "code" : "408477008",
+        "display" : "Surgery-Transplantation surgery"
+      },
+      {
+        "code" : "394801008",
+        "display" : "Surgery-Trauma and orthopedics"
+      },
+      {
+        "code" : "408463005",
+        "display" : "Surgery-Vascular"
+      },
+      {
+        "code" : "419321007",
+        "display" : "Surgical oncology"
+      },
+      {
+        "code" : "394576009",
+        "display" : "Surgical-Accident & emergency"
+      },
+      {
+        "code" : "394590007",
+        "display" : "Thoracic medicine"
+      },
+      {
+        "code" : "409967009",
+        "display" : "Toxicology"
+      },
+      {
+        "code" : "408448007",
+        "display" : "Tropical medicine"
+      },
+      {
+        "code" : "419043006",
+        "display" : "Urological oncology"
+      },
+      {
+        "code" : "394612005",
+        "display" : "Urology"
+      },
+      {
+        "code" : "394733009",
+        "display" : "Medical specialty--OTHER--NOT LISTED"
+      },
+      {
+        "code" : "394732004",
+        "display" : "Surgical specialty--OTHER-NOT LISTED"
+      }]
+    }]
+  }
+}, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"NO_MEMBERSHIP_CHECK"}####
+v: {
+  "display" : "General practice (specialty) (qualifier value)",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://snomed.info/sct",
+  "code" : "394814009"
+}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "General practice (specialty) (qualifier value)",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://snomed.info/sct",
+  "code" : "270427003"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://snomed.info/sct",
+      "filter" : [{
+        "property" : "concept",
+        "op" : "is-a",
+        "value" : "308335008"
+      }]
+    }]
+  }
+}, "lang":"null", "useServer":"true", "useClient":"false", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "Patient-initiated encounter",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://snomed.info/sct",
+  "code" : "270427003",
+  "display" : "Patient-initiated encounter"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://snomed.info/sct",
+      "filter" : [{
+        "property" : "concept",
+        "op" : "is-a",
+        "value" : "308335008"
+      }]
+    },
+    {
+      "system" : "http://www.ama-assn.org/go/cpt"
+    }]
+  }
+}, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"NO_MEMBERSHIP_CHECK"}####
+v: {
+  "display" : "Patient-initiated encounter",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://snomed.info/sct",
+  "code" : "270427003"
+}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "Patient-initiated encounter",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://snomed.info/sct",
+  "code" : "310361003",
+  "display" : "Non-urgent cardiological admission"
+}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "Non-urgent cardiological admission",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://snomed.info/sct",
+  "code" : "34068001"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://snomed.info/sct",
+      "filter" : [{
+        "property" : "concept",
+        "op" : "is-a",
+        "value" : "404684003"
+      }]
+    }]
+  }
+}, "lang":"null", "useServer":"true", "useClient":"false", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code provided (http://snomed.info/sct#34068001) is not valid (from http://tx.fhir.org/r4)"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://snomed.info/sct",
+  "code" : "34068001"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://snomed.info/sct",
+      "filter" : [{
+        "property" : "concept",
+        "op" : "is-a",
+        "value" : "71388002"
+      }]
+    }]
+  }
+}, "lang":"null", "useServer":"true", "useClient":"false", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "Heart valve replacement",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://snomed.info/sct",
+  "code" : "34068001",
+  "display" : "Heart valve replacement"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://snomed.info/sct",
+      "filter" : [{
+        "property" : "concept",
+        "op" : "is-a",
+        "value" : "404684003"
+      }]
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "filter" : [{
+        "property" : "concept",
+        "op" : "is-a",
+        "value" : "71388002"
+      }]
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "filter" : [{
+        "property" : "concept",
+        "op" : "is-a",
+        "value" : "243796009"
+      }]
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "filter" : [{
+        "property" : "concept",
+        "op" : "is-a",
+        "value" : "272379006"
+      }]
+    }]
+  }
+}, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"NO_MEMBERSHIP_CHECK"}####
+v: {
+  "display" : "Heart valve replacement",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://snomed.info/sct",
+  "code" : "34068001"
+}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "Heart valve replacement",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://snomed.info/sct",
+  "code" : "305956004",
+  "display" : "Referral by physician"
+}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "Referral from physician",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://snomed.info/sct",
+  "code" : "306689006",
+  "display" : "Discharge to home"
+}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "Discharge to home (procedure)",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://snomed.info/sct",
+  "code" : "324252006",
+  "display" : "Azithromycin (as azithromycin dihydrate) 250 mg oral capsule"
+}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "Azithromycin (as azithromycin dihydrate) 250 mg oral capsule",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://snomed.info/sct",
+  "code" : "11840006",
+  "display" : "Traveler's Diarrhea (disorder)"
+}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "Traveler's diarrhea",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://snomed.info/sct",
+  "code" : "311504000",
+  "display" : "With or after food"
+}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "With or after food",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://snomed.info/sct",
+  "code" : "26643006",
+  "display" : "Oral Route"
+}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "Oral route",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://snomed.info/sct",
+  "code" : "421521009",
+  "display" : "Swallow - dosing instruction imperative (qualifier value)"
+}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "Swallow - dosing instruction imperative (qualifier value)",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://snomed.info/sct",
+  "code" : "227493005",
+  "display" : "Cashew Nut"
+}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "Cashew nuts",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://snomed.info/sct",
+  "code" : "15108003",
+  "display" : "Restricted fiber diet"
+}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "Restricted fiber diet",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://snomed.info/sct",
+  "code" : "16208003",
+  "display" : "Low fat diet"
+}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "Low fat diet",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://snomed.info/sct",
+  "code" : "256674009",
+  "display" : "Fat"
+}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "Fat",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://snomed.info/sct",
+  "code" : "25267002"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://snomed.info/sct",
+      "filter" : [{
+        "property" : "concept",
+        "op" : "is-a",
+        "value" : "71388002"
+      }]
+    }]
+  }
+}, "lang":"null", "useServer":"true", "useClient":"false", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "Insertion of intracardiac pacemaker",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://snomed.info/sct",
+  "code" : "25267002",
+  "display" : "Insertion of intracardiac pacemaker (procedure)"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://www.ama-assn.org/go/cpt"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "filter" : [{
+        "property" : "concept",
+        "op" : "is-a",
+        "value" : "71388002"
+      }]
+    },
+    {
+      "system" : "urn:oid:2.16.840.1.113883.6.285"
+    },
+    {
+      "system" : "http://loinc.org"
+    }]
+  }
+}, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"NO_MEMBERSHIP_CHECK"}####
+v: {
+  "display" : "Insertion of intracardiac pacemaker",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://snomed.info/sct",
+  "code" : "25267002"
+}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "Insertion of intracardiac pacemaker",
+  "severity" : null,
   "error" : ""
 }
 -------------------------------------------------------------------------------------
@@ -5080,8 +6416,8 @@ e: {
       "url" : "http://hl7.org/fhir/StructureDefinition/valueset-unclosed",
       "valueBoolean" : true
     }],
-    "identifier" : "urn:uuid:2db5ac73-4523-497d-b5fa-65ba63c26010",
-    "timestamp" : "2020-10-07T15:47:24.060Z",
+    "identifier" : "urn:uuid:281723e5-d046-4612-a73d-36d747cdc962",
+    "timestamp" : "2020-11-10T04:37:27.292Z",
     "parameter" : [{
       "name" : "limitedExpansion",
       "valueBoolean" : true
@@ -5092,7 +6428,7 @@ e: {
     },
     {
       "name" : "version",
-      "valueString" : "http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20200309"
+      "valueString" : "http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20200731"
     }],
     "contains" : [{
       "system" : "http://snomed.info/sct",
@@ -5396,18 +6732,8 @@ e: {
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "570001",
-      "display" : "Vaccination for arthropod-borne viral encephalitis"
-    },
-    {
-      "system" : "http://snomed.info/sct",
       "code" : "574005",
       "display" : "Benzodiazepine measurement"
-    },
-    {
-      "system" : "http://snomed.info/sct",
-      "code" : "603006",
-      "display" : "Synchondrotomy"
     },
     {
       "system" : "http://snomed.info/sct",
@@ -6406,11 +7732,6 @@ e: {
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "1906007",
-      "display" : "Insertion of prosthesis or prosthetic device of arm, bioelectric or cineplastic"
-    },
-    {
-      "system" : "http://snomed.info/sct",
       "code" : "1907003",
       "display" : "Bifurcation of bone"
     },
@@ -7102,7 +8423,7 @@ e: {
     {
       "system" : "http://snomed.info/sct",
       "code" : "2857007",
-      "display" : "Pinealectomy"
+      "display" : "Complete pinealectomy"
     },
     {
       "system" : "http://snomed.info/sct",
@@ -9031,11 +10352,6 @@ e: {
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "5482008",
-      "display" : "Serologic test for Blastomyces"
-    },
-    {
-      "system" : "http://snomed.info/sct",
       "code" : "5486006",
       "display" : "Delayed suture of tendon of hand"
     },
@@ -10093,328 +11409,29 @@ e: {
       "system" : "http://snomed.info/sct",
       "code" : "6794008",
       "display" : "Biopsy of soft tissue of wrist, superficial"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "6801000",
+      "display" : "Resection of mesentery"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "6812000",
+      "display" : "Mohs' chemosurgery, fixed tissue technique"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "6818001",
+      "display" : "Excision of buccal mucosa"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "6832004",
+      "display" : "Atherectomy"
     }]
   }
 },
-  "error" : ""
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "270427003",
-  "display" : "Patient-initiated encounter"
-}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
-v: {
-  "display" : "Patient-initiated encounter",
-  "severity" : null,
-  "error" : ""
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "310361003",
-  "display" : "Non-urgent cardiological admission"
-}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
-v: {
-  "display" : "Non-urgent cardiological admission",
-  "severity" : null,
-  "error" : ""
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "34068001"
-}, "valueSet" :{
-  "resourceType" : "ValueSet",
-  "compose" : {
-    "include" : [{
-      "system" : "http://snomed.info/sct",
-      "filter" : [{
-        "property" : "concept",
-        "op" : "is-a",
-        "value" : "404684003"
-      }]
-    }]
-  }
-}, "lang":"null", "useServer":"true", "useClient":"false", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
-v: {
-  "display" : "",
-  "severity" : "error",
-  "error" : "The code provided (http://snomed.info/sct#34068001) is not valid (from http://tx.fhir.org/r4)"
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "34068001"
-}, "valueSet" :{
-  "resourceType" : "ValueSet",
-  "compose" : {
-    "include" : [{
-      "system" : "http://snomed.info/sct",
-      "filter" : [{
-        "property" : "concept",
-        "op" : "is-a",
-        "value" : "71388002"
-      }]
-    }]
-  }
-}, "lang":"null", "useServer":"true", "useClient":"false", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
-v: {
-  "display" : "Heart valve replacement",
-  "severity" : null,
-  "error" : ""
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "34068001",
-  "display" : "Heart valve replacement"
-}, "valueSet" :{
-  "resourceType" : "ValueSet",
-  "compose" : {
-    "include" : [{
-      "system" : "http://snomed.info/sct",
-      "filter" : [{
-        "property" : "concept",
-        "op" : "is-a",
-        "value" : "404684003"
-      }]
-    },
-    {
-      "system" : "http://snomed.info/sct",
-      "filter" : [{
-        "property" : "concept",
-        "op" : "is-a",
-        "value" : "71388002"
-      }]
-    },
-    {
-      "system" : "http://snomed.info/sct",
-      "filter" : [{
-        "property" : "concept",
-        "op" : "is-a",
-        "value" : "243796009"
-      }]
-    },
-    {
-      "system" : "http://snomed.info/sct",
-      "filter" : [{
-        "property" : "concept",
-        "op" : "is-a",
-        "value" : "272379006"
-      }]
-    }]
-  }
-}, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"NO_MEMBERSHIP_CHECK"}####
-v: {
-  "display" : "Heart valve replacement",
-  "severity" : null,
-  "error" : ""
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "34068001"
-}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
-v: {
-  "display" : "Heart valve replacement",
-  "severity" : null,
-  "error" : ""
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "305956004",
-  "display" : "Referral by physician"
-}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
-v: {
-  "display" : "Referral from physician",
-  "severity" : null,
-  "error" : ""
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "306689006",
-  "display" : "Discharge to home"
-}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
-v: {
-  "display" : "Discharge to home (procedure)",
-  "severity" : null,
-  "error" : ""
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "324252006",
-  "display" : "Azithromycin 250mg capsule (product)"
-}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
-v: {
-  "display" : "Azithromycin (as azithromycin dihydrate) 250 mg oral capsule",
-  "severity" : "warning",
-  "error" : "The display \"Azithromycin 250mg capsule (product)\" is not a valid display for the code {http://snomed.info/sct}324252006 - should be one of [\"Azithromycin (as azithromycin dihydrate) 250 mg oral capsule\",\"Product containing precisely azithromycin (as azithromycin dihydrate) 250 milligram/1 each conventional release oral capsule (clinical drug)\"] (from http://tx.fhir.org/r4)"
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "11840006",
-  "display" : "Traveller's Diarrhea (disorder)"
-}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
-v: {
-  "display" : "Traveler's diarrhea",
-  "severity" : "warning",
-  "error" : "The display \"Traveller's Diarrhea (disorder)\" is not a valid display for the code {http://snomed.info/sct}11840006 - should be one of [\"Traveler's diarrhea\",Turista,\"Traveler's diarrhea (disorder)\"] (from http://tx.fhir.org/r4)"
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "311504000",
-  "display" : "With or after food"
-}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
-v: {
-  "display" : "With or after food",
-  "severity" : null,
-  "error" : ""
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "26643006",
-  "display" : "Oral Route"
-}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
-v: {
-  "display" : "Oral route",
-  "severity" : null,
-  "error" : ""
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "421521009",
-  "display" : "Swallow - dosing instruction imperative (qualifier value)"
-}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
-v: {
-  "display" : "Swallow - dosing instruction imperative (qualifier value)",
-  "severity" : null,
-  "error" : ""
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "227493005",
-  "display" : "Cashew Nut"
-}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
-v: {
-  "display" : "Cashew nuts",
-  "severity" : null,
-  "error" : ""
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "15108003",
-  "display" : "Restricted fiber diet"
-}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
-v: {
-  "display" : "Restricted fiber diet",
-  "severity" : null,
-  "error" : ""
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "16208003",
-  "display" : "Low fat diet"
-}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
-v: {
-  "display" : "Low fat diet",
-  "severity" : null,
-  "error" : ""
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "256674009",
-  "display" : "Fat"
-}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
-v: {
-  "display" : "Fat",
-  "severity" : null,
-  "error" : ""
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "25267002",
-  "display" : "Insertion of intracardiac pacemaker (procedure)"
-}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
-v: {
-  "display" : "Insertion of intracardiac pacemaker",
-  "severity" : null,
-  "error" : ""
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "25267002"
-}, "valueSet" :{
-  "resourceType" : "ValueSet",
-  "compose" : {
-    "include" : [{
-      "system" : "http://snomed.info/sct",
-      "filter" : [{
-        "property" : "concept",
-        "op" : "is-a",
-        "value" : "71388002"
-      }]
-    }]
-  }
-}, "lang":"null", "useServer":"true", "useClient":"false", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
-v: {
-  "display" : "Insertion of intracardiac pacemaker",
-  "severity" : null,
-  "error" : ""
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "25267002",
-  "display" : "Insertion of intracardiac pacemaker (procedure)"
-}, "valueSet" :{
-  "resourceType" : "ValueSet",
-  "compose" : {
-    "include" : [{
-      "system" : "http://www.ama-assn.org/go/cpt"
-    },
-    {
-      "system" : "http://snomed.info/sct",
-      "filter" : [{
-        "property" : "concept",
-        "op" : "is-a",
-        "value" : "71388002"
-      }]
-    },
-    {
-      "system" : "urn:oid:2.16.840.1.113883.6.285"
-    },
-    {
-      "system" : "http://loinc.org"
-    }]
-  }
-}, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"NO_MEMBERSHIP_CHECK"}####
-v: {
-  "display" : "Insertion of intracardiac pacemaker",
-  "severity" : null,
-  "error" : ""
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "25267002"
-}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
-v: {
-  "display" : "Insertion of intracardiac pacemaker",
-  "severity" : null,
   "error" : ""
 }
 -------------------------------------------------------------------------------------

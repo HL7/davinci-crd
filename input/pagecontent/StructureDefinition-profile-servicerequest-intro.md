@@ -8,5 +8,5 @@ CRD Clients SHALL use this profile to [resolve references](hooks.html#additional
 
 Information provided in [Must Support]({{site.data.fhir.path}}profiling.html#mustsupport) elements will commonly be required for CRD Services to perform coverage requirements discovery.
 
-The `insurance` element allows relevant coverage information to be conveyed with selections and/or draft orders.  A [search parameter](SearchParameter-servicerequest-insurance.html) is defined in this guide to enable the [pre-fetch](hooks.html#pre-fetch) of coverage information when invoking hooks.
+The `insurance` element allows relevant coverage information to be conveyed with selections and/or draft orders.  A [search parameter](SearchParameter-servicerequest-insurance.html) is defined in this guide to enable the [prefetch](hooks.html#prefetch) of coverage information when invoking hooks.
 <br/>

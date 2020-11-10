@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SearchParameter xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
 	<id value="devicerequest-insurance"/>
-	<url value="http://hl7.org/fhir/us/davinci-crd/SearchParameter/DeviceRequest-insurance"/>
+	<url value="http://hl7.org/fhir/us/davinci-crd/SearchParameter/devicerequest-insurance"/>
 	<name value="CRDDeviceRequestInsurance"/>
 	<status value="draft"/>
 	<date value="2018-08-14"/>

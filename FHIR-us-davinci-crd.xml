@@ -7,6 +7,7 @@
 <artifactPageExtension value="-mappings"/>
 <artifact id="StructureDefinition/profile-appointment" key="StructureDefinition-profile-appointment" name="Appointment"/>
 <artifact id="SearchParameter/appointment-insurance" key="SearchParameter-appointment-insurance" name="Appointment Insurance Search Parameter"/>
+<artifact id="Appointment/example" key="Appointment-example" name="Appointment example"/>
 <artifact id="ValueSet/afterCompletionCode" key="ValueSet-afterCompletionCode" name="CRD After Completion Code"/>
 <artifact id="ValueSet/coverageClass" key="ValueSet-coverageClass" name="CRD Coverage Classes"/>
 <artifact id="ValueSet/locationAddressType" key="ValueSet-locationAddressType" name="CRD Location Address Types"/>
@@ -15,37 +16,40 @@
 <artifact id="CodeSystem/temp" key="CodeSystem-temp" name="CRD Temporary Codes"/>
 <artifact id="StructureDefinition/profile-communicationrequest" key="StructureDefinition-profile-communicationrequest" name="CommunicationRequest"/>
 <artifact id="SearchParameter/communicationrequest-insurance" key="SearchParameter-communicationrequest-insurance" name="CommunicationRequest Insurance Search Parameter"/>
+<artifact id="CommunicationRequest/example" key="CommunicationRequest-example" name="CommunicationRequest example"/>
 <artifact id="StructureDefinition/profile-coverage" key="StructureDefinition-profile-coverage" name="Coverage"/>
+<artifact id="Coverage/example" key="Coverage-example" name="Coverage example"/>
 <artifact id="StructureDefinition/profile-coverage-deident" key="StructureDefinition-profile-coverage-deident" name="CoverageDeident"/>
+<artifact id="Coverage/deident-example" key="Coverage-deident-example" name="De-identified Coverage example"/>
+<artifact id="Patient/deident-example" key="Patient-deident-example" name="De-identified Patient example"/>
 <artifact id="StructureDefinition/profile-device" key="StructureDefinition-profile-device" name="Device"/>
+<artifact id="Device/example" key="Device-example" name="Device example"/>
 <artifact id="StructureDefinition/profile-devicerequest" key="StructureDefinition-profile-devicerequest" name="DeviceRequest"/>
 <artifact id="SearchParameter/devicerequest-insurance" key="SearchParameter-devicerequest-insurance" name="DeviceRequest Insurance Search Parameter"/>
+<artifact id="DeviceRequest/example" key="DeviceRequest-example" name="DeviceRequest example"/>
 <artifact id="StructureDefinition/profile-encounter" key="StructureDefinition-profile-encounter" name="Encounter"/>
 <artifact id="SearchParameter/encounter-insurance" key="SearchParameter-encounter-insurance" name="Encounter Insurance Search Parameter"/>
-<artifact id="CommunicationRequest/example" key="CommunicationRequest-example" name="Example CommunicationRequest - example"/>
-<artifact id="Coverage/example" key="Coverage-example" name="Example Coverage - example"/>
-<artifact id="Coverage/example-deident" key="Coverage-example-deident" name="Example Coverage - example-deident"/>
-<artifact id="Device/example" key="Device-example" name="Example Device - example"/>
-<artifact id="Encounter/example" key="Encounter-example" name="Example Encounter - example"/>
-<artifact id="Location/example" key="Location-example" name="Example Location - example"/>
-<artifact id="MedicationRequest/example" key="MedicationRequest-example" name="Example MedicationRequest - example"/>
-<artifact id="NutritionOrder/example" key="NutritionOrder-example" name="Example NutritionOrder - example"/>
-<artifact id="Patient/example" key="Patient-example" name="Example Patient - example"/>
-<artifact id="Practitioner/example" key="Practitioner-example" name="Example Practitioner - example"/>
-<artifact id="ServiceRequest/example" key="ServiceRequest-example" name="Example ServiceRequest - example"/>
-<artifact id="Task/example" key="Task-example" name="Example Task - example"/>
+<artifact id="Encounter/example" key="Encounter-example" name="Encounter example"/>
 <artifact id="StructureDefinition/ext-insurance" key="StructureDefinition-ext-insurance" name="InsuranceExtension"/>
 <artifact id="StructureDefinition/profile-location" key="StructureDefinition-profile-location" name="Location"/>
+<artifact id="Location/example" key="Location-example" name="Location example"/>
 <artifact id="StructureDefinition/profile-medicationrequest" key="StructureDefinition-profile-medicationrequest" name="MedicationRequest"/>
 <artifact id="SearchParameter/medicationrequest-insurance" key="SearchParameter-medicationrequest-insurance" name="MedicationRequest Insurance Search Parameter"/>
+<artifact id="MedicationRequest/example" key="MedicationRequest-example" name="MedicationRequest example"/>
+<artifact id="NutritionOrder/example" key="NutritionOrder-example" name="NutritionOder example"/>
 <artifact id="StructureDefinition/profile-nutritionorder" key="StructureDefinition-profile-nutritionorder" name="NutritionOrder"/>
 <artifact id="SearchParameter/nutritionorder-insurance" key="SearchParameter-nutritionorder-insurance" name="NutritionOrder Insurance Search Parameter"/>
 <artifact id="StructureDefinition/profile-organization" key="StructureDefinition-profile-organization" name="Organization"/>
+<artifact id="Organization/example" key="Organization-example" name="Organization example"/>
 <artifact id="StructureDefinition/profile-patient" key="StructureDefinition-profile-patient" name="Patient"/>
+<artifact id="Patient/example" key="Patient-example" name="Patient example"/>
 <artifact id="StructureDefinition/profile-patient-deident" key="StructureDefinition-profile-patient-deident" name="PatientDident"/>
 <artifact id="StructureDefinition/profile-practitioner" key="StructureDefinition-profile-practitioner" name="Practitioner"/>
+<artifact id="Practitioner/example" key="Practitioner-example" name="Practitioner example"/>
+<artifact id="Task/questionnaire-example" key="Task-questionnaire-example" name="Questionnaire Task example"/>
 <artifact id="StructureDefinition/profile-servicerequest" key="StructureDefinition-profile-servicerequest" name="ServiceRequest"/>
 <artifact id="SearchParameter/servicerequest-insurance" key="SearchParameter-servicerequest-insurance" name="ServiceRequest Insurance Search Parameter"/>
+<artifact id="ServiceRequest/example" key="ServiceRequest-example" name="ServiceRequest example"/>
 <artifact deprecated="true" key="SupplyRequest" name="SupplyRequest"/>
 <artifact id="StructureDefinition/profile-taskquestionnaire" key="StructureDefinition-profile-taskquestionnaire" name="TaskQuestionnaire"/>
 <page key="NA" name="(NA)"/>

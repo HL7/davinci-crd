@@ -36,7 +36,9 @@ This implementation guide uses terminology, notations and design principles that
 * [How to read resource & profile definitions]({{site.data.fhir.path}}formats.html)
 * [Base resource]({{site.data.fhir.path}}resource.html)
 
-This implementation guide supports the [R4]({{site.data.fhir.path}}index.html) version of the FHIR standard and builds on the [US Core Implementation Guide](http://hl7.org/fhir/us/core/STU3) and implementers need to familiarize themselves with the profiles in that guide.  Implementers should also familiarize themselves with the FHIR resources used within the guide:
+This implementation guide supports the [R4]({{site.data.fhir.path}}index.html) version of the FHIR standard and builds on the [US Core Implementation Guide]({{site.data.fhir.ver.uscore}}) and implementers need to familiarize themselves with the profiles in that guide.  It also draws on content from the [Davinci Health Record Exchange (HRex)]({{site.data.fhir.ver.hrex}}) and [Structured Data Capture (SDC)]({{site.data.fhir.ver.sdc}}) implementation guides.
+
+Implementers should also familiarize themselves with the FHIR resources used within the guide:
 
 <table>
     <td>

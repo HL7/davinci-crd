@@ -37,7 +37,7 @@ The full set of profiles defined in this implementation guide can be found by fo
 
 
 #### US Core
-This implementation guide also leverages the [US Core](http://hl7.org/fhir/us/core)  set of profiles defined by HL7 for sharing non-veterinary EMR individual health data in the U.S. Where US Core profiles exist, this Guide either leverages them directly or uses them as a base for any additional constraints needed to support the coverage requirements discovery use-case. Where no constraints are needed, this IG doesn't define additional profiles, as all US Core profiles are deemed to be part of this IG and available for use in CRD communications. For example, the US Core Observation and Condition profiles are likely to be of interest in at least some CRD scenarios and may be used by solutions conformant to this guide.
+This implementation guide also leverages the [US Core]({{site.data.fhir.ver.uscore}})  set of profiles defined by HL7 for sharing non-veterinary EMR individual health data in the U.S. Where US Core profiles exist, this Guide either leverages them directly or uses them as a base for any additional constraints needed to support the coverage requirements discovery use-case. Where no constraints are needed, this IG doesn't define additional profiles, as all US Core profiles are deemed to be part of this IG and available for use in CRD communications. For example, the US Core Observation and Condition profiles are likely to be of interest in at least some CRD scenarios and may be used by solutions conformant to this guide.
 
 Where US Core profiles do not yet exist (e.g. for several of the 'Request' resources), profiles have been created that try to align with existing US Core profiles in terms of elements exposed and terminologies used.
 
@@ -488,7 +488,7 @@ The profiles expected to be used for the resources resolved to by the userId, pa
   </tr>
   <tr>
     <td/>
-    <td><a href="http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-practitionerrole.html">us-core-practitionerrole</a></td>
+    <td><a href="{{site.data.fhir.ver.uscore}}/StructureDefinition-us-core-practitionerrole.html">us-core-practitionerrole</a></td>
   </tr>
 </table>
 
@@ -526,7 +526,7 @@ The profiles expected to be used for the resources resolved to by the userId, pa
   </tr>
   <tr>
     <td/>
-    <td><a href="http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-practitionerrole.html">us-core-practitionerrole</a></td>
+    <td><a href="{{site.data.fhir.ver.uscore}}/StructureDefinition-us-core-practitionerrole.html">us-core-practitionerrole</a></td>
   </tr>
 </table>
 
@@ -565,7 +565,7 @@ The profiles expected to be used for the resources resolved to by the userId, pa
   </tr>
   <tr>
     <td/>
-    <td><a href="http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-practitionerrole.html">us-core-practitionerrole</a></td>
+    <td><a href="{{site.data.fhir.ver.uscore}}/StructureDefinition-us-core-practitionerrole.html">us-core-practitionerrole</a></td>
   </tr>
 </table>
 
@@ -637,7 +637,7 @@ There are no constraints or special rules related to this hook beyond the profil
   </tr>
   <tr>
     <td/>
-    <td><a href="http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-practitionerrole.html">us-core-practitionerrole<sup>‡</sup></a></td>
+    <td><a href="{{site.data.fhir.ver.uscore}}/StructureDefinition-us-core-practitionerrole.html">us-core-practitionerrole<sup>‡</sup></a></td>
   </tr>
   <tr>
     <td><a href="StructureDefinition-profile-servicerequest.html">profile-servicerequest</a></td>
@@ -783,7 +783,7 @@ When using this response type, the proposed orders (and any associated resources
   </tr>
   <tr>
     <td/>
-    <td><a href="http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-medication.html">us-core-medication</a></td>
+    <td><a href="{{site.data.fhir.ver.uscore}}/StructureDefinition-us-core-medication.html">us-core-medication</a></td>
   </tr>
   <tr>
     <td><a href="StructureDefinition-profile-medicationrequest.html">profile-medicationrequest</a></td>
@@ -888,7 +888,7 @@ When using this response type, the proposed orders (and any associated resources
   </tr>
   <tr>
     <td/>
-    <td><a href="http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-medication.html">us-core-medication</a></td>
+    <td><a href="{{site.data.fhir.ver.uscore}}/StructureDefinition-us-core-medication.html">us-core-medication</a></td>
   </tr>
   <tr>
     <td><a href="StructureDefinition-profile-medicationrequest.html">profile-medicationrequest</a></td>

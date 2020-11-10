@@ -1,0 +1,81 @@
+{
+  "resourceType": "Task",
+  "id": "questionnaire-example",
+  "basedOn": [
+    {
+      "reference": "MedicationRequest/example"
+    }
+  ],
+  "status": "ready",
+  "intent": "order",
+  "code": {
+    "coding": [
+      {
+        "system": "http://hl7.org/fhir/uv/sdc/CodeSystem/temp",
+        "code": "complete-questionnaire"
+      }
+    ]
+  },
+  "for": {
+    "reference": "Patient/example"
+  },
+  "encounter": {
+    "reference": "Encounter/example"
+  },
+  "authoredOn": "2018-08-09",
+  "requester": {
+    "reference": "http://example.org/fhir/Organization/payer"
+  },
+  "reasonCode": {
+    "coding": [
+      {
+        "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+        "code": "reason-prior-auth"
+      }
+    ],
+    "text": "Needed for prior authorization"
+  },
+  "input": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/uv/sdc/CodeSystem/temp",
+            "code": "questionnaire"
+          }
+        ]
+      },
+      "valueCanonical": "http://example.org/Questionnaire/XYZ|2"
+    },
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/uv/sdc/CodeSystem/temp",
+            "code": "response-endpoint"
+          }
+        ]
+      },
+      "valueUrl": "http://example.org/somePayer"
+    },
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+            "code": "after-completion-action"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+            "code": "prior-auth",
+            "display": "Include in prior authorization"
+          }
+        ]
+      }
+    }
+  ]
+}

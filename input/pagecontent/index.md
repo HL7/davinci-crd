@@ -50,7 +50,7 @@ The implementation guide is organized into the following sections:
 ### Dependencies
 This implementation guide relies on the following other specifications:
 * **[FHIR R4]({{site.data.fhir.path}})** - The 'current' official version of FHIR as of the time this implementation guide was published.  See the [background page](background.html#fhir) for key pieces of this specification implementers should be familiar with.
-* **[US Core STU3](http://hl7.org/fhir/us/core/STU3)** - The version of US Core based on FHIR R4.
+* **[US Core STU3]({{site.data.fhir.ver.uscore}})** - The version of US Core based on FHIR R4.
 * **[CDS Hooks CI Build](https://cds-hooks.org/specification/current/)** - The community release that defines the hooks used by this implementation guide
 * **[CDS Hooks 1.0](https://cds-hooks.hl7.org/1.0)** - The official standard for trial use publication of CDS Hooks that defines the CDS Hooks protocol and interfaces used by this implementation guide
 * **[SMART on FHIR](http://hl7.org/fhir/smart-app-launch)** - The specification provides a reliable, secure authorization protocol for SMART apps launched from a clinical system to support coverage requirements discovery (e.g. what-if scenarios).

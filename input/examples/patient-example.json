@@ -1,11 +1,6 @@
 {
   "resourceType": "Patient",
   "id": "example",
-  "meta": {
-    "profile": [
-      "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-patient"
-    ]
-  },
   "extension": [
     {
       "extension": [

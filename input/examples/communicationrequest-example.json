@@ -1,42 +1,6 @@
 {
   "resourceType": "CommunicationRequest",
   "id": "example",
-  "meta": {
-    "profile": [
-      "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-communicationrequest"
-    ]
-  },
-  "contained": [
-    {
-      "resourceType": "Organization",
-      "id": "provider",
-      "identifier": [
-        {
-          "system": "http://www.jurisdiction.com/provideroffices",
-          "value": "3456"
-        }
-      ]
-    },
-    {
-      "resourceType": "Organization",
-      "id": "payor",
-      "identifier": [
-        {
-          "system": "http://www.jurisdiction.com/insurer",
-          "value": "123456"
-        }
-      ]
-    },
-    {
-      "resourceType": "Practitioner",
-      "id": "requester",
-      "identifier": [
-        {
-          "value": "6789"
-        }
-      ]
-    }
-  ],
   "extension": [
     {
       "url": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-insurance",
@@ -96,20 +60,34 @@
   },
   "payload": [
     {
-      "contentString": "Please provide the accident report and any associated pictures to support your Claim# DEF5647."
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/extension-CommunicationRequest.payload.content",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "65752-8",
+                "display": "Liver Pathology biopsy report"
+              }
+            ]
+          }
+        }
+      ],
+      "contentString": "Liver pathology biopsy report"
     }
   ],
   "occurrenceDateTime": "2016-06-10T11:01:10-08:00",
   "authoredOn": "2016-06-10T11:01:10-08:00",
   "requester": {
-    "reference": "#requester"
+    "reference": "Practitioner/example"
   },
   "recipient": [
     {
-      "reference": "#provider"
+      "reference": "Organization/example"
     }
   ],
   "sender": {
-    "reference": "#payor"
+    "reference": "http://example.org/fhir/someOtherProvider"
   }
 }

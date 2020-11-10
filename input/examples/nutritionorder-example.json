@@ -1,11 +1,6 @@
 {
   "resourceType": "NutritionOrder",
   "id": "example",
-  "meta": {
-    "profile": [
-      "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-nutritionorder"
-    ]
-  },
   "extension": [
     {
       "url": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-insurance",
@@ -34,7 +29,7 @@
   },
   "allergyIntolerance": [
     {
-      "reference": "AllergyIntolerance/example",
+      "reference": "http://example.org/fhir/AllergyIntolerance/example",
       "display": "Cashew Nuts"
     }
   ],
@@ -68,11 +63,6 @@
             "system": "http://snomed.info/sct",
             "code": "15108003",
             "display": "Restricted fiber diet"
-          },
-          {
-            "system": "http://goodhealthhospital.org/diet-type-codes",
-            "code": "1000",
-            "display": "Fiber restricted"
           }
         ],
         "text": "Fiber restricted diet"
@@ -83,11 +73,6 @@
             "system": "http://snomed.info/sct",
             "code": "16208003",
             "display": "Low fat diet"
-          },
-          {
-            "system": "http://goodhealthhospital.org/diet-type-codes",
-            "code": "1100",
-            "display": "Low Fat"
           }
         ],
         "text": "Low fat diet"

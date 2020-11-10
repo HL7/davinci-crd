@@ -1,8 +1,54 @@
 == Suppressed Messages ==
 
+# The remaining errors are all tooling issues:
+# - All issues related to extension-CommunicationRequest.payload.content related to an issue raised on Zulip here: https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/URL.20for.20R5.20pre-adoption.20extension
+# - 'The link 'history.html' for "History" cannot be resolved' is a long-standing tooling issue
+# - 'Code System URI 'urn:iso:std:iso:3166' is unknown so the code cannot be validated' - this issue disappears if you delete the txcache, but promptly re-appears against
+# - Issues related to igpublisher-spreadsheet relate to a template issue not suppressing the extension - or to the publisher not recognizing it.  It's essential for template operation
+# - 'Coverage.text: max allowed = 0' and 'Patient.text: max allowed = 0' stem from there being no means to prevent the publisher from generating narrative for specific files
+# - 'The URL http://example.org/Questionnaire/XYZ|2 is not valid (URL contains Invalid Characters ([|]))' is raised here: https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/Narrative.20creation.20isn't.20handling.20versioned.20canonicals.20well
+
 # We have no ability to point to a single example for both a profile and an extension yet
 WARNING: http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-insurance: The Implementation Guide contains no examples for this extension
 
-# De-identified patient specifically *cannot* be based on US-Core patient because US-Core patients have to be identifiable
-WARNING: http://hl7.org/fhir/us/davinci-crd/StructureDefinition/: US FHIR Usage rules require that all profiles on Patient derive from the core US profile
+# De-identified patient specifically *cannot* be based on US-Core patient because US-Core patients have to be identifiable.  See US Core ticket FHIR-29675
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-patient-deident').baseDefinition: US FHIR Usage rules require that all profiles on Patient derive from the core US profile
+
+# Device for CRD doesn't meet the constraints of Implantable Device.  See US Core ticket FHIR-29674
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-device').baseDefinition: US FHIR Usage rules require that all profiles on Device derive from the core US profile
+
+# US Core MedicationRequest doesn't allow PractitionerRole as requester.  Have raised FHIR-29667
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-medicationrequest').baseDefinition: US FHIR Usage rules require that all profiles on MedicationRequest derive from the core US profile
+
+# We don't have any specific profiles for infrastructure resourcess, so validation against only the base resources is expected
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/CodeSystem
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/ImplementationGuide
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/SearchParameter
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet
+
+# There are no profiles for these non-infrastructure resources, so validating against the base resource is also expected
+INFORMATION: MedicationRequest/example: MedicationRequest.contained.ofType(Medication): Validate resource against profile http://hl7.org/fhir/StructureDefinition/Medication
+
+# Each of the examples are being validated against their corresponding profile
+INFORMATION: Appointment/example: Appointment: Validate resource against profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-appointment
+INFORMATION: CommunicationRequest/example: CommunicationRequest: Validate resource against profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-communicationrequest
+INFORMATION: Coverage/deident-example: Coverage: Validate resource against profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-coverage-deident
+INFORMATION: Coverage/example: Coverage: Validate resource against profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-coverage
+INFORMATION: Device/example: Device: Validate resource against profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-device
+INFORMATION: DeviceRequest/example: DeviceRequest: Validate resource against profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-devicerequest
+INFORMATION: Encounter/example: Encounter: Validate resource against profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-encounter
+INFORMATION: Location/example: Location: Validate resource against profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-location
+INFORMATION: MedicationRequest/example: MedicationRequest: Validate resource against profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-medicationrequest
+INFORMATION: NutritionOrder/example: NutritionOrder: Validate resource against profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-nutritionorder
+INFORMATION: Organization/example: Organization: Validate resource against profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-organization
+INFORMATION: Patient/deident-example: Patient: Validate resource against profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-patient-deident
+INFORMATION: Patient/example: Patient: Validate resource against profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-patient
+INFORMATION: Practitioner/example: Practitioner: Validate resource against profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-practitioner
+INFORMATION: ServiceRequest/example: ServiceRequest: Validate resource against profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-servicerequest
+INFORMATION: Task/questionnaire-example: Task: Validate resource against profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-taskquestionnaire
+
+
+# This identifier is intended to show that identifiers that *aren't* in one of the slices are also valid
+INFORMATION: Practitioner/example: Practitioner.identifier[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-practitioner
 

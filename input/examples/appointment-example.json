@@ -1,11 +1,6 @@
 {
   "resourceType": "Appointment",
   "id": "example",
-  "meta": {
-    "profile": [
-      "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-appointment"
-    ]
-  },
   "extension": [
     {
       "url": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-insurance",
@@ -43,7 +38,7 @@
         {
           "system": "http://snomed.info/sct",
           "code": "394814009",
-          "display": "General practice"
+          "display": "General practice (specialty)"
         }
       ]
     }
@@ -59,7 +54,7 @@
   },
   "reasonReference": [
     {
-      "reference": "Condition/example",
+      "reference": "http://example.org/fhir/Condition/example",
       "display": "Heart problem"
     }
   ],
@@ -110,8 +105,10 @@
       "status": "accepted"
     }
   ],
-  "requestedPeriod": []
-    "start": "2020-11-01",
-    "end": "2020-12-15"
+  "requestedPeriod": [
+    {
+      "start": "2020-11-01",
+      "end": "2020-12-15"
+    }
   ]
 }

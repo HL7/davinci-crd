@@ -16,8 +16,8 @@
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>11678</WindowHeight>
-  <WindowWidth>18645</WindowWidth>
+  <WindowHeight>12818</WindowHeight>
+  <WindowWidth>28800</WindowWidth>
   <WindowTopX>32767</WindowTopX>
   <WindowTopY>32767</WindowTopY>
   <ActiveSheet>2</ActiveSheet>
@@ -1000,7 +1000,7 @@
    <Column ss:Index="22" ss:StyleID="s84" ss:AutoFitWidth="0" ss:Width="103.875"/>
    <Column ss:StyleID="s84" ss:AutoFitWidth="0" ss:Width="66"/>
    <Column ss:StyleID="s84" ss:AutoFitWidth="0" ss:Width="118.875"/>
-   <Row ss:Height="43.125" ss:StyleID="s86">
+   <Row ss:AutoFitHeight="0" ss:Height="43.21875" ss:StyleID="s86">
     <Cell ss:StyleID="s87"><Data ss:Type="String">Profile Name</Data><Comment
       ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><Font
         html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">The name of an element for the purposes of this profile (used for slicing, code generation, etc. (see wiki for more details)</Font><Font
@@ -1080,7 +1080,7 @@
       ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40">        <Font
         html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">Not published</Font>       </ss:Data></Comment></Cell>
    </Row>
-   <Row ss:Height="28.5">
+   <Row ss:AutoFitHeight="0" ss:Height="28.5">
     <Cell ss:StyleID="s92"><Data ss:Type="String">Organization</Data></Cell>
     <Cell ss:StyleID="s93"/>
     <Cell ss:StyleID="s93"/>
@@ -1106,13 +1106,15 @@
     <Cell ss:StyleID="s102"/>
     <Cell ss:StyleID="s103"/>
    </Row>
-   <Row ss:Height="42.75">
+   <Row ss:AutoFitHeight="0" ss:Height="42.75">
     <Cell ss:Index="4"><Data ss:Type="String">Organization.identifier</Data></Cell>
+    <Cell ss:Index="9"><Data ss:Type="String">Y</Data></Cell>
     <Cell ss:Index="18"><Data ss:Type="String">If the organization has an NPI, it **SHALL** be one of the identifiers.</Data></Cell>
    </Row>
-   <Row ss:Height="28.5">
+   <Row ss:AutoFitHeight="0" ss:Height="28.5">
     <Cell ss:Index="4"><Data ss:Type="String">Organization.partOf</Data></Cell>
     <Cell ss:Index="8"><Data ss:Type="String">Reference(Organization){http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-organization}</Data></Cell>
+    <Cell><Data ss:Type="String">Y</Data></Cell>
    </Row>
   </Table>
   <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
@@ -1121,11 +1123,19 @@
     <Footer x:Margin="0.3"/>
     <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
    </PageSetup>
+   <Unsynced/>
    <Print>
     <ValidPrinterInfo/>
     <VerticalResolution>0</VerticalResolution>
    </Print>
    <Selected/>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>4</ActiveRow>
+     <ActiveCol>8</ActiveCol>
+    </Pane>
+   </Panes>
    <ProtectObjects>False</ProtectObjects>
    <ProtectScenarios>False</ProtectScenarios>
   </WorksheetOptions>

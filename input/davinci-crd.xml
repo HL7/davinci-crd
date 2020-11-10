@@ -23,193 +23,23 @@
 	</jurisdiction>
 	<packageId value="hl7.fhir.us.davinci-crd"/>
 	<fhirVersion value="4.0.1"/>
-	<!-- <dependsOn>
-    <extension url="http://hl7.org/fhir/StructureDefinition/tools-alternateVersion">
-      <valueCode value="STU3"/>
-    </extension>
-    <uri value="http://hl7.org/fhir/us/core"/>
-    <packageId value="hl7.fhir.us.core"/>
-    <version value="2.0.0"/>
-  </dependsOn> -->
-	<dependsOn id="us-core">
+	<dependsOn id="uscore">
 		<uri value="http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core"/>
 		<packageId value="hl7.fhir.us.core"/>
-		<version value="3.0.0"/>
+		<version value="3.1.1"/>
+	</dependsOn>
+	<dependsOn id="hrex">
+		<uri value="http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex"/>
+		<packageId value="hl7.fhir.us.davinci-hrex"/>
+		<version value="0.2.0"/>
+	</dependsOn>
+	<dependsOn id="sdc">
+		<uri value="http://hl7.org/fhir/uv/sdc/ImplementationGuide/hl7.fhir.uv.sdc"/>
+		<packageId value="hl7.fhir.uv.sdc"/>
+		<version value="current"/>
+<!--		<version value="2.7.0"/>-->
 	</dependsOn>
 	<definition>
-<!--		<grouping id="profiles">
-			<name value="Profiles"/>
-			<description value="Profiles to be supported by EMRs and payor systems conforming to this implementation guide"/>
-		</grouping>
-		<grouping id="extensions">
-			<name value="Extensions"/>
-			<description value="Extensions defined as part of this implementation guide"/>
-		</grouping>
-		<grouping id="search">
-			<name value="Search Parameters"/>
-			<description value="Search Parameters defined as part of this implementation guide"/>
-		</grouping>
-		<grouping id="terminology">
-			<name value="Terminology"/>
-			<description value="Value Sets and/or code systems defined as part of this implementation guide"/>
-		</grouping>
-		<grouping id="examples">
-			<name value="Example(s)"/>
-			<description value="Example(s) showing the use of the CG profiles"/>
-		</grouping>
-		<resource>
-			<reference>
-				<reference value="StructureDefinition/profile-appointment"/>
-			</reference>
-			<name value="Appointment Profile"/>
-			<description value="Profile specifies extensions and constraints on the Appointment resource to support coverage requirements discovery."/>
-			<exampleBoolean value="false"/>
-			<groupingId value="profiles"/>
-		</resource>
-		<resource>
-			<reference>
-				<reference value="StructureDefinition/profile-communicationrequest"/>
-			</reference>
-			<name value="Communication Request Profile"/>
-			<description value="Profile specifies constraints on the CommunicationRequest resource to support coverage requirements discovery."/>
-			<exampleBoolean value="false"/>
-			<groupingId value="profiles"/>
-		</resource>
-		<resource>
-			<reference>
-				<reference value="StructureDefinition/profile-coverage"/>
-			</reference>
-			<name value="Coverage Profile"/>
-			<description value="Profile specifies constraints on the Coverage resource to support coverage requirements discovery."/>
-			<exampleBoolean value="false"/>
-			<groupingId value="profiles"/>
-		</resource>
-		<resource>
-			<reference>
-				<reference value="StructureDefinition/profile-coverage-deident"/>
-			</reference>
-			<name value="Deidentified Coverage Profile"/>
-			<description value="Profile specifies constraints on the Coverage resource to support coverage requirements discovery without revealing patient identity."/>
-			<exampleBoolean value="false"/>
-			<groupingId value="profiles"/>
-		</resource>
-		<resource>
-			<reference>
-				<reference value="StructureDefinition/profile-device"/>
-			</reference>
-			<name value="Device Profile"/>
-			<description value="Profile specifies additional constraints on the US Core Device Profile to support coverage requirements discovery."/>
-			<exampleBoolean value="false"/>
-			<groupingId value="profiles"/>
-		</resource>
-		<resource>
-			<reference>
-				<reference value="StructureDefinition/profile-devicerequest"/>
-			</reference>
-			<name value="Device Request Profile"/>
-			<description value="Profile specifies extensions and constraints on the DeviceRequest resource to support coverage requirements discovery."/>
-			<exampleBoolean value="false"/>
-			<groupingId value="profiles"/>
-		</resource>
-		<resource>
-			<reference>
-				<reference value="StructureDefinition/profile-encounter"/>
-			</reference>
-			<name value="Encounter Profile"/>
-			<description value="Profile specifies additional extensions and constraints on the US Core Encounter profile to support coverage requirements discovery."/>
-			<exampleBoolean value="false"/>
-			<groupingId value="profiles"/>
-		</resource>
-		<resource>
-			<reference>
-				<reference value="StructureDefinition/profile-location"/>
-			</reference>
-			<name value="Location Profile"/>
-			<description value="Profile specifies additional constraints on the US Core Location profile to support coverage requirements discovery."/>
-			<exampleBoolean value="false"/>
-			<groupingId value="profiles"/>
-		</resource>
-		<resource>
-			<reference>
-				<reference value="StructureDefinition/profile-medicationrequest"/>
-			</reference>
-			<name value="Medication Request Profile"/>
-			<description value="Profile specifies additional constraints on the US Core MedicationRequest profile to support coverage requirements discovery."/>
-			<exampleBoolean value="false"/>
-			<groupingId value="profiles"/>
-		</resource>
-		<resource>
-			<reference>
-				<reference value="StructureDefinition/profile-nutritionorder"/>
-			</reference>
-			<name value="Nutrition Order Profile"/>
-			<description value="Profile specifies extensions and constraints on the NutritionOrder resource to support coverage requirements discovery."/>
-			<exampleBoolean value="false"/>
-			<groupingId value="profiles"/>
-		</resource>
-		<resource>
-			<reference>
-				<reference value="StructureDefinition/profile-organization"/>
-			</reference>
-			<name value="Organization Profile"/>
-			<description value="Profile specifies additional constraints on the US Core Organization profile to support coverage requirements discovery."/>
-			<exampleBoolean value="false"/>
-			<groupingId value="profiles"/>
-		</resource>
-		<resource>
-			<reference>
-				<reference value="StructureDefinition/profile-patient"/>
-			</reference>
-			<name value="Patient Profile"/>
-			<description value="Profile specifies additional constraints on the US Core Patient profile to support coverage requirements discovery."/>
-			<exampleBoolean value="false"/>
-			<groupingId value="profiles"/>
-		</resource>
-		<resource>
-			<reference>
-				<reference value="StructureDefinition/profile-patient-deident"/>
-			</reference>
-			<name value="Deidentified Patient Profile"/>
-			<description value="Profile specifies additional constraints on the US Core Patient profile to support coverage requirements discovery without revealing patient identity."/>
-			<exampleBoolean value="false"/>
-			<groupingId value="profiles"/>
-		</resource>
-		<resource>
-			<reference>
-				<reference value="StructureDefinition/profile-practitioner"/>
-			</reference>
-			<name value="Practitioner Profile"/>
-			<description value="Profile specifies constraints on the Practitioner resource to support coverage requirements discovery."/>
-			<exampleBoolean value="false"/>
-			<groupingId value="profiles"/>
-		</resource>
-		<resource>
-			<reference>
-				<reference value="StructureDefinition/profile-servicerequest"/>
-			</reference>
-			<name value="Service Request Profile"/>
-			<description value="Profile specifies constraints on the ServiceRequest resource to support coverage requirements discovery."/>
-			<exampleBoolean value="false"/>
-			<groupingId value="profiles"/>
-		</resource>
-		<resource>
-			<reference>
-				<reference value="StructureDefinition/profile-taskquestionnaire"/>
-			</reference>
-			<name value="Questionnaire Task Profile"/>
-			<description value="Profile specifies constraints on the Task resource to support the creation of tasks for practitioners to complete forms (Questionnaires)."/>
-			<exampleBoolean value="false"/>
-			<groupingId value="profiles"/>
-		</resource>
-		<resource>
-			<reference>
-				<reference value="StructureDefinition/ext-insurance"/>
-			</reference>
-			<name value="Insurance Extension"/>
-			<description value="Extension enables relevant insurance coverage information to be associated with Appointments, CommunicationRequests, DeviceRequests, Encounters and NutritionOrders."/>
-			<exampleBoolean value="false"/>
-			<groupingId value="extensions"/>
-		</resource>-->
 		<resource>
 			<reference>
 				<reference value="SearchParameter/appointment-insurance"/>
@@ -252,87 +82,134 @@
 			</reference>
 			<name value="ServiceRequest Insurance Search Parameter"/>
 		</resource>
-<!--		<resource>
+		<resource>
 			<reference>
-				<reference value="CodeSystem/temp"/>
+				<reference value="Appointment/example"/>
 			</reference>
-			<name value="After Completion Code System"/>
-			<description value="Code system specifies codes for actions that may be taken after completing a form."/>
-			<exampleBoolean value="true"/>
-			<groupingId value="terminology"/>
+			<name value="Appointment example"/>
+			<description value="Example appointment populated based on CRD profile"/>
+			<exampleCanonical value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-appointment"/>
 		</resource>
 		<resource>
 			<reference>
-				<reference value="CodeSystem/task-reason"/>
+				<reference value="CommunicationRequest/example"/>
 			</reference>
-			<name value="Task Reason Code System"/>
-			<description value="Code system specifies codes used to identify reasons for performing task."/>
-			<exampleBoolean value="true"/>
-			<groupingId value="terminology"/>
+			<name value="CommunicationRequest example"/>
+			<description value="Example communication request populated based on CRD profile"/>
+			<exampleCanonical value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-communicationrequest"/>
 		</resource>
 		<resource>
 			<reference>
-				<reference value="CodeSystem/task-type"/>
+				<reference value="Coverage/deident-example"/>
 			</reference>
-			<name value="Task Type Code System"/>
-			<description value="Code system specifies codes used to identify types of tasks."/>
-			<exampleBoolean value="true"/>
-			<groupingId value="terminology"/>
+			<name value="De-identified Coverage example"/>
+			<description value="Example de-identified coverage populated based on CRD profile"/>
+			<exampleCanonical value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-coverage-deident"/>
 		</resource>
 		<resource>
 			<reference>
-				<reference value="ValueSet/afterCompletionCode"/>
+				<reference value="Coverage/example"/>
 			</reference>
-			<name value="After Completion Code Value Set"/>
-			<description value="Value set specifies the set of after completion action codes relevant for coverage requirement discovery."/>
-			<exampleBoolean value="true"/>
-			<groupingId value="terminology"/>
+			<name value="Coverage example"/>
+			<description value="Example identified coverage populated based on CRD profile"/>
+			<exampleCanonical value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-coverage"/>
 		</resource>
 		<resource>
 			<reference>
-				<reference value="ValueSet/coverageClass"/>
+				<reference value="Device/example"/>
 			</reference>
-			<name value="Coverage Class Value Set"/>
-			<description value="Value set specifies the subset of coverage classes relevant for coverage requirement discovery."/>
-			<exampleBoolean value="true"/>
-			<groupingId value="terminology"/>
+			<name value="Device example"/>
+			<description value="Example device populated based on CRD profile"/>
+			<exampleCanonical value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-device"/>
 		</resource>
 		<resource>
 			<reference>
-				<reference value="ValueSet/locationAddressType"/>
+				<reference value="DeviceRequest/example"/>
 			</reference>
-			<name value="Location Address Type Value Set"/>
-			<description value="Value set specifies the subset of location address types relevant for coverage requirement discovery."/>
-			<exampleBoolean value="true"/>
-			<groupingId value="terminology"/>
+			<name value="DeviceRequest example"/>
+			<description value="Example devicerequest populated based on CRD profile"/>
+			<exampleCanonical value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-devicerequest"/>
 		</resource>
 		<resource>
 			<reference>
-				<reference value="ValueSet/serviceRequestCodes"/>
+				<reference value="Encounter/example"/>
 			</reference>
-			<name value="Service Request Code Value Set"/>
-			<description value="Value set specifies the set of codes that can be used to identify a requested service  for coverage requirement discovery."/>
-			<exampleBoolean value="true"/>
-			<groupingId value="terminology"/>
+			<name value="Encounter example"/>
+			<description value="Example encounter populated based on CRD profile"/>
+			<exampleCanonical value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-encounter"/>
 		</resource>
 		<resource>
 			<reference>
-				<reference value="ValueSet/taskCode"/>
+				<reference value="Location/example"/>
 			</reference>
-			<name value="Task Code Value Set"/>
-			<description value="Value set specifies the set of task codes relevant to coverage requirements discovery."/>
-			<exampleBoolean value="true"/>
-			<groupingId value="terminology"/>
+			<name value="Location example"/>
+			<description value="Example location populated based on CRD profile"/>
+			<exampleCanonical value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-location"/>
 		</resource>
 		<resource>
 			<reference>
-				<reference value="ValueSet/taskReasonCode"/>
+				<reference value="MedicationRequest/example"/>
 			</reference>
-			<name value="Task Reason Code Value Set"/>
-			<description value="Value set specifies the set of task reason codes relevant to coverage requirements discovery."/>
-			<exampleBoolean value="true"/>
-			<groupingId value="terminology"/>
-		</resource>-->
+			<name value="MedicationRequest example"/>
+			<description value="Example medication request populated based on CRD profile"/>
+			<exampleCanonical value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-medicationrequest"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="NutritionOrder/example"/>
+			</reference>
+			<name value="NutritionOder example"/>
+			<description value="Example nutrition order populated based on CRD profile"/>
+			<exampleCanonical value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-nutritionorder"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="Organization/example"/>
+			</reference>
+			<name value="Organization example"/>
+			<description value="Example organization populated based on CRD profile"/>
+			<exampleCanonical value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-organization"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="Patient/deident-example"/>
+			</reference>
+			<name value="De-identified Patient example"/>
+			<description value="Example de-identified patient populated based on CRD profile"/>
+			<exampleCanonical value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-patient-deident"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="Patient/example"/>
+			</reference>
+			<name value="Patient example"/>
+			<description value="Example patient populated based on CRD profile"/>
+			<exampleCanonical value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-patient"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="Practitioner/example"/>
+			</reference>
+			<name value="Practitioner example"/>
+			<description value="Example practitioner populated based on CRD profile"/>
+			<exampleCanonical value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-practitioner"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="ServiceRequest/example"/>
+			</reference>
+			<name value="ServiceRequest example"/>
+			<description value="Example service request populated based on CRD profile"/>
+			<exampleCanonical value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-servicerequest"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="Task/questionnaire-example"/>
+			</reference>
+			<name value="Questionnaire Task example"/>
+			<description value="Example questionnaire-completion Task populated based on CRD profile"/>
+			<exampleCanonical value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-taskquestionnaire"/>
+		</resource>
 		<page>
 			<nameUrl value="toc.html"/>
 			<title value="Table of Contents"/>
@@ -398,5 +275,9 @@
 			<code value="excludettl"/>
 			<value value="true"/>
 		</parameter>
+		<parameter>
+      <code value="show-reference-messages"/>
+      <value value="true"/>
+    </parameter>
 	</definition>
 </ImplementationGuide>

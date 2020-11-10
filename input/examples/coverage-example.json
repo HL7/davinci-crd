@@ -8,7 +8,7 @@
   },
   "identifier": [
     {
-      "system": "http://benefitsinc.com/certificate",
+      "system": "http://example.com/fhir/NampingSystem/certificate",
       "value": "12345"
     }
   ],
@@ -23,7 +23,7 @@
     ]
   },
   "policyHolder": {
-    "reference": "http://benefitsinc.com/FHIR/Organization/CBI35"
+    "reference": "http://example.org/FHIR/Organization/CBI35"
   },
   "subscriber": {
     "reference": "Patient/example"
@@ -46,7 +46,7 @@
   },
   "payor": [
     {
-      "reference": "Organization/example-payer",
+      "reference": "http://example.org/fhir/Organization/example-payer",
       "display": "Payer XYZ"
     }
   ],
