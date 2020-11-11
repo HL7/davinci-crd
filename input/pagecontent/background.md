@@ -17,6 +17,10 @@ This implementation guide is part of a set of interrelated implementation guides
 2. [Documentation Templates and Rules (DTR)](http://hl7.org/fhir/us/davinci-dtr) which allows providers to download 'smart' questionnaires (and a [SMART on FHIR](http://www.hl7.org/fhir/smart-app-launch/) app that executes them to gather information relevant to a performed or planned service.
 3. [Prior Authorization Support (PAS)](http://hl7.org/fhir/us/davinci-pas) allows provider systems to send (and payer systems to receive) prior authorization requests using FHIR, while still meeting regulatory mandates to have X12 278 used to transport the prior authorization, potentially simplifying processing for either or both exchange partner.
 
+The general flow of activity across all three IGs can be seen in the following diagram:
+
+{% include burdenReduction.svg %}
+
 The guides overlap in the following ways:
 
 * CRD can indicate whether prior authorization is or is not required and whether there are or are not 'special documentation requirements' related to the planned service.  The CDS Hook cards returned by CRD can include a link to the DTR SMART application that will then guide the clinician in capturing the relevant information
