@@ -46,6 +46,7 @@ Implementers should also familiarize themselves with the FHIR resources used wit
 <table>
     <td>
       <a href="{{site.data.fhir.path}}appointment.html">Appointment</a><br/>
+      <a href="{{site.data.fhir.path}}claimresponse.html">ClaimResponse</a><br/>
       <a href="{{site.data.fhir.path}}coverage.html">Coverage</a><br/>
       <a href="{{site.data.fhir.path}}communicationrequest.html">CommunicationRequest</a><br/>
       <a href="{{site.data.fhir.path}}device.html">Device</a><br/>
