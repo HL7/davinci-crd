@@ -62,7 +62,7 @@
     {
       "extension": [
         {
-          "url": "http://hl7.org/fhir/StructureDefinition/extension-CommunicationRequest.payload.content",
+          "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-CommunicationRequest.payload.content",
           "valueCodeableConcept": {
             "coding": [
               {

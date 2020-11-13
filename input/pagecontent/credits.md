@@ -3,6 +3,7 @@ Primary authors:
 
 * Jean Duteau (Duteau Design)
 * Lloyd McKenzie (Gevity Consulting)
+* Russel Buchanan (Gevity Consulting)
 
 Project leads:
 
