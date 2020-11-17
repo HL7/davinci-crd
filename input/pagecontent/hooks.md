@@ -123,9 +123,9 @@ The CRD Services provided by payers will support discovery of different types of
 *	Whether authorization is required
 *	Recommended alternative therapies
 *	Best practices associated with the planned therapy that are expected to be adhered to
-*	Documentation requirements
-*	Forms that must be provided with a prior authorization request
-*	Forms that must be included with a claim submission
+*	Forms and documentation for retention within the EHR
+*	Forms and documentation that must be provided with a prior authorization request
+*	Forms and documentation that must be included with a claim submission
 
 Not all of the coverage information returned by a CRD Service will be relevant to all users of all CRD Clients. It would therefore be useful to be able configure CRD Services to withhold certain card types from certain provider types, user roles, or specific users.  Preferences could potentially be configured within the CRD Service or within the CRD Client.
 
