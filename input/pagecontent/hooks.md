@@ -962,7 +962,7 @@ This example proposes adding a monthly test to check liver function:
 ```
 
 ###### Request form completion
-This response type can be used to present a `Card` that indicates that there are forms that need to be completed.  These might be forms that must be submitted for prior authorization, attachments for claims submission, documentation that must be completed and retained as proof that clinical need protocols have been followed, or that must otherwise be retained and available for future audits.  While forms can also be expressed as static or active PDFs referenced by [External References](#external-reference), or within a [SMART Application](#launch-smart-application) this response type provides the form definition as a FHIR Questionnaire and creates a Task within the EMR allowing the completion of the form to be appropriately scheduled and/or delegated.  Alternatively, the Practitioner could choose to execute the task and fill out the form immediately if that makes more sense from a clinical workflow perspective.
+This response type can be used to present a `Card` that indicates that there are forms that need to be completed.  These might contain documentation that must be submitted for prior authorization, attachments for claims submission, documentation that must be completed and retained as proof that clinical need protocols have been followed, or that must otherwise be retained and available for future audits.  While forms can also be expressed as static or active PDFs referenced by [External References](#external-reference), or within a [SMART Application](#launch-smart-application) this response type provides the form definition as a FHIR Questionnaire and creates a Task within the EMR allowing the completion of the form to be appropriately scheduled and/or delegated.  Alternatively, the Practitioner could choose to execute the task and fill out the form immediately if that makes more sense from a clinical workflow perspective.
 
 This suggestion will always include a "create" action for the Task.  The Task will point to the questionnaire to be completed using a `Task.input` element with a `Task.input.type.text` of "questionnaire" and the canonical URL for the questionnaire in `Task.input.valueCanonical`.  Additional `Task.input` elements will provide information about how the completed questionnaire is to be submitted to the payer with a service endpoint if required.  The `Task.code` will always include the CRD-specific `complete-questionnaire` code.  The reason for completion will be conveyed in `Task.reasonCode`.  The Questionnaire might also be included with a separate conditional "create" action or it might be excluded with the presumption it will already be available or retrievable by the client via its canonical URL, either from the original source or from a local registry.
 
@@ -1104,7 +1104,7 @@ All such apps will need to go through the approval processes for the client's pr
 
 This response type is just a modified version of the [External Reference](#external-reference) response type.  However, the `Link.type` will be "smart" instead of "absolute".  The `Link.appContext` will typically also be present.  
 
-This card type also provides the mechanism to transition from CRD to the behavior defined in the [Documentation, Templates, and Rules (DTR) Implementation Guide](http://hl7.org/fhir/us/davinci-dtr).  The SMART app link returned is the one the payer uses to guide providers through filling out relevant forms and is capable of both retrieving the relevant CQL from the payer to determine (and where appropriate, automatically populate) payer-sourced templates and documentation as well as retrieving information from the provider via queries authorized by the token used to launch the SMART app.  The card includes the complete app context needed for the CRD client to launch the SMART application (information gleaned by the CRD server either as data passed as part of hook invocation or subsequent querying by the service.
+This card type also provides the mechanism to transition from CRD to the behavior defined in the [Documentation, Templates, and Rules (DTR) Implementation Guide](http://hl7.org/fhir/us/davinci-dtr).  The SMART app link returned is the one the payer uses to guide providers through filling out relevant questionnaires and is capable of both retrieving the relevant CQL from the payer to determine (and where appropriate, automatically populate) payer-sourced templates and documentation as well as retrieving information from the provider via queries authorized by the token used to launch the SMART app.  The card includes the complete app context needed for the CRD client to launch the SMART application (information gleaned by the CRD server either as data passed as part of hook invocation or subsequent querying by the service.
 
 For example, this [Card](https://cds-hooks.hl7.org/1.0/#cds-service-response) contains a SMART App [Link](https://cds-hooks.hl7.org/1.0/#link) to perform an opioid assessment.
 
@@ -1136,7 +1136,7 @@ The `appContext` in the above example follows a pattern used for invoking a [Da 
 
 To support this behavior, the appContext **SHOULD** include the following properties:
 
-* `questionnaire`: 1..1 - The canonical URL (potentially version-specific) for the Questionnaire to be completed by the form
+* `questionnaire`: 1..1 - The canonical URL (potentially version-specific) for the Questionnaire to be completed by the app
 * `questionnaireToken`: 0..1 - A JWT to be passed as a security token when querying for the Questionnaire in situations where 'permission' is needed to access the Questionnaire
 * `context`: 1..1 - a copy of the `context` object that was passed to the service on invocation of the hook
 
@@ -1162,9 +1162,9 @@ For example, this CDS Hook [Card](https://cds-hooks.hl7.org/1.0/#cds-service-res
           "uuid": "23d5f278-a742-4cb7-801b-ea32c2ae2ccf",
           "actions": [{
             "type": "create",
-            "description": "Stor prior authorization record",
+            "description": "Store prior authorization record",
             "resource": {
-              "resourceType": "Coverage",
+              "resourceType": "Claim",
               "id": "UR3503",
               "status": "active",
               ...
