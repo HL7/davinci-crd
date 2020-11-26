@@ -11,12 +11,21 @@
 			"status": "ci-build",
 			"current": true
 		}, {
+			"version": "1.0.0",
+			"date": "2020-12-01",
+      "fhirversion": "4.0.1",
+			"descmd": "First official STU release of the implementation guide",
+			"path": "http://hl7.org/fhir/us/davinci-crd/STU1",
+			"status": "trial-use",
+			"sequence": "STU 1"
+		}, {
 			"version": "0.3.0",
 			"date": "2019-03-27",
+      "fhirversion": "4.0.0",
 			"descmd": "Second ballot incorporating feedback from the first ballot.  Significant changes include:\r\n\r\n* updating to point to draft US Core profiles based on FHIR R4\r\n* adjusting to reflect changes to CDS Hooks, including the official publication of CRD-proposed hooks\r\n* adjusting profiles to reflect changes in the final FHIR R4 specification\r\n* completed examples and background documentation that had previously been marked as \"to do\"\r\n* numerous changes to improve clarity of the specification",
 			"path": "http://hl7.org/fhir/us/davinci-crd/2019May",
 			"status": "ballot",
-			"sequence": "STU 2"
+			"sequence": "STU 1"
 		}, {
 			"version": "0.1.0",
 			"date": "2018-09-01",
@@ -25,5 +34,6 @@
 			"status": "ballot",
 			"sequence": "STU 1"
 		}
-	]
+	],
+  "category": "Financial"
 }
