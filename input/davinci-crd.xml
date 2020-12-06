@@ -287,5 +287,9 @@
       <code value="show-reference-messages"/>
       <value value="true"/>
     </parameter>
+    <parameter>
+      <code value="system-version"/>
+      <value value="http://snomed.info/sct|http://snomed.info/sct/731000124108"/>
+    </parameter>
 	</definition>
 </ImplementationGuide>
