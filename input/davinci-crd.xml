@@ -289,7 +289,7 @@
     </parameter>
     <parameter>
       <code value="path-expansion-params"/>
-      <value value="input/terminology-settings.json"/>
+      <value value="terminology-settings.json"/>
     </parameter>
 	</definition>
 </ImplementationGuide>
