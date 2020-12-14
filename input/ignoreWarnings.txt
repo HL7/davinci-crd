@@ -55,3 +55,6 @@ INFORMATION: Practitioner/example: Practitioner.identifier[1]: This element does
 # These code systems are made up and aren't expected to be evaluated
 Code System URI 'http://example.org/fhir/modifiers' is unknown so the code cannot be validated
 Code System URI 'http://example.org/fhir/oralservicecodes' is unknown so the code cannot be validated
+
+# We aren't expecting support for this code system (inherited from US Core)
+WARNING: ValueSet.where(id = 'serviceRequestCodes'): Error from server: Unable to provide support for code system urn:oid:2.16.840.1.113883.6.285
