@@ -1,6 +1,10 @@
 {
   "resourceType": "Patient",
   "id": "deident-example",
+  "text": {
+    "status": "empty",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This resource is not supposed to have a 'text' element at all.  One is included here only for publishing purposes.  When tooling supports, it will be removed entirely.  In conformant instances, the text element must be omitted entirely.</div>"
+  },
   "extension": [
     {
       "extension": [
