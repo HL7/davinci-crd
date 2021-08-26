@@ -678,7 +678,7 @@ In addition to the [guidance provided in the CDS Hooks specification](https://cd
 
     *  `Card.detail` **SHOULD** provide graduated information with critical information being provided in the first paragraph and less critical information towards the end of the page.
 
-    *  `Card.detail` **SHOULD** provide enough context that a user can determine whether it's worth the precious seconds to launch an app or external link or not - ideally providing a sense of where to look for and how to use whatever link or app they do launch in the specific context of the order they're making at the time.
+    *  `Card.detail` **SHOULD** provide enough context that a user can determine whether it is worth the precious seconds to launch an app or external link or not - ideally providing a sense of where to look for and how to use whatever link or app they do launch in the specific context of the order they're making at the time.
 
     *  Keep the number of cards manageable.  Consider whether user workflow will be faster with separate cards for each link or a single card having multiple links.  Typically using the smallest number of cards that still support descriptive actionable summaries is best.
 
@@ -692,7 +692,7 @@ In addition to the [guidance provided in the CDS Hooks specification](https://cd
 ##### Potential CRD Response Types
 This section describes the different types of [responses](https://cds-hooks.hl7.org/1.0/#cds-service-response) that CRD Services can use when returning coverage requirements to CRD Clients, including CRD-specific profiles on cards to describe CRD-expected behavior.  It is possible that some CRD Services and CRD Clients will support additional card response patterns than those listed here, but such behavior is outside the scope of this specification.  Future versions of this specification might standardize additional response types.
 
-Of the response types in this guide, conformant CRD Clients **SHALL** support the [External reference](#external-reference) and [Instructions](#instructions) responses and **SHOULD** support the remaining types.  CRD Services **SHALL** support at least one of these response type and **MAY** support as many as necessary to convey the requirements of the types of coverage they support.
+Of the response types in this guide, conformant CRD Clients **SHALL** support the [External reference](#external-reference), [Instructions](#instructions) and  [Annotate](#annotate) responses and **SHOULD** support the remaining types.  CRD Services **SHALL** support at least one of these response type and **MAY** support as many as necessary to convey the requirements of the types of coverage they support.
 
 Response types are listed from least sophisticated to most sophisticated - and potentially more useful/powerful.  As a rule, the more a card can automate manual processes and the more context-specific the behavior is, the more useful the decision support will be to the clinician and the more likely it will be used.
 
@@ -752,6 +752,105 @@ This example CDS Hook [Card](https://cds-hooks.hl7.org/1.0/#cds-service-response
       }
     }
 {% endraw %}
+
+
+###### Annotate
+This response type presents a `Card` with a piece of information that should be retained with the order/appointment/etc.  For example "No prior authorization for drug X required by ABC insurance", "Prior authorization number for X-ray from ABC insurance is 13245", or "This referral is not covered under the patient's DEF plan".  With information like this, merely displaying the text on the screen in a card isn't sufficient - it needs to be recorded in the associated order for future use or evidence.  These cards involve 'replacing' the submitted order, but leaving the order unchanged, with the exception that an additional 'note' is added to the resource instance. 
+
+The note uses the [{{site.data.fhir.path}}datatypes.html#Annotation](Annotation) datatype and captures the comment, the date, and who made the assertion.  In this case, the commenter would be the payer organization.  Note that the text should *also* be displayed in the card, with the button link simply saying "Add to record" or something like that.  The requested action is always an 'update' and there is only ever one alternative.
+
+When using this response type, the proposed order or appointment being updated **SHALL** comply with the following profiles:
+
+<table class="grid">
+  <thead>
+    <tr>
+      <th>CRD Profiles</th>
+      <th>US Core Profiles</th>
+    </tr>
+  </thead>
+  <tr>
+    <td><a href="StructureDefinition-profile-appointment.html">profile-appointment</a></td>
+    <td/>
+  </tr>
+  <tr>
+    <td><a href="StructureDefinition-profile-devicerequest.html">profile-devicerequest</a></td>
+    <td/>
+  </tr>
+  <tr>
+    <td><a href="StructureDefinition-profile-medicationrequest.html">profile-medicationrequest</a></td>
+    <td/>
+  </tr>
+  <tr>
+    <td><a href="StructureDefinition-profile-nutritionorder.html">profile-nutritionorder</a></td>
+    <td/>
+  </tr>
+  <tr>
+    <td><a href="StructureDefinition-profile-servicerequest.html">profile-servicerequest</a></td>
+    <td/>
+  </tr>
+</table>
+
+For example, this card proposes indicates that a prior authorization has been granted for a planned prescription:
+
+```
+    "suggestions": [
+      {
+        "label": "Prior authorization granted by XYZ insurer.  Auth #:12345 - add to record?",
+        "actions": [{
+          "type": "update",
+          "description": "Add authorization to record",
+          "resource": {
+            "resourceType": "MedicationRequest",
+            "id": "idfromcontext",
+            "status": "draft",
+            "intent": "initial-order",
+            "medicationCodeableConcept": {
+              "coding": {
+                "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                "code": "616447",
+                "display": "Mycophenolate Mofetil 250 MG Oral Tablet"
+              }
+            },
+            "subject": {
+              "reference": "Patient/123",
+              "display": "Jane Smith"
+            },
+            "encounter": {
+              "reference": "Encounter/ABC"
+            },
+            "authoredOn": "2019-02-15",
+            "performer": {
+              "reference": "PractitionerRole/987",
+              "display": "Dr. Jones"
+            },
+            "note": [
+              {
+                "authorString": "XYZ Insurance",
+                "time": "2019-02-15T15:07:18",
+                "Unsolicited prior authorization for Jane Smith to receive 6 tablets Mycophenolate Mofetil 250 mg oral tablets BID granted.  Please note prior authorization # 12345 on claim submission."
+              }
+            ],
+            "dosageInstruction": {
+              "text": "6 tablets every 12 hours.",
+              "timing": {
+                "repeat": {
+                  "frequency": 1,
+                  "period": 12,
+                  "periodUnit": "h"
+                }
+              },
+              "doseAndRate": {
+                "doseQuantity": {
+                  "value": 6,
+                  "unit": "tablet"
+                }
+              }
+            }
+          }
+        }]
+      }
+    ]
+```
 
 
 ###### Propose alternate request

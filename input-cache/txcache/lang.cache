@@ -2817,10 +2817,11 @@ e: {
 e: {
   "valueSet" : {
   "resourceType" : "ValueSet",
+  "language" : "en",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:68cdfbf9-5ee4-46cf-b7a7-3288ba8e8526",
-    "timestamp" : "2020-12-04T05:26:54.052Z",
+    "identifier" : "urn:uuid:578dee19-53ac-4ead-b835-d6fec8afc86d",
+    "timestamp" : "2021-08-26T03:44:53.320Z",
     "parameter" : [{
       "name" : "limitedExpansion",
       "valueBoolean" : true
@@ -2832,7 +2833,7 @@ e: {
     "contains" : [{
       "system" : "urn:ietf:bcp:47",
       "code" : "ar",
-      "display" : "Arabic"
+      "display" : "Arabisk"
     },
     {
       "system" : "urn:ietf:bcp:47",
@@ -3037,7 +3038,7 @@ e: {
     {
       "system" : "urn:ietf:bcp:47",
       "code" : "pl",
-      "display" : "Polish"
+      "display" : "Polskie"
     },
     {
       "system" : "urn:ietf:bcp:47",
@@ -5886,7 +5887,7 @@ e: {
   }
 }, "lang":"null", "useServer":"true", "useClient":"false", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
 v: {
-  "display" : "English (Region=Canada)",
+  "display" : "English (Canada)",
   "severity" : null,
   "error" : ""
 }
