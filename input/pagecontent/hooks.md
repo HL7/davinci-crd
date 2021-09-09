@@ -827,7 +827,7 @@ For example, this card proposes indicates that a prior authorization has been gr
               {
                 "authorString": "XYZ Insurance",
                 "time": "2019-02-15T15:07:18",
-                "Unsolicited prior authorization for Jane Smith to receive 6 tablets Mycophenolate Mofetil 250 mg oral tablets BID granted.  Please note prior authorization # 12345 on claim submission."
+                "text": "Unsolicited prior authorization for Jane Smith to receive 6 tablets Mycophenolate Mofetil 250 mg oral tablets BID granted.  Please note prior authorization # 12345 on claim submission."
               }
             ],
             "dosageInstruction": {
