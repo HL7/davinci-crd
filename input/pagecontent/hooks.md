@@ -103,7 +103,7 @@ To meet requirements identified by Da Vinci project participants, it is necessar
 
 Each capability listed here has been proposed to the CDS Hooks community and could become part of the official specification in a future release.  However, there is a significant likelihood that the way the requirements are met will vary from the syntax or even the architectural approach proposed in this guide.  Future versions of this implementation guide will be updated to align with how these requirements are addressed in future versions of the CDS Hook specification.  Until the both the CDS Hooks content and the FHIR and US Core content underlying this specification are *Normative* (locked into backward compatibility mode), the CRD implementation guide will remain as STU.
 
-This implementation guide extends/customizes CDS Hooks in 4 ways: additional hook resources, a hook configuration mechanism, additional prefetch capabilities and additional response capabilities.  Each are described below:
+This implementation guide extends/customizes CDS Hooks in 5 ways: additional hook resources, a hook configuration mechanism, additional prefetch capabilities, additional response capabilities, and ability to link hooks to their corresponding request.  Each are described below:
 
 
 ##### Additional Hook resources
@@ -419,6 +419,33 @@ For example, the following [CDS Hook Suggestion](https://cds-hooks.hl7.org/1.0/#
 ```
 
 Note: Sending existing prior authorizations is not in scope for this version of the IG.
+
+##### Linking cards to requests
+Some CDS hooks have a single context.  [encounter-start](#encounter-start) and [encounter-discharge](#encounter-discharge) are tied to their respective encounter and there is no question as to which encounter a returned card is associated with.  However, the [appointment-book](#appointment-book), [order-select](#order-select), and [order-sign](#order-sign) hooks all allow passing in multiple resources as part of the hook invocation.  Each cardsreturned in the hook response might be associated with only one of the referenced appointment or order resources or a subset of them.  An EHR may wish to be able to track *what* resource(s) a card was associated with.  This might be for audit, to how or where the card is rendered on the screen, to allow the card to being directly associated with the triggering resource resource, or to enable various other workflow considerations.
+
+This implementation guide defines a standard extension - `davinci-associated-resource` -  that can appear on any card that provides a local reference to the appointment, order or other context resource to which the card is 'pertinent'.  It is optional and has a value consisting of 1..* local references referring to the resource type and resource id of the resource being linked.
+
+NOTE: If a hook service is invoked on a collection of resources, all cards returned that are specific to only a subset of the resources passed as context SHALL disambiguate in the `detail` element which resources they're associated with in a human-friendly way.  Typically this means using test name, drug name or some other mechanism rather than a bare identifier, as identifiers may not be visible to the end user for resources that are not yet fully 'created'.
+
+{% raw %}
+    {
+      "extension": {
+        "davinci-associated-resource": [
+          "ServiceRequest/1",
+          "ServiceRequest/7",
+          "ServiceRequest/12"
+        ]
+      },
+      "summary": "Prior authorization details",
+      "indicator": "warning",
+      "detail": "Genomics tests A, B and C are only covered with prior authorization.",
+      "source": {
+        "label": "You're Covered Insurance",
+        "url": "https://example.com",
+        "icon": "https://example.com/img/icon-100px.png"
+      }
+    }
+{% endraw %}
 
 
 #### CDS Hooks

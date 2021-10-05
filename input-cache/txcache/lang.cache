@@ -5,6 +5,8 @@
 }, "valueSet" :null, "lang":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
 v: {
   "display" : "English (Region=Canada)",
+  "code" : "en-CA",
+  "system" : "urn:ietf:bcp:47",
   "severity" : null,
   "error" : ""
 }
@@ -2820,8 +2822,8 @@ e: {
   "language" : "en",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:578dee19-53ac-4ead-b835-d6fec8afc86d",
-    "timestamp" : "2021-08-26T03:44:53.320Z",
+    "identifier" : "urn:uuid:9fbf5a87-0f13-491e-8696-de9c94b19d9e",
+    "timestamp" : "2021-10-05T18:17:54.880Z",
     "parameter" : [{
       "name" : "limitedExpansion",
       "valueBoolean" : true
@@ -5888,6 +5890,8 @@ e: {
 }, "lang":"null", "useServer":"true", "useClient":"false", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
 v: {
   "display" : "English (Canada)",
+  "code" : "en-CA",
+  "system" : "urn:ietf:bcp:47",
   "severity" : null,
   "error" : ""
 }
@@ -8665,6 +8669,8 @@ v: {
 }, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"NO_MEMBERSHIP_CHECK"}####
 v: {
   "display" : "English (Region=Canada)",
+  "code" : "en-CA",
+  "system" : "urn:ietf:bcp:47",
   "severity" : null,
   "error" : ""
 }
@@ -8675,6 +8681,8 @@ v: {
 }, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
 v: {
   "display" : "English (Region=Canada)",
+  "code" : "en-CA",
+  "system" : "urn:ietf:bcp:47",
   "severity" : null,
   "error" : ""
 }

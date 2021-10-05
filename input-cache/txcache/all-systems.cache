@@ -37,6 +37,8 @@ e: {
 }, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"true", "valueSetMode":"ALL_CHECKS"}####
 v: {
   "display" : "United States dollar",
+  "code" : "USD",
+  "system" : "urn:iso:std:iso:4217",
   "severity" : null,
   "error" : ""
 }
@@ -293,6 +295,8 @@ v: {
 }, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"true", "valueSetMode":"ALL_CHECKS"}####
 v: {
   "display" : "California",
+  "code" : "CA",
+  "system" : "https://www.usps.com/",
   "severity" : null,
   "error" : ""
 }
@@ -393,6 +397,8 @@ v: {
 }, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"true", "valueSetMode":"ALL_CHECKS"}####
 v: {
   "display" : "天",
+  "code" : "d",
+  "system" : "http://unitsofmeasure.org",
   "severity" : null,
   "error" : ""
 }
@@ -649,6 +655,8 @@ v: {
 }, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"true", "valueSetMode":"ALL_CHECKS"}####
 v: {
   "display" : "Oklahoma",
+  "code" : "OK",
+  "system" : "https://www.usps.com/",
   "severity" : null,
   "error" : ""
 }
@@ -676,6 +684,6 @@ v: {
   }
 }}####
 e: {
-  "error" : "Error from server: Unable to provide support for code system http://www.ama-assn.org/go/cpt"
+  "error" : "Error from server: Unable to provide support for code system urn:oid:2.16.840.1.113883.6.285"
 }
 -------------------------------------------------------------------------------------

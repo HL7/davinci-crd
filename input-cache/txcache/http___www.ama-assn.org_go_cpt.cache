@@ -13,8 +13,8 @@ e: {
   "language" : "en",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:138ac1fe-1d67-455f-bfea-cf090800ce05",
-    "timestamp" : "2021-08-26T03:45:07.992Z",
+    "identifier" : "urn:uuid:59255852-00c0-4146-8f63-44074a006ec9",
+    "timestamp" : "2021-10-05T19:39:36.371Z",
     "parameter" : [{
       "name" : "limitedExpansion",
       "valueBoolean" : true
@@ -37,6 +37,19 @@ e: {
   }
 }}####
 e: {
-  "error" : "Error from server: Unable to provide support for code system http://www.ama-assn.org/go/cpt"
+  "valueSet" : {
+  "resourceType" : "ValueSet",
+  "language" : "en",
+  "status" : "active",
+  "expansion" : {
+    "identifier" : "urn:uuid:1b77feec-4a48-4f0f-9935-98b3df078446",
+    "timestamp" : "2021-10-05T19:40:05.528Z",
+    "parameter" : [{
+      "name" : "limitedExpansion",
+      "valueBoolean" : true
+    }]
+  }
+},
+  "error" : ""
 }
 -------------------------------------------------------------------------------------
