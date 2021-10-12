@@ -5,6 +5,8 @@
 }, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
 v: {
   "display" : "g",
+  "code" : "g",
+  "system" : "http://unitsofmeasure.org",
   "severity" : null,
   "error" : ""
 }

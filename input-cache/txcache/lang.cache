@@ -5,6 +5,8 @@
 }, "valueSet" :null, "lang":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
 v: {
   "display" : "English (Region=Canada)",
+  "code" : "en-CA",
+  "system" : "urn:ietf:bcp:47",
   "severity" : null,
   "error" : ""
 }
@@ -2817,10 +2819,11 @@ e: {
 e: {
   "valueSet" : {
   "resourceType" : "ValueSet",
+  "language" : "en",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:68cdfbf9-5ee4-46cf-b7a7-3288ba8e8526",
-    "timestamp" : "2020-12-04T05:26:54.052Z",
+    "identifier" : "urn:uuid:9fbf5a87-0f13-491e-8696-de9c94b19d9e",
+    "timestamp" : "2021-10-05T18:17:54.880Z",
     "parameter" : [{
       "name" : "limitedExpansion",
       "valueBoolean" : true
@@ -2832,7 +2835,7 @@ e: {
     "contains" : [{
       "system" : "urn:ietf:bcp:47",
       "code" : "ar",
-      "display" : "Arabic"
+      "display" : "Arabisk"
     },
     {
       "system" : "urn:ietf:bcp:47",
@@ -3037,7 +3040,7 @@ e: {
     {
       "system" : "urn:ietf:bcp:47",
       "code" : "pl",
-      "display" : "Polish"
+      "display" : "Polskie"
     },
     {
       "system" : "urn:ietf:bcp:47",
@@ -5886,7 +5889,9 @@ e: {
   }
 }, "lang":"null", "useServer":"true", "useClient":"false", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
 v: {
-  "display" : "English (Region=Canada)",
+  "display" : "English (Canada)",
+  "code" : "en-CA",
+  "system" : "urn:ietf:bcp:47",
   "severity" : null,
   "error" : ""
 }
@@ -8664,6 +8669,8 @@ v: {
 }, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"NO_MEMBERSHIP_CHECK"}####
 v: {
   "display" : "English (Region=Canada)",
+  "code" : "en-CA",
+  "system" : "urn:ietf:bcp:47",
   "severity" : null,
   "error" : ""
 }
@@ -8674,6 +8681,8 @@ v: {
 }, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
 v: {
   "display" : "English (Region=Canada)",
+  "code" : "en-CA",
+  "system" : "urn:ietf:bcp:47",
   "severity" : null,
   "error" : ""
 }

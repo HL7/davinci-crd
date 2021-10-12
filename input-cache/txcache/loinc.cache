@@ -6,6 +6,8 @@
 }, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
 v: {
   "display" : "Liver Pathology biopsy report",
+  "code" : "65752-8",
+  "system" : "http://loinc.org",
   "severity" : null,
   "error" : ""
 }
