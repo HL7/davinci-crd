@@ -1533,6 +1533,16 @@ NOTES:
     * when a CRD Service returns cards, any instructions associated with the cards will be displayed in the app but it may not be able to execute the instructions within the cards
 * Exploration of "what-if" scenarios using the app is intended to work for all of the hooks. This might be accomplished through the use of separate SMART apps for different types of orders / processes (e.g. distinct what-if apps for ordering drugs, ordering labs, doing referrals, scheduling appointments, etc.) or a single SMART app that prompts the user to identify they scenario they are interested in exploring prior to invoking the hook.
 
+#### Registering DTR apps with CRD
+
+If a payer supports both CRD and DTR and the EHR intends to enable DTR in addition to CRD, then at the time the CRD service is enabled within the EHR, the service must be configured with the URL of the SMART app that is to be used within that EHR.  For configuration purposes either zero or one SMART app SHALL be configured.  The SMART app selected must be one that supports all of the Questionnaire data types, extensions and other options that will be used by the payer - potentially including adaptive forms.
+
+**NOTE:** The URL selected MAY be a 'logical' URL that corresponds to an EHR internal function rather than a registered SMART app.
+
+An EHR, on receipt of a CDS Hook card with a SMART app launch of the specified DTR URL choose to substitute that URL with the URL of an alternate SMART app, or with a card that allows launch of an internal function.  (Note: There is no standard mechanism for launching internal EHR functionality from a CDS Hook card as yet, so this will need to be an EHR-proprietary mechanism.).  EHRs performing such substitution might do so based on the user, organization, order type or any other configuration option.  All responsibility for selection of which app to use rests with the EHR.  The card-provided URL SHALL be the same for all DTR launches cards returned by the payer.
+
+Any substituted app (or internal EHR functionality) would need to support the DTR 1.1 standard launch context expectations and would also need to ensure the alternate app or internal function likewise supports the necessary Questionnaire capabilities used by the payer.  The EHR SHALL also notify the payer that they are performing app substitution so that the payer can notify the EHR if the payer's Questionnaire requirements will be changing.
+
 ### Additional Considerations
 
 1. Healthcare providers will rely on the information provided by the Coverage Requirements Discovery process to determine if there are any special steps they need to take such as requesting prior authorization.  As a result, it's important to them to know whether requirements exist or not.  CRD Services SHALL respond with an empty JSON object when there is no action to be taken by the provider (the CDS Hooks mechanism for representing no guidance – which is not shown to the user) which allows a computer to distinguish between "no requirements" and a textual requirement.
