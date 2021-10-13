@@ -448,6 +448,7 @@ NOTE: If a hook service is invoked on a collection of resources, all cards retur
 {% endraw %}
 
 
+
 #### CDS Hooks
 Each CDS Hook corresponds to a point in the workflow/business process within a CRD Client system (e.g. EMR) where a specific type of decision support is relevant.  For example, the `order-select` hook **SHOULD** fire whenever a user of a CRD Client creates a new order or referral.  In many CRD Clients, the same hook might fire in multiple different workflows.  (For example, an EMR might have different screens for ordering regular medications vs. vaccinations vs. chemotherapy, not to mention distinct screens for lab orders, imaging orders and referrals.  An order-select hook might be initiated from any or all these screens / workflows.)
 
@@ -1301,6 +1302,76 @@ For example, this CDS Hook [Card](https://cds-hooks.hl7.org/1.0/#cds-service-res
     }
 ```
 
+###### Pre-emptive prior authorization
+
+One result of invoking a CRD service may be that, based on the patient, their type of coverage and other information available in the patient's record queried by the CRD service, is that the service determines that - not only is prior authorization necessary for the intervention being ordered, but that the ordered intervention meets prior authorization requirements.  In such a case, the CRD service may return a card with two alternate suggestions - store the prior authorization in computable or add the prior authorization as an annotation to the order. 
+
+The first will be handled through a 'create' action that stores a ClaimResponse instance complying with the HRex [unsolicited authorization] profile together with an 'update' to the order or appointment instance that triggered the CDS Hook invocation to modify the record adding the ClaimResponse as a 'supportingInfo' element - establishing a linkage between the order and the prior authorization.
+
+The second suggestion will function exactly as per the 'annotate' card, with the annotation covering all relevant information needed for the prior authorization (billing codes, modifiers, authorized quantity, authorized amounts, time period, authorization number, etc.).  Support for this  second suggestion type is included as part of the mandatory support required for 'Annotate' suggestions.
+
+```
+    {
+      "summary": "Store pre-emptive prior authorization for this service",
+      "indicator": "info",
+	  "detail": "This is an example card for pre-emptive prior authorization with two alternate suggestions - store the prior authorization in computable or add the prior authorization as an annotation to the order.",
+      "source": {
+        "label": "Some Payer",
+        "url": "https://example.com",
+        "icon": "https://example.com/img/icon-100px.png"
+      },
+      "suggestions": [
+        {
+          "label": "Store the prior authorization in the EHR",
+          "uuid": "23d5f278-a742-4cb7-801b-ea32c2ae2ccf",
+          "actions": [{
+            "type": "create",
+            "description": "Store ClaimResponse",
+            "resource": {
+              "resourceType": "ClaimResponse",
+              "id": "cr1",
+              "status": "active",
+              ...
+            }
+          },
+		  {
+            "type": "update",
+            "description": "Update to the order",
+            "resource": {
+            "resourceType": "ServiceRequest",
+            ...
+            "supportingInfo": [{
+              "reference": "ClaimResponse/cr1"
+            }],
+            ...
+          }
+          }
+		  ]
+        },
+        {
+          "label": "Prior authorization as an annotation to the order",
+          "uuid": "9309cc18-fea1-4939-ab0c-ecb15bedf043",
+          "actions": [{
+            "type": "update",
+            "description": "Add authorization to record",
+            "resource": {
+              "resourceType": "ServiceRequest",
+              ...
+              "supportingInfo": [{
+              "reference": "ClaimResponse/cr1"
+            }],
+			 "note": [
+            {
+              "text": "Adding authorization to the record"
+            }
+             ]
+            }
+          }]
+        }
+      ]
+    }
+```
+
 #### Additional data retrieval
 The context information provided as part of hook invocation will often not be enough for a CRD service to fully determine coverage requirements.  This section of the guide describes a common set of queries that define data that most, if not all, CRD Services will need to perform their requirements assessment.
 
@@ -1641,6 +1712,12 @@ The response is a batch-response Bundle, with each entry containing either a sin
 
 * When processing data from query responses, always check the 'self' link to ensure that the server executed what was requested and processed the data as necessary - or try querying by a different mechanism (e.g. multiple queries rather than relying on `_include`).
 
+#### Deferring Tasks
+CRD clients SHOULD support deferring cards, allowing the information on a card to be reviewed by and/or the actions on a card to be performed by the current user or someone else at a later point.  If a CRD service feels that the ability to defer a card is important and (a) the system receiving the card does not have a native mechanism to defer a card and (b) the system does have the ability to accept 'create Task' actions, the CRD service MAY provide an alternate 'deferred' action that allows the card action to be performed later. CRD clients that do not provide native support for deferring cards ?SHOULD? support accepting Task create actions.
+
+The action will display an appropriate message about deferring the action (e.g. launching the SMART app) and will cause the creation of a Task within the CRD client. This Task will have an owner of the current user and will comply with the [CRD Card Task] profile.  Once created, deferred card Tasks can be re-assigned, scheduled and otherwise managed as normal Tasks.
+
+In addition, where no other deferral capabilities exist, a user can 'effectively' defer a DTR task by launching the DTR application, then saving and closing the app - which will save the current DTR session for later resumption by manually invoking the DTR application and selecting and resuming the in-progress session.  The user could also add a note to the in-progress order that DTR work requires completion.
 
 ### SMART on FHIR Hook Invocation
 In addition to the real-time decision support provided by CDS Hooks, providers will sometimes need to seek coverage requirements information without invoking the workflow of their clinical system to actively create an order, appointment, encounter, etc.  A few real world examples where hooks may be invoked this way include: exploring a "what-if" scenario, answering a patient question related to whether a service would be covered, and retrieving a guidance document they had seen in a previous card.
