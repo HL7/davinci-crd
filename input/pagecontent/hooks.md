@@ -420,6 +420,8 @@ For example, the following [CDS Hook Suggestion](https://cds-hooks.hl7.org/1.0/#
 
 Note: Sending existing prior authorizations is not in scope for this version of the IG.
 
+<div markdown="1" class="new-content">
+
 ##### Linking cards to requests
 Some CDS hooks have a single context.  [encounter-start](#encounter-start) and [encounter-discharge](#encounter-discharge) are tied to their respective encounter and there is no question as to which encounter a returned card is associated with.  However, the [appointment-book](#appointment-book), [order-select](#order-select), and [order-sign](#order-sign) hooks all allow passing in multiple resources as part of the hook invocation.  Each cardsreturned in the hook response might be associated with only one of the referenced appointment or order resources or a subset of them.  An EHR may wish to be able to track *what* resource(s) a card was associated with.  This might be for audit, to how or where the card is rendered on the screen, to allow the card to being directly associated with the triggering resource resource, or to enable various other workflow considerations.
 
@@ -446,6 +448,7 @@ NOTE: If a hook service is invoked on a collection of resources, all cards retur
       }
     }
 {% endraw %}
+
 
 ##### Controlling hook invocation
 
@@ -474,6 +477,7 @@ CRD servers SHALL declare a prefetch for their hook services that retrieves a pa
 	 ]
 ```
 where 12345|somesystem.org is the identifier for that payer.  (NOTE: a national identifier scheme for U.S. payer organizations is expected to be in place by mid-2022.)
+</div>
 
 #### CDS Hooks
 Each CDS Hook corresponds to a point in the workflow/business process within a CRD Client system (e.g. EMR) where a specific type of decision support is relevant.  For example, the `order-select` hook **SHOULD** fire whenever a user of a CRD Client creates a new order or referral.  In many CRD Clients, the same hook might fire in multiple different workflows.  (For example, an EMR might have different screens for ordering regular medications vs. vaccinations vs. chemotherapy, not to mention distinct screens for lab orders, imaging orders and referrals.  An order-select hook might be initiated from any or all these screens / workflows.)
@@ -807,6 +811,7 @@ This example CDS Hook [Card](https://cds-hooks.hl7.org/1.0/#cds-service-response
     }
 {% endraw %}
 
+<div markdown="1" class="new-content">
 
 ###### Annotate
 This response type presents a `Card` with a piece of information that should be retained with the order/appointment/etc.  For example "No prior authorization for drug X required by ABC insurance", "Prior authorization number for X-ray from ABC insurance is 13245", or "This referral is not covered under the patient's DEF plan".  With information like this, merely displaying the text on the screen in a card isn't sufficient - it needs to be recorded in the associated order for future use or evidence.  These cards involve 'replacing' the submitted order, but leaving the order unchanged, with the exception that an additional 'note' is added to the resource instance. 
@@ -905,7 +910,7 @@ For example, this card proposes indicates that a prior authorization has been gr
       }
     ]
 ```
-
+</div>
 
 ###### Propose alternate request
 This response type can be used by payers to present a `Card` with suggested alternatives to the current proposed therapy.  This might be updating the order to change certain information or proposing to replace the order completely with one or more alternatives.  This might be used to propose a change to a first-line treatment, to alter therapy frequency or drug dosage to be consistent with coverage guidelines, to propose covered products or services as substitutes for a non-covered service and/or to propose therapeutically equivalent treatments that will have a lower cost to the patient.
@@ -1328,6 +1333,8 @@ For example, this CDS Hook [Card](https://cds-hooks.hl7.org/1.0/#cds-service-res
     }
 ```
 
+<div markdown="1" class="new-content">
+
 ###### Pre-emptive prior authorization
 
 One result of invoking a CRD service may be that, based on the patient, their type of coverage and other information available in the patient's record queried by the CRD service, is that the service determines that - not only is prior authorization necessary for the intervention being ordered, but that the ordered intervention meets prior authorization requirements.  In such a case, the CRD service may return a card with two alternate suggestions - store the prior authorization in computable or add the prior authorization as an annotation to the order. 
@@ -1398,6 +1405,7 @@ The second suggestion will function exactly as per the 'annotate' card, with the
     }
 ```
 
+</div>
 #### Additional data retrieval
 The context information provided as part of hook invocation will often not be enough for a CRD service to fully determine coverage requirements.  This section of the guide describes a common set of queries that define data that most, if not all, CRD Services will need to perform their requirements assessment.
 
@@ -1738,12 +1746,16 @@ The response is a batch-response Bundle, with each entry containing either a sin
 
 * When processing data from query responses, always check the 'self' link to ensure that the server executed what was requested and processed the data as necessary - or try querying by a different mechanism (e.g. multiple queries rather than relying on `_include`).
 
+<div markdown="1" class="new-content">
+
 #### Deferring Tasks
-CRD clients SHOULD support deferring cards, allowing the information on a card to be reviewed by and/or the actions on a card to be performed by the current user or someone else at a later point.  If a CRD service feels that the ability to defer a card is important and (a) the system receiving the card does not have a native mechanism to defer a card and (b) the system does have the ability to accept 'create Task' actions, the CRD service MAY provide an alternate 'deferred' action that allows the card action to be performed later. CRD clients that do not provide native support for deferring cards ?SHOULD? support accepting Task create actions.
+CRD clients SHOULD support deferring cards, allowing the information on a card to be reviewed by and/or the actions on a card to be performed by the current user or someone else at a later point.  If a CRD service feels that the ability to defer a card is important and (a) the system receiving the card does not have a native mechanism to defer a card and (b) the system does have the ability to accept 'create Task' actions, the CRD service MAY provide an alternate 'deferred' action that allows the card action to be performed later. CRD clients that do not provide native support for deferring cards **SHOULD** support accepting Task create actions.
 
 The action will display an appropriate message about deferring the action (e.g. launching the SMART app) and will cause the creation of a Task within the CRD client. This Task will have an owner of the current user and will comply with the [CRD Card Task] profile.  Once created, deferred card Tasks can be re-assigned, scheduled and otherwise managed as normal Tasks.
 
 In addition, where no other deferral capabilities exist, a user can 'effectively' defer a DTR task by launching the DTR application, then saving and closing the app - which will save the current DTR session for later resumption by manually invoking the DTR application and selecting and resuming the in-progress session.  The user could also add a note to the in-progress order that DTR work requires completion.
+
+</div>
 
 ### SMART on FHIR Hook Invocation
 In addition to the real-time decision support provided by CDS Hooks, providers will sometimes need to seek coverage requirements information without invoking the workflow of their clinical system to actively create an order, appointment, encounter, etc.  A few real world examples where hooks may be invoked this way include: exploring a "what-if" scenario, answering a patient question related to whether a service would be covered, and retrieving a guidance document they had seen in a previous card.
@@ -1762,6 +1774,8 @@ NOTES:
     * when a CRD Service returns cards, any instructions associated with the cards will be displayed in the app but it may not be able to execute the instructions within the cards
 * Exploration of "what-if" scenarios using the app is intended to work for all of the hooks. This might be accomplished through the use of separate SMART apps for different types of orders / processes (e.g. distinct what-if apps for ordering drugs, ordering labs, doing referrals, scheduling appointments, etc.) or a single SMART app that prompts the user to identify they scenario they are interested in exploring prior to invoking the hook.
 
+<div markdown="1" class="new-content">
+
 #### Registering DTR apps with CRD
 
 If a payer supports both CRD and DTR and the EHR intends to enable DTR in addition to CRD, then at the time the CRD service is enabled within the EHR, the service must be configured with the URL of the SMART app that is to be used within that EHR.  For configuration purposes either zero or one SMART app SHALL be configured.  The SMART app selected must be one that supports all of the Questionnaire data types, extensions and other options that will be used by the payer - potentially including adaptive forms.
@@ -1771,6 +1785,8 @@ If a payer supports both CRD and DTR and the EHR intends to enable DTR in additi
 An EHR, on receipt of a CDS Hook card with a SMART app launch of the specified DTR URL choose to substitute that URL with the URL of an alternate SMART app, or with a card that allows launch of an internal function.  (Note: There is no standard mechanism for launching internal EHR functionality from a CDS Hook card as yet, so this will need to be an EHR-proprietary mechanism.).  EHRs performing such substitution might do so based on the user, organization, order type or any other configuration option.  All responsibility for selection of which app to use rests with the EHR.  The card-provided URL SHALL be the same for all DTR launches cards returned by the payer.
 
 Any substituted app (or internal EHR functionality) would need to support the DTR 1.1 standard launch context expectations and would also need to ensure the alternate app or internal function likewise supports the necessary Questionnaire capabilities used by the payer.  The EHR SHALL also notify the payer that they are performing app substitution so that the payer can notify the EHR if the payer's Questionnaire requirements will be changing.
+
+</div>
 
 ### Additional Considerations
 
