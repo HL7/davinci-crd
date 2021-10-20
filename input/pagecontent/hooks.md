@@ -1298,42 +1298,6 @@ To support this behavior, the appContext **SHOULD** include the following proper
 * `questionnaireToken`: 0..1 - A JWT to be passed as a security token when querying for the Questionnaire in situations where 'permission' is needed to access the Questionnaire
 * `context`: 1..1 - a copy of the `context` object that was passed to the service on invocation of the hook
 
-###### Provide unsolicited prior authorization
-This response type is used when the payer determines that prior authorization is necessary in order to cover the service described by the invoked hook, and that the information necessary to grant the prior authorization is already available.  Rather than requiring the provider to submit a prior authorization request, the payer generates a prior authorization response pre-emptively, indicating exactly what is covered and providing a prior authorization reference that can be communicated to downstream service providers.
-
-The card will contain a single "create" action with a ClaimResponse instance complying with the [Da Vinci prior authorization profile](StructureDefinition-profile-claimresponse.html) (the resource used by FHIR to represent prior authorizations) - one per authorization.  (Multiple cards can be provided in the event that multiple prior authorizations are produced, as the provider must choose independently which ones they wish to store.
-
-For example, this CDS Hook [Card](https://cds-hooks.hl7.org/1.0/#cds-service-response) includes a single [Suggestion](https://cds-hooks.hl7.org/1.0/#suggestion) with the necessary 'create' [Action](https://cds-hooks.hl7.org/1.0/#action).  For size reasons, the full content of the prior authorization is omitted, however an example prior authorization can be seen [here](ClaimResponse-priorauth-example.json).
-
-```
-    {
-      "summary": "Store prior payer-generated authorization for this service",
-      "indicator": "info",
-      "source": {
-        "label": "Some Payer",
-        "url": "https://example.com",
-        "icon": "https://example.com/img/icon-100px.png"
-      },
-      "suggestions": [
-        {
-          "label": "Store the prior authorization in the EHR",
-          "uuid": "23d5f278-a742-4cb7-801b-ea32c2ae2ccf",
-          "actions": [{
-            "type": "create",
-            "description": "Store prior authorization record",
-            "resource": {
-              "resourceType": "Claim",
-              "id": "UR3503",
-              "status": "active",
-              ...
-            }
-          }]
-        }
-      ]
-    }
-```
-
-<div markdown="1" class="new-content">
 
 ###### Pre-emptive prior authorization
 
