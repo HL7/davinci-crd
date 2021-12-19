@@ -915,6 +915,12 @@ For example, this card proposes indicates that a prior authorization has been gr
       }
     ]
 ```
+CRD clients and services MAY, by mutual agreement, make use of the new CDS Hooks system action functionality to cause annotations to automatically be stored on the relevant request, appointment, etc.  These implementations will be responsible for ensuring that the only changes made to the EHR record are to add the annotations contemplated here.  It is likely that the conformance expectation on the use of system actions will be tighter in future releases.
+<blockquote class="stu-note">
+<p>
+Balloters are requested to provide their feedback on whether the conformance expectation here should be stronger.
+</p>
+</blockquote>
 </div>
 
 ###### Propose alternate request
@@ -1305,14 +1311,16 @@ To support this behavior, the appContext **SHOULD** include the following proper
 * `questionnaireToken`: 0..1 - A JWT to be passed as a security token when querying for the Questionnaire in situations where 'permission' is needed to access the Questionnaire
 * `context`: 1..1 - a copy of the `context` object that was passed to the service on invocation of the hook
 
-
+<div markdown="1" class="new-content">
 ###### Pre-emptive prior authorization
 
 One result of invoking a CRD service may be that, based on the patient, their type of coverage and other information available in the patient's record queried by the CRD service, is that the service determines that - not only is prior authorization necessary for the intervention being ordered, but that the ordered intervention meets prior authorization requirements.  In such a case, the CRD service may return a card with two alternate suggestions - store the prior authorization in computable or add the prior authorization as an annotation to the order. 
 
-The first will be handled through a 'create' action that stores a ClaimResponse instance complying with the HRex [unsolicited authorization] profile together with an 'update' to the order or appointment instance that triggered the CDS Hook invocation to modify the record adding the ClaimResponse as a 'supportingInfo' element - establishing a linkage between the order and the prior authorization.
+The first will be handled through a 'create' action that stores a ClaimResponse instance complying with the HRex [unsolicited authorization](StructureDefinition-profile-claimresponse.html) profile together with an 'update' to the order or appointment instance that triggered the CDS Hook invocation to modify the record adding the ClaimResponse as a 'supportingInfo' element - establishing a linkage between the order and the prior authorization.
 
 The second suggestion will function exactly as per the 'annotate' card, with the annotation covering all relevant information needed for the prior authorization (billing codes, modifiers, authorized quantity, authorized amounts, time period, authorization number, etc.).  Support for this  second suggestion type is included as part of the mandatory support required for 'Annotate' suggestions.
+
+CRD clients and services MAY, by mutual agreement, make use of the new CDS Hooks system action functionality to cause annotations to automatically be stored on the relevant request, appointment, etc.  These implementations will be responsible for ensuring that the only changes made to the EHR record are to add the annotations contemplated here.  It is likely that the conformance expectation on the use of system actions will be tighter in future releases.
 
 ```
     {
