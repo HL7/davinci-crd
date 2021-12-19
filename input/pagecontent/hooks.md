@@ -143,7 +143,7 @@ Extensions will be enabled in two places:
 An extension called `davinci-crd.configuration-options` will define a configuration object with an array of available configurable options within the CDS Service, where:  
 
 *  Each option **SHALL** include four mandatory elements:
-    *  A `code` that will be used when setting configuration during hook invocation
+    *  A `code` that will be used when setting configuration during hook invocation, and binds ([extensible](http://www.hl7.org/fhir/terminologies.html#extensible)) to the <a href="ValueSet-cardType.html">CRD Card Types</a> valueset.
     *  A data `type` for the parameter.  At present, allowed values are "boolean" and "integer" (NOTE: These are the JSON data types and not the FHIR data types.)
     *  A display `name` for the configuration option to appear in the client's user interface when performing configuration
     *  A `description` providing a 1-2 sentence description of the effect of the configuration option
@@ -221,7 +221,7 @@ Notes:
 
     *  indicate that CRD checking could not be done and log appropriate information to allow engagement with CRD Clients to address any payer-specific needs.
 
-*  Codes **SHALL** be valid JSON property names
+*  Codes **SHALL** be valid JSON property names and has an [extensible](http://www.hl7.org/fhir/terminologies.html#extensible) binding to the valueset <a href="ValueSet-cardType.html">CRD Card Types.</a>
 
 *  Codes, names and descriptions **SHALL** be unique within a [CDS Service](https://cds-hooks.hl7.org/1.0/#response) definition.  They **SHOULD** be consistent across different hooks supported by the same payer when dealing with the same types of configuration options.
 
@@ -444,7 +444,8 @@ NOTE: If a hook service is invoked on a collection of resources, all cards retur
       "source": {
         "label": "You're Covered Insurance",
         "url": "https://example.com",
-        "icon": "https://example.com/img/icon-100px.png"
+        "icon": "https://example.com/img/icon-100px.png",
+		"topic": "prior-auth"
       }
     }
 {% endraw %}
@@ -728,6 +729,8 @@ In addition to the [guidance provided in the CDS Hooks specification](https://cd
 
 *  The `Card.source` **SHOULD** be populated with an insurer name that the user and patient would recognize (i.e. the responsible insurer on the patient's insurance card) including in situations where coverage recommendations are being returned by a benefits manager or intermediary operating the CRD service on behalf of the payer.  If an insurer is providing recommendations from another authority (e.g. a clinical society), the society's name and logo might be displayed, though usually only with the permission of that organization.
 
+    *  `Card.source.topic` **SHALL** be populated, and has an [extensible](http://www.hl7.org/fhir/terminologies.html#extensible) binding to the valueset <a href="ValueSet-cardType.html">CRD Card Types.</a> The rationale is to allow EHRs to potentially filter or track the usage of different types of cards.
+
 *  Users are busy.  Time spent reading a payer-returned card is inevitably time not spent reviewing other information or interacting with the patient.  If not useful or relevant, users will quickly learn to ignore - or even demand the disabling of - payer-provided alerts.  Therefore, information must be delivered efficiently and be tuned to provide maximum relevance.  Specifically:
 
     *  `Card.summary` **SHOULD** provide actionable information.  "Coverage alert" would not be very helpful. "Drug not covered.  Covered alternatives available" or "Prior authorization required" would be better.
@@ -776,7 +779,8 @@ For example, this CDS Hooks [Card](https://cds-hooks.hl7.org/1.0/#cds-service-re
       "detail": " Learn about covered oxygen items and equipment for home use; coverage requirements; criteria you must meet to furnish oxygen items and equipment for home use; Advance Beneficiary Notice of Noncoverage; oxygen equipment, items, and services that are not covered; and payments for oxygen items and equipment and billing and coding guidelines.",
       "source": {
         "label": "Centers for Medicare & Medicaid Services",
-        "url": "https://cms.gov"
+        "url": "https://cms.gov",
+		"topic": "coverage"
       },
       "links": [
         {
@@ -806,7 +810,8 @@ This example CDS Hook [Card](https://cds-hooks.hl7.org/1.0/#cds-service-response
       "source": {
         "label": "You're Covered Insurance",
         "url": "https://example.com",
-        "icon": "https://example.com/img/icon-100px.png"
+        "icon": "https://example.com/img/icon-100px.png",
+		"topic": "prior-auth"
       }
     }
 {% endraw %}
@@ -1215,7 +1220,8 @@ For example, this CDS Hook [Card](https://cds-hooks.hl7.org/1.0/#cds-service-res
       "source": {
         "label": "Some Payer",
         "url": "https://example.com",
-        "icon": "https://example.com/img/icon-100px.png"
+        "icon": "https://example.com/img/icon-100px.png",
+		"topic": "coverage"
       },
       "suggestions": [
         {
@@ -1274,7 +1280,8 @@ For example, this [Card](https://cds-hooks.hl7.org/1.0/#cds-service-response) co
       "source": {
         "label": "Some Payer",
         "url": "https://example.com",
-        "icon": "https://example.com/img/icon-100px.png"
+        "icon": "https://example.com/img/icon-100px.png",
+		"topic": "coverage"
       },
       "links": [
         {
@@ -1315,7 +1322,8 @@ The second suggestion will function exactly as per the 'annotate' card, with the
       "source": {
         "label": "Some Payer",
         "url": "https://example.com",
-        "icon": "https://example.com/img/icon-100px.png"
+        "icon": "https://example.com/img/icon-100px.png",
+		"topic": "prior-auth"
       },
       "suggestions": [
         {
@@ -1715,9 +1723,44 @@ The response is a batch-response Bundle, with each entry containing either a sin
 #### Deferring Tasks
 CRD clients SHOULD support deferring cards, allowing the information on a card to be reviewed by and/or the actions on a card to be performed by the current user or someone else at a later point.  If a CRD service feels that the ability to defer a card is important and (a) the system receiving the card does not have a native mechanism to defer a card and (b) the system does have the ability to accept 'create Task' actions, the CRD service MAY provide an alternate 'deferred' action that allows the card action to be performed later. CRD clients that do not provide native support for deferring cards **SHOULD** support accepting Task create actions.
 
-The action will display an appropriate message about deferring the action (e.g. launching the SMART app) and will cause the creation of a Task within the CRD client. This Task will have an owner of the current user and will comply with the [CRD Card Task] profile.  Once created, deferred card Tasks can be re-assigned, scheduled and otherwise managed as normal Tasks.
+The action will display an appropriate message about deferring the action (e.g. launching the SMART app) and will cause the creation of a Task within the CRD client. This Task will have an owner of the current user and will comply with the [CRD Card Task](StructureDefinition-profile-crdcardtask.html) profile.  Once created, deferred card Tasks can be re-assigned, scheduled and otherwise managed as normal Tasks.
 
 In addition, where no other deferral capabilities exist, a user can 'effectively' defer a DTR task by launching the DTR application, then saving and closing the app - which will save the current DTR session for later resumption by manually invoking the DTR application and selecting and resuming the in-progress session.  The user could also add a note to the in-progress order that DTR work requires completion.
+
+For example, this CDS Hook [Card](https://cds-hooks.hl7.org/1.0/#cds-service-response) includes a single [Suggestion](https://cds-hooks.hl7.org/1.0/#suggestion) with an [Action](https://cds-hooks.hl7.org/1.0/#action) to create the deferred task.
+
+```
+    {
+      "summary": "Deferring the action",
+      "indicator": "info",
+      "source": {
+        "label": "Some Payer",
+        "url": "https://example.com",
+        "icon": "https://example.com/img/icon-100px.png",
+		"topic": "deferred-task"
+      },
+      "suggestions": [
+        {
+          "label": "Deferring Tasks",
+          "uuid": "1207df9d-9ff6-4042-985b-b8dec21038c2",
+          "actions": [{
+            "type": "create",
+            "description": "Creation of a task within CRD client",
+            "resource": {
+              "resourceType": "Task",
+              "id": "1234",
+              "status": "ready",
+              "intent": "proposal",
+              "code": {
+                "text": "deferred CRD task"
+                  }
+			   ...  
+            }
+          }]
+        }
+      ]
+    }
+```
 
 </div>
 

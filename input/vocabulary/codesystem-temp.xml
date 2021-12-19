@@ -31,4 +31,8 @@
     <code value="after-completion-action"/>
     <display value="A task input indicating an action that should be taken after a QuestionnaireResponse has been completed on a specified Questionnaire.  (Multiple completion actions can be specified.)"/>
   </concept>
+   <concept>
+    <code value="deferred-CRD-task"/>
+    <display value="A code used in CRD task profile to denote a deferred task"/>
+  </concept>
 </CodeSystem>
