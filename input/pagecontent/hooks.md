@@ -1733,7 +1733,7 @@ The response is a batch-response Bundle, with each entry containing either a sin
 #### Deferring Tasks
 CRD clients SHOULD support deferring cards, allowing the information on a card to be reviewed by and/or the actions on a card to be performed by the current user or someone else at a later point.  If a CRD service feels that the ability to defer a card is important and (a) the system receiving the card does not have a native mechanism to defer a card and (b) the system does have the ability to accept 'create Task' actions, the CRD service MAY provide an alternate 'deferred' action that allows the card action to be performed later. CRD clients that do not provide native support for deferring cards **SHOULD** support accepting Task create actions.
 
-The action will display an appropriate message about deferring the action (e.g. launching the SMART app) and will cause the creation of a Task within the CRD client. This Task will have an owner of the current user and will comply with the [CRD Card Task](StructureDefinition-profile-crdcardtask.html) profile.  Once created, deferred card Tasks can be re-assigned, scheduled and otherwise managed as normal Tasks.
+If using the 'Task' mechanism, the action will display an appropriate message about deferring the action (e.g. launching the SMART app) and will cause the creation of a Task within the CRD client. This Task will have an owner of the current user and will comply with the [CRD Card Task](StructureDefinition-profile-crdcardtask.html) profile.  Once created, deferred action Tasks might be re-assigned, scheduled and otherwise managed as normal Tasks.  How EHRs manage Task work queues is outside the scope of this specification.
 
 In addition, where no other deferral capabilities exist, a user can 'effectively' defer a DTR task by launching the DTR application, then saving and closing the app - which will save the current DTR session for later resumption by manually invoking the DTR application and selecting and resuming the in-progress session.  The user could also add a note to the in-progress order that DTR work requires completion.
 
@@ -1762,7 +1762,7 @@ For example, this CDS Hook [Card](https://cds-hooks.hl7.org/1.0/#cds-service-res
               "status": "ready",
               "intent": "proposal",
               "code": {
-                "text": "deferred CRD task"
+                "text": "deferred CRD action"
                   }
 			   ...  
             }
