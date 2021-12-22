@@ -454,32 +454,8 @@ NOTE: If a hook service is invoked on a collection of resources, all cards retur
 
 
 ##### Controlling hook invocation
+Providers SHALL NOT invoke hooks on payer services where the patient in question is not known to have active coverage with the payer in question.  Providers MAY limit hook invocation to only those payers that are believed to potentially have relevant information related to the current action.  (This might be more payers than just those that are likely to provide coverage.)
 
-The CDS Hook community has considered introducing a process called 'guards' that allow a CDS Service to indicate constraints on when the hook service should be called.  This specification introduces an extension on the `CDS Service` object called `davinci-guard` that is a FHIRPath that must evaluate to 'true' for in order for the service to be invoked.
-
-The FHIRPath may reference any context or pre-fetch elements defined by the service using the context field name or pre-fetch name.  E.g. `%patient` can be used to refer to a pre-fetch by the name of 'patient'.
-
-CRD clients SHALL either support this guard mechanism or provide alternative functionality that ensures that a given payer's service is only invoked for patients that are believed to have active coverage with that payer.
-
-CRD servers SHALL declare a prefetch for their hook services that retrieves a payer's active coverages associated with that payer.  CDS Servers SHALL also declare the 'davinci-guard' extension on their CDS Service objects that, at minimum checks for the existence of a relevant coverage.  For example:
-
-```
-   "services": [
-  {
-    "hook": "order-select",
-    ...
-    prefetch": {
-      ...
-      "coverage": "Coverage?beneficiary=context.patientId&status=active&payor.identifier=12345|somesystem.org"
-      ...
-    },
-    "extension": {
-      "davinci-guard" : "%coverage.exists()"
-	  }
-     }
-	 ]
-```
-where 12345|somesystem.org is the identifier for that payer.  (NOTE: a national identifier scheme for U.S. payer organizations is expected to be in place by mid-2022.)
 </div>
 
 #### CDS Hooks
