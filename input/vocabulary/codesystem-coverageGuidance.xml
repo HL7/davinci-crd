@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="coverageGuidance"/>
+  <url value="http://hl7.org/fhir/us/davinci-crd/CodeSystem/coverageGuidance"/>
+  <name value="CoverageGuidance"/>
+  <title value="Coverage Guidance"/>
+  <status value="draft"/>
+  <description value="Coverage guidance"/>
+  <caseSensitive value="true"/>
+  <content value="complete"/>
+  <concept>
+    <code value="not-covered"/>
+	<display value="Not covered"/>
+    <definition value="no coverage or possibility of coverage for this service)"/>
+  </concept>
+  <concept>
+    <code value="covered"/>
+	<display value="Covered"/>
+    <definition value="regular coverage applies"/>
+  </concept>
+  <concept>
+    <code value="prior-auth"/>
+	<display value="Prior authorization"/>
+    <definition value="coverage is possible with prior authorization"/>
+  </concept>
+  <concept>
+    <code value="clinical"/>
+	<display value="Clinical"/>
+    <definition value="clinical details are required to determine coverage/prior auth applicability - e.g. via DTR by clinician"/>
+  </concept>
+  <concept>
+    <code value="admin"/>
+	<display value="Admin"/>
+    <definition value="administrative details are required to determine coverage/prior auth applicability - e.g. via DTR by clinician"/>
+  </concept>
+</CodeSystem>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="coverageGuidance"/>
+  <url value="http://hl7.org/fhir/us/davinci-crd/ValueSet/coverageGuidance"/>
+  <name value="CoverageGuidance"/>
+  <title value="Coverage Guidance"/>
+  <status value="draft"/>
+  <description value="Coverage guidance"/>
+  <compose>
+    <include>
+      <system value="http://hl7.org/fhir/us/davinci-crd/CodeSystem/coverageGuidance"/>  
+    </include>
+  </compose>
+</ValueSet>
