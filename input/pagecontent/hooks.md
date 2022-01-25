@@ -844,6 +844,29 @@ For example, this card proposes indicates that a prior authorization has been gr
           "resource": {
             "resourceType": "MedicationRequest",
             "id": "idfromcontext",
+			 "extension" : [
+               {
+                 "extension" : [
+                  {
+                    "url" : "coverageInfo",
+                    "valueCoding" : {
+                    "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/coverageGuidance",
+                    "code" : "prior-auth",
+                    "display" : "Prior Authorization"
+                  }
+               },
+              {
+               "url" : "coverage",
+               "valueReference" : "Coverage/example"
+               },
+              {
+               "url" : "date",
+               "valueDate" : "2019-02-15"
+              }
+             ],
+            "url" : "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-coverage-information"
+            }
+            ],
             "status": "draft",
             "intent": "initial-order",
             "medicationCodeableConcept": {
