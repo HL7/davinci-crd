@@ -7,6 +7,4 @@ CRD Clients SHALL use this profile to [resolve references](hooks.html#additional
 * [order-sign](hooks.html#order-sign)
 
 Information provided in [Must Support]({{site.data.fhir.path}}profiling.html#mustsupport) elements will commonly be required for CRD Services to perform coverage requirements discovery.
-
-The `insurance` element allows relevant coverage information to be conveyed with selections and/or draft orders.  A [search parameter](SearchParameter-servicerequest-insurance.html) is defined in this guide to enable the [prefetch](hooks.html#prefetch) of coverage information when invoking hooks.
 <br/>

@@ -1,14 +1,6 @@
 {
   "resourceType": "Encounter",
   "id": "example",
-  "extension": [
-    {
-      "url": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-insurance",
-      "valueReference": {
-        "reference": "Coverage/example"
-      }
-    }
-  ],
   "identifier": [
     {
       "use": "official",

@@ -1,14 +1,6 @@
 {
   "resourceType": "DeviceRequest",
   "id": "example",
-  "extension": [
-    {
-      "url": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-insurance",
-      "valueReference": {
-        "reference": "Coverage/example"
-      }
-    }
-  ],
   "basedOn": [
     {
       "reference": "http://example.org/fhir/ServiceRequest/someReferral"

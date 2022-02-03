@@ -24,7 +24,6 @@ The artifacts are of four types:
 * [Extensions]({{site.data.fhir.path}}extensibility.html) define additional data elements that can be conveyed as part of a resource
 * [Code Systems]({{site.data.fhir.path}}codesystem.html) define terminologies to be used in one or more of the profiles
 * [Value Sets]({{site.data.fhir.path}}valueset.html) define the specific subsets of both CRD-defined and other code systems that must be (or are recommended to be) used within one or more profile elements
-* [Search Parameters]({{site.data.fhir.path}}searchparameter.html) define additional search criteria needed to allow filtering of FHIR resources to those relevant for CRD use-cases
 
 For the purpose of this implementation guide, [Must Support]({{site.data.fhir.path}}profiling.html#mustsupport) means that CRD Clients must be capable of exposing the data to at least some CRD Services.  CRD Services are not obligated to make use of Must Support elements when performing their coverage requirements discovery.
 

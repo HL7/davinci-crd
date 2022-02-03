@@ -16,7 +16,7 @@
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>12165</WindowHeight>
+  <WindowHeight>12818</WindowHeight>
   <WindowWidth>28800</WindowWidth>
   <WindowTopX>32767</WindowTopX>
   <WindowTopY>32767</WindowTopY>
@@ -1026,7 +1026,7 @@
     <Cell ss:StyleID="s74"><Data ss:Type="String">version</Data></Cell>
     <Cell ss:StyleID="s77"><Data ss:Type="String">current</Data></Cell>
    </Row>
-   <Row ss:AutoFitHeight="0" ss:Height="59.0625">
+   <Row ss:AutoFitHeight="0" ss:Height="58.96875">
     <Cell ss:StyleID="s74"><Data ss:Type="String">extension.uri</Data></Cell>
     <Cell ss:StyleID="s80" ss:HRef="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-"><Data
       ss:Type="String">http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-</Data></Cell>
@@ -1083,9 +1083,9 @@
  <Worksheet ss:Name="profile-medicationrequest">
   <Names>
    <NamedRange ss:Name="_FilterDatabase"
-    ss:RefersTo="='profile-medicationrequest'!R1C1:R27C24" ss:Hidden="1"/>
+    ss:RefersTo="='profile-medicationrequest'!R1C1:R26C24" ss:Hidden="1"/>
   </Names>
-  <Table ss:ExpandedColumnCount="24" ss:ExpandedRowCount="27" x:FullColumns="1"
+  <Table ss:ExpandedColumnCount="24" ss:ExpandedRowCount="26" x:FullColumns="1"
    x:FullRows="1" ss:StyleID="s85" ss:DefaultColumnWidth="65.25"
    ss:DefaultRowHeight="15">
    <Column ss:StyleID="s85" ss:AutoFitWidth="0" ss:Width="122.25"/>
@@ -1425,13 +1425,6 @@
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:Index="4"><Data ss:Type="String">MedicationRequest.insurance</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:Index="8"><Data ss:Type="String">Reference(Coverage) {http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-coverage}</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
-    <Cell><Data ss:Type="String">Y</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
     <Cell ss:Index="4"><Data ss:Type="String">MedicationRequest.dosageInstruction</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:Index="9"><Data ss:Type="String">Y</Data><NamedCell
@@ -1478,14 +1471,14 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>5</ActiveRow>
-     <ActiveCol>3</ActiveCol>
+     <ActiveRow>7</ActiveRow>
+     <ActiveCol>6</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
    <ProtectScenarios>False</ProtectScenarios>
   </WorksheetOptions>
-  <AutoFilter x:Range="R1C1:R27C24"
+  <AutoFilter x:Range="R1C1:R26C24"
    xmlns="urn:schemas-microsoft-com:office:excel">
   </AutoFilter>
  </Worksheet>

@@ -16,8 +16,8 @@
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>7680</WindowHeight>
-  <WindowWidth>21570</WindowWidth>
+  <WindowHeight>12818</WindowHeight>
+  <WindowWidth>28800</WindowWidth>
   <WindowTopX>32767</WindowTopX>
   <WindowTopY>32767</WindowTopY>
   <ActiveSheet>2</ActiveSheet>
@@ -1004,7 +1004,7 @@
     <Cell ss:StyleID="s74"><Data ss:Type="String">version</Data></Cell>
     <Cell ss:StyleID="s77"><Data ss:Type="String">current</Data></Cell>
    </Row>
-   <Row ss:AutoFitHeight="0" ss:Height="59.0625">
+   <Row ss:AutoFitHeight="0" ss:Height="58.96875">
     <Cell ss:StyleID="s74"><Data ss:Type="String">extension.uri</Data></Cell>
     <Cell ss:StyleID="s80" ss:HRef="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-"><Data
       ss:Type="String">http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-</Data></Cell>
@@ -1059,7 +1059,7 @@
   </WorksheetOptions>
  </Worksheet>
  <Worksheet ss:Name="profile-encounter">
-  <Table ss:ExpandedColumnCount="24" ss:ExpandedRowCount="19" x:FullColumns="1"
+  <Table ss:ExpandedColumnCount="24" ss:ExpandedRowCount="18" x:FullColumns="1"
    x:FullRows="1" ss:StyleID="s85" ss:DefaultColumnWidth="65.25"
    ss:DefaultRowHeight="15">
    <Column ss:StyleID="s85" ss:AutoFitWidth="0" ss:Width="122.25"/>
@@ -1196,13 +1196,6 @@
     <Cell ss:StyleID="s104"/>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell><Data ss:Type="String">EncounterInsurance</Data></Cell>
-    <Cell ss:Index="4"><Data ss:Type="String">Encounter.extension</Data></Cell>
-    <Cell ss:Index="6"><Data ss:Type="String">0..*</Data></Cell>
-    <Cell ss:Index="8"><Data ss:Type="String">Extension{http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-insurance}</Data></Cell>
-    <Cell><Data ss:Type="String">Y</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
     <Cell><Data ss:Type="String">Coverage-Information</Data></Cell>
     <Cell ss:Index="4"><Data ss:Type="String">Encounter.extension</Data></Cell>
     <Cell ss:Index="6"><Data ss:Type="String">0..*</Data></Cell>
@@ -1290,8 +1283,8 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>4</ActiveRow>
-     <ActiveCol>3</ActiveCol>
+     <ActiveRow>2</ActiveRow>
+     <RangeSelection>R3</RangeSelection>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>

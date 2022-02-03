@@ -42,48 +42,6 @@
 	<definition>
 		<resource>
 			<reference>
-				<reference value="SearchParameter/appointment-insurance"/>
-			</reference>
-			<name value="Appointment Insurance Search Parameter"/>
-		</resource>
-		<resource>
-			<reference>
-				<reference value="SearchParameter/communicationrequest-insurance"/>
-			</reference>
-			<name value="CommunicationRequest Insurance Search Parameter"/>
-		</resource>
-		<resource>
-			<reference>
-				<reference value="SearchParameter/devicerequest-insurance"/>
-			</reference>
-			<name value="DeviceRequest Insurance Search Parameter"/>
-		</resource>
-		<resource>
-			<reference>
-				<reference value="SearchParameter/encounter-insurance"/>
-			</reference>
-			<name value="Encounter Insurance Search Parameter"/>
-		</resource>
-		<resource>
-			<reference>
-				<reference value="SearchParameter/medicationrequest-insurance"/>
-			</reference>
-			<name value="MedicationRequest Insurance Search Parameter"/>
-		</resource>
-		<resource>
-			<reference>
-				<reference value="SearchParameter/nutritionorder-insurance"/>
-			</reference>
-			<name value="NutritionOrder Insurance Search Parameter"/>
-		</resource>
-		<resource>
-			<reference>
-				<reference value="SearchParameter/servicerequest-insurance"/>
-			</reference>
-			<name value="ServiceRequest Insurance Search Parameter"/>
-		</resource>
-		<resource>
-			<reference>
 				<reference value="Appointment/example"/>
 			</reference>
 			<name value="Appointment example"/>

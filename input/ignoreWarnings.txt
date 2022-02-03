@@ -8,9 +8,6 @@
 # - 'Coverage.text: max allowed = 0' and 'Patient.text: max allowed = 0' stem from there being no means to prevent the publisher from generating narrative for specific files
 # - 'The URL http://example.org/Questionnaire/XYZ|2 is not valid (URL contains Invalid Characters ([|]))' is raised here: https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/Narrative.20creation.20isn't.20handling.20versioned.20canonicals.20well
 
-# We have no ability to point to a single example for both a profile and an extension yet
-WARNING: http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-insurance: The Implementation Guide contains no examples for this extension
-
 # De-identified patient specifically *cannot* be based on US-Core patient because US-Core patients have to be identifiable.  See US Core ticket FHIR-29675
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-patient-deident').baseDefinition: US FHIR Usage rules require that all profiles on Patient derive from the core US profile
 
@@ -23,7 +20,6 @@ WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/Str
 # We don't have any specific profiles for infrastructure resourcess, so validation against only the base resources is expected
 Validate resource against profile http://hl7.org/fhir/StructureDefinition/CodeSystem
 Validate resource against profile http://hl7.org/fhir/StructureDefinition/ImplementationGuide
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/SearchParameter
 Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
 Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet
 

@@ -311,11 +311,11 @@ For example, a prefetch for `order-select` might look like this:
 
 {% raw %}
     "prefetch": {
-      "ins-sr": "ServiceRequest?_id={{context.draftOrders.ServiceRequest.id}}&_include=ServiceRequest:insurance"
+      "ins-sr": "ServiceRequest?_id={{context.draftOrders.ServiceRequest.id}}&_include=ServiceRequest:performer"
     }
 {% endraw %}
 
-This might result in an executed query that looks like this: `ServiceRequest?_id=2347,10948,5881&_include=ServiceRequest:insurance`
+This might result in an executed query that looks like this: `ServiceRequest?_id=2347,10948,5881&_include=ServiceRequest:performer`
 
 <blockquote class="stu-note">
 <p>
@@ -1431,7 +1431,7 @@ For this release of the implementation guide, conformant CRD Clients **SHOULD** 
 In future releases of this specification, the requirements in this section might become a **SHALL**.  Implementers are encouraged to provide feedback about this possibility based on their initial implementation experience.
 </blockquote>
 
-The base requirement for each query, whether based on Encounter or one of the request resources is to bring back the following associated resources:
+The base requirement for these queries, whether based on Encounter or one of the request resources is to bring back the following associated resources:
 
 *  Patient
 *  Relevant Coverage
@@ -1443,7 +1443,7 @@ The base requirement for each query, whether based on Encounter or one of the re
 *  associated Medication (if any)
 *  associated Device (if any)
 
-Not all these will be relevant for all resource types.  Different resources have differently named data elements and search parameters for them.  In some cases, support only exists as extensions or does not exist at all.  Where necessary, this implementation guide defines additional extensions and/or SearchParameter instances to support retrieval of these elements.  The intention is for both extensions and search parameters to eventually migrate into the core FHIR specification.
+Not all these will be relevant for all resource types.  Different resources have differently named data elements and search parameters for them.  In some cases, support only exists as extensions or does not exist at all.  Where necessary, this implementation guide defines additional extensions to support retrieval of these elements.  The intention is for both extensions and search parameters to eventually migrate into the core FHIR specification.
 
 There are two possible mechanisms that can be used by the service to gather the information needed: prefetch and querying against the EMR to retrieve additional resources.  Both of these mechanisms are defined as part of the [CDS Hooks specification](https://cds-hooks.hl7.org/1.0/#providing-fhir-resources-to-a-cds-service).  In some cases, a mixture of both approaches might be necessary.
 
@@ -1454,7 +1454,22 @@ In addition to the [base prefetch capabilities](https://cds-hooks.hl7.org/1.0/#p
 
 EMR implementations **SHOULD NOT** expect standardized prefetch key names.  EMRs supporting prefetch **SHALL** inspect the CDS Hooks Discovery Endpoint to determine exact prefetch key names and queries.
 
+<div markdown="1" class="new-content">
+
+In most cases, payers will require information about a patient's coverage.  Retrieval of this information is only dependent on the patient context and not on any other information being passed by the hook.  It will simply look like this:
+
 {% raw %}
+<code>Coverage?patient={{context.patient}}&amp;status=active</code>
+
+Other information will need to be retrieved using queries that are more specific to the type of hook being invoked - and the resources passed with it:
+
+</div>
+<blockquote class="note-to-balloters">
+<p>
+This represents a change to how coverage information will be retrieved.  All active coverage for the patient is now retrieved (though typically only the coverage related to a payer will actually flow to the CRD service due to limits on information disclosure).  There are no longer extensions or special search parameters to support capturing insurance information on a request-specific, encounter-specific or other context-specific manner.
+</p>
+</blockquote>
+
 <table class="grid">
   <thead>
     <tr>
@@ -1471,8 +1486,8 @@ EMR implementations **SHOULD NOT** expect standardized prefetch key names.  EMRs
       &_include=Appointment:practitioner:PractitionerRole<br/>
       &_include:iterate=PractitionerRole:organization<br/>
       &_include:iterate=PractitionerRole:practitioner<br/>
-      &_include=Appointment:location<br/>
-      &_include=Appointment:<a href="SearchParameter-appointment-insurance.html">insurance</a>:Coverage</code>
+      &_include=Appointment:location<br/><br/>
+      Coverage?member={{context.patient}}</code>
     </td>
     <td>No requester</td>
   </tr>
@@ -1485,8 +1500,8 @@ EMR implementations **SHOULD NOT** expect standardized prefetch key names.  EMRs
       &_include=DeviceRequest:requester<br/>
       &_include=DeviceRequest:device<br/>
       &_include:iterate=PractitionerRole:organization<br/>
-      &_include:iterate=PractitionerRole:practitioner<br/>
-      &_include=DeviceRequest:insurance:Coverage</code>
+      &_include:iterate=PractitionerRole:practitioner<br/><br/>
+      Coverage?member={{context.patient}}</code>
     </td>
     <td>No performing location</td>
   </tr>
@@ -1497,8 +1512,8 @@ EMR implementations **SHOULD NOT** expect standardized prefetch key names.  EMRs
       &_include=Encounter:patient<br/>
       &_include=Encounter:service-provider<br/>
       &_include=Encounter:practitioner<br/>
-      &_include=Encounter:location<br/>
-      &_include=Encounter:<a href="SearchParameter-encounter-insurance.html">insurance</a>:Coverage</code>
+      &_include=Encounter:location<br/><br/>
+      Coverage?member={{context.patient}}</code>
     </td>
     <td>No requester</td>
   </tr>
@@ -1511,8 +1526,8 @@ EMR implementations **SHOULD NOT** expect standardized prefetch key names.  EMRs
       &_include=MedicationRequest:requester:PractitionerRole<br/>
       &_include=MedicationRequest:medication<br/>
       &_include:iterate=PractitionerRole:organization<br/>
-      &_include:iterate=PractitionerRole:practitioner<br/>
-      &_include=MedicationRequest:<a href="SearchParameter-medicationrequest-insurance.html">insurance</a>:Coverage</code>
+      &_include:iterate=PractitionerRole:practitioner<br/><br/>
+      Coverage?member={{context.patient}}</code>
     </td>
     <td>No performing location</td>
   </tr>
@@ -1525,8 +1540,7 @@ EMR implementations **SHOULD NOT** expect standardized prefetch key names.  EMRs
       &_include=MedicationRequest:requester:PractitionerRole<br/>
       &_include=MedicationRequest:medication<br/>
       &_include:iterate=PractitionerRole:organization<br/>
-      &_include:iterate=PractitionerRole:practitioner<br/>
-      &_include=MedicationRequest:<a href="SearchParameter-medicationrequest-insurance.html">insurance</a>:Coverage</code>
+      &_include:iterate=PractitionerRole:practitioner</code>
     </td>
     <td>No performing location</td>
   </tr>
@@ -1540,8 +1554,7 @@ EMR implementations **SHOULD NOT** expect standardized prefetch key names.  EMRs
       &_include:iterate=PractitionerRole:organization<br/>
       &_include:iterate=PractitionerRole:practitioner<br/>
       &_include=NutritionOrder:encounter<br/>
-      &_include:iterate=Encounter:location<br/>
-      &_include=NutritionOrder:<a href="SearchParameter-nutritionorder-insurance.html">insurance</a>:Coverage</code>
+      &_include:iterate=Encounter:location</code>
     </td>
     <td>Location only through request encounter</td>
   </tr>
@@ -1553,8 +1566,7 @@ EMR implementations **SHOULD NOT** expect standardized prefetch key names.  EMRs
       &_include=ServiceRequest:performer<br/>
       &_include=ServiceRequest:requester<br/>
       &_include:iterate=PractitionerRole:organization<br/>
-      &_include:iterate=PractitionerRole:practitioner<br/>
-      &_include=ServiceRequest:<a href="SearchParameter-servicerequest-insurance.html">insurance</a>:Coverage</code>
+      &_include:iterate=PractitionerRole:practitioner</code>
     </td>
     <td>No performer location</td>
   </tr>
