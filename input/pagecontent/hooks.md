@@ -89,6 +89,12 @@ NOTES:
 * The non-PHI information exchanged is considered "de-identified, but potentially re-identifiable".  As such, when retaining this information for audit purposes, access to the information **SHALL** be restricted and itself audited as would access to PHI log information.
 * For the purposes of non-PHI interactions, this specification does not consider the Patient resource id as PHI.  If organizational policy requires the Patient.id to be treated as PHI, implementers will need to anonymize the id and support query of the patient's related resources by the anonymized id.
 
+<blockquote class="note-to-balloters">
+<p>
+There is some controversy around the decision to mandate support for de-identified CRD service invocation.  Implementers are encouraged to provide feedback around the implications for industry of support for this feature being mandatory.
+</p>
+</blockquote>
+
 #### Sensitive Orders
 
 CRD Clients that implement the [order-select](#order-select) hook will typically fire the hook multiple times as information is gathered and entered into the system by a practitioner.  In cases where the content of an order is sensitive, it is possible that a patient will elect to pay for a medication, device, service (etc.) themselves instead of sharing the information with a payer.  In these cases, the order in which information is entered and when hooks are fired could determine whether or not information the patient deems sensitive is shared with the CRD Service and payer.
@@ -101,7 +107,7 @@ CRD Client workflows, user interfaces and CDS hook triggers **SHALL** be designe
 
 Depending on their location within the workflow, CDS Hooks may be processed in a synchronous manner.  This means that the user who is performing the business action that triggers the hook might be 'blocked' from continuing the action until results have been returned by the CDS service.  The corollary to this is that services must respond to hook invocations quickly to avoid impeding clinician workflow - and turning the intended benefit CRD is intended to provide into a detriment.  Servers **SHALL** provide their card responses within 5 seconds, 95% of the time.  It is recognized that this may limit the payer from providing full responses to all calls where a response is 'theoretically' possible.  Systems should provide the best information they can in a timely fashion and rely on other layers of the payment and adjudication process to catch issues that require longer processing.
 
-<blockquote class="stu-note">
+<blockquote class="note-to-balloters">
 <p>
 Payers and EHRs are both encouraged to provide feedback around whether this timing expectation strikes the appropriate balance between allowing appropriate decision support and allowing timely progress of worklow.  This evaluation should take into account what systems will need to be involved in the decision support process, what external calls might be needed, what caching strategies are viable, etc.
 </p>
@@ -945,7 +951,8 @@ For example, this card proposes indicates that a prior authorization has been gr
     ]
 ```
 CRD clients and services MAY, by mutual agreement, make use of the new CDS Hooks system action functionality to cause annotations to automatically be stored on the relevant request, appointment, etc.  These implementations will be responsible for ensuring that the only changes made to the EHR record are to add the annotations contemplated here.  It is likely that the conformance expectation on the use of system actions will be tighter in future releases.
-<blockquote class="stu-note">
+
+<blockquote class="note-to-balloters">
 <p>
 Balloters are requested to provide their feedback on whether the conformance expectation here should be stronger.
 </p>

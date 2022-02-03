@@ -1,5 +1,14 @@
 {% raw %}
 {% endraw %}
+<blockquote class="note-to-balloters">
+<p>
+This ballot release of the specification reflects a number of changes that reflect implementer feedback about the CRD specification arising from detailed review, connectathons and implementation experience.  Significant changes to the specification are highlighted in green and balloters are invited to focus particular attention on these sections.  However, the whole specification is open to review and the project welcomes all constructive feedback.
+</p>
+<p>
+A summary of the major changes in this release can be found [here](history.html).
+</p>
+</blockquote>
+
 <blockquote class="stu-note">
 <p>
 This specification is a Standard for Trial Use.  It is expected to continue to evolve and improve through connectathon testing and feedback from early adopters.
@@ -16,7 +25,7 @@ This implementation guide is dependent on other specifications.  Please submit a
   <li>Feedback on the US core profiles should be submitted to the <a href="http://hl7.org/fhir-issues">FHIR change tracker</a> with "US Core" as the specification.</li>
 </ul>
 <p>
-Individuals interested in participating in the Coverage Requirements Discovery or  other HL7 Da Vinci projects can find information about Da Vinci [here](http://www.hl7.org/about/davinci).
+Individuals interested in participating in the Coverage Requirements Discovery or other HL7 Da Vinci projects can find information about Da Vinci [here](http://www.hl7.org/about/davinci).
 </p>
 </blockquote>
 
