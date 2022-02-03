@@ -95,3 +95,11 @@ The approach taken to meet the requirements of the Coverage Requirements Discove
 * *Human intervention?* - No - there was no expectation that a human would need to be involved on the data source (payer) side to determine what guidance should be provided back.  The requirement was for real-time guidance, which meant any guidance provided had to be automatic.
 * *Is data pre-existing?* - No - in decision support, we're generating context-specific guidance that didn't previously exist, even if some of the resources pointed to might have been pre-existing
 * *CDS-hooks?* - Yes - CDS hooks was a good fit for the workflow we needed.  There was no need to define custom operations or messages to meet our use-cases
+
+<div markdown="1" class="new-content">
+
+#### Impact on payer processes
+
+Information passed to the CRD service will typically contain clinical terminologies and may not contain billing terminologies and will certainly not include billing modifier codes or similar information typically included in prior authorization requests.  CRD services will need to support these clinical terminologies or map them to internally used billing terminologies when determining decision support results such as whether a therapy is covered or requires prior authorization.  In some cases, mappings may not be fully deterministic and may impact the ability respond with useful decision support.  Services will also need to consider that the mapping they perform between clinical terminologies and billing codes may be different than the bill coding process performed by the client system when claims are eventually submitted.  This may mean that assertions about coverage or prior authorization requirements will need to be expressed conditionally.  E.g. "Provided this service is billed as X, Y or Z, then prior authorization is not needed".
+
+</div>
