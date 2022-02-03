@@ -89,6 +89,20 @@ CRD Clients that implement the [order-select](#order-select) hook will typically
 
 CRD Client workflows, user interfaces and CDS hook triggers **SHALL** be designed in a manner that ensures that practitioner and patient considerations govern whether information is sent to a CRD Service.
 
+<div markdown="1" class="new-content">
+
+#### Performance
+
+Depending on their location within the workflow, CDS Hooks may be processed in a synchronous manner.  This means that the user who is performing the business action that triggers the hook might be 'blocked' from continuing the action until results have been returned by the CDS service.  The corollary to this is that services must respond to hook invocations quickly to avoid impeding clinician workflow - and turning the intended benefit CRD is intended to provide into a detriment.  Servers **SHALL** provide their card responses within 5 seconds, 95% of the time.  It is recognized that this may limit the payer from providing full responses to all calls where a response is 'theoretically' possible.  Systems should provide the best information they can in a timely fashion and rely on other layers of the payment and adjudication process to catch issues that require longer processing.
+
+<blockquote class="stu-note">
+<p>
+Payers and EHRs are both encouraged to provide feedback around whether this timing expectation strikes the appropriate balance between allowing appropriate decision support and allowing timely progress of worklow.  This evaluation should take into account what systems will need to be involved in the decision support process, what external calls might be needed, what caching strategies are viable, etc.
+</p>
+</blockquote>
+
+</div>
+
 ### CDS Hooks
 
 #### Appropriate use of hooks

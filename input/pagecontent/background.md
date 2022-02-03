@@ -20,6 +20,13 @@ The CRD implementation guide defines the responsibilities of the two types of sy
 
 **CRD Services** (or servers) are systems that act on behalf of payer organizations to share information with healthcare providers about rules and requirements related to healthcare products and services covered by a patient's payer.  A CRD Service will provide coverage information related to one or possibly more insurance plans.
 
+<div markdown="1" class="new-content">
+
+### Users
+The human users of CRD will all be on the **CRD Client** side, as **CRD Services** must be fully automated with no human intervention.  The humans who benefit from the decision support provided by payer services will be many and varied.  They will include clinicians who might adjust therapies or even make decisions about whether to pursue a therapy at all based on information from a payer (projected patient expense, whether a therapy is covered, whether there is a contraindication detected based on information known to the payer but previously unknown to the clinician.  However, they will also include non-clinical staff - those making appointments, those managing dispatching of referrals to available providers, those handling back-end collection of documentation that was inappropriate/inefficient for the clinician to gather at the time of the encounter.  As such, CRD encompasses a broad spectrum of decision support that isn't exclusively 'clinical'.
+
+</div>
+
 ### Underlying technologies
 
 This guide is based on the [HL7 FHIR]({{site.data.fhir.path}}index.html) standard, as well as the [CDS Hooks](https://cds-hooks.hl7.org) and [SMART on FHIR](http://hl7.org/fhir/smart-app-launch/index.html) specifications, which build additional capabilities on top of FHIR.  This architecture is intended to maximize the number of clinical systems that conform to this guide as well as to allow for easy growth and extensibility of system capabilities in the future.
