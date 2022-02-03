@@ -3,7 +3,7 @@
   <id value="coverageGuidance"/>
   <url value="http://hl7.org/fhir/us/davinci-crd/ValueSet/coverageGuidance"/>
   <name value="CoverageGuidance"/>
-  <title value="Coverage Guidance"/>
+  <title value="Coverage Guidance Value Set"/>
   <status value="draft"/>
   <description value="Coverage guidance"/>
   <compose>

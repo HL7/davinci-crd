@@ -3,12 +3,12 @@
   "system" : "http://terminology.hl7.org/CodeSystem/service-category",
   "code" : "17",
   "display" : "General Practice"
-}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS", "versionFlexible":"true"}####
 v: {
   "display" : "General Practice",
   "code" : "17",
   "system" : "http://terminology.hl7.org/CodeSystem/service-category",
-  "severity" : null,
-  "error" : ""
+  "severity" : "warning",
+  "error" : "The system \"General Practice\" http://terminology.hl7.org/CodeSystem/service-category was found but did not contain enough information to properly validate the code (mode = example) (from http://tx.fhir.org/r4)"
 }
 -------------------------------------------------------------------------------------

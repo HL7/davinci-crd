@@ -11,6 +11,14 @@
 			"status": "ci-build",
 			"current": true
 		}, {
+			"version": "1.1.0-ballot",
+			"date": "2022-02-03",
+      "fhirversion": "4.0.1",
+			"descmd": "Ballot for second STU release",
+			"path": "http://hl7.org/fhir/us/davinci-crd/202203",
+			"status": "ballot",
+			"sequence": "STU 2"
+		}, {
 			"version": "1.0.0",
 			"date": "2020-12-01",
       "fhirversion": "4.0.1",

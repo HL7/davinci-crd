@@ -2,7 +2,7 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../input-cache/schemas/R4/fhir-single.xsd">
 	<id value="davinci-crd"/>
 	<url value="http://hl7.org/fhir/us/davinci-crd/ImplementationGuide/davinci-crd"/>
-	<version value="1.1.0"/>
+	<version value="1.1.0-ballot"/>
 	<name value="CoverageRequirementsDiscovery"/>
 	<title value="Da Vinci - Coverage Requirements Discovery"/>
 	<status value="draft"/>
@@ -122,6 +122,14 @@
 		</resource>
 		<resource>
 			<reference>
+				<reference value="MedicationRequest/annotated-example"/>
+			</reference>
+			<name value="MedicationRequest annotated example"/>
+			<description value="Example medication request with an annotation showing coverage expectations"/>
+			<exampleCanonical value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-medicationrequest"/>
+		</resource>
+		<resource>
+			<reference>
 				<reference value="NutritionOrder/example"/>
 			</reference>
 			<name value="NutritionOder example"/>
@@ -175,6 +183,14 @@
 			<name value="Questionnaire Task example"/>
 			<description value="Example questionnaire-completion Task populated based on CRD profile"/>
 			<exampleCanonical value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-taskquestionnaire"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="Task/action-example"/>
+			</reference>
+			<name value="CDS Hook deferred action example"/>
+			<description value="Example Task showing a deferred action to update a Coverage record for a patient"/>
+			<exampleCanonical value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-crdcardtask"/>
 		</resource>
 		<page>
 			<nameUrl value="toc.html"/>

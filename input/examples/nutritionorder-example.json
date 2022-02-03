@@ -40,7 +40,6 @@
       "coding": [
         {
           "system": "http://snomed.info/sct",
-          "version": "20140730",
           "code": "227493005",
           "display": "Cashew Nut"
         }

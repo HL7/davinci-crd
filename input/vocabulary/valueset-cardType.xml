@@ -3,7 +3,7 @@
   <id value="cardType"/>
   <url value="http://hl7.org/fhir/us/davinci-crd/ValueSet/cardType"/>
   <name value="CardType"/>
-  <title value="CRD Card Types"/>
+  <title value="CRD Card Types Value Set"/>
   <status value="draft"/>
   <description value="List of card types"/>
   <compose>

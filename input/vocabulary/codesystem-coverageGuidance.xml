@@ -3,7 +3,7 @@
   <id value="coverageGuidance"/>
   <url value="http://hl7.org/fhir/us/davinci-crd/CodeSystem/coverageGuidance"/>
   <name value="CoverageGuidance"/>
-  <title value="Coverage Guidance"/>
+  <title value="Coverage Guidance Code System"/>
   <status value="draft"/>
   <description value="Coverage guidance"/>
   <caseSensitive value="true"/>

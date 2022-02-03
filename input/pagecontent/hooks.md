@@ -109,7 +109,7 @@ Payers and EHRs are both encouraged to provide feedback around whether this timi
 
 #### Accuracy
 
-CDS services SHOULD make every effort to ensure that the guidance returned with respect to coverage and prior authorizations (e.g. assertions that a service is covered or prior authorization is not necessary) is as accurate as guidance that would be provided by other means (e.g. portals, phone calls).  However, that this doesn't mean that circumstances can't change in a way that invalidates an answer provided.  Also, such guidance should allow for possible variances in coding and submission.  (See [Impact on payer processes](impact-on-payer-processes) on the Background page.)
+CDS services SHOULD make every effort to ensure that the guidance returned with respect to coverage and prior authorizations (e.g. assertions that a service is covered or prior authorization is not necessary) is as accurate as guidance that would be provided by other means (e.g. portals, phone calls).  However, that this doesn't mean that circumstances can't change in a way that invalidates an answer provided.  Also, such guidance should allow for possible variances in coding and submission.  (See [Impact on payer processes](background.html#impact-on-payer-processes) on the Background page.)
 
 </div>
 
@@ -180,11 +180,17 @@ Extensions will be enabled in two places:
 An extension called `davinci-crd.configuration-options` will define a configuration object with an array of available configurable options within the CDS Service, where:  
 
 *  Each option **SHALL** include four mandatory elements:
-    *  A `code` that will be used when setting configuration during hook invocation, and binds ([extensible](http://www.hl7.org/fhir/terminologies.html#extensible)) to the <a href="ValueSet-cardType.html">CRD Card Types</a> valueset.
+    *  A `code` that will be used when setting configuration during hook invocation, and has an ([extensible](http://www.hl7.org/fhir/terminologies.html#extensible)) binding to the <a href="ValueSet-cardType.html">CRD Card Types</a> valueset.
     *  A data `type` for the parameter.  At present, allowed values are "boolean" and "integer" (NOTE: These are the JSON data types and not the FHIR data types.)
     *  A display `name` for the configuration option to appear in the client's user interface when performing configuration
     *  A `description` providing a 1-2 sentence description of the effect of the configuration option
 *  A `default` value **SHOULD** also be provided to show users what to expect when an override is not specified
+
+<div markdown="1" class="new-content">
+<p>
+The binding on the 'code' element is new
+</p>
+</div>
 
 For example, a [CDS Service Response](https://cds-hooks.hl7.org/1.0/#response) from a CRD Service might look like this:
 
@@ -258,7 +264,7 @@ Notes:
 
     *  indicate that CRD checking could not be done and log appropriate information to allow engagement with CRD Clients to address any payer-specific needs.
 
-*  Codes **SHALL** be valid JSON property names and has an [extensible](http://www.hl7.org/fhir/terminologies.html#extensible) binding to the valueset <a href="ValueSet-cardType.html">CRD Card Types.</a>
+*  Codes **SHALL** be valid JSON property names and SHALL come from the <a href="ValueSet-cardType.html">CRD Card Types.</a> list if an applicable type is in that list.
 
 *  Codes, names and descriptions **SHALL** be unique within a [CDS Service](https://cds-hooks.hl7.org/1.0/#response) definition.  They **SHOULD** be consistent across different hooks supported by the same payer when dealing with the same types of configuration options.
 
@@ -773,6 +779,11 @@ In addition to the [guidance provided in the CDS Hooks specification](https://cd
 
 * CRD Client systems might not support all card capabilities, therefore card options **SHOULD** provide sufficient information for a user to perform record changes manually if automated support isn't possible.
 
+<div markdown="1" class="new-content">
+<p>
+The card topic element above is new.
+</p>
+</div>
 
 ##### Potential CRD Response Types
 This section describes the different types of [responses](https://cds-hooks.hl7.org/1.0/#cds-service-response) that CRD Services can use when returning coverage requirements to CRD Clients, including CRD-specific profiles on cards to describe CRD-expected behavior.  It is possible that some CRD Services and CRD Clients will support additional card response patterns than those listed here, but such behavior is outside the scope of this specification.  Future versions of this specification might standardize additional response types.
@@ -890,7 +901,7 @@ For example, this card proposes indicates that a prior authorization has been gr
           "resource": {
             "resourceType": "MedicationRequest",
             "id": "idfromcontext",
-			 "extension" : [
+			      "extension" : [
               { 
                  "extension" : [
                   {
@@ -902,8 +913,10 @@ For example, this card proposes indicates that a prior authorization has been gr
                     }
                   },
                   {
-                   "url" : "coverage",
-                   "valueReference" : "Coverage/example"
+                    "url" : "coverage",
+                    "valueReference" : {
+                      "reference": "Coverage/example"
+                    }
                   },
                   {
                    "url" : "date",
@@ -914,13 +927,13 @@ For example, this card proposes indicates that a prior authorization has been gr
               } 
             ],
             "status": "draft",
-            "intent": "initial-order",
+            "intent": "original-order",
             "medicationCodeableConcept": {
-              "coding": {
+              "coding": [{
                 "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
                 "code": "616447",
-                "display": "Mycophenolate Mofetil 250 MG Oral Tablet"
-              }
+                "display": "Cellcept 250 MG Oral Capsule"
+              }]
             },
             "subject": {
               "reference": "Patient/123",
@@ -930,18 +943,18 @@ For example, this card proposes indicates that a prior authorization has been gr
               "reference": "Encounter/ABC"
             },
             "authoredOn": "2019-02-15",
-            "performer": {
+            "requester": {
               "reference": "PractitionerRole/987",
               "display": "Dr. Jones"
             },
             "note": [
               {
                 "authorString": "XYZ Insurance",
-                "time": "2019-02-15T15:07:18",
-                "text": "Unsolicited prior authorization for Jane Smith to receive 6 tablets Mycophenolate Mofetil 250 mg oral tablets BID granted.  Please note prior authorization # 12345 on claim submission."
+                "time": "2019-02-15T15:07:18-05:00",
+                "text": "Unsolicited prior authorization for Jane Smith to receive 6 tablets Cellcept 250 MG Oral Capsule BID granted.  Please note prior authorization # 12345 on claim submission."
               }
             ],
-            "dosageInstruction": {
+            "dosageInstruction": [{
               "text": "6 tablets every 12 hours.",
               "timing": {
                 "repeat": {
@@ -950,13 +963,13 @@ For example, this card proposes indicates that a prior authorization has been gr
                   "periodUnit": "h"
                 }
               },
-              "doseAndRate": {
+              "doseAndRate": [{
                 "doseQuantity": {
                   "value": 6,
                   "unit": "tablet"
                 }
-              }
-            }
+              }]
+            }]
           }
         }]
       }
@@ -1037,13 +1050,13 @@ For example, this card proposes replacing the draft prescription for a brand-nam
           "resource": {
             "resourceType": "MedicationRequest",
             "status": "draft",
-            "intent": "initial-order",
+            "intent": "original-order",
             "medicationCodeableConcept": {
-              "coding": {
+              "coding": [{
                 "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
                 "code": "616447",
-                "display": "Mycophenolate Mofetil 250 MG Oral Tablet"
-              }
+                "display": "Cellcept 250 MG Oral Capsule"
+              }]
             },
             "subject": {
               "reference": "Patient/123",
@@ -1053,11 +1066,11 @@ For example, this card proposes replacing the draft prescription for a brand-nam
               "reference": "Encounter/ABC"
             },
             "authoredOn": "2019-02-15",
-            "performer": {
+            "requester": {
               "reference": "PractitionerRole/987",
               "display": "Dr. Jones"
             },
-            "dosageInstruction": {
+            "dosageInstruction": [{
               "text": "6 tablets every 12 hours.",
               "timing": {
                 "repeat": {
@@ -1066,13 +1079,13 @@ For example, this card proposes replacing the draft prescription for a brand-nam
                   "periodUnit": "h"
                 }
               },
-              "doseAndRate": {
+              "doseAndRate": [{
                 "doseQuantity": {
                   "value": 6,
                   "unit": "tablet"
                 }
-              }
-            }
+              }]
+            }]
           }
         }]
       }
@@ -1134,20 +1147,20 @@ This example proposes adding a monthly test to check liver function:
           "resource": {
             "resourceType": "ServiceRequest",
             "status": "draft",
-            "intent": "initial-order",
-            "category": {
-              "coding": {
+            "intent": "original-order",
+            "category": [{
+              "coding": [{
                 "system": "http://snomed.info/sct",
                 "code": "108252007",
                 "display": "Laboratory procedure"
-              }
-            },
+              }]
+            }],
             "code": {
-              "coding": {
+              "coding": [{
                 "system": "http://www.ama-assn.org/go/cpt",
                 "code": "80076",
                 "display": "Hepatic function panel"
-              }
+              }]
             },
             "subject": {
               "reference": "Patient/123",
@@ -1788,10 +1801,14 @@ The response is a batch-response Bundle, with each entry containing either a sin
 
 <div markdown="1" class="new-content">
 
-#### Deferring Tasks
+#### Deferring Card Actions
 CRD clients SHOULD support deferring cards, allowing the information on a card to be reviewed by and/or the actions on a card to be performed by the current user or someone else at a later point.  If a CRD service feels that the ability to defer a card is important and (a) the system receiving the card does not have a native mechanism to defer a card and (b) the system does have the ability to accept 'create Task' actions, the CRD service MAY provide an alternate 'deferred' action that allows the card action to be performed later. CRD clients that do not provide native support for deferring cards **SHOULD** support accepting Task create actions.
 
-If using the 'Task' mechanism, the action will display an appropriate message about deferring the action (e.g. launching the SMART app) and will cause the creation of a Task within the CRD client. This Task will have an owner of the current user and will comply with the [CRD Card Task](StructureDefinition-profile-crdcardtask.html) profile.  Once created, deferred action Tasks might be re-assigned, scheduled and otherwise managed as normal Tasks.  How EHRs manage Task work queues is outside the scope of this specification.
+If using the 'Task' mechanism, the action will display an appropriate message about deferring the action (e.g. launching the SMART app) and will cause the creation of a Task within the CRD client. This Task will have an owner of the current user and will comply with the [CRD Card Task](StructureDefinition-profile-crdcardtask.html) profile.  Each action within a suggestion will have its own Task - allowing the actions to be managed separately.  Once created, deferred action Tasks might be re-assigned, scheduled and otherwise managed as normal Tasks.  How EHRs manage Task work queues is outside the scope of this specification.
+
+The 'focus' of the Task indicates the resource to be acted upon for suggestion actions.  For 'delete' actions, this will simply be a reference to the resource.  For create and update actions, it will be to a 'contained' resource representing the new content.  For updates, the contained 'id' of the resource SHALL match the id of the record to update in the CRD client.
+
+
 
 In addition, where no other deferral capabilities exist, a user can 'effectively' defer a DTR task by launching the DTR application, then saving and closing the app - which will save the current DTR session for later resumption by manually invoking the DTR application and selecting and resuming the in-progress session.  The user could also add a note to the in-progress order that DTR work requires completion.
 
@@ -1799,7 +1816,7 @@ For example, this CDS Hook [Card](https://cds-hooks.hl7.org/1.0/#cds-service-res
 
 ```
     {
-      "summary": "Deferring the action",
+      "summary": "Update coverage information",
       "indicator": "info",
       "source": {
         "label": "Some Payer",
@@ -1809,19 +1826,22 @@ For example, this CDS Hook [Card](https://cds-hooks.hl7.org/1.0/#cds-service-res
       },
       "suggestions": [
         {
-          "label": "Deferring Tasks",
+          "label": "Update coverage later",
           "uuid": "1207df9d-9ff6-4042-985b-b8dec21038c2",
           "actions": [{
             "type": "create",
-            "description": "Creation of a task within CRD client",
+            "description": "Add 'to-do' to update coverage information",
             "resource": {
               "resourceType": "Task",
               "id": "1234",
               "status": "ready",
               "intent": "proposal",
               "code": {
-                "text": "deferred CRD action"
-                  }
+                "coding": [{
+                  "system": "http://hl7.org/fhir/restful-interaction",
+                  "code": "update"
+                }]
+              }
 			   ...  
             }
           }]
@@ -1829,6 +1849,8 @@ For example, this CDS Hook [Card](https://cds-hooks.hl7.org/1.0/#cds-service-res
       ]
     }
 ```
+See [here](Task-action-example.html) for a full example of a deferred task.
+
 
 </div>
 

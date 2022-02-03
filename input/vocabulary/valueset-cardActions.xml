@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="cardActions"/>
+  <url value="http://hl7.org/fhir/us/davinci-crd/ValueSet/cardActions"/>
+  <name value="CDSHookCardActionType"/>
+  <title value="CDS Hooks Card Suggestion Action Types"/>
+  <status value="draft"/>
+  <description value="Codes allowed for defining the type of action in a CDS Hooks suggestion"/>
+  <compose>
+    <include>
+      <system value="http://hl7.org/fhir/restful-interaction"/>
+      <concept>
+        <code value="create"/>
+      </concept>    
+      <concept>
+        <code value="delete"/>
+      </concept>    
+      <concept>
+        <code value="update"/>
+      </concept>    
+    </include>
+  </compose>
+</ValueSet>
