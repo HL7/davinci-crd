@@ -319,10 +319,10 @@ This might result in an executed query that looks like this: `ServiceRequest?_id
 
 <blockquote class="stu-note">
 <p>
-This proposed pre-adoption is not CDS Hooks conformant.  It is possible that the CDS Hooks community will adopt an alternative solution or choose not to make any changes.  Community discussion about this proposal can be found on the CDS Hooks issue list <a href="https://github.com/cds-hooks/docs/issues/377">here</a>.  This implementation guide will be updated to align with the decision of the community and might, if necessary, fall back to the use of extensions if CDS Hooks does not choose to support prefetch based on context resources and the payer community determines that prefetch is still required.
+This proposed pre-adoption is not CDS Hooks conformant.  It is possible that the CDS Hooks community will adopt an alternative solution or choose not to make any changes.  Community discussion about this proposal can be found on the CDS Hooks issue list <a href="https://github.com/cds-hooks/docs/issues/377">here</a> and in Jira <a href="https://jira.hl7.org/browse/FHIR-35804">here</a>.  This implementation guide will be updated to align with the decision of the community and might, if necessary, fall back to the use of extensions if CDS Hooks does not choose to support prefetch based on context resources and the payer community determines that prefetch is still required.
 </p>
 <p>
-In addition to this preadoption, this implementation guide presumes support for prefetch query capabilities more sophisticated than the recommended <a href="https://cds-hooks.hl7.org/1.0/#prefetch-query-restrictions">prefetch query restrictions</a> in the CDS Hooks specification.  Specifically, the use of <a href="{{site.data.fhir.path}}search.html#include">_include</a>, as seen in the example above.
+In addition to this preadoption, this implementation guide presumes support for prefetch query capabilities more sophisticated than the recommended <a href="https://cds-hooks.hl7.org/1.0/#prefetch-query-restrictions">prefetch query restrictions</a> in the CDS Hooks specification.  Specifically, the use of <a href="{{site.data.fhir.path}}search.html#include">_include</a>, as seen in the example above.  It also uses a query-like mechanism to reference 'draft' orders that may not yet be available in the CRD client's repository for query, which will require query-like functionality to be implemented against in-memory objects.
 </p>
 </blockquote>
 
