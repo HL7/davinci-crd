@@ -141,6 +141,13 @@ Each capability listed here has been proposed to the CDS Hooks community and cou
 
 This implementation guide extends/customizes CDS Hooks in 5 ways: additional hook resources, a hook configuration mechanism, additional prefetch capabilities, additional response capabilities, and ability to link hooks to their corresponding request.  Each are described below:
 
+<div markdown="1" class="new-content">
+
+##### Additional hook
+
+Based on implementer feedback, CRD has identified the need for an additional location within CRD client workflow where payer decision support might be relevant - the process of dispatching a non-directed order to a specific performer.  (E.g. selecting a referral recipient, choosing an imaging center, picking a lab, etc.)  To support this use-case, a new proposed [order-dispatch](https://cds-hooks.org/hooks/order-dispatch) has been proposed.  Implementers **MAY** choose to provide support for this new hook.
+
+</div>
 
 ##### Additional Hook resources
 Two of the hooks used by this specification (`order-select` and `order-sign`) identify specific "order" resources that can be passed as part of the hook invocation.  CRD has use-cases for additional resource types to be passed to this hook.  Specifically:
@@ -640,6 +647,17 @@ The profiles expected to be used for the resources resolved to by the userId, pa
     <td><a href="{{site.data.fhir.ver.uscore}}/StructureDefinition-us-core-practitionerrole.html">us-core-practitionerrole</a></td>
   </tr>
 </table>
+
+<div markdown="1" class="new-content">
+
+##### order-dispatch
+This hook is described in current build of the CDS Hook specification [here](https://cds-hooks.hl7.org/hooks/order-dispatch/).  This version of the CRD implementation guide refers to version 1.0 of the hook.
+
+This is a brand new hook proposal that allows for decision support to be provided when the intended performer of a service is not chosen when the order is written, but instead at some later time-point - quite frequently by someone other than the practitioner who wrote the order.  Because knowing 'who' will perform the service is often relevant when determining coverage and prior authorization requirements, and because it is also a useful point for providing guidance such as suggesting alternative "in-network" providers, this is a useful place to provide decision support.
+
+This hook will fire at some point after (possibly well after) the [order-sign](#order-sign) hook fires.  It only passes the patient id, order id, performer and (optionally) the Task that describes the fulfillment request as part of the context.  This specification does not require use of the Task resource.
+
+</div>
 
 ##### order-select
 This hook is described in the CDS Hook specification [here](https://cds-hooks.hl7.org/hooks/order-select/2020May/order-select/).  This version of the CRD implementation guide refers to version 1.0 of the hook.
