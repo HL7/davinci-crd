@@ -57,12 +57,6 @@ Guidance and conformance expectations around privacy and security are provided b
 
 In addition to these, this implementation guide imposes the following additional rules:
 
-<div markdown="1" class="new-content">
-
-* CRD clients SHALL ensure that a given payer’s service is only invoked for patients that are believed to have active coverage with that payer.
-
-</div>
-
 * As per the CDS Hook specification, communications between CRD Clients and CRD Services **SHALL** use TLS.  Mutual TLS is not required by this specification but is permitted.  CRD Services and CRD Clients **SHOULD** enforce a minimum version and other TLS configuration requirements based on current best practices.
     * Systems **SHOULD** comply with the most recent set of NIST guidelines and **SHALL** comply with at least the next most recent guidelines.  At the time this IG is written, the current guidelines can be found [here](https://csrc.nist.gov/CSRC/media/Publications/sp/800-52/rev-2/draft/documents/sp800-52r2-draft2.pdf).
     * This specification does not provide guidance on certificate management between systems, though it has been proposed that Direct certificates could be used for this purpose.
