@@ -36,8 +36,8 @@ e: {
       "url" : "http://hl7.org/fhir/StructureDefinition/valueset-unclosed",
       "valueBoolean" : true
     }],
-    "identifier" : "urn:uuid:7eed2a5b-5164-4e80-89e9-7dcf03a6b4e8",
-    "timestamp" : "2022-02-03T06:48:46.448Z",
+    "identifier" : "urn:uuid:a1f8d38c-d561-43a3-aaca-dd6cb1aca9a7",
+    "timestamp" : "2022-02-04T17:47:44.497Z",
     "parameter" : [{
       "name" : "limitedExpansion",
       "valueBoolean" : true
@@ -5236,14 +5236,13 @@ v: {
 -------------------------------------------------------------------------------------
 {"code" : {
   "system" : "http://snomed.info/sct",
-  "version" : "20140730",
   "code" : "227493005",
   "display" : "Cashew Nut"
 }, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS", "versionFlexible":"true"}####
 v: {
-  "severity" : "error",
-  "error" : "Version '20140730' of the code system 'http://snomed.info/sct' is not known (encountered paired with code = '227493005'). ValidVersions = [http://snomed.info/sct/11000146104/version/20210930,http://snomed.info/sct/11000172109/version/20210915,http://snomed.info/sct/20611000087101/version/20210930,http://snomed.info/sct/32506021000036107/version/20210630,http://snomed.info/sct/45991000052106/version/20210531,http://snomed.info/sct/554471000005108/version/20210930,http://snomed.info/sct/731000124108/version/20210901,http://snomed.info/sct/900000000000207008/version/20190731,http://snomed.info/sct/900000000000207008/version/20200131,http://snomed.info/sct/900000000000207008/version/20200731,http://snomed.info/sct/900000000000207008/version/20210731]; The code provided (http://snomed.info/sct#227493005) is not valid in the value set 'All codes known to the system' (from http://tx.fhir.org/r4)",
-  "class" : "CODESYSTEM_UNSUPPORTED"
+  "display" : "Cashew nuts",
+  "code" : "227493005",
+  "system" : "http://snomed.info/sct"
 }
 -------------------------------------------------------------------------------------
 {"code" : {
@@ -5282,38 +5281,17 @@ v: {
 {"code" : {
   "system" : "http://snomed.info/sct",
   "code" : "25267002"
-}, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/serviceRequestCodes--1", "version": "1.1.0", "lang":"null", "useServer":"true", "useClient":"false", "guessSystem":"false", "valueSetMode":"ALL_CHECKS", "versionFlexible":"true"}####
-v: {
-  "display" : "Insertion of intracardiac pacemaker",
-  "code" : "25267002",
-  "system" : "http://snomed.info/sct"
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "25267002"
-}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS", "versionFlexible":"true"}####
-v: {
-  "display" : "Insertion of intracardiac pacemaker",
-  "code" : "25267002",
-  "system" : "http://snomed.info/sct"
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "227493005",
-  "display" : "Cashew Nut"
-}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS", "versionFlexible":"true"}####
-v: {
-  "display" : "Cashew nuts",
-  "code" : "227493005",
-  "system" : "http://snomed.info/sct"
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "25267002"
 }, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/serviceRequestCodes--1", "version": "1.1.0-ballot", "lang":"null", "useServer":"true", "useClient":"false", "guessSystem":"false", "valueSetMode":"ALL_CHECKS", "versionFlexible":"true"}####
+v: {
+  "display" : "Insertion of intracardiac pacemaker",
+  "code" : "25267002",
+  "system" : "http://snomed.info/sct"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://snomed.info/sct",
+  "code" : "25267002"
+}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS", "versionFlexible":"true"}####
 v: {
   "display" : "Insertion of intracardiac pacemaker",
   "code" : "25267002",

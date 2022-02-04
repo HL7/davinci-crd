@@ -1,4 +1,4 @@
-This section of the implementation guide defines specific requirements for systems wishing to conform to this Coverage Requirements Discovery implementation guide.  The bulk of the section focuses on the implementation of the [CDS Hooks Specification](https://cds-hooks.hl7.org/1.0) to meet CRD use-cases.  It also describes the use of [SMART on FHIR](http://hl7.org/fhir/smart-app-launch/index.html) and provides guidance on privacy, security and other implementation requirements.
+This section of the implementation guide defines specific requirements for systems wishing to conform to this Coverage Requirements Discovery implementation guide.  The bulk of the section focuses on the implementation of the [CDS Hooks Specification](https://cds-hooks.hl7.org/1.0) to meet CRD use-cases.  It also describes the use of [SMART on FHIR](http://hl7.org/fhir/smart-app-launch/index.html) and provides guidance on privacy, security, and other implementation requirements.
 
 The requirements and expectations described here are not intended to be exhaustive. The purpose of this implementation guide is to establish a baseline of expected behavior that communication partners can rely on and then build upon. Future versions of this specification will evolve based on implementer feedback. Therefore, CRD Services and CRD Clients **MAY** mutually agree to support additional hooks, additional card patterns, additional resources, additional extensions, etc. not in this specification.  Although CRD Services and CRD Clients are not required to support any capabilities defined beyond this specification, the intent is to support innovations that extend the specification in a manner that allows payers and providers to adopt those extensions in a mutually agreeable way.
 
@@ -46,7 +46,7 @@ There is one exception to the use of or alignment with US Core profiles.  The [n
 Note that, in some cases, the US Core profiles require support for data elements that are not necessarily relevant to the coverage requirements discovery use-case.  It was felt that leveraging existing standard interfaces would promote greater (and quicker) interoperability than a more tuned custom interface.  CRD Clients might still choose to restrict what information is exposed to CRD Services based on their internal data access and governance rules.
 
 
-### Privacy, Security and Safety
+### Privacy, Security, and Safety
 
 Guidance and conformance expectations around privacy and security are provided by all three specifications this implementation guide relies on.  Implementers **SHALL** adhere to any security and privacy rules defined by:
 
@@ -62,7 +62,7 @@ In addition to these, this implementation guide imposes the following additional
     * This specification does not provide guidance on certificate management between systems, though it has been proposed that Direct certificates could be used for this purpose.
 * CRD Clients **SHALL** support running applications that adhere to the SMART on FHIR [confidential app](http://www.hl7.org/fhir/smart-app-launch#support-for-public-and-confidential-apps) profile
 * CRD Services **SHALL** use information received solely for coverage determination purposes and **SHALL NOT** retain data received over the CRD interfaces for any purpose other than audit
-* CRD Clients are the final arbiters of what data can or cannot be shared with CRD Services and **MAY** filter or withhold any resources or data elements necessary to support their obligations as health data custodians, including legal, policy and patient consent-based restrictions.  Withholding information might, however, limit the completeness or accuracy of coverage requirements discovery advice retrieved using the interfaces within this guide.  The inability of a CRD service to provide full advice does not relieve providers of their responsiblity for ensuring that payer coverage requirements are met.
+* CRD Clients are the final arbiters of what data can or cannot be shared with CRD Services and **MAY** filter or withhold any resources or data elements necessary to support their obligations as health data custodians, including legal, policy and patient consent-based restrictions.  Withholding information might, however, limit the completeness or accuracy of coverage requirements discovery advice retrieved using the interfaces within this guide.  The inability of a CRD service to provide full advice does not relieve providers of their responsibility for ensuring that payer coverage requirements are met.
 * CRD Clients **SHALL** ensure that the resource identifiers exposed over the CRD interface are distinct from and have no determinable relationship with any business identifiers associated with those records.  E.g. the Patient.id element cannot be the same as or contain in some fashion a patient's social security number or medical record number.
 
 #### PHI and Hook Invocation
@@ -74,7 +74,7 @@ Therefore, CRD Clients **SHALL** provide support for Coverage Requirements Disco
 * The Coverage resources adhere to the [de-identified profile](StructureDefinition-profile-coverage-deident.html)
 * All resource narratives are removed
 * All extensions other than those explicitly mentioned in the profiles in this implementation guide are removed
-* All markdown elements and all string elements that could potentially support free-text (e.g. 'text', 'display', 'comment' and similar elements) are removed
+* All markdown elements and all string elements that could potentially support free text (e.g. 'text', 'display', 'comment' and similar elements) are removed
 * Any elements that would be rendered empty due to the above removals are either removed, or if cardinality restrictions would prevent their removal, are populated solely with a [data absent reason]({{site.data.fhir.path}}extension-data-absent-reason.html) extension with a code of 'masked'
 
 CRD Clients **SHALL** determine whether a CRD Service will use the PHI or non-PHI version of the CRD interface at the time the CRD Service is configured to have access to their system.  In situations where PHI will never be required to perform Coverage Requirements Discovery, the redacted view **SHALL** be used.
@@ -91,7 +91,7 @@ There is some controversy around the decision to mandate support for de-identifi
 
 #### Sensitive Orders
 
-CRD Clients that implement the [order-select](#order-select) hook will typically fire the hook multiple times as information is gathered and entered into the system by a practitioner.  In cases where the content of an order is sensitive, it is possible that a patient will elect to pay for a medication, device, service (etc.) themselves instead of sharing the information with a payer.  In these cases, the order in which information is entered and when hooks are fired could determine whether or not information the patient deems sensitive is shared with the CRD Service and payer.
+CRD Clients that implement the [order-select](#order-select) hook will typically fire the hook multiple times as information is gathered and entered into the system by a practitioner.  In cases where the content of an order is sensitive, it is possible that a patient will elect to pay for a medication, device, service (etc.) themselves instead of sharing the information with a payer.  In these cases, the order in which information is entered and when hooks are fired could determine whether information the patient deems sensitive is shared with the CRD Service and payer.
 
 CRD Client workflows, user interfaces and CDS hook triggers **SHALL** be designed in a manner that ensures that practitioner and patient considerations govern whether information is sent to a CRD Service.
 
@@ -103,13 +103,13 @@ Depending on their location within the workflow, CDS Hooks may be processed in a
 
 <blockquote class="note-to-balloters">
 <p>
-Payers and EHRs are both encouraged to provide feedback around whether this timing expectation strikes the appropriate balance between allowing appropriate decision support and allowing timely progress of worklow.  This evaluation should take into account what systems will need to be involved in the decision support process, what external calls might be needed, what caching strategies are viable, etc.
+Payers and EHRs are both encouraged to provide feedback around whether this timing expectation strikes the appropriate balance between allowing appropriate decision support and allowing timely progress of workflow.  This evaluation should consider what systems will need to be involved in the decision support process, what external calls might be needed, what caching strategies are viable, etc.
 </p>
 </blockquote>
 
 #### Accuracy
 
-CDS services SHOULD make every effort to ensure that the guidance returned with respect to coverage and prior authorizations (e.g. assertions that a service is covered or prior authorization is not necessary) is as accurate as guidance that would be provided by other means (e.g. portals, phone calls).  However, that this doesn't mean that circumstances can't change in a way that invalidates an answer provided.  Also, such guidance should allow for possible variances in coding and submission.  (See [Impact on payer processes](background.html#impact-on-payer-processes) on the Background page.)
+CDS services SHOULD make every effort to ensure that the guidance returned with respect to coverage and prior authorizations (e.g. assertions that a service is covered, or prior authorization is not necessary) is as accurate as guidance that would be provided by other means (e.g. portals, phone calls).  However, that this doesn't mean that circumstances can't change in a way that invalidates an answer provided.  Also, such guidance should allow for possible variances in coding and submission.  (See [Impact on payer processes](background.html#impact-on-payer-processes) on the Background page.)
 
 </div>
 
@@ -122,7 +122,7 @@ Payers and service providers **SHALL** ensure that CDS Hooks return only message
 
 <div markdown="1" class="new-content">
 
-Implementations **SHALL** have the ability to flag or otherwise identify particular orders, appointments, encounters and other records as 'payer-sensitive' and ensure that such sensitive information is not queryable by payers and that such information does not trigger payer hooks or get included as part of payer hook invocation.  The process to flag information as payer-sensitive should fit within standard workflow and minimize provider effort.  The determination of the flag SHOULD be set as early in the process as possible in the workflow to ensure that decision support can be provided as early as possible.  The 'flagging' may occur either automatically or with provider intervention, but both SHOULD be supported.
+Implementations **SHALL** have the ability to flag or otherwise identify orders, appointments, encounters, and other records as 'payer-sensitive' and ensure that such sensitive information is not queryable by payers and that such information does not trigger payer hooks or get included as part of payer hook invocation.  The process to flag information as payer-sensitive should fit within standard workflow and minimize provider effort.  The determination of the flag SHOULD be set as early in the process as possible in the workflow to ensure that decision support can be provided as early as possible.  The 'flagging' may occur either automatically or with provider intervention, but both SHOULD be supported.
 
 </div>
 
@@ -164,7 +164,7 @@ The CRD Services provided by payers will support discovery of different types of
 *	Forms and documentation that must be provided with a prior authorization request
 *	Forms and documentation that must be included with a claim submission
 
-Not all of the coverage information returned by a CRD Service will be relevant to all users of all CRD Clients. It would therefore be useful to be able configure CRD Services to withhold certain card types from certain provider types, user roles, or specific users.  Preferences could potentially be configured within the CRD Service or within the CRD Client.
+Not all the coverage information returned by a CRD Service will be relevant to all users of all CRD Clients. It would therefore be useful to be able configure CRD Services to withhold certain card types from certain provider types, user roles, or specific users.  Preferences could potentially be configured within the CRD Service or within the CRD Client.
 
 Managing preferences within a CRD Service would require processes to support communication and management of customization requests as well as additional complexity within the CRD Service software.  Managing preferences within the CRD Client would require it to either request specific information by invoking multiple calls to different services or by invoking a single call to the service indicating the response types desired.
 
@@ -180,7 +180,7 @@ Extensions will be enabled in two places:
 An extension called `davinci-crd.configuration-options` will define a configuration object with an array of available configurable options within the CDS Service, where:  
 
 *  Each option **SHALL** include four mandatory elements:
-    *  A `code` that will be used when setting configuration during hook invocation, and has an ([extensible](http://www.hl7.org/fhir/terminologies.html#extensible)) binding to the <a href="ValueSet-cardType.html">CRD Card Types</a> valueset.
+    *  A `code` that will be used when setting configuration during hook invocation, and has an ([extensible](http://www.hl7.org/fhir/terminologies.html#extensible)) binding to the <a href="ValueSet-cardType.html">CRD Card Types</a> ValueSet.
     *  A data `type` for the parameter.  At present, allowed values are "boolean" and "integer" (NOTE: These are the JSON data types and not the FHIR data types.)
     *  A display `name` for the configuration option to appear in the client's user interface when performing configuration
     *  A `description` providing a 1-2 sentence description of the effect of the configuration option
@@ -254,7 +254,7 @@ For example, a [CDS Service Response](https://cds-hooks.hl7.org/1.0/#response) f
 
 Notes:
 
-*  This version of the implementation guide is not proposing to standardize the codes, names, types or descriptions for configuration options for CRD Services.  If configurability proves to be useful, future versions of the CRD specification will work towards standardizing configuration options so that there is consistency in behavior across payer services to ease the burden on those performing configuration.
+*  This version of the implementation guide is not proposing to standardize the codes, names, types, or descriptions for configuration options for CRD Services.  If configurability proves to be useful, future versions of the CRD specification will work towards standardizing configuration options so that there is consistency in behavior across payer services to ease the burden on those performing configuration.
 
 *  There is no mechanism to express co-occurrence rules amongst configuration options.  Guidance can be given about allowed combinations in descriptions, but payer services **SHALL** gracefully handle disallowed/nonsensical combinations.  I.e. the CRD Service must:
 
@@ -266,7 +266,7 @@ Notes:
 
 *  Codes **SHALL** be valid JSON property names and SHALL come from the <a href="ValueSet-cardType.html">CRD Card Types.</a> list if an applicable type is in that list.
 
-*  Codes, names and descriptions **SHALL** be unique within a [CDS Service](https://cds-hooks.hl7.org/1.0/#response) definition.  They **SHOULD** be consistent across different hooks supported by the same payer when dealing with the same types of configuration options.
+*  Codes, names, and descriptions **SHALL** be unique within a [CDS Service](https://cds-hooks.hl7.org/1.0/#response) definition.  They **SHOULD** be consistent across different hooks supported by the same payer when dealing with the same types of configuration options.
 
 *  Payer services providing more than one type of coverage requirement information/guidance **SHOULD** expose configuration options allowing clients to dynamically control what information is returned by the service.
 
@@ -339,7 +339,7 @@ CDS Hooks supports suggestions that involve multiple actions.  Coverage Requirem
 *  Creating a Task to complete a Questionnaire; and
 *  Updating the proposed order to point to a "new" prior authorization (ClaimResponse instance) - one the CRD Service was aware of that the CRD Client was not.
 
-In the first case, the creation of the Questionnaire needs to be conditional - it **SHOULD** only occur if that specific Questionnaire version doesn't already exist and the payer service **SHALL** query to determine if the client has a copy of the Questionnaire before sending the request.  In the second case, the order **SHOULD** be updated to point to the "id" assigned by the EMR to the newly persisted ClaimResponse instance.  Both  capabilities are supported in FHIR's [transaction]({{site.data.fhir.path}}http.html#transaction)  
+In the first case, the creation of the Questionnaire needs to be conditional - it **SHOULD** only occur if that specific Questionnaire version doesn't already exist, and the payer service **SHALL** query to determine if the client has a copy of the Questionnaire before sending the request.  In the second case, the order **SHOULD** be updated to point to the "id" assigned by the EMR to the newly persisted ClaimResponse instance.  Both  capabilities are supported in FHIR's [transaction]({{site.data.fhir.path}}http.html#transaction)  
 functionality.  However, not all the capabilities/guidance included there has been incorporated into CDS Hooks 'suggestions', in part to keep the specification simpler.
 
 For this release of the implementation guide, these requirements will be handled as follows:
@@ -466,11 +466,11 @@ Note: Sending existing prior authorizations is not in scope for this version of 
 <div markdown="1" class="new-content">
 
 ##### Linking cards to requests
-Some CDS hooks have a single context.  [encounter-start](#encounter-start) and [encounter-discharge](#encounter-discharge) are tied to their respective encounter and there is no question as to which encounter a returned card is associated with.  However, the [appointment-book](#appointment-book), [order-select](#order-select), and [order-sign](#order-sign) hooks all allow passing in multiple resources as part of the hook invocation.  Each cardsreturned in the hook response might be associated with only one of the referenced appointment or order resources or a subset of them.  An EHR may wish to be able to track *what* resource(s) a card was associated with.  This might be for audit, to how or where the card is rendered on the screen, to allow the card to being directly associated with the triggering resource resource, or to enable various other workflow considerations.
+Some CDS hooks have a single context.  [encounter-start](#encounter-start) and [encounter-discharge](#encounter-discharge) are tied to their respective encounter and there is no question as to which encounter a returned card is associated with.  However, the [appointment-book](#appointment-book), [order-select](#order-select), and [order-sign](#order-sign) hooks all allow passing in multiple resources as part of the hook invocation.  Each card returned in the hook response might be associated with only one of the referenced appointment or order resources or a subset of them.  An EHR may wish to be able to track *what* resource(s) a card was associated with.  This might be for audit, to how or where the card is rendered on the screen, to allow the card to being directly associated with the triggering resource, or to enable various other workflow considerations.
 
-This implementation guide defines a standard extension - `davinci-associated-resource` -  that can appear on any card that provides a local reference to the appointment, order or other context resource to which the card is 'pertinent'.  It is optional and has a value consisting of 1..* local references referring to the resource type and resource id of the resource being linked.
+This implementation guide defines a standard extension - `davinci-associated-resource` -  that can appear on any card that provides a local reference to the appointment, order, or other context resource to which the card is 'pertinent'.  It is optional and has a value consisting of 1..* local references referring to the resource type and resource id of the resource being linked.
 
-NOTE: If a hook service is invoked on a collection of resources, all cards returned that are specific to only a subset of the resources passed as context SHALL disambiguate in the `detail` element which resources they're associated with in a human-friendly way.  Typically this means using test name, drug name or some other mechanism rather than a bare identifier, as identifiers may not be visible to the end user for resources that are not yet fully 'created'.
+NOTE: If a hook service is invoked on a collection of resources, all cards returned that are specific to only a subset of the resources passed as context SHALL disambiguate in the `detail` element which resources they're associated with in a human-friendly way.  Typically, this means using test name, drug name or some other mechanism rather than a bare identifier, as identifiers may not be visible to the end user for resources that are not yet fully 'created'.
 
 {% raw %}
     {
@@ -653,7 +653,7 @@ The profiles expected to be used for the resources resolved to by the userId, pa
 ##### order-dispatch
 This hook is described in current build of the CDS Hook specification [here](https://cds-hooks.hl7.org/hooks/order-dispatch/).  This version of the CRD implementation guide refers to version 1.0 of the hook.
 
-This is a brand new hook proposal that allows for decision support to be provided when the intended performer of a service is not chosen when the order is written, but instead at some later time-point - quite frequently by someone other than the practitioner who wrote the order.  Because knowing 'who' will perform the service is often relevant when determining coverage and prior authorization requirements, and because it is also a useful point for providing guidance such as suggesting alternative "in-network" providers, this is a useful place to provide decision support.
+This is a brand-new hook proposal that allows for decision support to be provided when the intended performer of a service is not chosen when the order is written, but instead at some later time-point - quite frequently by someone other than the practitioner who wrote the order.  Because knowing 'who' will perform the service is often relevant when determining coverage and prior authorization requirements, and because it is also a useful point for providing guidance such as suggesting alternative "in-network" providers, this is a useful place to provide decision support.
 
 This hook will fire at some point after (possibly well after) the [order-sign](#order-sign) hook fires.  It only passes the patient id, order id, performer and (optionally) the Task that describes the fulfillment request as part of the context.  This specification does not require use of the Task resource.
 
@@ -666,7 +666,7 @@ This will probably be the most important and widely used hook for CRD as it will
 
 While it might be possible to not support this hook and only use the order-sign hook, the benefit of supporting [order-select](https://cds-hooks.hl7.org/hooks/order-select/2020May/order-select/) is that information may be provided to alter a provider's behavior before they've gone very far in the authoring process.  It will be less aggravating for the provider to be prompted to change a medical equipment order when they've just picked the device and haven't filled in all the usage instructions than when everything is complete and they're just about to sign.
 
-This hook allows multiple resource types to be present. Resources provided could be all of the same type or a mixture of types.  Coverage requirements **SHOULD** be limited only to those resources that are included in the `selections` context, though the content of other resources **SHOULD** also be considered before making recommendations about what additional actions are necessary.  (I.e. don't recommend an action if there's already a draft order to perform that action.)  
+This hook allows multiple resource types to be present. Resources provided could all be the same type or be a mixture of types.  Coverage requirements **SHOULD** be limited only to those resources that are included in the `selections` context, though the content of other resources **SHOULD** also be considered before making recommendations about what additional actions are necessary.  (I.e. don't recommend an action if there's already a draft order to perform that action.)  
 
 The different relevant resource types are as follows (support can vary between clients):
 
@@ -678,7 +678,7 @@ The different relevant resource types are as follows (support can vary between c
 
 **ServiceRequest**: Used to order a referral, lab tests, diagnostic imaging and sometimes to schedule a future appointment (also see [appointment-book](#appointment-book)).
 
-**NutritionOrder**: Used to order the preparation of specific meal types.  Generally used for in-patient care, but potentially also relevant for home-care.
+**NutritionOrder**: Used to order the preparation of specific meal types.  Generally used for in-patient care, but potentially also relevant for homecare.
 
 
 Coverage requirement responses might include:
@@ -739,7 +739,7 @@ There are no constraints or special rules related to this hook beyond the profil
 
 <sup>‡</sup> While this hook does not explicitly list PractitionerRole as an expected resource type for userId, it is not prohibited and is included to allow linking the user to a Practitioner in a specific role acting on behalf of a specific Organization.
 
-Note: While this hook is defined for use when ordering, it is still relevant when proposing (e.g. as part of a consult note) or planning (e.g. as part of a care plan) the use of an intervention.  All the 'Request' resources support differentiating between plans, proposal and orders.  Where CRD Clients have an appropriate workflow and data capture mechanism, this hook **MAY** be used in scenarios that don't involve creating a true order.
+Note: While this hook is defined for use when ordering, it is still relevant when proposing (e.g. as part of a consult note) or planning (e.g. as part of a care plan) the use of an intervention.  All the 'Request' resources support differentiating between plans, proposals, and orders.  Where CRD Clients have an appropriate workflow and data capture mechanism, this hook **MAY** be used in scenarios that don't involve creating a true order.
 
 
 ##### order-sign
@@ -759,7 +759,7 @@ In addition to the [guidance provided in the CDS Hooks specification](https://cd
 
 *  The `Card.source` **SHOULD** be populated with an insurer name that the user and patient would recognize (i.e. the responsible insurer on the patient's insurance card) including in situations where coverage recommendations are being returned by a benefits manager or intermediary operating the CRD service on behalf of the payer.  If an insurer is providing recommendations from another authority (e.g. a clinical society), the society's name and logo might be displayed, though usually only with the permission of that organization.
 
-    *  `Card.source.topic` **SHALL** be populated, and has an [extensible](http://www.hl7.org/fhir/terminologies.html#extensible) binding to the valueset <a href="ValueSet-cardType.html">CRD Card Types.</a> The rationale is to allow EHRs to potentially filter or track the usage of different types of cards.
+    *  `Card.source.topic` **SHALL** be populated, and has an [extensible](http://www.hl7.org/fhir/terminologies.html#extensible) binding to the ValueSet <a href="ValueSet-cardType.html">CRD Card Types.</a> The rationale is to allow EHRs to potentially filter or track the usage of different types of cards.
 
 *  Users are busy.  Time spent reading a payer-returned card is inevitably time not spent reviewing other information or interacting with the patient.  If not useful or relevant, users will quickly learn to ignore - or even demand the disabling of - payer-provided alerts.  Therefore, information must be delivered efficiently and be tuned to provide maximum relevance.  Specifically:
 
@@ -771,7 +771,7 @@ In addition to the [guidance provided in the CDS Hooks specification](https://cd
 
     *  `Card.detail` **SHOULD** provide enough context that a user can determine whether it is worth the precious seconds to launch an app or external link or not - ideally providing a sense of where to look for and how to use whatever link or app they do launch in the specific context of the order they're making at the time.
 
-    *  Keep the number of cards manageable.  Consider whether user workflow will be faster with separate cards for each link or a single card having multiple links.  Typically using the smallest number of cards that still support descriptive actionable summaries is best.
+    *  Keep the number of cards manageable.  Consider whether user workflow will be faster with separate cards for each link or a single card having multiple links.  Typically, using the smallest number of cards that still support descriptive actionable summaries is best.
 
     *  When providing links, don't send the user to the first page of an 80+ page PDF.  Keep document size short and/or provide linking directly to the section that is relevant for the context.
 
@@ -793,7 +793,7 @@ Of the response types in this guide, conformant CRD Clients **SHALL** support th
 Response types are listed from least sophisticated to most sophisticated - and potentially more useful/powerful.  As a rule, the more a card can automate manual processes and the more context-specific the behavior is, the more useful the decision support will be to the clinician and the more likely it will be used.
 
 Notes:
-* CRD Clients will provide resources, such as MedicationRequest, in the CDS Hook request context object. These resources might be temporary in the context in which the CDS Hook is triggered, such as when a proposed medication order is being reviewed. In this case, the CDS Client must maintain a stable identifier for these temporary resources in order to allow CRD responses to refer to them in CDS Hook Actions.
+* CRD Clients will provide resources, such as MedicationRequest, in the CDS Hook request context object. These resources might be temporary in the context in which the CDS Hook is triggered, such as when a proposed medication order is being reviewed. In this case, the CDS Client must maintain a stable identifier for these temporary resources to allow CRD responses to refer to them in CDS Hook Actions.
 
 * Hook responses will frequently contain multiple cards and those cards might draw from a variety of response types.  For example, providing links, textual guidance as well as suggestions for alternative orders.
 
@@ -833,7 +833,7 @@ For example, this CDS Hooks [Card](https://cds-hooks.hl7.org/1.0/#cds-service-re
 {% endraw %}
 
 ###### Instructions
-This response type presents a `Card` with textual guidance to display to the user making the decisions. The text might provide clinical guidelines, suggested changes, rules around prior authorization, or even something as simple as "No special coverage requirements". It can be generated in a more sophisticated context for the payer, while still remaining simple to consume for the provider because it more easily allows returned information to be tuned to the specific context of the order/encounter that triggered the hook. In some cases, the text returned might be generated uniquely each time a hook is fired.
+This response type presents a `Card` with textual guidance to display to the user making the decisions. The text might provide clinical guidelines, suggested changes, rules around prior authorization, or even something as simple as "No special coverage requirements". It can be generated in a more sophisticated context for the payer, while remaining simple to consume for the provider because it more easily allows returned information to be tuned to the specific context of the order/encounter that triggered the hook. In some cases, the text returned might be generated uniquely each time a hook is fired.
 
 This example CDS Hook [Card](https://cds-hooks.hl7.org/1.0/#cds-service-response) just contains a message:
 
@@ -854,9 +854,9 @@ This example CDS Hook [Card](https://cds-hooks.hl7.org/1.0/#cds-service-response
 <div markdown="1" class="new-content">
 
 ###### Annotate
-This response type presents a `Card` with a piece of information that should be retained with the order/appointment/etc.  For example "No prior authorization for drug X required by ABC insurance", "Prior authorization number for X-ray from ABC insurance is 13245", or "This referral is not covered under the patient's DEF plan".  With information like this, merely displaying the text on the screen in a card isn't sufficient - it needs to be recorded in the associated order for future use or evidence.  These cards involve 'replacing' the submitted order, but leaving the order unchanged, with the exception that an additional 'note' is added to the resource instance. 
+This response type presents a `Card` with a piece of information that should be retained with the order/appointment/etc.  For example, "No prior authorization for drug X required by ABC insurance", "Prior authorization number for X-ray from ABC insurance is 13245", or "This referral is not covered under the patient's DEF plan".  With information like this, merely displaying the text on the screen in a card isn't sufficient - it needs to be recorded in the associated order for future use or evidence.  These cards involve 'replacing' the submitted order, but leaving the order unchanged, with the exception that an additional 'note' is added to the resource instance. 
 
-The note uses the [{{site.data.fhir.path}}datatypes.html#Annotation](Annotation) datatype and captures the comment, the date, and who made the assertion.  In this case, the commenter would be the payer organization. The payers should include all of the discrete information in the 'annotation' and the 'detail' for the card should indicate that the statement is point-in-time.  Note that the text should *also* be displayed in the card, with the button link simply saying "Add to record" or something like that.  The requested action is always an 'update' and there is only ever one alternative. It is to be noted that this will be handled as a single 'update' action and EHRs that don't support the extension will ignore it and just store the annotation.
+The note uses the [{{site.data.fhir.path}}datatypes.html#Annotation](Annotation) datatype and captures the comment, the date, and who made the assertion.  In this case, the commenter would be the payer organization. The payers should include all the discrete information in the 'annotation' and the 'detail' for the card should indicate that the statement is point-in-time.  Note that the text should *also* be displayed in the card, with the button link simply saying "Add to record" or something like that.  The requested action is always an 'update' and there is only ever one alternative. It is to be noted that this will be handled as a single 'update' action and EHRs that don't support the extension will ignore it and just store the annotation.
 
 When using this response type, the proposed order or appointment being updated **SHALL** comply with the following profiles:
 
@@ -901,29 +901,29 @@ For example, this card proposes indicates that a prior authorization has been gr
           "resource": {
             "resourceType": "MedicationRequest",
             "id": "idfromcontext",
-			      "extension" : [
+			      "extension": [
               { 
-                 "extension" : [
+                 "extension": [
                   {
-                    "url" : "coverageInfo",
-                    "valueCoding" : {
-                      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/coverageGuidance",
-                      "code" : "prior-auth",
-                      "display" : "Prior Authorization"
+                    "url": "coverageInfo",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/coverageGuidance",
+                      "code": "prior-auth",
+                      "display": "Prior Authorization"
                     }
                   },
                   {
-                    "url" : "coverage",
-                    "valueReference" : {
+                    "url": "coverage",
+                    "valueReference": {
                       "reference": "Coverage/example"
                     }
                   },
                   {
-                   "url" : "date",
-                   "valueDate" : "2019-02-15"
+                   "url": "date",
+                   "valueDate": "2019-02-15"
                   }
                ],
-               "url" : "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-coverage-information"
+               "url": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-coverage-information"
               } 
             ],
             "status": "draft",
@@ -987,7 +987,7 @@ Balloters are requested to provide their feedback on whether the conformance exp
 ###### Propose alternate request
 This response type can be used by payers to present a `Card` with suggested alternatives to the current proposed therapy.  This might be updating the order to change certain information or proposing to replace the order completely with one or more alternatives.  This might be used to propose a change to a first-line treatment, to alter therapy frequency or drug dosage to be consistent with coverage guidelines, to propose covered products or services as substitutes for a non-covered service and/or to propose therapeutically equivalent treatments that will have a lower cost to the patient.
 
-Multiple alternatives can be proposed by providing multiple suggestions.  Each suggestion **SHOULD** contain either a single "update" action to revise the existing proposed order; or both a "delete" action for the current proposed order and a "create" action for the new proposed order.  In some cases, additional "create" actions might be needed if there's a need to convey a non-[contained]({{site.data.fhir.path}}references.html#contained) Medication, Device or other resource.  The "delete" action resource element is not expected to adhere to any profile as it is only expected to contain the "id" property of the resource being replaced.  Any other elements will be ignored.
+Multiple alternatives can be proposed by providing multiple suggestions.  Each suggestion **SHOULD** contain either a single "update" action to revise the existing proposed order; or both a "delete" action for the current proposed order and a "create" action for the new proposed order.  In some cases, additional "create" actions might be needed if there's a need to convey a non-[contained]({{site.data.fhir.path}}references.html#contained) Medication, Device, or other resource.  The "delete" action resource element is not expected to adhere to any profile as it is only expected to contain the "id" property of the resource being replaced.  Any other elements will be ignored.
 
 The choice of "update" vs. "delete + create" **SHOULD** be based on how significant the change is - and how relevant other decision support on the original request will still be.  If cards returned by other service providers might still be relevant (e.g. because there was just a small change in dose or frequency), then performing an 'update' will allow updates from other decision support cards to also be applied.  If the change is significant enough that other decision support will not be relevant, a delete + create will allow the client to suppress decision support cards that no longer apply.
 
@@ -1379,7 +1379,7 @@ One result of invoking a CRD service may be that, based on the patient, their ty
 
 The first will be handled through a 'create' action that stores a ClaimResponse instance complying with the HRex [unsolicited authorization](StructureDefinition-profile-claimresponse.html) profile together with an 'update' to the order or appointment instance that triggered the CDS Hook invocation to modify the record adding the ClaimResponse as a 'supportingInfo' element - establishing a linkage between the order and the prior authorization.
 
-The second suggestion will function exactly as per the 'annotate' card, with the annotation covering all relevant information needed for the prior authorization (billing codes, modifiers, authorized quantity, authorized amounts, time period, authorization number, etc.).  Support for this  second suggestion type is included as part of the mandatory support required for 'Annotate' suggestions.
+The second suggestion will function exactly as per the 'annotate' card, with the annotation covering all relevant information needed for the prior authorization (billing codes, modifiers, authorized quantity, authorized amounts, authorized period, authorization number, etc.).  Support for this  second suggestion type is included as part of the mandatory support required for 'Annotate' suggestions.
 
 CRD clients and services MAY, by mutual agreement, make use of the new CDS Hooks system action functionality to cause annotations to automatically be stored on the relevant request, appointment, etc.  These implementations will be responsible for ensuring that the only changes made to the EHR record are to add the annotations contemplated here.  It is likely that the conformance expectation on the use of system actions will be tighter in future releases.
 
@@ -1450,7 +1450,7 @@ CRD clients and services MAY, by mutual agreement, make use of the new CDS Hooks
 #### Additional data retrieval
 The context information provided as part of hook invocation will often not be enough for a CRD service to fully determine coverage requirements.  This section of the guide describes a common set of queries that define data that most, if not all, CRD Services will need to perform their requirements assessment.
 
-For this release of the implementation guide, conformant CRD Clients **SHOULD** support the CDS Hooks [prefetch](https://cds-hooks.hl7.org/1.0/#prefetch-template) capability and be able to perform all the prefetch queries defined here and, where needed, **SHOULD** implement interfaces to [_include]({{site.data.fhir.path}}search.html#include) resources not available in the system's database.  (i.e. if some of the data is stored in a separate system, it should ideally still be retrievable via `_include` in queries executed against the client.)  However, each payer will define the prefetch requests for their CRD Service based on the information they require to provide coverage requirements.  They might include more and/or less than described in this section.  Prefetch requests **SHOULD** only include information that is always expected to be needed for each hook invocation.  When information is only needed for certain invocations of the hook (e.g. for particular types of medications or services), that information **SHALL** only be retrieved by query using the provided token, never requested universally via prefetch.  Not all CRD Clients will support all prefetch requests.  
+For this release of the implementation guide, conformant CRD Clients **SHOULD** support the CDS Hooks [prefetch](https://cds-hooks.hl7.org/1.0/#prefetch-template) capability and be able to perform all the prefetch queries defined here and, where needed, **SHOULD** implement interfaces to [_include]({{site.data.fhir.path}}search.html#include) resources not available in the system's database.  (I.e. if some of the data is stored in a separate system, it should ideally still be retrievable via `_include` in queries executed against the client.)  However, each payer will define the prefetch requests for their CRD Service based on the information they require to provide coverage requirements.  They might include more and/or less than described in this section.  Prefetch requests **SHOULD** only include information that is always expected to be needed for each hook invocation.  When information is only needed for certain invocations of the hook (e.g. for specific types of medications or services), that information **SHALL** only be retrieved by query using the provided token, never requested universally via prefetch.  Not all CRD Clients will support all prefetch requests.  
 
 <blockquote class="stu-note">
 In future releases of this specification, the requirements in this section might become a **SHALL**.  Implementers are encouraged to provide feedback about this possibility based on their initial implementation experience.
@@ -1470,7 +1470,7 @@ The base requirement for these queries, whether based on Encounter or one of the
 
 Not all these will be relevant for all resource types.  Different resources have differently named data elements and search parameters for them.  In some cases, support only exists as extensions or does not exist at all.  Where necessary, this implementation guide defines additional extensions to support retrieval of these elements.  The intention is for both extensions and search parameters to eventually migrate into the core FHIR specification.
 
-There are two possible mechanisms that can be used by the service to gather the information needed: prefetch and querying against the EMR to retrieve additional resources.  Both of these mechanisms are defined as part of the [CDS Hooks specification](https://cds-hooks.hl7.org/1.0/#providing-fhir-resources-to-a-cds-service).  In some cases, a mixture of both approaches might be necessary.
+There are two possible mechanisms that can be used by the service to gather the information needed: prefetch and querying against the EMR to retrieve additional resources.  Both mechanisms are defined as part of the [CDS Hooks specification](https://cds-hooks.hl7.org/1.0/#providing-fhir-resources-to-a-cds-service).  In some cases, a mixture of both approaches might be necessary.
 
 ##### Prefetch
 Prefetch is an optional capability of CDS Hooks that allows the client to perform certain query functions on behalf of the CRD Service and provide the results in the initial hook invocation.  This allows the client to optimize query performance and can simplify functionality for the CRD Service.
@@ -1491,7 +1491,7 @@ Other information will need to be retrieved using queries that are more specific
 </div>
 <blockquote class="note-to-balloters">
 <p>
-This represents a change to how coverage information will be retrieved.  All active coverage for the patient is now retrieved (though typically only the coverage related to a payer will actually flow to the CRD service due to limits on information disclosure).  There are no longer extensions or special search parameters to support capturing insurance information on a request-specific, encounter-specific or other context-specific manner.
+This represents a change to how coverage information will be retrieved.  All active coverage for the patient is now retrieved (though typically only the coverage related to a payer will actually flow to the CRD service due to limits on information disclosure).  There are no longer extensions or special search parameters to support capturing insurance information on a request-specific, encounter-specific, or other context-specific manner.
 </p>
 </blockquote>
 
@@ -1614,7 +1614,7 @@ This query presumes that a hook has been invoked and the following information h
   "encounterId": "987"
 ```
 
-As well, the `draftOrders` Bundle includes MedicationRequests that: reference 2 formulary medications (MED1, MED2), to be fulfilled by one pharmacy Organization (456), and are ordered by the same PractitionerRole with id 'ABC'.  Most importantly, they are all tied to the same Coverage record with id 'DEF'.
+As well, the `draftOrders` Bundle includes MedicationRequests that reference 2 formulary medications (MED1, MED2), to be fulfilled by one pharmacy Organization (456) and are ordered by the same PractitionerRole with id 'ABC'.  Most importantly, they are all tied to the same Coverage record with id 'DEF'.
 
 Note: This query also presumes that all this information would be relevant to the CRD Service.  In practice, the service would only query the information needed to determine coverage requirements.  Also, the service will only be able to query data where the scopes made available in the `fhirAuthorization.scope` permit the desired queries.
 
@@ -1789,7 +1789,7 @@ The response is a batch-response Bundle, with each entry containing either a sin
 ##### Query Notes
 *  Conformant CRD Clients **SHOULD** be able to perform all the queries defined here and, where needed, **SHOULD** implement interfaces to [_include]({{site.data.fhir.path}}search.html#include) resources not available in the client's database.
 
-* Executing these queries in either batch or prefetch will bring back some redundant information (e.g.  information that was already known to the CRD Client and included in the request). Examples of this redundant information include: returning the original request, returning Encounter and Appointment resources found in the hook contexts, and returning Patient, Practitioner, Organization and Coverage resources that are common for different request types for the order-sign hook. This redundancy is the cost of using the prefetch mechanism or batch mechanism. Payers seeking greater efficiency can perform direct queries that are more tuned at the cost of needing to make multiple service calls.
+* Executing these queries in either batch or prefetch will bring back some redundant information (e.g.  information that was already known to the CRD Client and included in the request). Examples of this redundant information include returning the original request, returning Encounter and Appointment resources found in the hook contexts, and returning Patient, Practitioner, Organization and Coverage resources that are common for different request types for the order-sign hook. This redundancy is the cost of using the prefetch mechanism or batch mechanism. Payers seeking greater efficiency can perform direct queries that are more tuned at the cost of needing to make multiple service calls.
 
 * The queries use the defined search parameter names from the respective FHIR specification versions. If parties processing these queries have varied from these 'standard' search parameter names (as indicated by navigating their CapabilityStatements), the CRD Service will be responsible for translating the parameters into the CRD client's local names. For example, if a particular EMR's CapabilityStatement indicates that the parameter name (that corresponds to HL7's 'encounter' search criteria) is named 'visit' on the client's server, the Service will have to construct its search URL accordingly.
 
@@ -1804,7 +1804,7 @@ The response is a batch-response Bundle, with each entry containing either a sin
 #### Deferring Card Actions
 CRD clients SHOULD support deferring cards, allowing the information on a card to be reviewed by and/or the actions on a card to be performed by the current user or someone else at a later point.  If a CRD service feels that the ability to defer a card is important and (a) the system receiving the card does not have a native mechanism to defer a card and (b) the system does have the ability to accept 'create Task' actions, the CRD service MAY provide an alternate 'deferred' action that allows the card action to be performed later. CRD clients that do not provide native support for deferring cards **SHOULD** support accepting Task create actions.
 
-If using the 'Task' mechanism, the action will display an appropriate message about deferring the action (e.g. launching the SMART app) and will cause the creation of a Task within the CRD client. This Task will have an owner of the current user and will comply with the [CRD Card Task](StructureDefinition-profile-crdcardtask.html) profile.  Each action within a suggestion will have its own Task - allowing the actions to be managed separately.  Once created, deferred action Tasks might be re-assigned, scheduled and otherwise managed as normal Tasks.  How EHRs manage Task work queues is outside the scope of this specification.
+If using the 'Task' mechanism, the action will display an appropriate message about deferring the action (e.g. launching the SMART app) and will cause the creation of a Task within the CRD client. This Task will have an owner of the current user and will comply with the [CRD Card Task](StructureDefinition-profile-crdcardtask.html) profile.  Each action within a suggestion will have its own Task - allowing the actions to be managed separately.  Once created, deferred action Tasks might be re-assigned, scheduled, and otherwise managed as normal Tasks.  How EHRs manage Task work queues is outside the scope of this specification.
 
 The 'focus' of the Task indicates the resource to be acted upon for suggestion actions.  For 'delete' actions, this will simply be a reference to the resource.  For create and update actions, it will be to a 'contained' resource representing the new content.  For updates, the contained 'id' of the resource SHALL match the id of the record to update in the CRD client.
 
@@ -1855,9 +1855,9 @@ See [here](Task-action-example.html) for a full example of a deferred task.
 </div>
 
 ### SMART on FHIR Hook Invocation
-In addition to the real-time decision support provided by CDS Hooks, providers will sometimes need to seek coverage requirements information without invoking the workflow of their clinical system to actively create an order, appointment, encounter, etc.  A few real world examples where hooks may be invoked this way include: exploring a "what-if" scenario, answering a patient question related to whether a service would be covered, and retrieving a guidance document they had seen in a previous card.
+In addition to the real-time decision support provided by CDS Hooks, providers will sometimes need to seek coverage requirements information without invoking the workflow of their clinical system to actively create an order, appointment, encounter, etc.  A few real-world examples where hooks may be invoked this way include exploring a "what-if" scenario, answering a patient question related to whether a service would be covered, and retrieving a guidance document they had seen in a previous card.
 
-The solution to this need to perform coverage discovery "any time" is the use of a SMART on FHIR app.  Many CRD Clients (e.g. EMR systems) already support SMART on FHIR.  That standard allows independently developed applications to be launched from within the CRD Client (possibly within the user interface) and to interact with its data.  As part of its scope, the Da Vinci organization will develop an open source SMART on FHIR application to allow users of CRD Clients to invoke coverage requirements discovery from CRD Services for "what-if" scenarios using a CRD Client's existing SMART on FHIR interface.  CRD implementers **MAY** choose to use this app directly or as the basis for their own app development.  Note that CRD Clients will have their own registration process for all such apps.
+The solution to this need to perform coverage discovery "any time" is the use of a SMART on FHIR app.  Many CRD Clients (e.g. EMR systems) already support SMART on FHIR.  That standard allows independently developed applications to be launched from within the CRD Client (possibly within the user interface) and to interact with its data.  As part of its scope, the Da Vinci organization will develop an open-source SMART on FHIR application to allow users of CRD Clients to invoke coverage requirements discovery from CRD Services for "what-if" scenarios using a CRD Client's existing SMART on FHIR interface.  CRD implementers **MAY** choose to use this app directly or as the basis for their own app development.  Note that CRD Clients will have their own registration process for all such apps.
 
 CRD Clients conforming with this specification **SHALL** support the SMART on FHIR interface, **SHALL** allow launching of SMART apps from within their application, and **SHALL** be capable of providing the SMART app access to information it exposes to CRD Services using the CDS Hooks interface.
 
@@ -1868,18 +1868,18 @@ NOTES:
 * The use of SMART to explore "what-if" scenarios is distinct from the use of SMART envisioned in CDS Hooks:
     * rather than launching a SMART app based on a returned card, a SMART app is used here to invoke a CDS hook to artificially simulate a workflow in the CRD Client that would normally trigger a hook
     * when a SMART app is launched, draft orders within a CRD Client will not typically be available to the app to submit to the CRD Service - information for consideration in the "what-if" scenario will need to be entered into the app directly
-    * when a CRD Service returns cards, any instructions associated with the cards will be displayed in the app but it may not be able to execute the instructions within the cards
-* Exploration of "what-if" scenarios using the app is intended to work for all of the hooks. This might be accomplished through the use of separate SMART apps for different types of orders / processes (e.g. distinct what-if apps for ordering drugs, ordering labs, doing referrals, scheduling appointments, etc.) or a single SMART app that prompts the user to identify they scenario they are interested in exploring prior to invoking the hook.
+    * when a CRD Service returns cards, any instructions associated with the cards will be displayed in the app, but it may not be able to execute the instructions within the cards
+* Exploration of "what-if" scenarios using the app is intended to work for all the hooks. This might be accomplished using separate SMART apps for different types of orders / processes (e.g. distinct what-if apps for ordering drugs, ordering labs, doing referrals, scheduling appointments, etc.) or a single SMART app that prompts the user to identify they scenario they are interested in exploring prior to invoking the hook.
 
 <div markdown="1" class="new-content">
 
 #### Registering DTR apps with CRD
 
-If a payer supports both CRD and DTR and the EHR intends to enable DTR in addition to CRD, then at the time the CRD service is enabled within the EHR, the service must be configured with the URL of the SMART app that is to be used within that EHR.  For configuration purposes either zero or one SMART app SHALL be configured.  The SMART app selected must be one that supports all of the Questionnaire data types, extensions and other options that will be used by the payer - potentially including adaptive forms.
+If a payer supports both CRD and DTR and the EHR intends to enable DTR in addition to CRD, then at the time the CRD service is enabled within the EHR, the service must be configured with the URL of the SMART app that is to be used within that EHR.  For configuration purposes either zero or one SMART app SHALL be configured.  The SMART app selected must be one that supports all the Questionnaire data types, extensions and other options that will be used by the payer - potentially including adaptive forms.
 
 **NOTE:** The URL selected MAY be a 'logical' URL that corresponds to an EHR internal function rather than a registered SMART app.
 
-An EHR, on receipt of a CDS Hook card with a SMART app launch of the specified DTR URL choose to substitute that URL with the URL of an alternate SMART app, or with a card that allows launch of an internal function.  (Note: There is no standard mechanism for launching internal EHR functionality from a CDS Hook card as yet, so this will need to be an EHR-proprietary mechanism.).  EHRs performing such substitution might do so based on the user, organization, order type or any other configuration option.  All responsibility for selection of which app to use rests with the EHR.  The card-provided URL SHALL be the same for all DTR launches cards returned by the payer.
+An EHR, on receipt of a CDS Hook card with a SMART app launch of the specified DTR URL choose to substitute that URL with the URL of an alternate SMART app, or with a card that allows launch of an internal function.  (Note: There is no standard mechanism for launching internal EHR functionality from a CDS Hook card yet, so this will need to be an EHR-proprietary mechanism.).  EHRs performing such substitution might do so based on the user, organization, order type or any other configuration option.  All responsibility for selection of which app to use rests with the EHR.  The card-provided URL SHALL be the same for all DTR launches cards returned by the payer.
 
 Any substituted app (or internal EHR functionality) would need to support the DTR 1.1 standard launch context expectations and would also need to ensure the alternate app or internal function likewise supports the necessary Questionnaire capabilities used by the payer.  The EHR SHALL also notify the payer that they are performing app substitution so that the payer can notify the EHR if the payer's Questionnaire requirements will be changing.
 

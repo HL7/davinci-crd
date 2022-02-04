@@ -14,7 +14,7 @@ e: {
   "error" : "Error from server: Unable to provide support for code system http://www.ama-assn.org/go/cpt"
 }
 -------------------------------------------------------------------------------------
-{"hierarchical" : false, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/serviceRequestCodes", "version": "1.1.0"}####
+{"hierarchical" : false, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/serviceRequestCodes", "version": "1.1.0-ballot"}####
 e: {
   "error" : "Error from server: Unable to provide support for code system http://www.ama-assn.org/go/cpt"
 }
@@ -49,6 +49,15 @@ v: {
 }
 -------------------------------------------------------------------------------------
 {"code" : {
+  "code" : "h"
+}, "url": "http://hl7.org/fhir/ValueSet/units-of-time", "version": "4.0.1", "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"true", "valueSetMode":"ALL_CHECKS", "versionFlexible":"true"}####
+v: {
+  "display" : "小时",
+  "code" : "h",
+  "system" : "http://unitsofmeasure.org"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
   "code" : "d"
 }, "url": "http://hl7.org/fhir/ValueSet/units-of-time", "version": "4.0.1", "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"true", "valueSetMode":"ALL_CHECKS", "versionFlexible":"true"}####
 v: {
@@ -64,36 +73,6 @@ v: {
   "display" : "Oklahoma",
   "code" : "OK",
   "system" : "https://www.usps.com/"
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "25267002",
-  "display" : "Insertion of intracardiac pacemaker (procedure)"
-}, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/serviceRequestCodes", "version": "1.1.0", "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"NO_MEMBERSHIP_CHECK", "versionFlexible":"true"}####
-v: {
-  "display" : "Insertion of intracardiac pacemaker",
-  "code" : "25267002",
-  "system" : "http://snomed.info/sct"
-}
--------------------------------------------------------------------------------------
-{"hierarchical" : true, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/serviceRequestCodes", "version": "1.1.0"}####
-e: {
-  "error" : "Error from server: Unable to provide support for code system http://www.ama-assn.org/go/cpt"
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "code" : "h"
-}, "url": "http://hl7.org/fhir/ValueSet/units-of-time", "version": "4.0.1", "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"true", "valueSetMode":"ALL_CHECKS", "versionFlexible":"true"}####
-v: {
-  "display" : "小时",
-  "code" : "h",
-  "system" : "http://unitsofmeasure.org"
-}
--------------------------------------------------------------------------------------
-{"hierarchical" : false, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/serviceRequestCodes", "version": "1.1.0-ballot"}####
-e: {
-  "error" : "Error from server: Unable to provide support for code system http://www.ama-assn.org/go/cpt"
 }
 -------------------------------------------------------------------------------------
 {"code" : {
