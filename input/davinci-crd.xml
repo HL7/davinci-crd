@@ -270,5 +270,13 @@
       <code value="path-expansion-params"/>
       <value value="terminology-settings.json"/>
     </parameter>
+    <parameter>
+      <code value="no-narrative"/>
+      <value value="Coverage/deident-example"/>
+    </parameter>
+    <parameter>
+      <code value="no-narrative"/>
+      <value value="Patient/deident-example"/>
+    </parameter>
 	</definition>
 </ImplementationGuide>

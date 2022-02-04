@@ -1,9 +1,7 @@
 == Suppressed Messages ==
 
 # The remaining errors are all tooling issues:
-# - "The link 'Annotation' for "http://hl7.org/fhir/R4/datatypes.html#Annotation" cannot be resolved" - this link exists and is valid.  Have raised on Zulip
 # - "The system "General Practice" ..." - both of these codes are valid.  Unclear why they can't be validated.  Have raised on Zulip
-# - 'Coverage.text: max allowed = 0' and 'Patient.text: max allowed = 0' stem from there being no means to prevent the publisher from generating narrative for specific files
 # - 'sdc-t1' - This is a known SDC issue
 
 # De-identified patient specifically *cannot* be based on US-Core patient because US-Core patients have to be identifiable.  See US Core ticket FHIR-29675
