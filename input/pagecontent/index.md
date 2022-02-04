@@ -5,7 +5,7 @@
 This ballot release of the specification reflects several changes that reflect implementer feedback about the CRD specification arising from detailed review, connectathons and implementation experience.  Significant changes to the specification are highlighted in green and balloters are invited to focus particular attention on these sections.  "Notes to balloters" and "STU notes" call out additional key considerations where feedback is desired.  However, the whole specification is open to review and the project welcomes all constructive feedback.
 </p>
 <p>
-A summary of the major changes in this release can be found [here](history.html).
+A summary of the major changes in this release can be found <a href="history.html">here</a>.
 </p>
 </blockquote>
 

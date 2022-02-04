@@ -236,6 +236,11 @@
 				<title value="Credits"/>
 				<generation value="markdown"/>
 			</page>
+			<page>
+				<nameUrl value="history.html"/>
+				<title value="Change History"/>
+				<generation value="markdown"/>
+			</page>
 		</page>
 		<parameter>
 			<code value="copyrightyear"/>

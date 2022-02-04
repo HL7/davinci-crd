@@ -13,7 +13,7 @@ Added a number of enhancements and some changes to approach.  Key differences ar
 * Added the [Annotate](hooks.html#annotate) and [Pre-emptive prior authorization](hooks.html#pre-emptive-prior-authorization) card types
 * Revamped how [Prefetch](hooks.html#prefetch) handles retrieving a patient's coverage information
 * Provided explicit guidance around [deferring card actions](hooks.html#deferring-card-actions)
-* Added a section on [registering DTR apps with CRD](registering-dtr-apps-with-crd)
+* Added a section on [registering DTR apps with CRD](hooks.html#registering-dtr-apps-with-crd)
 
 As well there were various other adjustments to specification language, profiles and examples to align with these changes and to correct minor typos or improve wording.
 
