@@ -36,7 +36,7 @@ Mrs. Smith is a 75-year-old female on a Medicare Fee-For-Service plan with long 
 
 As Dr. Good begins crafting the order in his EMR, it uses Mrs. Smith's coverage information to initiate a querying to a CRD Service used by her payer that includes the code for home oxygen therapy.  An alert appears at the bottom of the EMR order entry screen notifying Dr. Good that specific testing and documentation is required to substantiate the need for home oxygen therapy.
 
-Dr. Good retrieves specified documentation templates which have already been populated with information from his EMR.  He completes any remaining documentation requirements, signs the documentation and includes it in Mrs. Smith's medical record.
+Dr. Good retrieves specified documentation templates which have already been populated with information from his EMR.  He completes any remaining documentation requirements, signs the documentation, and includes it in Mrs. Smith's medical record.
 
 #### Scenario 3
 Mr. Light is a 45-year-old generally healthy male who presents for an annual exam.  His physical exam is normal.  Dr. Good checks a basic metabolic panel and determines that Mr. Light's kidney function is diminished (Creatinine of 2.5) which is new compared to his function one year prior (Creatinine of 1). Dr. Good wants to refer Mr. Light to a nephrologist for further evaluation.
@@ -84,10 +84,10 @@ The EMR (in the background as the provider is typing) or the CRD SMART app (once
 * configuration information that indicates the type of information the EMR user is interested in receiving (e.g. whether prior authorization or clinical documentation is required, or products covered or recommended by the plan.
 
 Note:
-* Configuration options - received in step #3 - might be managed by the EMR and information provided could be specific to the context of the request, a user role or an individual user.
+* Configuration options - received in step #3 - might be managed by the EMR and information provided could be specific to the context of the request, a user role, or an individual user.
 
 **5. (Optional) Payer service gets additional data**<br/>
-If additional information is needed to process the query, the CRD Service may use the EMR's secure API with the temporary access token provided in step #4 to request additional information from the patient's record.  Examples include: requests for information needed to assess whether the action is needed (e.g. an allergy to a first line medication, lab result), whether recommended next steps are in place (e.g. follow-up visits scheduled, lab tests ordered to monitor effectiveness/safety), etc.  The CRD Service might submit multiple queries for different types of data to determine coverage requirements.
+If additional information is needed to process the query, the CRD Service may use the EMR's secure API with the temporary access token provided in step #4 to request additional information from the patient's record.  Examples include requests for information needed to assess whether the action is needed (e.g. an allergy to a first line medication, lab result), whether recommended next steps are in place (e.g. follow-up visits scheduled, lab tests ordered to monitor effectiveness/safety), etc.  The CRD Service might submit multiple queries for different types of data to determine coverage requirements.
 
 Note:
 * By requesting information from the EMR directly, a CRD Service can avoid interrupting provider workflow with information about coverage requirements that have already been met.  This is expected to be done in all cases where it is possible.
@@ -104,7 +104,7 @@ Based on the information provided/retrieved, the payer system returns guidance t
 Payer requirements might include the need for prior authorization, forms that must be completed, medical documentation that must exist or be provided, recommendations on alternative therapies, etc.  
 
 **7. Provider invokes links**<br/>
-If the response included links to additional information or apps, the provider can direct EMR to interact further with the payer system by retrieving the linked-to information or launching the provided application.
+If the response includes links to additional information or apps, the provider can direct the EMR to interact further with the payer system by retrieving the linked-to information or launching the provided application.
 
 
 #### Considerations
@@ -122,5 +122,5 @@ While the primary purpose of this implementation guide is to ensure that healthc
 * Identifying in-network providers for the delivery of services
 * Making providers aware of clinical risks (e.g. potential drug-drug interactions) based on payer knowledge from previous claims
 * Improving accountable care delivery by making recommendations related to clinical practice guidelines or best practices
-* Expanding usage beyond EMRs to allied healthcare providers (dentistry, vision care, physio therapy, etc.)
+* Expanding usage beyond EMRs to allied healthcare providers (dentistry, vision care, physiotherapy, etc.)
 * Surfacing the CRD back-end to patients, their care givers and/or healthcare providers through a web-based user interface to support exploring coverage requirements without the use of an EMR

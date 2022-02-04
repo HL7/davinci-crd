@@ -2,7 +2,7 @@
 {% endraw %}
 <blockquote class="note-to-balloters">
 <p>
-This ballot release of the specification reflects a number of changes that reflect implementer feedback about the CRD specification arising from detailed review, connectathons and implementation experience.  Significant changes to the specification are highlighted in green and balloters are invited to focus particular attention on these sections.  "Notes to balloters" and "STU notes" call out additional key considerations where feedback is desired.  However, the whole specification is open to review and the project welcomes all constructive feedback.
+This ballot release of the specification reflects several changes that reflect implementer feedback about the CRD specification arising from detailed review, connectathons and implementation experience.  Significant changes to the specification are highlighted in green and balloters are invited to focus particular attention on these sections.  "Notes to balloters" and "STU notes" call out additional key considerations where feedback is desired.  However, the whole specification is open to review and the project welcomes all constructive feedback.
 </p>
 <p>
 A summary of the major changes in this release can be found [here](history.html).
@@ -31,7 +31,7 @@ Individuals interested in participating in the Coverage Requirements Discovery o
 
 
 ### Overview
-The process of managing billing for patient insurance is a significant source of complexity and cost in the United States.  Healthcare providers work with a range of different health insurers and payers who cover the services the providers supply to patients.  Different payers and plans provide different levels of coverage for healthcare services with different processes for determining whether services are necessary or are appropriate.  Different processess have different requirements for documentation, prior authorization or other approvals.  Providers who fail to adhere to payer or coverage expectations may find that costs for a given service are not covered or are only partially covered.  The outcome of this failure to conform to payer requirements can be: increased out of pocket costs for patients, additional visits, changes to ordered therapy and increased costs for both patients and providers.
+The process of managing billing for patient insurance is a significant source of complexity and cost in the United States.  Healthcare providers work with a range of different health insurers and payers who cover the services the providers supply to patients.  Different payers and plans provide different levels of coverage for healthcare services with different processes for determining whether services are necessary or are appropriate.  These processes have different requirements for documentation, prior authorization, or other approvals.  Providers who fail to adhere to payer or coverage expectations may find that costs for a given service are not covered or are only partially covered.  The outcome of this failure to conform to payer requirements can be increased out of pocket costs for patients, additional visits, changes to ordered therapy and increased costs for both patients and providers.
 
 This Coverage Requirements Discovery (CRD) implementation guide defines a workflow to allow payers to provide information about coverage requirements to healthcare providers through their clinical systems at the time treatment decisions are being made.  This will ensure that clinicians and administrative staff have the capability to make informed decisions and meet the requirements of the patient's insurance coverage.
 
@@ -49,8 +49,8 @@ The implementation guide is designed to allow for initial support of basic capab
 ### Content and organization
 The implementation guide is organized into the following sections:
 
-* [Use Cases and Overview](usecases.html) describes the intent of the implementation guide, gives examples of its use and provides a high-level overview of expected process flow
-* [Technical Background](background.html) identifies related specifications that this implementation guide builds upon and that developers should read and understand prior to implementing this specification
+* [Use Cases and Overview](usecases.html) describes the intent of the implementation guide, gives examples of its use, and provides a high-level overview of expected process flow
+* [Technical Background](background.html) identifies related specifications this implementation guide builds upon that developers should read and understand prior to implementing this specification
 * [Formal Specification](hooks.html) covers the detailed implementation requirements and conformance expectation
 * [Artifacts](allartifacts.html) introduces and provides links to the profiles, search parameters and other FHIR artifacts used in this implementation guide
 * [Downloads](downloads.html) allows download of this and other specifications as well as other useful files
