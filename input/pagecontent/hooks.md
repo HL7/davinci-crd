@@ -109,7 +109,7 @@ Payers and EHRs are both encouraged to provide feedback around whether this timi
 
 #### Accuracy
 
-CDS services SHOULD make every effort to ensure that the guidance returned with respect to coverage and prior authorizations (e.g. assertions that a service is covered, or prior authorization is not necessary) is as accurate as guidance that would be provided by other means (e.g. portals, phone calls).  However, that this doesn't mean that circumstances can't change in a way that invalidates an answer provided.  Also, such guidance should allow for possible variances in coding and submission.  (See [Impact on payer processes](background.html#impact-on-payer-processes) on the Background page.)
+CDS services **SHOULD** make every effort to ensure that the guidance returned with respect to coverage and prior authorizations (e.g. assertions that a service is covered, or prior authorization is not necessary) is as accurate as guidance that would be provided by other means (e.g. portals, phone calls).  However, that this doesn't mean that circumstances can't change in a way that invalidates an answer provided.  Also, such guidance should allow for possible variances in coding and submission.  (See [Impact on payer processes](background.html#impact-on-payer-processes) on the Background page.)
 
 </div>
 
@@ -122,7 +122,7 @@ Payers and service providers **SHALL** ensure that CDS Hooks return only message
 
 <div markdown="1" class="new-content">
 
-Implementations **SHALL** have the ability to flag or otherwise identify orders, appointments, encounters, and other records as 'payer-sensitive' and ensure that such sensitive information is not queryable by payers and that such information does not trigger payer hooks or get included as part of payer hook invocation.  The process to flag information as payer-sensitive should fit within standard workflow and minimize provider effort.  The determination of the flag SHOULD be set as early in the process as possible in the workflow to ensure that decision support can be provided as early as possible.  The 'flagging' may occur either automatically or with provider intervention, but both SHOULD be supported.
+Implementations **SHALL** have the ability to flag or otherwise identify orders, appointments, encounters, and other records as 'payer-sensitive' and ensure that such sensitive information is not queryable by payers and that such information does not trigger payer hooks or get included as part of payer hook invocation.  The process to flag information as payer-sensitive should fit within standard workflow and minimize provider effort.  The determination of the flag **SHOULD** be set as early in the process as possible in the workflow to ensure that decision support can be provided as early as possible.  The 'flagging' may occur either automatically or with provider intervention, but both **SHOULD** be supported.
 
 </div>
 
@@ -157,12 +157,12 @@ The proposal to add these resources to the existing hook definitions [can be fou
 ##### New hook configuration mechanism
 The CRD Services provided by payers will support discovery of different types of coverage requirements that will return different types of information to users on [CDS Cards](https://cds-hooks.hl7.org/1.0/#cds-service-response), such as:
 
-*	Whether authorization is required
-*	Recommended alternative therapies
-*	Best practices associated with the planned therapy that are expected to be adhered to
-*	Forms and documentation for retention within the EHR
-*	Forms and documentation that must be provided with a prior authorization request
-*	Forms and documentation that must be included with a claim submission
+*  Whether authorization is required
+*  Recommended alternative therapies
+*  Best practices associated with the planned therapy that are expected to be adhered to
+*  Forms and documentation for retention within the EHR
+*  Forms and documentation that must be provided with a prior authorization request
+*  Forms and documentation that must be included with a claim submission
 
 Not all the coverage information returned by a CRD Service will be relevant to all users of all CRD Clients. It would therefore be useful to be able configure CRD Services to withhold certain card types from certain provider types, user roles, or specific users.  Preferences could potentially be configured within the CRD Service or within the CRD Client.
 
@@ -196,59 +196,53 @@ For example, a [CDS Service Response](https://cds-hooks.hl7.org/1.0/#response) f
 
 {% raw %}
 ```
-  {
-    "services": [
-      {
-        "hook": "order-select",
-        "title": "Payer XYZ Order Selection Requirements",
-        "description": "Indicates coverage requirements associated with draft orders, including expectations for prior authorization, recommended therapy alternatives, etc.",
-        "id": "order-select-crd",
-        "prefetch": {
-          "patient": "Patient/{{context.patientId}}",
-          "medications": "MedicationOrder?patient={{context.patientId}}"
-        },
-        "extension": {
-          "davinci-crd.configuration-options": [
-            {
-              "code": "priorauth",
-              "type": "boolean",
-              "name": "Prior authorization",
-              "description": "Provides indications of whether prior authorization is required for the proposed order",
-              "default": true
-            },
-            {
-              "code": "prior-auth-form",
-              "type": "boolean",
-              "name": "Prior Authorization Forms",
-              "description": "Indicates any forms that should be completed as part of a prior authorization process",
-              "default": true
-            },
-            {
-              "code": "alt-drug",
-              "type": "boolean",
-              "name": "Alternative therapy",
-              "description": "Provides recommendations for alternative therapy with equivalent/similar clinical effect for which the patient has better coverage, that will incur lesser cost",
-              "default": true
-            },
-            {
-              "code": "first-line",
-              "type": "boolean",
-              "name": "First-line therapy",
-              "description": "Provides alternative therapies that must be tried prior to the selected medication to receive coverage for the selected medication",
-              "default": true
-            },
-            {
-              "code": "max-cards",
-              "type": "integer",
-              "name": "Maximum cards",
-              "description": "Indicates the maximum number of cards to be returned from the service.  The services will prioritize cards such as highest priority ones are delivered",
-              "default": 10
-            }
-          ]
+{
+  "services": [{
+    "hook": "order-select",
+    "title": "Payer XYZ Order Selection Requirements",
+    "description": "Indicates coverage requirements associated with draft orders, including expectations for prior authorization, recommended therapy alternatives, etc.",
+    "id": "order-select-crd",
+    "prefetch": {
+      "patient": "Patient/{{context.patientId}}",
+      "medications": "MedicationOrder?patient={{context.patientId}}"
+    },
+    "extension": {
+      "davinci-crd.configuration-options": [
+        {
+          "code": "priorauth",
+          "type": "boolean",
+          "name": "Prior authorization",
+          "description": "Provides indications of whether prior authorization is required for the proposed order",
+          "default": true
+        }, {
+          "code": "prior-auth-form",
+          "type": "boolean",
+          "name": "Prior Authorization Forms",
+          "description": "Indicates any forms that should be completed as part of a prior authorization process",
+          "default": true
+        }, {
+          "code": "alt-drug",
+          "type": "boolean",
+          "name": "Alternative therapy",
+          "description": "Provides recommendations for alternative therapy with equivalent/similar clinical effect for which the patient has better coverage, that will incur lesser cost",
+          "default": true
+        }, {
+          "code": "first-line",
+          "type": "boolean",
+          "name": "First-line therapy",
+          "description": "Provides alternative therapies that must be tried prior to the selected medication to receive coverage for the selected medication",
+          "default": true
+        }, {
+          "code": "max-cards",
+          "type": "integer",
+          "name": "Maximum cards",
+          "description": "Indicates the maximum number of cards to be returned from the service.  The services will prioritize cards such as highest priority ones are delivered",
+          "default": 10
         }
-      }
-    ]
-  }
+      ]
+    }
+  }]
+}
 ```
 {% endraw %}
 
@@ -264,7 +258,7 @@ Notes:
 
     *  indicate that CRD checking could not be done and log appropriate information to allow engagement with CRD Clients to address any payer-specific needs.
 
-*  Codes **SHALL** be valid JSON property names and SHALL come from the <a href="ValueSet-cardType.html">CRD Card Types.</a> list if an applicable type is in that list.
+*  Codes **SHALL** be valid JSON property names and **SHALL** come from the <a href="ValueSet-cardType.html">CRD Card Types.</a> list if an applicable type is in that list.
 
 *  Codes, names, and descriptions **SHALL** be unique within a [CDS Service](https://cds-hooks.hl7.org/1.0/#response) definition.  They **SHOULD** be consistent across different hooks supported by the same payer when dealing with the same types of configuration options.
 
@@ -276,31 +270,31 @@ An extension called `davinci-crd.configuration` will define a second configurati
 For example, the hook [HTTP Request](https://cds-hooks.hl7.org/1.0/#http-request_1) would look like this:
 
 ```
-    {
-       ...
-       "hook": "order-select",
-       ...
-       "extension": {
-         "davinci-crd.configuration": {
-           "prior-auth": true,
-           "alt-drug": false,
-           "max-cards": 5
-         }
-       }
+{
+  ...
+  "hook": "order-select",
+  ...
+  "extension": {
+    "davinci-crd.configuration": {
+      "prior-auth": true,
+      "alt-drug": false,
+      "max-cards": 5
     }
+  }
+}
 ```
 
 Notes:
 
-*	Where CRD Clients support the optional configuration options, the following requirements apply:
-    *	CRD Clients **SHOULD** expose configuration options through a configuration screen to allow users and/or system administrators to control the types of information returned.
-    *	CRD Clients **SHALL** convey configuration options when invoking the hook using the davinci-crd.configuration extension. It will be a single object whose properties will be drawn from the code values from configuration options and whose values will be of the type defined for that option.
-    *	CRD Clients **SHOULD** provide an ability to leverage the dynamic configuration capabilities of payer services based on provider role, individual provider and/or hook invocation location as best meets the needs of their users.
+*  Where CRD Clients support the optional configuration options, the following requirements apply:
+    *  CRD Clients **SHOULD** expose configuration options through a configuration screen to allow users and/or system administrators to control the types of information returned.
+    *  CRD Clients **SHALL** convey configuration options when invoking the hook using the davinci-crd.configuration extension. It will be a single object whose properties will be drawn from the code values from configuration options and whose values will be of the type defined for that option.
+    *  CRD Clients **SHOULD** provide an ability to leverage the dynamic configuration capabilities of payer services based on provider role, individual provider and/or hook invocation location as best meets the needs of their users.
 
-*	Where CRD Services support the optional configuration options, the following requirements apply:
-    *	CRD Services **SHALL** behave in the manner prescribed by any supported configuration information received from the CRD Client.
-    *	CRD Services **SHALL NOT** require the inclusion of configuration information in a hook call (i.e. no hook invocation is permitted to fail because configuration information was not included).
-    *	CRD Clients **MAY** send configuration information that CRD Services do not support. In this case, the CRD Service **SHALL** ignore the unsupported configuration information.
+*  Where CRD Services support the optional configuration options, the following requirements apply:
+    *  CRD Services **SHALL** behave in the manner prescribed by any supported configuration information received from the CRD Client.
+    *  CRD Services **SHALL NOT** require the inclusion of configuration information in a hook call (i.e. no hook invocation is permitted to fail because configuration information was not included).
+    *  CRD Clients **MAY** send configuration information that CRD Services do not support. In this case, the CRD Service **SHALL** ignore the unsupported configuration information.
 
 *  This specification provides no guidance on exactly when/how CRD Clients are expected to manage hook configuration.  This could be done at the level of provider roles, individual providers, location from which the hook is invoked or other means.  CRD Clients can experiment and determine what types of configuration make the most sense and at what levels they can support managing/persisting configuration information.
 
@@ -317,9 +311,11 @@ Note: Recognizing these tokens doesn't mean the client must support prefetch or 
 For example, a prefetch for `order-select` might look like this:
 
 {% raw %}
-    "prefetch": {
-      "ins-sr": "ServiceRequest?_id={{context.draftOrders.ServiceRequest.id}}&_include=ServiceRequest:performer"
-    }
+```
+"prefetch": {
+  "ins-sr": "ServiceRequest?_id={{context.draftOrders.ServiceRequest.id}}&_include=ServiceRequest:performer"
+}
+```
 {% endraw %}
 
 This might result in an executed query that looks like this: `ServiceRequest?_id=2347,10948,5881&_include=ServiceRequest:performer`
@@ -350,70 +346,66 @@ The `suggestion.action` object will use an extension to carry the if-none-exist 
 For example, this [CDS Hook Suggestion](https://cds-hooks.hl7.org/1.0/#suggestion) contains two [Actions](https://cds-hooks.hl7.org/1.0/#action) - one referencing an HL7 [Questionnaire]({{site.data.fhir.path}}questionnaire.html) and the other the [Task]({{site.data.fhir.path}}task.html) to complete the Questionnaire.  The Questionnaire will only be created if it didn't already exist:
 
 ```
-    "suggestions": [
-      {
-        "label": "Add 'completion of the XYZ form' to your task list (possibly for reassignment)",
-        "actions": [{
-          "type": "create",
-          "description": "Add version 2 of the XYZ form to the EMR's repository (if it doesn't already exist)",
-          "resource": {
-            "resourceType": "Questionnaire",
-            "url": "http://example.org/Questionnaire/XYZ",
-            "version": "2",
-            ...
-          },
-          "extension": {
-            "davinci-crd.if-none-exist": "url=http://example.org/Questionnaire/XYZ&version=2"
-          }
-        },
-        {
-          "type": "create",
-          "description": "Add 'Complete XYZ form' to the task list",
-          "resource": {
-            "resourceType": "Task",
-            "basedOn": "MedicationRequest/5",
-            "status": "ready",
-            "intent": "order",
-            "code": {
-              "coding": [{
-                "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/task-type",
-                "code": "complete-questionnaire"
-              }]
-            },
-            "description": "Complete XYZ form for inclusion in prior authorization",
-            "for": {
-              "reference": "Patient/some-patient-id"
-            },
-            "authoredOn": "2018-08-09",
-            "reasonCode": {
-              "coding": [{
-                "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/task-reason",
-                "code": "prior-auth",
-                "display": "Needed for prior authorization"
-              }]
-            },
-            "input": [{
-              "type": {
-                "text": "questionnaire"
-              },
-              "valueCanonical": "http://example.org/Questionnaire/XYZ|2"
-            },
-            {
-              "type": {
-                "text": "afterCompletion"
-              },
-              "valueCodeableConcept": {
-                "coding": [{
-                  "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/after-completion",
-                  "code": "prior-auth",
-                  "display": "Include in prior authorization"
-                }]
-              }
-            }]
-          }
+"suggestions": [{
+  "label": "Add 'completion of the XYZ form' to your task list (possibly for reassignment)",
+  "actions": [{
+    "type": "create",
+    "description": "Add version 2 of the XYZ form to the EMR's repository (if it doesn't already exist)",
+    "resource": {
+      "resourceType": "Questionnaire",
+      "url": "http://example.org/Questionnaire/XYZ",
+      "version": "2",
+      ...
+    },
+    "extension": {
+      "davinci-crd.if-none-exist": "url=http://example.org/Questionnaire/XYZ&version=2"
+    }
+  }, {
+    "type": "create",
+    "description": "Add 'Complete XYZ form' to the task list",
+    "resource": {
+      "resourceType": "Task",
+      "basedOn": "MedicationRequest/5",
+      "status": "ready",
+      "intent": "order",
+      "code": {
+        "coding": [{
+          "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/task-type",
+          "code": "complete-questionnaire"
         }]
-      }
-    ]
+      },
+      "description": "Complete XYZ form for inclusion in prior authorization",
+      "for": {
+        "reference": "Patient/some-patient-id"
+      },
+      "authoredOn": "2018-08-09",
+      "reasonCode": {
+        "coding": [{
+          "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/task-reason",
+          "code": "prior-auth",
+          "display": "Needed for prior authorization"
+        }]
+      },
+      "input": [{
+        "type": {
+          "text": "questionnaire"
+        },
+        "valueCanonical": "http://example.org/Questionnaire/XYZ|2"
+      },{
+        "type": {
+          "text": "afterCompletion"
+        },
+        "valueCodeableConcept": {
+          "coding": [{
+            "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/after-completion",
+            "code": "prior-auth",
+            "display": "Include in prior authorization"
+          }]
+        }
+      }]
+    }
+  }]
+}]
 ```
 
 ###### Linkage between created resources
@@ -422,43 +414,41 @@ The linkage between resources by identifier in different Actions within a single
 For example, the following [CDS Hook Suggestion](https://cds-hooks.hl7.org/1.0/#suggestion) will cause the FHIR [MedicationRequest]({{site.data.fhir.path}}medicationrequest.html) to be updated to point to the prior authorization ([ClaimResponse]({{site.data.fhir.path}}claimresponse.html) resource) being created.  The ClaimResponse would be created before the MedicationRequest would be updated:
 
 ```
-    "suggestions": [
-      {
-        "label": "Update prescription to point to pre-existing prior authorization",
-        "actions": [{
-          "type": "update",
-          "description": "Revise the prescription to include the prior authorization",
-          "resource": {
-            "resourceType": "MedicationRequest",
-            ...
-            "insurance": [{
-              "reference": "ClaimResponse/cr1"
-            }],
-            ...
-          }
-        },{
-          "type": "create",
-          "description": "Record the pre-existing prior authorization in the EMR",
-          "resource": {
-            "resourceType": "ClaimResponse",
-            "id": "cr1",
-            "status": "active",
-            "type": {
-              "coding": [{
-                "system": "http://terminology.hl7.org/CodeSystem/claim-type",
-                "code": "pharmacy"
-              }]
-            }
-          },
-          "use": "preauthorization",
-          "patient": {
-            "reference": "Patient/some-patient-d"
-          },
-          "outcome": "complete",
-          "preAuthRef": ["ABCDE"]
+"suggestions": [{
+  "label": "Update prescription to point to pre-existing prior authorization",
+  "actions": [{
+    "type": "update",
+    "description": "Revise the prescription to include the prior authorization",
+    "resource": {
+      "resourceType": "MedicationRequest",
+      ...
+      "insurance": [{
+        "reference": "ClaimResponse/cr1"
+      }],
+      ...
+    }
+  },{
+    "type": "create",
+    "description": "Record the pre-existing prior authorization in the EMR",
+    "resource": {
+      "resourceType": "ClaimResponse",
+      "id": "cr1",
+      "status": "active",
+      "type": {
+        "coding": [{
+          "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+          "code": "pharmacy"
         }]
       }
-    ]
+    },
+    "use": "preauthorization",
+    "patient": {
+      "reference": "Patient/some-patient-d"
+    },
+    "outcome": "complete",
+    "preAuthRef": ["ABCDE"]
+  }]
+}]
 ```
 
 Note: Sending existing prior authorizations is not in scope for this version of the IG.
@@ -466,36 +456,38 @@ Note: Sending existing prior authorizations is not in scope for this version of 
 <div markdown="1" class="new-content">
 
 ##### Linking cards to requests
-Some CDS hooks have a single context.  [encounter-start](#encounter-start) and [encounter-discharge](#encounter-discharge) are tied to their respective encounter and there is no question as to which encounter a returned card is associated with.  However, the [appointment-book](#appointment-book), [order-select](#order-select), and [order-sign](#order-sign) hooks all allow passing in multiple resources as part of the hook invocation.  Each card returned in the hook response might be associated with only one of the referenced appointment or order resources or a subset of them.  An EHR may wish to be able to track *what* resource(s) a card was associated with.  This might be for audit, to how or where the card is rendered on the screen, to allow the card to being directly associated with the triggering resource, or to enable various other workflow considerations.
+Some CDS hooks have a single context.  [encounter-start](#encounter-start) and [encounter-discharge](#encounter-discharge) are tied to their respective encounter and there is no question as to which encounter a returned card is associated with.  However, the [appointment-book](#appointment-book), [order-select](#order-select), and [order-sign](#order-sign) hooks all allow passing in multiple resources as part of the hook invocation.  Each card returned in the hook response might be associated with only one of the referenced appointment or order resources or a subset of them.  An EHR may wish to be able to track *what* resource(s) a card was associated with.  This might be for audit, to control how or where the card is rendered on the screen, to allow the card to being directly associated with the triggering resource, or to enable various other workflow considerations.
 
 This implementation guide defines a standard extension - `davinci-associated-resource` -  that can appear on any card that provides a local reference to the appointment, order, or other context resource to which the card is 'pertinent'.  It is optional and has a value consisting of 1..* local references referring to the resource type and resource id of the resource being linked.
 
-NOTE: If a hook service is invoked on a collection of resources, all cards returned that are specific to only a subset of the resources passed as context SHALL disambiguate in the `detail` element which resources they're associated with in a human-friendly way.  Typically, this means using test name, drug name or some other mechanism rather than a bare identifier, as identifiers may not be visible to the end user for resources that are not yet fully 'created'.
+If a hook service is invoked on a collection of resources, all cards returned that are specific to only a subset of the resources passed as context **SHALL** disambiguate in the `detail` element which resources they're associated with in a human-friendly way.  Typically, this means using test name, drug name or some other mechanism rather than a bare identifier, as identifiers may not be visible to the end user for resources that are not yet fully 'created'.  As well, cards **SHOULD** include this new extension to allow computable linkage.
 
 {% raw %}
-    {
-      "extension": {
-        "davinci-associated-resource": [
-          "ServiceRequest/1",
-          "ServiceRequest/7",
-          "ServiceRequest/12"
-        ]
-      },
-      "summary": "Prior authorization details",
-      "indicator": "warning",
-      "detail": "Genomics tests A, B and C are only covered with prior authorization.",
-      "source": {
-        "label": "You're Covered Insurance",
-        "url": "https://example.com",
-        "icon": "https://example.com/img/icon-100px.png",
-		"topic": "prior-auth"
-      }
-    }
+```
+{
+  "extension": {
+    "davinci-associated-resource": [
+      "ServiceRequest/1",
+      "ServiceRequest/7",
+      "ServiceRequest/12"
+    ]
+  },
+  "summary": "Prior authorization details",
+  "indicator": "warning",
+  "detail": "Genomics tests A, B and C are only covered with prior authorization.",
+  "source": {
+    "label": "You're Covered Insurance",
+    "url": "https://example.com",
+    "icon": "https://example.com/img/icon-100px.png",
+    "topic": "prior-auth"
+  }
+}
+```
 {% endraw %}
 
 
 ##### Controlling hook invocation
-Providers SHALL NOT invoke hooks on payer services where the patient in question is not known to have active coverage with the payer in question.  Providers MAY limit hook invocation to only those payers that are believed to potentially have relevant information related to the current action.  (This might be more payers than just those that are likely to provide coverage.)
+Providers **SHALL NOT** invoke hooks on payer services where the patient in question is not known to have active coverage with the payer in question.  Providers **MAY** limit hook invocation to only those payers that are believed to potentially have relevant information related to the current action - for example, clinical guidance, contraindication detection, etc.  This might be more payers than just those that are likely to provide coverage.
 
 </div>
 
@@ -653,7 +645,7 @@ The profiles expected to be used for the resources resolved to by the userId, pa
 ##### order-dispatch
 This hook is described in current build of the CDS Hook specification [here](https://cds-hooks.hl7.org/hooks/order-dispatch/).  This version of the CRD implementation guide refers to version 1.0 of the hook.
 
-This is a brand-new hook proposal that allows for decision support to be provided when the intended performer of a service is not chosen when the order is written, but instead at some later time-point - quite frequently by someone other than the practitioner who wrote the order.  Because knowing 'who' will perform the service is often relevant when determining coverage and prior authorization requirements, and because it is also a useful point for providing guidance such as suggesting alternative "in-network" providers, this is a useful place to provide decision support.
+This is a brand-new hook proposal that allows for decision support to be provided when the intended performer of a service is not chosen when the order is written, but instead at some later time-point - quite frequently by someone other than the practitioner who wrote the order.  Because knowing 'who' will perform the service is often relevant when determining coverage and prior authorization requirements, and because it is also a useful point for providing guidance such as suggesting alternative "in-network" providers, this is a useful point in client workflow to provide decision support.
 
 This hook will fire at some point after (possibly well after) the [order-sign](#order-sign) hook fires.  It only passes the patient id, order id, performer and (optionally) the Task that describes the fulfillment request as part of the context.  This specification does not require use of the Task resource.
 
@@ -781,7 +773,7 @@ In addition to the [guidance provided in the CDS Hooks specification](https://cd
 
 <div markdown="1" class="new-content">
 <p>
-The card topic element above is new.
+The card.source.topic element above is new.
 </p>
 </div>
 
@@ -801,35 +793,36 @@ Notes:
 
 
 ###### External Reference
-This response type presents a `Card` with one or more links to external web pages, PDFs, or other resources that provide relevant coverage information.  The links might provide clinical guidelines, prior authorization requirements, printable forms, etc. Typically, these references would be links to information available from the payer's website, though pointers to other authoritative sources are possible too.  The card **SHALL** have at least one `Card.link`.  The `Link.type` **SHALL** have a type of "absolute".
+This response type presents a Card with one or more links to external web pages, PDFs, or other resources that provide relevant coverage information.  The links might provide clinical guidelines, prior authorization requirements, printable forms, etc. Typically, these references would be links to information available from the payer's website, though pointers to other authoritative sources are possible too.  The card **SHALL** have at least one `Card.link`.  The `Link.type` **SHALL** have a type of "absolute".
 
 When reasonable, an "External Reference" card **SHOULD** contain a summary of the actionable information from the external reference.
 
 For example, this CDS Hooks [Card](https://cds-hooks.hl7.org/1.0/#cds-service-response) contains two [Links](https://cds-hooks.hl7.org/1.0/#link) - a standard and a printer-friendly version.
 
 {% raw %}
+```
+{
+  "summary": "CMS Home Oxygen Therapy Coverage Requirements",
+  "indicator": "info",
+  "detail": "Learn about covered oxygen items and equipment for home use; coverage requirements; criteria you must meet to furnish oxygen items and equipment for home use; Advance Beneficiary Notice of Noncoverage; oxygen equipment, items, and services that are not covered; and payments for oxygen items and equipment and billing and coding guidelines.",
+  "source": {
+    "label": "Centers for Medicare & Medicaid Services",
+    "url": "https://cms.gov",
+    "topic": "coverage"
+  },
+  "links": [
     {
-      "summary": "CMS Home Oxygen Therapy Coverage Requirements",
-      "indicator": "info",
-      "detail": " Learn about covered oxygen items and equipment for home use; coverage requirements; criteria you must meet to furnish oxygen items and equipment for home use; Advance Beneficiary Notice of Noncoverage; oxygen equipment, items, and services that are not covered; and payments for oxygen items and equipment and billing and coding guidelines.",
-      "source": {
-        "label": "Centers for Medicare & Medicaid Services",
-        "url": "https://cms.gov",
-		"topic": "coverage"
-      },
-      "links": [
-        {
-          "label": "Home Oxygen Therapy Guidelines",
-          "url": "https://www.cms.gov/Outreach-and-Education/Medicare-Learning-Network-MLN/MLNProducts/Downloads/Home-Oxygen-Therapy-ICN908804.pdf",
-          "type": "absolute"
-        },
-        {
-          "label": "Home Oxygen Therapy Guidelines (printer-friendly)",
-          "url": "https://www.cms.gov/Outreach-and-Education/Medicare-Learning-Network-MLN/MLNProducts/Downloads/Home-Oxygen-Therapy-Text-Only.pdf",
-          "type": "absolute"
-        }
-      ]
+      "label": "Home Oxygen Therapy Guidelines",
+      "url": "https://www.cms.gov/Outreach-and-Education/Medicare-Learning-Network-MLN/MLNProducts/Downloads/Home-Oxygen-Therapy-ICN908804.pdf",
+      "type": "absolute"
+    }, {
+      "label": "Home Oxygen Therapy Guidelines (printer-friendly)",
+      "url": "https://www.cms.gov/Outreach-and-Education/Medicare-Learning-Network-MLN/MLNProducts/Downloads/Home-Oxygen-Therapy-Text-Only.pdf",
+      "type": "absolute"
     }
+  ]
+}
+```
 {% endraw %}
 
 ###### Instructions
@@ -838,25 +831,31 @@ This response type presents a `Card` with textual guidance to display to the use
 This example CDS Hook [Card](https://cds-hooks.hl7.org/1.0/#cds-service-response) just contains a message:
 
 {% raw %}
-    {
-      "summary": "Prior authorization required",
-      "indicator": "warning",
-      "detail": "All prescriptions for _Drug X_ with a dose higher than 100mg/day require prior authorization.  Forms and instructions can be found [here](http://example.org/prior-auth.pdf).",
-      "source": {
-        "label": "You're Covered Insurance",
-        "url": "https://example.com",
-        "icon": "https://example.com/img/icon-100px.png",
-		"topic": "prior-auth"
-      }
-    }
+```
+{
+  "summary": "Prior authorization required",
+  "indicator": "warning",
+  "detail": "All prescriptions for _Drug X_ with a dose higher than 100mg/day require prior authorization.  Forms and instructions can be found [here](http://example.org/prior-auth.pdf).",
+  "source": {
+    "label": "You're Covered Insurance",
+    "url": "https://example.com",
+    "icon": "https://example.com/img/icon-100px.png",
+    "topic": "prior-auth"
+  }
+}
+```
 {% endraw %}
 
 <div markdown="1" class="new-content">
 
 ###### Annotate
-This response type presents a `Card` with a piece of information that should be retained with the order/appointment/etc.  For example, "No prior authorization for drug X required by ABC insurance", "Prior authorization number for X-ray from ABC insurance is 13245", or "This referral is not covered under the patient's DEF plan".  With information like this, merely displaying the text on the screen in a card isn't sufficient - it needs to be recorded in the associated order for future use or evidence.  These cards involve 'replacing' the submitted order, but leaving the order unchanged, with the exception that an additional 'note' is added to the resource instance. 
+This response type presents a `Card` with a piece of information that should be retained with the order/appointment/etc.  For example, "No prior authorization for drug X required by ABC insurance", "Prior authorization number for X-ray from ABC insurance is 13245", or "This referral is not covered under the patient's DEF plan".  With information like this, merely displaying the text on the screen in a card is not sufficient - it needs to be recorded in the associated order for future use or evidence.  These cards involve 'replacing' the submitted order, but leaving the order unchanged, with the exception that an additional 'note' is added to the resource instance. 
 
 The note uses the [Annotation]({{site.data.fhir.path}}datatypes.html#Annotation) datatype and captures the comment, the date, and who made the assertion.  In this case, the commenter would be the payer organization. The payers should include all the discrete information in the 'annotation' and the 'detail' for the card should indicate that the statement is point-in-time.  Note that the text should *also* be displayed in the card, with the button link simply saying "Add to record" or something like that.  The requested action is always an 'update' and there is only ever one alternative. It is to be noted that this will be handled as a single 'update' action and EHRs that don't support the extension will ignore it and just store the annotation.
+
+In addition to the annotation, a new FHIR [coverage-information](StructureDefinition-ext-coverage-information.html) extension is defined that allows assertions around coverage and prior authorization to also be captured computably, including what assertion is made, what coverage the assertion is made with respect to, when the assertion was made, and - optionally - a trace id that can be used for audit purposes.
+
+CRD Services that make assertions with respect to coverage and prior authorization **SHALL** provide an annotation card that includes both the human-readable and computable version.  Clients **SHALL** store at least one of the two forms.
 
 When using this response type, the proposed order or appointment being updated **SHALL** comply with the following profiles:
 
@@ -892,90 +891,92 @@ When using this response type, the proposed order or appointment being updated *
 For example, this card proposes indicates that a prior authorization has been granted for a planned prescription:
 
 ```
-    "suggestions": [
-      {
-        "label": "Prior authorization granted by XYZ insurer.  Auth #:12345 - add to record?",
-        "actions": [{
-          "type": "update",
-          "description": "Add authorization to record",
-          "resource": {
-            "resourceType": "MedicationRequest",
-            "id": "idfromcontext",
-			      "extension": [
-              { 
-                 "extension": [
-                  {
-                    "url": "coverageInfo",
-                    "valueCoding": {
-                      "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/coverageGuidance",
-                      "code": "prior-auth",
-                      "display": "Prior Authorization"
-                    }
-                  },
-                  {
-                    "url": "coverage",
-                    "valueReference": {
-                      "reference": "Coverage/example"
-                    }
-                  },
-                  {
-                   "url": "date",
-                   "valueDate": "2019-02-15"
-                  }
-               ],
-               "url": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-coverage-information"
-              } 
-            ],
-            "status": "draft",
-            "intent": "original-order",
-            "medicationCodeableConcept": {
-              "coding": [{
-                "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-                "code": "616447",
-                "display": "Cellcept 250 MG Oral Capsule"
-              }]
-            },
-            "subject": {
-              "reference": "Patient/123",
-              "display": "Jane Smith"
-            },
-            "encounter": {
-              "reference": "Encounter/ABC"
-            },
-            "authoredOn": "2019-02-15",
-            "requester": {
-              "reference": "PractitionerRole/987",
-              "display": "Dr. Jones"
-            },
-            "note": [
-              {
-                "authorString": "XYZ Insurance",
-                "time": "2019-02-15T15:07:18-05:00",
-                "text": "Unsolicited prior authorization for Jane Smith to receive 6 tablets Cellcept 250 MG Oral Capsule BID granted.  Please note prior authorization # 12345 on claim submission."
+"suggestions": [{
+  "label": "Prior authorization granted by XYZ insurer.  Auth #:12345 - add to record?",
+  "actions": [{
+    "type": "update",
+    "description": "Add authorization to record",
+    "resource": {
+      "resourceType": "MedicationRequest",
+      "id": "idfromcontext",
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-coverage-information"
+          "extension": [
+            {
+              "url": "coverageInfo",
+              "valueCoding": {
+                "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/coverageGuidance",
+                "code": "prior-auth",
+                "display": "Prior Authorization"
               }
-            ],
-            "dosageInstruction": [{
-              "text": "6 tablets every 12 hours.",
-              "timing": {
-                "repeat": {
-                  "frequency": 1,
-                  "period": 12,
-                  "periodUnit": "h"
-                }
-              },
-              "doseAndRate": [{
-                "doseQuantity": {
-                  "value": 6,
-                  "unit": "tablet"
-                }
-              }]
-            }]
+            },
+            {
+              "url": "coverage",
+              "valueReference": {
+                "reference": "Coverage/example"
+              }
+            },
+            {
+             "url": "date",
+             "valueDate": "2019-02-15"
+            },
+            {
+             "url": "identifier",
+             "valueString": "12345ABC"
+            }
+          ]
+        } 
+      ],
+      "status": "draft",
+      "intent": "original-order",
+      "medicationCodeableConcept": {
+        "coding": [{
+          "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+          "code": "616447",
+          "display": "Cellcept 250 MG Oral Capsule"
+        }]
+      },
+      "subject": {
+        "reference": "Patient/123",
+        "display": "Jane Smith"
+      },
+      "encounter": {
+        "reference": "Encounter/ABC"
+      },
+      "authoredOn": "2019-02-15",
+      "requester": {
+        "reference": "PractitionerRole/987",
+        "display": "Dr. Jones"
+      },
+      "note": [
+        {
+          "authorString": "XYZ Insurance",
+          "time": "2019-02-15T15:07:18-05:00",
+          "text": "Prior authorization required for Cellcept 250MG Oral Capsule under coverage ABC.  (Determination 1234ABC made Feb 15, 2019)"
+        }
+      ],
+      "dosageInstruction": [{
+        "text": "6 tablets every 12 hours.",
+        "timing": {
+          "repeat": {
+            "frequency": 1,
+            "period": 12,
+            "periodUnit": "h"
+          }
+        },
+        "doseAndRate": [{
+          "doseQuantity": {
+            "value": 6,
+            "unit": "tablet"
           }
         }]
-      }
-    ]
+      }]
+    }
+  }]
+}]
 ```
-CRD clients and services MAY, by mutual agreement, make use of the new CDS Hooks system action functionality to cause annotations to automatically be stored on the relevant request, appointment, etc.  These implementations will be responsible for ensuring that the only changes made to the EHR record are to add the annotations contemplated here.  It is likely that the conformance expectation on the use of system actions will be tighter in future releases.
+CRD clients and services MAY, by mutual agreement, make use of the new CDS Hooks system action functionality to cause annotations to automatically be stored on the relevant request, appointment, etc. without any user intervention.  I.e. the user would not need to click on the card to store the information.  In this case, a card **SHALL** still be displayed to the user conveying the coverage assertion.  These implementations will be responsible for ensuring that the only changes made to the EHR record are to add the annotations contemplated here.  It is likely that the conformance expectation on the use of system actions will be tighter in future releases.
 
 <blockquote class="note-to-balloters">
 <p>
@@ -1034,62 +1035,60 @@ When using this response type, the proposed orders (and any associated resources
 For example, this card proposes replacing the draft prescription for a brand-name drug (shown only as the 'resourceType' and 'id' from the `draftOrders` entry) and instead creating an equivalent prescription with a generic medication.
 
 ```
-    "suggestions": [
-      {
-        "label": "Change to generic (name brand not covered)",
-        "actions": [{
-          "type": "delete",
-          "description": "Remove name-brand prescription",
-          "resource": {
-            "resourceType": "MedicationRequest",
-            "id": "draftrx1"
+"suggestions": [{
+  "label": "Change to generic (name brand not covered)",
+  "actions": [{
+    "type": "delete",
+    "description": "Remove name-brand prescription",
+    "resource": {
+      "resourceType": "MedicationRequest",
+      "id": "draftrx1"
+    }
+  }, {
+    "type": "create",
+    "description": "Add equivalent generic prescription",
+    "resource": {
+      "resourceType": "MedicationRequest",
+      "status": "draft",
+      "intent": "original-order",
+      "medicationCodeableConcept": {
+        "coding": [{
+          "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+          "code": "616447",
+          "display": "Cellcept 250 MG Oral Capsule"
+        }]
+      },
+      "subject": {
+        "reference": "Patient/123",
+        "display": "Jane Smith"
+      },
+      "encounter": {
+        "reference": "Encounter/ABC"
+      },
+      "authoredOn": "2019-02-15",
+      "requester": {
+        "reference": "PractitionerRole/987",
+        "display": "Dr. Jones"
+      },
+      "dosageInstruction": [{
+        "text": "6 tablets every 12 hours.",
+        "timing": {
+          "repeat": {
+            "frequency": 1,
+            "period": 12,
+            "periodUnit": "h"
           }
-        }, {
-          "type": "create",
-          "description": "Add equivalent generic prescription",
-          "resource": {
-            "resourceType": "MedicationRequest",
-            "status": "draft",
-            "intent": "original-order",
-            "medicationCodeableConcept": {
-              "coding": [{
-                "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-                "code": "616447",
-                "display": "Cellcept 250 MG Oral Capsule"
-              }]
-            },
-            "subject": {
-              "reference": "Patient/123",
-              "display": "Jane Smith"
-            },
-            "encounter": {
-              "reference": "Encounter/ABC"
-            },
-            "authoredOn": "2019-02-15",
-            "requester": {
-              "reference": "PractitionerRole/987",
-              "display": "Dr. Jones"
-            },
-            "dosageInstruction": [{
-              "text": "6 tablets every 12 hours.",
-              "timing": {
-                "repeat": {
-                  "frequency": 1,
-                  "period": 12,
-                  "periodUnit": "h"
-                }
-              },
-              "doseAndRate": [{
-                "doseQuantity": {
-                  "value": 6,
-                  "unit": "tablet"
-                }
-              }]
-            }]
+        },
+        "doseAndRate": [{
+          "doseQuantity": {
+            "value": 6,
+            "unit": "tablet"
           }
         }]
-      }
-    ]
+      }]
+    }
+  }]
+}]
 ```
 
 
@@ -1138,57 +1137,55 @@ When using this response type, the proposed orders (and any associated resources
 This example proposes adding a monthly test to check liver function:
 
 ```
-    "suggestions": [
-      {
-        "label": "Add monthly AST test for 1st 3 months",
-        "actions": [{
-          "type": "create",
-          "description": "Add order for AST test",
-          "resource": {
-            "resourceType": "ServiceRequest",
-            "status": "draft",
-            "intent": "original-order",
-            "category": [{
-              "coding": [{
-                "system": "http://snomed.info/sct",
-                "code": "108252007",
-                "display": "Laboratory procedure"
-              }]
-            }],
-            "code": {
-              "coding": [{
-                "system": "http://www.ama-assn.org/go/cpt",
-                "code": "80076",
-                "display": "Hepatic function panel"
-              }]
-            },
-            "subject": {
-              "reference": "Patient/123",
-              "display": "Jane Smith"
-            },
-            "encounter": {
-              "reference": "Encounter/ABC"
-            },
-            "occurrence": {
-              "boundsDuration": {
-                "value": 3,
-                "unit": "months",
-                "code": "mo",
-                "system": "http://unitsofmeasure.org"
-              },
-              "frequency": 1,
-              "period": 1,
-              "periodUnit": "mo"
-            },
-            "authoredOn": "2019-02-15",
-            "requester": {
-              "reference": "PractitionerRole/987",
-              "display": "Dr. Jones"
-            }
-          }
+"suggestions": [{
+  "label": "Add monthly AST test for 1st 3 months",
+  "actions": [{
+    "type": "create",
+    "description": "Add order for AST test",
+    "resource": {
+      "resourceType": "ServiceRequest",
+      "status": "draft",
+      "intent": "original-order",
+      "category": [{
+        "coding": [{
+          "system": "http://snomed.info/sct",
+          "code": "108252007",
+          "display": "Laboratory procedure"
         }]
+      }],
+      "code": {
+        "coding": [{
+          "system": "http://www.ama-assn.org/go/cpt",
+          "code": "80076",
+          "display": "Hepatic function panel"
+        }]
+      },
+      "subject": {
+        "reference": "Patient/123",
+        "display": "Jane Smith"
+      },
+      "encounter": {
+        "reference": "Encounter/ABC"
+      },
+      "occurrence": {
+        "boundsDuration": {
+          "value": 3,
+          "unit": "months",
+          "code": "mo",
+          "system": "http://unitsofmeasure.org"
+        },
+        "frequency": 1,
+        "period": 1,
+        "periodUnit": "mo"
+      },
+      "authoredOn": "2019-02-15",
+      "requester": {
+        "reference": "PractitionerRole/987",
+        "display": "Dr. Jones"
       }
-    ]
+    }
+  }]
+}]
 ```
 
 ###### Request form completion
@@ -1220,56 +1217,54 @@ Note:
 The following is an example CDS Hook [Suggestion](https://cds-hooks.hl7.org/1.0/#suggestion) where the specified questionnaire is either expected to be available within the CRD Client or available for retrieval through its canonical URL.  As such, the [Action](https://cds-hooks.hl7.org/1.0/#action) only contains the FHIR [Task]({{site.data.fhir.path}}task.html) resource.  An example showing inclusion of both the Task and the referenced Questionnaire can be found [above](#if-none-exist).
 
 ```
-    "suggestions": [
-      {
-        "label": "Add 'completion of the ABC form' to your task list (possibly for reassignment)",
-        "actions": [{
-          "type": "create",
-          "description": "Add 'Complete ABC form' to the task list",
-          "resource": {
-            "resourceType": "Task",
-            "basedOn": "Appointment/27",
-            "status": "ready",
-            "intent": "order",
-            "code": {
-              "coding": [{
-                "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/task-type",
-                "code": "complete-questionnaire"
-              }]
-            },
-            "description": "Complete XYZ form for inclusion in prior authorization",
-            "for": {
-              "reference": "Patient/some-patient-id"
-            },
-            "authoredOn": "2018-08-09",
-            "reasonCode": {
-              "coding": [{
-                "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/task-reason",
-                "code": "prior-auth",
-                "display": "Needed for prior authorization"
-              }]
-            },
-            "input": [{
-              "type": {
-                "text": "questionnaire"
-              },
-              "valueCanonical": "http://example.org/Questionnaire/XYZ|2"
-            },{
-              "type": {
-                "text": "afterCompletion"
-              },
-              "valueCodeableConcept": {
-                "coding": [{
-                  "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/after-completion",
-                  "code": "prior-auth",
-                  "display": "Include in prior authorization"
-                }]
-              }
-            }]
-          }
+"suggestions": [{
+  "label": "Add 'completion of the ABC form' to your task list (possibly for reassignment)",
+  "actions": [{
+    "type": "create",
+    "description": "Add 'Complete ABC form' to the task list",
+    "resource": {
+      "resourceType": "Task",
+      "basedOn": "Appointment/27",
+      "status": "ready",
+      "intent": "order",
+      "code": {
+        "coding": [{
+          "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/task-type",
+          "code": "complete-questionnaire"
         }]
-      }
-    ]
+      },
+      "description": "Complete XYZ form for inclusion in prior authorization",
+      "for": {
+        "reference": "Patient/some-patient-id"
+      },
+      "authoredOn": "2018-08-09",
+      "reasonCode": {
+        "coding": [{
+          "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/task-reason",
+          "code": "prior-auth",
+          "display": "Needed for prior authorization"
+        }]
+      },
+      "input": [{
+        "type": {
+          "text": "questionnaire"
+        },
+        "valueCanonical": "http://example.org/Questionnaire/XYZ|2"
+      },{
+        "type": {
+          "text": "afterCompletion"
+        },
+        "valueCodeableConcept": {
+          "coding": [{
+            "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/after-completion",
+            "code": "prior-auth",
+            "display": "Include in prior authorization"
+          }]
+        }
+      }]
+    }
+  }]
+}]
 ```
 
 
@@ -1281,51 +1276,48 @@ This response will contain a single suggestion.  The primary action will either 
 For example, this CDS Hook [Card](https://cds-hooks.hl7.org/1.0/#cds-service-response) includes a single [Suggestion](https://cds-hooks.hl7.org/1.0/#suggestion) with two [Actions](https://cds-hooks.hl7.org/1.0/#action) - one is to update the [Coverage]({{site.data.fhir.path}}coverage.html) and the second is to update the draft order [MedicationRequest]({{site.data.fhir.path}}medicationrequest.html) to reference the existing Coverage.
 
 ```
-    {
-      "summary": "EMR coverage information is incomplete",
-      "indicator": "info",
-      "source": {
-        "label": "Some Payer",
-        "url": "https://example.com",
-        "icon": "https://example.com/img/icon-100px.png",
-		"topic": "coverage"
-      },
-      "suggestions": [
-        {
-          "label": "Update coverage information to be current",
-          "uuid": "1207df9d-9ff6-4042-985b-b8dec21038c2",
-          "actions": [{
-            "type": "update",
-            "description": "Update current coverage record",
-            "resource": {
-              "resourceType": "Coverage",
-              "id": "1234",
-              "subscriberId": "192837",
-              "class": {
-                "type": "group",
-                "value": "A1"
-              }
-            }
-          }]
-        },
-        {
-          "label": "Link coverage to existing Drug X prescription",
-          "uuid": "9309cc18-fea1-4939-ab0c-ecb15bedf043",
-          "actions": [{
-            "type": "update",
-            "description": "Update prescription to include coverage",
-            "resource": {
-              "resourceType": "MedicationRequest",
-              "id": "5678",
-              ...
-              "insurance": {
-                "reference": "Coverage/1234"
-              }
-            }
-          }]
+{
+  "summary": "EMR coverage information is incomplete",
+  "indicator": "info",
+  "source": {
+    "label": "Some Payer",
+    "url": "https://example.com",
+    "icon": "https://example.com/img/icon-100px.png",
+    "topic": "coverage"
+  },
+  "suggestions": [{
+    "label": "Update coverage information to be current",
+    "uuid": "1207df9d-9ff6-4042-985b-b8dec21038c2",
+    "actions": [{
+      "type": "update",
+      "description": "Update current coverage record",
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "1234",
+        "subscriberId": "192837",
+        "class": {
+          "type": "group",
+          "value": "A1"
         }
-      ]
-    }
+      }
+    }]
+  }, {
+    "label": "Link coverage to existing Drug X prescription",
+    "uuid": "9309cc18-fea1-4939-ab0c-ecb15bedf043",
+    "actions": [{
+      "type": "update",
+      "description": "Update prescription to include coverage",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "5678",
+        ...
+        "insurance": {
+          "reference": "Coverage/1234"
+        }
+      }
+    }]
+  }]
+}
 ```
 
 ###### Launch SMART application
@@ -1340,28 +1332,26 @@ This card type also provides the mechanism to transition from CRD to the behavio
 For example, this [Card](https://cds-hooks.hl7.org/1.0/#cds-service-response) contains a SMART App [Link](https://cds-hooks.hl7.org/1.0/#link) to perform an opioid assessment.
 
 ```
-    {
-      "summary": "Launch opioid XYZ-assessment",
-      "indicator": "info",
-      "detail": "This is an example card.",
-      "source": {
-        "label": "Some Payer",
-        "url": "https://example.com",
-        "icon": "https://example.com/img/icon-100px.png",
-		"topic": "coverage"
-      },
-      "links": [
-        {
-          "label": "Opioid XYZ-assessment",
-          "url": "https://example.org/opioid-assessment",
-          "type": "smart",
-          "appContext": "{\"questionnaire\":\"https://example.org/fhir/Questionnaire/OP123\",
-              \"questionnaireToken\":\"a1235abe399...\",
-              \"context\":\"{\"patientId\": \"123\",...}\"
-          }"
-        }
-      ]
-    }
+{
+  "summary": "Launch opioid XYZ-assessment",
+  "indicator": "info",
+  "detail": "This is an example card.",
+  "source": {
+    "label": "Some Payer",
+    "url": "https://example.com",
+    "icon": "https://example.com/img/icon-100px.png",
+    "topic": "coverage"
+  },
+  "links": [{
+    "label": "Opioid XYZ-assessment",
+    "url": "https://example.org/opioid-assessment",
+    "type": "smart",
+    "appContext": "{\"questionnaire\":\"https://example.org/fhir/Questionnaire/OP123\",
+        \"questionnaireToken\":\"a1235abe399...\",
+        \"context\":\"{\"patientId\": \"123\",...}\"
+    }"
+  }]
+}
 ```
 
 The `appContext` in the above example follows a pattern used for invoking a [Da Vinci Documentation Templates &amp; Rules (DTR)](http://hl7.org/fhir/us/davinci-dtr) SMART app.  While the appContext can contain any information desired and coordinated between the designers of the CDS Hook service and the designers of the launched SMART App, Da Vinci DTR intends to support the use of 'common' SMART apps that can be used by multiple payers, such that the SMART apps can be interchangeable and the EHR might choose to launch a common app in place of the specific SMART app URL specified.
@@ -1375,7 +1365,7 @@ To support this behavior, the appContext **SHOULD** include the following proper
 <div markdown="1" class="new-content">
 ###### Pre-emptive prior authorization
 
-One result of invoking a CRD service may be that, based on the patient, their type of coverage and other information available in the patient's record queried by the CRD service, is that the service determines that - not only is prior authorization necessary for the intervention being ordered, but that the ordered intervention meets prior authorization requirements.  In such a case, the CRD service may return a card with two alternate suggestions - store the prior authorization in computable or add the prior authorization as an annotation to the order. 
+One result of invoking a CRD service may be - based on the patient, their type of coverage, and other information available in the patient's record queried by the CRD service - that the service determines that not only is prior authorization necessary for the intervention being ordered, but that the ordered intervention meets prior authorization requirements.  In such a case, the CRD service may return a card with two alternate suggestions - store the prior authorization in computable or add the prior authorization as an annotation to the order. 
 
 The first will be handled through a 'create' action that stores a ClaimResponse instance complying with the HRex [unsolicited authorization](StructureDefinition-profile-claimresponse.html) profile together with an 'update' to the order or appointment instance that triggered the CDS Hook invocation to modify the record adding the ClaimResponse as a 'supportingInfo' element - establishing a linkage between the order and the prior authorization.
 
@@ -1384,67 +1374,67 @@ The second suggestion will function exactly as per the 'annotate' card, with the
 CRD clients and services MAY, by mutual agreement, make use of the new CDS Hooks system action functionality to cause annotations to automatically be stored on the relevant request, appointment, etc.  These implementations will be responsible for ensuring that the only changes made to the EHR record are to add the annotations contemplated here.  It is likely that the conformance expectation on the use of system actions will be tighter in future releases.
 
 ```
-    {
-      "summary": "Store pre-emptive prior authorization for this service",
-      "indicator": "info",
-	  "detail": "This is an example card for pre-emptive prior authorization with two alternate suggestions - store the prior authorization in computable or add the prior authorization as an annotation to the order.",
-      "source": {
-        "label": "Some Payer",
-        "url": "https://example.com",
-        "icon": "https://example.com/img/icon-100px.png",
-		"topic": "prior-auth"
-      },
-      "suggestions": [
-        {
-          "label": "Store the prior authorization in the EHR",
-          "uuid": "23d5f278-a742-4cb7-801b-ea32c2ae2ccf",
-          "actions": [{
-            "type": "create",
-            "description": "Store ClaimResponse",
-            "resource": {
-              "resourceType": "ClaimResponse",
-              "id": "cr1",
-              "status": "active",
-              ...
-            }
-          },
-		  {
-            "type": "update",
-            "description": "Update to the order",
-            "resource": {
-            "resourceType": "ServiceRequest",
-            ...
-            "supportingInfo": [{
-              "reference": "ClaimResponse/cr1"
-            }],
-            ...
+{
+  "summary": "Referal has received prior authorization",
+  "indicator": "info",
+  "detail": "Patient's ABC plan authorizes weekly physio-therapy on their right shoulder for 6 weeks.  Please submit as billing code 12345 with specialty modifier of 0A.  Authorization number 98765 is valid through Jun 7, 2020.",
+  "source": {
+    "label": "Some Payer",
+    "url": "https://example.com",
+    "icon": "https://example.com/img/icon-100px.png",
+    "topic": "prior-auth"
+  },
+  "suggestions": [{
+    "label": "Store the prior authorization in the EHR",
+    "uuid": "23d5f278-a742-4cb7-801b-ea32c2ae2ccf",
+    "actions": [{
+      "type": "create",
+      "description": "Store ClaimResponse",
+      "resource": {
+        "resourceType": "ClaimResponse",
+        "id": "cr1",
+        "status": "active",
+        ...
+      }
+    }, {
+      "type": "update",
+      "description": "Update to the order",
+      "resource": {
+        "resourceType": "ServiceRequest",
+        ...
+        "supportingInfo": [
+          ...
+          {
+            "reference": "ClaimResponse/cr1"
           }
-          }
-		  ]
-        },
-        {
-          "label": "Prior authorization as an annotation to the order",
-          "uuid": "9309cc18-fea1-4939-ab0c-ecb15bedf043",
-          "actions": [{
-            "type": "update",
-            "description": "Add authorization to record",
-            "resource": {
-              "resourceType": "ServiceRequest",
-              ...
-              "supportingInfo": [{
-              "reference": "ClaimResponse/cr1"
-            }],
-			 "note": [
-            {
-              "text": "Adding authorization to the record"
-            }
-             ]
-            }
-          }]
-        }
-      ]
-    }
+        ],
+        ...
+      }
+    }]
+  }, {
+    "label": "Capture authorization an order note",
+    "uuid": "9309cc18-fea1-4939-ab0c-ecb15bedf043",
+    "actions": [{
+      "type": "update",
+      "description": "Add authorization to record",
+      "resource": {
+        "resourceType": "ServiceRequest",
+        ...
+        "supportingInfo": [{
+          "reference": "ClaimResponse/cr1"
+        }],
+        "note": [{
+          "authorString": "Some Payer",
+          "time": "2019-12-07T15:28:33",
+          "text": "Patient's ABC plan authorizes weekly physio-therapy on their right shoulder for 6 weeks.  Please submit as billing code 12345 with specialty modifier of 0A.  Authorization number 98765 is valid through Jun 7, 2020."
+        }]
+      }
+    }]
+  }]
+}
 ```
+A full example of a pre-emptive prior authorization can be found [here](https://build.fhir.org/ig/HL7/davinci-crd/ClaimResponse-priorauth-example.html).
+
 
 </div>
 #### Additional data retrieval
@@ -1481,20 +1471,27 @@ EMR implementations **SHOULD NOT** expect standardized prefetch key names.  EMRs
 
 <div markdown="1" class="new-content">
 
-In most cases, payers will require information about a patient's coverage.  Retrieval of this information is only dependent on the patient context and not on any other information being passed by the hook.  It will simply look like this:
+In most cases, payers will require information about a patient's coverage.  Retrieval of this information is only dependent on the patient context and not on any other information being passed by the hook.  It will look like this:
 
 {% raw %}
-<code>Coverage?patient={{context.patient}}&amp;status=active</code>
+```
+"prefetch": {
+  "coverage": "Coverage?patient={{context.patient}}&amp;status=active",
+  ...
+},
+{% endraw %}
+```
 
-Other information will need to be retrieved using queries that are more specific to the type of hook being invoked - and the resources passed with it:
-
-</div>
 <blockquote class="note-to-balloters">
 <p>
 This represents a change to how coverage information will be retrieved.  All active coverage for the patient is now retrieved (though typically only the coverage related to a payer will actually flow to the CRD service due to limits on information disclosure).  There are no longer extensions or special search parameters to support capturing insurance information on a request-specific, encounter-specific, or other context-specific manner.
 </p>
 </blockquote>
 
+Other information will need to be retrieved using queries that are more specific to the type of hook being invoked - and the resources passed with it:
+</div>
+
+{% raw %}
 <table class="grid">
   <thead>
     <tr>
@@ -1609,9 +1606,9 @@ The following two examples show a batch query that could retrieve all CRD-releva
 This query presumes that a hook has been invoked and the following information has been passed in as context:
 
 ```
-  "userId": "PractitionerRole/ABC",
-  "patientId": "123",
-  "encounterId": "987"
+"userId": "PractitionerRole/ABC",
+"patientId": "123",
+"encounterId": "987"
 ```
 
 As well, the `draftOrders` Bundle includes MedicationRequests that reference 2 formulary medications (MED1, MED2), to be fulfilled by one pharmacy Organization (456) and are ordered by the same PractitionerRole with id 'ABC'.  Most importantly, they are all tied to the same Coverage record with id 'DEF'.
@@ -1674,12 +1671,10 @@ The response is a batch-response Bundle, with each entry containing either a sin
       },
       "type": "searchset",
       "total": 1,
-      "link": [
-        {
-          "relation": "self",
-          "url": "http://someemr.org/fhir/r4/PractitionerRole??_id=123&_include=PractitionerRole:organization&_include=PractitionerRole:practitioner&_sort=_id"
-        }
-      ],
+      "link": [{
+        "relation": "self",
+        "url": "http://someemr.org/fhir/r4/PractitionerRole??_id=123&_include=PractitionerRole:organization&_include=PractitionerRole:practitioner&_sort=_id"
+      }],
       "entry": [{
         "resource": {
           "resourceType": "PractitionerRole",
@@ -1747,12 +1742,10 @@ The response is a batch-response Bundle, with each entry containing either a sin
       },
       "type": "searchset",
       "total": 2,
-      "link": [
-        {
-          "relation": "self",
-          "url": "http://someemr.org/fhir/r4/Medication?_id=MED1,MED2&_sort=_id"
-        }
-      ],
+      "link": [{
+        "relation": "self",
+        "url": "http://someemr.org/fhir/r4/Medication?_id=MED1,MED2&_sort=_id"
+      }],
       "entry": [{
         "resource": {
           "resourceType": "Medication",
@@ -1802,52 +1795,48 @@ The response is a batch-response Bundle, with each entry containing either a sin
 <div markdown="1" class="new-content">
 
 #### Deferring Card Actions
-CRD clients SHOULD support deferring cards, allowing the information on a card to be reviewed by and/or the actions on a card to be performed by the current user or someone else at a later point.  If a CRD service feels that the ability to defer a card is important and (a) the system receiving the card does not have a native mechanism to defer a card and (b) the system does have the ability to accept 'create Task' actions, the CRD service MAY provide an alternate 'deferred' action that allows the card action to be performed later. CRD clients that do not provide native support for deferring cards **SHOULD** support accepting Task create actions.
+CRD clients **SHOULD** support deferring cards, allowing the information on a card to be reviewed by (and/or the actions on a card to be performed by) the current user or someone else at a later point.  If a CRD service feels that the ability to defer a card is important and (a) the CRD client does not have a native mechanism to defer a card and (b) the CRD client *does* have the ability to accept 'create Task' actions, the CRD service **MAY** provide an alternate 'deferred' action that allows the card action to be performed later. CRD clients that do not provide native support for deferring cards **SHOULD** support accepting Task create actions.
 
 If using the 'Task' mechanism, the action will display an appropriate message about deferring the action (e.g. launching the SMART app) and will cause the creation of a Task within the CRD client. This Task will have an owner of the current user and will comply with the [CRD Card Task](StructureDefinition-profile-crdcardtask.html) profile.  Each action within a suggestion will have its own Task - allowing the actions to be managed separately.  Once created, deferred action Tasks might be re-assigned, scheduled, and otherwise managed as normal Tasks.  How EHRs manage Task work queues is outside the scope of this specification.
 
-The 'focus' of the Task indicates the resource to be acted upon for suggestion actions.  For 'delete' actions, this will simply be a reference to the resource.  For create and update actions, it will be to a 'contained' resource representing the new content.  For updates, the contained 'id' of the resource SHALL match the id of the record to update in the CRD client.
+The 'focus' of the Task indicates the resource to be acted upon for suggestion actions.  For 'delete' actions, this will simply be a reference to the resource.  For create and update actions, it will be to a 'contained' resource representing the new content.  For updates, the contained 'id' of the resource **SHALL** match the id of the record to update in the CRD client.
 
-
-
-In addition, where no other deferral capabilities exist, a user can 'effectively' defer a DTR task by launching the DTR application, then saving and closing the app - which will save the current DTR session for later resumption by manually invoking the DTR application and selecting and resuming the in-progress session.  The user could also add a note to the in-progress order that DTR work requires completion.
+In addition, where no other deferral capabilities exist, a user can 'effectively' defer a [DTR](http://hl7.org/fhir/us/davinci-dtr) task by launching the DTR application, then saving and closing the app - which will save the current DTR session for later resumption by manually invoking the DTR application and selecting and resuming the in-progress session.  The user could also add a note to the in-progress order that DTR work requires completion.
 
 For example, this CDS Hook [Card](https://cds-hooks.hl7.org/1.0/#cds-service-response) includes a single [Suggestion](https://cds-hooks.hl7.org/1.0/#suggestion) with an [Action](https://cds-hooks.hl7.org/1.0/#action) to create the deferred task.
 
 ```
-    {
-      "summary": "Update coverage information",
-      "indicator": "info",
-      "source": {
-        "label": "Some Payer",
-        "url": "https://example.com",
-        "icon": "https://example.com/img/icon-100px.png",
-		"topic": "deferred-task"
-      },
-      "suggestions": [
-        {
-          "label": "Update coverage later",
-          "uuid": "1207df9d-9ff6-4042-985b-b8dec21038c2",
-          "actions": [{
-            "type": "create",
-            "description": "Add 'to-do' to update coverage information",
-            "resource": {
-              "resourceType": "Task",
-              "id": "1234",
-              "status": "ready",
-              "intent": "proposal",
-              "code": {
-                "coding": [{
-                  "system": "http://hl7.org/fhir/restful-interaction",
-                  "code": "update"
-                }]
-              }
-			   ...  
-            }
+{
+  "summary": "Update coverage information",
+  "indicator": "info",
+  "source": {
+    "label": "Some Payer",
+    "url": "https://example.com",
+    "icon": "https://example.com/img/icon-100px.png",
+    "topic": "deferred-task"
+  },
+  "suggestions": [{
+    "label": "Update coverage later",
+    "uuid": "1207df9d-9ff6-4042-985b-b8dec21038c2",
+    "actions": [{
+      "type": "create",
+      "description": "Add 'to-do' to update coverage information",
+      "resource": {
+        "resourceType": "Task",
+        "id": "1234",
+        "status": "ready",
+        "intent": "proposal",
+        "code": {
+          "coding": [{
+            "system": "http://hl7.org/fhir/restful-interaction",
+            "code": "update"
           }]
         }
-      ]
-    }
+        ...  
+      }
+    }]
+  }]
+}
 ```
 See [here](Task-action-example.html) for a full example of a deferred task.
 
@@ -1875,21 +1864,21 @@ NOTES:
 
 #### Registering DTR apps with CRD
 
-If a payer supports both CRD and DTR and the EHR intends to enable DTR in addition to CRD, then at the time the CRD service is enabled within the EHR, the service must be configured with the URL of the SMART app that is to be used within that EHR.  For configuration purposes either zero or one SMART app SHALL be configured.  The SMART app selected must be one that supports all the Questionnaire data types, extensions and other options that will be used by the payer - potentially including adaptive forms.
+If a payer supports both CRD and [DTR](http://hl7.org/fhir/us/davinci-dtr) and the EHR intends to enable DTR in addition to CRD, then at the time the CRD service is enabled within the EHR, the service must be configured with the URL of the SMART app that is to be used within that EHR.  For configuration purposes either zero or one SMART app **SHALL** be configured.  The SMART app selected must be one that supports all the Questionnaire data types, extensions and other options that will be used by the payer - potentially including adaptive forms.
 
-**NOTE:** The URL selected MAY be a 'logical' URL that corresponds to an EHR internal function rather than a registered SMART app.
+**NOTE:** The URL selected **MAY** be a 'logical' URL that corresponds to an EHR internal function rather than a registered SMART app.
 
-An EHR, on receipt of a CDS Hook card with a SMART app launch of the specified DTR URL choose to substitute that URL with the URL of an alternate SMART app, or with a card that allows launch of an internal function.  (Note: There is no standard mechanism for launching internal EHR functionality from a CDS Hook card yet, so this will need to be an EHR-proprietary mechanism.).  EHRs performing such substitution might do so based on the user, organization, order type or any other configuration option.  All responsibility for selection of which app to use rests with the EHR.  The card-provided URL SHALL be the same for all DTR launches cards returned by the payer.
+An EHR, on receipt of a CDS Hook card with a SMART app launch of the specified DTR URL **MAY** choose to substitute that URL with the URL of an alternate SMART app, or with a card that allows launch of an internal function.  (Note: There is no standard mechanism for launching internal EHR functionality from a CDS Hook card yet, so this will need to be an EHR-proprietary mechanism.).  EHRs performing such substitution might do so based on the user, organization, order type or any other configuration option.  All responsibility for selection of which app to use rests with the EHR.  The card-provided URL **SHALL** be the same for all DTR launch cards returned by the payer.
 
-Any substituted app (or internal EHR functionality) would need to support the DTR 1.1 standard launch context expectations and would also need to ensure the alternate app or internal function likewise supports the necessary Questionnaire capabilities used by the payer.  The EHR SHALL also notify the payer that they are performing app substitution so that the payer can notify the EHR if the payer's Questionnaire requirements will be changing.
+Any substituted app (or internal EHR functionality) would need to support the DTR standard launch context expectations and would also need to ensure the alternate app or internal function likewise supports the necessary Questionnaire capabilities used by the payer.  The EHR **SHALL** also notify the payer that they are performing app substitution so that the payer can notify the EHR if the payer's Questionnaire requirements will be changing.
 
 </div>
 
 ### Additional Considerations
 
-1. When EHRs pass resources to a CRD as part of context, the resources SHALL have an id and that id SHALL be useable as a target for references in resources manipulated by CDS Hook actions and/or by SMART apps launched by CRD.  This does not mean that the ids passed to CRD must persist, but rather that the EHR must handle adjustments to any references made to them (or provide necessary redirects) ensuring that any references made to the in-memory resource will remain valid.  This also means that EHRs will need to support the creation or updating of resources that include references to resources that might, at the time, only exist in memory and not yet be available as persistent entities.
+1. When EHRs pass resources to a CRD as part of context, the resources **SHALL** have an id and that id **SHALL** be useable as a target for references in resources manipulated by CDS Hook actions and/or by SMART apps launched by CRD.  This does not mean that the ids passed to CRD must persist, but rather that the EHR must handle adjustments to any references made to them (or provide necessary redirects) ensuring that any references made to the in-memory resource will remain valid.  This also means that EHRs will need to support the creation or updating of resources that include references to resources that might, at the time, only exist in memory and not yet be available as persistent entities.
 
-2. Healthcare providers will rely on the information provided by the Coverage Requirements Discovery process to determine if there are any special steps they need to take such as requesting prior authorization.  As a result, it's important to them to know whether requirements exist or not.  CRD Services SHALL respond with an empty JSON object when there is no action to be taken by the provider (the CDS Hooks mechanism for representing no guidance – which is not shown to the user) which allows a computer to distinguish between "no requirements" and a textual requirement.
+2. Healthcare providers will rely on the information provided by the Coverage Requirements Discovery process to determine if there are any special steps they need to take such as requesting prior authorization.  As a result, it's important to them to know whether requirements exist or not.  CRD Services **SHALL** respond with an empty JSON object when there is no action to be taken by the provider (the CDS Hooks mechanism for representing no guidance – which is not shown to the user) which allows a computer to distinguish between "no requirements" and a textual requirement.
 
 3. The receipt of coverage requirements (be it "no requirements" or specific requirements/recommendations) has financial implications for both healthcare providers and payers.  If a provider receives a message of "no requirements" and subsequently has a claim denied because of unmet requirements, it will be necessary for both sides to be able to confirm whether a "no requirements" response was sent and what information was in the hook invocation that led to that response.  Therefore, in addition to any logging performed for security purposes, both CRD Clients and CRD Services **SHALL** retain logs of all CRD-related hook invocations and their responses for access in the event of a dispute.  All `Card.suggestion` elements **SHALL** populate the `Suggestion.uuid` element to aid in log reconciliation.  Organizations **SHALL** have processes to ensure logs can be accessed by appropriate authorized users to help resolve discrepancies or issues in a timely manner.
 

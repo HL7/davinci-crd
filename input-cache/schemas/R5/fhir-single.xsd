@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Fri, Feb 4, 2022 18:20+0000 for FHIR v4.6.0 
+  Generated on Mon, Feb 7, 2022 19:54+0000 for FHIR v4.6.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="4.6.0">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -7232,7 +7232,7 @@ A coverage may only be responsible for specific types of charges, and the sequen
           </xs:element>
           <xs:element name="formOf" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The medicinal product that this is a prepared administrable form of. This element is not a reference to the item(s) that make up this administrable form (for which see AdministrableProductDefinition.producedFrom). It is medicinal product as a whole, which may have several components (as well as packaging, devices etc.), that are given to the patient in this final administrable form. A single medicinal product may have several different administrable products (e.g. a tablet and a cream), and these could have different administrable forms (e.g. tablet as oral solid, or tablet crushed).</xs:documentation>
+              <xs:documentation xml:lang="en">References a product from which one or more of the constituent parts of that product can be prepared and used as described by this administrable product.  If this administrable product describes the administration of a crushed tablet, the 'formOf' would be the product representing a distribution containing tablets and possibly also a cream.  This is distinct from the 'producedFrom' which refers to the specific components of the product that are used in this preparation, rather than the product as a whole.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="administrableDoseForm" minOccurs="0" maxOccurs="1" type="CodeableConcept">
@@ -7247,7 +7247,7 @@ A coverage may only be responsible for specific types of charges, and the sequen
           </xs:element>
           <xs:element name="producedFrom" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The constituent manufactured item(s) that this administrable product is produced from. Either a single item, or several that are mixed before administration (e.g. a power item and a solvent item, to make a consumable solution). Note the items this is produced from are not raw ingredients (see AdministrableProductDefinition.ingredient), but manufactured medication items (ManufacturedItemDefinitions), which may be combined or prepared and transformed for patient use. The constituent items that this administrable form is produced from are all part of the product (for which see AdministrableProductDefinition.formOf).</xs:documentation>
+              <xs:documentation xml:lang="en">Indicates the specific manufactured items that are part of the 'formOf' product that are used in the preparation of this specific administrable form.  In some cases, an administrable form might use all of the items from the overall product (or there might only be one item), while in other cases, an administrable form might use only a subset of the items available in the overall product.  For example, an administrable form might involve combining a liquid and a powder available as part of an overall product, but not involve applying the also supplied cream.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="ingredient" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
@@ -7267,7 +7267,7 @@ A coverage may only be responsible for specific types of charges, and the sequen
           </xs:element>
           <xs:element name="routeOfAdministration" type="AdministrableProductDefinition.RouteOfAdministration" minOccurs="1" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The path by which the product is taken into or makes contact with the body. In some regions this is referred to as the licenced or approved route.</xs:documentation>
+              <xs:documentation xml:lang="en">The path by which the product is taken into or makes contact with the body. In some regions this is referred to as the licenced or approved route. RouteOfAdministration cannot be used when the 'formOf' product already uses MedicinalProductDefinition.route (and vice versa).</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -7803,14 +7803,9 @@ A coverage may only be responsible for specific types of charges, and the sequen
               <xs:documentation xml:lang="en">The recordedDate represents when this particular AllergyIntolerance record was created in the system, which is often a system-generated date.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="recorder" minOccurs="0" maxOccurs="1" type="Reference">
+          <xs:element name="participant" type="AllergyIntolerance.Participant" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Individual who recorded the record and takes responsibility for its content.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="asserter" minOccurs="0" maxOccurs="1" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The source of the information about the allergy that is recorded.</xs:documentation>
+              <xs:documentation xml:lang="en">Indicates who or what participated in the activities related to the allergy or intolerance and how they were involved.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="lastOccurrence" minOccurs="0" maxOccurs="1" type="dateTime">
@@ -7826,6 +7821,27 @@ A coverage may only be responsible for specific types of charges, and the sequen
           <xs:element name="reaction" type="AllergyIntolerance.Reaction" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation xml:lang="en">Details about each adverse reaction event linked to exposure to the identified substance.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AllergyIntolerance.Participant">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Risk of harmful or undesirable physiological response which is specific to an individual and associated with exposure to a substance.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="function" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Distinguishes the type of involvement of the actor in the activities related to the allergy or intolerance.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="actor" minOccurs="1" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Indicates who or what participated in the activities related to the allergy or intolerance.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -16934,14 +16950,9 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">The recordedDate represents when this particular Condition record was created in the system, which is often a system-generated date.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="recorder" minOccurs="0" maxOccurs="1" type="Reference">
+          <xs:element name="participant" type="Condition.Participant" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Individual who recorded the record and takes responsibility for its content.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="asserter" minOccurs="0" maxOccurs="1" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Individual or device that is making the condition statement.</xs:documentation>
+              <xs:documentation xml:lang="en">Indicates who or what participated in the activities related to the condition and how they were involved.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="stage" type="Condition.Stage" minOccurs="0" maxOccurs="unbounded">
@@ -16957,6 +16968,27 @@ into another (possibly the same) biological entity.</xs:documentation>
           <xs:element name="note" minOccurs="0" maxOccurs="unbounded" type="Annotation">
             <xs:annotation>
               <xs:documentation xml:lang="en">Additional information about the Condition. This is a general notes/comments entry  for description of the Condition, its diagnosis and prognosis.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Condition.Participant">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A clinical condition, problem, diagnosis, or other event, situation, issue, or clinical concept that has risen to a level of concern.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="function" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Distinguishes the type of involvement of the actor in the activities related to the condition.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="actor" minOccurs="1" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Indicates who or what participated in the activities related to the condition.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -30636,7 +30668,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
           </xs:element>
           <xs:element name="referenceStrength" type="Ingredient.ReferenceStrength" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Strength expressed in terms of a reference substance.</xs:documentation>
+              <xs:documentation xml:lang="en">Strength expressed in terms of a reference substance. For when the ingredient strength is additionally expressed as equivalent to the strength of some other closely related substance (e.g. salt vs. base). Reference strength represents the strength (quantitative composition) of the active moiety of the active substance. There are situations when the active substance and active moiety are different, therefore both a strength and a reference strength are needed.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>

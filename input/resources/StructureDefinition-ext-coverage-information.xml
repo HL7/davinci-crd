@@ -44,7 +44,7 @@
   <type value="Extension"/>
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
   <derivation value="constraint"/>
-   <differential>
+  <differential>
     <element id="Extension">
       <path value="Extension"/>
       <short value="CoverageInfo"/>
@@ -63,24 +63,24 @@
         <code value="Extension"/>
       </type>
     </element>
-	 <element id="Extension.extension:name.url">
+    <element id="Extension.extension:coverageInfo.url">
       <path value="Extension.extension.url"/>
       <fixedUri value="coverageInfo"/>
     </element>
-    <element id="Extension.extension:name.value[x]">
+    <element id="Extension.extension:coverageInfo.value[x]">
       <path value="Extension.extension.value[x]"/>
-	  <min value="1"/>
+      <min value="1"/>
       <max value="1"/>
       <type>
         <code value="Coding"/>
       </type>
-	  <binding>
+      <binding>
         <strength value="required"/>
         <description value="Coverage Information"/>
         <valueSet value="http://hl7.org/fhir/us/davinci-crd/ValueSet/coverageGuidance"/>
       </binding>
     </element>
-	 <element id="Extension.extension:Coverage">
+    <element id="Extension.extension:coverage">
       <path value="Extension.extension"/>
       <sliceName value="coverage"/>
       <short value="Reference to Coverage"/>
@@ -91,15 +91,15 @@
         <code value="Extension"/>
       </type>
     </element>
-    <element id="Extension.extension:type.url">
+    <element id="Extension.extension:coverage.url">
       <path value="Extension.extension.url"/>
       <fixedUri value="coverage"/>
     </element>
-    <element id="Extension.extension:type.value[x]">
+    <element id="Extension.extension:coverage.value[x]">
       <path value="Extension.extension.value[x]"/>
-	  <min value="1"/>
+      <min value="1"/>
       <max value="1"/>
-       <type>
+      <type>
         <code value="Reference"/>
         <targetProfile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-coverage"/>
       </type>
@@ -119,19 +119,19 @@
       <path value="Extension.extension.url"/>
       <fixedUri value="date"/>
     </element>
-    <element id="Extension.extension:description.value[x]">
+    <element id="Extension.extension:date.value[x]">
       <path value="Extension.extension.value[x]"/>
-	  <min value="1"/>
+      <min value="1"/>
       <max value="1"/>
       <type>
         <code value="date"/>
       </type>
     </element>
-	 <element id="Extension.extension:identifier">
+    <element id="Extension.extension:identifier">
       <path value="Extension.extension"/>
       <sliceName value="identifier"/>
       <short value="Identifier"/>
-      <definition value="Identifier to allow tracking the guidance in source system."/>
+      <definition value="Trace identifier to allow tracking the guidance in source system."/>
       <min value="0"/>
       <max value="1"/>
       <type>
@@ -145,7 +145,7 @@
     <element id="Extension.extension:identifier.value[x]">
       <path value="Extension.extension.value[x]"/>
       <type>
-        <code value="Identifier"/>
+        <code value="string"/>
       </type>
     </element>
     <element id="Extension.url">
