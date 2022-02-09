@@ -109,7 +109,7 @@ Payers and EHRs are both encouraged to provide feedback around whether this timi
 
 #### Accuracy
 
-CDS services **SHOULD** make every effort to ensure that the guidance returned with respect to coverage and prior authorizations (e.g. assertions that a service is covered, or prior authorization is not necessary) is as accurate as guidance that would be provided by other means (e.g. portals, phone calls).  However, that this doesn't mean that circumstances can't change in a way that invalidates an answer provided.  Also, such guidance should allow for possible variances in coding and submission.  (See [Impact on payer processes](background.html#impact-on-payer-processes) on the Background page.)
+CDS services **SHOULD** ensure that the guidance returned with respect to coverage and prior authorizations (e.g. assertions that a service is covered, or prior authorization is not necessary) is as accurate as guidance that would be provided by other means (e.g. portals, phone calls).  However, this doesn't mean that circumstances can't change in a way that invalidates an answer provided.  Also, such guidance should allow for possible variances in coding and submission.  (See [Impact on payer processes](background.html#impact-on-payer-processes) on the Background page.)
 
 </div>
 
@@ -122,7 +122,9 @@ Payers and service providers **SHALL** ensure that CDS Hooks return only message
 
 <div markdown="1" class="new-content">
 
-Implementations **SHALL** have the ability to flag or otherwise identify orders, appointments, encounters, and other records as 'payer-sensitive' and ensure that such sensitive information is not queryable by payers and that such information does not trigger payer hooks or get included as part of payer hook invocation.  The process to flag information as payer-sensitive should fit within standard workflow and minimize provider effort.  The determination of the flag **SHOULD** be set as early in the process as possible in the workflow to ensure that decision support can be provided as early as possible.  The 'flagging' may occur either automatically or with provider intervention, but both **SHOULD** be supported.
+Implementations **SHALL** restrict information shared with a payer to only the information appropriate to share with that payer, for example, not including patient pay or federal/state sensitive data without patient permission.
+
+Consideration **SHOULD** be given to how such restricted content will be determined and identified as 'patient sensitive' prior to invoking CRD to exchange patient data with payer systems.
 
 </div>
 
@@ -487,7 +489,7 @@ If a hook service is invoked on a collection of resources, all cards returned th
 
 
 ##### Controlling hook invocation
-Providers **SHALL NOT** invoke hooks on payer services where the patient in question is not known to have active coverage with the payer in question.  Providers **MAY** limit hook invocation to only those payers that are believed to potentially have relevant information related to the current action - for example, clinical guidance, contraindication detection, etc.  This might be more payers than just those that are likely to provide coverage.
+Provider systems **SHALL** only invoke hooks on payer services where the patient in question is known to have active coverage with the payer in question.  Providers **MAY** limit hook invocation to only those payers that are believed to potentially have relevant information related to the current action - for example, clinical guidance, contraindication detection, etc.  This might be more payers than just those that are likely to provide coverage for the services referred to by the hook.
 
 </div>
 
