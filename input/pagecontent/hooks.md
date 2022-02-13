@@ -1348,9 +1348,11 @@ For example, this [Card](https://cds-hooks.hl7.org/1.0/#cds-service-response) co
     "label": "Opioid XYZ-assessment",
     "url": "https://example.org/opioid-assessment",
     "type": "smart",
-    "appContext": "{\"questionnaire\":\"https://example.org/fhir/Questionnaire/OP123\",
-        \"questionnaireToken\":\"a1235abe399...\",
-        \"context\":\"{\"patientId\": \"123\",...}\"
+    "appContext": "{
+        \"questionnaire\":[\"https://example.org/fhir/Questionnaire/OP123\"],
+        \"response\":[{\"resourceType\":\"QuestionnaireResponse\",...}],
+        \"order\":[{\"resourceType\":\"MedicationRequest\",...}],
+        \"coverage\":[\"Coverage/ABC\"]
     }"
   }]
 }
