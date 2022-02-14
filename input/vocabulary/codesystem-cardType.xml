@@ -11,7 +11,12 @@
   <concept>
     <code value="coverage"/>
     <display value="Coverage"/>
-    <definition value="Is the therapy covered or not or are there limitations"/>
+    <definition value="Is the therapy covered or not, or are there limitations"/>
+  </concept>
+  <concept>
+    <code value="documentation"/>
+    <display value="Documentation"/>
+    <definition value="Are there additional documentation requirements"/>
   </concept>
   <concept>
     <code value="prior-auth"/>
@@ -79,7 +84,7 @@
     <definition value="Notice that the proposed intervention has already recently occurred with a different provider when that information isn't already available in the provider system"/>
   </concept>
   <concept>
-    <code value="Contraindication"/>
+    <code value="contraindication"/>
     <display value="Contraindication"/>
     <definition value="Notice that the proposed intervention may be contraindicated based on information the payer has in their record that the provider doesn't have in theirs"/>
   </concept>
