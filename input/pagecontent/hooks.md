@@ -899,7 +899,7 @@ For example, this card proposes indicates that a prior authorization has been gr
     "type": "update",
     "description": "Add authorization to record",
     "resource": {
-      "resourceType": "MedicationRequest",
+      "resourceType": "ServiceRequest",
       "id": "idfromcontext",
       "extension": [
         {
@@ -932,11 +932,11 @@ For example, this card proposes indicates that a prior authorization has been gr
       ],
       "status": "draft",
       "intent": "original-order",
-      "medicationCodeableConcept": {
+      "code": {
         "coding": [{
-          "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-          "code": "616447",
-          "display": "Cellcept 250 MG Oral Capsule"
+          "system": "http://snomed.info/sct",
+          "code": "726551006",
+          "display": "Contrast enhanced spectral mammography (Procedure)"
         }]
       },
       "subject": {
@@ -955,25 +955,9 @@ For example, this card proposes indicates that a prior authorization has been gr
         {
           "authorString": "XYZ Insurance",
           "time": "2019-02-15T15:07:18-05:00",
-          "text": "Prior authorization required for Cellcept 250MG Oral Capsule under coverage ABC.  (Determination 1234ABC made Feb 15, 2019)"
+          "text": "Prior authorization required for Contrast enhanced spectral mammography under coverage ABC.  (Determination 1234ABC made Feb 15, 2019)"
         }
-      ],
-      "dosageInstruction": [{
-        "text": "6 tablets every 12 hours.",
-        "timing": {
-          "repeat": {
-            "frequency": 1,
-            "period": 12,
-            "periodUnit": "h"
-          }
-        },
-        "doseAndRate": [{
-          "doseQuantity": {
-            "value": 6,
-            "unit": "tablet"
-          }
-        }]
-      }]
+      ]
     }
   }]
 }]
