@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Tue, Feb 8, 2022 00:54+0000 for FHIR v4.6.0 
+  Generated on Fri, Feb 11, 2022 19:08+0000 for FHIR v4.6.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="4.6.0">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -2484,6 +2484,12 @@
           <xs:documentation xml:lang="zh">测试报告</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="Transport">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Transport</xs:documentation>
+          <xs:documentation xml:lang="en">Transport</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="VerificationResult">
         <xs:annotation>
           <xs:documentation xml:lang="en">VerificationResult</xs:documentation>
@@ -3074,6 +3080,7 @@
       <xs:element ref="TerminologyCapabilities"/>
       <xs:element ref="TestReport"/>
       <xs:element ref="TestScript"/>
+      <xs:element ref="Transport"/>
       <xs:element ref="ValueSet"/>
       <xs:element ref="VerificationResult"/>
       <xs:element ref="VisionPrescription"/>
@@ -7494,6 +7501,11 @@ A coverage may only be responsible for specific types of charges, and the sequen
               <xs:documentation xml:lang="en">Indicates who or what participated in the adverse event and how they were involved.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="expectedInResearchStudy" minOccurs="0" maxOccurs="1" type="boolean">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Considered likely or probable or anticipated in the research study.  Whether the reported event matches any of the outcomes for the patient that are considered by the study as known or likely.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="suspectEntity" type="AdverseEvent.SuspectEntity" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation xml:lang="en">Describes the entity that is suspected to have caused the adverse event.</xs:documentation>
@@ -9084,16 +9096,6 @@ into another (possibly the same) biological entity.</xs:documentation>
           <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
             <xs:annotation>
               <xs:documentation xml:lang="en">This records identifiers associated with this biologically derived product instance that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="udiDeviceIdentifier" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The device identifier (DI) is a mandatory, fixed portion of a UDI that identifies the labeler and the specific version or model of a device.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="distinctIdentifier" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The distinct identification string as required by regulation for a human cell, tissue, or cellular and tissue-based product.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="biologicalSource" minOccurs="0" maxOccurs="1" type="Identifier">
@@ -12849,45 +12851,9 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">The specific classification value.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="whoClassified" type="Citation.WhoClassified" minOccurs="0" maxOccurs="1">
+          <xs:element name="artifactAssessment" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Provenance and copyright of classification.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="Citation.WhoClassified">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">The Citation Resource enables reference to any knowledge artifact for purposes of identification and attribution. The Citation Resource supports existing reference structures and developing publication practices such as versioning, expressing complex contributorship roles, and referencing computable resources.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="BackboneElement">
-        <xs:sequence>
-          <xs:element name="person" minOccurs="0" maxOccurs="1" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Person who created the classification.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="organization" minOccurs="0" maxOccurs="1" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Organization who created the classification.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="publisher" minOccurs="0" maxOccurs="1" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The publisher of the classification, not the publisher of the article or artifact being cited.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="classifierCopyright" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Rights management statement for the classification.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="freeToShare" minOccurs="0" maxOccurs="1" type="boolean">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Acceptable to re-use the classification.</xs:documentation>
+              <xs:documentation xml:lang="en">Complex or externally created classification.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -12927,39 +12893,19 @@ into another (possibly the same) biological entity.</xs:documentation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
-          <xs:element name="name" minOccurs="0" maxOccurs="1" type="HumanName">
+          <xs:element name="contributor" minOccurs="1" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A name associated with the individual.</xs:documentation>
+              <xs:documentation xml:lang="en">The identity of the individual entity.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="initials" minOccurs="0" maxOccurs="1" type="string">
+          <xs:element name="forenameInitials" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
               <xs:documentation xml:lang="en">Initials for forename.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="collectiveName" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Used for collective or corporate name as an author.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Unique person identifier.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="affiliationInfo" type="Citation.AffiliationInfo" minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="affiliation" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">Organization affiliated with the entity.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="address" minOccurs="0" maxOccurs="unbounded" type="Address">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Physical mailing address for the author or contributor.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="telecom" minOccurs="0" maxOccurs="unbounded" type="ContactPoint">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Email or telephone contact methods for the author or contributor.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="contributionType" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
@@ -12985,32 +12931,6 @@ into another (possibly the same) biological entity.</xs:documentation>
           <xs:element name="rankingOrder" minOccurs="0" maxOccurs="1" type="positiveInt">
             <xs:annotation>
               <xs:documentation xml:lang="en">Provides a numerical ranking to represent the degree of contributorship relative to other contributors, such as 1 for first author and 2 for second author.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="Citation.AffiliationInfo">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">The Citation Resource enables reference to any knowledge artifact for purposes of identification and attribution. The Citation Resource supports existing reference structures and developing publication practices such as versioning, expressing complex contributorship roles, and referencing computable resources.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="BackboneElement">
-        <xs:sequence>
-          <xs:element name="affiliation" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Display for the organization.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="role" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Role within the organization, such as professional title.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Identifier for the organization.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -27819,7 +27739,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
           </xs:element>
           <xs:element name="primarySource" minOccurs="0" maxOccurs="1" type="boolean">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Indicates if this record was captured as a secondary 'reported' record rather than as an original primary source-of-truth record.</xs:documentation>
+              <xs:documentation xml:lang="en">Indicates whether this record was captured as an original primary source-of-truth record rather than a secondary 'reported' record. A value &quot;true&quot; means this is a primary record of the immunization.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:choice minOccurs="0" maxOccurs="1" >
@@ -27967,7 +27887,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
               <xs:documentation xml:lang="en">Date of reaction to the immunization.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="detail" minOccurs="0" maxOccurs="1" type="Reference">
+          <xs:element name="manifestation" minOccurs="0" maxOccurs="1" type="CodeableReference">
             <xs:annotation>
               <xs:documentation xml:lang="en">Details of the reaction.</xs:documentation>
            </xs:annotation>
@@ -30581,7 +30501,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
-          <xs:element name="role" minOccurs="0" maxOccurs="1" type="Coding">
+          <xs:element name="role" minOccurs="0" maxOccurs="1" type="IngredientManufacturerRole">
             <xs:annotation>
               <xs:documentation xml:lang="en">The way in which this manufacturer is associated with the ingredient. For example whether it is a possible one (others allowed), or an exclusive authorized one for this ingredient. Note that this is not the manufacturing process role.</xs:documentation>
            </xs:annotation>
@@ -34199,6 +34119,12 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
           <xs:documentation xml:lang="fr">RapportTest</xs:documentation>
           <xs:documentation xml:lang="es">ReporteDePrueba</xs:documentation>
           <xs:documentation xml:lang="zh">测试报告</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Transport">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Transport</xs:documentation>
+          <xs:documentation xml:lang="en">Transport</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="VerificationResult">
@@ -44170,7 +44096,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="title" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A short, descriptive label for the study particularly for compouter use.</xs:documentation>
+              <xs:documentation xml:lang="en">A short, descriptive label for the study particularly for computer use.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="label" type="ResearchStudy.Label" minOccurs="0" maxOccurs="unbounded">
@@ -48001,12 +47927,12 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="manufacturer" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A company that makes this substance. This is a set of potential manufacturers but is not necessarily comprehensive.</xs:documentation>
+              <xs:documentation xml:lang="en">The entity that creates, makes, produces or fabricates the substance. This is a set of potential manufacturers but is not necessarily comprehensive.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="supplier" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A company that makes this substance available. This involves, for example, supply chain and marketing, rather than necessarily making the substance, and so covers distributers and re-sellers.</xs:documentation>
+              <xs:documentation xml:lang="en">An entity that is the source for the substance. It may be different from the manufacturer. Supplier is synonymous to a distributor.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="moiety" type="SubstanceDefinition.Moiety" minOccurs="0" maxOccurs="unbounded">
@@ -53307,6 +53233,12 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           <xs:documentation xml:lang="zh">测试报告</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="Transport">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Transport</xs:documentation>
+          <xs:documentation xml:lang="en">Transport</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="VerificationResult">
         <xs:annotation>
           <xs:documentation xml:lang="en">VerificationResult</xs:documentation>
@@ -53563,6 +53495,139 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:element name="Transport" type="Transport">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Record of transport of item.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="Transport">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Record of transport of item.</xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DomainResource">
+        <xs:sequence>
+          <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Identifier for the transport event that is used to identify it across multiple disparate systems.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="basedOn" minOccurs="0" maxOccurs="unbounded" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">BasedOn refers to a higher-level authorization that triggered the creation of the transport.  It references a &quot;request&quot; resource such as a ServiceRequest or Task, which is distinct from the &quot;request&quot; resource the Transport is seeking to fulfill.  This latter resource is referenced by FocusOn.  For example, based on a ServiceRequest (= BasedOn), a transport is created to fulfill a procedureRequest ( = FocusOn ) to transport a specimen to the lab.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="partOf" minOccurs="0" maxOccurs="unbounded" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A larger event of which this particular event is a component or step.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="status" minOccurs="0" maxOccurs="1" type="TransportStatus">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A code specifying the state of the dispense event.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="patient" minOccurs="0" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A link to a resource representing the person whom the delivered item is for.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="type" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Indicates the type of dispensing event that is performed. Examples include: Trial Fill, Completion of Trial, Partial Fill, Emergency Fill, Samples, etc.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="suppliedItem" type="Transport.SuppliedItem" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The item that is being delivered or has been supplied.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:choice minOccurs="0" maxOccurs="1" >
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The date or time(s) the activity occurred.</xs:documentation>
+            </xs:annotation>
+            <xs:element name="occurrenceDateTime" type="dateTime"/>
+            <xs:element name="occurrencePeriod" type="Period"/>
+            <xs:element name="occurrenceTiming" type="Timing"/>
+          </xs:choice>
+          <xs:element name="supplier" minOccurs="0" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The individual responsible for dispensing the medication, supplier or device.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="destination" minOccurs="0" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Identification of the facility/location where the Supply was shipped to, as part of the dispense event.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="receiver" minOccurs="0" maxOccurs="unbounded" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Identifies the person who picked up the Supply.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Transport.SuppliedItem">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Record of transport of item.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="quantity" minOccurs="0" maxOccurs="1" type="Quantity">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The amount of supply that has been dispensed. Includes unit of measure.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:choice minOccurs="0" maxOccurs="1" >
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Identifies the medication, substance or device being dispensed. This is either a link to a resource representing the details of the item or a code that identifies the item from a known list.</xs:documentation>
+            </xs:annotation>
+            <xs:element name="itemCodeableConcept" type="CodeableConcept"/>
+            <xs:element name="itemReference" type="Reference"/>
+          </xs:choice>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="TransportStatusEnum">
+    <xs:restriction base="code-primitive">
+      <xs:enumeration value="in-progress">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">In Progress</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="completed">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Delivered</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="abandoned">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Abandoned</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="entered-in-error">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Entered In Error</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="TransportStatus">
+    <xs:annotation>
+      <xs:documentation xml:lang="en"></xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="TransportStatusEnum" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:element name="ValueSet" type="ValueSet">
     <xs:annotation>
       <xs:documentation xml:lang="en">A ValueSet resource instance specifies a set of codes drawn from one or more code systems, intended for use in a particular context. Value sets link between [CodeSystem](codesystem.html) definitions and their use in [coded elements](terminologies.html).</xs:documentation>
@@ -53613,7 +53678,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="date" minOccurs="0" maxOccurs="1" type="dateTime">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The date (and optionally time) when the value set was created or revised (e.g. the 'content logical definition').</xs:documentation>
+              <xs:documentation xml:lang="en">The date (and optionally time) when the value set metadata or content logical definition (.compose) was created or revised.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="publisher" minOccurs="0" maxOccurs="1" type="string">
