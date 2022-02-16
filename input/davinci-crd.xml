@@ -36,8 +36,7 @@
 	<dependsOn id="sdc">
 		<uri value="http://hl7.org/fhir/uv/sdc/ImplementationGuide/hl7.fhir.uv.sdc"/>
 		<packageId value="hl7.fhir.uv.sdc"/>
-		<version value="current"/>
-<!--		<version value="2.7.0"/>-->
+		<version value="3.0.0-preview"/>
 	</dependsOn>
 	<definition>
 		<resource>
