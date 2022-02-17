@@ -247,7 +247,7 @@
 		</parameter>
 		<parameter>
 			<code value="releaselabel"/>
-			<value value="STU 2"/>
+			<value value="STU 1.1"/>
 		</parameter>
 		<parameter>
 			<code value="find-other-resources"/>

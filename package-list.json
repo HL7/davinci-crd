@@ -17,7 +17,7 @@
 			"descmd": "Ballot for second STU release",
 			"path": "http://hl7.org/fhir/us/davinci-crd/2022May",
 			"status": "ballot",
-			"sequence": "STU 2"
+			"sequence": "STU 1.1"
 		}, {
 			"version": "1.0.0",
 			"date": "2020-12-01",
