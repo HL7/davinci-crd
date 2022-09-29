@@ -59,6 +59,7 @@ The high-level workflow for CRD is envisioned to work as follows:
 A healthcare provider decides that a clinical action is needed or wants to explore the coverage ramifications of taking a clinical action.  Possible clinical actions include:
 * Admitting a patient or starting a patient visit
 * Ordering a drug, device, procedure, etc.
+* Choosing when or where an existing order will be performed
 * Making a referral or scheduling a future appointment
 * Discharging a patient
 
