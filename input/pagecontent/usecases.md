@@ -74,7 +74,7 @@ The provider uses an EMR to launch a 'What if?' CRD SMART app to explore payer c
 The EMR or CRD SMART app contacts a CRD Service used by their patient's payer to find out what information is required to perform Coverage Requirements Discovery (CRD) - particularly whether the CRD Service requires protected health information (PHI) to evaluate the patient's coverage requirements or whether the patient's coverage type and the proposed clinical action is enough.  Optionally, the CRD service might provide the EMR with information about configuration options, such as the option to control the types of coverage requirements returned to the user or the number of requirements returned.
 
 Note:
-* Different patients will have coverage from different payers and different payers may use different CDR Services.
+* Different patients will have coverage from different payers and different payers may use different CRD Services.
 * Payer server requirements are expected to be static. The EMR or CRD SMART app may choose to cache information received.
 * Modular EMR systems may need to retrieve the coverage type or other information required by the CRD Service from other systems within the provider's environment.
 
@@ -110,7 +110,7 @@ If the response includes links to additional information or apps, the provider c
 #### Considerations
 
 * The scenario above uses the term 'healthcare provider'.  Typically, that would be a physician, but in some cases, it could be a nurse, clerk, or other individual.
-* The EMR would only communicate to CDR Services they have specifically authenticated and have a trust relationship with.
+* The EMR would only communicate to CRD Services they have specifically authenticated and have a trust relationship with.
 * Similarly, the EMR would only launch apps or retrieve links that had previously been determined to be safe and trustworthy.  When launched, user context should be passed to apps to avoid the need for users who have already been authenticated by the EHR to log in again.
 * The EMR would determine in which situations a payer system would be contacted for CRD purposes and what level of information the payer system would be permitted to receive - including through the payer query mechanism.  The determination of what information is shared could be influenced by patient consent and other internal business rules.
 * The CRD query and response will be implemented by making a CDS Hooks service call and returning a set of cards.
