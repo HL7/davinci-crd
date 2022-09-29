@@ -11,7 +11,7 @@ This implementation guide defines a FHIR based API that providers can use to dis
 * Plan conditions only (i.e. without Protected Health Information - PHI), or also
 * Plan member identification (PHI) and, potentially, clinical information needed to determine requirements.
 
-When needed, the API will allow payers with authorization to query provider systems for additional patient information needed inform the guidance provided - for example by determining what information already exists or what steps have already occurred.
+When needed, the API will allow payers with authorization to query provider systems for additional patient information needed to inform the guidance provided - for example by determining what information already exists or what steps have already occurred.
 
 The payer response to a CRD request might include:
 * An indication that no coverage requirements exist
