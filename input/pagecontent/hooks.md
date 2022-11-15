@@ -69,6 +69,8 @@ In addition to these, this implementation guide imposes the following additional
 
 CRD Clients will typically need to provide patient-identifiable protected health information (PHI) to a CRD Service to perform Coverage Requirements Discovery, either because the information is needed to identify the plan that corresponds to the patient or to evaluate coverage requirements against information that the CRD Service or payer has on file - to ensure accurate guidance and to reduce unnecessary suggestions.  Nevertheless, there are situations where PHI will not be shared with a CRD Service because a patient has withheld consent to share information with the payer, the provider has concerns about sharing sensitive data with the payer or because a payer offers only a single plan with coverage requirements that can be evaluated without the use of PHI.
 
+In situations where a CRD service's access to PHI is limited due to patient consent and/or provider policy, the CRD service may have greater difficulty providing decision support and will be more likely to indicate 'Unable to determine coverage/prior authorization requirements' and potentially prompt for data collection using DTR.
+
 Therefore, CRD Clients **SHALL** provide support for Coverage Requirements Discovery without PHI using a redacted view where the resources exposed through the CDS Hooks and SMART on FHIR interfaces are filtered as follows:
 * The Patient resource adheres to the [de-identified profile](StructureDefinition-profile-patient-deident.html)
 * The Coverage resources adhere to the [de-identified profile](StructureDefinition-profile-coverage-deident.html)
