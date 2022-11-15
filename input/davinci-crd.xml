@@ -31,12 +31,12 @@
 	<dependsOn id="hrex">
 		<uri value="http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex"/>
 		<packageId value="hl7.fhir.us.davinci-hrex"/>
-		<version value="0.2.0"/>
+		<version value="1.0.0"/>
 	</dependsOn>
 	<dependsOn id="sdc">
 		<uri value="http://hl7.org/fhir/uv/sdc/ImplementationGuide/hl7.fhir.uv.sdc"/>
 		<packageId value="hl7.fhir.uv.sdc"/>
-		<version value="3.0.0-preview"/>
+		<version value="3.0.0"/>
 	</dependsOn>
 	<definition>
 		<resource>
