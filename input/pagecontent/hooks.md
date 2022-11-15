@@ -493,7 +493,7 @@ If a hook service is invoked on a collection of resources, all cards returned th
 
 
 ##### Controlling hook invocation
-Provider systems **SHALL** only invoke hooks on payer services where the patient in question is known to have active coverage with the payer in question.  Providers **MAY** limit hook invocation to only those payers that are believed to potentially have relevant information related to the current action - for example, clinical guidance, contraindication detection, etc.  This might be more payers than just those that are likely to provide coverage for the services referred to by the hook.
+Provider systems **SHALL** only invoke hooks on payer services where the the patient record indicates active coverage with the payer associated with the service.  Providers **MAY** limit hook invocation to only those payers that are believed to potentially have relevant information related to the current action - for example, clinical guidance, contraindication detection, etc.  This might be more payers than just those that are likely to provide coverage for the services referred to by the hook.
 
 </div>
 
