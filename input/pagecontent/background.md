@@ -23,7 +23,7 @@ The CRD implementation guide defines the responsibilities of the two types of sy
 <div markdown="1" class="new-content">
 
 ### Users
-The human users of CRD will all be on the **CRD Client** side, as **CRD Services** must be fully automated with no human intervention.  The humans who benefit from the decision support provided by payer services will be many and varied.  They will include clinicians who might adjust therapies or even make decisions about whether to pursue a therapy at all based on information from a payer (e.g. projected patient expense, whether a therapy is covered, whether there is a contraindication detected based on information known to the payer but previously unknown to the clinician).  However, they will also include non-clinical staff - those making appointments, those managing dispatching of referrals to available providers, and those handling back-end collection of documentation that was inappropriate/inefficient for the clinician to gather at the time of the encounter.  As such, CRD encompasses a broad spectrum of decision support that isn't exclusively 'clinical'.
+The 'CDS' in 'CDS Hooks' stands for 'Clinical Decision Support'. However, the mechanism actually supports a variety of types of decision support and the responsible HL7 work group has confirmed that conveying guidance that isn't strictly clinical, and providing guidance to non-clinical users (receptionists, back-end schedulers, etc.) is appropriate. Because all decision support provided by a CRD service is fully automated, there will be no human intervention on the payer side. If an automated system doesn't have enough information to provide guidance without human input, then no guidance will be provided.
 
 </div>
 
