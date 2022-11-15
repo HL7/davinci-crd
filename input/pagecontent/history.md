@@ -5,7 +5,7 @@ Added a number of enhancements and some changes to approach.  Key differences ar
 
 * [Clarified](background.html#users) that CRD results can be returned to non-clinical users
 * Highlighted the [challenges](background.html#impact-on-payer-processes) of CRD data coming in a different form and set of codes than payers have traditionally dealt with
-* Explicit expectations with respect to [performance](hooks.html#performance) and [accuracy](hooks.html#accuracy) of CRD services
+* Explicit expectations with respect to [performance](hooks.html#performance) and [accuracy](hooks.html#accuracy) of CRD Servers
 * Expectations around client ability to [flag sensitive orders](hooks.html#appropriate-use-of-hooks)
 * Specified a starter set of codes for [configuration options](hooks.html#configuration-options-extension) and mandated the appearance of those codes in cards in a new [card-topic](hooks.html#general-guidance) element
 * Added an extension to [link cards to requests](hooks.html#linking-cards-to-requests)
