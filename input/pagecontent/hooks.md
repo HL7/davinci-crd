@@ -1564,27 +1564,14 @@ Other information will need to be retrieved using queries that are more specific
   <tr>
     <td>MedicationRequest</td>
     <td>
-      <code>MedicationRequest?_id={{context.medications.MedicationRequest.id}}<br/>
-      &_include=MedicationRequest:patient<br/>
-      &_include=MedicationRequest:intended-dispenser<br/>
-      &_include=MedicationRequest:requester:PractitionerRole<br/>
-      &_include=MedicationRequest:medication<br/>
-      &_include:iterate=PractitionerRole:organization<br/>
-      &_include:iterate=PractitionerRole:practitioner<br/><br/>
-      Coverage?member={{context.patient}}</code>
-    </td>
-    <td>No performing location</td>
-  </tr>
-  <tr>
-    <td>MedicationRequest</td>
-    <td>
       <code>MedicationRequest?_id={{context.draftOrders.MedicationRequest.id}}<br/>
       &_include=MedicationRequest:patient<br/>
       &_include=MedicationRequest:intended-dispenser<br/>
       &_include=MedicationRequest:requester:PractitionerRole<br/>
       &_include=MedicationRequest:medication<br/>
       &_include:iterate=PractitionerRole:organization<br/>
-      &_include:iterate=PractitionerRole:practitioner</code>
+      &_include:iterate=PractitionerRole:practitioner</br>
+      Coverage?member={{context.patient}}</code>
     </td>
     <td>No performing location</td>
   </tr>
