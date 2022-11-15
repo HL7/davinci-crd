@@ -38,7 +38,7 @@ This Coverage Requirements Discovery (CRD) implementation guide defines a workfl
 This implementation guide supports both Protected Health Information (PHI)-specific and non-PHI mechanisms for CRD to meet the needs and privileges of different payer organizations.  These mechanisms will allow payers to share a wide variety of information with providers in a context-sensitive manner including:
 
 * updates to coverage information
-* alternative preferred/first-line/lower-cost services or products
+* alternative (e.g. first-line, lower-cost, etc.) services or products
 * documentation requirements and rules related to coverage
 * forms and templates to complete
 * indications of whether prior authorization is required
