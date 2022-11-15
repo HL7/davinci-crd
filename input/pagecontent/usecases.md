@@ -91,7 +91,7 @@ Note:
 If additional information is needed to process the query, the CRD Service may use the EMR's secure API with the temporary access token provided in step #4 to request additional information from the patient's record.  Examples include requests for information needed to assess whether the action is needed (e.g. an allergy to a first line medication, lab result), whether recommended next steps are in place (e.g. follow-up visits scheduled, lab tests ordered to monitor effectiveness/safety), etc.  The CRD Service might submit multiple queries for different types of data to determine coverage requirements.
 
 Note:
-* By requesting information from the EMR directly, a CRD Service can avoid interrupting provider workflow with information about coverage requirements that have already been met.  This is expected to be done in all cases where it is possible.
+* By requesting additional information directly from the EMR, a CRD Service can determine what documentation already exists and what requirements already exist, using that information to make the most accurate assessment possible before providing cards to the user that suggest additional documentation is necessary or prior authorization needs to be requested.  CRD Services should always attempt to gather what information they can automatically before providing responses that might require human action, such as completing a Questionnaire or launching DTR.
 
 **6. Payer service returns CRD results**<br/>
 Based on the information provided/retrieved, the payer system returns guidance to the provider.  The guidance can be in several forms:
