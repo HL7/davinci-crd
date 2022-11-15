@@ -974,7 +974,8 @@ For example, this card proposes indicates that a prior authorization has been gr
   }]
 }]
 ```
-CRD clients and services MAY, by mutual agreement, make use of the new CDS Hooks system action functionality to cause annotations to automatically be stored on the relevant request, appointment, etc. without any user intervention.  I.e. the user would not need to click on the card to store the information.  In this case, a card **SHALL** still be displayed to the user conveying the coverage assertion.  These implementations will be responsible for ensuring that the only changes made to the EHR record are to add the annotations contemplated here.  It is likely that the conformance expectation on the use of system actions will be tighter in future releases.
+CRD clients and services SHALL support the new CDS Hooks system action functionality to cause annotations to automatically be stored on the relevant request, appointment, etc. without any user intervention. 
+In this case, a card **SHALL** still be displayed to the user conveying the coverage assertion.  These implementations will be responsible for ensuring that the only changes made to the EHR record are to add the annotations contemplated here.  CRD clients MAY be configured to not execute system actions under some circumstances - e.g. if the order has been cancelled/abandoned.
 
 <blockquote class="note-to-balloters">
 <p>

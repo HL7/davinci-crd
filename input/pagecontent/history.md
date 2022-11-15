@@ -15,6 +15,8 @@ Added a number of enhancements and some changes to approach.  Key differences ar
 * Provided explicit guidance around [deferring card actions](hooks.html#deferring-card-actions)
 * Added a section on [registering DTR apps with CRD](hooks.html#registering-dtr-apps-with-crd)
 * Updated to support CRD 2.0, which included changes to the 'topic' element within cards
+* Added support for system actions and made their use mandatory for updates to orders and coverage
+* 
 
 As well there were various other adjustments to specification language, profiles and examples to align with these changes and to correct minor typos or improve wording.
 
