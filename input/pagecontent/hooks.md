@@ -122,9 +122,7 @@ Payers and service providers **SHALL** ensure that CDS Hooks return only message
 
 <div markdown="1" class="new-content">
 
-Implementations **SHALL** restrict information shared with a payer to only the information appropriate to share with that payer, for example, not including patient pay or federal/state sensitive data without patient permission.
-
-Consideration **SHOULD** be given to how such restricted content will be determined and identified as 'patient sensitive' prior to invoking CRD to exchange patient data with payer systems.
+Implementations **SHALL** restrict information shared with a payer to only the information appropriate to share with that payer, for example, not including patient pay or federal/state sensitive data without patient permission. This requires that consideration be given to how such restricted content will be determined and identified as ‘patient sensitive’ prior to invoking CRD to exchange patient data with payer systems.
 
 </div>
 
