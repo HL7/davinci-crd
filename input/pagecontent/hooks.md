@@ -1531,7 +1531,7 @@ Other information will need to be retrieved using queries that are more specific
       &_include:iterate=PractitionerRole:organization<br/>
       &_include:iterate=PractitionerRole:practitioner<br/>
       &_include=Appointment:location<br/><br/>
-      Coverage?member={{context.patient}}</code>
+      Coverage?patient={{context.patient}}</code>
     </td>
     <td>No requester</td>
   </tr>
