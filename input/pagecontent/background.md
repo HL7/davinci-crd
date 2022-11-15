@@ -16,7 +16,7 @@ Additional information about Da Vinci, its members, the use cases, and the imple
 ### Systems
 The CRD implementation guide defines the responsibilities of the two types of systems involved in a CRD solution:
 
-**CRD Clients** are typically systems that healthcare providers use at the point of care including electronic medical records systems, pharmacy systems and other clinical and administrative systems used for ordering, documenting, and executing patient-related services.  Users of these systems have a need for coverage requirements information to support care planning.
+**CRD Clients** are typically systems that healthcare providers use at the point of care including electronic medical records systems, pharmacy systems and other provider and administrative systems used for ordering, documenting, and executing patient-related services.  Users of these systems have a need for coverage requirements information to support care planning.
 
 **CRD Services** (or servers) are systems that act on behalf of payer organizations to share information with healthcare providers about rules and requirements related to healthcare products and services covered by a patient's payer.  A CRD Service will provide coverage information related to one or possibly more insurance plans.
 
@@ -29,7 +29,7 @@ The 'CDS' in 'CDS Hooks' stands for 'Clinical Decision Support'. However, the me
 
 ### Underlying technologies
 
-This guide is based on the [HL7 FHIR]({{site.data.fhir.path}}index.html) standard, as well as the [CDS Hooks](https://cds-hooks.hl7.org) and [SMART on FHIR](http://hl7.org/fhir/smart-app-launch/index.html) specifications, which build additional capabilities on top of FHIR.  This architecture is intended to maximize the number of clinical systems that conform to this guide as well as to allow for easy growth and extensibility of system capabilities in the future.
+This guide is based on the [HL7 FHIR]({{site.data.fhir.path}}index.html) standard, as well as the [CDS Hooks](https://cds-hooks.hl7.org) and [SMART on FHIR](http://hl7.org/fhir/smart-app-launch/index.html) specifications, which build additional capabilities on top of FHIR.  This architecture is intended to maximize the number of provider systems that conform to this guide as well as to allow for easy growth and extensibility of system capabilities in the future.
 
 Implementers of this specification therefore need to understand some basic information about these specifications.
 
@@ -74,7 +74,7 @@ Implementers should also familiarize themselves with the FHIR resources used wit
 </table>
 
 #### CDS Hooks
-Clinical systems will use the specification and workflows defined by [CDS Hooks](https://cds-hooks.hl7.org) to initiate Coverage Requirements Discovery with the payers. Implementers must be familiar with all aspects of this specification.
+Provider systems will use the specification and workflows defined by [CDS Hooks](https://cds-hooks.hl7.org) to initiate Coverage Requirements Discovery with the payers. Implementers must be familiar with all aspects of this specification.
 
 #### SMART on FHIR
 SMART on FHIR is expected to be used in two principal ways:
@@ -91,7 +91,7 @@ When a server responds to a CDS hook, one of the possible actions is to allow th
 The approach taken to meet the requirements of the Coverage Requirements Discovery use-case was selected after evaluating the various interoperability choices provided by FHIR.  Specifically, the project team evaluated the possible architectural approaches as described in the HRex specification's [Approaches to Exchanging FHIR Data]({{site.data.fhir.ver.hrex}}/exchanging.html) guide.  The following bullets describe the path choices driven by use-case requirements:
 
 * *Direct Connection* - Yes, it was presumed that EHR systems could connect directly either with the payer or with a payer-provided service
-* *Consumer initiates?* - Yes - the clinical system needing decision support would trigger the support, because only the clinical system would know when support was needed.
+* *Consumer initiates?* - Yes - the provider system needing decision support would trigger the support, because only the provider system would know when support was needed.
 * *Human intervention?* - No - there was no expectation that a human would need to be involved on the data source (payer) side to determine what guidance should be provided back.  The requirement was for real-time guidance, which meant any guidance provided had to be automatic.
 * *Is data pre-existing?* - No - in decision support, we're generating context-specific guidance that didn't previously exist, even if some of the resources pointed to might have been pre-existing
 * *CDS-hooks?* - Yes - CDS hooks was a good fit for the workflow we needed.  There was no need to define custom operations or messages to meet our use-cases

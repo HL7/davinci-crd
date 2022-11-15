@@ -26,7 +26,7 @@ This implementation guide uses specific terminology to flag statements that have
 
 This implementation guide sets expectations for two types of systems:
 
-**CRD Clients** are typically systems that healthcare providers use at the point of care, including electronic medical records systems, pharmacy systems and other clinical and administrative systems used for ordering, documenting and execution of patient-related services. Users of these systems have a need for coverage requirements information to support care planning.  CRD Clients are type of CDS Client as defined in the [CDS Hooks Specification](https://cds-hooks.hl7.org/2.0).
+**CRD Clients** are typically systems that healthcare providers use at the point of care, including electronic medical records systems, pharmacy systems and other provider and administrative systems used for ordering, documenting and execution of patient-related services. Users of these systems have a need for coverage requirements information to support care planning.  CRD Clients are type of CDS Client as defined in the [CDS Hooks Specification](https://cds-hooks.hl7.org/2.0).
 
 **CRD Services** (or servers) are systems that act on behalf of payer organizations to share information with healthcare providers about rules and requirements related to healthcare products and services covered by a patient's payer.  A CRD Service might provide coverage information related to one or more insurance plans. CRD Services are type of CDS Service as defined in the [CDS Hooks Specification](https://cds-hooks.hl7.org/2.0).
 
@@ -1868,7 +1868,7 @@ See [here](Task-action-example.html) for a full example of a deferred task.
 </div>
 
 ### SMART on FHIR Hook Invocation
-In addition to the real-time decision support provided by CDS Hooks, providers will sometimes need to seek coverage requirements information without invoking the workflow of their clinical system to actively create an order, appointment, encounter, etc.  A few real-world examples where hooks may be invoked this way include exploring a "what-if" scenario, answering a patient question related to whether a service would be covered, and retrieving a guidance document they had seen in a previous card.
+In addition to the real-time decision support provided by CDS Hooks, providers will sometimes need to seek coverage requirements information without invoking the workflow of their provider system to actively create an order, appointment, encounter, etc.  A few real-world examples where hooks may be invoked this way include exploring a "what-if" scenario, answering a patient question related to whether a service would be covered, and retrieving a guidance document they had seen in a previous card.
 
 The solution to this need to perform coverage discovery "any time" is the use of a SMART on FHIR app.  Many CRD Clients (e.g. EMR systems) already support SMART on FHIR.  That standard allows independently developed applications to be launched from within the CRD Client (possibly within the user interface) and to interact with its data.  As part of its scope, the Da Vinci organization will develop an open-source SMART on FHIR application to allow users of CRD Clients to invoke coverage requirements discovery from CRD Services for "what-if" scenarios using a CRD Client's existing SMART on FHIR interface.  CRD implementers **MAY** choose to use this app directly or as the basis for their own app development.  Note that CRD Clients will have their own registration process for all such apps.
 
