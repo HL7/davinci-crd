@@ -98,6 +98,8 @@ The approach taken to meet the requirements of the Coverage Requirements Discove
 
 <div markdown="1" class="new-content">
 
+NOTE: Because of the sensitivity around disclosure of clinical information to payer-controlled systems during the clinical workflow process, this IG imposes a number of safeguards around the use of the selected CDS Hooks technology to help ensure that providers and their systems have an appropriate degree of control over disclosure and that information can't be used in inappropriate ways.
+
 #### Impact on payer processes
 
 Information passed to the CRD service will typically contain clinical terminologies, might not contain billing terminologies, and will certainly not include billing modifier codes or similar information typically included in prior authorization requests.  CRD services will need to support these clinical terminologies or map them to internally used billing terminologies when determining decision support results - such as whether a therapy is covered or requires prior authorization.  In some cases, mappings may not be fully deterministic and may impact the ability respond with useful decision support.  Services will also need to consider that the mapping they perform between clinical terminologies and billing codes may be different than the bill coding process performed by the client system when claims are eventually submitted.  This may mean that assertions about coverage or prior authorization requirements will need to be expressed conditionally.  E.g. "Provided this service is billed as X, Y or Z, then prior authorization is not needed".
