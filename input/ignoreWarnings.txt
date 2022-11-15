@@ -10,6 +10,11 @@ WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/Str
 # Not expecting support for CPT codes.  Have validated it's correct
 WARNING: ValueSet.where(id = 'serviceRequestCodes'): Error from server: Unable to provide support for code system http://www.ama-assn.org/go/cpt
 
+# Coverage isn't part of the version of US Core we're complying with
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-coverage').baseDefinition: US FHIR Usage rules require that all profiles on Coverage derive from the core US profile
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-coverage-deident').baseDefinition: US FHIR Usage rules require that all profiles on Coverage derive from the core US profile
+
+
 # In all cases, the binding will only take effect for a single element
 INFORMATION: StructureDefinition/profile-claimresponse: StructureDefinition.snapshot.element[64].binding: The element ClaimResponse.addItem.location[x] has a binding, and has multiple types ([Address, Reference, CodeableConcept]). The binding will apply to all the types
 INFORMATION: StructureDefinition/profile-devicerequest: StructureDefinition.snapshot.element[19].binding: The element DeviceRequest.code[x] has a binding, and has multiple types ([Reference, CodeableConcept]). The binding will apply to all the types

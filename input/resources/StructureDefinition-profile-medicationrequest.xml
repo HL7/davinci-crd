@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+	<id value="profile-medicationrequest"/>
+	<url value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-medicationrequest"/>
+	<name value="MedicationRequest"/>
+	<title value="CRD Medication Request"/>
+	<status value="draft"/>
+	<experimental value="false"/>
+	<description value="This profile specifies additional constraints on the US Core MedicationRequest profile to support coverage requirements discovery."/>
+	<kind value="resource"/>
+	<abstract value="false"/>
+	<type value="MedicationRequest"/>
+	<baseDefinition value="http://hl7.org/fhir/StructureDefinition/MedicationRequest"/>
+	<derivation value="constraint"/>
+	<differential>
+		<element id="MedicationRequest.extension:Coverage-Information">
+			<path value="MedicationRequest.extension"/>
+			<sliceName value="Coverage-Information"/>
+			<short value="Coverage Info"/>
+			<type>
+				<code value="Extension"/>
+				<profile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-coverage-information"/>
+			</type>
+			<mustSupport value="true"/>
+		</element>
+		<element id="MedicationRequest.identifier">
+			<path value="MedicationRequest.identifier"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="MedicationRequest.status">
+			<path value="MedicationRequest.status"/>
+			<type>
+				<code value="code"/>
+			</type>
+			<fixedCode value="draft"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="MedicationRequest.intent">
+			<path value="MedicationRequest.intent"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="MedicationRequest.doNotPerform">
+			<path value="MedicationRequest.doNotPerform"/>
+			<max value="0"/>
+		</element>
+		<element id="MedicationRequest.reported[x]">
+			<path value="MedicationRequest.reported[x]"/>
+			<slicing>
+				<discriminator>
+					<type value="type"/>
+					<path value="$this"/>
+				</discriminator>
+				<rules value="open"/>
+			</slicing>
+			<type>
+				<code value="Reference"/>
+				<targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"/>
+				<targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"/>
+				<targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"/>
+			</type>
+			<mustSupport value="true"/>
+		</element>
+		<element id="MedicationRequest.reported[x]:reportedBoolean">
+			<path value="MedicationRequest.reported[x]"/>
+			<sliceName value="reportedBoolean"/>
+			<type>
+				<code value="boolean"/>
+			</type>
+		</element>
+		<element id="MedicationRequest.reported[x]:reportedReference">
+			<path value="MedicationRequest.reported[x]"/>
+			<sliceName value="reportedReference"/>
+			<type>
+				<code value="Reference"/>
+				<targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"/>
+				<targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"/>
+				<targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"/>
+			</type>
+		</element>
+		<element id="MedicationRequest.medication[x]">
+			<path value="MedicationRequest.medication[x]"/>
+			<slicing>
+				<discriminator>
+					<type value="type"/>
+					<path value="$this"/>
+				</discriminator>
+				<rules value="open"/>
+			</slicing>
+			<mustSupport value="true"/>
+		</element>
+		<element id="MedicationRequest.medication[x]:medicationCodeableConcept">
+			<path value="MedicationRequest.medication[x]"/>
+			<sliceName value="medicationCodeableConcept"/>
+			<min value="0"/>
+			<type>
+				<code value="CodeableConcept"/>
+			</type>
+			<binding>
+				<strength value="extensible"/>
+				<valueSet value="http://hl7.org/fhir/us/core/ValueSet/us-core-medication-codes"/>
+			</binding>
+		</element>
+		<element id="MedicationRequest.medication[x]:medicationReference">
+			<path value="MedicationRequest.medication[x]"/>
+			<sliceName value="medicationReference"/>
+			<min value="0"/>
+			<type>
+				<code value="Reference"/>
+				<targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-medication"/>
+			</type>
+		</element>
+		<element id="MedicationRequest.subject">
+			<path value="MedicationRequest.subject"/>
+			<type>
+				<code value="Reference"/>
+				<targetProfile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-patient"/>
+			</type>
+			<mustSupport value="true"/>
+		</element>
+		<element id="MedicationRequest.encounter">
+			<path value="MedicationRequest.encounter"/>
+			<comment value="potentially relevant for CRD in some situations."/>
+			<type>
+				<code value="Reference"/>
+				<targetProfile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-encounter"/>
+			</type>
+			<mustSupport value="true"/>
+		</element>
+		<element id="MedicationRequest.authoredOn">
+			<path value="MedicationRequest.authoredOn"/>
+			<min value="1"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="MedicationRequest.requester">
+			<path value="MedicationRequest.requester"/>
+			<min value="1"/>
+			<type>
+				<code value="Reference"/>
+				<targetProfile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-practitioner"/>
+				<targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole"/>
+			</type>
+			<mustSupport value="true"/>
+		</element>
+		<element id="MedicationRequest.performer">
+			<path value="MedicationRequest.performer"/>
+			<type>
+				<code value="Reference"/>
+				<targetProfile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-practitioner"/>
+				<targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole"/>
+			</type>
+			<mustSupport value="true"/>
+		</element>
+		<element id="MedicationRequest.reasonCode">
+			<path value="MedicationRequest.reasonCode"/>
+			<comment value="potentially relevant for CRD in some situations."/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="MedicationRequest.reasonReference">
+			<path value="MedicationRequest.reasonReference"/>
+			<comment value="potentially relevant for CRD in some situations."/>
+			<type>
+				<code value="Reference"/>
+				<targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"/>
+				<targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"/>
+			</type>
+			<mustSupport value="true"/>
+		</element>
+		<element id="MedicationRequest.basedOn">
+			<path value="MedicationRequest.basedOn"/>
+			<comment value="potentially relevant for CRD in some situations."/>
+			<type>
+				<code value="Reference"/>
+				<targetProfile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-medicationrequest"/>
+				<targetProfile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-servicerequest"/>
+			</type>
+		</element>
+		<element id="MedicationRequest.dosageInstruction">
+			<path value="MedicationRequest.dosageInstruction"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="MedicationRequest.dosageInstruction.text">
+			<path value="MedicationRequest.dosageInstruction.text"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="MedicationRequest.dispenseRequest">
+			<path value="MedicationRequest.dispenseRequest"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="MedicationRequest.substitution">
+			<path value="MedicationRequest.substitution"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="MedicationRequest.priorPrescription">
+			<path value="MedicationRequest.priorPrescription"/>
+			<type>
+				<code value="Reference"/>
+				<targetProfile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-medicationrequest"/>
+			</type>
+			<mustSupport value="true"/>
+		</element>
+	</differential>
+</StructureDefinition>

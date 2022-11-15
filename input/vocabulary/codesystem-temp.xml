@@ -5,6 +5,7 @@
   <name value="CRDTempCodes"/>
   <title value="CRD Temporary Codes"/>
   <status value="draft"/>
+  <experimental value="false"/>
   <description value="Codes temporarily defined as part of the CRD implementation guide.  These will eventually migrate into an officially maintained terminology (likely either SNOMED CT or HL7's UTG code systems)."/>
   <caseSensitive value="true"/>
   <content value="complete"/>

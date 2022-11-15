@@ -5,6 +5,7 @@
   <name value="CardType"/>
   <title value="CRD Card Types Code System"/>
   <status value="draft"/>
+  <experimental value="false"/>
   <description value="List of card types"/>
   <caseSensitive value="true"/>
   <content value="complete"/>

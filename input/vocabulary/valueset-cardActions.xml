@@ -5,6 +5,7 @@
   <name value="CDSHookCardActionType"/>
   <title value="CDS Hooks Card Suggestion Action Types"/>
   <status value="draft"/>
+  <experimental value="false"/>
   <description value="Codes allowed for defining the type of action in a CDS Hooks suggestion"/>
   <compose>
     <include>

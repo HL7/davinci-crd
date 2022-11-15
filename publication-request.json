@@ -1,0 +1,10 @@
+{
+  "package-id" : "hl7.fhir.us.davinci-crd",
+  "version" : "1.1.0",
+  "milestone" : true,
+	"path": "http://hl7.org/fhir/us/davinci-crd/STU1.1",
+  "status" : "trial-use",
+  "sequence" : "STU 1.1",
+  "desc" : "STU 1.1 official release",
+  "descmd" : "STU 1.1 official release.  See list of changes [here](http://hl7.org/fhir/us/sdoh-clinicalcare/STU1.1/history.html)" 
+}

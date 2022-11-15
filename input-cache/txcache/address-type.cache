@@ -1,0 +1,59 @@
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "inactive" : true,
+    "include" : [{
+      "system" : "http://hl7.org/fhir/address-type",
+      "concept" : [{
+        "code" : "both"
+      },
+      {
+        "code" : "physical"
+      }]
+    }]
+  }
+}}####
+e: {
+  "valueSet" : {
+  "resourceType" : "ValueSet",
+  "language" : "en",
+  "status" : "active",
+  "expansion" : {
+    "identifier" : "urn:uuid:3ddd340e-3c50-479e-8b27-45f9ff58c008",
+    "timestamp" : "2022-10-25T03:25:09.250Z",
+    "parameter" : [{
+      "name" : "limitedExpansion",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "excludeNested",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "version",
+      "valueUri" : "http://hl7.org/fhir/address-type|4.0.1"
+    }],
+    "contains" : [{
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+        "valueString" : "An address that is both physical and postal."
+      }],
+      "system" : "http://hl7.org/fhir/address-type",
+      "code" : "both",
+      "display" : "Postal & Physical"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+        "valueString" : "A physical address that can be visited."
+      }],
+      "system" : "http://hl7.org/fhir/address-type",
+      "code" : "physical",
+      "display" : "Physical"
+    }]
+  }
+},
+  "error" : ""
+}
+-------------------------------------------------------------------------------------

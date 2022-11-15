@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+	<id value="profile-communicationrequest"/>
+	<url value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-communicationrequest"/>
+	<name value="CommunicationRequest"/>
+	<title value="CRD Communication Request"/>
+	<status value="draft"/>
+	<experimental value="false"/>
+	<description value="This profile specifies constraints on the CommunicationRequest resource to support coverage requirements discovery."/>
+	<kind value="resource"/>
+	<abstract value="false"/>
+	<type value="CommunicationRequest"/>
+	<baseDefinition value="http://hl7.org/fhir/StructureDefinition/CommunicationRequest"/>
+	<derivation value="constraint"/>
+	<differential>
+		<element id="CommunicationRequest.extension:Coverage-Information">
+			<path value="CommunicationRequest.extension"/>
+			<sliceName value="Coverage-Information"/>
+			<type>
+				<code value="Extension"/>
+				<profile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-coverage-information"/>
+			</type>
+			<mustSupport value="true"/>
+		</element>
+		<element id="CommunicationRequest.identifier">
+			<path value="CommunicationRequest.identifier"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="CommunicationRequest.basedOn">
+			<path value="CommunicationRequest.basedOn"/>
+			<min value="1"/>
+			<max value="1"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="CommunicationRequest.replaces">
+			<path value="CommunicationRequest.replaces"/>
+			<comment value="potentially relevant for CRD in some situations."/>
+			<type>
+				<code value="Reference"/>
+				<targetProfile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-communicationrequest"/>
+			</type>
+		</element>
+		<element id="CommunicationRequest.status">
+			<path value="CommunicationRequest.status"/>
+			<type>
+				<code value="code"/>
+			</type>
+			<fixedCode value="draft"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="CommunicationRequest.doNotPerform">
+			<path value="CommunicationRequest.doNotPerform"/>
+			<max value="0"/>
+		</element>
+		<element id="CommunicationRequest.subject">
+			<path value="CommunicationRequest.subject"/>
+			<min value="1"/>
+			<type>
+				<code value="Reference"/>
+				<targetProfile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-patient"/>
+			</type>
+			<mustSupport value="true"/>
+		</element>
+		<element id="CommunicationRequest.encounter">
+			<path value="CommunicationRequest.encounter"/>
+			<comment value="potentially relevant for CRD in some situations."/>
+			<type>
+				<code value="Reference"/>
+				<targetProfile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-encounter"/>
+			</type>
+		</element>
+		<element id="CommunicationRequest.payload">
+			<path value="CommunicationRequest.payload"/>
+			<min value="1"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="CommunicationRequest.payload.extension:codeableConcept">
+			<path value="CommunicationRequest.payload.extension"/>
+			<sliceName value="codeableConcept"/>
+			<comment value="If the actual communication request being authored is conveying resources or an attachment, the CRD client SHALL either determine a coded way to indicate what information sharing is being requested or shall omit sharing the CommunicationRequest - i.e. don't bother calling the hook service."/>
+			<min value="1"/>
+			<max value="1"/>
+			<type>
+				<code value="Extension"/>
+				<profile value="http://hl7.org/fhir/5.0/StructureDefinition/extension-CommunicationRequest.payload.content[x]"/>
+			</type>
+			<mustSupport value="true"/>
+		</element>
+		<element id="CommunicationRequest.payload.extension:codeableConcept.value[x]">
+			<path value="CommunicationRequest.payload.extension.value[x]"/>
+			<type>
+				<code value="CodeableConcept"/>
+			</type>
+		</element>
+		<element id="CommunicationRequest.occurrence[x]">
+			<path value="CommunicationRequest.occurrence[x]"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="CommunicationRequest.authoredOn">
+			<path value="CommunicationRequest.authoredOn"/>
+			<min value="1"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="CommunicationRequest.requester">
+			<path value="CommunicationRequest.requester"/>
+			<min value="1"/>
+			<type>
+				<code value="Reference"/>
+				<targetProfile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-practitioner"/>
+				<targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole"/>
+			</type>
+			<mustSupport value="true"/>
+		</element>
+		<element id="CommunicationRequest.recipient">
+			<path value="CommunicationRequest.recipient"/>
+			<type>
+				<code value="Reference"/>
+				<targetProfile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-practitioner"/>
+				<targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole"/>
+				<targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"/>
+			</type>
+			<mustSupport value="true"/>
+		</element>
+		<element id="CommunicationRequest.sender">
+			<path value="CommunicationRequest.sender"/>
+			<type>
+				<code value="Reference"/>
+				<targetProfile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-practitioner"/>
+				<targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole"/>
+				<targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"/>
+			</type>
+			<mustSupport value="true"/>
+		</element>
+		<element id="CommunicationRequest.reasonCode">
+			<path value="CommunicationRequest.reasonCode"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="CommunicationRequest.reasonReference">
+			<path value="CommunicationRequest.reasonReference"/>
+			<comment value="potentially relevant for CRD in some situations."/>
+			<type>
+				<code value="Reference"/>
+				<targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"/>
+				<targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"/>
+			</type>
+			<mustSupport value="true"/>
+		</element>
+	</differential>
+</StructureDefinition>

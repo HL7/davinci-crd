@@ -5,6 +5,7 @@
   <name value="CoverageGuidance"/>
   <title value="Coverage Guidance Value Set"/>
   <status value="draft"/>
+  <experimental value="false"/>
   <description value="Coverage guidance"/>
   <compose>
     <include>

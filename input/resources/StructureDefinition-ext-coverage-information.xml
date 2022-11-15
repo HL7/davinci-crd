@@ -2,15 +2,11 @@
 <StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
   <id value="ext-coverage-information"/>
   <url value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-coverage-information"/>
-  <version value="1.1.0"/>
   <name value="CoverageInformation"/>
   <title value="Coverage Information"/>
   <status value="draft"/>
   <experimental value="false"/>
-  <date value="2018-07-25"/>
-  <publisher value="HL7 International - Financial Management Work Group"/>
   <description value="Captures assertions from a payer about whether the service is covered and/or requires prior authorization."/>
-  <fhirVersion value="4.0.1"/>
   <kind value="complex-type"/>
   <abstract value="false"/>
   <context>
@@ -49,8 +45,6 @@
       <path value="Extension"/>
       <short value="CoverageInfo"/>
       <definition value="Indicates coverage information."/>
-      <min value="0"/>
-      <max value="*"/>
     </element>
     <element id="Extension.extension:coverageInfo">
       <path value="Extension.extension"/>

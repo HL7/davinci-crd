@@ -5,6 +5,7 @@
   <name value="CRDLocationAddressTypes"/>
   <title value="CRD Location Address Types"/>
   <status value="draft"/>
+  <experimental value="false"/>
   <description value="Address codes allowed for CRD locations - those that are physical addresses"/>
   <compose>
     <include>

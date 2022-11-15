@@ -1,0 +1,109 @@
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "inactive" : true,
+    "include" : [{
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "concept" : [{
+        "code" : "prior-auth"
+      },
+      {
+        "code" : "initial-claim"
+      },
+      {
+        "code" : "all-claims"
+      },
+      {
+        "code" : "to-endpoint"
+      }]
+    }]
+  }
+}}####
+e: {
+  "valueSet" : {
+  "resourceType" : "ValueSet",
+  "language" : "en",
+  "status" : "active",
+  "expansion" : {
+    "identifier" : "urn:uuid:2ef83969-0bb8-45fe-9e5d-57ba7cc510d8",
+    "timestamp" : "2022-11-15T01:13:35.371Z",
+    "parameter" : [{
+      "name" : "limitedExpansion",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "excludeNested",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "version",
+      "valueUri" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp|1.1.0-ballot"
+    }],
+    "contains" : [{
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "code" : "prior-auth",
+      "display" : "Include in prior authorization"
+    },
+    {
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "code" : "initial-claim",
+      "display" : "Include in initial claim submission"
+    },
+    {
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "code" : "all-claims",
+      "display" : "Include in all claim submissions"
+    },
+    {
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "code" : "to-endpoint",
+      "display" : "Send to specified endpoint"
+    }]
+  }
+},
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "inactive" : true,
+    "include" : [{
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "concept" : [{
+        "code" : "reason-prior-auth"
+      }]
+    }]
+  }
+}}####
+e: {
+  "valueSet" : {
+  "resourceType" : "ValueSet",
+  "language" : "en",
+  "status" : "active",
+  "expansion" : {
+    "identifier" : "urn:uuid:13993c53-1c21-413e-a9a2-69f1ea35776a",
+    "timestamp" : "2022-11-15T01:13:35.731Z",
+    "parameter" : [{
+      "name" : "limitedExpansion",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "excludeNested",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "version",
+      "valueUri" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp|1.1.0-ballot"
+    }],
+    "contains" : [{
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "code" : "reason-prior-auth",
+      "display" : "Needed for prior authorization"
+    }]
+  }
+},
+  "error" : ""
+}
+-------------------------------------------------------------------------------------

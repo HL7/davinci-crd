@@ -5,6 +5,7 @@
   <name value="CRDCoverageClasses"/>
   <title value="CRD Coverage Classes"/>
   <status value="draft"/>
+  <experimental value="false"/>
   <description value="Restriction of coverage classes for CRD purposes"/>
   <compose>
     <include>

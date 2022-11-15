@@ -1,0 +1,71 @@
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "inactive" : true,
+    "include" : [{
+      "system" : "http://hl7.org/fhir/restful-interaction",
+      "concept" : [{
+        "code" : "create"
+      },
+      {
+        "code" : "delete"
+      },
+      {
+        "code" : "update"
+      }]
+    }]
+  }
+}}####
+e: {
+  "valueSet" : {
+  "resourceType" : "ValueSet",
+  "language" : "en",
+  "status" : "active",
+  "expansion" : {
+    "identifier" : "urn:uuid:d3e525ae-d70a-445e-a817-387f1f8bda99",
+    "timestamp" : "2022-10-25T03:25:08.266Z",
+    "parameter" : [{
+      "name" : "limitedExpansion",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "excludeNested",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "version",
+      "valueUri" : "http://hl7.org/fhir/restful-interaction|4.0.1"
+    }],
+    "contains" : [{
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+        "valueString" : "Create a new resource with a server assigned id."
+      }],
+      "system" : "http://hl7.org/fhir/restful-interaction",
+      "code" : "create",
+      "display" : "create"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+        "valueString" : "Delete a resource."
+      }],
+      "system" : "http://hl7.org/fhir/restful-interaction",
+      "code" : "delete",
+      "display" : "delete"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+        "valueString" : "Update an existing resource by its id (or create it if it is new)."
+      }],
+      "system" : "http://hl7.org/fhir/restful-interaction",
+      "code" : "update",
+      "display" : "update"
+    }]
+  }
+},
+  "error" : ""
+}
+-------------------------------------------------------------------------------------

@@ -1,0 +1,119 @@
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "inactive" : true,
+    "include" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/coverage-class",
+      "concept" : [{
+        "code" : "group"
+      },
+      {
+        "code" : "subgroup"
+      },
+      {
+        "code" : "plan"
+      },
+      {
+        "code" : "subplan"
+      },
+      {
+        "code" : "class"
+      },
+      {
+        "code" : "subclass"
+      },
+      {
+        "code" : "sequence"
+      }]
+    }]
+  }
+}}####
+e: {
+  "valueSet" : {
+  "resourceType" : "ValueSet",
+  "language" : "en",
+  "status" : "active",
+  "expansion" : {
+    "identifier" : "urn:uuid:6d886dea-f258-4d2f-b2f8-321042f37c1b",
+    "timestamp" : "2022-10-25T03:25:08.531Z",
+    "parameter" : [{
+      "name" : "limitedExpansion",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "excludeNested",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "version",
+      "valueUri" : "http://terminology.hl7.org/CodeSystem/coverage-class|0.1.0"
+    }],
+    "contains" : [{
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+        "valueString" : "An employee group"
+      }],
+      "system" : "http://terminology.hl7.org/CodeSystem/coverage-class",
+      "code" : "group",
+      "display" : "Group"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+        "valueString" : "A sub-group of an employee group"
+      }],
+      "system" : "http://terminology.hl7.org/CodeSystem/coverage-class",
+      "code" : "subgroup",
+      "display" : "SubGroup"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+        "valueString" : "A specific suite of benefits."
+      }],
+      "system" : "http://terminology.hl7.org/CodeSystem/coverage-class",
+      "code" : "plan",
+      "display" : "Plan"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+        "valueString" : "A subset of a specific suite of benefits."
+      }],
+      "system" : "http://terminology.hl7.org/CodeSystem/coverage-class",
+      "code" : "subplan",
+      "display" : "SubPlan"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+        "valueString" : "A class of benefits."
+      }],
+      "system" : "http://terminology.hl7.org/CodeSystem/coverage-class",
+      "code" : "class",
+      "display" : "Class"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+        "valueString" : "A subset of a class of benefits."
+      }],
+      "system" : "http://terminology.hl7.org/CodeSystem/coverage-class",
+      "code" : "subclass",
+      "display" : "SubClass"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+        "valueString" : "A sequence number associated with a short-term continuance of the coverage."
+      }],
+      "system" : "http://terminology.hl7.org/CodeSystem/coverage-class",
+      "code" : "sequence",
+      "display" : "Sequence"
+    }]
+  }
+},
+  "error" : ""
+}
+-------------------------------------------------------------------------------------

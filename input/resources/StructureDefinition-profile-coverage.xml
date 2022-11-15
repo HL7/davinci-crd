@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+	<id value="profile-coverage"/>
+	<url value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-coverage"/>
+	<name value="Coverage"/>
+	<title value="CRD Coverage"/>
+	<status value="draft"/>
+	<experimental value="false"/>
+	<description value="This profile specifies constraints on the Coverage resource to support coverage requirements discovery."/>
+	<kind value="resource"/>
+	<abstract value="false"/>
+	<type value="Coverage"/>
+	<baseDefinition value="http://hl7.org/fhir/StructureDefinition/Coverage"/>
+	<derivation value="constraint"/>
+	<differential>
+		<element id="Coverage">
+			<path value="Coverage"/>
+			<definition value="This profile specifies constraints on the Coverage resource to support coverage requirements discovery."/>
+		</element>
+		<element id="Coverage.identifier">
+			<path value="Coverage.identifier"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Coverage.status">
+			<path value="Coverage.status"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Coverage.type">
+			<path value="Coverage.type"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Coverage.policyHolder">
+			<path value="Coverage.policyHolder"/>
+			<type>
+				<code value="Reference"/>
+				<targetProfile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-patient"/>
+				<targetProfile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-organization"/>
+			</type>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Coverage.subscriber">
+			<path value="Coverage.subscriber"/>
+			<type>
+				<code value="Reference"/>
+				<targetProfile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-patient"/>
+			</type>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Coverage.subscriberId">
+			<path value="Coverage.subscriberId"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Coverage.beneficiary">
+			<path value="Coverage.beneficiary"/>
+			<type>
+				<code value="Reference"/>
+				<targetProfile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-patient"/>
+			</type>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Coverage.dependent">
+			<path value="Coverage.dependent"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Coverage.relationship">
+			<path value="Coverage.relationship"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Coverage.period">
+			<path value="Coverage.period"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Coverage.payor">
+			<path value="Coverage.payor"/>
+			<type>
+				<code value="Reference"/>
+				<targetProfile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-patient"/>
+				<targetProfile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-organization"/>
+			</type>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Coverage.class">
+			<path value="Coverage.class"/>
+			<max value="1"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Coverage.class.type">
+			<path value="Coverage.class.type"/>
+			<type>
+				<code value="CodeableConcept"/>
+			</type>
+			<mustSupport value="true"/>
+			<binding>
+				<strength value="required"/>
+				<description value="CRD Coverage Classes"/>
+				<valueSet value="http://hl7.org/fhir/us/davinci-crd/ValueSet/coverageClass"/>
+			</binding>
+		</element>
+		<element id="Coverage.class.value">
+			<path value="Coverage.class.value"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Coverage.class.name">
+			<path value="Coverage.class.name"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Coverage.order">
+			<path value="Coverage.order"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Coverage.network">
+			<path value="Coverage.network"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Coverage.costToBeneficiary">
+			<path value="Coverage.costToBeneficiary"/>
+			<max value="0"/>
+		</element>
+	</differential>
+</StructureDefinition>
