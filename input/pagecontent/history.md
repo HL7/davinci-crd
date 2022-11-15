@@ -14,6 +14,7 @@ Added a number of enhancements and some changes to approach.  Key differences ar
 * Revamped how [Prefetch](hooks.html#prefetch) handles retrieving a patient's coverage information
 * Provided explicit guidance around [deferring card actions](hooks.html#deferring-card-actions)
 * Added a section on [registering DTR apps with CRD](hooks.html#registering-dtr-apps-with-crd)
+* Updated to support CRD 2.0, which included changes to the 'topic' element within cards
 
 As well there were various other adjustments to specification language, profiles and examples to align with these changes and to correct minor typos or improve wording.
 

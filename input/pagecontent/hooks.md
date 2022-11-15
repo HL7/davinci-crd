@@ -1,4 +1,4 @@
-This section of the implementation guide defines specific requirements for systems wishing to conform to this Coverage Requirements Discovery implementation guide.  The bulk of the section focuses on the implementation of the [CDS Hooks Specification](https://cds-hooks.hl7.org/1.0) to meet CRD use-cases.  It also describes the use of [SMART on FHIR](http://hl7.org/fhir/smart-app-launch/index.html) and provides guidance on privacy, security, and other implementation requirements.
+This section of the implementation guide defines specific requirements for systems wishing to conform to this Coverage Requirements Discovery implementation guide.  The bulk of the section focuses on the implementation of the [CDS Hooks Specification](https://cds-hooks.hl7.org/2.0) to meet CRD use-cases.  It also describes the use of [SMART on FHIR](http://hl7.org/fhir/smart-app-launch/index.html) and provides guidance on privacy, security, and other implementation requirements.
 
 The requirements and expectations described here are not intended to be exhaustive. The purpose of this implementation guide is to establish a baseline of expected behavior that communication partners can rely on and then build upon. Future versions of this specification will evolve based on implementer feedback. Therefore, CRD Services and CRD Clients **MAY** mutually agree to support additional hooks, additional card patterns, additional resources, additional extensions, etc. not in this specification.  Although CRD Services and CRD Clients are not required to support any capabilities defined beyond this specification, the intent is to support innovations that extend the specification in a manner that allows payers and providers to adopt those extensions in a mutually agreeable way.
 
@@ -26,9 +26,9 @@ This implementation guide uses specific terminology to flag statements that have
 
 This implementation guide sets expectations for two types of systems:
 
-**CRD Clients** are typically systems that healthcare providers use at the point of care, including electronic medical records systems, pharmacy systems and other clinical and administrative systems used for ordering, documenting and execution of patient-related services. Users of these systems have a need for coverage requirements information to support care planning.  CRD Clients are type of CDS Client as defined in the [CDS Hooks Specification](https://cds-hooks.hl7.org/1.0).
+**CRD Clients** are typically systems that healthcare providers use at the point of care, including electronic medical records systems, pharmacy systems and other clinical and administrative systems used for ordering, documenting and execution of patient-related services. Users of these systems have a need for coverage requirements information to support care planning.  CRD Clients are type of CDS Client as defined in the [CDS Hooks Specification](https://cds-hooks.hl7.org/2.0).
 
-**CRD Services** (or servers) are systems that act on behalf of payer organizations to share information with healthcare providers about rules and requirements related to healthcare products and services covered by a patient's payer.  A CRD Service might provide coverage information related to one or more insurance plans. CRD Services are type of CDS Service as defined in the [CDS Hooks Specification](https://cds-hooks.hl7.org/1.0).
+**CRD Services** (or servers) are systems that act on behalf of payer organizations to share information with healthcare providers about rules and requirements related to healthcare products and services covered by a patient's payer.  A CRD Service might provide coverage information related to one or more insurance plans. CRD Services are type of CDS Service as defined in the [CDS Hooks Specification](https://cds-hooks.hl7.org/2.0).
 
 #### Profiles
 This specification makes significant use of [FHIR profiles]({{site.data.fhir.path}}profiling.html), search parameter definitions and terminology artifacts to describe the content to be shared as part of CDS Hook calls.  The implementation guide supports FHIR [R4]({{site.data.fhir.path}}) with profiles listed for each type of hook.
@@ -52,7 +52,7 @@ Guidance and conformance expectations around privacy and security are provided b
 
 * FHIR core: [Security & Privacy module]({{site.data.fhir.path}}secpriv-module.html), [Security Principles]({{site.data.fhir.path}}security.html) and [Implementer's Checklist]({{site.data.fhir.path}}safety.html)
 * HRex: [Privacy & Security page]({{site.data.fhir.ver.hrex}}/security.html)
-* CDS Hooks: [Security & Safety](https://cds-hooks.hl7.org/1.0/#security-and-safety)
+* CDS Hooks: [Security & Safety](https://cds-hooks.hl7.org/2.0/#security-and-safety)
 * SMART on FHIR: [SMART App Launch](http://www.hl7.org/fhir/smart-app-launch)
 
 In addition to these, this implementation guide imposes the following additional rules:
@@ -157,7 +157,7 @@ Two of the hooks used by this specification (`order-select` and `order-sign`) id
 The proposal to add these resources to the existing hook definitions [can be found](https://github.com/cds-hooks/docs/issues/396) on the CDS hooks [issue tracker](https://github.com/cds-hooks/docs/issues).
 
 ##### New hook configuration mechanism
-The CRD Services provided by payers will support discovery of different types of coverage requirements that will return different types of information to users on [CDS Cards](https://cds-hooks.hl7.org/1.0/#cds-service-response), such as:
+The CRD Services provided by payers will support discovery of different types of coverage requirements that will return different types of information to users on [CDS Cards](https://cds-hooks.hl7.org/2.0/#cds-service-response), such as:
 
 *  Whether authorization is required
 *  Recommended alternative therapies
@@ -174,8 +174,8 @@ The approach in this implementation guide is designed to allow the users or admi
 
 Extensions will be enabled in two places:
 
-1.  The [CDS Service Discovery Response](https://cds-hooks.hl7.org/1.0/#response) object that describes the service's capabilities will include an extension that describes what "configuration options" can be set by the CRD Client
-2.  The hook's [HTTP Request](https://cds-hooks.hl7.org/1.0/#http-request_1) object will include an extension to pass specific configuration settings as part of the hook invocation
+1.  The [CDS Service Discovery Response](https://cds-hooks.hl7.org/2.0/#response) object that describes the service's capabilities will include an extension that describes what "configuration options" can be set by the CRD Client
+2.  The hook's [HTTP Request](https://cds-hooks.hl7.org/2.0/#http-request_1) object will include an extension to pass specific configuration settings as part of the hook invocation
 
 
 ###### Configuration options extension
@@ -194,7 +194,7 @@ The binding on the 'code' element is new
 </p>
 </div>
 
-For example, a [CDS Service Response](https://cds-hooks.hl7.org/1.0/#response) from a CRD Service might look like this:
+For example, a [CDS Service Response](https://cds-hooks.hl7.org/2.0/#response) from a CRD Service might look like this:
 
 {% raw %}
 ```
@@ -262,14 +262,14 @@ Notes:
 
 *  Codes **SHALL** be valid JSON property names and **SHALL** come from the <a href="ValueSet-cardType.html">CRD Card Types.</a> list if an applicable type is in that list.
 
-*  Codes, names, and descriptions **SHALL** be unique within a [CDS Service](https://cds-hooks.hl7.org/1.0/#response) definition.  They **SHOULD** be consistent across different hooks supported by the same payer when dealing with the same types of configuration options.
+*  Codes, names, and descriptions **SHALL** be unique within a [CDS Service](https://cds-hooks.hl7.org/2.0/#response) definition.  They **SHOULD** be consistent across different hooks supported by the same payer when dealing with the same types of configuration options.
 
 *  Payer services providing more than one type of coverage requirement information/guidance **SHOULD** expose configuration options allowing clients to dynamically control what information is returned by the service.
 
 ###### Hook configuration extension
 An extension called `davinci-crd.configuration` will define a second configuration object that will contain an array of codes and values corresponding to the configuration options configured within the CRD Client.
 
-For example, the hook [HTTP Request](https://cds-hooks.hl7.org/1.0/#http-request_1) would look like this:
+For example, the hook [HTTP Request](https://cds-hooks.hl7.org/2.0/#http-request_1) would look like this:
 
 ```
 {
@@ -302,7 +302,7 @@ Notes:
 
 
 ##### Additional prefetch capabilities
-One of the options supported in CDS Hooks is the ability for a service to request that certain data be [prefetched](https://cds-hooks.hl7.org/1.0/#prefetch-template) for efficiency reasons and to simplify processing for the CDS service.  However, there is a limit in that, in the current CDS Hooks specification, prefetch can only use hook context information that is expressed as a simple key value.  It cannot leverage context information passed as resources.
+One of the options supported in CDS Hooks is the ability for a service to request that certain data be [prefetched](https://cds-hooks.hl7.org/2.0/#prefetch-template) for efficiency reasons and to simplify processing for the CDS service.  However, there is a limit in that, in the current CDS Hooks specification, prefetch can only use hook context information that is expressed as a simple key value.  It cannot leverage context information passed as resources.
 
 A [proposal](https://github.com/cds-hooks/docs/issues/377) has been submitted suggesting how to address this issue.  This ballot version of the implementation guide pre-adopts that proposal.
 
@@ -327,7 +327,7 @@ This might result in an executed query that looks like this: `ServiceRequest?_id
 This proposed pre-adoption is not CDS Hooks conformant.  It is possible that the CDS Hooks community will adopt an alternative solution or choose not to make any changes.  Community discussion about this proposal can be found on the CDS Hooks issue list <a href="https://github.com/cds-hooks/docs/issues/377">here</a> and in Jira <a href="https://jira.hl7.org/browse/FHIR-35804">here</a>.  This implementation guide will be updated to align with the decision of the community and might, if necessary, fall back to the use of extensions if CDS Hooks does not choose to support prefetch based on context resources and the payer community determines that prefetch is still required.
 </p>
 <p>
-In addition to this preadoption, this implementation guide presumes support for prefetch query capabilities more sophisticated than the recommended <a href="https://cds-hooks.hl7.org/1.0/#prefetch-query-restrictions">prefetch query restrictions</a> in the CDS Hooks specification.  Specifically, the use of <a href="{{site.data.fhir.path}}search.html#include">_include</a>, as seen in the example above.  It also uses a query-like mechanism to reference 'draft' orders that may not yet be available in the CRD client's repository for query, which will require query-like functionality to be implemented against in-memory objects.
+In addition to this preadoption, this implementation guide presumes support for prefetch query capabilities more sophisticated than the recommended <a href="https://cds-hooks.hl7.org/2.0/#prefetch-query-restrictions">prefetch query restrictions</a> in the CDS Hooks specification.  Specifically, the use of <a href="{{site.data.fhir.path}}search.html#include">_include</a>, as seen in the example above.  It also uses a query-like mechanism to reference 'draft' orders that may not yet be available in the CRD client's repository for query, which will require query-like functionality to be implemented against in-memory objects.
 </p>
 </blockquote>
 
@@ -345,7 +345,7 @@ For this release of the implementation guide, these requirements will be handled
 ###### if-none-exist
 The `suggestion.action` object will use an extension to carry the if-none-exist query as per FHIR's [conditional create]({{site.data.fhir.path}}http.html#ccreate) functionality.  The extension property will be `davinci-crd.if-none-exist`.  
 
-For example, this [CDS Hook Suggestion](https://cds-hooks.hl7.org/1.0/#suggestion) contains two [Actions](https://cds-hooks.hl7.org/1.0/#action) - one referencing an HL7 [Questionnaire]({{site.data.fhir.path}}questionnaire.html) and the other the [Task]({{site.data.fhir.path}}task.html) to complete the Questionnaire.  The Questionnaire will only be created if it didn't already exist:
+For example, this [CDS Hook Suggestion](https://cds-hooks.hl7.org/2.0/#suggestion) contains two [Actions](https://cds-hooks.hl7.org/2.0/#action) - one referencing an HL7 [Questionnaire]({{site.data.fhir.path}}questionnaire.html) and the other the [Task]({{site.data.fhir.path}}task.html) to complete the Questionnaire.  The Questionnaire will only be created if it didn't already exist:
 
 ```
 "suggestions": [{
@@ -413,7 +413,7 @@ For example, this [CDS Hook Suggestion](https://cds-hooks.hl7.org/1.0/#suggestio
 ###### Linkage between created resources
 The linkage between resources by identifier in different Actions within a single Suggestion doesn't require any extension to CDS Hooks, but it does require additional guidance.  For the purposes of this implementation guide, the inclusion of the `id` element in 'created' resources and references in created and updated resources within multi-action suggestions **SHALL** be handled as per FHIR's [transaction processing rules]({{site.data.fhir.path}}http.html#trules), treating each requested action as being an entry in a FHIR transaction bundle where the base URL is the base URL of the CRD Client's server.  POST corresponds to an `action.type` of 'create' and PUT corresponds to an action.type of 'update'.  Specifically, this means that if a FHIR Reference points to the resource type and identifier of a resource of another 'create' Action in the same Suggestion, then the reference to that resource **SHALL** be updated by the server to point to the identifier assigned by the client when performing the create.  CRD Clients **SHALL** perform creates in an order that ensures that referenced resources are created prior to referencing resources.
 
-For example, the following [CDS Hook Suggestion](https://cds-hooks.hl7.org/1.0/#suggestion) will cause the FHIR [MedicationRequest]({{site.data.fhir.path}}medicationrequest.html) to be updated to point to the prior authorization ([ClaimResponse]({{site.data.fhir.path}}claimresponse.html) resource) being created.  The ClaimResponse would be created before the MedicationRequest would be updated:
+For example, the following [CDS Hook Suggestion](https://cds-hooks.hl7.org/2.0/#suggestion) will cause the FHIR [MedicationRequest]({{site.data.fhir.path}}medicationrequest.html) to be updated to point to the prior authorization ([ClaimResponse]({{site.data.fhir.path}}claimresponse.html) resource) being created.  The ClaimResponse would be created before the MedicationRequest would be updated:
 
 ```
 "suggestions": [{
@@ -481,7 +481,11 @@ If a hook service is invoked on a collection of resources, all cards returned th
     "label": "You're Covered Insurance",
     "url": "https://example.com",
     "icon": "https://example.com/img/icon-100px.png",
-    "topic": "prior-auth"
+    "topic": {
+      "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/cardType",
+      "code": "prior-auth",
+      "display": "Prior Authorization"
+    }
   }
 }
 ```
@@ -744,10 +748,10 @@ This hook serves a very similar purpose to [order-select](#order-select).  The m
 Use and profiles for [order-select](#order-select) also apply to `order-sign`.
 
 #### Cards
-[Cards](https://cds-hooks.hl7.org/1.0/#cds-service-response) are the mechanism used to return coverage requirements from the CRD Service to the CRD Client.
+[Cards](https://cds-hooks.hl7.org/2.0/#cds-service-response) are the mechanism used to return coverage requirements from the CRD Service to the CRD Client.
 
 ##### General guidance
-In addition to the [guidance provided in the CDS Hooks specification](https://cds-hooks.hl7.org/1.0/#card-attributes), the following additional recommendations apply to CRD Services when constructing cards:
+In addition to the [guidance provided in the CDS Hooks specification](https://cds-hooks.hl7.org/2.0/#card-attributes), the following additional recommendations apply to CRD Services when constructing cards:
 
 *  The `Card.indicator` **SHOULD** be populated from the perspective of the clinical decision maker, not the payer.  While failure to procure a prior authorization might be 'critical' from the perspective of payment, it would be - at best - a 'warning' from the perspective of clinical care.  'critical' must be reserved for reporting life or death or serious clinical outcomes.  Issues where the proposed course of action will negatively affect the ability of the payer or patient to be reimbursed would generally be a 'warning'.  Most Coverage Requirements **SHOULD** be marked as 'info'.
 
@@ -780,7 +784,7 @@ The card.source.topic element above is new.
 </div>
 
 ##### Potential CRD Response Types
-This section describes the different types of [responses](https://cds-hooks.hl7.org/1.0/#cds-service-response) that CRD Services can use when returning coverage requirements to CRD Clients, including CRD-specific profiles on cards to describe CRD-expected behavior.  It is possible that some CRD Services and CRD Clients will support additional card response patterns than those listed here, but such behavior is outside the scope of this specification.  Future versions of this specification might standardize additional response types.
+This section describes the different types of [responses](https://cds-hooks.hl7.org/2.0/#cds-service-response) that CRD Services can use when returning coverage requirements to CRD Clients, including CRD-specific profiles on cards to describe CRD-expected behavior.  It is possible that some CRD Services and CRD Clients will support additional card response patterns than those listed here, but such behavior is outside the scope of this specification.  Future versions of this specification might standardize additional response types.
 
 Of the response types in this guide, conformant CRD Clients **SHALL** support the [External reference](#external-reference), [Instructions](#instructions) and  [Annotate](#annotate) responses and **SHOULD** support the remaining types.  CRD Services **SHALL** support at least one of these response type and **MAY** support as many as necessary to convey the requirements of the types of coverage they support.
 
@@ -799,7 +803,7 @@ This response type presents a Card with one or more links to external web pages,
 
 When reasonable, an "External Reference" card **SHOULD** contain a summary of the actionable information from the external reference.
 
-For example, this CDS Hooks [Card](https://cds-hooks.hl7.org/1.0/#cds-service-response) contains two [Links](https://cds-hooks.hl7.org/1.0/#link) - a standard and a printer-friendly version.
+For example, this CDS Hooks [Card](https://cds-hooks.hl7.org/2.0/#cds-service-response) contains two [Links](https://cds-hooks.hl7.org/2.0/#link) - a standard and a printer-friendly version.
 
 {% raw %}
 ```
@@ -810,7 +814,11 @@ For example, this CDS Hooks [Card](https://cds-hooks.hl7.org/1.0/#cds-service-re
   "source": {
     "label": "Centers for Medicare & Medicaid Services",
     "url": "https://cms.gov",
-    "topic": "coverage"
+    "topic": {
+      "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/cardType",
+      "code": "coverage",
+      "display": "Coverage"
+    }
   },
   "links": [
     {
@@ -830,7 +838,7 @@ For example, this CDS Hooks [Card](https://cds-hooks.hl7.org/1.0/#cds-service-re
 ###### Instructions
 This response type presents a `Card` with textual guidance to display to the user making the decisions. The text might provide clinical guidelines, suggested changes, rules around prior authorization, or even something as simple as "No special coverage requirements". It can be generated in a more sophisticated context for the payer, while remaining simple to consume for the provider because it more easily allows returned information to be tuned to the specific context of the order/encounter that triggered the hook. In some cases, the text returned might be generated uniquely each time a hook is fired.
 
-This example CDS Hook [Card](https://cds-hooks.hl7.org/1.0/#cds-service-response) just contains a message:
+This example CDS Hook [Card](https://cds-hooks.hl7.org/2.0/#cds-service-response) just contains a message:
 
 {% raw %}
 ```
@@ -842,7 +850,11 @@ This example CDS Hook [Card](https://cds-hooks.hl7.org/1.0/#cds-service-response
     "label": "You're Covered Insurance",
     "url": "https://example.com",
     "icon": "https://example.com/img/icon-100px.png",
-    "topic": "prior-auth"
+    "topic": {
+      "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/cardType",
+      "code": "prior-auth",
+      "display": "Prior Authorization"
+    }
   }
 }
 ```
@@ -1200,7 +1212,7 @@ Note:
 * Where CRD services use the Structured Data Capture profiles, they have the option of indicating an endpoint for submission of the questionnaire using Task.input or the SDC Questionnaire.endpoint extension to specify a service endpoint to submit completed questionnaires to a recipient.  If an endpoint is specified in both locations, both apply.
 * CRD Clients **SHOULD** retain a copy of all completed forms for future reference.
 
-The following is an example CDS Hook [Suggestion](https://cds-hooks.hl7.org/1.0/#suggestion) where the specified questionnaire is either expected to be available within the CRD Client or available for retrieval through its canonical URL.  As such, the [Action](https://cds-hooks.hl7.org/1.0/#action) only contains the FHIR [Task]({{site.data.fhir.path}}task.html) resource.  An example showing inclusion of both the Task and the referenced Questionnaire can be found [above](#if-none-exist).
+The following is an example CDS Hook [Suggestion](https://cds-hooks.hl7.org/2.0/#suggestion) where the specified questionnaire is either expected to be available within the CRD Client or available for retrieval through its canonical URL.  As such, the [Action](https://cds-hooks.hl7.org/2.0/#action) only contains the FHIR [Task]({{site.data.fhir.path}}task.html) resource.  An example showing inclusion of both the Task and the referenced Questionnaire can be found [above](#if-none-exist).
 
 ```
 "suggestions": [{
@@ -1259,7 +1271,7 @@ This response type is used when the CRD Service is aware of additional coverage 
 
 This response will contain a single suggestion.  The primary action will either be a suggestion to "update" an existing Coverage instance (if the CRD Client already has one) or to "create" a new Coverage instance if the CRD Service is aware of Coverage that the CRD Client is not.  In addition, the suggestion could include updates on all relevant Request resources to add or remove links to Coverage instances, reflecting which Coverages are relevant to which types of requests.
 
-For example, this CDS Hook [Card](https://cds-hooks.hl7.org/1.0/#cds-service-response) includes a single [Suggestion](https://cds-hooks.hl7.org/1.0/#suggestion) with two [Actions](https://cds-hooks.hl7.org/1.0/#action) - one is to update the [Coverage]({{site.data.fhir.path}}coverage.html) and the second is to update the draft order [MedicationRequest]({{site.data.fhir.path}}medicationrequest.html) to reference the existing Coverage.
+For example, this CDS Hook [Card](https://cds-hooks.hl7.org/2.0/#cds-service-response) includes a single [Suggestion](https://cds-hooks.hl7.org/2.0/#suggestion) with two [Actions](https://cds-hooks.hl7.org/2.0/#action) - one is to update the [Coverage]({{site.data.fhir.path}}coverage.html) and the second is to update the draft order [MedicationRequest]({{site.data.fhir.path}}medicationrequest.html) to reference the existing Coverage.
 
 ```
 {
@@ -1269,7 +1281,11 @@ For example, this CDS Hook [Card](https://cds-hooks.hl7.org/1.0/#cds-service-res
     "label": "Some Payer",
     "url": "https://example.com",
     "icon": "https://example.com/img/icon-100px.png",
-    "topic": "coverage"
+    "topic": {
+      "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/cardType",
+      "code": "coverage",
+      "display": "Coverage"
+    }
   },
   "suggestions": [{
     "label": "Update coverage information to be current",
@@ -1315,7 +1331,7 @@ This response type is just a modified version of the [External Reference](#exter
 
 This card type also provides the mechanism to transition from CRD to the behavior defined in the [Documentation, Templates, and Rules (DTR) Implementation Guide](http://hl7.org/fhir/us/davinci-dtr).  The SMART app link returned is the one the payer uses to guide providers through filling out relevant questionnaires and is capable of both retrieving the relevant CQL from the payer to determine (and where appropriate, automatically populate) payer-sourced templates and documentation as well as retrieving information from the provider via queries authorized by the token used to launch the SMART app.  The card includes the complete app context needed for the CRD client to launch the SMART application (information gleaned by the CRD server either as data passed as part of hook invocation or subsequent querying by the service.
 
-For example, this [Card](https://cds-hooks.hl7.org/1.0/#cds-service-response) contains a SMART App [Link](https://cds-hooks.hl7.org/1.0/#link) to perform an opioid assessment.
+For example, this [Card](https://cds-hooks.hl7.org/2.0/#cds-service-response) contains a SMART App [Link](https://cds-hooks.hl7.org/2.0/#link) to perform an opioid assessment.
 
 ```
 {
@@ -1326,7 +1342,11 @@ For example, this [Card](https://cds-hooks.hl7.org/1.0/#cds-service-response) co
     "label": "Some Payer",
     "url": "https://example.com",
     "icon": "https://example.com/img/icon-100px.png",
-    "topic": "coverage"
+    "topic": {
+      "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/cardType",
+      "code": "coverage",
+      "display": "Coverage"
+    }
   },
   "links": [{
     "label": "Opioid XYZ-assessment",
@@ -1370,7 +1390,11 @@ CRD clients and services MAY, by mutual agreement, make use of the new CDS Hooks
     "label": "Some Payer",
     "url": "https://example.com",
     "icon": "https://example.com/img/icon-100px.png",
-    "topic": "prior-auth"
+    "topic": {
+      "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/cardType",
+      "code": "prior-auth",
+      "display": "Prior Authorization"
+    }
   },
   "suggestions": [{
     "label": "Store the prior authorization in the EHR",
@@ -1428,7 +1452,7 @@ A full example of a pre-emptive prior authorization can be found [here](https://
 #### Additional data retrieval
 The context information provided as part of hook invocation will often not be enough for a CRD service to fully determine coverage requirements.  This section of the guide describes a common set of queries that define data that most, if not all, CRD Services will need to perform their requirements assessment.
 
-For this release of the implementation guide, conformant CRD Clients **SHOULD** support the CDS Hooks [prefetch](https://cds-hooks.hl7.org/1.0/#prefetch-template) capability and be able to perform all the prefetch queries defined here and, where needed, **SHOULD** implement interfaces to [_include]({{site.data.fhir.path}}search.html#include) resources not available in the system's database.  (I.e. if some of the data is stored in a separate system, it should ideally still be retrievable via `_include` in queries executed against the client.)  However, each payer will define the prefetch requests for their CRD Service based on the information they require to provide coverage requirements.  They might include more and/or less than described in this section.  Prefetch requests **SHOULD** only include information that is always expected to be needed for each hook invocation.  When information is only needed for certain invocations of the hook (e.g. for specific types of medications or services), that information **SHALL** only be retrieved by query using the provided token, never requested universally via prefetch.  Not all CRD Clients will support all prefetch requests.  
+For this release of the implementation guide, conformant CRD Clients **SHOULD** support the CDS Hooks [prefetch](https://cds-hooks.hl7.org/2.0/#prefetch-template) capability and be able to perform all the prefetch queries defined here and, where needed, **SHOULD** implement interfaces to [_include]({{site.data.fhir.path}}search.html#include) resources not available in the system's database.  (I.e. if some of the data is stored in a separate system, it should ideally still be retrievable via `_include` in queries executed against the client.)  However, each payer will define the prefetch requests for their CRD Service based on the information they require to provide coverage requirements.  They might include more and/or less than described in this section.  Prefetch requests **SHOULD** only include information that is always expected to be needed for each hook invocation.  When information is only needed for certain invocations of the hook (e.g. for specific types of medications or services), that information **SHALL** only be retrieved by query using the provided token, never requested universally via prefetch.  Not all CRD Clients will support all prefetch requests.  
 
 <blockquote class="stu-note">
 In future releases of this specification, the requirements in this section might become a **SHALL**.  Implementers are encouraged to provide feedback about this possibility based on their initial implementation experience.
@@ -1448,12 +1472,12 @@ The base requirement for these queries, whether based on Encounter or one of the
 
 Not all these will be relevant for all resource types.  Different resources have differently named data elements and search parameters for them.  In some cases, support only exists as extensions or does not exist at all.  Where necessary, this implementation guide defines additional extensions to support retrieval of these elements.  The intention is for both extensions and search parameters to eventually migrate into the core FHIR specification.
 
-There are two possible mechanisms that can be used by the service to gather the information needed: prefetch and querying against the EMR to retrieve additional resources.  Both mechanisms are defined as part of the [CDS Hooks specification](https://cds-hooks.hl7.org/1.0/#providing-fhir-resources-to-a-cds-service).  In some cases, a mixture of both approaches might be necessary.
+There are two possible mechanisms that can be used by the service to gather the information needed: prefetch and querying against the EMR to retrieve additional resources.  Both mechanisms are defined as part of the [CDS Hooks specification](https://cds-hooks.hl7.org/2.0/#providing-fhir-resources-to-a-cds-service).  In some cases, a mixture of both approaches might be necessary.
 
 ##### Prefetch
 Prefetch is an optional capability of CDS Hooks that allows the client to perform certain query functions on behalf of the CRD Service and provide the results in the initial hook invocation.  This allows the client to optimize query performance and can simplify functionality for the CRD Service.
 
-In addition to the [base prefetch capabilities](https://cds-hooks.hl7.org/1.0/#prefetch-template) defined in the CDS Hooks specification, systems that support prefetch **SHOULD** support the additional prefetch capabilities [defined earlier in this specification](#additional-prefetch-capabilities).  The following table defines the 'standard' prefetch queries for this implementation guide that **SHOULD** be supported for each type of resource are shown in the table below.  CRD Clients **MAY** support only the resources needed to implement the relevant CDS Hooks and order types.  Those search parameters with hyperlinks are defined as part of this implementation guide.  The remainder are defined within their respective version of the FHIR core specification.
+In addition to the [base prefetch capabilities](https://cds-hooks.hl7.org/2.0/#prefetch-template) defined in the CDS Hooks specification, systems that support prefetch **SHOULD** support the additional prefetch capabilities [defined earlier in this specification](#additional-prefetch-capabilities).  The following table defines the 'standard' prefetch queries for this implementation guide that **SHOULD** be supported for each type of resource are shown in the table below.  CRD Clients **MAY** support only the resources needed to implement the relevant CDS Hooks and order types.  Those search parameters with hyperlinks are defined as part of this implementation guide.  The remainder are defined within their respective version of the FHIR core specification.
 
 EMR implementations **SHOULD NOT** expect standardized prefetch key names.  EMRs supporting prefetch **SHALL** inspect the CDS Hooks Discovery Endpoint to determine exact prefetch key names and queries.
 
@@ -1584,7 +1608,7 @@ Other information will need to be retrieved using queries that are more specific
 {% endraw %}
 
 ##### FHIR Resource Access
-If information needed is not provided by prefetch, the CRD Service can query the client directly using the [FHIR resource access](https://cds-hooks.hl7.org/1.0/#fhir-resource-access) mechanism defined in the CDS Hooks specification.
+If information needed is not provided by prefetch, the CRD Service can query the client directly using the [FHIR resource access](https://cds-hooks.hl7.org/2.0/#fhir-resource-access) mechanism defined in the CDS Hooks specification.
 
 This can be done either by using individual queries or by invoking a batch of separate queries.  In either case, the HTTP call that performs the query or executes the batch must pass the `fhirAuthorization.accessToken` in the Authorization header as defined in the [OAuth specification](https://www.oauth.com/oauth2-servers/accessing-data/making-api-requests).
 
@@ -1791,7 +1815,7 @@ The 'focus' of the Task indicates the resource to be acted upon for suggestion a
 
 In addition, where no other deferral capabilities exist, a user can 'effectively' defer a [DTR](http://hl7.org/fhir/us/davinci-dtr) task by launching the DTR application, then saving and closing the app - which will save the current DTR session for later resumption by manually invoking the DTR application and selecting and resuming the in-progress session.  The user could also add a note to the in-progress order that DTR work requires completion.
 
-For example, this CDS Hook [Card](https://cds-hooks.hl7.org/1.0/#cds-service-response) includes a single [Suggestion](https://cds-hooks.hl7.org/1.0/#suggestion) with an [Action](https://cds-hooks.hl7.org/1.0/#action) to create the deferred task.
+For example, this CDS Hook [Card](https://cds-hooks.hl7.org/2.0/#cds-service-response) includes a single [Suggestion](https://cds-hooks.hl7.org/2.0/#suggestion) with an [Action](https://cds-hooks.hl7.org/2.0/#action) to create the deferred task.
 
 ```
 {
@@ -1801,7 +1825,11 @@ For example, this CDS Hook [Card](https://cds-hooks.hl7.org/1.0/#cds-service-res
     "label": "Some Payer",
     "url": "https://example.com",
     "icon": "https://example.com/img/icon-100px.png",
-    "topic": "deferred-task"
+    "topic": {
+      "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/cardType",
+      "code": "deferred-task",
+      "display": "Deferred Task"
+    }
   },
   "suggestions": [{
     "label": "Update coverage later",
