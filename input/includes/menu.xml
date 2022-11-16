@@ -2,14 +2,14 @@
   <li>
     <a href="{{site.data.info.assets}}toc.html">Table of Contents</a>
   </li>
+  <li>
+    <a href="{{site.data.info.assets}}index.html">Home</a>
+  </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">CRD Specification<b class="caret">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Background<b class="caret">
       </b>
     </a>
     <ul class="dropdown-menu">
-      <li>
-        <a href="{{site.data.info.assets}}index.html">CRD Home Page</a>
-      </li>
       <li>
         <a href="{{site.data.info.assets}}usecases.html">Use Cases and Overview</a>
       </li>
@@ -17,18 +17,25 @@
         <a href="{{site.data.info.assets}}background.html">Technical Background</a>
       </li>
       <li>
+        <a href="{{site.data.info.assets}}credits.html">Credits</a>
+      </li>
+      <li>
+        <a href="{{site.data.info.assets}}history.html">Change History</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Background<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
         <a href="{{site.data.info.assets}}hooks.html">
           <b>Formal Specification</b>
         </a>
       </li>
       <li>
-        <a href="{{site.data.info.assets}}downloads.html">Downloads</a>
-      </li>
-      <li>
-        <a href="{{site.data.info.assets}}credits.html">Credits</a>
-      </li>
-      <li>
-        <a href="{{site.data.info.assets}}history.html">Change History</a>
+        <a href="{{site.data.info.assets}}implementation.html">Implementation Guidance</a>
       </li>
     </ul>
   </li>
@@ -67,7 +74,23 @@
       </li>
     </ul>
   </li>
-  <li>
-    <a href="http://hl7.org/fhir/us/davinci-crd/history.html">History</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a target="_blank" href="https://confluence.hl7.org/pages/viewpage.action?pageId=91980079">Project Home</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://chat.fhir.org/#narrow/stream/180803-Da-Vinci-CRD">Discussion Forum</a>
+      </li>
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir-issues">Propose a Change</a>
+      </li>
+      <li>
+        <a href="{{site.data.info.assets}}downloads.html">Downloads</a>
+      </li>
+    </ul>
   </li>
 </ul>

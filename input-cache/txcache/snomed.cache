@@ -25719,3 +25719,13 @@ e: {
   "error" : ""
 }
 -------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://snomed.info/sct",
+  "code" : "270427003"
+}, "url": "http://hl7.org/fhir/us/core/ValueSet/us-core-encounter-type--0", "version": "3.1.1", "lang":"null", "useServer":"true", "useClient":"false", "guessSystem":"false", "valueSetMode":"ALL_CHECKS", "versionFlexible":"true"}####
+v: {
+  "display" : "Patient-initiated encounter",
+  "code" : "270427003",
+  "system" : "http://snomed.info/sct"
+}
+-------------------------------------------------------------------------------------

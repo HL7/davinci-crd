@@ -41,3 +41,24 @@ v: {
   "system" : "http://www.nlm.nih.gov/research/umls/rxnorm"
 }
 -------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://www.nlm.nih.gov/research/umls/rxnorm",
+  "code" : "616447"
+}, "url": "http://hl7.org/fhir/us/core/ValueSet/us-core-medication-codes--0", "version": "3.1.1", "lang":"null", "useServer":"true", "useClient":"false", "guessSystem":"false", "valueSetMode":"ALL_CHECKS", "versionFlexible":"true"}####
+v: {
+  "display" : "mycophenolate mofetil 250 MG Oral Capsule [Cellcept]",
+  "code" : "616447",
+  "system" : "http://www.nlm.nih.gov/research/umls/rxnorm"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://www.nlm.nih.gov/research/umls/rxnorm",
+  "code" : "616447",
+  "display" : "Cellcept 250 MG Oral Capsule"
+}, "url": "http://hl7.org/fhir/us/core/ValueSet/us-core-medication-codes", "version": "3.1.1", "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"NO_MEMBERSHIP_CHECK", "versionFlexible":"true"}####
+v: {
+  "display" : "mycophenolate mofetil 250 MG Oral Capsule [Cellcept]",
+  "code" : "616447",
+  "system" : "http://www.nlm.nih.gov/research/umls/rxnorm"
+}
+-------------------------------------------------------------------------------------
