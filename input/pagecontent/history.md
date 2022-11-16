@@ -18,7 +18,7 @@ Added a number of enhancements and some changes to approach.  Key differences ar
 * Added support for system actions and made their use mandatory for updates to orders and coverage
 * 
 
-As well there were various other adjustments to specification language, profiles and examples to align with these changes and to correct minor typos or improve wording.
+As well there were various other adjustments to specification language, profiles, and examples to align with these changes and to correct minor typos or improve wording.
 
 ### Release 1.0
-Initial release of the CRD specification
+Initial release of the CRD specification.

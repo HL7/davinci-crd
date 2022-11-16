@@ -20,7 +20,7 @@ Feedback is welcome and may be submitted through the <a href="http://hl7.org/fhi
 This implementation guide is dependent on other specifications.  Please submit any comments you have on these base specifications as follows:
 </p>
 <ul>
-  <li>Feedback on CDS Hooks should be posted to the CDS Hooks <a href="https://github.com/cds-hooks/docs/issues">GitHub Issue List</a></li>
+  <li>Feedback on CDS Hooks should be posted to the <a href="http://hl7.org/fhir-issues">FHIR change tracker</a> with "CDS Hooks" as the specification.</li>
   <li>Feedback on the FHIR core specification should be submitted to the <a href="http://hl7.org/fhir-issues">FHIR change tracker</a> with "FHIR Core" as the specification.</li>
   <li>Feedback on the US core profiles should be submitted to the <a href="http://hl7.org/fhir-issues">FHIR change tracker</a> with "US Core" as the specification.</li>
 </ul>
@@ -31,7 +31,7 @@ Individuals interested in participating in the Coverage Requirements Discovery o
 
 
 ### Overview
-The process of managing billing for patient insurance is a significant source of complexity and cost in the United States.  Healthcare providers work with a range of different health insurers and payers who cover the services the providers supply to patients.  Different payers and plans provide different levels of coverage for healthcare services with different processes for determining whether services are necessary or are appropriate.  These processes have different requirements for documentation, prior authorization, or other approvals.  Claims submitted for payment that do not meet payer coverage or documentation requirements will typically be initially denied and may result in delays due to resubmission or appeals and/or financial impact to the patient.
+The process of managing billing for patient insurance is a significant source of complexity and cost in the United States.  Healthcare providers work with a range of different health insurers and payers who cover the services the providers supply to patients.  Different payers and plans provide different levels of coverage for healthcare services with different processes for determining whether services are necessary or are appropriate.  These processes have different requirements for documentation, prior authorization, or other approvals.  Claims submitted for payment that do not meet payer coverage or documentation requirements will typically be initially denied and may result in delays due to resubmission, appeals, and/or financial impact to the patient.
 
 This Coverage Requirements Discovery (CRD) implementation guide defines a workflow to allow payers to provide information about coverage requirements to healthcare providers through their provider systems at the time treatment decisions are being made.  This will ensure that clinicians and administrative staff have the capability to make informed decisions and meet the requirements of the patient's insurance coverage.
 
@@ -43,11 +43,11 @@ This implementation guide supports both Protected Health Information (PHI)-speci
 * forms and templates to complete
 * indications of whether prior authorization is required
 
-The implementation guide is designed to allow for initial support of basic capabilities and to subsequently build new features over time.
+This implementation guide is designed to allow for initial support of basic capabilities and to subsequently build new features over time.
 
 
-### Content and organization
-The implementation guide is organized into the following sections:
+### Content and Organization
+This implementation guide is organized into the following sections:
 
 * [Use Cases and Overview](usecases.html) describes the intent of the implementation guide, gives examples of its use, and provides a high-level overview of expected process flow
 * [Technical Background](background.html) identifies related specifications this implementation guide builds upon that developers should read and understand prior to implementing this specification
@@ -60,9 +60,9 @@ The implementation guide is organized into the following sections:
 This implementation guide relies on the following other specifications:
 * **[FHIR R4]({{site.data.fhir.path}})** - The 'current' official version of FHIR as of the time this implementation guide was published.  See the [background page](background.html#fhir) for key pieces of this specification implementers should be familiar with.
 * **[US Core STU3]({{site.data.fhir.ver.uscore}})** - The version of US Core based on FHIR R4.
-* **[CDS Hooks CI Build](https://cds-hooks.org/specification/current/)** - The community release that defines one of the hooks used by this implementation guide
-* **[CDS Hooks 2.0](https://cds-hooks.hl7.org/2.0)** - The official standard for trial use publication of CDS Hooks that defines the CDS Hooks protocol and interfaces used by this implementation guide
-* **[SMART on FHIR](http://hl7.org/fhir/smart-app-launch)** - The specification provides a reliable, secure authorization protocol for SMART apps launched from a provider system to support coverage requirements discovery (e.g. what-if scenarios).
+* **[CDS Hooks CI Build](https://cds-hooks.org/specification/current/)** - The community release that defines one of the hooks used by this implementation guide.
+* **[CDS Hooks 2.0](https://cds-hooks.hl7.org/2.0)** - The official standard for trial use publication of CDS Hooks that defines the CDS Hooks protocol and interfaces used by this implementation guide.
+* **[SMART on FHIR](http://hl7.org/fhir/smart-app-launch)** - This specification provides a reliable, secure authorization protocol for SMART apps launched from a provider system to support coverage requirements discovery (e.g. what-if scenarios).
 
 
 This implementation guide defines additional constraints and usage expectations above and beyond the information found in these base specifications.

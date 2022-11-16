@@ -1,4 +1,4 @@
-Compliance with this implementation guide requires compliance with several profiles, extensions and value sets.  This page provides an overview of where these artifacts can be found.
+Compliance with this implementation guide requires compliance with several profiles, extensions, and value sets.  This page provides an overview of where these artifacts can be found.
 
 The FHIR artifacts used by CRD are organized according to whether the content was developed as part of the US Core implementation guides or are specific to this CRD implementation guide.
 
@@ -7,14 +7,14 @@ As a result, there are 2 different lists of artifacts - one for this Da Vinci im
 ### Artifact Lists
 <table>
   <tr>
-    <td><a href="artifacts.html">CRD-specific Artifacts</a></td>
+    <td><a href="artifacts.html">CRD-Specific Artifacts</a></td>
   </tr>
   <tr>
     <td><a href="http://hl7.org/fhir/us/core">US Core IG</a></td>
   </tr>
 </table>
 
-Additional information about the use of these artifacts, Coverage Requirements Discovery (CRD) and the use of US Core can be found in the [formal specification](hooks.html#profiles).
+Additional information about the use of these artifacts, Coverage Requirements Discovery (CRD), and the use of US Core can be found in the [formal specification](hooks.html#profiles).
 
 These FHIR artifacts define the clinical data that can be provided by CRD Clients when invoking CDS hooks, queried (or retrieved using [prefetch](hooks.html#prefetch)) from CRD Clients by CRD Servers and/or returned to client systems by hook services within [cards](hooks.html#cards).
 

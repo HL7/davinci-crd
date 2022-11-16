@@ -6,7 +6,7 @@
 	<title value="CRD Prior authorization"/>
 	<status value="draft"/>
 	<experimental value="false"/>
-	<description value="This profile specifies constraints on ClaimResponse resource to reflect the contents of a pro-active prior authorization returned via a card"/>
+	<description value="This profile specifies constraints on the ClaimResponse resource to reflect the contents of a pro-active prior authorization returned via a card."/>
 	<kind value="resource"/>
 	<abstract value="false"/>
 	<type value="ClaimResponse"/>

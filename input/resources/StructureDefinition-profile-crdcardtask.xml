@@ -6,7 +6,7 @@
 	<title value="CRD Card Task"/>
 	<status value="draft"/>
 	<experimental value="false"/>
-	<description value="This profile specifies constraints on the Task resource to support the creation of deferred task."/>
+	<description value="This profile specifies constraints on the Task resource to support the creation of a deferred task."/>
 	<kind value="resource"/>
 	<abstract value="false"/>
 	<type value="Task"/>
