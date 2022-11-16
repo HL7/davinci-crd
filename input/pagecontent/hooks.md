@@ -130,12 +130,6 @@ CDS Hooks are intended to improve healthcare provider care planning processes by
 
 Payers and service providers **SHALL** ensure that CDS Hooks return only messages and information relevant and useful to the intended recipient.
 
-<div markdown="1" class="new-content">
-
-Implementations **SHALL** restrict information shared with a payer to only the information appropriate to share with that payer, for example, not including patient pay or federal/state sensitive data without patient permission. This requires that consideration be given to how such restricted content will be determined and identified as ‘patient sensitive’ prior to invoking CRD to exchange patient data with payer systems.
-
-</div>
-
 #### Proposed Customizations to support CRD
 CDS Hooks is a relatively new technology.  It is considered a "Standard for Trial Use" (STU), meaning that it will continue to evolve based on implementer feedback and could change in ways that are not compatible with the current draft.  As well, the initial version of the CDS Hooks specification has focused on the core architecture and a relatively simple set of capabilities.  Additional capabilities will be introduced in future versions.
 
@@ -502,6 +496,8 @@ If a hook service is invoked on a collection of resources, all cards returned th
 
 ##### Controlling hook invocation
 Provider systems **SHALL** only invoke hooks on payer services where the the patient record indicates active coverage with the payer associated with the service.  Providers **MAY** limit hook invocation to only those payers that are believed to potentially have relevant information related to the current action - for example, clinical guidance, contraindication detection, etc.  This might be more payers than just those that are likely to provide coverage for the services referred to by the hook.
+
+Implementations **SHALL** restrict information shared with a payer to only the information appropriate to share with that payer, for example, not including patient pay or federal/state sensitive data without patient permission. This requires that consideration be given to how such restricted content will be determined and identified as ‘patient sensitive’, or how a patient will have an opportunity to indicate their intention to self-pay prior to invoking CRD to exchange patient data with payer systems.
 
 </div>
 
