@@ -130,6 +130,34 @@ CDS Hooks are intended to improve healthcare provider care planning processes by
 
 Payers and service providers **SHALL** ensure that CDS Hooks return only messages and information relevant and useful to the intended recipient.
 
+#### Enabling a CRD Server
+All CRD clients will need to be configured to support communicating to a particular CRD server.  This configuration process includes the following:
+
+* Confirming that the CRD Server can legitimately act on behalf of one or more payers
+
+* Confirming that the CRD Server can be trusted to receive and handle PHI
+
+* Determining which hook(s) to enable for that CRD Server
+
+* Determining what scopes to provide the CRD server with access to for access tokens issued to the service
+
+In order to initiate this process, the payer responsible for a given CRD Server must communicate with the relevant CRD client software vendor or provider organization and share the following information:
+
+* The URL of their server
+
+* Which hook types it supports
+
+* What scopes it needs to perform its full function (and why)
+
+
+#### CRD Access Tokens
+
+When a CRD client invokes a CRD server via CDS Hooks, it will provide an access token that allows the CRD server to retrieve additional patient information.  The base rules for this token are defined in the [CDS Hooks specification](https://cds-hooks.hl7.org/2.0/#passing-the-access-token-to-the-cds-service).  This specification imposes some additional constraints:
+
+* The EHR **SHOULD** limit the scopes provided in their access token to those identifed by the CRD service as necessary to perform their decision support.
+
+* Such access tokens **SHOULD** have an expiration time of no longer than 30 seconds (which is more than enough for even 'parallel' decision support with something like *Order Select* where a user is continuing to work while the decision support call is processing.)
+
 #### Proposed Customizations to support CRD
 CDS Hooks is a relatively new technology.  It is considered a "Standard for Trial Use" (STU), meaning that it will continue to evolve based on implementer feedback and could change in ways that are not compatible with the current draft.  As well, the initial version of the CDS Hooks specification has focused on the core architecture and a relatively simple set of capabilities.  Additional capabilities will be introduced in future versions.
 
