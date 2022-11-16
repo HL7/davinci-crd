@@ -99,12 +99,12 @@ Note:
 Based on the information provided/retrieved, the payer system returns guidance to the provider.  The guidance can be in several forms:
 * A simple message indicating that service is covered without additional requirements
 * A message describing what coverage requirements exist
-* A link to external documentation describing coverage requirements
+* A link to external documentation describing coverage requirements to help inform/educate providers (not as a substitute for electronic prior authorization)
 * Links to specific forms or templates that need to be completed
 * A link to open a SMART application that allows the provider to provide needed information or additional detail to help guide coverage requirements discovery
 * Links with recommendations to substitute the planned action with a different action and/or to add additional actions (e.g. proposals to replace a proposed drug to a required first-line treatment or a drug covered by the patient's plan, to add a concurrent medication, additional diagnostic tests, etc.)
 
-Payer requirements might include the need for prior authorization, forms that must be completed, medical documentation that must exist or be provided, recommendations on alternative therapies, etc.  
+Payer requirements might include the need for prior authorization, forms that must be completed, medical documentation that must exist or be provided, recommendations on alternative therapies, etc.
 
 **7. Provider invokes links**<br/>
 If the response includes links to additional information or apps, the provider can direct the EMR to interact further with the payer system by retrieving the linked-to information or launching the provided application.
