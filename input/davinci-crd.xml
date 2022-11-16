@@ -216,6 +216,11 @@
 				<generation value="markdown"/>
 			</page>
 			<page>
+				<nameUrl value="implementation.html"/>
+				<title value="Implementation Considerations"/>
+				<generation value="markdown"/>
+			</page>
+			<page>
 				<nameUrl value="allartifacts.html"/>
 				<title value="FHIR Artifacts"/>
 				<generation value="markdown"/>
