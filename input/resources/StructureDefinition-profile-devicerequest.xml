@@ -49,6 +49,10 @@
 				<code value="CodeableConcept"/>
 			</type>
 			<mustSupport value="true"/>
+			<binding>
+        <strength value="extensible"/>
+        <valueSet value="http://hl7.org/fhir/us/davinci-crd/ValueSet/deviceRequest"/>
+      </binding>
 		</element>
 		<element id="DeviceRequest.parameter">
 			<path value="DeviceRequest.parameter"/>
