@@ -46,6 +46,8 @@ This specification recognizes that CRD clients may be made up of multiple system
 
 **CRD Servers** (or servers) are systems that act on behalf of payer organizations to share information with healthcare providers about rules and requirements related to healthcare products and services covered by a patient's payer.  A CRD Server might provide coverage information related to one or more insurance plans. CRD Servers are a type of CDS Service as defined in the [CDS Hooks Specification](https://cds-hooks.hl7.org/2.0).
 
+Payers may have multiple back-end functions that handle different types of decision support and/or different types of services.  However, for the purpose of CRD conformance, payers **SHALL** have a single endpoint (managed by themselves or a delegate) that can handle responding to all CRD service calls.  CRD servers are free to route the information from those calls to back-end services as needed.  This routing may evolve over time and should have no impact on CRD client calls.
+
 #### Profiles
 This specification makes significant use of [FHIR profiles]({{site.data.fhir.path}}profiling.html), search parameter definitions, and terminology artifacts to describe the content to be shared as part of CDS Hook calls.  The implementation guide supports FHIR [R4]({{site.data.fhir.path}}) with profiles listed for each type of hook.
 
