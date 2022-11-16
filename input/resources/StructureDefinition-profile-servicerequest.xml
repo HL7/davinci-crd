@@ -46,7 +46,8 @@
 		</element>
 		<element id="ServiceRequest.doNotPerform">
 			<path value="ServiceRequest.doNotPerform"/>
-			<max value="0"/>
+			<comment value="...Client systems that do not allow ordering services with 'doNotPerform' of 'true' do not need to add support for this capability.  CRD services SHALL understand this element if populated.  Typically, 'doNotPerform' orders will not result in coverage-related card responses and might not result in any decision support at all.  In some cases, a payer might have documentation or other requirements relating to doNotPerform orders that they wish to communicate."/>
+			<mustSupport value="true"/>
 		</element>
 		<element id="ServiceRequest.code">
 			<path value="ServiceRequest.code"/>
