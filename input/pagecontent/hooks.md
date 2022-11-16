@@ -21,6 +21,14 @@ This implementation guide uses specific terminology to flag statements that have
 
 * **MAY** describes optional behaviors that implementers are free to consider but where there is no recommendation for or against adoption.
 
+#### MustSupport
+Profiles in this implementation guide make use of the [mustSupport]({{site.data.fhir.path}}profiling.html#mustsupport) element.
+
+For CRD clients, if the client maintains the data element and surfaces it to users, then it **SHALL** be exposed in their FHIR interface when the data exists and privacy constraints permit.
+
+For CRD servers, the server **SHALL** leverage mustSupport elements as available and appropriate to provide decision support.
+
+NOTE: These requirements are somewhat different from US-Core and HRex because the implementation needs are different.  In US-Core, there is generally an expectation for clients to modify code and persistence layers to add support mustSupport elements for supported profiles.  This expectation does not hold for CRD.  However, CRD does require surfacing elements in the FHIR interface if the system maintains the element.
 
 #### Systems
 
