@@ -119,7 +119,7 @@ Payers and EHRs are both encouraged to provide feedback around whether this timi
 
 #### Accuracy
 
-CDS services **SHALL** ensure that the guidance returned with respect to coverage and prior authorizations (e.g. assertions that a service is covered, or prior authorization is not necessary) is as accurate as guidance that would be provided by other means (e.g. portals, phone calls).  However, this doesn't mean that circumstances can't change in a way that invalidates an answer provided.  Also, such guidance should allow for possible variances in coding and submission.  (See [Impact on payer processes](background.html#impact-on-payer-processes) on the Background page.)
+CDS services **SHALL** ensure that the guidance returned with respect to coverage and prior authorizations (e.g. assertions that a service is covered, or prior authorization is not necessary) is as accurate as guidance that would be provided by other means (e.g. portals, phone calls).  Also, such guidance should allow for possible variances in coding and submission.  (See [Impact on payer processes](background.html#impact-on-payer-processes) on the Background page.)
 
 </div>
 
