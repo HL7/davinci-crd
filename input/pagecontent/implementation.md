@@ -2,7 +2,7 @@ This page lists considerations and recommendations for implementation that fall 
 
 ### Suppressing Guidance
 
-Some CRD clients might suppress certain types of payer guidance as being the 'default' presumption.  E.g. "Covered, no prior authorization required".  Where CRD systems do this, there may be an issue if the CRD service becomes unable to respond and the EHR does not clearly flag to the user that the service is not available.  I.e. Providers may incorrectly presume that authorization is not needed.  Clients that perform such suppression of messages **SHALL** mitigate this potential for misinterpretation.
+Some CRD clients might suppress certain types of payer guidance as being the 'default' presumption.  E.g. "Covered, no prior authorization required".  Where CRD systems do this, there may be an issue if the CRD service becomes unable to respond and the CRD client does not clearly flag to the user that the service is not available.  I.e. Providers may incorrectly presume that authorization is not needed.  Clients that perform such suppression of messages **SHALL** mitigate this potential for misinterpretation.
 
 ### Limitations on Accuracy
 

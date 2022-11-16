@@ -69,7 +69,7 @@
 		</element>
 		<element id="Task.owner">
 			<path value="Task.owner"/>
-			<comment value="This can be populated within the EHR to delegate responsibility for filling out the form to someone else."/>
+			<comment value="This can be populated within the CRD client to delegate responsibility for filling out the form to someone else."/>
 			<min value="0"/>
 			<max value="1"/>
 			<type>

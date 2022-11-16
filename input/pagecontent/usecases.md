@@ -112,9 +112,10 @@ If the response includes links to additional information or apps, the provider c
 
 #### Considerations
 
+* This page uses the term EMR as though it is a single monolithic system.  In practice, there may be a variety of systems working together that interact as a CRD client
 * The scenario above uses the term 'healthcare provider'.  Typically, that would be a physician, but in some cases, it could be a nurse, clerk, or other individual.
 * The EMR would only communicate to CRD Servers they have specifically authenticated and have a trust relationship with.
-* Similarly, the EMR would only launch apps or retrieve links that had previously been determined to be safe and trustworthy.  When launched, user context should be passed to apps to avoid the need for users, who have already been authenticated by the EHR, to log in again.
+* Similarly, the EMR would only launch apps or retrieve links that had previously been determined to be safe and trustworthy.  When launched, user context should be passed to apps to avoid the need for users, who have already been authenticated by the EMR, to log in again.
 * The EMR would determine in which situations a payer system would be contacted for CRD purposes and what level of information the payer system would be permitted to receive - including through the payer query mechanism.  The determination of what information is shared could be influenced by patient consent and other internal business rules.
 * The CRD query and response will be implemented by making a CDS Hooks service call and returning a set of cards.
 
