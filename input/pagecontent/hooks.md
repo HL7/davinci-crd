@@ -1031,8 +1031,7 @@ For example, this card indicates that a prior authorization has been granted for
   }]
 }]
 ```
-CRD clients and services SHALL support the new CDS Hooks system action functionality to cause annotations to automatically be stored on the relevant request, appointment, etc. without any user intervention. 
-In this case, a card **SHALL** still be displayed to the user conveying the coverage assertion.  These implementations will be responsible for ensuring that the only changes made to the CRD client record are to add the annotations contemplated here.  CRD clients MAY be configured to not execute system actions under some circumstances - e.g. if the order has been cancelled/abandoned.
+CRD clients and services SHALL support the new CDS Hooks system action functionality to cause annotations to automatically be stored on the relevant request, appointment, etc. without any user intervention. In this case, the discrete information propagated into the order extension **SHALL** be available to the user for viewing.  However, this might be managed with icons, flyovers or alternate mechanisms than traditional CDS Hook card rendering.  The key consideration is that the user is aware that the information is available and can easily get to it.  These implementations will be responsible for ensuring that the only changes made to the CRD client record are to add the annotations contemplated here.  CRD clients MAY be configured to not execute system actions under some circumstances - e.g. if the order has been cancelled/abandoned.
 
 <blockquote class="note-to-balloters">
 <p>
