@@ -1,6 +1,6 @@
 ### Business Need
 
-Providers need to easily discover which payer covered services or devices have:
+Providers need to easily discover which payer covered services, medications (not covered by NCPDP) or devices have:
 * Specific documentation requirements,
 * Rules for determining the need for specific treatments/services,
 * Requirements for Prior Authorization (PA) or other approvals, and
