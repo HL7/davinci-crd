@@ -2,7 +2,7 @@
 
 ### Usage
 <br/>
-CRD Clients SHALL use this profile to [resolve references](hooks.html#additional-data-retrieval) to Encounter resources passed to CRD Servers, including `encounterId` context references when invoking the following CDS Hooks:
+CRD Clients **SHALL** use this profile to [resolve references](hooks.html#additional-data-retrieval) to Encounter resources passed to CRD Servers, including `encounterId` context references when invoking the following CDS Hooks:
 * [appointment-book](hooks.html#appointment-book)
 * [encounter-start](hooks.html#encounter-start)
 * [encounter-discharge](hooks.html#encounter-discharge)

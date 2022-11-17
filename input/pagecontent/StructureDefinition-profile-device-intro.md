@@ -2,7 +2,7 @@
 
 ### Usage
 <br/>
-CRD Clients SHALL use this profile to [resolve references](hooks.html#additional-data-retrieval) to Device resources passed to CRD Servers.
+CRD Clients **SHALL** use this profile to [resolve references](hooks.html#additional-data-retrieval) to Device resources passed to CRD Servers.
 
 Information provided in [Must Support]({{site.data.fhir.path}}profiling.html#mustsupport) elements will commonly be required for CRD Servers to perform coverage requirements discovery.
 <br/>

@@ -8,7 +8,7 @@
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-patient-deident').baseDefinition: US FHIR Usage rules require that all profiles on Patient derive from the core US profile
 
 # Not expecting support for CPT codes.  Have validated it's correct
-WARNING: ValueSet.where(id = 'serviceRequestCodes'): Error from server: Unable to provide support for code system http://www.ama-assn.org/go/cpt
+Error from server: Unable to provide support for code system http://www.ama-assn.org/go/cpt
 
 # Coverage isn't part of the version of US Core we're complying with
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-coverage').baseDefinition: US FHIR Usage rules require that all profiles on Coverage derive from the core US profile

@@ -135,3 +135,13 @@ v: {
   "system" : "https://www.usps.com/"
 }
 -------------------------------------------------------------------------------------
+{"hierarchical" : false, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/deviceRequest", "version": "1.1.0-ballot"}####
+e: {
+  "error" : "Error from server: Unable to provide support for code system http://www.ama-assn.org/go/cpt"
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : true, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/deviceRequest", "version": "1.1.0-ballot"}####
+e: {
+  "error" : "Error from server: Unable to provide support for code system http://www.ama-assn.org/go/cpt"
+}
+-------------------------------------------------------------------------------------

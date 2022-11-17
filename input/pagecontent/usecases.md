@@ -34,11 +34,11 @@ Note: An app may also provide Dr. Good with additional useful information, such 
 #### Scenario 2
 Mrs. Smith is a 75-year-old female on a Medicare Fee-For-Service plan with long standing chronic obstructive pulmonary disease (COPD) who has had slowly and progressively worsening shortness of breath with activity.  In the office, her room air saturation after a 5-minute walk is found to be 84%.  She has additional evaluation that reveals no new findings.  Dr. Good wants to initiate home oxygen therapy for Mrs. Smith.
 
-As Dr. Good begins crafting the order in his EMR^*^, it uses Mrs. Smith's coverage information to initiate a querying to a CRD Server used by her payer that includes the code for home oxygen therapy.  An alert appears at the bottom of the EMR order entry screen notifying Dr. Good that specific testing and documentation is required to substantiate the need for home oxygen therapy.
+As Dr. Good begins crafting the order in his EMR<sup>*</sup>, it uses Mrs. Smith's coverage information to initiate a querying to a CRD Server used by her payer that includes the code for home oxygen therapy.  An alert appears at the bottom of the EMR order entry screen notifying Dr. Good that specific testing and documentation is required to substantiate the need for home oxygen therapy.
 
 Dr. Good retrieves specific documentation templates which have already been populated with information from his EMR.  He completes any remaining documentation requirements, signs the documentation, and includes it in Mrs. Smith's medical record.
 
-^*^ Note: This flow envisions the use of the Order Select hook, which allows guidance to be returned while the user is in the process of writing the order.  However, this is an optional hook, so for some systems, the flow of the use-case would be altered to have the clinician only receive guidance when they had completed the order and reached the 'signing' step.
+<sup>*</sup> Note: This flow envisions the use of the Order Select hook, which allows guidance to be returned while the user is in the process of writing the order.  However, this is an optional hook, so for some systems, the flow of the use-case would be altered to have the clinician only receive guidance when they had completed the order and reached the 'signing' step.
 
 #### Scenario 3
 Mr. Light is a 45-year-old generally healthy male who presents for an annual exam.  His physical exam is normal.  Dr. Good checks a basic metabolic panel and determines that Mr. Light's kidney function is diminished (Creatinine of 2.5) which is new compared to his function one year prior (Creatinine of 1). Dr. Good wants to refer Mr. Light to a nephrologist for further evaluation.

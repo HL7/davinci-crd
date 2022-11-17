@@ -2,7 +2,7 @@
 
 ### Usage
 <br/>
-CRD Clients SHALL use this profile to convey unsolicited prior authorizations stemming from planned orders.
+CRD Clients **SHALL** use this profile to convey unsolicited prior authorizations stemming from planned orders.
 
 Refer to the section on [Pre-emptive Prior Authorization cards](hooks.html#pre-emptive-prior-authorization) in the formal specification for more information.
 <br/>

@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Sat, Nov 12, 2022 04:41+0000 for FHIR v5.0.0-cibuild 
+  Generated on Thu, Nov 17, 2022 13:04+0000 for FHIR v5.0.0-cibuild 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="5.0.0-cibuild">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -61008,7 +61008,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="molecularWeight" type="SubstanceDefinition.MolecularWeight" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The molecular weight or weight range (for proteins, polymers or nucleic acids).</xs:documentation>
+              <xs:documentation xml:lang="en">The average mass of a molecule of a compound compared to 1/12 the mass of carbon 12 and calculated as the sum of the atomic weights of the constituent atoms.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="structure" type="SubstanceDefinition.Structure" minOccurs="0" maxOccurs="1">
@@ -61179,7 +61179,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="molecularFormula" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Molecular formula of this substance, typically using the Hill system.</xs:documentation>
+              <xs:documentation xml:lang="en">An expression which states the number and type of atoms present in a molecule of a substance.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="molecularFormulaByMoiety" minOccurs="0" maxOccurs="1" type="string">

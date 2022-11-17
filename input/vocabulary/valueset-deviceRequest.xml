@@ -7,6 +7,7 @@
   <status value="draft"/>
   <experimental value="false"/>
   <description value="Codes for ordering devices.&#xa;&#xa;NOTE: This value set contains many inappropriate codes because the underlying code systems do not provide a straight-forward mechanism to select only device-related codes and, given the evolving nature of the underlying code systems, strict enumeration is not a viable approach to defining the value set."/>
+  <copyright value="Current Procedural Terminology (CPT) is copyright 2020 American Medical Association. All rights reserved."/>
   <compose>
     <include>
       <system value="http://www.ama-assn.org/go/cpt"/>
