@@ -17,21 +17,21 @@
   <concept>
     <code value="covered"/>
 	<display value="Covered"/>
-    <definition value="regular coverage applies"/>
+    <definition value="Regular coverage applies"/>
   </concept>
   <concept>
     <code value="prior-auth"/>
 	<display value="Prior authorization"/>
-    <definition value="coverage is possible with prior authorization"/>
+    <definition value="Coverage is possible with prior authorization"/>
   </concept>
   <concept>
     <code value="clinical"/>
 	<display value="Clinical"/>
-    <definition value="clinical details are required to determine coverage/prior auth applicability - e.g. via DTR by clinician"/>
+    <definition value="Clinical details are required to determine coverage/prior auth applicability - e.g. via DTR by clinician.  Indicates that the CRD client should expose the need to launch DTR to clinical users."/>
   </concept>
   <concept>
     <code value="admin"/>
 	<display value="Admin"/>
-    <definition value="administrative details are required to determine coverage/prior auth applicability - e.g. via DTR by clinician"/>
+    <definition value="administrative details are required to determine coverage/prior auth applicability - e.g. via DTR by back-end staff.  Indicates that while the CRD client might expose the ability to launch DTR as an option for clinical users, it should be clear that clinical input is not necessary and deferring the use of DTR to back-end staff is perfectly appropriate.  Some CRD clients might be configured (based on provider preference) to not even show clinicians the option to launch."/>
   </concept>
 </CodeSystem>
