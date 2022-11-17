@@ -232,8 +232,11 @@ An extension called `davinci-crd.configuration-options` will define a configurat
 *  A `default` value **SHOULD** also be provided to show users what to expect when an override is not specified.
 
 <div markdown="1" class="new-content">
+
+CRD servers SHALL, at minimum, offer configuration options for each type of card they support (with a code corresponding to the <a href="ValueSet-cardType.html">CRD Card Types</a> ValueSet and a type of 'boolean', where setting the flag to false will result in the server not returning any cards of the specified type.  This allows CRD clients to control what types of cards they wish to receive at all, or to receive in particular workflow contexts or for certain users.
+
 <p>
-The binding on the 'code' element is new
+Also, the binding on the 'code' element is new
 </p>
 </div>
 
@@ -293,7 +296,7 @@ For example, a [CDS Service Response](https://cds-hooks.hl7.org/2.0/#response) f
 
 Notes:
 
-*  This version of the implementation guide is not proposing to standardize the codes, names, types, or descriptions for configuration options for CRD Servers.  If configurability proves to be useful, future versions of the CRD specification will work towards standardizing configuration options so that there is consistency in behavior across payer services to ease the burden on those performing configuration.
+*  This version of the implementation guide provides only limited standardization of the codes, names, types, or descriptions for configuration options for CRD Servers.  Future versions of the CRD specification may standardize additional configuration options that have been identified as useful by individual payer and CRD client experimentation - thereby improving consistency in behavior across payer services to ease the burden on those performing configuration.
 
 *  There is no mechanism to express co-occurrence rules amongst configuration options.  Guidance can be given about allowed combinations in descriptions, but payer services **SHALL** gracefully handle disallowed/nonsensical combinations.  I.e. the CRD Server must:
 
