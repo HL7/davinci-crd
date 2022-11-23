@@ -74,6 +74,33 @@
         <valueSet value="http://hl7.org/fhir/us/davinci-crd/ValueSet/coverageGuidance"/>
       </binding>
     </element>
+    <element id="Extension.extension:billingCode">
+      <path value="Extension.extension"/>
+      <sliceName value="billingCode"/>
+      <short value="Billing code"/>
+      <definition value="Billing code(s) that must be used in the eventual claim for the coverage assertion to hold"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="Extension"/>
+      </type>
+    </element>
+    <element id="Extension.extension:billingCode.url">
+      <path value="Extension.extension.url"/>
+      <fixedUri value="billingCode"/>
+    </element>
+    <element id="Extension.extension:billingCode.value[x]">
+      <path value="Extension.extension.value[x]"/>
+      <min value="1"/>
+      <max value="*"/>
+      <type>
+        <code value="Coding"/>
+      </type>
+      <binding>
+        <strength value="example"/>
+        <valueSet value="http://hl7.org/fhir/ValueSet/service-uscls"/>
+      </binding>
+    </element>
     <element id="Extension.extension:coverage">
       <path value="Extension.extension"/>
       <sliceName value="coverage"/>

@@ -156,7 +156,12 @@ Payers and Healthcare IT system vendors are both encouraged to provide feedback 
 
 CDS services **SHALL** ensure that the guidance returned with respect to coverage and prior authorizations (e.g. assertions that a service is covered, or prior authorization is not necessary) is as accurate as guidance that would be provided by other means (e.g. portals, phone calls).  Also, such guidance should allow for possible variances in coding and submission.  (See [Impact on payer processes](background.html#impact-on-payer-processes) on the Background page.)
 
+#### Terminology
+When invoking CDS Hooks, resources reflecting the clinical/business representation of the order, appointment, encounter, etc. will be transmitted to the CRD Server.  These data representations will generally make use of codes to describe the type of service/product being ordered/booked/performed.  These codes will draw from the code systems used at this stage of the business process and will typically be "clinical" codes rather than "billing" codes.  That said, it is always possible to send multiple codings within a CodeableConcept.  Where the selected code is not already a 'billing' code and CRD clients are able to automatically determine what the corresponding billing code is, they **SHOULD** send a Coding with the billing code alongside the clinical code to reduce the risk of the receiving payer making a differing translation.
+
 </div>
+
+
 
 ### CDS Hooks
 
@@ -957,6 +962,10 @@ This response type presents a `Card` with a piece of information that should be 
 The note uses the [Annotation]({{site.data.fhir.path}}datatypes.html#Annotation) data type and captures the comment, the date, and who made the assertion.  In this case, the commenter would be the payer organization. The payers **SHOULD** include all the discrete information in the 'annotation'.  The 'detail' for the card **SHOULD** indicate that the statement is point-in-time.  Note that the text **SHOULD** *also* be displayed in the card, with the button link simply saying "Add to record" or something similar.  The requested action is always an 'update' and there is only ever one alternative. It is to be noted that this will be handled as a single 'update' action. CRD clients that don't support the extension will ignore it and just store the annotation.
 
 In addition to the annotation, a new FHIR [coverage-information](StructureDefinition-ext-coverage-information.html) extension is defined that allows assertions around coverage and prior authorization to also be captured computably, including what assertion is made, what coverage the assertion is made with respect to, when the assertion was made, and - optionally - a trace id that can be used for audit purposes.
+
+Assertions about coverage, prior authorization requirements, etc. are of course contingent on the eventual claim for the ordered service being aligned with the payer expectations.  Because the order/appointment/etc. will not have the same information that would typically be included in a formal request for prior authorization or pre-determination, the payer will need to infer from the order what billing codes, qualifiers, dollar amounts, etc. would typically be involved.  In some cases, the answer might differ depending on factors such as in/out of network, when the service is delivered, etc.  These qualifiers around when the coverage assertion is considered valid **SHALL** be included as part of the annotation.
+
+If a CRD service has provided limitations about when a coverage assertion applies that turn out to not be consistent with what the provider intends to do (e.g. payer says covered if billed as X, but provider intends to bill as Y), then the provider can always use the normal prior authorization process to solicit an authorization that more precisely aligns with their expectations for how the service will eventually be billed.
 
 CRD Servers that make assertions with respect to coverage and prior authorization **SHALL** provide an annotation card that includes both the human-readable and computable version.  Clients **SHALL** store at least one of the two forms.
 
