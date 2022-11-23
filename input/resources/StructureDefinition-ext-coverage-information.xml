@@ -79,8 +79,8 @@
       <sliceName value="billingCode"/>
       <short value="Billing code"/>
       <definition value="Billing code(s) that must be used in the eventual claim for the coverage assertion to hold"/>
-      <min value="1"/>
-      <max value="1"/>
+      <min value="0"/>
+      <max value="*"/>
       <type>
         <code value="Extension"/>
       </type>
@@ -101,6 +101,39 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/service-uscls"/>
       </binding>
     </element>
+
+    <element id="Extension.extension:reason">
+      <path value="Extension.extension"/>
+      <sliceName value="reason"/>
+      <short value="Reason for assertion"/>
+      <definition value="Indicates the 'reason' for the coverage assertion"/>
+      <comment value="This can be used whenever the reason may not be obvious to the practitioner.  E.g. prior authorization waived because the provider is gold-carded; patient is no longer a minor and hasn't been registered as an adult dependent; patient has reached their limit for this type of service this year; etc.
+
+Additional standard reason codes may be introduced in the future.  If no standard code applies, use text."/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="Extension"/>
+      </type>
+    </element>
+    <element id="Extension.extension:reason.url">
+      <path value="Extension.extension.url"/>
+      <fixedUri value="reason"/>
+    </element>
+    <element id="Extension.extension:reason.value[x]">
+      <path value="Extension.extension.value[x]"/>
+      <min value="1"/>
+      <max value="*"/>
+      <type>
+        <code value="CodeableConcept"/>
+      </type>
+      <binding>
+        <strength value="extensible"/>
+        <valueSet value="http://hl7.org/fhir/us/davinci-crd/ValueSet/coverage-assertion-reasons"/>
+      </binding>
+    </element>
+    
+    
     <element id="Extension.extension:coverage">
       <path value="Extension.extension"/>
       <sliceName value="coverage"/>

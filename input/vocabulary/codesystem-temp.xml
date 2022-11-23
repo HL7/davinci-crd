@@ -33,8 +33,12 @@
     <code value="after-completion-action"/>
     <display value="A task input indicating an action that should be taken after a QuestionnaireResponse has been completed on a specified Questionnaire.  (Multiple completion actions can be specified.)"/>
   </concept>
-   <concept>
+  <concept>
     <code value="deferred-CRD-action"/>
     <display value="A code used in CRD task profile to denote a deferred action"/>
+  </concept>
+  <concept>
+    <code value="gold-card"/>
+    <display value="Ordering Practitioner has been granted 'gold card' status with this payer/coverage type."/>
   </concept>
 </CodeSystem>
