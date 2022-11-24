@@ -34,11 +34,6 @@
   "encounter": {
     "reference": "Encounter/example"
   },
-  "supportingInformation": [
-    {
-      "reference": "Coverage/example"
-    }
-  ],
   "authoredOn": "2015-01-15",
   "requester": {
     "reference": "Practitioner/example"

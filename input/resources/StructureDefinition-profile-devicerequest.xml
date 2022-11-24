@@ -116,13 +116,5 @@
 			</type>
 			<mustSupport value="true"/>
 		</element>
-		<element id="DeviceRequest.insurance">
-			<path value="DeviceRequest.insurance"/>
-			<type>
-				<code value="Reference"/>
-				<targetProfile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-coverage"/>
-			</type>
-			<mustSupport value="true"/>
-		</element>
 	</differential>
 </StructureDefinition>

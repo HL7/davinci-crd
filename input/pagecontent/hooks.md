@@ -1462,21 +1462,6 @@ For example, this CDS Hook [Card](https://cds-hooks.hl7.org/2.0/#cds-service-res
         }
       }
     }]
-  }, {
-    "label": "Link coverage to existing Drug X prescription",
-    "uuid": "9309cc18-fea1-4939-ab0c-ecb15bedf043",
-    "actions": [{
-      "type": "update",
-      "description": "Update prescription to include coverage",
-      "resource": {
-        "resourceType": "MedicationRequest",
-        "id": "5678",
-        ...
-        "insurance": {
-          "reference": "Coverage/1234"
-        }
-      }
-    }]
   }]
 }
 ```
@@ -1694,7 +1679,7 @@ Other information will need to be retrieved using queries that are more specific
       &_include=DeviceRequest:device<br/>
       &_include:iterate=PractitionerRole:organization<br/>
       &_include:iterate=PractitionerRole:practitioner<br/><br/>
-      Coverage?member={{context.patient}}</code>
+      Coverage?patient={{context.patient}}</code>
     </td>
     <td>No performing location</td>
   </tr>
@@ -1706,7 +1691,7 @@ Other information will need to be retrieved using queries that are more specific
       &_include=Encounter:service-provider<br/>
       &_include=Encounter:practitioner<br/>
       &_include=Encounter:location<br/><br/>
-      Coverage?member={{context.patient}}</code>
+      Coverage?patient={{context.patient}}</code>
     </td>
     <td>No requester</td>
   </tr>
@@ -1720,7 +1705,7 @@ Other information will need to be retrieved using queries that are more specific
       &_include=MedicationRequest:medication<br/>
       &_include:iterate=PractitionerRole:organization<br/>
       &_include:iterate=PractitionerRole:practitioner</br>
-      Coverage?member={{context.patient}}</code>
+      Coverage?patient={{context.patient}}</code>
     </td>
     <td>No performing location</td>
   </tr>
@@ -1734,7 +1719,8 @@ Other information will need to be retrieved using queries that are more specific
       &_include:iterate=PractitionerRole:organization<br/>
       &_include:iterate=PractitionerRole:practitioner<br/>
       &_include=NutritionOrder:encounter<br/>
-      &_include:iterate=Encounter:location</code>
+      &_include:iterate=Encounter:location<br/>
+      Coverage?patient={{context.patient}}</code>
     </td>
     <td>Location only through request encounter</td>
   </tr>
@@ -1746,7 +1732,8 @@ Other information will need to be retrieved using queries that are more specific
       &_include=ServiceRequest:performer<br/>
       &_include=ServiceRequest:requester<br/>
       &_include:iterate=PractitionerRole:organization<br/>
-      &_include:iterate=PractitionerRole:practitioner</code>
+      &_include:iterate=PractitionerRole:practitioner</br>
+      Coverage?patient={{context.patient}}</code>
     </td>
     <td>No performer location</td>
   </tr>
