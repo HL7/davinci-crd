@@ -449,7 +449,7 @@ For example, this [CDS Hook Suggestion](https://cds-hooks.hl7.org/2.0/#suggestio
       "intent": "order",
       "code": {
         "coding": [{
-          "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/task-type",
+          "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
           "code": "complete-questionnaire"
         }]
       },
@@ -460,8 +460,8 @@ For example, this [CDS Hook Suggestion](https://cds-hooks.hl7.org/2.0/#suggestio
       "authoredOn": "2018-08-09",
       "reasonCode": {
         "coding": [{
-          "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/task-reason",
-          "code": "prior-auth",
+          "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+          "code": "reason-prior-auth",
           "display": "Needed for prior authorization"
         }]
       },
@@ -476,8 +476,8 @@ For example, this [CDS Hook Suggestion](https://cds-hooks.hl7.org/2.0/#suggestio
         },
         "valueCodeableConcept": {
           "coding": [{
-            "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/after-completion",
-            "code": "prior-auth",
+            "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+            "code": "prior-auth-include",
             "display": "Include in prior authorization"
           }]
         }
@@ -559,7 +559,7 @@ If a hook service is invoked on a collection of resources, all cards returned th
     "url": "https://example.com",
     "icon": "https://example.com/img/icon-100px.png",
     "topic": {
-      "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/cardType",
+      "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
       "code": "prior-auth",
       "display": "Prior Authorization"
     }
@@ -903,7 +903,7 @@ For example, this CDS Hooks [Card](https://cds-hooks.hl7.org/2.0/#cds-service-re
     "label": "Centers for Medicare & Medicaid Services",
     "url": "https://cms.gov",
     "topic": {
-      "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/cardType",
+      "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
       "code": "coverage",
       "display": "Coverage"
     }
@@ -945,7 +945,7 @@ This example CDS Hook [Card](https://cds-hooks.hl7.org/2.0/#cds-service-response
     "url": "https://example.com",
     "icon": "https://example.com/img/icon-100px.png",
     "topic": {
-      "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/cardType",
+      "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
       "code": "prior-auth",
       "display": "Prior Authorization"
     }
@@ -1004,10 +1004,10 @@ For example, this card indicates that a prior authorization has been granted for
 
 ```
 "suggestions": [{
-  "label": "Prior authorization granted by XYZ insurer.  Auth #:12345 - add to record?",
+  "label": "Prior authorization required if out-of-network",
   "actions": [{
     "type": "update",
-    "description": "Add authorization to record",
+    "description": "Add coverage information to record",
     "resource": {
       "resourceType": "ServiceRequest",
       "id": "idfromcontext",
@@ -1018,9 +1018,9 @@ For example, this card indicates that a prior authorization has been granted for
             {
               "url": "coverageInfo",
               "valueCoding": {
-                "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/coverageGuidance",
-                "code": "prior-auth",
-                "display": "Prior Authorization"
+                "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+                "code": "covered-prior-auth",
+                "display": "Covered with prior authorization"
               }
             },
             {
@@ -1028,6 +1028,61 @@ For example, this card indicates that a prior authorization has been granted for
               "valueReference": {
                 "reference": "Coverage/example"
               }
+            },
+            {
+              "url": "billingCode",
+              "valueCodeableConcept": {
+                "coding": [{
+                  "system": "http://www.ama-assn.org/go/cpt",
+                  "code": "77065"
+                }]
+              }
+            },
+            {
+              "url": "billingCode",
+              "valueCodeableConcept": {
+                "coding": [{
+                  "system": "http://www.ama-assn.org/go/cpt",
+                  "code": "77066"
+                }]
+              }
+            },
+            {
+              "url": "billingCode",
+              "valueCodeableConcept": {
+                "coding": [{
+                  "system": "http://www.ama-assn.org/go/cpt",
+                  "code": "77067"
+                }]
+              }
+            },
+            {
+              "url": "reason",
+              "valueCodeableConcept": {
+                "text": "In-network required unless exigent circumstances"
+              }
+            },
+            {
+              "url": "detail",
+              "extension": [
+                {
+                  "url": "code",
+                  "valueCodeableConcept": {
+                    "coding" [{
+                      "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+                      "code": "auth-out-network-only"
+                    }]
+                  }
+                },
+                {
+                  "url": "value",
+                  "valueBoolean": true
+                },
+                {
+                  "url": "qualification",
+                  "valueString": "Out-of-network prior auth does not apply if delivery occurs at a service site designated as 'remote'"
+                }
+              ]
             },
             {
              "url": "date",
@@ -1331,7 +1386,7 @@ The following is an example CDS Hook [Suggestion](https://cds-hooks.hl7.org/2.0/
       "intent": "order",
       "code": {
         "coding": [{
-          "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/task-type",
+          "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
           "code": "complete-questionnaire"
         }]
       },
@@ -1342,8 +1397,8 @@ The following is an example CDS Hook [Suggestion](https://cds-hooks.hl7.org/2.0/
       "authoredOn": "2018-08-09",
       "reasonCode": {
         "coding": [{
-          "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/task-reason",
-          "code": "prior-auth",
+          "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+          "code": "prior-auth-reason",
           "display": "Needed for prior authorization"
         }]
       },
@@ -1358,8 +1413,8 @@ The following is an example CDS Hook [Suggestion](https://cds-hooks.hl7.org/2.0/
         },
         "valueCodeableConcept": {
           "coding": [{
-            "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/after-completion",
-            "code": "prior-auth",
+            "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+            "code": "prior-auth-include",
             "display": "Include in prior authorization"
           }]
         }
@@ -1386,7 +1441,7 @@ For example, this CDS Hook [Card](https://cds-hooks.hl7.org/2.0/#cds-service-res
     "url": "https://example.com",
     "icon": "https://example.com/img/icon-100px.png",
     "topic": {
-      "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/cardType",
+      "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
       "code": "coverage",
       "display": "Coverage"
     }
@@ -1447,7 +1502,7 @@ For example, this [Card](https://cds-hooks.hl7.org/2.0/#cds-service-response) co
     "url": "https://example.com",
     "icon": "https://example.com/img/icon-100px.png",
     "topic": {
-      "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/cardType",
+      "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
       "code": "coverage",
       "display": "Coverage"
     }
@@ -1495,7 +1550,7 @@ CRD clients and services **MAY**, by mutual agreement, make use of the new CDS H
     "url": "https://example.com",
     "icon": "https://example.com/img/icon-100px.png",
     "topic": {
-      "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/cardType",
+      "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
       "code": "prior-auth",
       "display": "Prior Authorization"
     }
@@ -1917,7 +1972,7 @@ For example, this CDS Hook [Card](https://cds-hooks.hl7.org/2.0/#cds-service-res
     "url": "https://example.com",
     "icon": "https://example.com/img/icon-100px.png",
     "topic": {
-      "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/cardType",
+      "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
       "code": "deferred-task",
       "display": "Deferred Task"
     }

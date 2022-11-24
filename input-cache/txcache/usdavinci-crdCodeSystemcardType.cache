@@ -1,0 +1,37 @@
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "inactive" : true,
+    "include" : [{
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/cardType"
+    }]
+  }
+}}####
+e: {
+  "error" : "Error from server: Unable to provide support for code system http://hl7.org/fhir/us/davinci-crd/CodeSystem/cardType"
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/cardType", "version": "1.1.0-ci-build"}####
+e: {
+  "error" : "Error from server: Unable to provide support for code system http://hl7.org/fhir/us/davinci-crd/CodeSystem/cardType"
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : true, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "inactive" : true,
+    "include" : [{
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/cardType"
+    }]
+  }
+}}####
+e: {
+  "error" : "Error from server: Unable to provide support for code system http://hl7.org/fhir/us/davinci-crd/CodeSystem/cardType"
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : true, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/cardType", "version": "1.1.0-ci-build"}####
+e: {
+  "error" : "Error from server: Unable to provide support for code system http://hl7.org/fhir/us/davinci-crd/CodeSystem/cardType"
+}
+-------------------------------------------------------------------------------------

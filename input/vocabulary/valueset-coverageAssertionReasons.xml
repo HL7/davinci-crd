@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ValueSet xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
-  <id value="cardType"/>
-  <url value="http://hl7.org/fhir/us/davinci-crd/ValueSet/cardType"/>
-  <name value="CardType"/>
-  <title value="CRD Card Types Value Set"/>
+  <id value="coverageAssertionReasons"/>
+  <url value="http://hl7.org/fhir/us/davinci-crd/ValueSet/coverageAssertionReasons"/>
+  <name value="CRDCoverageAssertionReasons"/>
+  <title value="CRD Coverage Assertion Reasons"/>
   <status value="draft"/>
   <experimental value="false"/>
-  <description value="List of card types"/>
+  <description value="Reasons for a coverage assertion in the coverage-information extension"/>
   <compose>
     <include>
       <system value="http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp"/>
-      <filter>
-        <property value="concept"/>
-        <op value="descendent-of"/>
-        <value value="_cardType"/>
-      </filter>
+      <concept>
+        <code value="gold-card"/>
+      </concept>
     </include>
   </compose>
 </ValueSet>

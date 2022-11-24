@@ -25729,3 +25729,13 @@ v: {
   "system" : "http://snomed.info/sct"
 }
 -------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://snomed.info/sct",
+  "code" : "25267002"
+}, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/serviceRequestCodes--1", "version": "1.1.0-ci-build", "lang":"null", "useServer":"true", "useClient":"false", "guessSystem":"false", "valueSetMode":"ALL_CHECKS", "versionFlexible":"true"}####
+v: {
+  "display" : "Insertion of intracardiac pacemaker",
+  "code" : "25267002",
+  "system" : "http://snomed.info/sct"
+}
+-------------------------------------------------------------------------------------

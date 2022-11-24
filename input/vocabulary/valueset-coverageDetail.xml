@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="coverageDetail"/>
+  <url value="http://hl7.org/fhir/us/davinci-crd/ValueSet/coverageDetail"/>
+  <name value="CRDCoverageDetailCodes"/>
+  <title value="CRD Coverage Detail Codes"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <description value="Codes for name-value-pair details on a coverage assertion"/>
+  <compose>
+    <include>
+      <system value="http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp"/>
+      <concept>
+        <code value="allowed-quantity"/>
+      </concept>
+      <concept>
+        <code value="allowed-period"/>
+      </concept>
+      <concept>
+        <code value="in-network-copay"/>
+      </concept>
+      <concept>
+        <code value="out-network-copay"/>
+      </concept>
+      <concept>
+        <code value="auth-out-network-only"/>
+      </concept>
+      <concept>
+        <code value="concurrent-review"/>
+      </concept>
+      <concept>
+        <code value="appropriate-use-needed"/>
+      </concept>
+    </include>
+  </compose>
+</ValueSet>

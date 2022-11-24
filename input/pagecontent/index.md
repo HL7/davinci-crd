@@ -41,7 +41,7 @@ This implementation guide supports both Protected Health Information (PHI)-speci
 * alternative (e.g. first-line, lower-cost, etc.) services or products
 * documentation requirements and rules related to coverage
 * forms and templates to complete
-* indications of whether prior authorization is required
+* indications of whether a therapy is covered or prior authorization is required, including propagating this information into the relevant order/appointment
 
 This implementation guide is designed to allow for initial support of basic capabilities and to subsequently build new features over time.
 

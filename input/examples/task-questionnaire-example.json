@@ -72,7 +72,7 @@
           {
             "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
             "code": "prior-auth",
-            "display": "Include in prior authorization"
+            "display": "Prior authorization"
           }
         ]
       }

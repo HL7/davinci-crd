@@ -6,10 +6,25 @@
   <title value="Coverage Guidance Value Set"/>
   <status value="draft"/>
   <experimental value="false"/>
-  <description value="Coverage guidance"/>
+  <description value="Codes defining types of coverage guidance"/>
   <compose>
     <include>
-      <system value="http://hl7.org/fhir/us/davinci-crd/CodeSystem/coverageGuidance"/>  
+      <system value="http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp"/>
+      <concept>
+        <code value="not-covered"/>
+      </concept>
+      <concept>
+        <code value="covered"/>
+      </concept>
+      <concept>
+        <code value="covered-prior-auth"/>
+      </concept>
+      <concept>
+        <code value="clinical"/>
+      </concept>
+      <concept>
+        <code value="admin"/>
+      </concept>
     </include>
   </compose>
 </ValueSet>

@@ -11,13 +11,13 @@
     <include>
       <system value="http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp"/>
       <concept>
-        <code value="prior-auth"/>
+        <code value="prior-auth-include"/>
       </concept>
       <concept>
-        <code value="initial-claim"/>
+        <code value="initial-claim-include"/>
       </concept>
       <concept>
-        <code value="all-claims"/>
+        <code value="all-claims-include"/>
       </concept>
       <concept>
         <code value="to-endpoint"/>

@@ -7,9 +7,9 @@
         {
           "url": "coverageInfo",
           "valueCoding": {
-            "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/coverageGuidance",
-            "code": "prior-auth",
-            "display": "Prior Authorization"
+            "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+            "code": "covered-prior-auth",
+            "display": "Covered with prior authorization"
           }
         },
         {

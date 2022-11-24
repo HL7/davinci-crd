@@ -3,7 +3,7 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../input-cache/schemas/R4/fhir-single.xsd">
 	<id value="davinci-crd"/>
 	<url value="http://hl7.org/fhir/us/davinci-crd/ImplementationGuide/davinci-crd"/>
-	<version value="1.1.0-ballot"/>
+	<version value="1.1.0-ci-build"/>
 	<name value="CoverageRequirementsDiscovery"/>
 	<title value="Da Vinci - Coverage Requirements Discovery"/>
 	<status value="draft"/>
@@ -253,7 +253,7 @@
 		</parameter>
 		<parameter>
 			<code value="releaselabel"/>
-			<value value="STU 1.1"/>
+			<value value="CI-build"/>
 		</parameter>
 		<parameter>
 			<code value="find-other-resources"/>

@@ -58,7 +58,7 @@ INFORMATION: ServiceRequest/example: ServiceRequest: Validate resource against p
 INFORMATION: Task/questionnaire-example: Task: Validate resource against profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-taskquestionnaire
 
 # This identifier is intended to show that identifiers that *aren't* in one of the slices are also valid
-INFORMATION: Practitioner/example: Practitioner.identifier[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-practitioner
+INFORMATION: Practitioner/example: Practitioner.identifier[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-practitioner|1.1.0-ci-build
 
 # These code systems are made up and aren't expected to be evaluated
 Code System URI 'http://example.org/fhir/modifiers' is unknown so the code cannot be validated

@@ -8,37 +8,210 @@
   <experimental value="false"/>
   <description value="Codes temporarily defined as part of the CRD implementation guide.  These will eventually migrate into an officially maintained terminology (likely either SNOMED CT or HL7's UTG code systems)."/>
   <caseSensitive value="true"/>
+  <hierarchyMeaning value="is-a"/>
   <content value="complete"/>
+  <!-- after-completion code -->
   <concept>
-    <code value="prior-auth"/>
+    <code value="prior-auth-include"/>
     <display value="Include in prior authorization"/>
+    <definition value="Include information in prior authorization"/>
   </concept>
   <concept>
-    <code value="initial-claim"/>
-    <display value="Include in initial claim submission"/>
+    <code value="initial-claim-include"/>
+    <display value="Include in initial claim"/>
+    <definition value="Include information in initial claim submission"/>
   </concept>
   <concept>
-    <code value="all-claims"/>
-    <display value="Include in all claim submissions"/>
+    <code value="all-claims-include"/>
+    <display value="Include in all claims"/>
+    <definition value="Include information in all claim submissions"/>
   </concept>
   <concept>
     <code value="to-endpoint"/>
-    <display value="Send to specified endpoint"/>
+    <display value="Send to endpoint"/>
+    <definition value="Send information to the specified endpoint"/>
   </concept>
+  <!-- Task reason -->
   <concept>
     <code value="reason-prior-auth"/>
-    <display value="Needed for prior authorization"/>
+    <display value="Prior authorization"/>
+    <definition value="Task action is needed for prior authorization"/>
   </concept>
+  <!-- Task input codes -->
   <concept>
     <code value="after-completion-action"/>
-    <display value="A task input indicating an action that should be taken after a QuestionnaireResponse has been completed on a specified Questionnaire.  (Multiple completion actions can be specified.)"/>
+    <display value="After-completion action"/>
+    <definition value="A task input indicating an action that should be taken after a QuestionnaireResponse has been completed on a specified Questionnaire.  (Multiple completion actions can be specified.)"/>
   </concept>
   <concept>
     <code value="deferred-CRD-action"/>
-    <display value="A code used in CRD task profile to denote a deferred action"/>
+    <display value="Deferred CRD action"/>
+    <definition value="A code used in CRD task profile to denote a deferred card action"/>
   </concept>
+  <!-- Coverage assertion reasons -->
   <concept>
     <code value="gold-card"/>
-    <display value="Ordering Practitioner has been granted 'gold card' status with this payer/coverage type."/>
+    <display value="Gold card"/>
+    <definition value="Ordering Practitioner has been granted 'gold card' status with this payer/coverage type."/>
+  </concept>
+  <!-- Coverage detail types -->
+  <concept>
+    <code value="allowed-quantity"/>
+    <display value="Maximum quantity"/>
+    <definition value="Indicates limitations on the number of services/products allowed (possibly per time period).  Value should be a Quantity"/>
+  </concept>
+  <concept>
+    <code value="allowed-period"/>
+    <display value="Maximum allowed period"/>
+    <definition value="Indicates the maximum period of time that can be covered in a single order.  Value should be a Period"/>
+  </concept>
+  <concept>
+    <code value="in-network-copay"/>
+    <display value="Copay for in-network"/>
+    <definition value="Indicates a percentage co-pay to expect if delivered in-network.  Value should be a Quantity."/>
+  </concept>
+  <concept>
+    <code value="out-network-copay"/>
+    <display value="Copay for out-of-network"/>
+    <definition value="Indicates a percentage co-pay to expect if delivered out-of-network.  Value should be a Quantity."/>
+  </concept>
+  <concept>
+    <code value="auth-out-network-only"/>
+    <display value="Authorization for out-of-network only"/>
+    <definition value="Authorization is only necessary if out-of-network.  Value should be a boolean."/>
+  </concept>
+  <concept>
+    <code value="concurrent-review"/>
+    <display value="Concurrent review"/>
+    <definition value="Additional payer-defined documentation will be required prior to claim payment.  Value should be a boolean."/>
+  </concept>
+  <concept>
+    <code value="appropriate-use-needed"/>
+    <display value="Appropriate use"/>
+    <definition value="Payer-defined appropriate use process must be invoked to determine coverage.  Value should be a boolean."/>
+  </concept>
+  <!-- Coverage guidance -->
+  <concept>
+    <code value="not-covered"/>
+    <display value="Not covered"/>
+    <definition value="no coverage or possibility of coverage for this service)"/>
+  </concept>
+  <concept>
+    <code value="covered"/>
+    <display value="Covered"/>
+    <definition value="Regular coverage applies"/>
+  </concept>
+  <concept>
+    <code value="covered-prior-auth"/>
+    <display value="Covered with prior authorization"/>
+    <definition value="Coverage is possible with prior authorization"/>
+  </concept>
+  <concept>
+    <code value="clinical"/>
+    <display value="Clinical"/>
+    <definition value="Clinical details are required to determine coverage/prior auth applicability - e.g. via DTR by clinician.  Indicates that the CRD client should expose the need to launch DTR to clinical users."/>
+  </concept>
+  <concept>
+    <code value="admin"/>
+    <display value="Admin"/>
+    <definition value="administrative details are required to determine coverage/prior auth applicability - e.g. via DTR by back-end staff.  Indicates that while the CRD client might expose the ability to launch DTR as an option for clinical users, it should be clear that clinical input is not necessary and deferring the use of DTR to back-end staff is perfectly appropriate.  Some CRD clients might be configured (based on provider preference) to not even show clinicians the option to launch."/>
+  </concept>
+  <!-- Card types -->
+  <concept>
+    <code value="_cardType"/>
+    <property>
+      <code value="abstract"/>
+      <valueBoolean value="true"/>
+    </property>
+    <concept>
+      <code value="coverage"/>
+      <display value="Coverage"/>
+      <definition value="Is the therapy covered or not, or are there limitations"/>
+    </concept>
+    <concept>
+      <code value="documentation"/>
+      <display value="Documentation"/>
+      <definition value="Are there additional documentation requirements"/>
+    </concept>
+    <concept>
+      <code value="prior-auth"/>
+      <display value="Prior Authorization"/>
+      <definition value="Is prior authorization required or not (and possibly provision of unsolicited prior authorizations)"/>
+    </concept>
+    <concept>
+      <code value="dtr-clin"/>
+      <display value="DTR Clin"/>
+      <definition value="Indication that DTR is relevant for prior authorization, claim or other documentation requirements and that at least some clinical information needs to be captured"/>
+    </concept>
+    <concept>
+      <code value="dtr-admin"/>
+      <display value="DTR Admin"/>
+      <definition value="Indication that DTR is relevant for prior authorization, claim or other documentation requirements and that all information to be captured is strictly administrative (and thus it is not necessary that the app be launched by the ordering clinician)"/>
+    </concept>
+    <concept>
+      <code value="claim"/>
+      <display value="Claim"/>
+      <definition value="Information about what steps need to be taken to submit a claim for the service"/>
+    </concept>
+    <concept>
+      <code value="insurance"/>
+      <display value="Insurance"/>
+      <definition value="Allows a provider to update the patient's coverage information with additional details from the payer (e.g. expiry date, coverage extensions)"/>
+    </concept>
+    <concept>
+      <code value="limits"/>
+      <display value="Limits"/>
+      <definition value="Messages warning about the patient approaching or exceeding their limits for a particular type of coverage or expiry date for coverage in general"/>
+    </concept>
+    <concept>
+      <code value="network"/>
+      <display value="Network"/>
+      <definition value="Providing information about in-network providers that could deliver the order (or in-network alternatives for an order directed out-of-network)"/>
+    </concept>
+    <concept>
+      <code value="appropriate-use"/>
+      <display value="Appropriate Use"/>
+      <definition value="Guidance on whether appropriate-use documentation is needed"/>
+    </concept>
+    <concept>
+      <code value="cost"/>
+      <display value="Cost"/>
+      <definition value="What is the anticipated cost to the patient based on their coverage"/>
+    </concept>
+    <concept>
+      <code value="therapy-alternatives-opt"/>
+      <display value="Therapy Alternatives Opt"/>
+      <definition value="Are there alternative therapies that have better coverage and/or are lower-cost for the patient"/>
+    </concept>
+    <concept>
+      <code value="therapy-alternatives-req"/>
+      <display value="Therapy Alternatives Req"/>
+      <definition value="Are there alternative therapies that must be tried first prior to coverage being available for the proposed therapy"/>
+    </concept>
+    <concept>
+      <code value="clinical-reminder"/>
+      <display value="Clinical Reminder"/>
+      <definition value="Reminders that a patient is due for certain screening or other therapy (based on payer recorded date of last intervention)"/>
+    </concept>
+    <concept>
+      <code value="duplicate-therapy"/>
+      <display value="Duplicate Therapy"/>
+      <definition value="Notice that the proposed intervention has already recently occurred with a different provider when that information isn't already available in the provider system"/>
+    </concept>
+    <concept>
+      <code value="contraindication"/>
+      <display value="Contraindication"/>
+      <definition value="Notice that the proposed intervention may be contraindicated based on information the payer has in their record that the provider doesn't have in theirs"/>
+    </concept>
+    <concept>
+      <code value="guideline"/>
+      <display value="Guideline"/>
+      <definition value="Indication that there is a guideline available for the proposed therapy (with an option to view)"/>
+    </concept>
+    <concept>
+      <code value="off-guideline"/>
+      <display value="Off Guideline"/>
+      <definition value="Notice that the proposed therapy may be contrary to best-practice guidelines, typically with an option to view the relevant guideline"/>
+    </concept>
   </concept>
 </CodeSystem>

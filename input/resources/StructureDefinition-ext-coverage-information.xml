@@ -92,7 +92,7 @@
     <element id="Extension.extension:billingCode.value[x]">
       <path value="Extension.extension.value[x]"/>
       <min value="1"/>
-      <max value="*"/>
+      <max value="1"/>
       <type>
         <code value="Coding"/>
       </type>
@@ -101,7 +101,6 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/service-uscls"/>
       </binding>
     </element>
-
     <element id="Extension.extension:reason">
       <path value="Extension.extension"/>
       <sliceName value="reason"/>
@@ -123,17 +122,100 @@ Additional standard reason codes may be introduced in the future.  If no standar
     <element id="Extension.extension:reason.value[x]">
       <path value="Extension.extension.value[x]"/>
       <min value="1"/>
-      <max value="*"/>
+      <max value="1"/>
       <type>
         <code value="CodeableConcept"/>
       </type>
       <binding>
         <strength value="extensible"/>
-        <valueSet value="http://hl7.org/fhir/us/davinci-crd/ValueSet/coverage-assertion-reasons"/>
+        <valueSet value="http://hl7.org/fhir/us/davinci-crd/ValueSet/coverageAssertionReasons"/>
       </binding>
     </element>
     
-    
+    <element id="Extension.extension:detail">
+      <path value="Extension.extension"/>
+      <sliceName value="detail"/>
+      <short value="detail for assertion"/>
+      <definition value="Indicates the 'detail' for the coverage assertion"/>
+      <comment value="Additional information that qualifies, describes, or provides additional guidance about coverage or documentation requirements."/>
+      <min value="0"/>
+      <max value="*"/>
+      <type>
+        <code value="Extension"/>
+      </type>
+    </element>
+    <element id="Extension.extension:detail.extension:code">
+      <path value="Extension.extension.extension"/>
+      <sliceName value="code"/>
+      <short value="Name of name-value pair"/>
+      <definition value="The type of detail or qualification expressed."/>
+      <min value="1"/>
+      <max value="1"/>
+    </element>
+    <element id="Extension.extension:detail.extension:code.url">
+      <path value="Extension.extension.extension.url"/>
+      <fixedUri value="code"/>
+    </element>
+    <element id="Extension.extension:detail.extension:code.value[x]">
+      <path value="Extension.extension.extension.value[x]"/>
+      <type>
+        <code value="CodeableConcept"/>
+      </type>
+      <binding>
+        <strength value="extensible"/>
+        <valueSet value="http://hl7.org/fhir/us/davinci-crd/ValueSet/coverageDetail"/>
+      </binding>
+    </element>
+    <element id="Extension.extension:detail.extension:value">
+      <path value="Extension.extension.extension"/>
+      <sliceName value="value"/>
+      <short value="Value of name-value pair"/>
+      <definition value="The detail or qualification that applies to this coverage assertion."/>
+      <min value="1"/>
+      <max value="1"/>
+    </element>
+    <element id="Extension.extension:detail.extension:value.url">
+      <path value="Extension.extension.extension.url"/>
+      <fixedUri value="value"/>
+    </element>
+    <element id="Extension.extension:detail.extension:value.value[x]">
+      <path value="Extension.extension.extension.value[x]"/>
+      <type>
+        <code value="boolean"/>
+      </type>
+      <type>
+        <code value="string"/>
+      </type>
+      <type>
+        <code value="Quantity"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/SimpleQuantity"/>
+      </type>
+      <type>
+        <code value="Period"/>
+      </type>
+    </element>
+    <element id="Extension.extension:detail.extension:qualification">
+      <path value="Extension.extension.extension"/>
+      <sliceName value="qualification"/>
+      <short value="Additional info about detail"/>
+      <definition value="Additional text that qualifies/expands on the computable detail.  E.g. 'Provided coverage is renewed' or 'Does not account for deductible'"/>
+      <min value="0"/>
+      <max value="1"/>
+    </element>
+    <element id="Extension.extension:detail.extension:qualification.url">
+      <path value="Extension.extension.extension.url"/>
+      <fixedUri value="qualification"/>
+    </element>
+    <element id="Extension.extension:detail.extension:qualification.value[x]">
+      <path value="Extension.extension.extension.value[x]"/>
+      <type>
+        <code value="string"/>
+      </type>
+    </element>
+    <element id="Extension.extension:detail.url">
+      <path value="Extension.extension.url"/>
+      <fixedUri value="detail"/>
+    </element>
     <element id="Extension.extension:coverage">
       <path value="Extension.extension"/>
       <sliceName value="coverage"/>

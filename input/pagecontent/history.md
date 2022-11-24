@@ -26,7 +26,7 @@ Added a number of enhancements and some changes to approach.  Key differences ar
 * Added guidances on [crd access tokens](hooks.html#crd-access-tokens)
 * Clarified expectations about [controlling hook invocation](hooks.html#controlling-hook-invocation)
 * Provided guidance on [external references](hooks.html#external-reference)
-* 
+* Corrected cardType codes to use the IG temporary code system, as it is likely that long-term these codes won't all live as part of the IG
 
 As well there were various other adjustments to specification language, profiles, and examples to align with these changes and to correct minor typos or improve wording.
 
