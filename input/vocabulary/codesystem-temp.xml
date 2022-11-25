@@ -139,6 +139,11 @@
       <definition value="Is prior authorization required or not (and possibly provision of unsolicited prior authorizations)"/>
     </concept>
     <concept>
+      <code value="preempt-determination"/>
+      <display value="Preemptive determination"/>
+      <definition value="Cards that support conveying an approval of coverage for services that would otherwise require prior authorization without authorization having been solicited."/>
+    </concept>
+    <concept>
       <code value="dtr-clin"/>
       <display value="DTR Clin"/>
       <definition value="Indication that DTR is relevant for prior authorization, claim or other documentation requirements and that at least some clinical information needs to be captured"/>
