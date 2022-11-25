@@ -36,7 +36,7 @@ Mrs. Smith is a 75-year-old female on a Medicare Fee-For-Service plan with long 
 
 As Dr. Good begins crafting the order in his EMR<sup>*</sup>, it uses Mrs. Smith's coverage information to initiate a querying to a CRD Server used by her payer that includes the code for home oxygen therapy.  An alert appears at the bottom of the EMR order entry screen notifying Dr. Good that specific testing and documentation is required to substantiate the need for home oxygen therapy.
 
-Dr. Good retrieves specific documentation templates which have already been populated with information from his EMR.  He completes any remaining documentation requirements, signs the documentation, and includes it in Mrs. Smith's medical record.
+Dr. Good retrieves specific documentation templates which have already been populated with information from his EMR.  He completes the remaining documentation requirements that require clinical input, signs the documentation, and includes it in Mrs. Smith's medical record.  He leaves the remaining portion of the documentation to be completed by his administrative staff who will work to find an appropriate supplier and then do final paperwork submission.
 
 <sup>*</sup> Note: This flow envisions the use of the Order Select hook, which allows guidance to be returned while the user is in the process of writing the order.  However, this is an optional hook, so for some systems, the flow of the use-case would be altered to have the clinician only receive guidance when they had completed the order and reached the 'signing' step.
 
