@@ -46,6 +46,34 @@ This implementation guide supports both Protected Health Information (PHI)-speci
 This implementation guide is designed to allow for initial support of basic capabilities and to subsequently build new features over time.
 
 
+### Systems
+
+This implementation guide sets expectations for two types of systems:
+
+[CRD Clients](CapabilityStatement-crd-client.html) are typically systems that healthcare providers use at the point of care, including electronic medical records systems, pharmacy systems, and other provider and administrative systems used for ordering, documenting, and execution of patient-related services. Users of these systems have a need for coverage requirements information to support care planning.
+<div markdown="1" class="new-content">
+
+Examples of potential CRD clients include EHRs, EMRs, practice management systems, scheduling systems, patient registration systems, etc.  In some situations, a CDS Client may be composed of a variety of different subsystems, where the sub-system within a healthcare organization coordinate to satisfy CDS Client functionality (e.g. different data repositories for clinical and administrative data, different software for clinical orders vs. encounter management vs. appointment booking).
+
+The specific architecture of the CRD client and the number of distinct data repositories it uses doesn't matter.  The only requirement is that from a CRD server perspective, the collection of systems behaves as one.  I.e. one endpoint for the CRD server can use to access patient data, one authorization process for registering the server to be used within the provider environment, etc.
+
+<blockquote class="stu-note">
+<p>
+This specification recognizes that CRD clients may be made up of multiple systems.  In practice, there will be orchestration requirements to allow these multiple systems to interact in a way that allows them to appear as a single monolithic system from the perspective of the CRD server.  This IG does not (yet) provide any guidance or standardization about how system components should interoperate to achieve this monolithic behavior.
+</p>
+</blockquote>
+
+</div>
+
+[CRD Servers](CapabilityStatement-crd-server.html) (or servers) are systems that act on behalf of payer organizations to share information with healthcare providers about rules and requirements related to healthcare products and services covered by a patient's payer.  A CRD Server might provide coverage information related to one or more insurance plans. CRD Servers are a type of CDS Service as defined in the [CDS Hooks Specification](https://cds-hooks.hl7.org/2.0).
+
+<div markdown="1" class="new-content">
+
+Payers may have multiple back-end functions that handle different types of decision support and/or different types of services.  However, for the purpose of CRD conformance, payers **SHALL** have a single endpoint (managed by themselves or a delegate) that can handle responding to all CRD service calls.  CRD servers are free to route the information from those calls to back-end services as needed.  This routing may evolve over time and should have no impact on CRD client calls.
+
+</div>
+
+
 ### Content and Organization
 This implementation guide is organized into the following sections:
 

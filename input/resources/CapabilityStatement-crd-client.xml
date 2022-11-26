@@ -1,0 +1,1248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CapabilityStatement xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="crd-client"/>
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>CRD Client</h2>
+      <p>(Requirements Definition Capability Statement)</p>
+      <p>Canonical URL: http://hl7.org/fhir/us/davinci-crd/CapabilityStatement/crd-client Published: 2022-11-25</p>
+      <p>This statement defines the expected capabilities of systems wishing to conform to the <i>CRD Client</i> role.  This role is responsible for initiating CDS Hooks calls and consuming received decision support.  It is *also* responsible for returning data requested by the CRD Server needed to provide that decision support.  This capability statement doesn't define the CDS Hooks capabilities as there is no standard way to do that as yet.  Instead, it focuses on the 'server' capabilities needed to respond to CRD Server queries.  These capabilties are based on US Core.
+
+In addition to the U.S. core expectations, the CRD Client **SHALL** support all 'SHOULD' 'read' and 'search' capabilities listed below for resources referenced in supported hooks and order types if it does not support return the associated resources as part of CDS Hooks pre-fetch.  The CRD Client **SHALL** also support 'update' functionality for all resources listed below where the client allows invoking hooks based on the resource.</p>
+      <h2>General</h2>
+      <div class="table-wrapper">
+        <table class="grid">
+          <tbody>
+            <tr>
+              <th>FHIR Version:</th>
+              <td>4.0.1</td>
+            </tr>
+            <tr>
+              <th>Supported formats:</th>
+              <td>json</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h2>REST server behavior</h2>
+      <p>A CRD Client provides a FHIR server endpoint, returning patient information to the CRD server, ensuring it has the needed information to perform decision support.</p>
+      <p>
+        <b>Security:</b>
+      </p>
+      <p>Implementations **SHALL** meet the general security requirements documented in the <a href="http://hl7.org/fhir/us/davinci-hrex/STU1/security.html">HRex implementation guide</a>.</p>
+      <h3>Resource summary</h3>
+      <div class="table-wrapper">
+        <table class="grid">
+          <thead>
+            <tr>
+              <th>Resource</th>
+              <th>Search</th>
+              <th>Read</th>
+              <th>Read Version</th>
+              <th>Instance History</th>
+              <th>Resource History</th>
+              <th>Create</th>
+              <th>Update</th>
+              <th>Delete</th>
+              <th>Operations</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>Appointment</th>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td>
+                <a title="Allows annotating the appointment in response to a card.  (Support is mandatory if the system supports Appointments)" href="#Appointment-update">SHOULD</a>
+              </td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <th>CommunicationRequest</th>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td>
+                <a title="Allows annotating the communication request in response to a card.  (Support is mandatory if the system supports CommunicationRequests)" href="#CommunicationRequest-update">SHOULD</a>
+              </td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <th>Coverage</th>
+              <td>
+                <a title="Allows retrieval of the patient's coverage information if it is not retrieved as part of pre-fetch.  (Support is mandatory if not supported as part of pre-fetch.)  Note that only coverages relevant to the payer(s) associated with the requesting CRD Server are allowed to be returned." href="#Coverage-search-type">SHOULD</a>
+              </td>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <th>Device</th>
+              <td/>
+              <td>
+                <a title="Allows retrieval of the device requested in a DeviceRequest if it is not retrieved as part of pre-fetch.  (Support is mandatory if not supported as part of pre-fetch.)" href="#Device-read">SHOULD</a>
+              </td>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <th>DeviceRequest</th>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td>
+                <a title="Allows annotating the device request in response to a card.  (Support is mandatory if the system supports DeviceRequests.)" href="#DeviceRequest-update">SHOULD</a>
+              </td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <th>Encounter</th>
+              <td>
+                <a title="Allows retrieval of the encounter for a nutrition order (including referenced location) if not retrieved as part of pre-fetch.  (Support is mandatory if not supported as part of pre-fetch.)" href="#Encounter-search-type">SHOULD</a>
+              </td>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td>
+                <a title="Allows annotating the encounter in response to a card.  (Support is mandatory if the system supports Encounters)" href="#Encounter-update">SHOULD</a>
+              </td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <th>Patient</th>
+              <td/>
+              <td>
+                <a title="Allows retrieval of the patient demographics if patient is not retrieved as part of pre-fetch.  (Support is mandatory if not supported as part of pre-fetch.)" href="#Patient-read">SHOULD</a>
+              </td>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <th>Practitioner</th>
+              <td/>
+              <td>
+                <a title="Allows retrieval of ordering and/or performing provider's information if not retrieved as part of pre-fetch.  (Support is mandatory if not supported as part of pre-fetch.)" href="#Practitioner-read">SHOULD</a>
+              </td>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <th>PractitionerRole</th>
+              <td>
+                <a title="Allows retrieval of ordering and/or performing provider's (including associated Practitioners and Organizations) if not retrieved as part of pre-fetch.  (Support is mandatory if not supported as part of pre-fetch.)" href="#PractitionerRole-search-type">SHOULD</a>
+              </td>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <th>Location</th>
+              <td/>
+              <td>
+                <a title="Allows retrieval of the location associated with an order or appointment if not retrieved as part of pre-fetch.  (Support is mandatory if not supported as part of pre-fetch.)" href="#Location-read">SHOULD</a>
+              </td>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <th>MedicationRequest</th>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td>
+                <a title="Allows annotating the medication request in response to a card.  (Support is mandatory if the system supports MedicationRequests)" href="#MedicationRequest-update">SHOULD</a>
+              </td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <th>NutritionOrder</th>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td>
+                <a title="Allows annotating the nutrition order in response to a card.  (Support is mandatory if the system supports NutritionOrders.)" href="#NutritionOrder-update">SHOULD</a>
+              </td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <th>Organization</th>
+              <td/>
+              <td>
+                <a title="Allows retrieval of ordering and/or performing organization's information if not retrieved as part of pre-fetch.  (Support is mandatory if not supported as part of pre-fetch.)" href="#Organization-read">SHOULD</a>
+              </td>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <th>ServiceRequest</th>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td>
+                <a title="Allows annotating the service requests in response to a card.  (Support is mandatory if the system supports ServiceRequests.)" href="#ServiceRequest-update">SHOULD</a>
+              </td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <th>ClaimResponse</th>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td>
+                <a title="Needed to allow support for cards returning preemptive determiniations." href="#ClaimResponse-create">SHOULD</a>
+              </td>
+              <td/>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <th>Task</th>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td>
+                <a title="Needed to allow support for cards returning deferrable cards and/or requests to complete Questionnaires." href="#Task-create">SHOULD</a>
+              </td>
+              <td/>
+              <td/>
+              <td/>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br/>
+      <br/>
+      <h3>
+        <a href="{{site.data.fhir.path}}appointment.html">Appointment</a>
+      </h3>
+      <p>Supported Profile(s) - if resource is supported:</p>
+      <ul>
+        <li>
+          <a href="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-appointment">http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-appointment</a>
+        </li>
+      </ul>
+      <h4>Behavior</h4>
+      <p>Versioning support: versioned-update</p>
+      <h4>Interactions</h4>
+      <div class="table-wrapper">
+        <table class="list">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Conformance</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>
+                <a name="Appointment-update"> </a>
+                <span>update</span>
+              </th>
+              <td>SHOULD</td>
+              <td>
+                <p>Allows annotating the appointment in response to a card.  (Support is mandatory if the system supports Appointments)</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br/>
+      <br/>
+      <h3>
+        <a href="{{site.data.fhir.path}}communicationrequest.html">CommunicationRequest</a>
+      </h3>
+      <p>Supported Profile(s) - if resource is supported:</p>
+      <ul>
+        <li>
+          <a href="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-communicationrequest">http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-communicationrequest</a>
+        </li>
+      </ul>
+      <h4>Behavior</h4>
+      <p>Versioning support: versioned-update</p>
+      <h4>Interactions</h4>
+      <div class="table-wrapper">
+        <table class="list">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Conformance</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>
+                <a name="CommunicationRequest-update"> </a>
+                <span>update</span>
+              </th>
+              <td>SHOULD</td>
+              <td>
+                <p>Allows annotating the communication request in response to a card.  (Support is mandatory if the system supports CommunicationRequests)</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br/>
+      <br/>
+      <h3>
+        <a href="{{site.data.fhir.path}}coverage.html">Coverage</a>
+      </h3>
+      <p>Supported Profile(s) - if resource is supported:</p>
+      <ul>
+        <li>
+          <a href="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-coverage">http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-coverage</a>
+        </li>
+      </ul>
+      <h4>Interactions</h4>
+      <div class="table-wrapper">
+        <table class="list">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Conformance</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>
+                <a name="Coverage-search-type"> </a>
+                <span>search-type</span>
+              </th>
+              <td>SHOULD</td>
+              <td>
+                <p>Allows retrieval of the patient's coverage information if it is not retrieved as part of pre-fetch.  (Support is mandatory if not supported as part of pre-fetch.)  Note that only coverages relevant to the payer(s) associated with the requesting CRD Server are allowed to be returned.</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h4>Search</h4>
+      <div class="table-wrapper">
+        <table class="list">
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Conformance</th>
+              <th>Type</th>
+              <th>Definition &amp; Chaining</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>patient</th>
+              <td>SHALL</td>
+              <td>reference</td>
+              <td>
+                <p>Allows retrieving coverages for the patient</p>
+              </td>
+            </tr>
+            <tr>
+              <th>status</th>
+              <td>SHALL</td>
+              <td>token</td>
+              <td>
+                <p>Allows filtering to only active coverages</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br/>
+      <br/>
+      <h3>
+        <a href="{{site.data.fhir.path}}device.html">Device</a>
+      </h3>
+      <p>Supported Profile(s) - if resource is supported:</p>
+      <ul>
+        <li>
+          <a href="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-device">http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-device</a>
+        </li>
+      </ul>
+      <h4>Interactions</h4>
+      <div class="table-wrapper">
+        <table class="list">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Conformance</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>
+                <a name="Device-read"> </a>
+                <span>read</span>
+              </th>
+              <td>SHOULD</td>
+              <td>
+                <p>Allows retrieval of the device requested in a DeviceRequest if it is not retrieved as part of pre-fetch.  (Support is mandatory if not supported as part of pre-fetch.)</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br/>
+      <br/>
+      <h3>
+        <a href="{{site.data.fhir.path}}devicerequest.html">DeviceRequest</a>
+      </h3>
+      <p>Supported Profile(s) - if resource is supported:</p>
+      <ul>
+        <li>
+          <a href="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-devicerequest">http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-devicerequest</a>
+        </li>
+      </ul>
+      <h4>Behavior</h4>
+      <p>Versioning support: versioned-update</p>
+      <h4>Interactions</h4>
+      <div class="table-wrapper">
+        <table class="list">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Conformance</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>
+                <a name="DeviceRequest-update"> </a>
+                <span>update</span>
+              </th>
+              <td>SHOULD</td>
+              <td>
+                <p>Allows annotating the device request in response to a card.  (Support is mandatory if the system supports DeviceRequests.)</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br/>
+      <br/>
+      <h3>
+        <a href="{{site.data.fhir.path}}encounter.html">Encounter</a>
+      </h3>
+      <p>Supported Profile(s) - if resource is supported:</p>
+      <ul>
+        <li>
+          <a href="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-encounter">http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-encounter</a>
+        </li>
+      </ul>
+      <h4>Behavior</h4>
+      <p>Versioning support: versioned-update</p>
+      <h4>Interactions</h4>
+      <div class="table-wrapper">
+        <table class="list">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Conformance</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>
+                <a name="Encounter-update"> </a>
+                <span>update</span>
+              </th>
+              <td>SHOULD</td>
+              <td>
+                <p>Allows annotating the encounter in response to a card.  (Support is mandatory if the system supports Encounters)</p>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a name="Encounter-search-type"> </a>
+                <span>search-type</span>
+              </th>
+              <td>SHOULD</td>
+              <td>
+                <p>Allows retrieval of the encounter for a nutrition order (including referenced location) if not retrieved as part of pre-fetch.  (Support is mandatory if not supported as part of pre-fetch.)</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h4>Search</h4>
+      <p>Supported Includes: Encounter:location</p>
+      <div class="table-wrapper">
+        <table class="list">
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Conformance</th>
+              <th>Type</th>
+              <th>Definition &amp; Chaining</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>_id</th>
+              <td>SHALL</td>
+              <td>token</td>
+              <td>
+                <p>Allows searching for a Encounter by id</p>
+              </td>
+            </tr>
+            <tr>
+              <th>organization</th>
+              <td>SHALL</td>
+              <td>token</td>
+              <td>
+                <p>Allows performing an _include on Location when retrieving an Encounter</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br/>
+      <br/>
+      <h3>
+        <a href="{{site.data.fhir.path}}patient.html">Patient</a>
+      </h3>
+      <p>Supported Profile(s) - if resource is supported:</p>
+      <ul>
+        <li>
+          <a href="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-patient">http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-patient</a>
+        </li>
+      </ul>
+      <h4>Interactions</h4>
+      <div class="table-wrapper">
+        <table class="list">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Conformance</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>
+                <a name="Patient-read"> </a>
+                <span>read</span>
+              </th>
+              <td>SHOULD</td>
+              <td>
+                <p>Allows retrieval of the patient demographics if patient is not retrieved as part of pre-fetch.  (Support is mandatory if not supported as part of pre-fetch.)</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br/>
+      <br/>
+      <h3>
+        <a href="{{site.data.fhir.path}}practitioner.html">Practitioner</a>
+      </h3>
+      <p>Supported Profile(s) - if resource is supported:</p>
+      <ul>
+        <li>
+          <a href="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-practitioner">http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-practitioner</a>
+        </li>
+      </ul>
+      <h4>Interactions</h4>
+      <div class="table-wrapper">
+        <table class="list">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Conformance</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>
+                <a name="Practitioner-read"> </a>
+                <span>read</span>
+              </th>
+              <td>SHOULD</td>
+              <td>
+                <p>Allows retrieval of ordering and/or performing provider's information if not retrieved as part of pre-fetch.  (Support is mandatory if not supported as part of pre-fetch.)</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br/>
+      <br/>
+      <h3>
+        <a href="{{site.data.fhir.path}}practitionerrole.html">PractitionerRole</a>
+      </h3>
+      <p>Supported Profile(s) - if resource is supported:</p>
+      <ul>
+        <li>
+          <a href="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole">http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole</a>
+        </li>
+      </ul>
+      <h4>Interactions</h4>
+      <div class="table-wrapper">
+        <table class="list">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Conformance</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>
+                <a name="PractitionerRole-search-type"> </a>
+                <span>search-type</span>
+              </th>
+              <td>SHOULD</td>
+              <td>
+                <p>Allows retrieval of ordering and/or performing provider's (including associated Practitioners and Organizations) if not retrieved as part of pre-fetch.  (Support is mandatory if not supported as part of pre-fetch.)</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h4>Search</h4>
+      <p>Supported Includes: PractitionerRole:organization PractitionerRole:practitioner</p>
+      <div class="table-wrapper">
+        <table class="list">
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Conformance</th>
+              <th>Type</th>
+              <th>Definition &amp; Chaining</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>_id</th>
+              <td>SHALL</td>
+              <td>token</td>
+              <td>
+                <p>Allows searching for a PractitionerRole by id</p>
+              </td>
+            </tr>
+            <tr>
+              <th>organization</th>
+              <td>SHALL</td>
+              <td>token</td>
+              <td>
+                <p>Allows performing an _include on Organization when retrieving a PractitionerRole</p>
+              </td>
+            </tr>
+            <tr>
+              <th>practitioner</th>
+              <td>SHALL</td>
+              <td>token</td>
+              <td>
+                <p>Allows performing an _include on Practitioner when retrieving a PractitionerRole</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br/>
+      <br/>
+      <h3>
+        <a href="{{site.data.fhir.path}}location.html">Location</a>
+      </h3>
+      <p>Supported Profile(s) - if resource is supported:</p>
+      <ul>
+        <li>
+          <a href="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-location">http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-location</a>
+        </li>
+      </ul>
+      <h4>Interactions</h4>
+      <div class="table-wrapper">
+        <table class="list">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Conformance</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>
+                <a name="Location-read"> </a>
+                <span>read</span>
+              </th>
+              <td>SHOULD</td>
+              <td>
+                <p>Allows retrieval of the location associated with an order or appointment if not retrieved as part of pre-fetch.  (Support is mandatory if not supported as part of pre-fetch.)</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br/>
+      <br/>
+      <h3>
+        <a href="{{site.data.fhir.path}}medicationrequest.html">MedicationRequest</a>
+      </h3>
+      <p>Supported Profile(s) - if resource is supported:</p>
+      <ul>
+        <li>
+          <a href="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-medicationrequest">http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-medicationrequest</a>
+        </li>
+      </ul>
+      <h4>Behavior</h4>
+      <p>Versioning support: versioned-update</p>
+      <h4>Interactions</h4>
+      <div class="table-wrapper">
+        <table class="list">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Conformance</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>
+                <a name="MedicationRequest-update"> </a>
+                <span>update</span>
+              </th>
+              <td>SHOULD</td>
+              <td>
+                <p>Allows annotating the medication request in response to a card.  (Support is mandatory if the system supports MedicationRequests)</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br/>
+      <br/>
+      <h3>
+        <a href="{{site.data.fhir.path}}nutritionorder.html">NutritionOrder</a>
+      </h3>
+      <p>Supported Profile(s) - if resource is supported:</p>
+      <ul>
+        <li>
+          <a href="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-nutritionorder">http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-nutritionorder</a>
+        </li>
+      </ul>
+      <h4>Behavior</h4>
+      <p>Versioning support: versioned-update</p>
+      <h4>Interactions</h4>
+      <div class="table-wrapper">
+        <table class="list">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Conformance</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>
+                <a name="NutritionOrder-update"> </a>
+                <span>update</span>
+              </th>
+              <td>SHOULD</td>
+              <td>
+                <p>Allows annotating the nutrition order in response to a card.  (Support is mandatory if the system supports NutritionOrders.)</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br/>
+      <br/>
+      <h3>
+        <a href="{{site.data.fhir.path}}organization.html">Organization</a>
+      </h3>
+      <p>Supported Profile(s) - if resource is supported:</p>
+      <ul>
+        <li>
+          <a href="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-organization">http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-organization</a>
+        </li>
+      </ul>
+      <h4>Interactions</h4>
+      <div class="table-wrapper">
+        <table class="list">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Conformance</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>
+                <a name="Organization-read"> </a>
+                <span>read</span>
+              </th>
+              <td>SHOULD</td>
+              <td>
+                <p>Allows retrieval of ordering and/or performing organization's information if not retrieved as part of pre-fetch.  (Support is mandatory if not supported as part of pre-fetch.)</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br/>
+      <br/>
+      <h3>
+        <a href="{{site.data.fhir.path}}servicerequest.html">ServiceRequest</a>
+      </h3>
+      <p>Supported Profile(s) - if resource is supported:</p>
+      <ul>
+        <li>
+          <a href="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-servicerequest">http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-servicerequest</a>
+        </li>
+      </ul>
+      <h4>Behavior</h4>
+      <p>Versioning support: versioned-update</p>
+      <h4>Interactions</h4>
+      <div class="table-wrapper">
+        <table class="list">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Conformance</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>
+                <a name="ServiceRequest-update"> </a>
+                <span>update</span>
+              </th>
+              <td>SHOULD</td>
+              <td>
+                <p>Allows annotating the service requests in response to a card.  (Support is mandatory if the system supports ServiceRequests.)</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br/>
+      <br/>
+      <h3>
+        <a href="{{site.data.fhir.path}}claimresponse.html">ClaimResponse</a>
+      </h3>
+      <p>Supported Profile(s) - if resource is supported:</p>
+      <ul>
+        <li>
+          <a href="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-claimresponse">http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-claimresponse</a>
+        </li>
+      </ul>
+      <h4>Interactions</h4>
+      <div class="table-wrapper">
+        <table class="list">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Conformance</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>
+                <a name="ClaimResponse-create"> </a>
+                <span>create</span>
+              </th>
+              <td>SHOULD</td>
+              <td>
+                <p>Needed to allow support for cards returning preemptive determiniations.</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br/>
+      <br/>
+      <h3>
+        <a href="{{site.data.fhir.path}}task.html">Task</a>
+      </h3>
+      <p>Supported Profile(s) - if resource is supported:</p>
+      <ul>
+        <li>
+          <a href="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-crdcardtask">http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-crdcardtask</a>
+        </li>
+        <li>
+          <a href="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-taskquestionnaire">http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-taskquestionnaire</a>
+        </li>
+      </ul>
+      <h4>Interactions</h4>
+      <div class="table-wrapper">
+        <table class="list">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Conformance</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>
+                <a name="Task-create"> </a>
+                <span>create</span>
+              </th>
+              <td>SHOULD</td>
+              <td>
+                <p>Needed to allow support for cards returning deferrable cards and/or requests to complete Questionnaires.</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </text>
+  <url value="http://hl7.org/fhir/us/davinci-crd/CapabilityStatement/crd-client"/>
+  <name value="CRDClient"/>
+  <title value="CRD Client"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2022-11-25"/>
+  <description value="This statement defines the expected capabilities of systems wishing to conform to the ''CRD Client'' role.  This role is responsible for initiating CDS Hooks calls and consuming received decision support.  It is *also* responsible for returning data requested by the CRD Server needed to provide that decision support.  This capability statement doesn't define the CDS Hooks capabilities as there is no standard way to do that as yet.  Instead, it focuses on the 'server' capabilities needed to respond to CRD Server queries.  These capabilties are based on US Core.&#xA;&#xA;In addition to the U.S. core expectations, the CRD Client **SHALL** support all 'SHOULD' 'read' and 'search' capabilities listed below for resources referenced in supported hooks and order types if it does not support return the associated resources as part of CDS Hooks pre-fetch.  The CRD Client **SHALL** also support 'update' functionality for all resources listed below where the client allows invoking hooks based on the resource."/>
+  <kind value="requirements"/>
+  <imports value="http://hl7.org/fhir/us/core/CapabilityStatement/us-core-server"/>
+  <fhirVersion value="4.0.1"/>
+  <format value="json"/>
+  <rest>
+    <mode value="server"/>
+    <documentation value="A CRD Client provides a FHIR server endpoint, returning patient information to the CRD server, ensuring it has the needed information to perform decision support."/>
+    <security>
+      <description value="Implementations **SHALL** meet the general security requirements documented in the [[http://hl7.org/fhir/us/davinci-hrex/STU1/security.html|HRex implementation guide]]."/>
+    </security>
+    <resource>
+      <type value="Appointment"/>
+      <supportedProfile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-appointment"/>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHOULD"/>
+        </extension>
+        <code value="update"/>
+        <documentation value="Allows annotating the appointment in response to a card.  (Support is mandatory if the system supports Appointments)"/>
+      </interaction>
+      <versioning value="versioned-update"/>
+    </resource>
+    <resource>
+      <type value="CommunicationRequest"/>
+      <supportedProfile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-communicationrequest"/>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHOULD"/>
+        </extension>
+        <code value="update"/>
+        <documentation value="Allows annotating the communication request in response to a card.  (Support is mandatory if the system supports CommunicationRequests)"/>
+      </interaction>
+      <versioning value="versioned-update"/>
+    </resource>
+    <resource>
+      <type value="Coverage"/>
+      <supportedProfile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-coverage"/>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHOULD"/>
+        </extension>
+        <code value="search-type"/>
+        <documentation value="Allows retrieval of the patient's coverage information if it is not retrieved as part of pre-fetch.  (Support is mandatory if not supported as part of pre-fetch.)  Note that only coverages relevant to the payer(s) associated with the requesting CRD Server are allowed to be returned."/>
+      </interaction>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="patient"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Coverage-patient"/>
+        <type value="reference"/>
+        <documentation value="Allows retrieving coverages for the patient"/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="status"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Coverage-status"/>
+        <type value="token"/>
+        <documentation value="Allows filtering to only active coverages"/>
+      </searchParam>
+    </resource>
+    <resource>
+      <type value="Device"/>
+      <supportedProfile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-device"/>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHOULD"/>
+        </extension>
+        <code value="read"/>
+        <documentation value="Allows retrieval of the device requested in a DeviceRequest if it is not retrieved as part of pre-fetch.  (Support is mandatory if not supported as part of pre-fetch.)"/>
+      </interaction>
+    </resource>
+    <resource>
+      <type value="DeviceRequest"/>
+      <supportedProfile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-devicerequest"/>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHOULD"/>
+        </extension>
+        <code value="update"/>
+        <documentation value="Allows annotating the device request in response to a card.  (Support is mandatory if the system supports DeviceRequests.)"/>
+      </interaction>
+      <versioning value="versioned-update"/>
+    </resource>
+    <resource>
+      <type value="Encounter"/>
+      <supportedProfile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-encounter"/>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHOULD"/>
+        </extension>
+        <code value="update"/>
+        <documentation value="Allows annotating the encounter in response to a card.  (Support is mandatory if the system supports Encounters)"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHOULD"/>
+        </extension>
+        <code value="search-type"/>
+        <documentation value="Allows retrieval of the encounter for a nutrition order (including referenced location) if not retrieved as part of pre-fetch.  (Support is mandatory if not supported as part of pre-fetch.)"/>
+      </interaction>
+      <versioning value="versioned-update"/>
+      <searchInclude value="Encounter:location"/>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="_id"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-id"/>
+        <type value="token"/>
+        <documentation value="Allows searching for a Encounter by id"/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="organization"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Encounter-location"/>
+        <type value="reference"/>
+        <documentation value="Allows performing an _include on Location when retrieving an Encounter"/>
+      </searchParam>
+    </resource>
+    <resource>
+      <type value="Patient"/>
+      <supportedProfile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-patient"/>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHOULD"/>
+        </extension>
+        <code value="read"/>
+        <documentation value="Allows retrieval of the patient demographics if patient is not retrieved as part of pre-fetch.  (Support is mandatory if not supported as part of pre-fetch.)"/>
+      </interaction>
+    </resource>
+    <resource>
+      <type value="Practitioner"/>
+      <supportedProfile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-practitioner"/>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHOULD"/>
+        </extension>
+        <code value="read"/>
+        <documentation value="Allows retrieval of ordering and/or performing provider's information if not retrieved as part of pre-fetch.  (Support is mandatory if not supported as part of pre-fetch.)"/>
+      </interaction>
+    </resource>
+    <resource>
+      <type value="PractitionerRole"/>
+      <supportedProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole"/>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHOULD"/>
+        </extension>
+        <code value="search-type"/>
+        <documentation value="Allows retrieval of ordering and/or performing provider's (including associated Practitioners and Organizations) if not retrieved as part of pre-fetch.  (Support is mandatory if not supported as part of pre-fetch.)"/>
+      </interaction>
+      <searchInclude value="PractitionerRole:organization"/>
+      <searchInclude value="PractitionerRole:practitioner"/>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="_id"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-id"/>
+        <type value="token"/>
+        <documentation value="Allows searching for a PractitionerRole by id"/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="organization"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/PractitionerRole-organization"/>
+        <type value="reference"/>
+        <documentation value="Allows performing an _include on Organization when retrieving a PractitionerRole"/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="practitioner"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/PractitionerRole-practitioner"/>
+        <type value="reference"/>
+        <documentation value="Allows performing an _include on Practitioner when retrieving a PractitionerRole"/>
+      </searchParam>
+    </resource>
+    <resource>
+      <type value="Location"/>
+      <supportedProfile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-location"/>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHOULD"/>
+        </extension>
+        <code value="read"/>
+        <documentation value="Allows retrieval of the location associated with an order or appointment if not retrieved as part of pre-fetch.  (Support is mandatory if not supported as part of pre-fetch.)"/>
+      </interaction>
+    </resource>
+    <resource>
+      <type value="MedicationRequest"/>
+      <supportedProfile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-medicationrequest"/>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHOULD"/>
+        </extension>
+        <code value="update"/>
+        <documentation value="Allows annotating the medication request in response to a card.  (Support is mandatory if the system supports MedicationRequests)"/>
+      </interaction>
+      <versioning value="versioned-update"/>
+    </resource>
+    <resource>
+      <type value="NutritionOrder"/>
+      <supportedProfile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-nutritionorder"/>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHOULD"/>
+        </extension>
+        <code value="update"/>
+        <documentation value="Allows annotating the nutrition order in response to a card.  (Support is mandatory if the system supports NutritionOrders.)"/>
+      </interaction>
+      <versioning value="versioned-update"/>
+    </resource>
+    <resource>
+      <type value="Organization"/>
+      <supportedProfile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-organization"/>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHOULD"/>
+        </extension>
+        <code value="read"/>
+        <documentation value="Allows retrieval of ordering and/or performing organization's information if not retrieved as part of pre-fetch.  (Support is mandatory if not supported as part of pre-fetch.)"/>
+      </interaction>
+    </resource>
+    <resource>
+      <type value="ServiceRequest"/>
+      <supportedProfile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-servicerequest"/>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHOULD"/>
+        </extension>
+        <code value="update"/>
+        <documentation value="Allows annotating the service requests in response to a card.  (Support is mandatory if the system supports ServiceRequests.)"/>
+      </interaction>
+      <versioning value="versioned-update"/>
+    </resource>
+    <resource>
+      <type value="ClaimResponse"/>
+      <supportedProfile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-claimresponse"/>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHOULD"/>
+        </extension>
+        <code value="create"/>
+        <documentation value="Needed to allow support for cards returning preemptive determiniations."/>
+      </interaction>
+    </resource>
+    <resource>
+      <type value="Task"/>
+      <supportedProfile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-crdcardtask"/>
+      <supportedProfile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-taskquestionnaire"/>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHOULD"/>
+        </extension>
+        <code value="create"/>
+        <documentation value="Needed to allow support for cards returning deferrable cards and/or requests to complete Questionnaires."/>
+      </interaction>
+    </resource>
+  </rest>
+</CapabilityStatement>

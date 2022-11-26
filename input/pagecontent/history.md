@@ -13,20 +13,22 @@ Added a number of enhancements and some changes to approach.  Key differences ar
 * Made support for a [minimal set of configuration options](hooks.html#configuration-options-extension) mandatory
 * Added an extension to [link cards to requests](hooks.html#linking-cards-to-requests)
 * Introduced the new [order-dispatch](hooks.html#order-dispatch) hook
-* Added the [Annotate](hooks.html#annotate) and [Pre-emptive prior authorization](hooks.html#pre-emptive-prior-authorization) card types
+* Added the [Annotate](hooks.html#annotate) and [Pre-emptive prior authorization](hooks.html#preemptive-determination) card types
 * Revamped how [Prefetch](hooks.html#prefetch) handles retrieving a patient's coverage information
 * Provided explicit guidance around [deferring card actions](hooks.html#deferring-card-actions)
 * Added a section on [registering DTR apps with CRD](hooks.html#registering-dtr-apps-with-crd)
 * Updated to support CRD 2.0, which included changes to the 'topic' element within cards
 * Added support for system actions and made their use mandatory for updates to orders and coverage
 * Added a definition of [mustSupport](hooks.html#mustsupport) for this guide
-* Acknowledged that CRD clients can be made up of [multiple systems](hooks.html#systems)
+* Acknowledged that CRD clients can be made up of [multiple systems](index.html#systems)
 * Removed constraint prohibiting [ServiceRequest.doNotPerform])(StructureDefinition-profile-servicerequest.html#profile)
 * Added guidance on [enabling a CRD server](hooks.html#enabling-a-crd-server)
 * Added guidances on [crd access tokens](hooks.html#crd-access-tokens)
 * Clarified expectations about [controlling hook invocation](hooks.html#controlling-hook-invocation)
 * Provided guidance on [external references](hooks.html#external-reference)
 * Corrected cardType codes to use the IG temporary code system, as it is likely that long-term these codes won't all live as part of the IG
+* Added CapabilityStatements describing [CRD client](CapabilityStatement-crd-client.html) and [CRD Server](CapabilityStatement-crd-server.html) responsibilities
+
 
 As well there were various other adjustments to specification language, profiles, and examples to align with these changes and to correct minor typos or improve wording.
 
