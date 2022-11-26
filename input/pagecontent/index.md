@@ -59,7 +59,7 @@ The specific architecture of the CRD client and the number of distinct data repo
 
 <blockquote class="stu-note">
 <p>
-This specification recognizes that CRD clients may be made up of multiple systems.  In practice, there will be orchestration requirements to allow these multiple systems to interact in a way that allows them to appear as a single monolithic system from the perspective of the CRD server.  This IG does not (yet) provide any guidance or standardization about how system components should interoperate to achieve this monolithic behavior.
+This specification recognizes that CRD clients may be made up of multiple systems, potentially including components whose specific function is enabling CRD functionality.  In practice, there will be orchestration requirements to allow these multiple systems to interact in a way that allows them to appear as a single monolithic system from the perspective of the CRD server.  This IG does not (yet) provide any guidance or standardization about how system components should interoperate to achieve this monolithic behavior.  If there is industry interest, future releases of this IG may work to standardize some of these "intra-client" interactions.
 </p>
 </blockquote>
 
