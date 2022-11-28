@@ -1013,7 +1013,7 @@ For example, this card indicates that a prior authorization has been granted for
                 {
                   "url": "code",
                   "valueCodeableConcept": {
-                    "coding" [{
+                    "coding": [{
                       "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
                       "code": "auth-out-network-only"
                     }]
@@ -1030,12 +1030,19 @@ For example, this card indicates that a prior authorization has been granted for
               ]
             },
             {
-             "url": "date",
-             "valueDate": "2019-02-15"
+              "url": "date",
+              "valueDate": "2019-02-15"
             },
             {
-             "url": "identifier",
-             "valueString": "12345ABC"
+              "url": "identifier",
+              "valueString": "12345ABC"
+            },
+            {
+              "url": "contact",
+              "valueContactPoint": {
+                "system": "url",
+                "value": "http://some-payer/xyz-sub-org/get-help-here.html"
+              }
             }
           ]
         } 

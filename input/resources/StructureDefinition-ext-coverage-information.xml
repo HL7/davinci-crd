@@ -131,7 +131,6 @@ Additional standard reason codes may be introduced in the future.  If no standar
         <valueSet value="http://hl7.org/fhir/us/davinci-crd/ValueSet/coverageAssertionReasons"/>
       </binding>
     </element>
-    
     <element id="Extension.extension:detail">
       <path value="Extension.extension"/>
       <sliceName value="detail"/>
@@ -282,6 +281,28 @@ Additional standard reason codes may be introduced in the future.  If no standar
       <path value="Extension.extension.value[x]"/>
       <type>
         <code value="string"/>
+      </type>
+    </element>
+    <element id="Extension.extension:contact">
+      <path value="Extension.extension"/>
+      <sliceName value="contact"/>
+      <short value="Contact"/>
+      <definition value="Phone number, fax number, email address, website, or other ContactPoint that can be used to ask questions/escalate issues related to a coverage assertion."/>
+      <comment value="This **SHOULD** only be populated if the contact information is context-specific rather than a generic contact for the payer as a whole."/>
+      <min value="0"/>
+      <max value="*"/>
+      <type>
+        <code value="Extension"/>
+      </type>
+    </element>
+    <element id="Extension.extension:contact.url">
+      <path value="Extension.extension.url"/>
+      <fixedUri value="contact"/>
+    </element>
+    <element id="Extension.extension:contact.value[x]">
+      <path value="Extension.extension.value[x]"/>
+      <type>
+        <code value="Contact"/>
       </type>
     </element>
     <element id="Extension.url">
