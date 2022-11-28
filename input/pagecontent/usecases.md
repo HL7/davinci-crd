@@ -32,7 +32,7 @@ Note: An app may also provide Dr. Good with additional useful information, such 
 #### Scenario 2
 Mrs. Smith is a 75-year-old female on a Medicare Fee-For-Service plan with long standing chronic obstructive pulmonary disease (COPD) who has had slowly and progressively worsening shortness of breath with activity.  In the office, her room air saturation after a 5-minute walk is found to be 84%.  She has additional evaluation that reveals no new findings.  Dr. Good wants to initiate home oxygen therapy for Mrs. Smith.
 
-As Dr. Good begins crafting the order in their EMR<sup>*</sup>, it uses Mrs. Smith's coverage information to initiate a querying to a CRD Server used by her payer that includes the code for home oxygen therapy.  An alert appears at the bottom of the EMR order entry screen notifying Dr. Good that specific testing and documentation is required to substantiate the need for home oxygen therapy.
+As Dr. Good begins crafting the order in their EMR<sup>*</sup>, it initiates a query to a CRD Server used by her payer that includes the code for home oxygen therapy.  An alert appears at the bottom of the EMR order entry screen notifying Dr. Good that specific testing and documentation is required to substantiate the need for home oxygen therapy.
 
 Dr. Good retrieves specific documentation templates which have already been populated with information from their EMR.  They complete the remaining documentation requirements that require clinical input, signs the documentation, and includes it in Mrs. Smith's medical record.  They leave the remaining portion of the documentation to be completed by their administrative staff who will work to find an appropriate supplier and then do final paperwork submission.
 

@@ -113,6 +113,10 @@ Payers and service providers **SHALL** ensure that CDS Hooks return only message
 <div markdown="1" class="new-content">
 
 #### Enabling a CRD Server
+When an CRD client configures itself to support a payer's CRD service, it will need to identify which payer(s) the service supports.  This is needed to ensure that the CRD client only sends CRD calls to services that the patient has current coverage for.  The CRD service is responsible for any internal routing based on which processing organization handles the decisions.  For this purpose, payer means 'The organization listed on the member's insurance card'.
+
+Provider and EHR Vendor organizations **MAY** leverage the [payer registry](http://hl7.org/fhir/us/davinci-pdex-plan-net) developed by PDex (which will eventually fold into the [national directory under FAST](https://confluence.hl7.org/display/FAST/National+Healthcare+Directory)) as a means of determining which endpoints exist for which payers as candidates for configuration.
+
 All CRD clients will need to be configured to support communicating to a particular CRD server.  This configuration process includes the following:
 
 * Confirming that the CRD Server can legitimately act on behalf of one or more payers
