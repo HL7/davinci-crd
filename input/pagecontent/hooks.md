@@ -1073,6 +1073,12 @@ Balloters are requested to provide their feedback on whether the conformance exp
 </blockquote>
 </div>
 
+<div markdown="1" class="new-content">
+
+The information added to the order here is often going to be relevant/important not only to the creator of the order, but also to its eventual performer.  This guide does not define how information around coverage, preemptive determination, etc. are conveyed from the ordering system to the performing system.  However, the [Post-accute Orders implementation guide](http://hl7.org/fhir/us/dme-orders) does provide a mechanism for electronic sharing of orders and could be used to convey the additional notes/extensions envisioned here as well.
+
+</div>
+
 ###### Propose alternate request
 This response type can be used by payers to present a `Card` with suggested alternatives to the current proposed therapy.  This might be updating the order to change certain information or proposing to replace the order completely with one or more alternatives.  This might be used to propose a change to a first-line treatment, to alter therapy frequency or drug dosage to be consistent with coverage guidelines, to propose covered products or services as substitutes for a non-covered service, and/or to propose therapeutically equivalent treatments that will have a lower cost to the patient.
 
