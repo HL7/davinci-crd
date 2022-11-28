@@ -134,9 +134,14 @@
       <definition value="Are there additional documentation requirements"/>
     </concept>
     <concept>
-      <code value="prior-auth"/>
-      <display value="Prior Authorization"/>
-      <definition value="Is prior authorization required or not (and possibly provision of unsolicited prior authorizations)"/>
+      <code value="auth-req"/>
+      <display value="Prior Authorization Required?"/>
+      <definition value="Is prior authorization required for the current service or not, or is there additional data that needs to be collected to make that determination?"/>
+    </concept>
+    <concept>
+      <code value="unsolicited-determ"/>
+      <display value="Unsolicited Determiniation"/>
+      <definition value="The payer might provide an unsolicited approval of the service as covered (similar to, but not quite the same as a 'prior authorization')"/>
     </concept>
     <concept>
       <code value="preempt-determination"/>

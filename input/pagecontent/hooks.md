@@ -298,7 +298,7 @@ For example, the hook [HTTP Request](https://cds-hooks.hl7.org/2.0/#http-request
   ...
   "extension": {
     "davinci-crd.configuration": {
-      "prior-auth": true,
+      "auth-req": true,
       "alt-drug": false,
       "max-cards": 5
     }
@@ -503,8 +503,8 @@ If a hook service is invoked on a collection of resources, all cards returned th
     "icon": "https://example.com/img/icon-100px.png",
     "topic": {
       "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-      "code": "prior-auth",
-      "display": "Prior Authorization"
+      "code": "auth-req",
+      "display": "Prior Authorization Required?"
     }
   }
 }
@@ -887,8 +887,8 @@ This example CDS Hook [Card](https://cds-hooks.hl7.org/2.0/#cds-service-response
     "icon": "https://example.com/img/icon-100px.png",
     "topic": {
       "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-      "code": "prior-auth",
-      "display": "Prior Authorization"
+      "code": "auth-req",
+      "display": "Prior Authorization Required?"
     }
   }
 }
@@ -1079,7 +1079,7 @@ Balloters are requested to provide their feedback on whether the conformance exp
 
 <div markdown="1" class="new-content">
 
-The information added to the order here is often going to be relevant/important not only to the creator of the order, but also to its eventual performer.  This guide does not define how information around coverage, preemptive determination, etc. are conveyed from the ordering system to the performing system.  However, the [Post-accute Orders implementation guide](http://hl7.org/fhir/us/dme-orders) does provide a mechanism for electronic sharing of orders and could be used to convey the additional notes/extensions envisioned here as well.
+The information added to the order here is often going to be relevant/important not only to the creator of the order, but also to its eventual performer.  This guide does not define how information around coverage, unsolicited determination, etc. are conveyed from the ordering system to the performing system.  However, the [Post-accute Orders implementation guide](http://hl7.org/fhir/us/dme-orders) does provide a mechanism for electronic sharing of orders and could be used to convey the additional notes/extensions envisioned here as well.
 
 </div>
 
@@ -1462,7 +1462,7 @@ To support this behavior, the appContext **SHOULD** include the following proper
 * `context`: 1..1 - a copy of the `context` object that was passed to the service on invocation of the hook
 
 <div markdown="1" class="new-content">
-###### Preemptive determination
+###### Unsolicited Determination
 
 One result of invoking a CRD Server may be - based on the patient, their type of coverage, and other information available in the patient's record queried by the CRD Server - that the service determines that not only is prior authorization necessary for the intervention being ordered, but that the ordered intervention meets prior authorization requirements.  In such a case, the CRD Server may wish to preemptively return a "determination of coverage", bypassing the need for prior authorization to be solicited at all.  To do this, the CRD Service returns a card with two alternate suggestions - store the prior authorization in computable form or add the prior authorization as an annotation to the order. 
 
@@ -1472,7 +1472,7 @@ The second suggestion will function exactly as per the 'annotate' card. The anno
 
 CRD clients and services **MAY**, by mutual agreement, make use of the new CDS Hooks system action functionality to cause annotations to automatically be stored on the relevant request, appointment, etc.  These implementations will be responsible for ensuring that the only changes made to the CRD client record are to add the annotations contemplated here.  It is likely that the conformance expectation on the use of system actions will be tighter in future releases.
 
-NOTE:  If a payer issues an preemptive determination, there is no guarantee that the order that triggered the determination will ever get performed (or possibly even issued).  As a result, the creation of such an determination **SHALL NOT** result in any limitation on provision of subsequent services (e.g. through reservation of funds).  There should also be no expectation that a provider will 'cancel' the determiniation if the order is cancelled (because the determination was never actually 'requested').
+NOTE:  If a payer issues an unsolicited determination, there is no guarantee that the order that triggered the determination will ever get performed (or possibly even issued).  As a result, the creation of such an determination **SHALL NOT** result in any limitation on provision of subsequent services (e.g. through reservation of funds).  There should also be no expectation that a provider will 'cancel' the determiniation if the order is cancelled (because the determination was never actually 'requested').
 
 ```
 {
@@ -1485,8 +1485,8 @@ NOTE:  If a payer issues an preemptive determination, there is no guarantee that
     "icon": "https://example.com/img/icon-100px.png",
     "topic": {
       "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-      "code": "prior-auth",
-      "display": "Prior Authorization"
+      "code": "auth-req",
+      "display": "Prior Authorization Required?"
     }
   },
   "suggestions": [{
@@ -1538,7 +1538,7 @@ NOTE:  If a payer issues an preemptive determination, there is no guarantee that
   }]
 }
 ```
-A full example of a preemptive prior authorization can be found [here](https://build.fhir.org/ig/HL7/davinci-crd/ClaimResponse-priorauth-example.html).
+A full example of an unsolicited determination can be found [here](https://build.fhir.org/ig/HL7/davinci-crd/ClaimResponse-priorauth-example.html).
 
 
 </div>

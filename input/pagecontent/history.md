@@ -13,7 +13,7 @@ Added a number of enhancements and some changes to approach.  Key differences ar
 * Made support for a [minimal set of configuration options](hooks.html#configuration-options-extension) mandatory
 * Added an extension to [link cards to requests](hooks.html#linking-cards-to-requests)
 * Introduced the new [order-dispatch](hooks.html#order-dispatch) hook
-* Added the [Annotate](hooks.html#annotate) and [Pre-emptive prior authorization](hooks.html#preemptive-determination) card types
+* Added the [Annotate](hooks.html#annotate) and [Unsolicited determiniation](hooks.html#unsolicited-determination) card types
 * Revamped how [Prefetch](hooks.html#prefetch) handles retrieving a patient's coverage information
 * Provided explicit guidance around [deferring card actions](hooks.html#deferring-card-actions)
 * Added a section on [registering DTR apps with CRD](hooks.html#registering-dtr-apps-with-crd)
