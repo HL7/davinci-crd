@@ -46,8 +46,6 @@ This implementation guide also leverages the [US Core]({{site.data.fhir.ver.usco
 
 Where US Core profiles do not yet exist (e.g. for several of the 'Request' resources), profiles have been created that try to align with existing US Core profiles in terms of elements exposed and terminologies used.
 
-There is one exception to the use of or alignment with US Core profiles.  The [non-PHI](#phi-and-hook-invocation) interfaces are not based on US Core because the US Core profiles expect support for, and sometimes demand, the sharing of patient-identifying information.
-
 Note that, in some cases, the US Core profiles require support for data elements that are not necessarily relevant to the coverage requirements discovery use-case.  It was felt that leveraging existing standard interfaces would promote greater (and quicker) interoperability than a more tuned custom interface.  CRD Clients might still choose to restrict what information is exposed to CRD Servers based on their internal data access and governance rules.
 
 
@@ -75,36 +73,6 @@ In addition to these, this implementation guide imposes the following additional
 * Access to patient information to meet decision support requirements is still subject to regulations such as HIPAA "minimum necessary" and CRD clients **MAY** audit access to check for reasonableness and appropriateness.
 
 </div>
-
-#### PHI and Hook Invocation
-
-CRD Clients will typically need to provide patient-identifiable protected health information (PHI) to a CRD Server to perform Coverage Requirements Discovery - either because the information is needed to identify the plan that corresponds to the patient or to evaluate coverage requirements against information that the CRD Server or payer has on file - to ensure accurate guidance and to reduce unnecessary suggestions.  Nevertheless, there are situations where PHI will not be shared with a CRD Server because a patient has withheld consent to share information with the payer, the provider has concerns about sharing sensitive data with the payer, or because a payer offers only a single plan with coverage requirements that can be evaluated without the use of PHI.
-
-<div markdown="1" class="new-content">
-
-In situations where a CRD Server's access to PHI is limited due to patient consent and/or provider policy, the CRD Server may have greater difficulty providing decision support and will be more likely to indicate 'Unable to determine coverage/prior authorization requirements' and potentially prompt for data collection using DTR.
-
-</div>
-
-Therefore, CRD Clients **SHALL** provide support for Coverage Requirements Discovery without PHI using a redacted view where the resources exposed through the CDS Hooks and SMART on FHIR interfaces are filtered as follows:
-* The Patient resource adheres to the [de-identified profile](StructureDefinition-profile-patient-deident.html)
-* The Coverage resources adhere to the [de-identified profile](StructureDefinition-profile-coverage-deident.html)
-* All resource narratives are removed
-* All extensions other than those explicitly mentioned in the profiles in this implementation guide are removed
-* All markdown elements and all string elements that could potentially support free text (e.g. 'text', 'display', 'comment' and similar elements) are removed
-* Any elements that would be rendered empty due to the above removals are either removed, or if cardinality restrictions would prevent their removal, are populated solely with a [data absent reason]({{site.data.fhir.path}}extension-data-absent-reason.html) extension with a code of 'masked'
-
-CRD Clients **SHALL** determine whether a CRD Server will use the PHI or non-PHI version of the CRD interface at the time the CRD Server is configured to have access to their system.  In situations where PHI will never be required to perform Coverage Requirements Discovery, the redacted view **SHALL** be used.
-
-NOTES:
-* The non-PHI information exchanged is considered "de-identified, but potentially re-identifiable".  As such, when retaining this information for audit purposes, access to the information **SHALL** be restricted and itself audited, as would access to PHI log information.
-* For the purposes of non-PHI interactions, this specification does not consider the Patient resource id as PHI.  If organizational policy requires the Patient.id to be treated as PHI, implementers will need to anonymize the id and support query of the patient's related resources by the anonymized id.
-
-<blockquote class="note-to-balloters">
-<p>
-There is some controversy around the decision to mandate support for de-identified CRD Server invocation.  Implementers are encouraged to provide feedback around the implications for industry of support for this feature being mandatory.
-</p>
-</blockquote>
 
 #### Sensitive Orders
 

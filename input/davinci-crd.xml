@@ -66,14 +66,6 @@
 		</resource>
 		<resource>
 			<reference>
-				<reference value="Coverage/deident-example"/>
-			</reference>
-			<name value="De-identified Coverage example"/>
-			<description value="Example de-identified coverage populated based on CRD profile"/>
-			<exampleCanonical value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-coverage-deident"/>
-		</resource>
-		<resource>
-			<reference>
 				<reference value="Coverage/example"/>
 			</reference>
 			<name value="Coverage example"/>
@@ -143,14 +135,6 @@
 			<name value="Organization example"/>
 			<description value="Example organization populated based on CRD profile"/>
 			<exampleCanonical value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-organization"/>
-		</resource>
-		<resource>
-			<reference>
-				<reference value="Patient/deident-example"/>
-			</reference>
-			<name value="De-identified Patient example"/>
-			<description value="Example de-identified patient populated based on CRD profile"/>
-			<exampleCanonical value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-patient-deident"/>
 		</resource>
 		<resource>
 			<reference>
@@ -274,14 +258,6 @@
     <parameter>
       <code value="path-expansion-params"/>
       <value value="terminology-settings.json"/>
-    </parameter>
-    <parameter>
-      <code value="no-narrative"/>
-      <value value="Coverage/deident-example"/>
-    </parameter>
-    <parameter>
-      <code value="no-narrative"/>
-      <value value="Patient/deident-example"/>
     </parameter>
 	</definition>
 </ImplementationGuide>
