@@ -1959,6 +1959,9 @@ NOTES:
 * Exploration of "what-if" scenarios using the app is intended to work for all the hooks. This might be accomplished using separate SMART apps for different types of orders/processes (e.g. distinct what-if apps for ordering drugs, ordering labs, doing referrals, scheduling appointments, etc.) or a single SMART app that prompts the user to identify the scenario they are interested in exploring prior to invoking the hook.
 
 <div markdown="1" class="new-content">
+* The app/CRD client **MAY** choose to use configuration options to control what types of cares are of interest
+
+In the specific case of order-based hooks, "What if" **SHOULD** use the Order Sign hook, but **SHALL** use the configuration option that prevents the return of an unsolicited determination and MAY use configuration options to prevent the return of other irrelevant types of cards (e.g. duplicate therapy, etc.)
 
 #### Registering DTR Apps with CRD
 
