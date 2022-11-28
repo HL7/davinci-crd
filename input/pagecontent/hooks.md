@@ -74,11 +74,9 @@ In addition to these, this implementation guide imposes the following additional
 
 </div>
 
-#### Sensitive Orders
+#### Sharing Information with Payers
 
-CRD Clients that implement the [order-select](#order-select) hook will typically fire the hook multiple times as information is gathered and entered into the system by a practitioner.  In cases where the content of an order is sensitive, it is possible that a patient will elect to pay for a medication, device, service (etc.) themselves instead of sharing the information with a payer.  In these cases, the order in which information is entered and when hooks are fired could determine whether information the patient deems sensitive is shared with the CRD Server and payer.
-
-CRD Client workflows, user interfaces, and CDS hook triggers **SHALL** be designed in a manner that ensures that practitioner and patient considerations govern whether information is sent to a CRD Server.
+All information sharing that occurs through making CRD calls is subject to the privacy and security considerations documented [here]({{site.data.fhir.ver.hrex}}/security.html).
 
 <div markdown="1" class="new-content">
 
@@ -516,8 +514,6 @@ Provider systems **SHALL** only invoke hooks on payer services where the the pat
 NOTE: There is no expectation that CRD clients will only make calls to payer services that are 'known' to provide coverage for the proposed service.  In some cases, the EMR will not know at time of order entry which payer(s) will have claims submitted to them.  Also, a payer with active coverage may have information relevant to the order even if a claim will never be submitted to them (e.g. contraindications) or require a formal declaration of non-coverage, even though that declaration is a given.
 
 Where the patient has multiple active coverages that the CRD client deems appropriate to call the respective CRD servers for, the CRD client **SHALL** invoke all CRD server calls in parallel and display results simultaneously to ensure timely response to user action.
-
-Implementations **SHALL** restrict information shared with a payer to only the information appropriate to share with that payer, for example, not including patient pay or federal/state sensitive data without patient permission. This requires that consideration be given to how such restricted content will be determined and identified as ‘patient sensitive’, or how a patient will have an opportunity to indicate their intention to self-pay prior to invoking CRD to exchange patient data with payer systems.
 
 </div>
 
