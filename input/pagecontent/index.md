@@ -53,13 +53,18 @@ This implementation guide sets expectations for two types of systems:
 [CRD Clients](CapabilityStatement-crd-client.html) are typically systems that healthcare providers use at the point of care, including electronic medical records systems, pharmacy systems, and other provider and administrative systems used for ordering, documenting, and execution of patient-related services. Users of these systems have a need for coverage requirements information to support care planning.
 <div markdown="1" class="new-content">
 
-Examples of potential CRD clients include EHRs, EMRs, practice management systems, scheduling systems, patient registration systems, etc.  In some situations, a CDS Client may be composed of a variety of different subsystems, where the sub-system within a healthcare organization coordinate to satisfy CDS Client functionality (e.g. different data repositories for clinical and administrative data, different software for clinical orders vs. encounter management vs. appointment booking).
+Examples of potential CRD clients include EHRs, EMRs, practice management systems, scheduling systems, patient registration systems, etc.  
 
-The specific architecture of the CRD client and the number of distinct data repositories it uses doesn't matter.  The only requirement is that from a CRD server perspective, the collection of systems behaves as one.  I.e. one endpoint for the CRD server can use to access patient data, one authorization process for registering the server to be used within the provider environment, etc.
+The CRD client may actually involve multiple systems. For example, the systems that handle order entry may be different from what is used for appointment booking and different again from the system that exposes information over the FHIR interface. It is possible that a provider environment might use an intermediary to coordinate CRD client calls from multiple systems. Such an architecture is sufficient provided that:
+
+* Calls are triggered from within the system the user is interacting with at the time the 'hook event' (entering an order, booking an appointment, etc.) occurs.
+* Cards returned are displayed to the user, or in the event of system actions, user-notifications associated with the system actions occur in the application the user was interacting with.
+* The 'access token' and FHIR endpoint exposed to the CRD service has access to all relevant data, independent of which physical data store it resides in.
+* The intermediary could take on the responsibility for the FHIR interface, determining appropriate payer to route calls to, etc.
 
 <blockquote class="stu-note">
 <p>
-This specification recognizes that CRD clients may be made up of multiple systems, potentially including components whose specific function is enabling CRD functionality.  In practice, there will be orchestration requirements to allow these multiple systems to interact in a way that allows them to appear as a single monolithic system from the perspective of the CRD server.  This IG does not (yet) provide any guidance or standardization about how system components should interoperate to achieve this monolithic behavior.  If there is industry interest, future releases of this IG may work to standardize some of these "intra-client" interactions.
+When CRD clients are made up of multiple systems, there will be orchestration requirements to allow these multiple systems to interact in a way that allows them to appear as a single monolithic system from the perspective of the CRD server.  This IG does not (yet) provide any guidance or standardization about how system components should interoperate to achieve this monolithic behavior.  If there is industry interest, future releases of this IG may work to standardize some of these "intra-client" interactions.
 </p>
 </blockquote>
 
