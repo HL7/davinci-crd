@@ -165,11 +165,6 @@ In order to initiate this process, the payer responsible for a given CRD Server 
 
 * What scopes it needs to perform its full function (and why)
 
-### Resource Identity
-Some CRD functionality includes the ability to update orders, appointments and other resources passed to the CRD service and/or the creation of new resources that reference those originally passed resources.  These resources may also be referenced as part of context when recommending the launch of the DTR smart app.  For this to work, resource identity needs to be reliable even when working with 'draft' orders that might not yet be persisted or surfaced over the CRD client's FHIR endpoint.
-
-When CRD clients pass resources to a CRD server as part of context, the resources **SHALL** have an id and that id **SHALL** be useable as a target for references in resources manipulated by CDS Hook actions and/or by SMART apps launched by CRD.  This does not mean that the ids passed to CRD must persist, but rather that the CRD client must handle adjustments to any references made to them (or provide necessary redirects) ensuring that any references made to the in-memory resource will remain valid.  This also means that CRD clients will need to support the creation or updating of resources that include references to resources that might, at the time, only exist in memory and not yet be available as persistent entities.
-
 #### CRD Access Tokens
 
 When a CRD client invokes a CRD server via CDS Hooks, it will provide an access token that allows the CRD server to retrieve additional patient information.  The base rules for this token are defined in the [CDS Hooks specification](https://cds-hooks.hl7.org/2.0/#passing-the-access-token-to-the-cds-service).  This specification imposes some additional constraints:
