@@ -821,6 +821,8 @@ CRD Servers **SHALL**, at minimum, demonstrate an ability to return cards with t
 
 NOTE: Support for a card type does not mean that all orders/appointments/etc. will necessarily receive card guidance, merely that it must be able to return those card types for at least a subset of CRD invocations
 
+Provision of and acceptance of decision support cards outside the coverage and documentation requirements space is optional (for both server and client).  CRD that provide decision support for non-coverage/documentation areas **SHALL** check that the CRD client does not have the information within its store that would allow it to detect the issue itself.  If the information already exists in the CRD client, then the obligation is on the CRD cllient to manage the issue detection and reporting in its own manner and CRD servers should not get involved.
+
 Response types are listed from least sophisticated to most sophisticated - and potentially more useful/powerful.  As a rule, the more a card can automate manual processes and the more context-specific the behavior is, the more useful the decision support will be to the clinician and the more likely it will be used.
 
 Notes:
