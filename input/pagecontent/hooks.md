@@ -815,7 +815,11 @@ The card.source.topic element above is new.
 ##### Potential CRD Response Types
 This section describes the different types of [responses](https://cds-hooks.hl7.org/2.0/#cds-service-response) that CRD Servers can use when returning coverage requirements to CRD Clients, including CRD-specific profiles on cards to describe CRD-expected behavior.  It is possible that some CRD Servers and CRD Clients will support additional card response patterns than those listed here, but such behavior is outside the scope of this specification.  Future versions of this specification might standardize additional response types.
 
-Of the response types in this guide, conformant CRD Clients **SHALL** support the [External Reference](#external-reference), [Instructions](#instructions), and  [Annotate](#annotate) responses and **SHOULD** support the remaining types.  CRD Servers **SHALL** support at least one of these response types and **MAY** support as many as necessary to convey the requirements of the types of coverage they support.
+Of the response types in this guide, conformant CRD Clients **SHALL** support the [External Reference](#external-reference), [Instructions](#instructions), and  [Annotate](#annotate) responses and **SHOULD** support the remaining types.
+
+CRD Servers **SHALL**, at minimum, demonstrate an ability to return cards with the following type: [Annotate](#annotate) (card type codes `coverage` and `auth-req`). As well, systems **SHALL** either support the [External Reference](#external-reference) and [Instructions](#instructions) card types (card type code `documentation`), or the [DTR](http://hl7.org/fhir/us/davinci-dtr) implementation guide with the [Launch SMART Application](#launch-smart-application) ard type (card type codes `dtr-clin` and `dtr-admin`).
+
+NOTE: Support for a card type does not mean that all orders/appointments/etc. will necessarily receive card guidance, merely that it must be able to return those card types for at least a subset of CRD invocations
 
 Response types are listed from least sophisticated to most sophisticated - and potentially more useful/powerful.  As a rule, the more a card can automate manual processes and the more context-specific the behavior is, the more useful the decision support will be to the clinician and the more likely it will be used.
 
