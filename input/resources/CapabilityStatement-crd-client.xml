@@ -1223,7 +1223,7 @@ In addition to the U.S. core expectations, the CRD Client **SHALL** support all 
     </resource>
     <resource>
       <type value="ClaimResponse"/>
-      <supportedProfile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-claimresponse"/>
+      <supportedProfile value="http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-claimresponse"/>
       <interaction>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
           <valueCode value="SHOULD"/>
