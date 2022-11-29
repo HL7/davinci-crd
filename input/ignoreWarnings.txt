@@ -60,6 +60,13 @@ INFORMATION: Task/questionnaire-example: Task: Validate resource against profile
 # This identifier is intended to show that identifiers that *aren't* in one of the slices are also valid
 INFORMATION: Practitioner/example: Practitioner.identifier[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-practitioner|1.1.0-ci-build
 
+# The concept conveyed isn't covered by the value set (and an out-of-value set example is intended and actually common)
+WARNING: MedicationRequest/annotated-example: MedicationRequest.extension[0].extension[5].value.ofType(CodeableConcept): No code provided, and a code should be provided from the value set 'CRD Coverage Assertion Reasons' (http://hl7.org/fhir/us/davinci-crd/ValueSet/coverageAssertionReasons|1.1.0-ci-build)
+
+
 # These code systems are made up and aren't expected to be evaluated
 Code System URI 'http://example.org/fhir/modifiers' is unknown so the code cannot be validated
 Code System URI 'http://example.org/fhir/oralservicecodes' is unknown so the code cannot be validated
+
+# This has been verified to be the correct URL for CPT codes
+Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated

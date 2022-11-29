@@ -978,29 +978,23 @@ For example, this card indicates that a prior authorization has been granted for
             },
             {
               "url": "billingCode",
-              "valueCodeableConcept": {
-                "coding": [{
-                  "system": "http://www.ama-assn.org/go/cpt",
-                  "code": "77065"
-                }]
+              "valueCoding": {
+                "system": "http://www.ama-assn.org/go/cpt",
+                "code": "77065"
               }
             },
             {
               "url": "billingCode",
-              "valueCodeableConcept": {
-                "coding": [{
-                  "system": "http://www.ama-assn.org/go/cpt",
-                  "code": "77066"
-                }]
+              "valueCoding": {
+                "system": "http://www.ama-assn.org/go/cpt",
+                "code": "77066"
               }
             },
             {
               "url": "billingCode",
-              "valueCodeableConcept": {
-                "coding": [{
-                  "system": "http://www.ama-assn.org/go/cpt",
-                  "code": "77067"
-                }]
+              "valueCoding": {
+                "system": "http://www.ama-assn.org/go/cpt",
+                "code": "77067"
               }
             },
             {

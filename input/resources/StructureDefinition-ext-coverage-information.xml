@@ -302,7 +302,7 @@ Additional standard reason codes may be introduced in the future.  If no standar
     <element id="Extension.extension:contact.value[x]">
       <path value="Extension.extension.value[x]"/>
       <type>
-        <code value="Contact"/>
+        <code value="ContactPoint"/>
       </type>
     </element>
     <element id="Extension.url">
