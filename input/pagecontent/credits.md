@@ -31,7 +31,7 @@ Project participants included:
 * Blue Cross Blue Shield of Alabama (Tony Benson, Kevin Lambert, Gini McGlothin, Morry Payne, Clarissa Winchester)
 * Cerner (Hans Buitendijk, Kevin Shekleton, Michelle Miller)
 * Cognosante (Mary Kay McDaniel)
-* Epic (Danielle Friend, Kyle Johnsen, Rachael McCormick, Mathew Varghese, Isaac Vetter)
+* Epic (Danielle Friend, Kyle Johnsen, Rachael McCormick, Spencer Utley, Mathew Varghese, Isaac Vetter)
 * Health Care Data Standards (Mary Kay McDaniel)
 * Kaiser Permanente (Walter Suarez)
 * Microsoft (Joshua Mandel)
