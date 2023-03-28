@@ -211,6 +211,31 @@ Additional standard reason codes may be introduced in the future.  If no standar
         <code value="string"/>
       </type>
     </element>
+    <element id="Extension.extension:detail.extension:dependencies">
+      <path value="Extension.extension.extension"/>
+      <sliceName value="dependencies"/>
+      <short value="Additional info about detail"/>
+      <definition value="If present, indicates that the determination represented here is dependent on the content, determination, and possibly execution of the referenced order(s)"/>
+      <requirements value="For example, the authorization decision on a request for post-surgical physiotherapy might be dependent on the order for the surgery itself.  If coverage for the surgery is not approved or the order for the surgery is cancelled, that might impact the decision on covering the physiotherapy."/>
+      <min value="0"/>
+      <max value="*"/>
+    </element>
+    <element id="Extension.extension:detail.extension:dependencies.url">
+      <path value="Extension.extension.extension.url"/>
+      <fixedUri value="dependencies"/>
+    </element>
+    <element id="Extension.extension:detail.extension:dependencies.value[x]">
+      <path value="Extension.extension.extension.value[x]"/>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-appointment"/>
+        <targetProfile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-communicationrequest"/>
+        <targetProfile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-devicerequest"/>
+        <targetProfile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-medicationrequest"/>
+        <targetProfile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-nutritionorder"/>
+        <targetProfile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-servicerequest"/>
+      </type>
+    </element>
     <element id="Extension.extension:detail.url">
       <path value="Extension.extension.url"/>
       <fixedUri value="detail"/>

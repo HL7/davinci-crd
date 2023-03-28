@@ -973,6 +973,12 @@ For example, this card indicates that a prior authorization has been granted for
               }
             },
             {
+              "url": "dependency",
+              "valueReference": {
+                "reference": "ServiceRequest/example2"
+              }
+            },
+            {
               "url": "coverage",
               "valueReference": {
                 "reference": "Coverage/example"
