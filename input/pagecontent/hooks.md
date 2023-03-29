@@ -819,7 +819,7 @@ This section describes the different types of [responses](https://cds-hooks.hl7.
 
 Of the response types in this guide, conformant CRD Clients **SHALL** support the [External Reference](#external-reference), [Instructions](#instructions), and  [Annotate](#annotate) responses and **SHOULD** support the remaining types.
 
-CRD Servers **SHALL**, at minimum, demonstrate an ability to return cards with the following type: [Annotate](#annotate) (card type codes `coverage` and `auth-req`). As well, systems **SHALL** either support the [External Reference](#external-reference) and [Instructions](#instructions) card types (card type code `documentation`), or the [DTR](http://hl7.org/fhir/us/davinci-dtr) implementation guide with the [Launch SMART Application](#launch-smart-application) ard type (card type codes `dtr-clin` and `dtr-admin`).
+CRD Servers **SHALL**, at minimum, demonstrate an ability to return cards with the following type: [Annotate](#annotate) (card type codes `coverage` and `auth-req`). As well, systems **SHALL** either support the [External Reference](#external-reference) and [Instructions](#instructions) card types (card type code `documentation`), or the [DTR](http://hl7.org/fhir/us/davinci-dtr) implementation guide with the [Launch SMART Application](#launch-smart-application) card type (card type codes `dtr-clin` and `dtr-admin`).
 
 NOTE: Support for a card type does not mean that all orders/appointments/etc. will necessarily receive card guidance, merely that it must be able to return those card types for at least a subset of CRD invocations
 
@@ -833,6 +833,12 @@ Notes:
 * Hook responses will frequently contain multiple cards and those cards might draw from a variety of response types.  For example, providing links, textual guidance, as well as suggestions for alternative orders.
 
 * The response types listed here are *not* the same as the [Configuration Options](#configuration-options-extension) specified above.  A single response type could correspond to multiple configuration options.  For example, [External Reference](#external-reference) could apply to clinical practice guidelines, prior authorization requirements, claims attachment requirements, and other things.  Similarly, one configuration option could be satisfied with multiple response types.  For example, required Prior Authorization Forms could include both [External References](#external-reference) and explicit [Request Form Completion](#request-form-completion) responses.
+
+<div markdown="1" class="new-content">
+
+* Where a card of type `dtr-clin` is returned, CRD Clients **SHALL** ensure that clinical users have an opportunity to launch the DTR app as part of the current workflow.  Where a card of type `dtr-admin` is returned, CRD Clients **SHOULD** allow clinical users to have an opportunity to launch the DTR app, but should make it clear that the information to be captured is non-clinical.
+
+</div>
 
 
 ###### External Reference
@@ -1439,7 +1445,9 @@ All such apps will need to go through the approval processes for the client's pr
 
 This response type is just a modified version of the [External Reference](#external-reference) response type.  However, the `Link.type` will be "smart" instead of "absolute".  The `Link.appContext` will typically also be present.  
 
-This card type also provides the mechanism to transition from CRD to the behavior defined in the [Documentation, Templates, and Rules (DTR) Implementation Guide](http://hl7.org/fhir/us/davinci-dtr).  The SMART app link returned is the one the payer uses to guide providers through filling out relevant questionnaires, and is capable of both retrieving the relevant CQL from the payer to determine (and where appropriate, automatically populate) payer-sourced templates and documentation, as well as retrieving information from the provider via queries authorized by the token used to launch the SMART app.  The card includes the complete app context needed for the CRD client to launch the SMART application (information gleaned by the CRD server either as data passed as part of hook invocation or subsequent querying by the service).
+<div markdown="1" class="modified-content">
+
+NOTE: This mechanism is no longer to be used for launching [Documentation, Templates, and Rules (DTR) applications](http://hl7.org/fhir/us/davinci-dtr).  That process is now handled entirely through the []() process above.  It can still be used for launching other types of SMART apps not focused on gathering data for payer use via Questionnaire.
 
 For example, this [Card](https://cds-hooks.hl7.org/2.0/#cds-service-response) contains a SMART App [Link](https://cds-hooks.hl7.org/2.0/#link) to perform an opioid assessment:
 
@@ -1463,22 +1471,14 @@ For example, this [Card](https://cds-hooks.hl7.org/2.0/#cds-service-response) co
     "url": "https://example.org/opioid-assessment",
     "type": "smart",
     "appContext": "{
-        \"questionnaire\":[\"https://example.org/fhir/Questionnaire/OP123\"],
-        \"response\":[{\"resourceType\":\"QuestionnaireResponse\",...}],
-        \"order\":[{\"resourceType\":\"MedicationRequest\",...}],
-        \"coverage\":[\"Coverage/ABC\"]
+        ...
     }"
   }]
 }
 ```
 
-The `appContext` in the above example follows a pattern used for invoking a [Da Vinci Documentation Templates &amp; Rules (DTR)](http://hl7.org/fhir/us/davinci-dtr) SMART app.  While the appContext can contain any information desired and coordinated between the designers of the CDS Hook service and the designers of the launched SMART App, Da Vinci DTR intends to support the use of 'common' SMART apps that can be used by multiple payers, such that the SMART apps can be interchangeable and the CRD client might choose to launch a common app in place of the specific SMART app URL specified.
+</div>
 
-To support this behavior, the appContext **SHOULD** include the following properties:
-
-* `questionnaire`: 1..1 - The canonical URL (potentially version-specific) for the Questionnaire to be completed by the app
-* `questionnaireToken`: 0..1 - A JWT to be passed as a security token when querying for the Questionnaire in situations where 'permission' is needed to access the Questionnaire
-* `context`: 1..1 - a copy of the `context` object that was passed to the service on invocation of the hook
 
 <div markdown="1" class="new-content">
 ###### Unsolicited Determination
