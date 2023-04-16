@@ -1949,6 +1949,7 @@ The response is a batch-response Bundle, with each entry containing either a sin
 
 * When processing data from query responses, always check the 'self' link to ensure that the server executed what was requested and processed the data as necessary - or try querying by a different mechanism (e.g. multiple queries rather than relying on `_include`).
 
+<!--
 <div markdown="1" class="new-content">
 
 #### Deferring Card Actions
@@ -2002,7 +2003,7 @@ For example, this CDS Hook [Card](https://cds-hooks.hl7.org/2.0/#cds-service-res
 See [here](Task-action-example.html) for a full example of a deferred task.
 
 
-</div>
+</div>-->
 
 ### SMART on FHIR Hook Invocation
 In addition to the real-time decision support provided by CDS Hooks, providers will sometimes need to seek coverage requirements information without invoking the workflow of their provider system to actively create an order, appointment, encounter, etc.  A few real-world examples where hooks may be invoked this way include exploring a "what-if" scenario, answering a patient question related to whether a service would be covered, and retrieving a guidance document they had seen in a previous card.

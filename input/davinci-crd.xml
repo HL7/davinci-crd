@@ -168,14 +168,14 @@
 			<description value="Example questionnaire-completion Task populated based on CRD profile"/>
 			<exampleCanonical value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-taskquestionnaire"/>
 		</resource>
-		<resource>
+<!--		<resource>
 			<reference>
 				<reference value="Task/action-example"/>
 			</reference>
 			<name value="CDS Hook deferred action example"/>
 			<description value="Example Task showing a deferred action to update a Coverage record for a patient"/>
 			<exampleCanonical value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-crdcardtask"/>
-		</resource>
+		</resource>-->
 		<page>
 			<nameUrl value="toc.html"/>
 			<title value="Table of Contents"/>
