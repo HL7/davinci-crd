@@ -815,6 +815,9 @@ In addition to the [guidance provided in the CDS Hooks specification](https://cd
 * CRD Client systems might not support all card capabilities, therefore card options **SHOULD** provide sufficient information for a user to perform record changes manually if automated support isn't possible.
 
 <div markdown="1" class="new-content">
+
+* Where <a href="https://cds-hooks.hl7.org/2.0/#system-action">systemActions</a> are used, CRD Servers **SHOULD NOT** return equivalent information in a card for user display.  It is the responsibility of the CRD Client to determine how best to present the results of the newly created or revised records.
+
 <p>
 The card.source.topic element above is new.
 </p>
