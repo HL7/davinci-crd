@@ -86,6 +86,7 @@
       <sliceName value="billingCode"/>
       <short value="Billing code"/>
       <definition value="Billing code(s) that must be used in the eventual claim for the coverage assertion to hold"/>
+      <comment value="Codes may include modifier codes, leveraging [CPT's post-coordination syntax](https://terminology.hl7.org/CPT.html)"/>
       <min value="0"/>
       <max value="*"/>
       <type>
