@@ -48,14 +48,14 @@
 			<description value="Example appointment populated based on CRD profile"/>
 			<exampleCanonical value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-appointment"/>
 		</resource>
-		<resource>
+<!--		<resource>
 			<reference>
 				<reference value="ClaimResponse/priorauth-example"/>
 			</reference>
 			<name value="Prior Authorization example"/>
 			<description value="Example prior authorization populated based on CRD profile"/>
 			<exampleCanonical value="http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-claimresponse"/>
-		</resource>
+		</resource>-->
 		<resource>
 			<reference>
 				<reference value="CommunicationRequest/example"/>

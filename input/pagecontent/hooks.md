@@ -64,7 +64,13 @@ In addition to these, this implementation guide imposes the following additional
     * Systems **SHOULD** comply with the most recent set of NIST guidelines and **SHALL** comply with at least the next most recent guidelines.  At the time this IG is written, the current guidelines can be found [here](https://csrc.nist.gov/CSRC/media/Publications/sp/800-52/rev-2/draft/documents/sp800-52r2-draft2.pdf).
     * This specification does not provide guidance on certificate management between systems, though it has been proposed that Direct certificates could be used for this purpose.
 * CRD Clients **SHALL** support running applications that adhere to the SMART on FHIR [confidential app](http://www.hl7.org/fhir/smart-app-launch#support-for-public-and-confidential-apps) profile.
-* CRD Servers **SHALL** use information received solely for coverage determination purposes and **SHALL NOT** retain data received over the CRD interfaces for any purpose other than audit
+
+<div markdown="1" class="modified-content">
+
+* CRD Servers **SHALL** use information received solely for coverage determination and decision support purposes and **SHALL NOT** retain data received over the CRD interfaces for any purpose other than audit or providing context for form completion using DTR.
+
+</div>
+
 * CRD Clients are the final arbiters of what data can or cannot be shared with CRD Servers and **MAY** filter or withhold any resources or data elements necessary to support their obligations as health data custodians, including legal, policy, and patient consent-based restrictions.  Withholding information might, however, limit the completeness or accuracy of coverage requirements discovery advice retrieved using the interfaces within this guide.  The inability of a CRD Server to provide full advice does not relieve providers of their responsibility for ensuring that payer coverage requirements are met.
 * CRD Clients **SHALL** ensure that the resource identifiers exposed over the CRD interface are distinct from and have no determinable relationship with any business identifiers associated with those records.  E.g. the Patient.id element cannot be the same as or contain in some fashion a patient's social security number or medical record number.
 
@@ -909,20 +915,50 @@ This example CDS Hook [Card](https://cds-hooks.hl7.org/2.0/#cds-service-response
 ```
 {% endraw %}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div markdown="1" class="new-content">
 
-###### Annotate
-This response type presents a `Card` with a piece of information that should be retained with the order/appointment/etc.  For example, "No prior authorization for drug X required by ABC insurance", "Prior authorization number for X-ray from ABC insurance is 13245", or "This referral is not covered under the patient's DEF plan".  With information like this, merely displaying the text on the screen in a card is not sufficient - it needs to be recorded in the associated order for future use or evidence.  These cards involve 'replacing' the submitted order, but leaving the order unchanged, with the exception that an additional 'note' is added to the resource instance. 
+###### Coverage Information
+This response type does not present a `Card`.  Instead, it uses a <a href="https://cds-hooks.hl7.org/2.0/#system-action">systemAction</a> to automatically update the order or other resource in the CRD Client with an extension that conveys information related to the coverage of the order.
 
-The note uses the [Annotation]({{site.data.fhir.path}}datatypes.html#Annotation) data type and captures the comment, the date, and who made the assertion.  In this case, the commenter would be the payer organization. The payers **SHOULD** include all the discrete information in the 'annotation'.  The 'detail' for the card **SHOULD** indicate that the statement is point-in-time.  Note that the text **SHOULD** *also* be displayed in the card, with the button link simply saying "Add to record" or something similar.  The requested action is always an 'update' and there is only ever one alternative. It is to be noted that this will be handled as a single 'update' action. CRD clients that don't support the extension will ignore it and just store the annotation.
-
-In addition to the annotation, a new FHIR [coverage-information](StructureDefinition-ext-coverage-information.html) extension is defined that allows assertions around coverage and prior authorization to also be captured computably, including what assertion is made, what coverage the assertion is made with respect to, when the assertion was made, and - optionally - a trace id that can be used for audit purposes.
+A new FHIR [coverage-information](StructureDefinition-ext-coverage-information.html) extension is defined that allows assertions around coverage and prior authorization to also be captured computably, including what assertion is made, what coverage the assertion is made with respect to, when the assertion was made, and - optionally - a trace id that can be used for audit purposes.
 
 Assertions about coverage, prior authorization requirements, etc. are of course contingent on the eventual claim for the ordered service being aligned with the payer expectations.  Because the order/appointment/etc. will not have the same information that would typically be included in a formal request for prior authorization or pre-determination, the payer will need to infer from the order what billing codes, qualifiers, dollar amounts, etc. would typically be involved.  In some cases, the answer might differ depending on factors such as in/out of network, when the service is delivered, etc.  These qualifiers around when the coverage assertion is considered valid **SHALL** be included as part of the annotation.
 
 If a CRD service has provided limitations about when a coverage assertion applies that turn out to not be consistent with what the provider intends to do (e.g. payer says covered if billed as X, but provider intends to bill as Y), then the provider can always use the normal prior authorization process to solicit an authorization that more precisely aligns with their expectations for how the service will eventually be billed.
 
-CRD Servers that make assertions with respect to coverage and prior authorization **SHALL** provide an annotation card that includes both the human-readable and computable version.  Clients **SHALL** store at least one of the two forms.
+It is possible that more than one extension could be present, representing coverage information for different coverages for the same order.
 
 When using this response type, the proposed order or appointment being updated **SHALL** comply with the following profiles:
 
@@ -958,11 +994,9 @@ When using this response type, the proposed order or appointment being updated *
 For example, this card indicates that a prior authorization has been granted for a planned prescription:
 
 ```
-"suggestions": [{
-  "label": "Prior authorization required if out-of-network",
-  "actions": [{
+{
+  "systemActions": [{
     "type": "update",
-    "description": "Add coverage information to record",
     "resource": {
       "resourceType": "ServiceRequest",
       "id": "idfromcontext",
@@ -1087,7 +1121,7 @@ For example, this card indicates that a prior authorization has been granted for
       ]
     }
   }]
-}]
+}
 ```
 CRD clients and services **SHALL** support the new CDS Hooks system action functionality to cause annotations to automatically be stored on the relevant request, appointment, etc. without any user intervention. In this case, the discrete information propagated into the order extension **SHALL** be available to the user for viewing.  However, this might be managed with icons, flyovers or alternate mechanisms than traditional CDS Hook card rendering.  The key consideration is that the user is aware that the information is available and can easily get to it.  These implementations will be responsible for ensuring that the only changes made to the CRD client record are to add the annotations contemplated here.  CRD clients **MAY** be configured to not execute system actions under some circumstances - e.g. if the order has been cancelled/abandoned.
 
@@ -1308,11 +1342,13 @@ This example proposes adding a monthly test to check liver function:
 ```
 
 ###### Request form completion
-This response type can be used to present a `Card` that indicates that there are forms that need to be completed.  These might contain documentation that must be submitted for prior authorization, attachments for claims submission, documentation that must be completed and retained as proof that clinical need protocols have been followed, or that must otherwise be retained and available for future audits.  While forms can also be expressed as static or active PDFs referenced by [External References](#external-reference), or within a [SMART Application](#launch-smart-application), this response type provides the form definition as a FHIR Questionnaire and creates a Task within the CRD client allowing the completion of the form to be appropriately scheduled and/or delegated.  Alternatively, the Practitioner could choose to execute the task and fill out the form immediately if that makes more sense from a clinical workflow perspective.
+This response type can be used to present a `Card` that indicates that there are forms that need to be completed.  The indicated forms might contain documentation that must be submitted for prior authorization, attachments for claims submission, documentation that must be completed and retained as proof that clinical need protocols have been followed, or that must otherwise be retained and available for future audits.  While forms can also be expressed as static or active PDFs referenced by [External References](#external-reference), or within a [SMART Application](#launch-smart-application), this response type provides the form definition as a FHIR Questionnaire and creates a Task within the CRD client allowing the completion of the form to be appropriately scheduled and/or delegated.  Alternatively, the Practitioner could choose to execute the task and fill out the form immediately if that makes more sense from a clinical workflow perspective.
 
 This suggestion will always include a "create" action for the Task.  The Task will point to the questionnaire to be completed using a `Task.input` element with a `Task.input.type.text` of "questionnaire" and the canonical URL for the questionnaire in `Task.input.valueCanonical`.  Additional `Task.input` elements will provide information about how the completed questionnaire is to be submitted to the payer with a service endpoint if required.  The `Task.code` will always include the CRD-specific `complete-questionnaire` code.  The reason for completion will be conveyed in `Task.reasonCode`.  The Questionnaire might also be included with a separate conditional "create" action or it might be excluded with the presumption it will already be available or retrievable by the client via its canonical URL, either from the original source or from a local registry.
 
 <div markdown="1" class="new-content">
+
+Instead of using a card, CRD services **MAY** opt to use a <a href="https://cds-hooks.hl7.org/2.0/#system-action">systemAction</a> instead.  CRD clients **SHALL** support either approach.
 
 NOTE: DTR is the preferred solution where forms are needed for capture of information for payer purposes including, but not limited to, prior authorization, claims submission, or audit because of its ability to minimize data entry burden.  This card type **SHOULD** only be used when DTR is not available or applicable.
 
@@ -1397,7 +1433,11 @@ The following is an example CDS Hook [Suggestion](https://cds-hooks.hl7.org/2.0/
 This response type is used when the CRD Server is aware of additional coverage that is relevant to the current/proposed activity or has updates/corrections to make to the information held by the CRD Client.  For example, the CRD Client might be aware that a patient has coverage with a provider, but not know the plan number, member identifier, or other relevant information.  This response allows the CRD Server to convey that information to the CRD Client and link it to the current/proposed action.  In theory, this type of response could also be used to convey corrected/additional prior authorization information the payer was aware of, however that functionality is out-of-scope for this release of the implementation guide.
 
 <div markdown="1" class="new-content">
+
+Instead of using a card, CRD services **MAY** opt to use a <a href="https://cds-hooks.hl7.org/2.0/#system-action">systemAction</a> instead.  CRD clients **SHALL** support either approach.  If receiving a system action, a CRD client **MAY** opt to place the new or updated record in a holding area for human review rather than directly modifying their source of truth.
+
 NOTE: This functionality is somewhat redundant with the capabilities of the X12 270/271 transactions.  This CRD capability **SHALL NOT** be used in situations where regulation dictates the use of the X12 functionality.
+
 </div>
 
 This response will contain a single suggestion.  The primary action will either be a suggestion to "update" an existing Coverage instance (if the CRD Client already has one) or to "create" a new Coverage instance if the CRD Server is aware of Coverage that the CRD Client is not.  In addition, the suggestion could include updates on all relevant Request resources to add or remove links to Coverage instances, reflecting which Coverages are relevant to which types of requests.
@@ -1479,7 +1519,7 @@ For example, this [Card](https://cds-hooks.hl7.org/2.0/#cds-service-response) co
 
 </div>
 
-
+<!--
 <div markdown="1" class="new-content">
 ###### Unsolicited Determination
 
@@ -1560,7 +1600,8 @@ NOTE:  If a payer issues an unsolicited determination, there is no guarantee tha
 A full example of an unsolicited determination can be found [here](https://build.fhir.org/ig/HL7/davinci-crd/ClaimResponse-priorauth-example.html).
 
 
-</div>
+</div>-->
+
 #### Additional Data Retrieval
 The context information provided as part of hook invocation will often not be enough for a CRD Server to fully determine coverage requirements.  This section of the guide describes a common set of queries that define data that most, if not all, CRD Servers will need to perform their requirements assessment.
 

@@ -45,6 +45,12 @@
       <path value="Extension"/>
       <short value="CoverageInfo"/>
       <definition value="Indicates coverage information."/>
+      <constraint>
+        <key value="crd-ci-q1"/>
+        <severity value="error"/>
+        <human value="Questionnaire and QuestionnaireResponse are only allowed when the coverageInfo code indicates clinical or administrative DTR is needed"/>
+        <expression value="extension.where(url='questionnaire' or url='response').exists() implies extension.where(url='coverageInfo').value.where(system='http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp' and (code='clinical' or code='admin')).exists()"/>
+      </constraint>
     </element>
     <element id="Extension.extension:coverageInfo">
       <path value="Extension.extension"/>
@@ -56,6 +62,7 @@
       <type>
         <code value="Extension"/>
       </type>
+      <condition value="crd-ci-q1"/>
     </element>
     <element id="Extension.extension:coverageInfo.url">
       <path value="Extension.extension.url"/>
@@ -192,7 +199,7 @@ Additional standard reason codes may be introduced in the future.  If no standar
       <type>
         <code value="Period"/>
       </type>
-    </element>
+    </element>    
     <element id="Extension.extension:detail.extension:qualification">
       <path value="Extension.extension.extension"/>
       <sliceName value="qualification"/>
@@ -239,6 +246,53 @@ Additional standard reason codes may be introduced in the future.  If no standar
     <element id="Extension.extension:detail.url">
       <path value="Extension.extension.url"/>
       <fixedUri value="detail"/>
+    </element>
+    <element id="Extension.extension:questionnaire">
+      <path value="Extension.extension"/>
+      <sliceName value="questionnaire"/>
+      <short value="Questionnaire"/>
+      <definition value="A form to be filled out to gather more information.  Only for use if the response indicates a need to use DTR"/>
+      <min value="0"/>
+      <max value="*"/>
+      <type>
+        <code value="Extension"/>
+      </type>
+      <condition value="crd-ci-q1"/>
+    </element>
+    <element id="Extension.extension:identifier.url">
+      <path value="Extension.extension.url"/>
+      <fixedUri value="questionnaire"/>
+    </element>
+    <element id="Extension.extension:identifier.value[x]">
+      <path value="Extension.extension.value[x]"/>
+      <type>
+        <code value="canonical"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Questionnaire"/>
+      </type>
+    </element>
+    <element id="Extension.extension:response">
+      <path value="Extension.extension"/>
+      <sliceName value="response"/>
+      <short value="Questionnaire Response"/>
+      <definition value="A reference to a partially completed Questionnaire Response that is intended to be used as a basis for subsequent form filling in DTR."/>
+      <comment value="If a QuestionnaireResponse is provided, no corresponding 'questionnaire' extension should be present - the canonical for the needed Questionnaire will be found inside the QuestionnaireResponse."/>
+      <min value="0"/>
+      <max value="*"/>
+      <type>
+        <code value="Extension"/>
+      </type>
+      <condition value="crd-ci-q1"/>
+    </element>
+    <element id="Extension.extension:identifier.url">
+      <path value="Extension.extension.url"/>
+      <fixedUri value="response"/>
+    </element>
+    <element id="Extension.extension:identifier.value[x]">
+      <path value="Extension.extension.value[x]"/>
+      <type>
+        <code value="reference"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse"/>
+      </type>
     </element>
     <element id="Extension.extension:coverage">
       <path value="Extension.extension"/>
@@ -291,7 +345,7 @@ Additional standard reason codes may be introduced in the future.  If no standar
       <path value="Extension.extension"/>
       <sliceName value="identifier"/>
       <short value="Identifier"/>
-      <definition value="Trace identifier to allow tracking the guidance in source system."/>
+      <definition value="Trace identifier to allow tracking the guidance in source system.  This identifier can also be used used to re-establish cached context information when subsequently launching DTR."/>
       <min value="0"/>
       <max value="1"/>
       <type>
