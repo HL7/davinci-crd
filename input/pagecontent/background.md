@@ -70,6 +70,7 @@ Implementers should also familiarize themselves with the FHIR resources used wit
       <a href="{{site.data.fhir.path}}questionnaire.html">Questionnaire</a><br/>
       <a href="{{site.data.fhir.path}}servicerequest.html">ServiceRequest</a><br/>
       <a href="{{site.data.fhir.path}}task.html">Task</a><br/>
+      <a href="{{site.data.fhir.path}}visionprescription.html">VisionPrescription</a>
     </td>
 </table>
 

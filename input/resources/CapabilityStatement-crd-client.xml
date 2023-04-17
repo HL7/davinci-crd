@@ -1234,7 +1234,6 @@ In addition to the U.S. core expectations, the CRD Client **SHALL** support all 
     </resource>
     <resource>
       <type value="Task"/>
-      <supportedProfile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-crdcardtask"/>
       <supportedProfile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-taskquestionnaire"/>
       <interaction>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
@@ -1243,6 +1242,18 @@ In addition to the U.S. core expectations, the CRD Client **SHALL** support all 
         <code value="create"/>
         <documentation value="Needed to allow support for cards returning deferrable cards and/or requests to complete Questionnaires."/>
       </interaction>
+    </resource>
+    <resource>
+      <type value="VisionPrescription"/>
+      <supportedProfile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-visionprescription"/>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHOULD"/>
+        </extension>
+        <code value="update"/>
+        <documentation value="Allows annotating the vision prescription in response to a card.  (Support is mandatory if the system supports VisionPrescriptions)"/>
+      </interaction>
+      <versioning value="versioned-update"/>
     </resource>
   </rest>
 </CapabilityStatement>

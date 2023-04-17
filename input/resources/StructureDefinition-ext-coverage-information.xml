@@ -291,7 +291,7 @@ Additional standard reason codes may be introduced in the future.  If no standar
     <element id="Extension.extension:identifier.value[x]">
       <path value="Extension.extension.value[x]"/>
       <type>
-        <code value="reference"/>
+        <code value="Reference"/>
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse"/>
       </type>
     </element>

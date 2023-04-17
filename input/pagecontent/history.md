@@ -2,6 +2,20 @@ This page describes the primary releases of the specification and summarizes the
 
 <div markdown="1" class="new-content">
 
+### Release 1.2.0
+A number of additional changes enhancements.  Key differences are:
+* Renamed the 'Annotate' card to [Coverage Information](hooks.html#coverage-information) and made it a system action rather than a card
+* Removed the Unsolicited determiniation card type
+* Added system action as an optional feature of the [form completion](hooks.html#request-form-completion) and [update coverage information](hooks.html#create-or-update-coverage-information) cards
+* Removed guidance on deferring card actions (as it's no longer terribly relevant for CRD and SMART now defines a mechanism)
+* Added additional properties to the [coverage-information](StructureDefinition-ext-coverage-information.html) extension including the ability to specify questionnaires and draft responses for DTR, authorized billing codes, dependencies on other orders, and other details.
+* Removed support for 'de-identified' invocation of CRD
+* Corrected ServiceRequest.location to be 0..1 instead of 1..1
+* Dropped expectation for coverage information to be conveyed as part of orders
+* Changed language to make clear that CRD does not provide prior authorizations
+* Tightened general conformance expectations 
+* A few additional corrections and numerous clarifications and refinements
+
 ### Release 1.1.0
 Added a number of enhancements and some changes to approach.  Key differences are:
 
@@ -13,9 +27,9 @@ Added a number of enhancements and some changes to approach.  Key differences ar
 * Made support for a [minimal set of configuration options](hooks.html#configuration-options-extension) mandatory
 * Added an extension to [link cards to requests](hooks.html#linking-cards-to-requests)
 * Introduced the new [order-dispatch](hooks.html#order-dispatch) hook
-* Added the [Annotate](hooks.html#annotate) and [Unsolicited determiniation](hooks.html#unsolicited-determination) card types
+* Added the Annotate and Unsolicited Determiniation card types
 * Revamped how [Prefetch](hooks.html#prefetch) handles retrieving a patient's coverage information
-* Provided explicit guidance around [deferring card actions](hooks.html#deferring-card-actions)
+* Provided explicit guidance around deferring card actions
 * Added a section on [registering DTR apps with CRD](hooks.html#registering-dtr-apps-with-crd)
 * Updated to support CRD 2.0, which included changes to the 'topic' element within cards
 * Added support for system actions and made their use mandatory for updates to orders and coverage

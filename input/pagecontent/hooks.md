@@ -768,6 +768,10 @@ There are no constraints or special rules related to this hook beyond the profil
     <td><a href="StructureDefinition-profile-servicerequest.html">profile-servicerequest</a></td>
     <td/>
   </tr>
+  <tr>
+    <td><a href="StructureDefinition-profile-visionprescription.html">profile-visionprescription</a></td>
+    <td/>
+  </tr>
 </table>
 
 <sup>†</sup> DeviceRequest is not currently supported by the order-select and order-sign hooks.  A [proposal](https://github.com/cds-hooks/docs/issues/396) has been submitted to add them.  CRD Servers **SHALL NOT** treat the presence of these resources in the `draftOrders` Bundle as an error and **SHOULD** support these resource types if relevant to their operations.
@@ -826,9 +830,9 @@ The card.source.topic element above is new.
 ##### Potential CRD Response Types
 This section describes the different types of [responses](https://cds-hooks.hl7.org/2.0/#cds-service-response) that CRD Servers can use when returning coverage requirements to CRD Clients, including CRD-specific profiles on cards to describe CRD-expected behavior.  It is possible that some CRD Servers and CRD Clients will support additional card response patterns than those listed here, but such behavior is outside the scope of this specification.  Future versions of this specification might standardize additional response types.
 
-Of the response types in this guide, conformant CRD Clients **SHALL** support the [External Reference](#external-reference), [Instructions](#instructions), and  [Annotate](#annotate) responses and **SHOULD** support the remaining types.
+Of the response types in this guide, conformant CRD Clients **SHALL** support the [External Reference](#external-reference), [Instructions](#instructions), and  [Coverage Information](#coverage-information) responses and **SHOULD** support the remaining types.
 
-CRD Servers **SHALL**, at minimum, demonstrate an ability to return cards with the following type: [Annotate](#annotate) (card type codes `coverage` and `auth-req`). As well, systems **SHALL** either support the [External Reference](#external-reference) and [Instructions](#instructions) card types (card type code `documentation`), or the [DTR](http://hl7.org/fhir/us/davinci-dtr) implementation guide with the [Launch SMART Application](#launch-smart-application) card type (card type codes `dtr-clin` and `dtr-admin`).
+CRD Servers **SHALL**, at minimum, demonstrate an ability to return cards with the following type: [Coverage](#coverage-information) (card type codes `coverage` and `auth-req`). As well, systems **SHALL** either support the [External Reference](#external-reference) and [Instructions](#instructions) card types (card type code `documentation`), or the [DTR](http://hl7.org/fhir/us/davinci-dtr) implementation guide with the [Launch SMART Application](#launch-smart-application) card type (card type codes `dtr-clin` and `dtr-admin`).
 
 NOTE: Support for a card type does not mean that all orders/appointments/etc. will necessarily receive card guidance, merely that it must be able to return those card types for at least a subset of CRD invocations
 
@@ -918,38 +922,6 @@ This example CDS Hook [Card](https://cds-hooks.hl7.org/2.0/#cds-service-response
 ```
 {% endraw %}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div markdown="1" class="new-content">
 
 ###### Coverage Information
@@ -990,6 +962,10 @@ When using this response type, the proposed order or appointment being updated *
   </tr>
   <tr>
     <td><a href="StructureDefinition-profile-servicerequest.html">profile-servicerequest</a></td>
+    <td/>
+  </tr>
+  <tr>
+    <td><a href="StructureDefinition-profile-visionprescription.html">profile-visionprescription</a></td>
     <td/>
   </tr>
 </table>
@@ -1137,7 +1113,7 @@ Balloters are requested to provide their feedback on whether the conformance exp
 
 <div markdown="1" class="new-content">
 
-The information added to the order here is often going to be relevant/important not only to the creator of the order, but also to its eventual performer.  This guide does not define how information around coverage, unsolicited determination, etc. are conveyed from the ordering system to the performing system.  However, the [Post-accute Orders implementation guide](http://hl7.org/fhir/us/dme-orders) does provide a mechanism for electronic sharing of orders and could be used to convey the additional notes/extensions envisioned here as well.
+The information added to the order here is often going to be relevant/important not only to the creator of the order, but also to its eventual performer.  This guide does not define how information around coverage is conveyed from the ordering system to the performing system.  However, the [Post-accute Orders implementation guide](http://hl7.org/fhir/us/dme-orders) does provide a mechanism for electronic sharing of orders and could be used to convey the additional notes/extensions envisioned here as well.
 
 </div>
 
@@ -1183,6 +1159,10 @@ When using this response type, the proposed orders (and any associated resources
   </tr>
   <tr>
     <td><a href="StructureDefinition-profile-servicerequest.html">profile-servicerequest</a></td>
+    <td/>
+  </tr>
+  <tr>
+    <td><a href="StructureDefinition-profile-visionprescription.html">profile-visionprescription</a></td>
     <td/>
   </tr>
 </table>
@@ -1286,6 +1266,10 @@ When using this response type, the proposed orders (and any associated resources
   </tr>
   <tr>
     <td><a href="StructureDefinition-profile-servicerequest.html">profile-servicerequest</a></td>
+    <td/>
+  </tr>
+  <tr>
+    <td><a href="StructureDefinition-profile-visionprescription.html">profile-visionprescription</a></td>
     <td/>
   </tr>
 </table>

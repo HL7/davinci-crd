@@ -176,6 +176,14 @@
 			<description value="Example Task showing a deferred action to update a Coverage record for a patient"/>
 			<exampleCanonical value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-crdcardtask"/>
 		</resource>-->
+		<resource>
+			<reference>
+				<reference value="VisionPrescription/visionprescription-example"/>
+			</reference>
+			<name value="VisionPrescription example"/>
+			<description value="Example vision prescription based on CRD profile"/>
+			<exampleCanonical value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-visionprescription"/>
+		</resource>
 		<page>
 			<nameUrl value="toc.html"/>
 			<title value="Table of Contents"/>
