@@ -937,9 +937,9 @@ Assertions about coverage, prior authorization requirements, etc. are of course 
 
 If a CRD service has provided limitations about when a coverage assertion applies that turn out to not be consistent with what the provider intends to do (e.g. payer says covered if billed as X, but provider intends to bill as Y), then the provider can always use the normal prior authorization process to solicit an authorization that more precisely aligns with their expectations for how the service will eventually be billed.
 
-It is possible that more than one extension could be present, representing coverage information for different coverages for the same order.
+It is possible that more than one extension could be present, representing coverage information for different coverages for the same order.  It is also possible for multiple assertions to be present for the same coverage - for example the fact that prior authorization must be solicited by the performing provider, but that clinical and administrative DTR are also necessary.
 
-Systems **MAY** fire calls related to orders even if there is already a coverage assertion recorded on the order.  There is always the possibility that context has changed or new information available in the order will result in a new decision or additional guidance. The payer may also have other useful information not related to coverage/authorization.
+Systems **MAY** fire calls related to orders even if there is already a coverage assertion recorded on the order.  There is always the possibility that context has changed or new information available in the order will result in a new decision or additional guidance. The payer may also have other useful information not related to coverage/authorization.  As well, information about the order or context might change between an initial `order-select` or `order-sign` and a subsequent `order-dispatch` or other hook invocation.
 
 However, payers **SHALL NOT** send a system action to update the order unless something is new.  Payers **SHOULD** take into account the previous decision in deciding how much processing is necessary before returning a response.
 
@@ -1111,13 +1111,8 @@ For example, this card indicates that a prior authorization has been granted for
 }
 ```
 CRD clients and services **SHALL** support the new CDS Hooks system action functionality to cause annotations to automatically be stored on the relevant request, appointment, etc. without any user intervention. In this case, the discrete information propagated into the order extension **SHALL** be available to the user for viewing.  However, this might be managed with icons, flyovers or alternate mechanisms than traditional CDS Hook card rendering.  The key consideration is that the user is aware that the information is available and can easily get to it.  These implementations will be responsible for ensuring that the only changes made to the CRD client record are to add the annotations contemplated here.  CRD clients **MAY** be configured to not execute system actions under some circumstances - e.g. if the order has been cancelled/abandoned.
-
-<blockquote class="note-to-balloters">
-<p>
-Balloters are requested to provide their feedback on whether the conformance expectation here should be stronger.
-</p>
-</blockquote>
 </div>
+
 
 <div markdown="1" class="new-content">
 

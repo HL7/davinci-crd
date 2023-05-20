@@ -25,6 +25,15 @@
       <concept>
         <code value="admin"/>
       </concept>
+      <concept>
+        <code value="perform"/>
+      </concept>
+      <concept>
+        <code value="performpa"/>
+      </concept>
+      <concept>
+        <code value="detailedcode"/>
+      </concept>
     </include>
   </compose>
 </ValueSet>

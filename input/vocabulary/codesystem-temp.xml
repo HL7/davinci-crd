@@ -116,6 +116,21 @@
     <display value="Admin"/>
     <definition value="administrative details are required to determine coverage/prior auth applicability - e.g. via DTR by back-end staff.  Indicates that while the CRD client might expose the ability to launch DTR as an option for clinical users, it should be clear that clinical input is not necessary and deferring the use of DTR to back-end staff is perfectly appropriate.  Some CRD clients might be configured (based on provider preference) to not even show clinicians the option to launch."/>
   </concept>
+  <concept>
+    <code value="perform"/>
+    <display value="Performing Information Needed"/>
+    <definition value="The performing provider, location, and/or date information is needed.  Further determination might be possible at order dispatch or order set revision time, or determination might need to be made by the performing system."/>
+  </concept>
+  <concept>
+    <code value="performpa"/>
+    <display value="Performer Prior Authorization"/>
+    <definition value="Prior authorization is needed for the service, however such prior authoriation must be initiated by the performing (rather than ordering) provider."/>
+  </concept>
+  <concept>
+    <code value="detailedcode"/>
+    <display value="Detailed Code"/>
+    <definition value="The service is being ordered at too high a level of granularity to be able to determine what coverage and documentation expectations apply."/>
+  </concept>
   <!-- Card types -->
   <concept>
     <code value="_cardType"/>
