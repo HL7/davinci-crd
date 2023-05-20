@@ -937,6 +937,10 @@ If a CRD service has provided limitations about when a coverage assertion applie
 
 It is possible that more than one extension could be present, representing coverage information for different coverages for the same order.
 
+Systems **MAY** fire calls related to orders even if there is already a coverage assertion recorded on the order.  There is always the possibility that context has changed or new information available in the order will result in a new decision or additional guidance. The payer may also have other useful information not related to coverage/authorization.
+
+However, payers **SHALL NOT** send a system action to update the order unless something is new.  Payers **SHOULD** take into account the previous decision in deciding how much processing is necessary before returning a response.
+
 When using this response type, the proposed order or appointment being updated **SHALL** comply with the following profiles:
 
 <table class="grid">
