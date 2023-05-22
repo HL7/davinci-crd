@@ -30,9 +30,16 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="{{site.data.info.assets}}hooks.html">
-          <b>Formal Specification</b>
-        </a>
+        <a href="{{site.data.info.assets}}foundation.html">Foundational Guidance</a>
+      </li>
+      <li>
+        <a href="{{site.data.info.assets}}deviations.html">Deviations and Enhancements</a>
+      </li>
+      <li>
+        <a href="{{site.data.info.assets}}hooks.html">Supported Hooks</a>
+      </li>
+      <li>
+        <a href="{{site.data.info.assets}}cards.html">Card Profiles</a>
       </li>
       <li>
         <a href="{{site.data.info.assets}}implementation.html">Implementation Guidance</a>

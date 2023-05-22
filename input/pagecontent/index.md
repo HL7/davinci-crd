@@ -84,18 +84,28 @@ This implementation guide is organized into the following sections:
 
 * [Use Cases and Overview](usecases.html) describes the intent of the implementation guide, gives examples of its use, and provides a high-level overview of expected process flow
 * [Technical Background](background.html) identifies related specifications this implementation guide builds upon that developers should read and understand prior to implementing this specification
-* [Formal Specification](hooks.html) covers the detailed implementation requirements and conformance expectation
+* [Foundational Guidance](foundation.html) covers the detailed requirements and conformance expectations that apply to all implementations
+* [Deviations and Enhancements](deviations.html) covers detailed implementation requirements and conformance expectations that are independent of particular hooks or cards
+* [Supported Hooks](foundation.html) identifies the expectations for support for specific CDS hooks
+* [Card Profiles](cards.html) defines patterns for CDS Hook cards that can be returned as part of this specification
+* [Implementation Guidance](cards.html) that provides recommendations for implementation that fall outside the technical scope of the specification
 * [Artifacts](allartifacts.html) introduces and provides links to the profiles, search parameters and other FHIR artifacts used in this implementation guide
 * [Downloads](downloads.html) allows download of this and other specifications as well as other useful files
 * [Credits](credits.html) identifies the individuals and organizations involved in developing this implementation guide
 
 ### Dependencies
-This implementation guide relies on the following other specifications:
-* **[FHIR R4]({{site.data.fhir.path}})** - The 'current' official version of FHIR as of the time this implementation guide was published.  See the [background page](background.html#fhir) for key pieces of this specification implementers should be familiar with.
-* **[US Core STU3]({{site.data.fhir.ver.uscore}})** - The version of US Core based on FHIR R4.
-* **[CDS Hooks CI Build](https://cds-hooks.org/specification/current/)** - The community release that defines one of the hooks used by this implementation guide.
-* **[CDS Hooks 2.0](https://cds-hooks.hl7.org/2.0)** - The official standard for trial use publication of CDS Hooks that defines the CDS Hooks protocol and interfaces used by this implementation guide.
-* **[SMART on FHIR](http://hl7.org/fhir/smart-app-launch)** - This specification provides a reliable, secure authorization protocol for SMART apps launched from a provider system to support coverage requirements discovery (e.g. what-if scenarios).
+This guide is based on the [FHIR R4]({{site.data.fhir.path}}) specification that is mandated for use in the U.S. as well as the [CDS Hooks 2.0](https://cds-hooks.hl7.org/2.0) and [CDS Hooks CI Build](https://cds-hooks.org/specification/current/) releases of the CDS hooks specification.  It also leverages the [SMART on FHIR](http://hl7.org/fhir/smart-app-launch) specification for CRD clients that opt to use that approach for "what-if" scenarios.
 
+In addition, this guide also relies on a number of parent implementation guides:
+
+{% include dependency-table-short.xhtml %}
 
 This implementation guide defines additional constraints and usage expectations above and beyond the information found in these base specifications.
+
+###Intellectual Property Considerations
+This implementation guide and the underlying FHIR specification are licensed as public domain under the [FHIR license](http://hl7.org/fhir/R4/license.html#license). The license page also describes rules for the use of the FHIR name and logo.
+
+This publication includes IP covered under the following statements.
+
+{% include ip-statements.xhtml %}
+

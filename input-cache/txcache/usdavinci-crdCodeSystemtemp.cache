@@ -23,11 +23,11 @@
 e: {
   "valueSet" : {
   "resourceType" : "ValueSet",
-  "language" : "en",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:130a22ce-467a-401f-9c4c-6ed202ecc9f2",
-    "timestamp" : "2023-04-17T03:33:11.764Z",
+    "identifier" : "urn:uuid:005751d5-0c74-44b7-9dd4-c5d2bf8fc338",
+    "timestamp" : "2023-05-22T00:35:17.563Z",
+    "total" : 4,
     "parameter" : [{
       "name" : "limitedExpansion",
       "valueBoolean" : true
@@ -41,37 +41,21 @@ e: {
       "valueUri" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp|1.1.0-ci-build"
     }],
     "contains" : [{
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
-        "valueString" : "Include information in prior authorization"
-      }],
       "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
       "code" : "prior-auth-include",
       "display" : "Include in prior authorization"
     },
     {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
-        "valueString" : "Include information in initial claim submission"
-      }],
       "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
       "code" : "initial-claim-include",
       "display" : "Include in initial claim"
     },
     {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
-        "valueString" : "Include information in all claim submissions"
-      }],
       "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
       "code" : "all-claims-include",
       "display" : "Include in all claims"
     },
     {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
-        "valueString" : "Send information to the specified endpoint"
-      }],
       "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
       "code" : "to-endpoint",
       "display" : "Send to endpoint"
@@ -96,11 +80,11 @@ e: {
 e: {
   "valueSet" : {
   "resourceType" : "ValueSet",
-  "language" : "en",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:36a3f1ee-df8b-4bd3-bd24-ecf1b20282b3",
-    "timestamp" : "2023-04-17T03:33:12.014Z",
+    "identifier" : "urn:uuid:68422b01-9dc6-48cb-a704-bfde4a6f581b",
+    "timestamp" : "2023-05-22T00:35:17.829Z",
+    "total" : 1,
     "parameter" : [{
       "name" : "limitedExpansion",
       "valueBoolean" : true
@@ -114,10 +98,6 @@ e: {
       "valueUri" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp|1.1.0-ci-build"
     }],
     "contains" : [{
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
-        "valueString" : "Ordering Practitioner has been granted 'gold card' status with this payer/coverage type."
-      }],
       "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
       "code" : "gold-card",
       "display" : "Gold card"
@@ -160,11 +140,11 @@ e: {
 e: {
   "valueSet" : {
   "resourceType" : "ValueSet",
-  "language" : "en",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:d9be6e2b-644e-492f-bfab-c081cb821848",
-    "timestamp" : "2023-04-17T03:33:12.232Z",
+    "identifier" : "urn:uuid:7eea4ad5-f68c-4eee-9239-c209c4cc59f8",
+    "timestamp" : "2023-05-22T00:35:18.032Z",
+    "total" : 7,
     "parameter" : [{
       "name" : "limitedExpansion",
       "valueBoolean" : true
@@ -178,64 +158,36 @@ e: {
       "valueUri" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp|1.1.0-ci-build"
     }],
     "contains" : [{
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
-        "valueString" : "Indicates limitations on the number of services/products allowed (possibly per time period).  Value should be a Quantity"
-      }],
       "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
       "code" : "allowed-quantity",
       "display" : "Maximum quantity"
     },
     {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
-        "valueString" : "Indicates the maximum period of time that can be covered in a single order.  Value should be a Period"
-      }],
       "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
       "code" : "allowed-period",
       "display" : "Maximum allowed period"
     },
     {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
-        "valueString" : "Indicates a percentage co-pay to expect if delivered in-network.  Value should be a Quantity."
-      }],
       "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
       "code" : "in-network-copay",
       "display" : "Copay for in-network"
     },
     {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
-        "valueString" : "Indicates a percentage co-pay to expect if delivered out-of-network.  Value should be a Quantity."
-      }],
       "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
       "code" : "out-network-copay",
       "display" : "Copay for out-of-network"
     },
     {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
-        "valueString" : "Authorization is only necessary if out-of-network.  Value should be a boolean."
-      }],
       "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
       "code" : "auth-out-network-only",
       "display" : "Authorization for out-of-network only"
     },
     {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
-        "valueString" : "Additional payer-defined documentation will be required prior to claim payment.  Value should be a boolean."
-      }],
       "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
       "code" : "concurrent-review",
       "display" : "Concurrent review"
     },
     {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
-        "valueString" : "Payer-defined appropriate use process must be invoked to determine coverage.  Value should be a boolean."
-      }],
       "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
       "code" : "appropriate-use-needed",
       "display" : "Appropriate use"
@@ -265,6 +217,15 @@ e: {
       },
       {
         "code" : "admin"
+      },
+      {
+        "code" : "perform"
+      },
+      {
+        "code" : "performpa"
+      },
+      {
+        "code" : "detailedcode"
       }]
     }]
   }
@@ -272,11 +233,11 @@ e: {
 e: {
   "valueSet" : {
   "resourceType" : "ValueSet",
-  "language" : "en",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:e6425444-621a-49ae-9615-6162a2d68cee",
-    "timestamp" : "2023-04-17T03:33:12.420Z",
+    "identifier" : "urn:uuid:aaf843fd-92b5-40ce-a592-833c72445746",
+    "timestamp" : "2023-05-22T00:35:18.235Z",
+    "total" : 8,
     "parameter" : [{
       "name" : "limitedExpansion",
       "valueBoolean" : true
@@ -290,49 +251,44 @@ e: {
       "valueUri" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp|1.1.0-ci-build"
     }],
     "contains" : [{
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
-        "valueString" : "no coverage or possibility of coverage for this service)"
-      }],
       "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
       "code" : "not-covered",
       "display" : "Not covered"
     },
     {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
-        "valueString" : "Regular coverage applies"
-      }],
       "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
       "code" : "covered",
       "display" : "Covered"
     },
     {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
-        "valueString" : "Coverage is possible with prior authorization"
-      }],
       "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
       "code" : "covered-prior-auth",
       "display" : "Covered with prior authorization"
     },
     {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
-        "valueString" : "Clinical details are required to determine coverage/prior auth applicability - e.g. via DTR by clinician.  Indicates that the CRD client should expose the need to launch DTR to clinical users."
-      }],
       "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
       "code" : "clinical",
       "display" : "Clinical"
     },
     {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
-        "valueString" : "administrative details are required to determine coverage/prior auth applicability - e.g. via DTR by back-end staff.  Indicates that while the CRD client might expose the ability to launch DTR as an option for clinical users, it should be clear that clinical input is not necessary and deferring the use of DTR to back-end staff is perfectly appropriate.  Some CRD clients might be configured (based on provider preference) to not even show clinicians the option to launch."
-      }],
       "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
       "code" : "admin",
       "display" : "Admin"
+    },
+    {
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "code" : "perform",
+      "display" : "Performing Information Needed"
+    },
+    {
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "code" : "performpa",
+      "display" : "Performer Prior Authorization"
+    },
+    {
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "code" : "detailedcode",
+      "display" : "Detailed Code"
     }]
   }
 },
@@ -354,11 +310,11 @@ e: {
 e: {
   "valueSet" : {
   "resourceType" : "ValueSet",
-  "language" : "en",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:250a0110-7753-49e0-88a1-a5aae3f106cd",
-    "timestamp" : "2023-04-17T03:33:12.686Z",
+    "identifier" : "urn:uuid:1c8fc025-6193-41d9-ad8b-b88bd34a2012",
+    "timestamp" : "2023-05-22T00:35:18.500Z",
+    "total" : 1,
     "parameter" : [{
       "name" : "limitedExpansion",
       "valueBoolean" : true
@@ -372,10 +328,6 @@ e: {
       "valueUri" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp|1.1.0-ci-build"
     }],
     "contains" : [{
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
-        "valueString" : "Task action is needed for prior authorization"
-      }],
       "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
       "code" : "reason-prior-auth",
       "display" : "Prior authorization"

@@ -185,3 +185,141 @@ v: {
   "system" : "urn:ietf:bcp:13"
 }
 -------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "urn:iso:std:iso:3166",
+  "code" : "US"
+}, "url": "http://hl7.org/fhir/ValueSet/jurisdiction", "version": "4.0.1", "langs":"[]", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"NO_MEMBERSHIP_CHECK", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "id" : "terminology-settings",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  }]
+}}####
+v: {
+  "display" : "United States of America",
+  "code" : "US",
+  "system" : "urn:iso:std:iso:3166",
+  "version" : "2018"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "code" : "json"
+}, "url": "http://hl7.org/fhir/ValueSet/mimetypes", "version": "4.0.1", "langs":"[]", "useServer":"true", "useClient":"true", "guessSystem":"true", "valueSetMode":"ALL_CHECKS", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "id" : "terminology-settings",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  }]
+}}####
+v: {
+  "display" : "json",
+  "code" : "json",
+  "system" : "urn:ietf:bcp:13"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://snomed.info/sct",
+  "code" : "270427003",
+  "display" : "Patient-initiated encounter"
+}, "url": "http://hl7.org/fhir/us/core/ValueSet/us-core-encounter-type", "version": "3.1.1", "langs":"[]", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"NO_MEMBERSHIP_CHECK", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "id" : "terminology-settings",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  }]
+}}####
+v: {
+  "display" : "Patient-initiated encounter",
+  "code" : "270427003",
+  "system" : "http://snomed.info/sct",
+  "version" : "http://snomed.info/sct/731000124108/version/20230301"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "code" : "CA"
+}, "url": "http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state", "version": "3.1.1", "langs":"[]", "useServer":"true", "useClient":"true", "guessSystem":"true", "valueSetMode":"ALL_CHECKS", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "id" : "terminology-settings",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  }]
+}}####
+v: {
+  "display" : "California",
+  "code" : "CA",
+  "system" : "https://www.usps.com/"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "code" : "h"
+}, "url": "http://hl7.org/fhir/ValueSet/units-of-time", "version": "4.0.1", "langs":"[]", "useServer":"true", "useClient":"true", "guessSystem":"true", "valueSetMode":"ALL_CHECKS", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "id" : "terminology-settings",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  }]
+}}####
+v: {
+  "display" : "hour",
+  "code" : "h",
+  "system" : "http://unitsofmeasure.org",
+  "version" : "2.0.1"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "code" : "d"
+}, "url": "http://hl7.org/fhir/ValueSet/units-of-time", "version": "4.0.1", "langs":"[]", "useServer":"true", "useClient":"true", "guessSystem":"true", "valueSetMode":"ALL_CHECKS", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "id" : "terminology-settings",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  }]
+}}####
+v: {
+  "display" : "day",
+  "code" : "d",
+  "system" : "http://unitsofmeasure.org",
+  "version" : "2.0.1"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "code" : "OK"
+}, "url": "http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state", "version": "3.1.1", "langs":"[]", "useServer":"true", "useClient":"true", "guessSystem":"true", "valueSetMode":"ALL_CHECKS", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "id" : "terminology-settings",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  }]
+}}####
+v: {
+  "display" : "Oklahoma",
+  "code" : "OK",
+  "system" : "https://www.usps.com/"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://snomed.info/sct",
+  "code" : "25267002",
+  "display" : "Insertion of intracardiac pacemaker (procedure)"
+}, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/serviceRequestCodes", "version": "1.1.0-ci-build", "langs":"[]", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"NO_MEMBERSHIP_CHECK", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "id" : "terminology-settings",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  }]
+}}####
+v: {
+  "display" : "Insertion of intracardiac pacemaker",
+  "code" : "25267002",
+  "system" : "http://snomed.info/sct",
+  "version" : "http://snomed.info/sct/731000124108/version/20230301"
+}
+-------------------------------------------------------------------------------------

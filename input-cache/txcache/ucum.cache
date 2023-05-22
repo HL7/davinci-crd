@@ -19,3 +19,39 @@ v: {
   "system" : "http://unitsofmeasure.org"
 }
 -------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://unitsofmeasure.org",
+  "code" : "g"
+}, "valueSet" :null, "langs":"[en-US, en]", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "id" : "terminology-settings",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  }]
+}}####
+v: {
+  "display" : "g",
+  "code" : "g",
+  "system" : "http://unitsofmeasure.org",
+  "version" : "2.0.1"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://unitsofmeasure.org",
+  "code" : "g"
+}, "valueSet" :null, "langs":"[en]", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "id" : "terminology-settings",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  }]
+}}####
+v: {
+  "display" : "g",
+  "code" : "g",
+  "system" : "http://unitsofmeasure.org",
+  "version" : "2.0.1"
+}
+-------------------------------------------------------------------------------------

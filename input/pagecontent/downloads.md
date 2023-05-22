@@ -8,3 +8,5 @@ This implementation guide is web-based and is intended to be browsed online.  Ho
 * The [CDS Hooks](https://github.com/cds-hooks/docs/archive/master.zip) specification
 * The [SMART on FHIR](http://www.hl7.org/fhir/smart-app-launch/full-ig.zip) specification
 * A [validator](https://fhir.github.io/latest-ig-validator/org.hl7.fhir.validator.jar) that can be used to check FHIR resource instance validity
+
+{% include cross-version-analysis-inline.xhtml %}
