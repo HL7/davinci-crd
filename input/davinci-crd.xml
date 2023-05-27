@@ -192,6 +192,19 @@
 			<description value="Example vision prescription based on CRD profile"/>
 			<exampleCanonical value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-visionprescription"/>
 		</resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format">
+        <valueCode value="application/json"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-logical">
+        <valueCanonical value="http://hl7.org/fhir/tools/StructureDefinition/CDSHooksServices"/>
+      </extension>
+      <reference>
+        <reference value="Binary/cds-hooks-services"/>
+      </reference>
+      <name value="CDSHookServices Example"/>
+      <description value="An example a CDS Hooks Service Request"/>
+    </resource>
 		<page>
 			<nameUrl value="toc.html"/>
 			<title value="Table of Contents"/>

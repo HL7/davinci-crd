@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Fri, May 19, 2023 02:57+0000 for FHIR v6.0.0-cibuild 
+  Generated on Mon, May 22, 2023 02:21+0000 for FHIR v6.0.0-cibuild 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="6.0.0-cibuild">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -15104,6 +15104,11 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
           <xs:element name="servicePeriod" minOccurs="0" maxOccurs="1" type="Period">
             <xs:annotation>
               <xs:documentation xml:lang="en">The date range of services associated with this account.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="covers" minOccurs="0" maxOccurs="unbounded" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">An account that collects the charges for a specific set of services offered over a limited time period.  For example, a hospital account might contain all charges related to a given admission, including any inpatient appointments, and possibly re-admissions, of the billing for those re-admissions should be grouped with the initial admission for the purpose of claim submission.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="coverage" type="Account.Coverage" minOccurs="0" maxOccurs="unbounded">

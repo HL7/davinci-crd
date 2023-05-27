@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+	<id value="lm-CDSHookServicesExtensionConfig"/>
+	<url value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/lm-CDSHookServicesExtensionConfig"/>
+	<name value="CDSHookServicesExtensionConfig"/>
+	<title value="CDS Hooks Services Configuration Extension"/>
+	<status value="draft"/>
+	<experimental value="false"/>
+	<description value="An extension for the CDS Hooks 'services' object that indicates configuration options supported by the CDS server"/>
+	<kind value="logical"/>
+	<abstract value="false"/>
+	<type value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/lm-CDSHookServicesExtensionConfig"/>
+	<baseDefinition value="http://hl7.org/fhir/StructureDefinition/Base"/>
+	<derivation value="specialization"/>
+	<differential>
+    <element id="lm-CDSHookServicesExtensionConfig">
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/elementdefinition-json-name">
+        <valueString value="davinci-crd.configuration-options"/>
+      </extension>
+      <path value="lm-CDSHookServicesExtensionConfig"/>
+      <short value="An allowed configuration option"/>
+      <definition value="A specific configuration option that is supported by the server and can be transmitted when invoking a hooks service"/>
+      <min value="0"/>
+      <max value="*"/>
+    </element>
+    <element id="lm-CDSHookServicesExtensionConfig.code">
+      <path value="lm-CDSHookServicesExtensionConfig.code"/>
+      <short value="Identifies the setting configuration when hook is invoked"/>
+      <definition value="A code that will be used when setting configuration during hook invocation, and has an (extensible) binding to the CRD Card Types ValueSet."/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="code"/>
+      </type>
+    </element>
+    <element id="lm-CDSHookServicesExtensionConfig.type">
+      <path value="lm-CDSHookServicesExtensionConfig.type"/>
+      <short value="boolean | integer (JSON types)"/>
+      <definition value="A data type for the parameter. At present, allowed values are “boolean” and “integer”"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="code"/>
+      </type>
+    </element>
+    <element id="lm-CDSHookServicesExtensionConfig.name">
+      <path value="lm-CDSHookServicesExtensionConfig.name"/>
+      <short value="A display name for the configuration option"/>
+      <definition value="A display name for the configuration option to appear in the client’s user interface when performing configuration"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="string"/>
+      </type>
+    </element>
+    <element id="lm-CDSHookServicesExtensionConfig.description">
+      <path value="lm-CDSHookServicesExtensionConfig.description"/>
+      <short value="1-2 sentences - the effect of the configuration option"/>
+      <definition value="A description providing a 1-2 sentence description of the effect of the configuration option"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="string"/>
+      </type>
+    </element>
+    <element id="lm-CDSHookServicesExtensionConfig.default">
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/json-primitive-choice">
+        <valueBoolean value="true"/>
+      </extension>
+      <path value="lm-CDSHookServicesExtensionConfig.default"/>
+      <short value="Shows users what to expect when an override is not specified"/>
+      <definition value="A default value SHOULD also be provided to show users what to expect when an override is not specified"/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="integer"/>
+      </type>
+      <type>
+        <code value="boolean"/>
+      </type>
+    </element>
+	</differential>
+</StructureDefinition>

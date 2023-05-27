@@ -1,0 +1,66 @@
+{
+  "services": [
+    {
+      "hook": "patient-view",
+      "title": "Static CDS Service Example",
+      "description": "An example of a CDS Service that returns a static set of cards",
+      "id": "static-patient-greeter",
+      "prefetch": {
+        "patientToGreet": "Patient/{{context.patientId}}"
+      },
+      "extension": {
+        "davinci-crd.configuration-options": [
+          {
+            "badStuff": "foo",
+            "code": "priorauth",
+            "type": "boolean",
+            "name": "Prior authorization",
+            "description": "Provides indications of whether prior authorization is required for the proposed order",
+            "default": true
+          }, {
+            "code": "prior-auth-form",
+            "type": "boolean",
+            "name": "Prior Authorization Forms",
+            "description": "Indicates any forms that should be completed as part of a prior authorization process",
+            "default": true
+          }, {
+            "code": "alt-drug",
+            "type": "boolean",
+            "name": "Alternative therapy",
+            "description": "Provides recommendations for alternative therapy with equivalent/similar clinical effect for which the patient has better coverage, that will incur lesser cost",
+            "default": true
+          }, {
+            "code": "first-line",
+            "type": "boolean",
+            "name": "First-line therapy",
+            "description": "Provides alternative therapies that must be tried prior to the selected medication to receive coverage for the selected medication",
+            "default": true
+          }, {
+            "code": "max-cards",
+            "type": "integer",
+            "name": "Maximum cards",
+            "description": "Indicates the maximum number of cards to be returned from the service.  The services will prioritize cards such as highest priority ones are delivered",
+            "default": 10
+          }
+        ]
+      }
+    },
+    {
+      "hook": "order-select",
+      "title": "Order Echo CDS Service",
+      "description": "An example of a CDS Service that simply echoes the order(s) being placed",
+      "id": "order-echo",
+      "prefetch": {
+        "patient": "Patient/{{context.patientId}}",
+        "medications": "MedicationRequest?patient={{context.patientId}}"
+      }
+    },
+    {
+      "hook": "order-sign",
+      "title": "Pharmacogenomics CDS Service",
+      "description": "An example of a more advanced, precision medicine CDS Service",
+      "id": "pgx-on-order-sign",
+      "usageRequirements": "Note: functionality of this CDS Service is degraded without access to a FHIR Restful API as part of CDS recommendation generation."
+    }
+  ]
+}
