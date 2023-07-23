@@ -1,0 +1,15 @@
+{
+  "package-id": "hl7.fhir.us.davinci-crd",
+  "canonical": "http://hl7.org/fhir/us/davinci-crd",
+  "title": "Da Vinci - Coverage Requirements Discovery",
+  "introduction": "Guidelines for conveying coverage requirements to clinicians when planning treatment",
+  "list": [
+    {
+      "version": "current",
+      "desc": "Continuous Integration Build (latest in version control)",
+      "path": "http://build.fhir.org/ig/HL7/davinci-crd",
+      "status": "ci-build",
+      "current": true
+    }
+  ]
+}

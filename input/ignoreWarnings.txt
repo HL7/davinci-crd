@@ -1,0 +1,72 @@
+== Suppressed Messages ==
+
+# The remaining errors are all tooling issues:
+# - "The system "General Practice" ..." - both of these codes are valid.  Unclear why they can't be validated.  Have raised on Zulip
+# - 'sdc-t1' - This is a known SDC issue
+
+# De-identified patient specifically *cannot* be based on US-Core patient because US-Core patients have to be identifiable.  See US Core ticket FHIR-29675
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-patient-deident').baseDefinition: US FHIR Usage rules require that all profiles on Patient derive from the core US profile
+
+# Not expecting support for CPT codes.  Have validated it's correct
+Error from server: Unable to provide support for code system http://www.ama-assn.org/go/cpt
+
+# Coverage isn't part of the version of US Core we're complying with
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-coverage').baseDefinition: US FHIR Usage rules require that all profiles on Coverage derive from the core US profile
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-coverage-deident').baseDefinition: US FHIR Usage rules require that all profiles on Coverage derive from the core US profile
+
+
+# In all cases, the binding will only take effect for a single element
+INFORMATION: StructureDefinition/profile-claimresponse: StructureDefinition.snapshot.element[64].binding: The element ClaimResponse.addItem.location[x] has a binding, and has multiple types ([Address, Reference, CodeableConcept]). The binding will apply to all the types
+INFORMATION: StructureDefinition/profile-devicerequest: StructureDefinition.snapshot.element[19].binding: The element DeviceRequest.code[x] has a binding, and has multiple types ([Reference, CodeableConcept]). The binding will apply to all the types
+INFORMATION: StructureDefinition/profile-medicationrequest: StructureDefinition.snapshot.element[20].binding: The element MedicationRequest.medication[x] has a binding, and has multiple types ([Reference, CodeableConcept]). The binding will apply to all the types
+INFORMATION: StructureDefinition/profile-medicationrequest: StructureDefinition.snapshot.element[49].binding: The element MedicationRequest.dosageInstruction.asNeeded[x] has a binding, and has multiple types ([boolean, CodeableConcept]). The binding will apply to all the types
+INFORMATION: StructureDefinition/profile-medicationrequest: StructureDefinition.snapshot.element[82].binding: The element MedicationRequest.substitution.allowed[x] has a binding, and has multiple types ([boolean, CodeableConcept]). The binding will apply to all the types
+INFORMATION: StructureDefinition/profile-servicerequest: StructureDefinition.snapshot.element[27].binding: The element ServiceRequest.asNeeded[x] has a binding, and has multiple types ([boolean, CodeableConcept]). The binding will apply to all the types
+
+# Device for CRD doesn't meet the constraints of Implantable Device.  See US Core ticket FHIR-29674
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-device').baseDefinition: US FHIR Usage rules require that all profiles on Device derive from the core US profile
+
+# US Core MedicationRequest doesn't allow PractitionerRole as requester.  Have raised FHIR-29667
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-medicationrequest').baseDefinition: US FHIR Usage rules require that all profiles on MedicationRequest derive from the core US profile
+
+# ServiceRequest doesn't exist in the version of US-Core we're using, so can't derive from it
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-servicerequest').baseDefinition: US FHIR Usage rules require that all profiles on ServiceRequest derive from the core US profile
+
+# We don't have any specific profiles for infrastructure resourcess, so validation against only the base resources is expected
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/CodeSystem
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/ImplementationGuide
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet
+
+# Each of the examples are being validated against their corresponding profile
+INFORMATION: Appointment/example: Appointment: Validate resource against profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-appointment
+INFORMATION: ClaimResponse/priorauth-example: ClaimResponse: Validate resource against profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-claimresponse
+INFORMATION: CommunicationRequest/example: CommunicationRequest: Validate resource against profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-communicationrequest
+INFORMATION: Coverage/deident-example: Coverage: Validate resource against profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-coverage-deident
+INFORMATION: Coverage/example: Coverage: Validate resource against profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-coverage
+INFORMATION: Device/example: Device: Validate resource against profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-device
+INFORMATION: DeviceRequest/example: DeviceRequest: Validate resource against profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-devicerequest
+INFORMATION: Encounter/example: Encounter: Validate resource against profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-encounter
+INFORMATION: Location/example: Location: Validate resource against profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-location
+INFORMATION: MedicationRequest/example: MedicationRequest: Validate resource against profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-medicationrequest
+INFORMATION: NutritionOrder/example: NutritionOrder: Validate resource against profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-nutritionorder
+INFORMATION: Organization/example: Organization: Validate resource against profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-organization
+INFORMATION: Patient/deident-example: Patient: Validate resource against profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-patient-deident
+INFORMATION: Patient/example: Patient: Validate resource against profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-patient
+INFORMATION: Practitioner/example: Practitioner: Validate resource against profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-practitioner
+INFORMATION: ServiceRequest/example: ServiceRequest: Validate resource against profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-servicerequest
+INFORMATION: Task/questionnaire-example: Task: Validate resource against profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-taskquestionnaire
+
+# This identifier is intended to show that identifiers that *aren't* in one of the slices are also valid
+INFORMATION: Practitioner/example: Practitioner.identifier[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-practitioner|1.1.0-ci-build
+
+# The concept conveyed isn't covered by the value set (and an out-of-value set example is intended and actually common)
+WARNING: MedicationRequest/annotated-example: MedicationRequest.extension[0].extension[5].value.ofType(CodeableConcept): No code provided, and a code should be provided from the value set 'CRD Coverage Assertion Reasons' (http://hl7.org/fhir/us/davinci-crd/ValueSet/coverageAssertionReasons|1.1.0-ci-build)
+
+
+# These code systems are made up and aren't expected to be evaluated
+Code System URI 'http://example.org/fhir/modifiers' is unknown so the code cannot be validated
+Code System URI 'http://example.org/fhir/oralservicecodes' is unknown so the code cannot be validated
+
+# This has been verified to be the correct URL for CPT codes
+Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated
