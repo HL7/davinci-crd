@@ -1,7 +1,0 @@
-1. Ensure descriptions exist on all artifacts (including examples and terminologies) with hyperlinks to relevant portions of spec
-2. Cross-link card types with the specification section with relevant cards
-3. Double-check SHOULD/SHALL/MAY/SHALL NOT/etc.
-4. Spell and grammar check all pages
-5. Ensure history page is complete
-6. Ensure changes are marked
-7. Vet list of contributors in credits
