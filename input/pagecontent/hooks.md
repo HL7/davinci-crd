@@ -19,9 +19,26 @@ In the absence of guidance from the CDS Hooks specification, CRD Servers are exp
     * 400 - Bad Request - The request is not parsable as JSON
     * 422 - Unprocessable Entity - The request is valid JSON, but is not conformant to CDS Hooks, FHIR Resources, or required profiles
 
+### Hook-Categories
+The hooks supported by this guide can be categorized into two types: 'primary' hooks and 'supporting' hooks.
+
+The 'primary' hooks are [Appointment Book](#appointment-book), [Orders Sign](#order-sign), and [Order Dispatch](#order-dispatch).  CRD Servers SHALL, at minimum, return a [Coverage Information](StructureDefinition-ext-coverage-information.html) system action for these hooks, even if the response indicates that further information is needed or that the level of detail provided is insufficient to determine coverage.
+
+The 'secondary' hooks are [Orders Select](#order-select), [Encounter Start](#encounter-start), and [Encounter Discharge](#encounter-discharge).  These hooks MAY return cards or system actions, but are not expected to, and CRD clients are free to ignore any cards or actions returned.  (CRD clients SHOULD use the configuration options to instruct CRD servers to not even try to return cards if they do not intend to display/process them.)  If Coverage Information is returned for these hooks, it SHALL NOT include messages indicating a need for [clinical](ValueSet-AdditionalDocumentation.html) or [administrative](ValueSet-AdditionalDocumentation.html) information, as such information is expected to be made available later in the process and therefore such guidance is not useful.
+
 The following sections describe the hooks covered by this implementation guide as well as any constraints, profiles, and resources expected to be supported by conformant implementations.
 
 The hooks listed on the CDS hooks website are subject to update by the community at any time until they go through the ballot process.  However, all substantive changes are noted in the *Change Log* section at the bottom of the page describing each hook.  For each hook listed below, this specification identifies a specific version.  For the sake of interoperability, implementers are expected to adhere to the interface defined in the specified version of each hook, though compatible changes from future versions can also be supported.  CRD Servers **SHALL** handle unrecognized context elements by ignoring them.
+
+Below is a summary diagram that outlines all the hooks, indicating when responses are mandatory or optional, and provides insights into what contributes to caching and attribution. 
+
+{::options parse_block_html="false" /}
+<figure>
+  <img height="600px" src="hooks.png" alt="Hooks Diagram"/>
+  <figcaption><b>    Figure 2: Hooks Summary Diagram</b></figcaption>
+  <p></p>
+</figure>
+{::options parse_block_html="true" /}
 
 ### appointment-book
 This hook is described in the CDS Hook specification [here](https://cds-hooks.hl7.org/hooks/appointment-book/2020May/appointment-book/).  This version of the CRD implementation guide refers to version 1.0 of the hook.
@@ -71,6 +88,9 @@ The profiles expected to be used for the resources resolved to by the userId, pa
   </tr>
 </table>
 
+Notes: 
+* CRD Servers MAY use this hook as a basis for associating a patient with a particular practitioner from a payer attribution perspective.
+* CRD clients and servers SHALL, at minimum, support returning and processing the [Coverage Information](StructureDefinition-ext-coverage-information.html) system action for all invocations of this hook.
 
 ### encounter-start
 This hook is described in the CDS Hook specification [here](https://cds-hooks.hl7.org/hooks/encounter-start/2020May/encounter-start/).  This version of the CRD implementation guide refers to version 1.0 of the hook.
@@ -109,6 +129,9 @@ The profiles expected to be used for the resources resolved to by the userId, pa
   </tr>
 </table>
 
+Notes: 
+* CRD Servers MAY use this hook as a basis for associating a patient with a particular practitioner from a payer attribution perspective.
+* CRD clients and servers SHALL, at minimum, support returning and processing the [Coverage Information](StructureDefinition-ext-coverage-information.html) system action for all invocations of this hook.
 
 ### encounter-discharge
 This hook is described in the CDS Hook specification [here](https://cds-hooks.hl7.org/hooks/encounter-discharge/2020May/encounter-discharge/).  This version of the CRD implementation guide refers to version 1.0 of the hook.
@@ -148,6 +171,8 @@ The profiles expected to be used for the resources resolved to by the userId, pa
   </tr>
 </table>
 
+CRD clients and servers SHALL, at minimum, support returning and processing the [Coverage Information](StructureDefinition-ext-coverage-information.html) system action for all invocations of this hook.
+
 <div markdown="1" class="new-content">
 
 ### order-dispatch
@@ -156,6 +181,10 @@ This hook is described in the current build of the CDS Hook specification [here]
 This is a brand-new hook proposal that allows for decision support to be provided when the intended performer of a service is not chosen when the order is written, but instead at some later time-point, quite frequently by someone other than the practitioner who wrote the order.  Because knowing 'who' will perform the service is often relevant when determining coverage and prior authorization requirements, and because it is also a useful point for providing guidance such as suggesting alternative "in-network" providers, this is a useful point in client workflow to provide decision support.
 
 This hook will fire at some point after (possibly well after) the [order-sign](#order-sign) hook fires.  It only passes the patient id, order id, performer, and (optionally) the Task that describes the fulfillment request as part of the context.  This specification does not require use of the Task resource.
+
+Notes: 
+* CRD Servers MAY use this hook as a basis for associating a patient with a particular practitioner from a payer attribution perspective.
+* CRD clients and servers SHALL, at minimum, support returning and processing the [Coverage Information](StructureDefinition-ext-coverage-information.html) system action for all invocations of this hook.
 
 </div>
 
@@ -250,7 +279,9 @@ There are no constraints or special rules related to this hook beyond the profil
 
 <sup>‡</sup> While this hook does not explicitly list PractitionerRole as an expected resource type for userId, it is not prohibited and is included to allow linking the user to a Practitioner in a specific role acting on behalf of a specific Organization.
 
-Note: While this hook is defined for use when ordering, it is still relevant when proposing (e.g. as part of a consult note) or planning (e.g. as part of a care plan) the use of an intervention.  All the 'Request' resources support differentiating between plans, proposals, and orders.  Where CRD Clients have an appropriate workflow and data capture mechanism, this hook **MAY** be used in scenarios that don't involve creating a true order.
+Notes: 
+* While this hook is defined for use when ordering, it is still relevant when proposing (e.g. as part of a consult note) or planning (e.g. as part of a care plan) the use of an intervention.  All the 'Request' resources support differentiating between plans, proposals, and orders.  Where CRD Clients have an appropriate workflow and data capture mechanism, this hook **MAY** be used in scenarios that don't involve creating a true order.
+* CRD clients and servers SHALL, at minimum, support returning and processing the [Coverage Information](StructureDefinition-ext-coverage-information.html) system action for all invocations of this hook.
 
 
 ### order-sign
@@ -259,3 +290,7 @@ This hook is described in the CDS Hook specification [here](https://cds-hooks.hl
 This hook serves a very similar purpose to [order-select](#order-select).  The main difference is that all the listed draft orders are considered 'complete'.  That means that it's appropriate to provide warnings if there is insufficient information to determine coverage requirements.  As well, all `draftOrders` are appropriate to comment on when using [order-sign](https://cds-hooks.hl7.org/hooks/order-sign/2020May/order-sign/) as the `selections` field in [order-select](https://cds-hooks.hl7.org/hooks/order-select/2020May/order-select/) is absent.
 
 Use and profiles for [order-select](#order-select) also apply to `order-sign`.
+
+Notes: 
+* CRD Servers MAY use this hook as a basis for associating a patient with a particular practitioner from a payer attribution perspective.
+* CRD clients and servers SHALL, at minimum, support returning and processing the [Coverage Information](StructureDefinition-ext-coverage-information.html) system action for all invocations of this hook.

@@ -85,6 +85,10 @@ Note:
 * Payer server requirements are expected to be static. The EMR or CRD SMART app may choose to cache information received.
 * Modular EMR systems may need to retrieve the coverage type or other information required by the CRD Server from other systems within the provider's environment.
 
+It is up to payers to determine whether and how long to cache information such as "is member covered" and "what are coverage rules for service x", as well as if and how to check whether cached information is 'dirty' (i.e. the underlying record has changed).  From a performance perspective, if follow-on hooks (i.e. Order Dispatch or OrderSet Revision) are invoked, there is no expectation information will be cached if no hook for that patient have fired in the last 24 hours, which is why the response time target is longer in that situation.
+
+In the event decisions are made based on 'dirty' cached data, the unique identifier provided with the Coverage Information extension will allow the payer to trace what information the decision was based on.  In general, if a decision is based on information outside the payer's control (e.g. a policy being cancelled), they will not be held to the decision conveyed to the CRD client.  If a decision is based on changes within the payer's control (e.g. rules for when prior authorization is needed have changed), payers are expected to respect the decision that was conveyed to the CRD client.
+
 **4. System starts CRD query**<br/>
 The EMR (in the background as the provider is typing) or the CRD SMART app (once enough information has been provided) initiates a query to the CRD Server providing the patient's coverage type and/or identity along with information about the proposed clinical action.  The EMR might also provide the CRD Server with one or more of the following:
 * a 'token' to allow the CRD Server to temporarily and securely request additional patient information from the EMR in step #5.

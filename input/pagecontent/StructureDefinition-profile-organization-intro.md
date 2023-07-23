@@ -2,7 +2,5 @@
 
 ### Usage
 <br/>
-CRD Clients **SHALL** use this profile to [resolve references](foundation.html#additional-data-retrieval) to insurance Organization resources passed to CRD Servers.
-
 Information provided in [Must Support]({{site.data.fhir.path}}profiling.html#mustsupport) elements will commonly be required for CRD Servers to perform coverage requirements discovery.
 <br/>

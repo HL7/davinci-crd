@@ -55,11 +55,11 @@ An extension called `davinci-crd.configuration-options` will define a configurat
     *  A data `type` for the parameter.  At present, allowed values are "boolean" and "integer". (NOTE: These are the JSON data types and not the FHIR data types.)
     *  A display `name` for the configuration option to appear in the client's user interface when performing configuration.
     *  A `description` providing a 1-2 sentence description of the effect of the configuration option.
-*  A `default` value **SHOULD** also be provided to show users what to expect when an override is not specified.
+*  A `default` value **SHALL** also be provided to show users what to expect when an override is not specified.
 
 <div markdown="1" class="new-content">
 
-CRD servers **SHALL**, at minimum, offer configuration options for each type of card they support (with a code corresponding to the <a href="ValueSet-cardType.html">CRD Card Types</a> ValueSet and a type of 'boolean', where setting the flag to false will result in the server not returning any cards of the specified type.  This allows CRD clients to control what types of cards they wish to receive at all, or to receive in particular workflow contexts or for certain users.
+CRD servers **SHALL**, at minimum, offer configuration options for each type of card they support (with a code corresponding to the <a href="ValueSet-cardType.html">CRD Card Types</a> ValueSet and a type of ‘boolean’, where setting the flag to false will result in the server not returning any cards of the specified type. This allows CRD clients to control what types of cards they wish to receive at all, or to receive in particular workflow contexts or for certain users.  This configuration mechanism also allows EHRs to minimize information overload and avoid presentation of duplicative or low-utility CRD alerts.
 
 <p>
 Also, the binding on the 'code' element is new

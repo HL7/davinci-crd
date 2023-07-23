@@ -12,7 +12,6 @@ Additional information about Da Vinci, its members, the use cases, and the imple
 
 {% include burdenReduction.md %}
 
-
 ### Systems
 The CRD implementation guide defines the responsibilities of the two types of systems involved in a CRD solution:
 
