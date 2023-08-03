@@ -4,6 +4,8 @@ Title: "CRD Metric Data"
 Description: "A logical model describing the information that should be captured by CRD implementers about every CRD invocation to support measures evaluating CRD implementation"
 * ^status = #draft
 * ^experimental = false
+* ^extension[$fmm].valueInteger = 1
+* ^extension[$standards-status].valueCode = #informative
 * source            1..1 code            "provider-src | payer-src"            "A code to indicate which type of system collected the metric data."
 * source    from MetricDataSource      (required)
   * ^comment = "Each hook should have metric data capture by both the initiating provider and the responding payer."

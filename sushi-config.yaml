@@ -3,7 +3,15 @@
 # │  supported properties, see:                                                                    │
 # │  https://fshschool.org/docs/sushi/configuration/#full-configuration                            │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+instanceOptions:
+  setMetaProfile: never
+  manualSliceOrdering: true
 id: davinci-crd
+extension:
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+    valueCode: trial-use
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm
+    valueInteger: 2
 canonical: http://hl7.org/fhir/us/davinci-crd
 version: 1.1.0-ci-build
 name: CoverageRequirementsDiscovery
@@ -67,14 +75,29 @@ pages:
     title: Technical Background
   foundation.md:
     title: Foundational Requirements
+    extension:
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: trial-use
   deviations.md:
     title: CDS Hook Deviations and Enhancements
+    extension:
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: trial-use
   hooks.md:
     title: Supported Hooks
+    extension:
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: trial-use
   cards.md:
     title: Supported Cards
+    extension:
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: trial-use
   implementation.md:
     title: Implementation Considerations
+    extension:
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: trial-use
   metrics.md:
     title: CRD Metrics
   allartifacts.md:
