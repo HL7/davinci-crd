@@ -10,9 +10,10 @@
 <artifact id="ValueSet/AdditionalDocumentation" key="ValueSet-AdditionalDocumentation" name="Additional Documentation Value Set"/>
 <artifact deprecated="true" id="SearchParameter/appointment-insurance" key="SearchParameter-appointment-insurance" name="Appointment Insurance Search Parameter"/>
 <artifact id="Appointment/example" key="Appointment-example" name="Appointment example"/>
+<artifact id="ValueSet/cdsHookType" key="ValueSet-cdsHookType" name="CDS Hook Types"/>
 <artifact deprecated="true" id="Task/action-example" key="Task-action-example" name="CDS Hook deferred action example"/>
 <artifact id="ValueSet/cardActions" key="ValueSet-cardActions" name="CDS Hooks Card Suggestion Action Types"/>
-<artifact id="StructureDefinition/lm-CDSHookServicesExtensionConfig" key="StructureDefinition-lm-CDSHookServicesExtensionConfig" name="CDS Hooks Services Configuration Extension"/>
+<artifact id="StructureDefinition/CDSHookServicesExtensionConfig" key="StructureDefinition-CDSHookServicesExtensionConfig" name="CDS Hooks Services Configuration Extension"/>
 <artifact id="ValueSet/afterCompletionCode" key="ValueSet-afterCompletionCode" name="CRD After Completion Code"/>
 <artifact id="StructureDefinition/profile-appointment" key="StructureDefinition-profile-appointment" name="CRD Appointment"/>
 <artifact deprecated="true" id="CodeSystem/cardType" key="CodeSystem-cardType" name="CRD Card Types Code System"/>
@@ -30,6 +31,7 @@
 <artifact id="StructureDefinition/profile-location" key="StructureDefinition-profile-location" name="CRD Location"/>
 <artifact id="ValueSet/locationAddressType" key="ValueSet-locationAddressType" name="CRD Location Address Types"/>
 <artifact id="StructureDefinition/profile-medicationrequest" key="StructureDefinition-profile-medicationrequest" name="CRD Medication Request"/>
+<artifact id="StructureDefinition/CRDMetricData" key="StructureDefinition-CRDMetricData" name="CRD Metric Data"/>
 <artifact id="StructureDefinition/profile-nutritionorder" key="StructureDefinition-profile-nutritionorder" name="CRD Nutrition Order"/>
 <artifact id="StructureDefinition/profile-organization" key="StructureDefinition-profile-organization" name="CRD Organization"/>
 <artifact id="StructureDefinition/profile-patient" key="StructureDefinition-profile-patient" name="CRD Patient"/>
@@ -46,7 +48,7 @@
 <artifact deprecated="true" id="SearchParameter/communicationrequest-insurance" key="SearchParameter-communicationrequest-insurance" name="CommunicationRequest Insurance Search Parameter"/>
 <artifact id="CommunicationRequest/example" key="CommunicationRequest-example" name="CommunicationRequest example"/>
 <artifact deprecated="true" id="CodeSystem/coverageGuidance" key="CodeSystem-coverageGuidance" name="Coverage Guidance Code System"/>
-<artifact id="ValueSet/coverageGuidance" key="ValueSet-coverageGuidance" name="Coverage Guidance Value Set"/>
+<artifact deprecated="true" id="ValueSet/coverageGuidance" key="ValueSet-coverageGuidance" name="Coverage Guidance Value Set"/>
 <artifact id="StructureDefinition/ext-coverage-information" key="StructureDefinition-ext-coverage-information" name="Coverage Information"/>
 <artifact id="ValueSet/coveragePaDetail" key="ValueSet-coveragePaDetail" name="Coverage Prior Authorization Value Set"/>
 <artifact id="Coverage/example" key="Coverage-example" name="Coverage example"/>
@@ -65,6 +67,8 @@
 <artifact deprecated="true" id="SearchParameter/medicationrequest-insurance" key="SearchParameter-medicationrequest-insurance" name="MedicationRequest Insurance Search Parameter"/>
 <artifact id="MedicationRequest/annotated-example" key="MedicationRequest-annotated-example" name="MedicationRequest annotated example"/>
 <artifact id="MedicationRequest/example" key="MedicationRequest-example" name="MedicationRequest example"/>
+<artifact id="ValueSet/metricDataSource" key="ValueSet-metricDataSource" name="Metric Data Source"/>
+<artifact id="ValueSet/metricTokenUse" key="ValueSet-metricTokenUse" name="Metric Token Use"/>
 <artifact id="NutritionOrder/example" key="NutritionOrder-example" name="NutritionOder example"/>
 <artifact deprecated="true" id="SearchParameter/nutritionorder-insurance" key="SearchParameter-nutritionorder-insurance" name="NutritionOrder Insurance Search Parameter"/>
 <artifact id="Organization/example" key="Organization-example" name="Organization example"/>
@@ -83,6 +87,7 @@
 <page key="artifacts" name="Artifact List"/>
 <page key="deviations" name="CDS Hook Deviations and Enhancements"/>
 <page key="index" name="CRD IG Home Page"/>
+<page key="metrics" name="CRD Metrics"/>
 <page key="history" name="Change History"/>
 <page key="credits" name="Credits"/>
 <page key="downloads" name="Downloads"/>

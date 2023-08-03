@@ -18,9 +18,7 @@ Usage: #example
 * subject = Reference(Patient/example)
 * encounter = Reference(Encounter/example)
 * payload
-  * extension
-    * url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-CommunicationRequest.payload.content[x]"
-    * valueCodeableConcept = $loinc#65752-8 "Liver Pathology biopsy report"
+  * extension[codeableConcept].valueCodeableConcept = $loinc#65752-8 "Liver Pathology biopsy report"
   * contentString = "Liver pathology biopsy report"
 * occurrenceDateTime = "2016-06-10T11:01:10-08:00"
 * authoredOn = "2016-06-10T11:01:10-08:00"

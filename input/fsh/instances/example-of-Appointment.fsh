@@ -17,7 +17,7 @@ Usage: #example
 * created = "2013-10-10"
 * comment = "Further expand on the results of the MRI and determine the next actions that may be appropriate."
 * basedOn = Reference(ServiceRequest/example)
-* participant[0]
+* participant[+]
   * actor = Reference(Patient/example) "Amy Baxter"
   * required = #required
   * status = #accepted

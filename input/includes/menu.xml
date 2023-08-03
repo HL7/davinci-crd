@@ -44,6 +44,9 @@
       <li>
         <a href="{{site.data.info.assets}}implementation.html">Implementation Guidance</a>
       </li>
+      <li>
+        <a href="{{site.data.info.assets}}metrics.html">CRD Metrics</a>
+      </li>
     </ul>
   </li>
   <li class="dropdown">

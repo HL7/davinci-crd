@@ -3,48 +3,31 @@ InstanceOf: MedicationRequest
 Title: "MedicationRequest annotated example"
 Description: "Example medication request with an annotation showing coverage expectations"
 Usage: #example
-* extension
-  * extension[0]
-    * url = "coverageInfo"
-    * valueCoding = $temp#covered-prior-auth "Covered with prior authorization"
-  * extension[+]
-    * url = "coverage"
-    * valueReference = Reference(Coverage/example)
-  * extension[+]
-    * url = "billingCode"
-    * valueCoding = $cpt#77065
-  * extension[+]
-    * url = "billingCode"
-    * valueCoding = $cpt#77066
-  * extension[+]
-    * url = "billingCode"
-    * valueCoding = $cpt#77067
-  * extension[+]
-    * url = "reason"
-    * valueCodeableConcept.text = "In-network required unless exigent circumstances"
-  * extension[+]
-    * url = "detail"
-    * extension[0]
-      * url = "code"
-      * valueCodeableConcept = $temp#auth-out-network-only
-    * extension[+]
-      * url = "value"
-      * valueBoolean = true
-    * extension[+]
-      * url = "qualification"
-      * valueString = "Out-of-network prior auth does not apply if delivery occurs at a service site designated as 'remote'"
-  * extension[+]
-    * url = "date"
-    * valueDate = "2019-02-15"
-  * extension[+]
-    * url = "identifier"
-    * valueString = "12345ABC"
-  * extension[+]
-    * url = "contact"
-    * valueContactPoint
-      * system = #url
-      * value = "http://some-payer/xyz-sub-org/get-help-here.html"
-  * url = "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-coverage-information"
+* contained[+] = qr
+* extension[Coverage-Information]
+  * extension[coverage].valueReference = Reference(Coverage/example)
+  * extension[covered].valueCode = $temp#conditional
+  * extension[pa-needed].valueCode = $temp#satisfied
+  * extension[doc-needed].valueCode = $temp#admin
+  * extension[doc-purpose].valueCode = http://todo.dtr.system#Something
+  * extension[info-needed].valueCode = $temp#performer
+  * extension[billingCode].valueCoding = $cpt#77065
+  * extension[billingCode].valueCoding = $cpt#77066
+  * extension[billingCode].valueCoding = $cpt#77067
+  * extension[reason].valueCodeableConcept.text = "In-network required unless exigent circumstances"
+  * extension[reason].valueCodeableConcept = $temp#gold-card
+  * extension[detail]
+    * extension[code].valueCodeableConcept = $temp#auth-out-network-only
+    * extension[value].valueBoolean = true
+    * extension[qualification].valueString = "Out-of-network prior auth does not apply if delivery occurs at a service site designated as 'remote'"
+  * extension[questionnaire].valueCanonical = "http://example.org/some-payer/Questionnaire/123|1.3.0"
+  * extension[response].valueReference.reference = "#qr"
+  * extension[date].valueDate = "2019-02-15"
+  * extension[coverage-assertion-id].valueString = "12345ABC"
+  * extension[satisfied-pa-id].valueString = "XXYYZ"
+  * extension[contact].valueContactPoint
+    * system = #url
+    * value = "http://some-payer.org/xyz-sub-org/get-help-here.html"
 * status = #draft
 * intent = #original-order
 * medicationCodeableConcept = $rxnorm#616447 "Cellcept 250 MG Oral Capsule"
@@ -65,3 +48,21 @@ Usage: #example
   * doseAndRate.doseQuantity
     * value = 6
     * unit = "tablet"
+
+Instance: qr
+InstanceOf: QuestionnaireResponse
+Usage: #inline
+* questionnaire = "http://example.org/some-payer/Questionnaire/123|1.3.0"
+* subject = Reference(http://example.org/Patient/123) "Jane Smith"
+* status = #in-progress
+* authored = "2019-02-15"
+* author
+  * identifier
+    * system = "http://some-payer.org/xyz-sub-org/identifiers/application-ids"
+    * value = "payer-CRD-service-id"
+  * display = "Some payer app name"
+* item[+]
+  * linkId = "A1234"
+  * text = "How many previous treatments have been tried for this issue?"
+  * answer[+]
+    * valueInteger = 2

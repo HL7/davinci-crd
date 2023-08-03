@@ -1,3 +1,4 @@
+/*
 ValueSet: CoverageGuidance
 Id: coverageGuidance
 Title: "Coverage Guidance Value Set"
@@ -12,6 +13,7 @@ Description: "Codes defining types of coverage guidance"
 * CRDTempCodes#perform
 * CRDTempCodes#performpa
 * CRDTempCodes#detailedcode
+*/
 
 ValueSet: CoveredInfo
 Id: coverageInfo
@@ -19,8 +21,8 @@ Title: "Covered Information Value Set"
 Description: "Codes defining whether the ordered/requested service is covered under patient's plan"
 * ^status = #draft
 * ^experimental = false
-* CRDTempCodes#no
-* CRDTempCodes#yes
+* CRDTempCodes#not-covered
+* CRDTempCodes#covered
 * CRDTempCodes#conditional
 
 ValueSet: CoveragePaDetail
@@ -29,10 +31,10 @@ Title: "Coverage Prior Authorization Value Set"
 Description: "Codes defining whether prior auth will be needed for coverage to be provided"
 * ^status = #draft
 * ^experimental = false
-* CRDTempCodes#no
-* CRDTempCodes#yes
+* CRDTempCodes#no-auth
+* CRDTempCodes#auth-needed
 * CRDTempCodes#satisfied
-* CRDTempCodes#performing
+* CRDTempCodes#performpa
 * CRDTempCodes#conditional
 
 ValueSet: AdditionalDocumentation
@@ -41,7 +43,7 @@ Title: "Additional Documentation Value Set"
 Description: "Codes defining whether additional documentation needs to be captured"
 * ^status = #draft
 * ^experimental = false
-* CRDTempCodes#no
+* CRDTempCodes#no-doc
 * CRDTempCodes#clinical
 * CRDTempCodes#admin
 * CRDTempCodes#both

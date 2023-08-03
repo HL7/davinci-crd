@@ -4,7 +4,7 @@ Title: "Coverage example"
 Description: "Example identified coverage populated based on CRD profile"
 Usage: #example
 * id = "example"
-* identifier
+* identifier[MBIdentifier]
   * system = "http://example.com/fhir/NampingSystem/certificate"
   * value = "12345"
 * status = #active

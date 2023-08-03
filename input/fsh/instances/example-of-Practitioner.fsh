@@ -4,8 +4,7 @@ Title: "Practitioner example"
 Description: "Example practitioner populated based on CRD profile"
 Usage: #example
 * id = "example"
-* identifier[0]
-  * system = "http://hl7.org/fhir/sid/us-npi"
+* identifier[NPI]
   * value = "9941339108"
 * identifier[+]
   * system = "http://www.acme.org/practitioners"

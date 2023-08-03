@@ -12,7 +12,6 @@ Description: "This profile specifies constraints on the US Core profile on the P
 * ^contact.telecom.value = "http://www.hl7.org/Special/committees/fm"
 * ^jurisdiction = urn:iso:std:iso:3166#US
 * identifier[NPI] 1..1 MS
-* identifier[NPI] only Identifier
-  * ^patternIdentifier.system = "http://hl7.org/fhir/sid/us-npi"
+  * system = "http://hl7.org/fhir/sid/us-npi"
 * qualification MS
   * code MS

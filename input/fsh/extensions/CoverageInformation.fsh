@@ -28,35 +28,40 @@ Description: "Captures assertions from a payer about whether the service is cove
 * . ^short = "CoverageInfo"
   * ^definition = "Indicates coverage information."
 * extension contains
+    coverage 1..1 and
     covered 1..1 MS and
     pa-needed 0..1 MS and
     doc-needed 0..1 MS and
     doc-purpose 0..* MS and
     info-needed 0..* MS and
     billingCode 0..* and
-    reason 0..1 and
+    reason 0..* and
     detail 0..* and
     questionnaire 0..* and
     response 0..* and
-    coverage 1..1 and
     date 1..1 and
-    coverage-assertion-id 0..1 and
+    coverage-assertion-id 1..1 and
     satisfied-pa-id 0..1 and
     contact 0..*
+* extension[coverage] only Extension
+  * ^short = "Reference to Coverage"
+  * ^definition = "Reference to Coverage that assertion applies to."
+  * value[x] 1..1
+  * value[x] only Reference(Coverage)
 * extension[covered] only Extension
-  * ^short = "Covered Information"
+  * ^short = "covered | not-covered | conditional"
   * ^definition = "Indicates whether the ordered/requested service is covered under patient's plan"
   * value[x] 1..1
   * value[x] only code
   * value[x] from CoveredInfo (required)
 * extension[pa-needed] only Extension
-  * ^short = "Prior Authorization Information"
+  * ^short = "no-auth | auth-needed | satisfied | performpa | conditional"
   * ^definition = "Indicates whether prior auth will be needed for coverage to be provided"
   * value[x] 1..1
   * value[x] only code
   * value[x] from CoveragePaDetail (required)
 * extension[doc-needed] only Extension
-  * ^short = "Additional Documentation"
+  * ^short = "no-doc | clinical | admin | both | conditional"
   * ^definition = "Indicates whether additional documentation needs to be captured (purpose in next element)"
   * value[x] 1..1
   * value[x] only code
@@ -67,8 +72,8 @@ Description: "Captures assertions from a payer about whether the service is cove
   * value[x] only code
   * value[x] from $OriginValueSet (required)
 * extension[info-needed] only Extension
-  * ^short = "Additional information needed"
-  * ^definition = "TIndicates whether information about the perfomer, location, and/or performance date is needed to determine coverage information"
+  * ^short = "performer | location | timeframe"
+  * ^definition = "Indicates whether information about the perfomer, location, and/or performance date is needed to determine coverage information"
   * value[x] 1..1
   * value[x] only code
   * value[x] from InformationNeeded (required)
@@ -122,11 +127,6 @@ Description: "Captures assertions from a payer about whether the service is cove
   * ^condition = "crd-ci-q1"
   * value[x] only Reference(QuestionnaireResponse)
     * ^comment = "QuestionnaireResponse.author SHALL have a type of Device, with an identifier and display value.  It MAY have a Reference.reference, but need not do so."
-* extension[coverage] only Extension
-  * ^short = "Reference to Coverage"
-  * ^definition = "Reference to Coverage that assertion applies to."
-  * value[x] 1..1
-  * value[x] only Reference(Coverage)
 * extension[date] only Extension
   * ^short = "Assertion date"
   * ^definition = "Date on which assertion was made."
@@ -145,3 +145,28 @@ Description: "Captures assertions from a payer about whether the service is cove
   * ^comment = "This **SHOULD** only be populated if the contact information is context-specific rather than a generic contact for the payer as a whole."
   * value[x] only ContactPoint
 * url only uri
+
+Invariant: crd-ci-q1
+Description: "Questionnaire and QuestionnaireResponse are only allowed when doc-needed exists and not equal to 'no-doc'"
+Severity: #error
+Expression: "extension.where(url='questionnaire' or url='response').exists() implies (extension.where(url = 'doc-needed').exists() and extension.where(url = 'doc-needed').all(value != 'no-doc'))"
+
+Invariant: crd-ci-q2
+Description: "If covered is set to 'not-covered', then 'pa-needed' should not exist."
+Severity: #error
+Expression: "extension.where(url = 'covered' and value != 'not-covered') implies extension.where(url = 'pa-needed').exists()"
+
+Invariant: crd-ci-q3
+Description: "If 'info-needed' exists, then at least one of 'covered', 'pa-needed', or 'doc-needed' must be 'conditional'."
+Severity: #error
+Expression: "extension.where(url = 'info-needed').exists() implies extension.where((url = 'covered' or url = 'pa-needed' or url = 'doc-needed') and value = 'conditional').count() >= 1"
+
+Invariant: crd-ci-q4
+Description: "If 'pa-needed' is 'satisfied', then 'Doc-purpose' can't be 'PA'."
+Severity: #error
+Expression: "extension.where(url = 'pa-needed' and value = 'satisfied') and extension.where(url = 'doc-purpose').exists() implies extension.where(url = 'doc-purpose').all(value != 'PA')"
+
+Invariant: crd-ci-q5
+Description: "'satisfied-pa-id' must exist if and only if 'pa-needed' is set to 'satisfied'."
+Severity: #error
+Expression: "extension.where(url = 'pa-needed' and value = 'satisfied').exists() = extension.where(url = 'satisfied-pa-id').exists()"

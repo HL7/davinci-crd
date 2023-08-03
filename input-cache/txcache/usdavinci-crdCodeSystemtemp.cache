@@ -1,0 +1,621 @@
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "inactive" : true,
+    "include" : [{
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "concept" : [{
+        "code" : "no-doc"
+      },
+      {
+        "code" : "clinical"
+      },
+      {
+        "code" : "admin"
+      },
+      {
+        "code" : "both"
+      },
+      {
+        "code" : "conditional"
+      }]
+    }]
+  }
+}}####
+e: {
+  "valueSet" : {
+  "resourceType" : "ValueSet",
+  "status" : "active",
+  "expansion" : {
+    "identifier" : "urn:uuid:afd3267b-7624-4acb-9c0a-0372bb898e56",
+    "timestamp" : "2023-08-03T03:23:24.234Z",
+    "total" : 5,
+    "parameter" : [{
+      "name" : "limitedExpansion",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "excludeNested",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "version",
+      "valueUri" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp|1.1.0-ci-build"
+    }],
+    "contains" : [{
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "code" : "no-doc",
+      "display" : "No Additional Documentation"
+    },
+    {
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "code" : "clinical",
+      "display" : "Clinical Documentation"
+    },
+    {
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "code" : "admin",
+      "display" : "Administrative Documentation"
+    },
+    {
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "code" : "both",
+      "display" : "Administrative & clinical doc"
+    },
+    {
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "code" : "conditional",
+      "display" : "Conditional"
+    }]
+  }
+},
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "inactive" : true,
+    "include" : [{
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "concept" : [{
+        "code" : "prior-auth-include"
+      },
+      {
+        "code" : "initial-claim-include"
+      },
+      {
+        "code" : "all-claims-include"
+      },
+      {
+        "code" : "to-endpoint"
+      }]
+    }]
+  }
+}}####
+e: {
+  "valueSet" : {
+  "resourceType" : "ValueSet",
+  "status" : "active",
+  "expansion" : {
+    "identifier" : "urn:uuid:69af09ac-2c7c-4e3c-bc06-01fac7749818",
+    "timestamp" : "2023-08-03T03:23:24.406Z",
+    "total" : 4,
+    "parameter" : [{
+      "name" : "limitedExpansion",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "excludeNested",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "version",
+      "valueUri" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp|1.1.0-ci-build"
+    }],
+    "contains" : [{
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "code" : "prior-auth-include",
+      "display" : "Include in prior authorization"
+    },
+    {
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "code" : "initial-claim-include",
+      "display" : "Include in initial claim"
+    },
+    {
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "code" : "all-claims-include",
+      "display" : "Include in all claims"
+    },
+    {
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "code" : "to-endpoint",
+      "display" : "Send to endpoint"
+    }]
+  }
+},
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "inactive" : true,
+    "include" : [{
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "concept" : [{
+        "code" : "gold-card"
+      },
+      {
+        "code" : "detail-code"
+      }]
+    }]
+  }
+}}####
+e: {
+  "valueSet" : {
+  "resourceType" : "ValueSet",
+  "status" : "active",
+  "expansion" : {
+    "identifier" : "urn:uuid:1f34d3a8-87a4-40a9-a711-2687f7322ed8",
+    "timestamp" : "2023-08-03T03:23:24.593Z",
+    "total" : 2,
+    "parameter" : [{
+      "name" : "limitedExpansion",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "excludeNested",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "version",
+      "valueUri" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp|1.1.0-ci-build"
+    }],
+    "contains" : [{
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "code" : "gold-card",
+      "display" : "Gold card"
+    },
+    {
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "code" : "detail-code",
+      "display" : "Detail code"
+    }]
+  }
+},
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "inactive" : true,
+    "include" : [{
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "concept" : [{
+        "code" : "allowed-quantity"
+      },
+      {
+        "code" : "allowed-period"
+      },
+      {
+        "code" : "in-network-copay"
+      },
+      {
+        "code" : "out-network-copay"
+      },
+      {
+        "code" : "auth-out-network-only"
+      },
+      {
+        "code" : "concurrent-review"
+      },
+      {
+        "code" : "appropriate-use-needed"
+      }]
+    }]
+  }
+}}####
+e: {
+  "valueSet" : {
+  "resourceType" : "ValueSet",
+  "status" : "active",
+  "expansion" : {
+    "identifier" : "urn:uuid:047b6935-c5cc-4369-83fc-aaf510d2f4d4",
+    "timestamp" : "2023-08-03T03:23:24.781Z",
+    "total" : 7,
+    "parameter" : [{
+      "name" : "limitedExpansion",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "excludeNested",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "version",
+      "valueUri" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp|1.1.0-ci-build"
+    }],
+    "contains" : [{
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "code" : "allowed-quantity",
+      "display" : "Maximum quantity"
+    },
+    {
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "code" : "allowed-period",
+      "display" : "Maximum allowed period"
+    },
+    {
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "code" : "in-network-copay",
+      "display" : "Copay for in-network"
+    },
+    {
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "code" : "out-network-copay",
+      "display" : "Copay for out-of-network"
+    },
+    {
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "code" : "auth-out-network-only",
+      "display" : "Authorization out-of-network only"
+    },
+    {
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "code" : "concurrent-review",
+      "display" : "Concurrent review"
+    },
+    {
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "code" : "appropriate-use-needed",
+      "display" : "Appropriate use"
+    }]
+  }
+},
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "inactive" : true,
+    "include" : [{
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "concept" : [{
+        "code" : "not-covered"
+      },
+      {
+        "code" : "covered"
+      },
+      {
+        "code" : "conditional"
+      }]
+    }]
+  }
+}}####
+e: {
+  "valueSet" : {
+  "resourceType" : "ValueSet",
+  "status" : "active",
+  "expansion" : {
+    "identifier" : "urn:uuid:66706726-8158-48c0-b0c5-28707afb0a12",
+    "timestamp" : "2023-08-03T03:23:24.952Z",
+    "total" : 3,
+    "parameter" : [{
+      "name" : "limitedExpansion",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "excludeNested",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "version",
+      "valueUri" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp|1.1.0-ci-build"
+    }],
+    "contains" : [{
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "code" : "not-covered",
+      "display" : "Not covered"
+    },
+    {
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "code" : "covered",
+      "display" : "Covered"
+    },
+    {
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "code" : "conditional",
+      "display" : "Conditional"
+    }]
+  }
+},
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "inactive" : true,
+    "include" : [{
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "concept" : [{
+        "code" : "no-auth"
+      },
+      {
+        "code" : "auth-needed"
+      },
+      {
+        "code" : "satisfied"
+      },
+      {
+        "code" : "performpa"
+      },
+      {
+        "code" : "conditional"
+      }]
+    }]
+  }
+}}####
+e: {
+  "valueSet" : {
+  "resourceType" : "ValueSet",
+  "status" : "active",
+  "expansion" : {
+    "identifier" : "urn:uuid:d2248dd4-ec35-4bd2-ad31-60b8c95332b0",
+    "timestamp" : "2023-08-03T03:23:25.124Z",
+    "total" : 5,
+    "parameter" : [{
+      "name" : "limitedExpansion",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "excludeNested",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "version",
+      "valueUri" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp|1.1.0-ci-build"
+    }],
+    "contains" : [{
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "code" : "no-auth",
+      "display" : "No Prior Authorization"
+    },
+    {
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "code" : "auth-needed",
+      "display" : "Prior Authorization Needed"
+    },
+    {
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "code" : "satisfied",
+      "display" : "Authorization Satisfied"
+    },
+    {
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "code" : "performpa",
+      "display" : "Performer Prior Authorization"
+    },
+    {
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "code" : "conditional",
+      "display" : "Conditional"
+    }]
+  }
+},
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "inactive" : true,
+    "include" : [{
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "concept" : [{
+        "code" : "performer"
+      },
+      {
+        "code" : "location"
+      },
+      {
+        "code" : "timeframe"
+      }]
+    }]
+  }
+}}####
+e: {
+  "valueSet" : {
+  "resourceType" : "ValueSet",
+  "status" : "active",
+  "expansion" : {
+    "identifier" : "urn:uuid:fe8340ef-e355-41b7-9b6d-fbeffc8b57eb",
+    "timestamp" : "2023-08-03T03:23:25.312Z",
+    "total" : 3,
+    "parameter" : [{
+      "name" : "limitedExpansion",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "excludeNested",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "version",
+      "valueUri" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp|1.1.0-ci-build"
+    }],
+    "contains" : [{
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "code" : "performer",
+      "display" : "Performer Needed"
+    },
+    {
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "code" : "location",
+      "display" : "Location Needed"
+    },
+    {
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "code" : "timeframe",
+      "display" : "Timeframe Needed"
+    }]
+  }
+},
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "inactive" : true,
+    "include" : [{
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "concept" : [{
+        "code" : "payer-src"
+      },
+      {
+        "code" : "provider-src"
+      }]
+    }]
+  }
+}}####
+e: {
+  "valueSet" : {
+  "resourceType" : "ValueSet",
+  "status" : "active",
+  "expansion" : {
+    "identifier" : "urn:uuid:c48ac177-7ffa-411b-8225-ed6c159dbbc5",
+    "timestamp" : "2023-08-03T03:23:25.484Z",
+    "total" : 2,
+    "parameter" : [{
+      "name" : "limitedExpansion",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "excludeNested",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "version",
+      "valueUri" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp|1.1.0-ci-build"
+    }],
+    "contains" : [{
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "code" : "payer-src",
+      "display" : "Payer-sourced"
+    },
+    {
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "code" : "provider-src",
+      "display" : "Provider-sourced"
+    }]
+  }
+},
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "inactive" : true,
+    "include" : [{
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "concept" : [{
+        "code" : "used"
+      },
+      {
+        "code" : "not-used"
+      },
+      {
+        "code" : "rejected"
+      }]
+    }]
+  }
+}}####
+e: {
+  "valueSet" : {
+  "resourceType" : "ValueSet",
+  "status" : "active",
+  "expansion" : {
+    "identifier" : "urn:uuid:aaadd4c0-aff3-4725-b444-f1928189b06b",
+    "timestamp" : "2023-08-03T03:23:25.671Z",
+    "total" : 3,
+    "parameter" : [{
+      "name" : "limitedExpansion",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "excludeNested",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "version",
+      "valueUri" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp|1.1.0-ci-build"
+    }],
+    "contains" : [{
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "code" : "used",
+      "display" : "Authorization Token Used"
+    },
+    {
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "code" : "not-used",
+      "display" : "Authorization Token Not Used"
+    },
+    {
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "code" : "rejected",
+      "display" : "Authorization Token Rejected"
+    }]
+  }
+},
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "inactive" : true,
+    "include" : [{
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "concept" : [{
+        "code" : "reason-prior-auth"
+      }]
+    }]
+  }
+}}####
+e: {
+  "valueSet" : {
+  "resourceType" : "ValueSet",
+  "status" : "active",
+  "expansion" : {
+    "identifier" : "urn:uuid:ba171a52-03d2-45e1-80f9-5e814aa9bc6d",
+    "timestamp" : "2023-08-03T03:23:25.859Z",
+    "total" : 1,
+    "parameter" : [{
+      "name" : "limitedExpansion",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "excludeNested",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "version",
+      "valueUri" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp|1.1.0-ci-build"
+    }],
+    "contains" : [{
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+      "code" : "reason-prior-auth",
+      "display" : "Prior authorization"
+    }]
+  }
+},
+  "error" : ""
+}
+-------------------------------------------------------------------------------------

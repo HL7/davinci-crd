@@ -31,5 +31,6 @@ Alias: $MedicationRequest = http://hl7.org/fhir/StructureDefinition/MedicationRe
 Alias: $NutritionOrder = http://hl7.org/fhir/StructureDefinition/NutritionOrder
 Alias: $ServiceRequest = http://hl7.org/fhir/StructureDefinition/ServiceRequest
 Alias: $VisionPrescription = http://hl7.org/fhir/StructureDefinition/VisionPrescription
-Alias: $extension-CommunicationRequest.payload.content[x] = http://hl7.org/fhir/5.0/StructureDefinition/extension-CommunicationRequest.payload.content[x]
 Alias: $OriginValueSet = http://hl7.org/fhir/us/davinci-dtr/ValueSet/Origin-vs
+Alias: $raceEthnicity = urn:oid:2.16.840.1.113883.6.238
+Alias: $extension-CommunicationRequest.payload.content = http://hl7.org/fhir/5.0/StructureDefinition/extension-CommunicationRequest.payload.content[x]

@@ -1,5 +1,5 @@
 Logical: CDSHookServicesExtensionConfig
-Id: lm-CDSHookServicesExtensionConfig
+Id: CDSHookServicesExtensionConfig
 Title: "CDS Hooks Services Configuration Extension"
 Description: "An extension for the CDS Hooks 'services' object that indicates configuration options supported by the CDS server"
 * ^status = #draft
