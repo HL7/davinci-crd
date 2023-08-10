@@ -70,7 +70,7 @@ A determination that additional information is needed (e.g. via DTR) is consider
 
 If a CRD service exceeds the allocated time window for a hook (i.e. for those circumstances that fall outside the 90% expectation), CRD clients SHOULD establish a time-out process that ensures users are not blocked from proceeding with their business flow.  Where a CRD client opts to not block users from proceeding for responses that come back in a period of time shorter than the target time window in this guide (i.e. 5/10 seconds), the client must ensure that users are made aware of the information when it is available.  For responses that come back in a time period that exceeds this duration, CRD clients MAY ignore the resulting cards and/or system actions.
 
-<blockquote class="note-to-balloters">
+<blockquote class="stu-note">
 <p>
 Payers and Healthcare IT system vendors are both encouraged to provide feedback around whether this timing expectation strikes the appropriate balance between allowing appropriate decision support and allowing timely progress of workflow.  This evaluation should consider what systems will need to be involved in the decision support process, what external calls might be needed, what caching strategies are viable, etc.
 </p>
@@ -171,12 +171,6 @@ In most cases, payers will require information about a patient’s coverage. In 
 },
 {% endraw %}
 ```
-
-<blockquote class="note-to-balloters">
-<p>
-This represents a change to how coverage information will be retrieved.  All active coverage for the patient is now retrieved (though typically only the coverage related to a payer will actually flow to the CRD Server due to limits on information disclosure).  There are no longer extensions or special search parameters to support capturing insurance information in a request-specific, encounter-specific, or other context-specific manner.
-</p>
-</blockquote>
 
 Other information will need to be retrieved using queries that are more specific to the type of hook being invoked - and the resources passed with it:
 </div>

@@ -1,12 +1,9 @@
 {% raw %}
 {% endraw %}
-<blockquote class="note-to-balloters">
-<p>
-This ballot release of the specification reflects several changes that reflect implementer feedback about the CRD specification arising from detailed review, connectathons and implementation experience.  Significant changes to the specification are highlighted in green and balloters are invited to focus particular attention on these sections.  "Notes to balloters" and "STU notes" call out additional key considerations where feedback is desired.  However, the whole specification is open to review and the project welcomes all constructive feedback.
-</p>
-</blockquote>
-
 <blockquote class="stu-note">
+<p>
+This release of the specification reflects several changes that reflect implementer feedback about the CRD specification arising from detailed review, connectathons and implementation experience.  Significant changes to the specification are highlighted in green.  "STU notes" call out additional key considerations where feedback is desired.
+</p>
 <p>
 This specification is a Standard for Trial Use.  It is expected to continue to evolve and improve through connectathon testing and feedback from early adopters.
 </p>
@@ -47,7 +44,6 @@ This implementation guide is designed to allow for initial support of basic capa
 
 
 ### Systems
-
 This implementation guide sets expectations for two types of systems:
 
 [CRD Clients](CapabilityStatement-crd-client.html) are typically systems that healthcare providers use at the point of care, including electronic medical records systems, pharmacy systems, and other provider and administrative systems used for ordering, documenting, and execution of patient-related services. Users of these systems have a need for coverage requirements information to support care planning.
@@ -64,7 +60,7 @@ The CRD client may actually involve multiple systems. For example, the systems t
 
 <blockquote class="stu-note">
 <p>
-When CRD clients are made up of multiple systems, there will be orchestration requirements to allow these multiple systems to interact in a way that allows them to appear as a single monolithic system from the perspective of the CRD server.  This IG does not (yet) provide any guidance or standardization about how system components should interoperate to achieve this monolithic behavior.  If there is industry interest, future releases of this IG may work to standardize some of these "intra-client" interactions.
+When CRD clients are made up of multiple systems, there will be orchestration requirements to allow these multiple systems to interact in a way that allows them to appear as a single monolithic system from the perspective of the CRD server.  This IG provides some discussion of this on the <a href="epa.html">ePA Coordinators page</a>, though it does not (yet) provide any standardization about how system components should interoperate to achieve this monolithic behavior.  If there is industry interest, future releases of this IG may work to standardize some of these "intra-client" interactions.
 </p>
 </blockquote>
 

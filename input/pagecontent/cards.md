@@ -57,7 +57,7 @@ Notes:
 
 <div markdown="1" class="new-content">
 
-* Where a Coverage Information card type indicating that additional clinical documentation is needed and the CRD client supports DTR, CRD Clients **SHALL** ensure that clinical users have an opportunity to launch the DTR app as part of the current workflow.  Where a Coverage Information indicates that additional administrative documentation is needed, CRD Clients **SHOULD** allow clinical users to have an opportunity to launch the DTR app, but should make it clear that the information to be captured is non-clinical.
+* Where a Coverage Information card type indicating that additional clinical documentation is needed and the CRD client supports DTR, CRD Clients **SHALL** ensure that clinical users have an opportunity to launch the DTR app as part of the current workflow.  Where a Coverage Information indicates that additional administrative documentation is needed, CRD Clients **SHOULD** allow clinical users to have an opportunity to launch the DTR app, but **SHOULD** make it clear that the information to be captured is non-clinical.
 
 * Launching DTR does not necessarily mean launching a SMART on FHIR application.  Some CRD clients might incorporate DTR client functionality natively rather than using an app.
 
@@ -145,7 +145,7 @@ If a CRD service has provided limitations about when a coverage assertion applie
 
 It is possible that more than one extension could be present, representing coverage information for different coverages for the same order.  It is also possible for multiple assertions to be present for the same coverage - for example the fact that prior authorization must be solicited by the performing provider, but that clinical and administrative DTR are also necessary.
 
-Systems **MAY** fire calls related to orders even if there is already a coverage assertion recorded on the order.  There is always the possibility that context has changed or new information available in the order will result in a new decision or additional guidance. The payer may also have other useful information not related to coverage/authorization.  As well, information about the order or context might change between an initial `order-select` or `order-sign` and a subsequent `order-dispatch` or other hook invocation.
+Systems **MAY** fire calls related to orders even if there is already a coverage assertion recorded on the order.  There is always the possibility that context has changed or new information available in the order will result in a new decision or additional guidance. The payer might also have other useful information not related to coverage/authorization.  As well, information about the order or context might change between an initial `order-select` or `order-sign` and a subsequent `order-dispatch` or other hook invocation.
 
 However, payers **SHALL NOT** send a system action to update the order unless something is new.  Payers **SHOULD** take into account the previous decision in deciding how much processing is necessary before returning a response.
 
@@ -437,7 +437,7 @@ For example, this card proposes replacing the draft prescription for a brand-nam
 
 
 ### Identify additional orders as companions/prerequisites for current order
-This response type can be used to present a `Card` that recommends the introduction of additional orders. For example, the payer may recommend that certain lab tests be ordered along with a medication that is known to affect liver function.  This will normally involve additional "create" actions.  The fact there is no "delete" for the original order conveys that these are supplemental actions rather than replacement actions.  As with the [Propose Alternate Request](#propose-alternate-request) response type, in some cases multiple resources will need to be created to convey the full suggestion (e.g. Medication, Device, etc.)
+This response type can be used to present a `Card` that recommends the introduction of additional orders. For example, the payer might recommend that certain lab tests be ordered along with a medication that is known to affect liver function.  This will normally involve additional "create" actions.  The fact there is no "delete" for the original order conveys that these are supplemental actions rather than replacement actions.  As with the [Propose Alternate Request](#propose-alternate-request) response type, in some cases multiple resources will need to be created to convey the full suggestion (e.g. Medication, Device, etc.)
 
 When using this response type, the proposed orders (and any associated resources) **SHALL** comply with the following profiles:
 

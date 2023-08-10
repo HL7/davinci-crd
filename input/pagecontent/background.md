@@ -30,7 +30,7 @@ The 'CDS' in 'CDS Hooks' stands for 'Clinical Decision Support'. However, the me
 
 This guide is based on the [HL7 FHIR]({{site.data.fhir.path}}index.html) standard, as well as the [CDS Hooks](https://cds-hooks.hl7.org) and [SMART on FHIR](http://hl7.org/fhir/smart-app-launch/index.html) specifications, which build additional capabilities on top of FHIR.  This architecture is intended to maximize the number of provider systems that conform to this guide, as well as to allow for easy growth and extensibility of system capabilities in the future.
 
-Implementers of this specification therefore need to understand some basic information about these specifications.
+Implementers of this specification therefore need to understand some basic information about these referenced specifications.
 
 
 #### FHIR
@@ -74,7 +74,7 @@ Implementers should also familiarize themselves with the FHIR resources used wit
 </table>
 
 #### CDS Hooks
-Provider systems will use the specification and workflows defined by [CDS Hooks](https://cds-hooks.hl7.org) to initiate Coverage Requirements Discovery with the payers. Implementers must be familiar with all aspects of this specification.
+Provider systems will use the specification and workflows defined by [CDS Hooks 2.0](https://cds-hooks.hl7.org/2.0) to initiate Coverage Requirements Discovery with the payers. Implementers must be familiar with all aspects of this specification.
 
 #### SMART on FHIR
 SMART on FHIR is expected to be used in two principal ways:
@@ -83,9 +83,6 @@ SMART on FHIR is expected to be used in two principal ways:
 CDS Hooks provides a mechanism for payers to advise clinicians on coverage requirements as part of their regular workflow - when ordering medications, making referrals, scheduling appointments, discharging patients, etc.  However, sometimes clinicians may be interested in learning about coverage requirements without going through the workflow steps within their CRD client.  I.e. they don't want to actually create a referral, they just want to ask the question "what would the requirements be if I *wanted* to create a referral?
 
 Discussion of how a SMART on FHIR app can be used to trigger CDS Hooks from within an CRD client to perform such what-if scenarios can be found [here](foundation.html#smart-on-fhir-hook-invocation).  CRD clients can use the general open-source SMART app.  Payers might also choose to develop their own using the open-source SMART app as a base to inform their own development.  This might be an appropriate option if there's a need for additional elements to be included in certain resources to determine full coverage requirements.
-
-##### Hook actions
-When a server responds to a CDS hook, one of the possible actions is to allow the user to [invoke a SMART App](https://cds-hooks.hl7.org/2.0/#link).  Support for this option by payer systems is optional.  Doing so allows the payer to provide a custom user interface to complete forms, navigate through decision support, review subsets of CRD client and/or payer data, etc.  The Da Vinci [Documentation Templates and Rules](http://www.hl7.org/fhir/us/davinci-dtr) implementation guide provides additional guidance and expectations on the use of CDS Hook cards to launch SMART Apps and how payer-provided SMART Apps should function.
 
 ### Architectural Approach
 The approach taken to meet the requirements of the Coverage Requirements Discovery use-case was selected after evaluating the various interoperability choices provided by FHIR.  Specifically, the project team evaluated the possible architectural approaches as described in the HRex specification's [Approaches to Exchanging FHIR Data]({{site.data.fhir.ver.hrex}}/exchanging.html) guide.  The following bullets describe the path choices driven by use-case requirements:
@@ -99,13 +96,5 @@ The approach taken to meet the requirements of the Coverage Requirements Discove
 <div markdown="1" class="new-content">
 
 NOTE: Because of the sensitivity around disclosure of clinical information to payer-controlled systems during the clinical workflow process, this IG imposes a number of safeguards around the use of the selected CDS Hooks technology to help ensure that providers and their systems have an appropriate degree of control over disclosure and that information can't be used in inappropriate ways.
-
-#### Impact on payer processes
-
-Information passed to the CRD Server will typically contain clinical terminologies, might not contain billing terminologies, and will generally not include billing modifier codes or similar information typically included in prior authorization requests.  CRD Servers will need to support these clinical terminologies or map them to internally used billing terminologies when determining decision support results - such as whether a therapy is covered or requires prior authorization.  In some cases, mappings may not be fully deterministic and may impact the ability to respond with useful decision support.  Services will also need to consider that the mapping they perform between clinical terminologies and billing codes may be different than the bill coding process performed by the client system when claims are eventually submitted.  This may mean that assertions about coverage or prior authorization requirements will need to be expressed conditionally.  E.g. "Provided this service is billed as X, Y or Z, then prior authorization is not needed".
-
-In situations where CRD Clients are aware of the likely billing codes at the time of ordering, they **MAY** send these codes as additional CodeableConcept.coding repetitions to assist in server processing.  If using CPT, note the ability to convey CPT modifier codes via post-coordination as described in the [Using CPT]((https://terminology.hl7.org/CPT.html) page on terminology.hl7.org.
-
-It is more efficient if mappings can be shared across payers and providers.  This implementation guide encourages industry participants to cooperate on the development of shared mappings and/or to work with terminology developers (e.g. AMA for CPT codes) to develop shared mappings as part of their code maintenance process.
 
 </div>
