@@ -494,16 +494,6 @@ NOTES:
 
 In the specific case of order-based hooks, "What if" **SHOULD** use the Order Sign hook, but **SHALL** use the configuration option that prevents the return of an unsolicited determination and **MAY** use configuration options to prevent the return of other irrelevant types of cards (e.g. duplicate therapy, etc.)
 
-### Registering DTR Apps with CRD
-
-If a payer supports both CRD and [DTR](http://hl7.org/fhir/us/davinci-dtr) and the CRD client intends to enable DTR in addition to CRD, then at the time the CRD Server is enabled within the CRD client, the service must be configured with the URL of the SMART app that is to be used within that CRD client.  For configuration purposes either zero or one SMART app **SHALL** be configured.  The SMART app selected must be one that supports all the Questionnaire data types, extensions, and other options that will be used by the payer - potentially including adaptive forms.
-
-**NOTE:** The URL selected **MAY** be a 'logical' URL that corresponds to an CRD client internal function rather than a registered SMART app.
-
-A CRD client, on receipt of a CDS Hook card with a SMART app launch of the specified DTR URL **MAY** choose to substitute that URL with the URL of an alternate SMART app, or with a card that allows launch of an internal function.  (Note: There is no standard mechanism for launching internal CRD client functionality from a CDS Hook card yet, so this will need to be an CRD client-proprietary mechanism.).  CRD clients performing such substitution might do so based on the user, organization, order type, or any other configuration option.  All responsibility for selection of which app to use rests with the CRD client.  The card-provided URL **SHALL** be the same for all DTR launch cards returned by the payer.
-
-Any substituted app (or internal CRD client functionality) would need to support the DTR standard launch context expectations and would also need to ensure the alternate app or internal function likewise supports the necessary Questionnaire capabilities used by the payer.  The CRD client **SHALL** also notify the payer that they are performing app substitution so that the payer can notify the CRD client if the payer's Questionnaire requirements will be changing.
-
 </div>
 
 ### Additional Considerations

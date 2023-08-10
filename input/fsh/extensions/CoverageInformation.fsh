@@ -37,6 +37,7 @@ Description: "Captures assertions from a payer about whether the service is cove
     billingCode 0..* and
     reason 0..* and
     detail 0..* and
+    dependency 0..* and
     questionnaire 0..* and
     response 0..* and
     date 1..1 and
@@ -98,8 +99,7 @@ Description: "Captures assertions from a payer about whether the service is cove
   * extension contains
       code 1..1 and
       value 1..1 and
-      qualification 0..1 and
-      dependencies 0..*
+      qualification 0..1
   * extension[code] ^short = "Name of name-value pair"
     * ^definition = "The type of detail or qualification expressed."
     * value[x] only CodeableConcept
@@ -110,10 +110,10 @@ Description: "Captures assertions from a payer about whether the service is cove
   * extension[qualification] ^short = "Additional info about detail"
     * ^definition = "Additional text that qualifies/expands on the computable detail.  E.g. 'Provided coverage is renewed' or 'Does not account for deductible'"
     * value[x] only string
-  * extension[dependencies] ^short = "Additional info about detail"
-    * ^definition = "If present, indicates that the determination represented here is dependent on the content, determination, and possibly execution of the referenced order(s)"
-    * ^requirements = "For example, the authorization decision on a request for post-surgical physiotherapy might be dependent on the order for the surgery itself.  If coverage for the surgery is not approved or the order for the surgery is cancelled, that might impact the decision on covering the physiotherapy."
-    * value[x] only Reference(Appointment or CommunicationRequest or DeviceRequest or MedicationRequest or NutritionOrder or ServiceRequest)
+* extension[dependency] ^short = "Resources that impact this assertion"
+  * ^definition = "If present, indicates that the determination represented here is dependent on the content, determination, and possibly execution of the referenced order(s)"
+  * ^requirements = "For example, the authorization decision on a request for post-surgical physiotherapy might be dependent on the order for the surgery itself.  If coverage for the surgery is not approved or the order for the surgery is cancelled, that might impact the decision on covering the physiotherapy."
+  * value[x] only Reference(Appointment or CommunicationRequest or DeviceRequest or MedicationRequest or NutritionOrder or ServiceRequest)
 * extension[questionnaire] only Extension
   * ^short = "Questionnaire"
   * ^definition = "A form to be filled out to gather more information.  Only for use if the response indicates a need to use DTR"

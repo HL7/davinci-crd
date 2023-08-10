@@ -1,12 +1,12 @@
 [Cards](https://cds-hooks.hl7.org/2.0/#cds-service-response) are the mechanism used to return coverage requirements from the CRD Server to the CRD Client.
 
-In addition to the [guidance provided in the CDS Hooks specification](https://cds-hooks.hl7.org/2.0/#card-attributes), the following additional recommendations apply to CRD Servers when constructing cards:
+In addition to the [guidance provided in the CDS Hooks specification](https://cds-hooks.hl7.org/2.0/#card-attributes), the following additional guidance applies to CRD Servers when constructing cards:
 
 *  The `Card.indicator` **SHOULD** be populated from the perspective of the clinical decision maker, not the payer.  While failure to procure a prior authorization might be 'critical' from the perspective of payment, it would be - at best - a 'warning' from the perspective of clinical care.  'critical' must be reserved for reporting life or death or serious clinical outcomes.  Issues where the proposed course of action will negatively affect the ability of the payer or patient to be reimbursed would generally be a 'warning'.  Most Coverage Requirements **SHOULD** be marked as 'info'.
 
 *  The `Card.source` **SHOULD** be populated with an insurer name that the user and patient would recognize (i.e. the responsible insurer on the patient's insurance card), including in situations where coverage recommendations are being returned by a benefits manager or intermediary operating the CRD Server on behalf of the payer.  If an insurer is providing recommendations from another authority (e.g. a clinical society), the society's name and logo might be displayed, though usually only with the permission of that organization.
 
-    *  `Card.source.topic` **SHALL** be populated, and has an [extensible](http://www.hl7.org/fhir/terminologies.html#extensible) binding to the ValueSet <a href="ValueSet-cardType.html">CRD Card Types.</a> The rationale is to allow CRD clients to potentially filter or track the usage of different types of cards.
+*  `Card.source.topic` **SHALL** be populated, and has an [extensible](http://www.hl7.org/fhir/terminologies.html#extensible) binding to the ValueSet <a href="ValueSet-cardType.html">CRD Card Types.</a> The rationale is to allow CRD clients to potentially filter or track the usage of different types of cards.
 
 *  Users are busy.  Time spent reading a payer-returned card is inevitably time not spent reviewing other information or interacting with the patient.  If not useful or relevant, users will quickly learn to ignore - or even demand the disabling of - payer-provided alerts.  Therefore, information must be delivered efficiently and be tuned to provide maximum relevance.  Specifically:
 
@@ -40,11 +40,11 @@ This section describes the different types of [responses](https://cds-hooks.hl7.
 
 Of the response types in this guide, conformant CRD Clients **SHALL** support the [External Reference](#external-reference), [Instructions](#instructions), and  [Coverage Information](#coverage-information) responses and **SHOULD** support the remaining types.
 
-CRD Servers **SHALL**, at minimum, demonstrate an ability to return cards with the following type: [Coverage](#coverage-information) (card type codes `coverage` and `auth-req`). As well, systems **SHALL** either support the [External Reference](#external-reference) and [Instructions](#instructions) card types (card type code `documentation`), or the [DTR](http://hl7.org/fhir/us/davinci-dtr) implementation guide with the [Launch SMART Application](#launch-smart-application) card type (card type codes `dtr-clin` and `dtr-admin`).
+CRD Servers **SHALL**, at minimum, demonstrate an ability to return cards with the following type: [Coverage](#coverage-information), [External Reference](#external-reference) and [Instructions](#instructions) card types (card type code `documentation`).
 
 NOTE: Support for a card type does not mean that all orders/appointments/etc. will necessarily receive card guidance, merely that it must be able to return those card types for at least a subset of CRD invocations
 
-Provision of and acceptance of decision support cards outside the coverage and documentation requirements space is optional (for both server and client).  CRD that provide decision support for non-coverage/documentation areas **SHALL** check that the CRD client does not have the information within its store that would allow it to detect the issue itself.  If the information already exists in the CRD client, then the obligation is on the CRD cllient to manage the issue detection and reporting in its own manner and CRD servers should not get involved.
+Provision of and acceptance of decision support cards outside the coverage and documentation requirements space is optional (for both server and client).  CRD Servers that provide decision support for non-coverage/documentation areas **SHALL** check that the CRD client does not have the information within its store that would allow it to detect the issue itself.  If the information already exists in the CRD client, then the obligation is on the CRD Client to manage the issue detection and reporting in its own manner and CRD Servers should not get involved.
 
 Response types are listed from least sophisticated to most sophisticated - and potentially more useful/powerful.  As a rule, the more a card can automate manual processes and the more context-specific the behavior is, the more useful the decision support will be to the clinician and the more likely it will be used.
 
@@ -57,7 +57,9 @@ Notes:
 
 <div markdown="1" class="new-content">
 
-* Where a card of type `dtr-clin` is returned, CRD Clients **SHALL** ensure that clinical users have an opportunity to launch the DTR app as part of the current workflow.  Where a card of type `dtr-admin` is returned, CRD Clients **SHOULD** allow clinical users to have an opportunity to launch the DTR app, but should make it clear that the information to be captured is non-clinical.
+* Where a Coverage Information card type indicating that additional clinical documentation is needed and the CRD client supports DTR, CRD Clients **SHALL** ensure that clinical users have an opportunity to launch the DTR app as part of the current workflow.  Where a Coverage Information indicates that additional administrative documentation is needed, CRD Clients **SHOULD** allow clinical users to have an opportunity to launch the DTR app, but should make it clear that the information to be captured is non-clinical.
+
+* Launching DTR does not necessarily mean launching a SMART on FHIR application.  Some CRD clients might incorporate DTR client functionality natively rather than using an app.
 
 </div>
 
@@ -182,7 +184,7 @@ When using this response type, the proposed order or appointment being updated *
   </tr>
 </table>
 
-For example, this card indicates that a prior authorization has been granted for a planned prescription:
+For example, this card indicates that a prior authorization has been satisfied for a planned procedure:
 
 ```
 {
@@ -196,24 +198,18 @@ For example, this card indicates that a prior authorization has been granted for
           "url": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-coverage-information"
           "extension": [
             {
-              "url": "coverageInfo",
-              "valueCoding": {
-                "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-                "code": "covered-prior-auth",
-                "display": "Covered with prior authorization"
-              }
-            },
-            {
-              "url": "dependency",
-              "valueReference": {
-                "reference": "ServiceRequest/example2"
-              }
-            },
-            {
               "url": "coverage",
               "valueReference": {
                 "reference": "Coverage/example"
               }
+            },
+            {
+              "url": "covered",
+              "valueCode": "covered"
+            },
+            {
+              "url": "pa-needed",
+              "valueCode": "satisfied"
             },
             {
               "url": "billingCode",
@@ -265,12 +261,22 @@ For example, this card indicates that a prior authorization has been granted for
               ]
             },
             {
+              "url": "dependency",
+              "valueReference": {
+                "reference": "ServiceRequest/example2"
+              }
+            },
+            {
               "url": "date",
               "valueDate": "2019-02-15"
             },
             {
-              "url": "identifier",
+              "url": "coverage-assertion-id",
               "valueString": "12345ABC"
+            },
+            {
+              "url": "satisfied-pa-id",
+              "valueString": "Q8U119"
             },
             {
               "url": "contact",
@@ -314,14 +320,9 @@ For example, this card indicates that a prior authorization has been granted for
   }]
 }
 ```
-CRD clients and services **SHALL** support the new CDS Hooks system action functionality to cause annotations to automatically be stored on the relevant request, appointment, etc. without any user intervention. In this case, the discrete information propagated into the order extension **SHALL** be available to the user for viewing.  However, this might be managed with icons, flyovers or alternate mechanisms than traditional CDS Hook card rendering.  The key consideration is that the user is aware that the information is available and can easily get to it.  These implementations will be responsible for ensuring that the only changes made to the CRD client record are to add the annotations contemplated here.  CRD clients **MAY** be configured to not execute system actions under some circumstances - e.g. if the order has been cancelled/abandoned.
-</div>
-
-
-<div markdown="1" class="new-content">
+CRD clients and services **SHALL** support the new CDS Hooks system action functionality to cause annotations to automatically be stored on the relevant request, appointment, etc. without any user intervention. In this case, the discrete information propagated into the order extension **SHALL** be available to the user for viewing.  However, this might be managed with icons, flyovers or alternate mechanisms than traditional CDS Hook card rendering.  The key consideration is that the user is aware that the information is available and can easily get to it.  Client implementations will be responsible for ensuring that the only changes made to the CRD client record are to add the annotations contemplated here.  CRD clients **MAY** be configured to not execute system actions under some circumstances - e.g. if the order has been cancelled/abandoned.
 
 The information added to the order here is often going to be relevant/important not only to the creator of the order, but also to its eventual performer.  This guide does not define how information around coverage is conveyed from the ordering system to the performing system.  However, the [Post-accute Orders implementation guide](http://hl7.org/fhir/us/dme-orders) does provide a mechanism for electronic sharing of orders and could be used to convey the additional notes/extensions envisioned here as well.
-
 </div>
 
 ### Propose alternate request
@@ -542,7 +543,7 @@ This suggestion will always include a "create" action for the Task.  The Task wi
 
 <div markdown="1" class="new-content">
 
-Instead of using a card, CRD services **MAY** opt to use a <a href="https://cds-hooks.hl7.org/2.0/#system-action">systemAction</a> instead.  CRD clients **SHALL** support either approach.
+Instead of using a card, CRD services **MAY** opt to use a <a href="https://cds-hooks.hl7.org/2.0/#system-action">systemAction</a> instead.  CRD clients supporting this card type **SHALL** support either approach.
 
 NOTE: DTR is the preferred solution where forms are needed for capture of information for payer purposes including, but not limited to, prior authorization, claims submission, or audit because of its ability to minimize data entry burden.  This card type **SHOULD** only be used when DTR is not available or applicable.
 
@@ -628,7 +629,7 @@ This response type is used when the CRD Server is aware of additional coverage t
 
 <div markdown="1" class="new-content">
 
-Instead of using a card, CRD services **MAY** opt to use a <a href="https://cds-hooks.hl7.org/2.0/#system-action">systemAction</a> instead.  CRD clients **SHALL** support either approach.  If receiving a system action, a CRD client **MAY** opt to place the new or updated record in a holding area for human review rather than directly modifying their source of truth.
+Instead of using a card, CRD services **MAY** opt to use a <a href="https://cds-hooks.hl7.org/2.0/#system-action">systemAction</a> instead.  CRD clients supporting this card type **SHALL** support either approach.  If receiving a system action, a CRD client **MAY** opt to place the new or updated record in a holding area for human review rather than directly modifying their source of truth.
 
 NOTE: This functionality is somewhat redundant with the capabilities of the X12 270/271 transactions.  This CRD capability **SHALL NOT** be used in situations where regulation dictates the use of the X12 functionality.
 
@@ -681,7 +682,7 @@ This response type is just a modified version of the [External Reference](#exter
 
 <div markdown="1" class="modified-content">
 
-NOTE: This mechanism is no longer to be used for launching [Documentation, Templates, and Rules (DTR) applications](http://hl7.org/fhir/us/davinci-dtr).  That process is now handled entirely through the []() process above.  It can still be used for launching other types of SMART apps not focused on gathering data for payer use via Questionnaire.
+NOTE: This mechanism is no longer to be used for launching [Documentation, Templates, and Rules (DTR) applications](http://hl7.org/fhir/us/davinci-dtr).  That process is now handled entirely through the [Coverage Information](#coverage-information) card type above.  It can still be used for launching other types of SMART apps not focused on gathering data for payer use via Questionnaire.
 
 For example, this [Card](https://cds-hooks.hl7.org/2.0/#cds-service-response) contains a SMART App [Link](https://cds-hooks.hl7.org/2.0/#link) to perform an opioid assessment:
 
@@ -712,86 +713,3 @@ For example, this [Card](https://cds-hooks.hl7.org/2.0/#cds-service-response) co
 ```
 
 </div>
-
-<!--
-<div markdown="1" class="new-content">
-### Unsolicited Determination
-
-One result of invoking a CRD Server may be - based on the patient, their type of coverage, and other information available in the patient's record queried by the CRD Server - that the service determines that not only is prior authorization necessary for the intervention being ordered, but that the ordered intervention meets prior authorization requirements.  In such a case, the CRD Server may wish to preemptively return a "determination of coverage", bypassing the need for prior authorization to be solicited at all.  To do this, the CRD Service returns a card with two alternate suggestions - store the prior authorization in computable form or add the prior authorization as an annotation to the order. 
-
-The first will be handled through a 'create' action that stores a ClaimResponse instance complying with the HRex [unsolicited authorization]({{site.data.fhir.ver.hrex}}/StructureDefinition-hrex-claimresponse.html) profile together with an 'update' to the order or appointment instance that triggered the CDS Hook invocation, to modify the record adding the ClaimResponse as a 'supportingInfo' element - establishing a linkage between the order and the prior authorization.
-
-The second suggestion will function exactly as per the 'annotate' card. The annotation will cover all relevant information needed for the coverage determination (billing codes, modifiers, authorized quantity, authorized amounts, authorized period, authorization number, etc.).  Support for this  second suggestion type is included as part of the mandatory support required for 'Annotate' suggestions.
-
-CRD clients and services **MAY**, by mutual agreement, make use of the new CDS Hooks system action functionality to cause annotations to automatically be stored on the relevant request, appointment, etc.  These implementations will be responsible for ensuring that the only changes made to the CRD client record are to add the annotations contemplated here.  It is likely that the conformance expectation on the use of system actions will be tighter in future releases.
-
-NOTE:  If a payer issues an unsolicited determination, there is no guarantee that the order that triggered the determination will ever get performed (or possibly even issued).  As a result, the creation of such an determination **SHALL NOT** result in any limitation on provision of subsequent services (e.g. through reservation of funds).  There should also be no expectation that a provider will 'cancel' the determiniation if the order is cancelled (because the determination was never actually 'requested').
-
-```
-{
-  "summary": "Referral has received prior authorization",
-  "indicator": "info",
-  "detail": "Patient's ABC plan authorizes weekly physio-therapy on their right shoulder for 6 weeks.  Please submit as billing code 12345 with specialty modifier of 0A.  Authorization number 98765 is valid through Jun 7, 2020.",
-  "source": {
-    "label": "Some Payer",
-    "url": "https://example.com",
-    "icon": "https://example.com/img/icon-100px.png",
-    "topic": {
-      "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-      "code": "auth-req",
-      "display": "Prior Authorization Required?"
-    }
-  },
-  "suggestions": [{
-    "label": "Store the prior authorization in the patient record",
-    "uuid": "23d5f278-a742-4cb7-801b-ea32c2ae2ccf",
-    "actions": [{
-      "type": "create",
-      "description": "Store ClaimResponse",
-      "resource": {
-        "resourceType": "ClaimResponse",
-        "id": "cr1",
-        "status": "active",
-        ...
-      }
-    }, {
-      "type": "update",
-      "description": "Update to the order",
-      "resource": {
-        "resourceType": "ServiceRequest",
-        ...
-        "supportingInfo": [
-          ...
-          {
-            "reference": "ClaimResponse/cr1"
-          }
-        ],
-        ...
-      }
-    }]
-  }, {
-    "label": "Capture authorization an order note",
-    "uuid": "9309cc18-fea1-4939-ab0c-ecb15bedf043",
-    "actions": [{
-      "type": "update",
-      "description": "Add authorization to record",
-      "resource": {
-        "resourceType": "ServiceRequest",
-        ...
-        "supportingInfo": [{
-          "reference": "ClaimResponse/cr1"
-        }],
-        "note": [{
-          "authorString": "Some Payer",
-          "time": "2019-12-07T15:28:33",
-          "text": "Patient's ABC plan authorizes weekly physio-therapy on their right shoulder for 6 weeks.  Please submit as billing code 12345 with specialty modifier of 0A.  Authorization number 98765 is valid through Jun 7, 2020."
-        }]
-      }
-    }]
-  }]
-}
-```
-A full example of an unsolicited determination can be found [here](https://build.fhir.org/ig/HL7/davinci-crd/ClaimResponse-priorauth-example.html).
-
-
-</div>-->
