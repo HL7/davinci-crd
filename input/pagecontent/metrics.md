@@ -20,7 +20,7 @@ The table below defines a set of measures with a short name, purpose, conformanc
 <table class="grid">
   <thead>
     <tr style="background-color:light-grey">
-      <th>No</th>
+      <th>Nbr</th>
       <th>Metric</th>
       <th>Metric Type</th>
       <th>Provider/Payer</th>
@@ -35,21 +35,22 @@ The table below defines a set of measures with a short name, purpose, conformanc
       <td>Both</td>
       <td>
         <i>For volume:</i><br/>
-          count where CRDMetricData.response.coverageInfo &gt; 0<br/>
+          <code>CRDMetricData.exists(response.coverageInfo).count()</code><br/>
         <i>For percent:</i><br/>
-          divide by count of CRDMetricData.httpResponse = "200" and express as percentage
+          Divide volume above by <code>CRDMetricData.where(httpResponse=200).count()</code> and express as percentage
       </td>
     </tr>
     <tr>
       <td>2</td>
-      <td>% by response type (covered, not covered,  conditional, PA required)</td>
+      <td>% by coverage response type (covered, not covered,  conditional)</td>
       <td>Segmentation</td>
       <td>Both</td>
       <td>
         <i>For volume:</i><br/>
-          count where CRDMetricData.response.coverageInfo.covered = [one of the codes]<br/>
+          Iterate where $ResponseType is one of covered, not-covered, conditional
+          <code>CRDMetricData.exists(response.coverageInfo.where(covered=$ResponseType)).count()</code><br/>
         <i>For percent:</i><br/>
-          divide volume by count where CRDMetricData.httpResponse = 200 and express as percentage
+          Divide volume above by <code>CRDMetricData.where(httpResponse=200).count()</code> and express as percentage
       </td>
     </tr>
     <tr>
@@ -59,9 +60,9 @@ The table below defines a set of measures with a short name, purpose, conformanc
       <td>Both</td>
       <td>
         <i>For volume:</i><br/>
-          count where (CRDMetricData.cards.coverageInfo.pa-needed = "auth-needed" and CRDMetricData.cards.coverageInfo.questionnaie &gt; 0)<br/>
+          <code>CRDMetricData.exists(response.coverageInfo.where(paNeeded = "auth-needed" and questionnaire.exists())).count()</code><br/>
         <i>For percent:</i><br/>
-          divide by count of (CRDMetricData.cards.coverageInfo.pa-needed = "auth-needed" and express as percentage
+          divide volume above by <code>CRDMetricData.exists(response.coverageInfo.where(paNeeded = 'auth-needed')).count()</code> and express as percentage
       </td>
     </tr>
     <tr>
@@ -71,9 +72,9 @@ The table below defines a set of measures with a short name, purpose, conformanc
       <td>Both</td>
       <td>
         <i>For volume:</i><br/>
-          count where (CRDMetricData.cards.coverageInfo.doc-needed = "yes" and CRDMetricData.cards.coverageInfo.questionnaie &gt; 0)<br/>
+          <code>CRDMetricData.where(response.coverageInfo.where((docNeeded='clinical' or docNeeded='admin' or docNeeded='both') and questionnaire.exists())).count()</code><br/>
         <i>For percent:</i><br/>
-          divide by count of (CRDMetricData.cards.coverageInfo.doc-needed = "yes" and express as percentage
+          divide volume above by <code>CRDMetricData.exists(response.coverageInfo.where(docNeeded='clinical' or docNeeded='admin' or docNeeded='both')).count()</code> and express as percentage
       </td>
     </tr>
     <tr>
@@ -83,9 +84,9 @@ The table below defines a set of measures with a short name, purpose, conformanc
       <td>Both</td>
       <td>
         <i>For volume:</i><br/>
-          count where CRDMetricData.response.coverageInfo.pa-needed = "satisfied"<br/>
+          <code>CRDMetricData.where(response.coverageInfo.exists(paNeeded = 'satisfied')).count()</code><br/>
         <i>For percent:</i><br/>
-          divide by count of CRDMetricData.httpResponse = 200 and express as percentage
+          divide volume above by <code>CRDMetricData.where(httpResponse=200).count()</code> and express as percentage
       </td>
     </tr>
     <tr>
@@ -94,8 +95,8 @@ The table below defines a set of measures with a short name, purpose, conformanc
       <td>Process Compliance</td>
       <td>Both</td>
       <td>
-        count where (((CRDMetricData.responseTime - CRDMetricData.requestTime) &lt; 5 seconds) and CRDMetricData.httpResponse = 200)<br/>
-        divide by count of all CRD items where CRDMetricData.httpResponse = 200 and express as percentage
+        <code>CRDMetricData.where(httpResponse=200 and (requestTime + 5 seconds > responseTime)).count() /<br/>
+        CRDMetricData.where(httpResponse=200).count()</code> and express as percentage
       </td>
     </tr>
     <tr>
