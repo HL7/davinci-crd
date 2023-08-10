@@ -73,8 +73,15 @@ pages:
     title: Use Cases and Overview
   background.md:
     title: Technical Background
+  epa.md:
+    title: ePA Coordinators
   foundation.md:
     title: Foundational Requirements
+    extension:
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: trial-use
+  security.md:
+    title: Privacy, Security, and Safety
     extension:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
         valueCode: trial-use

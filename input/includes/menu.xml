@@ -17,6 +17,9 @@
         <a href="{{site.data.info.assets}}background.html">Technical Background</a>
       </li>
       <li>
+        <a href="{{site.data.info.assets}}epa.html">ePA Coordinators</a>
+      </li>
+      <li>
         <a href="{{site.data.info.assets}}credits.html">Credits</a>
       </li>
       <li>
@@ -31,6 +34,9 @@
     <ul class="dropdown-menu">
       <li>
         <a href="{{site.data.info.assets}}foundation.html">Foundational Guidance</a>
+      </li>
+      <li>
+        <a href="{{site.data.info.assets}}security.html">Privacy, Security, and Safety</a>
       </li>
       <li>
         <a href="{{site.data.info.assets}}deviations.html">Deviations and Enhancements</a>
@@ -74,10 +80,10 @@
         <a target="_blank" href="{{site.data.fhir.path}}index.html">FHIR R4 Spec <img src="external.png" style="text-align: baseline"/></a>
       </li>
       <li>
-        <a target="_blank" href="http://hl7.org/fhir/us/core">US Core<img src="external.png" style="text-align: baseline"/></a>
+        <a target="_blank" href="{{site.data.fhir.ver.uscore}}">US Core<img src="external.png" style="text-align: baseline"/></a>
       </li>
       <li>
-        <a target="_blank" href="https://cds-hooks.org/specification/current">CDS Hooks <img src="external.png" style="text-align: baseline"/></a>
+        <a target="_blank" href="https://cds-hooks.hl7.org/2.0">CDS Hooks <img src="external.png" style="text-align: baseline"/></a>
       </li>
       <li>
         <a target="_blank" href="http://hl7.org/fhir/smart-app-launch/index.html">SMART on FHIR <img src="external.png" style="text-align: baseline"/></a>

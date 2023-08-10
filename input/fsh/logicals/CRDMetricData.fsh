@@ -30,6 +30,7 @@ Description: "A logical model describing the information that should be captured
   * code            from IssueType             (required)
   * details         0..1 CodeableConcept "More detailed error code"            "The issue.details value from the OperationOutcome for this issue."
   * details         from OperationOutcomeCodes (example)
+    * ^requirements = "Because these codes are not standardized, they will primarily only be useful for evaluation between communication partners, not for comparison across implementations"
 * tokenUse          0..1 code            "used | not-used | rejected"          "Indicates whether the provided access token was used to retrieve additional information.  Rejected indicates that when used, the access failed."
 * tokenUse          from MetricTokenUse        (example)
 * resources         0..* BackboneElement "Resource types accessed"             "Information other than the 'focal' resources (orders, encounter, appointment) for the hook that were accessed by the payer."
@@ -54,6 +55,7 @@ Description: "A logical model describing the information that should be captured
     * infoNeeded    0..1 code            "performer | location | timeframe"    "Indicates what additional inforamtion is necessary in order to determine authorization/coverage - which might be available on a later hook invocation."
     * infoNeeded    from InformationNeeded        (required)
     * questionnaire 0..* BackboneElement "Questionnaire(s) returned"           "Information about the Questionnaire(s) returned to gather additional information (e.g. through DTR)."
+      * ^requirements = "Allows linking metadata about forms identified 'to be filled out' in CRD with what is actually completed in DTR, and eventually submitted in CDex, PAS or claims"
       * reference   1..1 canonical       "Questionnaire url & version"         "The official identifier of one of the Questionnaires provided to be filled out."
         * ^type.targetProfile = "http://hl7.org/fhir/StructureDefinition/Questionnaire"
       * adaptive    1..1 boolean         "Is questionnaire adaptive?"          "If true, indicates that the questionnaire is adaptive (i.e. uses the $next-question operation to determine questions)."

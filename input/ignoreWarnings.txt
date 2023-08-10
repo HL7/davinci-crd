@@ -1,12 +1,8 @@
 == Suppressed Messages ==
 
-
 # The underlying code systems are marked as content=example in THO.  Have submitted https://jira.hl7.org/browse/UP-451 to fix this.  Have manually verified that the codes exist and display names are correct
 WARNING: Appointment/example: Appointment.serviceCategory[0].coding[0]: The system "General Practice" http://terminology.hl7.org/CodeSystem/service-category was found but did not contain enough information to properly validate the code (mode = example) (from Tx-Server) for 'http://terminology.hl7.org/CodeSystem/service-category#17'
 WARNING: Appointment/example: Appointment.serviceType[0].coding[0]: The system "General Practice" http://terminology.hl7.org/CodeSystem/service-type was found but did not contain enough information to properly validate the code (mode = example) (from Tx-Server) for 'http://terminology.hl7.org/CodeSystem/service-type#124'
-
-# The remaining errors are all tooling issues:
-# - 'sdc-t1' - This is a known SDC issue
 
 # Not expecting support for CPT codes.  Have validated it's correct
 The definition for the Code System with URI 'http://www.ama-assn.org/go/cpt' doesnt provide any codes so the code cannot be validated
@@ -27,5 +23,5 @@ WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/Str
 # This identifier is intended to show that identifiers that *aren't* in one of the slices are also valid
 INFORMATION: Practitioner/example: Practitioner.identifier[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-practitioner|1.1.0-ci-build
 
-# There's no expectation that this Questionnaire will resolve
+# There's no expectation that the
 The questionnaire 'http://example.org/some-payer/Questionnaire/123|1.3.0' could not be resolved, so no validation can be performed against the base questionnaire

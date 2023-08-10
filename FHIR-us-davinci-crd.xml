@@ -94,9 +94,11 @@
 <page key="allartifacts" name="FHIR Artifacts"/>
 <page key="foundation" name="Foundational Requirements"/>
 <page key="implementation" name="Implementation Considerations"/>
+<page key="security" name="Privacy, Security, and Safety"/>
 <page key="cards" name="Supported Cards"/>
 <page key="hooks" name="Supported Hooks"/>
 <page key="toc" name="Table of Contents"/>
 <page key="background" name="Technical Background"/>
 <page key="usecases" name="Use Cases and Overview"/>
+<page key="epa" name="ePA Coordinators"/>
 </specification>

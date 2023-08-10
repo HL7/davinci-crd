@@ -4,9 +4,6 @@
 <p>
 This ballot release of the specification reflects several changes that reflect implementer feedback about the CRD specification arising from detailed review, connectathons and implementation experience.  Significant changes to the specification are highlighted in green and balloters are invited to focus particular attention on these sections.  "Notes to balloters" and "STU notes" call out additional key considerations where feedback is desired.  However, the whole specification is open to review and the project welcomes all constructive feedback.
 </p>
-<p>
-A summary of the major changes in this release can be found <a href="history.html">here</a>.
-</p>
 </blockquote>
 
 <blockquote class="stu-note">
@@ -26,6 +23,9 @@ This implementation guide is dependent on other specifications.  Please submit a
 </ul>
 <p>
 Individuals interested in participating in the Coverage Requirements Discovery or other HL7 Da Vinci projects can find information about Da Vinci [here](http://www.hl7.org/about/davinci).
+</p>
+<p>
+A summary of the major changes from the previous release can be found <a href="history.html">here</a>.
 </p>
 </blockquote>
 
@@ -84,7 +84,9 @@ This implementation guide is organized into the following sections:
 
 * [Use Cases and Overview](usecases.html) describes the intent of the implementation guide, gives examples of its use, and provides a high-level overview of expected process flow
 * [Technical Background](background.html) identifies related specifications this implementation guide builds upon that developers should read and understand prior to implementing this specification
+* [ePA Coordinators](ePA.html) acknowledges that neither the payer nor provider systems involved in CRD are monolithic and shows how the various components of provider and payer systems might interact with "ePA Coordinator" systems to satisfy the requirements of this IG
 * [Foundational Guidance](foundation.html) covers the detailed requirements and conformance expectations that apply to all implementations
+* [Privacy, Security, and Safety](foundation.html) covers considerations around data access, protection, and similar concepts that apply to all implementations
 * [Deviations and Enhancements](deviations.html) covers detailed implementation requirements and conformance expectations that are independent of particular hooks or cards
 * [Supported Hooks](foundation.html) identifies the expectations for support for specific CDS hooks
 * [Card Profiles](cards.html) defines patterns for CDS Hook cards that can be returned as part of this specification
