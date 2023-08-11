@@ -20,7 +20,7 @@ A number of additional changes enhancements.  Key differences are:
 Added a number of enhancements and some changes to approach.  Key differences are:
 
 * [Clarified](background.html#users) that CRD results can be returned to non-clinical users
-* Highlighted the [challenges](background.html#impact-on-payer-processes) of CRD data coming in a different form and set of codes than payers have traditionally dealt with
+* Highlighted the [challenges](implementation.html#impact-on-payer-processes) of CRD data coming in a different form and set of codes than payers have traditionally dealt with
 * Explicit expectations with respect to [performance](foundation.html#performance) and [accuracy](foundation.html#accuracy) of CRD Servers
 * Expectations around client ability to [flag sensitive orders](foundation.html#appropriate-use-of-hooks)
 * Specified a starter set of codes for [configuration options](deviations.html#configuration-options-extension) and mandated the appearance of those codes in cards in a new [topic](cards.html) element
@@ -30,7 +30,7 @@ Added a number of enhancements and some changes to approach.  Key differences ar
 * Added the Annotate and Unsolicited Determiniation card types
 * Revamped how [Prefetch](foundation.html#prefetch) handles retrieving a patient's coverage information
 * Provided explicit guidance around deferring card actions
-* Added a section on [registering DTR apps with CRD](foundation.html#registering-dtr-apps-with-crd)
+* Added a section on registering DTR apps with CRD
 * Updated to support CRD 2.0, which included changes to the 'topic' element within cards
 * Added support for system actions and made their use mandatory for updates to orders and coverage
 * Added a definition of [mustSupport](foundation.html#mustsupport) for this guide
