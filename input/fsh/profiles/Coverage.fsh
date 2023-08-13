@@ -3,6 +3,7 @@ Parent: $Coverage
 Id: profile-coverage
 Title: "CRD Coverage"
 Description: "This profile specifies constraints on the Coverage resource to support coverage requirements discovery."
+* . obeys us-core-15
 * ^version = "1.1.0-ci-build"
 * ^status = #draft
 * ^experimental = false
@@ -23,6 +24,7 @@ Description: "This profile specifies constraints on the Coverage resource to sup
   * type = $v2-0203#MB
 * status MS
 * type MS
+* type from http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591 (extensible)
 * policyHolder only Reference(Patient or Organization)
 * policyHolder MS
 * subscriber only Reference(Patient)
@@ -36,12 +38,25 @@ Description: "This profile specifies constraints on the Coverage resource to sup
 * payor only Reference(Patient or Organization)
 * payor MS
 * class ..1 MS
-  * type only CodeableConcept
-  * type MS
-  * type from CRDCoverageClasses (required)
-    * ^binding.description = "CRD Coverage Classes"
-  * value MS
-  * name MS
+  * ^slicing.discriminator[0].type = #pattern
+  * ^slicing.discriminator[=].path = "type"
+  * ^slicing.rules = #open
+* class contains group 0..1 MS
+* class contains plan 0..1 MS
+* class[group]
+  * type = $coverage-class#group
+  * value MS "Group Number"
+  * name MS  "Group Name"
+* class[plan]
+  * type = $coverage-class#plan
+  * value MS "Plan Number"
+  * name MS  "Plan Name"
 * order MS
 * network MS
 * costToBeneficiary ..0
+
+Invariant:   us-core-15
+Description: "Member Id in Coverage.identifier or Coverage.subscriberId SHALL be present"
+Severity:    #error
+Expression:  "identifier.type.coding.where(system='http://terminology.hl7.org/CodeSystem/v2-0203' and code='MB').exists() or subscriberId.exists()"
+XPath:       "exists(f:identifier[f:type/f:coding[f:system/@value='http://terminology.hl7.org/CodeSystem/v2-0203' and code='MB']]) or exists(f:subscriberId)"
