@@ -57,7 +57,7 @@ Notes:
 
 <div markdown="1" class="new-content">
 
-* Where a Coverage Information card type indicating that additional clinical documentation is needed and the CRD client supports DTR, CRD Clients **SHALL** ensure that clinical users have an opportunity to launch the DTR app as part of the current workflow.  Where a Coverage Information indicates that additional administrative documentation is needed, CRD Clients **SHOULD** allow clinical users to have an opportunity to launch the DTR app, but **SHOULD** make it clear that the information to be captured is non-clinical.
+* When a Coverage Information card type indicating that additional clinical documentation is needed and the CRD client supports DTR, CRD Clients **SHALL** ensure that clinical users have an opportunity to launch the DTR app as part of the current workflow.  Where a Coverage Information indicates that additional administrative documentation is needed, CRD Clients **SHOULD** allow clinical users to have an opportunity to launch the DTR app, but **SHOULD** make it clear that the information to be captured is non-clinical.
 
 * Launching DTR does not necessarily mean launching a SMART on FHIR application.  Some CRD clients might incorporate DTR client functionality natively rather than using an app.
 
@@ -324,7 +324,7 @@ For example, this card indicates that a prior authorization has been satisfied f
 ```
 CRD clients and services **SHALL** support the new CDS Hooks system action functionality to cause annotations to automatically be stored on the relevant request, appointment, etc. without any user intervention. In this case, the discrete information propagated into the order extension **SHALL** be available to the user for viewing.  However, this might be managed with icons, flyovers or alternate mechanisms than traditional CDS Hook card rendering.  The key consideration is that the user is aware that the information is available and can easily get to it.  Client implementations will be responsible for ensuring that the only changes made to the CRD client record are to add the annotations contemplated here.  CRD clients **MAY** be configured to not execute system actions under some circumstances - e.g. if the order has been cancelled/abandoned.
 
-The information added to the order here is often going to be relevant/important not only to the creator of the order, but also to its eventual performer.  This guide does not define how information around coverage is conveyed from the ordering system to the performing system.  However, the [Post-accute Orders implementation guide](http://hl7.org/fhir/us/dme-orders) does provide a mechanism for electronic sharing of orders and could be used to convey the additional notes/extensions envisioned here as well.
+The information added to the order here is often going to be relevant/important not only to the creator of the order, but also to its eventual performer.  This guide does not define how information around coverage is conveyed from the ordering system to the performing system.  However, the [Post-acute Orders implementation guide](http://hl7.org/fhir/us/dme-orders) does provide a mechanism for electronic sharing of orders and could be used to convey the additional notes/extensions envisioned here as well.
 </div>
 
 ### Propose alternate request
