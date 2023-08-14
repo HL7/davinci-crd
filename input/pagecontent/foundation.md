@@ -24,7 +24,7 @@ This implementation guide uses specific terminology to flag statements that have
 
 * **SHOULD** indicates behaviors that are strongly recommended (and which could result in interoperability issues or sub-optimal behavior if not adhered to), but which do not, for this version of the specification, affect the determination of specification conformance.
 
-* **MAY** describes optional behaviors that implementers are free to consider but where there is no recommendation for or against adoption.
+* **MAY** indicates optional behaviors that implementers are free to consider but where there is no recommendation for or against adoption.
 
 <div markdown="1" class="new-content">
 
@@ -58,7 +58,7 @@ Note that, in some cases, the US Core profiles require support for data elements
 
 ### Performance
 
-Depending on their location within the workflow, CDS Hooks may be processed in a synchronous manner.  This means that the user who is performing the business action that triggers the hook might be 'blocked' from continuing the action until cards have been returned by the CDS service.  E.g. an CRD client might not allow progress of an 'order sign' business action until decision support has been returned from all order-sign services and the user has had a chance to interact with any cards they deem relevant.  The corollary to this is that services must respond to hook invocations quickly to avoid impeding clinician workflow - and turning the intended benefit CRD is intended to provide into a detriment.
+Depending on their location within the workflow, CDS Hooks may be processed in a synchronous manner.  This means that the user who is performing the business action that triggers the hook might be 'blocked' from continuing the action until cards have been returned by the CDS service.  E.g. a CRD client might not allow progress of an 'order sign' business action until decision support has been returned from all order-sign services and the user has had a chance to interact with any cards they deem relevant.  The corollary to this is that services must respond to hook invocations quickly to avoid impeding clinician workflow - and turning the intended benefit CRD is intended to provide into a detriment.
 
 This specification sets a target duration in which CRD Services are expected to return their CDS Hooks response after being invoked.  CRD services SHALL return responses for all supported hooks and SHALL respond within the required duration 90% of the time.  (I.e. all [primary](hooks.html#hook-categories) hooks and any [supporting](hooks.html#hook-categories) hooks where they opt to support the hook.)  For most hooks, this target time is 5 seconds.  It extends to 10 seconds for [Appointment Book](hooks.html#appointment-book) and for [Order Dispatch](hooks.html#order-dispatch) and [Order Sign](hooks.html#order-sign) hooks that are sent at least 24 hours after the last hook invocation for the same order(s) because there is no opportunity to cache data in those cases.
 
@@ -93,9 +93,9 @@ Payers and service providers **SHALL** ensure that CDS Hooks return only message
 <div markdown="1" class="new-content">
 
 ### Enabling a CRD Server
-When an CRD client configures itself to support a payer's CRD service, it will need to identify which payer(s) the service supports.  This is needed to ensure that the CRD client only sends CRD calls to services that the patient has current coverage for.  The CRD service is responsible for any internal routing based on which processing organization handles the decisions.  For this purpose, payer means 'The organization listed on the member's insurance card'.
+When a CRD client configures itself to support a payer's CRD service, it will need to identify which payer(s) the service supports.  This is needed to ensure that the CRD client only sends CRD calls to services that the patient has current coverage for.  The CRD service is responsible for any internal routing based on which processing organization handles the decisions.  For this purpose, payer means 'The organization listed on the member's insurance card'.
 
-Provider and EHR Vendor organizations **MAY** leverage the [payer registry](http://hl7.org/fhir/us/davinci-pdex-plan-net) developed by PDex (which will eventually fold into the [national directory under FAST](https://confluence.hl7.org/display/FAST/National+Healthcare+Directory)) as a means of determining which endpoints exist for which payers as candidates for configuration.  Once plans are in the national directory, CRD Clients **SHOULD** include that plan identifier as way to uniquely identify that plan.
+Provider and EHR Vendor organizations **MAY** leverage the [payer registry](http://hl7.org/fhir/us/davinci-pdex-plan-net) developed by PDex (which will eventually fold into the [national directory under FAST](https://confluence.hl7.org/display/FAST/National+Healthcare+Directory)) as a means of determining which endpoints exist for which payers as candidates for configuration.  Once plans are in the national directory, CRD Clients **SHOULD** include that plan identifier as a way to uniquely identify that plan.
 
 All CRD clients will need to be configured to support communicating to a particular CRD server.  This configuration process includes the following:
 
@@ -119,7 +119,7 @@ In order to initiate this process, the payer responsible for a given CRD Server 
 
 When a CRD client invokes a CRD server via CDS Hooks, it will provide an access token that allows the CRD server to retrieve additional patient information.  The base rules for this token are defined in the [CDS Hooks specification](https://cds-hooks.hl7.org/2.0/#passing-the-access-token-to-the-cds-service).  This specification imposes some additional constraints:
 
-* The CRD client **SHOULD** limit the scopes provided in their access token to those identifed by the CRD service as necessary to perform their decision support.
+* The CRD client **SHOULD** limit the scopes provided in their access token to those identified by the CRD service as necessary to perform their decision support.
 
 * Such access tokens **SHOULD** have an expiration time of no longer than 30 seconds (which is more than enough for even 'parallel' decision support with something like *Order Select* where a user is continuing to work while the decision support call is processing.)
 
@@ -130,7 +130,7 @@ When a CRD client invokes a CRD server via CDS Hooks, it will provide an access 
 ### Additional Data Retrieval
 The context information provided as part of hook invocation will often not be enough for a CRD Server to fully determine coverage requirements.  This section of the guide describes a common set of queries that define data that most, if not all, CRD Servers will need to perform their requirements assessment.
 
-For this release of the implementation guide, conformant CRD Clients **SHOULD** support the CDS Hooks [prefetch](https://cds-hooks.hl7.org/2.0/#prefetch-template) capability and be able to perform all the prefetch queries defined here and, where needed, **SHOULD** implement interfaces to [_include]({{site.data.fhir.path}}search.html#include) resources not available in the system's database.  (I.e. if some of the data is stored in a separate system, it should ideally still be retrievable via `_include` in queries executed against the client.)  However, each payer will define the prefetch requests for their CRD Server based on the information they require to provide coverage requirements.  They might include more and/or less than described in this section.  Prefetch requests **SHOULD** only include information that is always expected to be needed for each hook invocation.  When information is only needed for certain invocations of the hook (e.g. for specific types of medications or services), that information **SHALL** only be retrieved by query using the provided token, never requested universally via prefetch.  Not all CRD Clients will support all prefetch requests.  
+For this release of the implementation guide, conformant CRD Clients **SHOULD** support the CDS Hooks [prefetch](https://cds-hooks.hl7.org/2.0/#prefetch-template) capability and be able to perform all the prefetch queries defined here and, where needed, **SHOULD** implement interfaces to [_include]({{site.data.fhir.path}}search.html#include) resources not available in the system's database.  (I.e., if some of the data is stored in a separate system, it should ideally still be retrievable via `_include` in queries executed against the client.)  However, each payer will define the prefetch requests for their CRD Server based on the information they require to provide coverage requirements.  They might include more and/or less than described in this section.  Prefetch requests **SHOULD** only include information that is always expected to be needed for each hook invocation.  When information is only needed for certain invocations of the hook (e.g. for specific types of medications or services), that information **SHALL** only be retrieved by query using the provided token, never requested universally via prefetch.  Not all CRD Clients will support all prefetch requests.  
 
 <blockquote class="stu-note">
 In future releases of this specification, the requirements in this section might become a **SHALL**.  Implementers are encouraged to provide feedback about this possibility based on their initial implementation experience.

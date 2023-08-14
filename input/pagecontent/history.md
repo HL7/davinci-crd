@@ -3,9 +3,9 @@ This page describes the primary releases of the specification and summarizes the
 <div markdown="1" class="new-content">
 
 ### Release 1.2.0
-A number of additional changes enhancements.  Key differences are:
+A number of additional changes and enhancements.  Key differences are:
 * Renamed the 'Annotate' card to [Coverage Information](cards.html#coverage-information) and made it a system action rather than a card
-* Removed the Unsolicited determiniation card type
+* Removed the Unsolicited determination card type
 * Added system action as an optional feature of the [form completion](cards.html#request-form-completion) and [update coverage information](cards.html#create-or-update-coverage-information) cards
 * Removed guidance on deferring card actions (as it's no longer terribly relevant for CRD and SMART now defines a mechanism)
 * Added additional properties to the [coverage-information](StructureDefinition-ext-coverage-information.html) extension including the ability to specify questionnaires and draft responses for DTR, authorized billing codes, dependencies on other orders, and other details.
@@ -27,7 +27,7 @@ Added a number of enhancements and some changes to approach.  Key differences ar
 * Made support for a [minimal set of configuration options](deviations.html#configuration-options-extension) mandatory
 * Added an extension to [link cards to requests](deviations.html#linking-cards-to-requests)
 * Introduced the new [order-dispatch](hooks.html#order-dispatch) hook
-* Added the Annotate and Unsolicited Determiniation card types
+* Added the Annotate and Unsolicited Determination card types
 * Revamped how [Prefetch](foundation.html#prefetch) handles retrieving a patient's coverage information
 * Provided explicit guidance around deferring card actions
 * Added a section on registering DTR apps with CRD
@@ -37,7 +37,7 @@ Added a number of enhancements and some changes to approach.  Key differences ar
 * Acknowledged that CRD clients can be made up of [multiple systems](index.html#systems)
 * Removed constraint prohibiting [ServiceRequest.doNotPerform])(StructureDefinition-profile-servicerequest.html#profile)
 * Added guidance on [enabling a CRD server](foundation.html#enabling-a-crd-server)
-* Added guidances on [crd access tokens](foundation.html#crd-access-tokens)
+* Added guidance on [CRD access tokens](foundation.html#crd-access-tokens)
 * Clarified expectations about [controlling hook invocation](deviations.html#controlling-hook-invocation)
 * Provided guidance on [external references](cards.html#external-reference)
 * Corrected cardType codes to use the IG temporary code system, as it is likely that long-term these codes won't all live as part of the IG

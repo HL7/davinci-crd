@@ -365,7 +365,7 @@ If a hook service is invoked on a collection of resources, all cards returned th
 
 
 ### Controlling hook invocation
-Provider systems **SHALL** only invoke hooks on payer services where the the patient record indicates active coverage with the payer associated with the service.  Providers **MAY** limit hook invocation to only those payers that are believed to potentially have relevant information related to the current action - for example, clinical guidance, contraindication detection, etc.  This might be more payers than just those that are likely to provide coverage for the services referred to by the hook.  
+Provider systems **SHALL** only invoke hooks on payer services where the patient record indicates active coverage with the payer associated with the service.  Providers **MAY** limit hook invocation to only those payers that are believed to potentially have relevant information related to the current action - for example, clinical guidance, contraindication detection, etc.  This might be more payers than just those that are likely to provide coverage for the services referred to by the hook.  
 
 To avoid confusion for providers, where a patient has multiple active coverages that could be relevant to the current order/appointment/etc., CRD clients **SHALL** select from those coverages which is most likely to be primary and only solicit coverage information for that one payer.  If they invoke CRD on other payers, CRD clients **SHALL** ensure that card types that return coverage information are disabled for those 'likely secondary' payers.
 

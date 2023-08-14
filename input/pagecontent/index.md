@@ -2,7 +2,7 @@
 {% endraw %}
 <blockquote class="stu-note">
 <p>
-This release of the specification reflects several changes that reflect implementer feedback about the CRD specification arising from detailed review, connectathons and implementation experience.  Significant changes to the specification are highlighted in green.  "STU notes" call out additional key considerations where feedback is desired.
+This release of the specification reflects several changes based on implementer feedback about the CRD specification arising from detailed review, connectathons and implementation experience.  Significant changes to the specification are highlighted in green.  "STU notes" call out additional key considerations where feedback is desired.
 </p>
 <p>
 This specification is a Standard for Trial Use.  It is expected to continue to evolve and improve through connectathon testing and feedback from early adopters.
@@ -15,8 +15,8 @@ This implementation guide is dependent on other specifications.  Please submit a
 </p>
 <ul>
   <li>Feedback on CDS Hooks should be posted to the <a href="http://hl7.org/fhir-issues">FHIR change tracker</a> with "CDS Hooks" as the specification.</li>
-  <li>Feedback on the FHIR core specification should be submitted to the <a href="http://hl7.org/fhir-issues">FHIR change tracker</a> with "FHIR Core" as the specification.</li>
-  <li>Feedback on the US core profiles should be submitted to the <a href="http://hl7.org/fhir-issues">FHIR change tracker</a> with "US Core" as the specification.</li>
+  <li>Feedback on the FHIR Core specification should be submitted to the <a href="http://hl7.org/fhir-issues">FHIR change tracker</a> with "FHIR Core" as the specification.</li>
+  <li>Feedback on the US Core profiles should be submitted to the <a href="http://hl7.org/fhir-issues">FHIR change tracker</a> with "US Core" as the specification.</li>
 </ul>
 <p>
 Individuals interested in participating in the Coverage Requirements Discovery or other HL7 Da Vinci projects can find information about Da Vinci [here](http://www.hl7.org/about/davinci).
@@ -28,7 +28,7 @@ A summary of the major changes from the previous release can be found <a href="h
 
 
 ### Overview
-The process of managing billing for patient insurance is a significant source of complexity and cost in the United States.  Healthcare providers work with a range of different health insurers and payers who cover the services the providers supply to patients.  Different payers and plans provide different levels of coverage for healthcare services with different processes for determining whether services are necessary or are appropriate.  These processes have different requirements for documentation, prior authorization, or other approvals.  Claims submitted for payment that do not meet payer coverage or documentation requirements will typically be initially denied and may result in delays due to resubmission, appeals, and/or financial impact to the patient.
+The process of managing billing for patient insurance is a significant source of complexity and cost in the United States.  Healthcare providers work with a range of different health insurers and payers who cover services the providers supply to patients.  Different payers and plans provide different levels of coverage for healthcare services with different processes for determining whether services are necessary or appropriate.  These processes have different requirements for documentation, prior authorization, or other approvals.  Claims submitted for payment that do not meet payer coverage or documentation requirements will typically be initially denied and may result in delays due to resubmission, appeals, and/or financial impact to the patient.
 
 This Coverage Requirements Discovery (CRD) implementation guide defines a workflow to allow payers to provide information about coverage requirements to healthcare providers through their provider systems at the time treatment decisions are being made.  This will ensure that clinicians and administrative staff have the capability to make informed decisions and meet the requirements of the patient's insurance coverage.
 
@@ -46,7 +46,7 @@ This implementation guide is designed to allow for initial support of basic capa
 ### Systems
 This implementation guide sets expectations for two types of systems:
 
-[CRD Clients](CapabilityStatement-crd-client.html) are typically systems that healthcare providers use at the point of care, including electronic medical records systems, pharmacy systems, and other provider and administrative systems used for ordering, documenting, and execution of patient-related services. Users of these systems have a need for coverage requirements information to support care planning.
+[CRD Clients](CapabilityStatement-crd-client.html) are typically systems that healthcare providers use at the point of care, including electronic medical records systems, pharmacy systems, and other provider and administrative systems used for ordering, documenting, and executing patient-related services. Users of these systems have a need for coverage requirements information to support care planning.
 <div markdown="1" class="new-content">
 
 Examples of potential CRD clients include EHRs, EMRs, practice management systems, scheduling systems, patient registration systems, etc.  
@@ -60,7 +60,7 @@ The CRD client may actually involve multiple systems. For example, the systems t
 
 <blockquote class="stu-note">
 <p>
-When CRD clients are made up of multiple systems, there will be orchestration requirements to allow these multiple systems to interact in a way that allows them to appear as a single monolithic system from the perspective of the CRD server.  This IG provides some discussion of this on the <a href="epa.html">ePA Coordinators page</a>, though it does not (yet) provide any standardization about how system components should interoperate to achieve this monolithic behavior.  If there is industry interest, future releases of this IG may work to standardize some of these "intra-client" interactions.
+When CRD clients are made up of multiple systems, there will be orchestration requirements to allow these multiple systems to interact in a way for them to appear as a single monolithic system from the perspective of the CRD server.  This IG provides some discussion of this on the <a href="epa.html">ePA Coordinators page</a>, though it does not (yet) provide any standardization about how system components should interoperate to achieve this monolithic behavior.  If there is industry interest, future releases of this IG may work to standardize some of these "intra-client" interactions.
 </p>
 </blockquote>
 
@@ -86,9 +86,9 @@ This implementation guide is organized into the following sections:
 * [Deviations and Enhancements](deviations.html) covers detailed implementation requirements and conformance expectations that are independent of particular hooks or cards
 * [Supported Hooks](foundation.html) identifies the expectations for support for specific CDS hooks
 * [Card Profiles](cards.html) defines patterns for CDS Hook cards that can be returned as part of this specification
-* [Implementation Guidance](cards.html) that provides recommendations for implementation that fall outside the technical scope of the specification
+* [Implementation Guidance](cards.html) provides recommendations for implementation that fall outside the technical scope of the specification
 * [Artifacts](allartifacts.html) introduces and provides links to the profiles, search parameters and other FHIR artifacts used in this implementation guide
-* [Downloads](downloads.html) allows download of this and other specifications as well as other useful files
+* [Downloads](downloads.html) allows download of this and other specifications, as well as other useful files
 * [Credits](credits.html) identifies the individuals and organizations involved in developing this implementation guide
 
 ### Dependencies
@@ -100,7 +100,7 @@ In addition, this guide also relies on a number of parent implementation guides:
 
 This implementation guide defines additional constraints and usage expectations above and beyond the information found in these base specifications.
 
-###Intellectual Property Considerations
+### Intellectual Property Considerations
 This implementation guide and the underlying FHIR specification are licensed as public domain under the [FHIR license](http://hl7.org/fhir/R4/license.html#license). The license page also describes rules for the use of the FHIR name and logo.
 
 This publication includes IP covered under the following statements.
