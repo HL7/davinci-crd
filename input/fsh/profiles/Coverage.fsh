@@ -37,7 +37,7 @@ Description: "This profile specifies constraints on the Coverage resource to sup
 * period MS
 * payor only Reference(Patient or Organization)
 * payor MS
-* class ..1 MS
+* class ..* MS
   * ^slicing.discriminator[0].type = #pattern
   * ^slicing.discriminator[=].path = "type"
   * ^slicing.rules = #open
@@ -45,12 +45,16 @@ Description: "This profile specifies constraints on the Coverage resource to sup
 * class contains plan 0..1 MS
 * class[group]
   * type = $coverage-class#group
-  * value MS "Group Number"
-  * name MS  "Group Name"
+  * value MS
+    * ^short = "Group Number"
+  * name MS 
+    * ^short = "Group Name"
 * class[plan]
   * type = $coverage-class#plan
-  * value MS "Plan Number"
-  * name MS  "Plan Name"
+  * value MS
+    * ^short = "Plan Number"
+  * name MS
+    * ^short = "Plan Name"
 * order MS
 * network MS
 * costToBeneficiary ..0
