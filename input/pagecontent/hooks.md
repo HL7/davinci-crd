@@ -2,11 +2,9 @@ Each CDS Hook corresponds to a point in the workflow/business process within a C
 
 Within this implementation guide, CDS Hooks are used by CRD Clients to perform coverage requirements discovery from CRD Servers used by patients' payers.  Six hooks are identified that cover the main situations where coverage requirements discovery is likely to be needed: [appointment-book](#appointment-book), [encounter-start](#encounter-start), [encounter-discharge](#encounter-discharge), [order-dispatch](#order-dispatch), [order-select](#order-select), and [order-sign](#order-sign).  Payers and respective CRD Servers will vary between patients.  CRD Clients conforming to this implementation guide **SHALL** be able to determine the correct payer CRD Service to use for each request.
 
-<div markdown="1" class="modified-content">
 Not all CRD Clients will support all hook types.  For example, community CRD client systems will not likely support `encounter-discharge`.  Community pharmacy systems would not likely support `appointment-book`.  CRD Clients conforming to this implementation guide **SHALL** support at least one of the hooks listed below and **SHOULD** support all that apply to the context of their system.  Future releases of this specification may increase expectations to support additional hooks.
 
 Similarly, not all payers will necessarily provide coverage that is relevant to all hook types.  For example, a payer that only provides drug coverage would be unlikely to have coverage information to return on an `encounter-discharge` event.  CRD Servers conforming to this implementation guide **SHALL** provide a service for all hooks required of CRD clients by this implementation guide unless the server has determined that the hook will not be reasonably useful in determining coverage or documentation expectations for the types of coverage provided.
-</div>
 
 CRD Clients and CRD Servers **MAY** choose to support additional hooks available in the registry on the [CDS Hooks continuous integration build](https://cds-hooks.org) or custom hooks defined elsewhere.  In these cases, systems **SHOULD** adhere to the conformance expectations defined in this specification for any hooks listed here.
 
@@ -173,8 +171,6 @@ The profiles expected to be used for the resources resolved to by the userId, pa
 
 CRD clients and servers **SHALL**, at minimum, support returning and processing the [Coverage Information](StructureDefinition-ext-coverage-information.html) system action for all invocations of this hook.
 
-<div markdown="1" class="new-content">
-
 ### order-dispatch
 This hook is described in the CDS Hook specification [here](https://cds-hooks.hl7.org/hooks/order-dispatch/2023SepSTU1Ballot/order-dispatch/).  This version of the CRD implementation guide refers to version 1.0 of the hook.
 
@@ -186,7 +182,6 @@ Notes:
 * CRD Servers **MAY** use this hook as a basis for associating a patient with a particular practitioner from a payer attribution perspective.
 * CRD clients and servers **SHALL**, at minimum, support returning and processing the [Coverage Information](StructureDefinition-ext-coverage-information.html) system action for all invocations of this hook.
 
-</div>
 
 ### order-select
 This hook is described in the CDS Hook specification [here](https://cds-hooks.hl7.org/hooks/order-select/2023SepSTU1Ballot/order-select/).  This version of the CRD implementation guide refers to version 1.0 of the hook.
@@ -211,11 +206,8 @@ The different relevant resource types are as follows (support can vary between c
 
 **NutritionOrder**: Used to order the preparation of specific meal types.  Generally used for in-patient care, but potentially also relevant for homecare.
 
-<div markdown="1" class="new-content">
-
 <sup>*</sup> - Note: in the medication space, regulations may mandate alternate standards for some of the functionality covered by CRD for certain classes of medications.  E.g. NCPDP Script
 
-</div>
 
 Coverage requirement responses might include:
 

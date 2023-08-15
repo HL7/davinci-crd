@@ -1,5 +1,3 @@
-<div markdown="1" class="new-content">
-
 This page lists considerations and recommendations for implementation that fall outside the conformance expectations established by the specification.  I.e. It covers content that the specification authors and project team consider to be essential business practices, good ideas, as well as concepts worthy of consideration/awareness.  However, the content here doesn't define specific testable behavior.
 
 ### Suppressing Guidance
@@ -21,5 +19,3 @@ Information passed to the CRD Server will typically contain clinical terminologi
 In situations where CRD Clients are aware of the likely billing codes at the time of ordering, they **MAY** send these codes as additional CodeableConcept.coding repetitions to assist in server processing.  If using CPT, note the ability to convey CPT modifier codes via post-coordination as described in the [Using CPT]((https://terminology.hl7.org/CPT.html) page on terminology.hl7.org.
 
 It is more efficient if mappings can be shared across payers and providers.  This implementation guide encourages industry participants to cooperate on the development of shared mappings and/or to work with terminology developers (e.g. AMA for CPT codes) to develop shared mappings as part of their code maintenance process.
-
-</div>

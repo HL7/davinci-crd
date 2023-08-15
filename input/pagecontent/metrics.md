@@ -1,5 +1,3 @@
-<div markdown="1" class="new-content">
-
 This Implementation Guide (IG) is one of 4 HL7 Da Vinci IGs that are designed to address the challenges of automating the exchange of information between a provider and the responsible payer to determine coverage of services, items, and referrals. In particular, these IGs standardize the exchange of information required to automate the Prior Authorization (PA) process. The specific IG are:
 
 1. Coverage Requirements Discovery (CRD) (this IG)
@@ -122,5 +120,3 @@ The table below defines a set of measures with a short name, purpose, conformanc
     </tr>
   </tbody>
 </table>
-
-</div>

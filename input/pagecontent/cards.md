@@ -26,14 +26,7 @@ In addition to the [guidance provided in the CDS Hooks specification](https://cd
 
 * CRD Client systems might not support all card capabilities, therefore card options **SHOULD** provide sufficient information for a user to perform record changes manually if automated support isn't possible.
 
-<div markdown="1" class="new-content">
-
 * Where <a href="https://cds-hooks.hl7.org/2.0/#system-action">systemActions</a> are used, CRD Servers **SHOULD NOT** return equivalent information in a card for user display.  It is the responsibility of the CRD Client to determine how best to present the results of the newly created or revised records.
-
-<p>
-The card.source.topic element above is new.
-</p>
-</div>
 
 ### Potential CRD Response Types
 This section describes the different types of [responses](https://cds-hooks.hl7.org/2.0/#cds-service-response) that CRD Servers can use when returning coverage requirements to CRD Clients, including CRD-specific profiles on cards to describe CRD-expected behavior.  It is possible that some CRD Servers and CRD Clients will support additional card response patterns than those listed here, but such behavior is outside the scope of this specification.  Future versions of this specification might standardize additional response types.
@@ -55,13 +48,9 @@ Notes:
 
 * The response types listed here are *not* the same as the [Configuration Options](deviations.html#configuration-options-extension) specified above.  A single response type could correspond to multiple configuration options.  For example, [External Reference](#external-reference) could apply to clinical practice guidelines, prior authorization requirements, claims attachment requirements, and other things.  Similarly, one configuration option could be satisfied with multiple response types.  For example, required Prior Authorization Forms could include both [External References](#external-reference) and explicit [Request Form Completion](#request-form-completion) responses.
 
-<div markdown="1" class="new-content">
-
 * When a Coverage Information card type indicating that additional clinical documentation is needed and the CRD client supports DTR, CRD Clients **SHALL** ensure that clinical users have an opportunity to launch the DTR app as part of the current workflow.  Where a Coverage Information indicates that additional administrative documentation is needed, CRD Clients **SHOULD** allow clinical users to have an opportunity to launch the DTR app, but **SHOULD** make it clear that the information to be captured is non-clinical.
 
 * Launching DTR does not necessarily mean launching a SMART on FHIR application.  Some CRD clients might incorporate DTR client functionality natively rather than using an app.
-
-</div>
 
 
 ### External Reference
@@ -101,11 +90,7 @@ For example, this CDS Hooks [Card](https://cds-hooks.hl7.org/2.0/#cds-service-re
 ```
 {% endraw %}
 
-<div markdown="1" class="new-content">
-
 As much as technically possible, links provided **SHOULD** be 'deep' links that take the user to the specific place in the documentation relevant to the current hook context to minimize provider reading and navigation time.
-
-</div>
 
 ### Instructions
 This response type presents a `Card` with textual guidance to display to the user making the decisions. The text might provide clinical guidelines, suggested changes, rules around prior authorization, or even something as simple as "No special coverage requirements". It can be generated in a more sophisticated context for the payer, while remaining simple to consume for the provider because it more easily allows returned information to be tuned to the specific context of the order/encounter that triggered the hook. In some cases, the text returned might be generated uniquely each time a hook is fired.
@@ -131,8 +116,6 @@ This example CDS Hook [Card](https://cds-hooks.hl7.org/2.0/#cds-service-response
 }
 ```
 {% endraw %}
-
-<div markdown="1" class="new-content">
 
 ### Coverage Information
 This response type does not present a `Card`.  Instead, it uses a <a href="https://cds-hooks.hl7.org/2.0/#system-action">systemAction</a> to automatically update the order or other resource in the CRD Client with an extension that conveys information related to the coverage of the order.
@@ -325,7 +308,6 @@ For example, this card indicates that a prior authorization has been satisfied f
 CRD clients and services **SHALL** support the new CDS Hooks system action functionality to cause annotations to automatically be stored on the relevant request, appointment, etc. without any user intervention. In this case, the discrete information propagated into the order extension **SHALL** be available to the user for viewing.  However, this might be managed with icons, flyovers or alternate mechanisms than traditional CDS Hook card rendering.  The key consideration is that the user is aware that the information is available and can easily get to it.  Client implementations will be responsible for ensuring that the only changes made to the CRD client record are to add the annotations contemplated here.  CRD clients **MAY** be configured to not execute system actions under some circumstances - e.g. if the order has been cancelled/abandoned.
 
 The information added to the order here is often going to be relevant/important not only to the creator of the order, but also to its eventual performer.  This guide does not define how information around coverage is conveyed from the ordering system to the performing system.  However, the [Post-acute Orders implementation guide](http://hl7.org/fhir/us/dme-orders) does provide a mechanism for electronic sharing of orders and could be used to convey the additional notes/extensions envisioned here as well.
-</div>
 
 ### Propose alternate request
 This response type can be used by payers to present a `Card` with suggested alternatives to the current proposed therapy.  This might be updating the order to change certain information or proposing to replace the order completely with one or more alternatives.  This might be used to propose a change to a first-line treatment, to alter therapy frequency or drug dosage to be consistent with coverage guidelines, to propose covered products or services as substitutes for a non-covered service, and/or to propose therapeutically equivalent treatments that will have a lower cost to the patient.
@@ -543,13 +525,9 @@ This response type can be used to present a `Card` that indicates that there are
 
 This suggestion will always include a "create" action for the Task.  The Task will point to the questionnaire to be completed using a `Task.input` element with a `Task.input.type.text` of "questionnaire" and the canonical URL for the questionnaire in `Task.input.valueCanonical`.  Additional `Task.input` elements will provide information about how the completed questionnaire is to be submitted to the payer with a service endpoint if required.  The `Task.code` will always include the CRD-specific `complete-questionnaire` code.  The reason for completion will be conveyed in `Task.reasonCode`.  The Questionnaire might also be included with a separate conditional "create" action or it might be excluded with the presumption it will already be available or retrievable by the client via its canonical URL, either from the original source or from a local registry.
 
-<div markdown="1" class="new-content">
-
 Instead of using a card, CRD services **MAY** opt to use a <a href="https://cds-hooks.hl7.org/2.0/#system-action">systemAction</a> instead.  CRD clients supporting this card type **SHALL** support either approach.
 
 NOTE: DTR is the preferred solution where forms are needed for capture of information for payer purposes including, but not limited to, prior authorization, claims submission, or audit because of its ability to minimize data entry burden.  This card type **SHOULD** only be used when DTR is not available or applicable.
-
-</div>
 
 When using this response type, the proposed orders (and any associated resources) **SHALL** comply with the following profiles:
 
@@ -629,13 +607,9 @@ The following is an example CDS Hook [Suggestion](https://cds-hooks.hl7.org/2.0/
 ### Create or update coverage information
 This response type is used when the CRD Server is aware of additional coverage that is relevant to the current/proposed activity or has updates/corrections to make to the information held by the CRD Client.  For example, the CRD Client might be aware that a patient has coverage with a provider, but not know the plan number, member identifier, or other relevant information.  This response allows the CRD Server to convey that information to the CRD Client and link it to the current/proposed action.  In theory, this type of response could also be used to convey corrected/additional prior authorization information the payer was aware of, however that functionality is out-of-scope for this release of the implementation guide.
 
-<div markdown="1" class="new-content">
-
 Instead of using a card, CRD services **MAY** opt to use a <a href="https://cds-hooks.hl7.org/2.0/#system-action">systemAction</a> instead.  CRD clients supporting this card type **SHALL** support either approach.  If receiving a system action, a CRD client **MAY** opt to place the new or updated record in a holding area for human review rather than directly modifying their source of truth.
 
 NOTE: This functionality is somewhat redundant with the capabilities of the X12 270/271 transactions.  This CRD capability **SHALL NOT** be used in situations where regulation dictates the use of the X12 functionality.
-
-</div>
 
 This response will contain a single suggestion.  The primary action will either be a suggestion to "update" an existing Coverage instance (if the CRD Client already has one) or to "create" a new Coverage instance if the CRD Server is aware of Coverage that the CRD Client is not.  In addition, the suggestion could include updates on all relevant Request resources to add or remove links to Coverage instances, reflecting which Coverages are relevant to which types of requests.
 
@@ -682,8 +656,6 @@ All such apps will need to go through the approval processes for the client's pr
 
 This response type is just a modified version of the [External Reference](#external-reference) response type.  However, the `Link.type` will be "smart" instead of "absolute".  The `Link.appContext` will typically also be present.  
 
-<div markdown="1" class="modified-content">
-
 NOTE: This mechanism is no longer to be used for launching [Documentation, Templates, and Rules (DTR) applications](http://hl7.org/fhir/us/davinci-dtr).  That process is now handled entirely through the [Coverage Information](#coverage-information) card type above.  It can still be used for launching other types of SMART apps not focused on gathering data for payer use via Questionnaire.
 
 For example, this [Card](https://cds-hooks.hl7.org/2.0/#cds-service-response) contains a SMART App [Link](https://cds-hooks.hl7.org/2.0/#link) to perform an opioid assessment:
@@ -713,5 +685,3 @@ For example, this [Card](https://cds-hooks.hl7.org/2.0/#cds-service-response) co
   }]
 }
 ```
-
-</div>

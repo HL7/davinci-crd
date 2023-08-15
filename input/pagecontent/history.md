@@ -1,7 +1,5 @@
 This page describes the primary releases of the specification and summarizes the content for each:
 
-<div markdown="1" class="new-content">
-
 ### Release 1.2.0
 A number of additional changes and enhancements.  Key differences are:
 * Renamed the 'Annotate' card to [Coverage Information](cards.html#coverage-information) and made it a system action rather than a card
@@ -46,7 +44,6 @@ Added a number of enhancements and some changes to approach.  Key differences ar
 
 As well there were various other adjustments to specification language, profiles, and examples to align with these changes and to correct minor typos or improve wording.
 
-</div>
 
 ### Release 1.0
 Initial release of the CRD specification.

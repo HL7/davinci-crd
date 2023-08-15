@@ -26,8 +26,6 @@ This implementation guide uses specific terminology to flag statements that have
 
 * **MAY** indicates optional behaviors that implementers are free to consider but where there is no recommendation for or against adoption.
 
-<div markdown="1" class="new-content">
-
 #### MustSupport
 Profiles in this implementation guide make use of the [mustSupport]({{site.data.fhir.path}}profiling.html#mustsupport) element.
 
@@ -36,8 +34,6 @@ For CRD clients, if the client maintains the data element and surfaces it to use
 For CRD servers, the server **SHALL** leverage mustSupport elements as available and appropriate to provide decision support.
 
 NOTE: These requirements are somewhat different from US-Core and HRex because the implementation needs are different.  In US-Core, there is generally an expectation for clients to modify code and persistence layers to add support mustSupport elements for supported profiles.  This expectation does not hold for CRD.  However, CRD does require surfacing elements in the FHIR interface if the system maintains the element.
-
-</div>
 
 
 #### Profiles
@@ -53,8 +49,6 @@ Where US Core profiles do not yet exist (e.g. for several of the 'Request' resou
 
 Note that, in some cases, the US Core profiles require support for data elements that are not necessarily relevant to the coverage requirements discovery use-case.  It was felt that leveraging existing standard interfaces would promote greater (and quicker) interoperability than a more tuned custom interface.  CRD Clients might still choose to restrict what information is exposed to CRD Servers based on their internal data access and governance rules.
 
-
-<div markdown="1" class="new-content">
 
 ### Performance
 
@@ -83,14 +77,11 @@ CDS services **SHALL** ensure that the guidance returned with respect to coverag
 ### Terminology
 When invoking CDS Hooks, resources reflecting the clinical/business representation of the order, appointment, encounter, etc. will be transmitted to the CRD Server.  These data representations will generally make use of codes to describe the type of service/product being ordered/booked/performed.  These codes will draw from the code systems used at this stage of the business process and will typically be "clinical" codes rather than "billing" codes.  That said, it is always possible to send multiple codings within a CodeableConcept.  Where the selected code is not already a 'billing' code and CRD clients are able to automatically determine what the corresponding billing code is, they **SHOULD** send a Coding with the billing code alongside the clinical code to reduce the risk of the receiving payer making a differing translation.
 
-</div>
 
 ### Appropriate use of hooks
 CDS Hooks are intended to improve healthcare provider care planning processes by allowing relevant and useful information to be inserted into provider workflows.  At the same time, inserting additional information into a provider's workflow will induce additional mental load, even if the information is not acted upon, and therefore must be done judiciously.
 
 Payers and service providers **SHALL** ensure that CDS Hooks return only messages and information relevant and useful to the intended recipient.
-
-<div markdown="1" class="new-content">
 
 ### Enabling a CRD Server
 When a CRD client configures itself to support a payer's CRD service, it will need to identify which payer(s) the service supports.  This is needed to ensure that the CRD client only sends CRD calls to services that the patient has current coverage for.  The CRD service is responsible for any internal routing based on which processing organization handles the decisions.  For this purpose, payer means 'The organization listed on the member's insurance card'.
@@ -122,8 +113,6 @@ When a CRD client invokes a CRD server via CDS Hooks, it will provide an access 
 * The CRD client **SHOULD** limit the scopes provided in their access token to those identified by the CRD service as necessary to perform their decision support.
 
 * Such access tokens **SHOULD** have an expiration time of no longer than 30 seconds (which is more than enough for even 'parallel' decision support with something like *Order Select* where a user is continuing to work while the decision support call is processing.)
-
-</div>
 
 
 
@@ -159,8 +148,6 @@ In addition to the [base prefetch capabilities](https://cds-hooks.hl7.org/2.0/#p
 
 CRD client implementations **SHOULD NOT** expect standardized prefetch key names.  CRD clients supporting prefetch **SHALL** inspect the CDS Hooks Discovery Endpoint to determine exact prefetch key names and queries.
 
-<div markdown="1" class="new-content">
-
 In most cases, payers will require information about a patient’s coverage. In order to reduce the time CRD services spend on member matching, CRD clients **SHOULD** limit the coverages provided to just those relevant to the CRD service. How this happens is up to the CRD client.  Coverage prefetch will look like this:
 
 {% raw %}
@@ -173,7 +160,6 @@ In most cases, payers will require information about a patient’s coverage. In 
 ```
 
 Other information will need to be retrieved using queries that are more specific to the type of hook being invoked - and the resources passed with it:
-</div>
 
 {% raw %}
 <table class="grid">
@@ -482,13 +468,9 @@ NOTES:
     * When a SMART app is launched, draft orders within a CRD Client will not typically be available to the app to submit to the CRD Server.  Information for consideration in the "what-if" scenario will need to be entered into the app directly.
     * When a CRD Server returns cards, any instructions associated with the cards will be displayed in the app, but it may not be able to execute the instructions within the cards.
 * Exploration of "what-if" scenarios using the app is intended to work for all the hooks. This might be accomplished using separate SMART apps for different types of orders/processes (e.g. distinct what-if apps for ordering drugs, ordering labs, doing referrals, scheduling appointments, etc.) or a single SMART app that prompts the user to identify the scenario they are interested in exploring prior to invoking the hook.
-
-<div markdown="1" class="new-content">
 * The app/CRD client **MAY** choose to use configuration options to control what types of cares are of interest
 
 In the specific case of order-based hooks, "What if" **SHOULD** use the Order Sign hook, but **SHALL** use the configuration option that prevents the return of an unsolicited determination and **MAY** use configuration options to prevent the return of other irrelevant types of cards (e.g. duplicate therapy, etc.)
-
-</div>
 
 ### Additional Considerations
 

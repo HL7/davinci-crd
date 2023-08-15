@@ -6,16 +6,12 @@ Each capability listed here has been proposed to the CDS Hooks community and cou
 
 This implementation guide extends/customizes CDS Hooks in 5 ways: additional hook resources, a hook configuration mechanism, additional prefetch capabilities, additional response capabilities, and the ability to link hooks to their corresponding request.  Each are described below:
 
-<div markdown="1" class="new-content">
-
 ### Additional order-dispatch hook
 
 Based on implementer feedback, CRD has identified the need for an additional location within CRD client workflow where payer decision support might be relevant - the process of dispatching a non-directed order to a specific performer.  (E.g. selecting a referral recipient, choosing an imaging center, picking a lab, etc.)  To support this use-case, a new proposed [order-dispatch](https://cds-hooks.org/hooks/order-dispatch) has been proposed.  Implementers **MAY** choose to provide support for this new hook.
 
 ### Additional Hook scope
 In the [current build](https://cds-hooks.org/hooks/order-sign/), the order-sign hook can be used for both 'draft' orders that are newly created as well as for updated orders that are active.  The balloted version of the hooks this IG release is bound to are limited to draft orders.  This IG adopts the newer wording, meaning that the order-sign hook can be triggered both on newly created orders, as well as when orders are updated (changing status, changing time-frame, etc.).
-
-</div>
 
 ### Additional Hook resources
 Two of the hooks used by this specification (`order-select` and `order-sign`) identify specific "order" resources that can be passed as part of the hook invocation.  CRD has use-cases for additional resource types to be passed to this hook.  Specifically:
@@ -58,14 +54,7 @@ An extension called `davinci-crd.configuration-options` will define a configurat
     *  A `description` providing a 1-2 sentence description of the effect of the configuration option.
 *  A `default` value **SHALL** also be provided to show users what to expect when an override is not specified.
 
-<div markdown="1" class="new-content">
-
 CRD servers **SHALL**, at minimum, offer configuration options for each type of card they support (with a code corresponding to the <a href="ValueSet-cardType.html">CRD Card Types</a> ValueSet and a type of ‘boolean’, where setting the flag to false will result in the server not returning any cards of the specified type. This allows CRD clients to control what types of cards they wish to receive at all, or to receive in particular workflow contexts or for certain users.  This configuration mechanism also allows EHRs to minimize information overload and avoid presentation of duplicative or low-utility CRD alerts.
-
-<p>
-Also, the binding on the 'code' element is new
-</p>
-</div>
 
 For example, a [CDS Service Response](https://cds-hooks.hl7.org/2.0/#response) from a CRD Server might look like this:
 
@@ -327,8 +316,6 @@ For example, the following [CDS Hook Suggestion](https://cds-hooks.hl7.org/2.0/#
 
 Note: Sending existing prior authorizations is not in scope for this version of the IG.
 
-<div markdown="1" class="new-content">
-
 ### Linking cards to requests
 Some CDS hooks have a single context.  [encounter-start](hooks.html#encounter-start) and [encounter-discharge](hooks.html#encounter-discharge) are tied to their respective encounter and there is no question as to which encounter a returned card is associated with.  However, the [appointment-book](hooks.html#appointment-book), [order-select](hooks.html#order-select), and [order-sign](hooks.html#order-sign) hooks all allow passing in multiple resources as part of the hook invocation.  Each card returned in the hook response might be associated with only one of the referenced appointment or order resources, or a subset of them.  A CRD client might wish to be able to track *what* resource(s) a card was associated with.  This might be for audit, to control how or where the card is rendered on the screen, to allow the card to be directly associated with the triggering resource, or to enable various other workflow considerations.
 
@@ -372,5 +359,3 @@ To avoid confusion for providers, where a patient has multiple active coverages 
 NOTE: There is no expectation that CRD clients will only make calls to payer services that are 'known' to provide coverage for the proposed service.  In some cases, the EMR will not know at time of order entry which payer(s) will have claims submitted to them.  Also, a payer with active coverage might have information relevant to the order even if a claim will never be submitted to them (e.g. contraindications) or require a formal declaration of non-coverage, even though that declaration is a given.
 
 Where the patient has multiple active coverages that the CRD client deems appropriate to call the respective CRD servers for, the CRD client **SHALL** invoke all CRD server calls in parallel and display results simultaneously to ensure timely response to user action.
-
-</div>

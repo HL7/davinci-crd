@@ -19,12 +19,8 @@ The CRD implementation guide defines the responsibilities of the two types of sy
 
 **CRD Servers** (or servers) are systems that act on behalf of payer organizations to share information with healthcare providers about rules and requirements related to healthcare products and services covered by a patient's payer.  A CRD Server will provide coverage information related to one or possibly more insurance plans.
 
-<div markdown="1" class="new-content">
-
 ### Users
 The 'CDS' in 'CDS Hooks' stands for 'Clinical Decision Support'. However, the mechanism actually supports a variety of types of decision support and the responsible HL7 work group has confirmed that conveying guidance that isn't strictly clinical, and providing guidance to non-clinical users (receptionists, back-end schedulers, etc.) is appropriate. Because all decision support provided by a CRD Server is fully automated, there will be no human intervention on the payer side. If an automated system doesn't have enough information to provide guidance without human input, then no guidance will be provided.
-
-</div>
 
 ### Underlying Technologies
 
@@ -93,8 +89,4 @@ The approach taken to meet the requirements of the Coverage Requirements Discove
 * *Is data pre-existing?* - No - in decision support, we're generating context-specific guidance that didn't previously exist, even if some of the resources pointed to might have been pre-existing.
 * *CDS-hooks?* - Yes - CDS hooks were a good fit for the workflow we needed.  There was no need to define custom operations or messages to meet our use-cases.
 
-<div markdown="1" class="new-content">
-
 NOTE: Because of the sensitivity around disclosure of clinical information to payer-controlled systems during the clinical workflow process, this IG imposes a number of safeguards around the use of the selected CDS Hooks technology to help ensure that providers and their systems have an appropriate degree of control over disclosure and that information can't be used in inappropriate ways.
-
-</div>
