@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/us/davinci-crd/2022May" ciUrl="http://build.fhir.org/ig/HL7/davinci-crd" defaultVersion="1.1.0" defaultWorkgroup="cic" gitUrl="https://github.com/HL7/davinci-crd" url="http://hl7.org/fhir/us/davinci-crd">
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/us/davinci-crd/2022May" ciUrl="http://build.fhir.org/ig/HL7/davinci-crd" defaultVersion="1.1.0" defaultWorkgroup="fm" gitUrl="https://github.com/HL7/davinci-crd" url="http://hl7.org/fhir/us/davinci-crd">
 <version code="current" url="http://build.fhir.org/ig/HL7/davinci-crd"/>
 <version code="1.1.0" url="http://hl7.org/fhir/us/davinci-crd/STU1.1"/>
 <version code="1.1.0-ballot" url="http://hl7.org/fhir/us/davinci-crd/2022May"/>
@@ -30,6 +30,7 @@
 <artifact id="StructureDefinition/profile-device" key="StructureDefinition-profile-device" name="CRD Device"/>
 <artifact id="StructureDefinition/profile-devicerequest" key="StructureDefinition-profile-devicerequest" name="CRD Device Request"/>
 <artifact id="ValueSet/deviceRequest" key="ValueSet-deviceRequest" name="CRD Device Request Codes"/>
+<artifact id="ValueSet/crdDocReason" key="ValueSet-crdDocReason" name="CRD Documentation Reason Value Set"/>
 <artifact id="StructureDefinition/profile-encounter" key="StructureDefinition-profile-encounter" name="CRD Encounter"/>
 <artifact id="StructureDefinition/profile-location" key="StructureDefinition-profile-location" name="CRD Location"/>
 <artifact id="ValueSet/locationAddressType" key="ValueSet-locationAddressType" name="CRD Location Address Types"/>

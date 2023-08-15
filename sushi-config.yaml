@@ -23,7 +23,7 @@ publisher:
 contact:
     telecom:
       - system: url
-        value: http://www.hl7.org/Special/committees/cic
+        value: http://www.hl7.org/Special/committees/fm
 description:  Guidelines for conveying coverage requirements to clinicians when planning treatment
 jurisdiction: urn:iso:std:iso:3166#US
 packageId: hl7.fhir.us.davinci-crd
@@ -56,16 +56,17 @@ dependencies:
     version: 1.0.0
     reason: |
       Defines common conformance rules across all Da Vinci IGs, as well as additional constraints and profiles beyond U.S. Core
-  hl7.fhir.us.davinci-dtr:
-    id: dtr
-    version: 1.0.0
-    reason: |
-      Defines common documentation templates and rules across all Da Vinci IGs
   hl7.fhir.extensions.r5:
     id: r5ext
     version: 4.0.1
     reason: |
       Makes available certain R5 elements for use as part of this R4 IG
+  us.nlm.vsac:
+    id: vsac
+    uri: 'http://fhir.org/packages/us.nlm.vsac/ImplementationGuide/us.nlm.vsac'
+    version: 0.11.0
+    reason: |
+      Defines some of the US Core value set bound to in this IG
 pages:
   index.md:
     title: CRD IG Home Page

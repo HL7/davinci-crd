@@ -79,4 +79,11 @@ Description: "Codes temporarily defined as part of the CRD implementation guide.
   * #encounter-discharge "Encounter Discharge"
   * #order-dispatch"     "Order Dispatch"
   * #order-select        "Order Select"
-  * #order-sign           "Order Sign"
+  * #order-sign          "Order Sign"
+* #_docReason              "Additional Information Purposes"   "A collector for codes representing different reasons for capturing additional information"
+  * ^property.code = #abstract
+  * ^property.valueBoolean = true
+  * #withpa              "Include in prior authorization"      "The information in this QuestionnaireResponse should be packaged into a Bundle and submitted as part of (or in association with) a prior authorization for the associated request resource(s)."
+  * #withclaim           "Include with claim"                  "The information in this QuestionnaireResponse should be packaged into a Bundle and submitted as part of (or in association with) the insurance claim for the services ordered by the associated request resource(s)."
+  * #withorder           "Include with order"                  "The information in this QuestionnaireResponse should be packaged into a Bundle and submitted along with (or referenced as supporting information to) the associated request resource(s) when transmitting the order to the fulfilling system."
+  * #retain-doc          "Medical necessity"                   "The information in this QuestionnaireResponse should be retained within the DTR as supporting evidence of the medical necessity of the associated request resource(s)."

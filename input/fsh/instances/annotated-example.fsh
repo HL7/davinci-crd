@@ -9,7 +9,7 @@ Usage: #example
   * extension[covered].valueCode = $temp#conditional
   * extension[pa-needed].valueCode = $temp#satisfied
   * extension[doc-needed].valueCode = $temp#admin
-  * extension[doc-purpose].valueCode = http://todo.dtr.system#Something
+  * extension[doc-purpose].valueCode = $temp#withclaim
   * extension[info-needed].valueCode = $temp#performer
   * extension[billingCode].valueCoding = $cpt#77065
   * extension[billingCode].valueCoding = $cpt#77066

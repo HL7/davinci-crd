@@ -24,6 +24,8 @@ Description: "Captures assertions from a payer about whether the service is cove
 * ^context[=].expression = "ServiceRequest"
 * ^context[+].type = #element
 * ^context[=].expression = "MedicationRequest"
+* ^context[0].type = #element
+* ^context[=].expression = "QuestionnaireResponse"
 * obeys crd-ci-q1 and crd-ci-q2 and crd-ci-q3 and crd-ci-q4 and crd-ci-q5
 * . ^short = "CoverageInfo"
   * ^definition = "Indicates coverage information."
@@ -71,7 +73,7 @@ Description: "Captures assertions from a payer about whether the service is cove
   * ^short = "Documentation purpose"
   * value[x] 1..1
   * value[x] only code
-  * value[x] from $OriginValueSet (required)
+  * value[x] from CRDDocReason (required)
 * extension[info-needed] only Extension
   * ^short = "performer | location | timeframe"
   * ^definition = "Indicates whether information about the perfomer, location, and/or performance date is needed to determine coverage information"
