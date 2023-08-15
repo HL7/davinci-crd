@@ -75,9 +75,9 @@ This implementation guide is organized into the following sections:
 * [Technical Background](background.html) identifies related specifications this implementation guide builds upon that developers should read and understand prior to implementing this specification
 * [ePA Coordinators](epa.html) acknowledges that neither the payer nor provider systems involved in CRD are monolithic and shows how the various components of provider and payer systems might interact with "ePA Coordinator" systems to satisfy the requirements of this IG
 * [Foundational Guidance](foundation.html) covers the detailed requirements and conformance expectations that apply to all implementations
-* [Privacy, Security, and Safety](foundation.html) covers considerations around data access, protection, and similar concepts that apply to all implementations
+* [Privacy, Security, and Safety](security.html) covers considerations around data access, protection, and similar concepts that apply to all implementations
 * [Deviations and Enhancements](deviations.html) covers detailed implementation requirements and conformance expectations that are independent of particular hooks or cards
-* [Supported Hooks](foundation.html) identifies the expectations for support for specific CDS hooks
+* [Supported Hooks](hooks.html) identifies the expectations for support for specific CDS hooks
 * [Card Profiles](cards.html) defines patterns for CDS Hook cards that can be returned as part of this specification
 * [Implementation Guidance](cards.html) provides recommendations for implementation that fall outside the technical scope of the specification
 * [Artifacts](allartifacts.html) introduces and provides links to the profiles, search parameters and other FHIR artifacts used in this implementation guide
@@ -95,8 +95,6 @@ This implementation guide defines additional constraints and usage expectations 
 
 ### Intellectual Property Considerations
 This implementation guide and the underlying FHIR specification are licensed as public domain under the [FHIR license](http://hl7.org/fhir/R4/license.html#license). The license page also describes rules for the use of the FHIR name and logo.
-
-This publication includes IP covered under the following statements.
 
 {% include ip-statements.xhtml %}
 
