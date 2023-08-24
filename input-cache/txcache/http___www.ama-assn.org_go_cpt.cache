@@ -1,30 +1,4 @@
 -------------------------------------------------------------------------------------
-{"hierarchical" : false, "valueSet" :{
-  "resourceType" : "ValueSet",
-  "compose" : {
-    "inactive" : true,
-    "include" : [{
-      "system" : "http://www.ama-assn.org/go/cpt"
-    }]
-  }
-}}####
-e: {
-  "error" : "Error from server: Unable to provide support for code system http://www.ama-assn.org/go/cpt"
-}
--------------------------------------------------------------------------------------
-{"hierarchical" : true, "valueSet" :{
-  "resourceType" : "ValueSet",
-  "compose" : {
-    "inactive" : true,
-    "include" : [{
-      "system" : "http://www.ama-assn.org/go/cpt"
-    }]
-  }
-}}####
-e: {
-  "error" : "Error from server: Unable to provide support for code system http://www.ama-assn.org/go/cpt"
-}
--------------------------------------------------------------------------------------
 {"code" : {
   "system" : "http://www.ama-assn.org/go/cpt",
   "code" : "77067"
@@ -40,5 +14,56 @@ v: {
   "severity" : "error",
   "error" : "Code '77067' not found in CPT; Unknown Code '77067' in the system 'http://www.ama-assn.org/go/cpt'; The provided code http://www.ama-assn.org/go/cpt#77067 is not in the value set 'http://hl7.org/fhir/ValueSet/@all' (from Tx-Server)",
   "class" : "UNKNOWN"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://www.ama-assn.org/go/cpt",
+  "code" : "77067"
+}, "valueSet" :null, "langs":"[en]", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "id" : "terminology-settings",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  }]
+}}####
+v: {
+  "severity" : "error",
+  "error" : "Code '77067' not found in CPT; Unknown Code '77067' in the system 'http://www.ama-assn.org/go/cpt'; The provided code http://www.ama-assn.org/go/cpt#77067 is not in the value set 'http://hl7.org/fhir/ValueSet/@all' (from Tx-Server)",
+  "class" : "UNKNOWN"
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : true, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "inactive" : true,
+    "include" : [{
+      "system" : "http://www.ama-assn.org/go/cpt"
+    }]
+  }
+}}####
+e: {
+  "valueSet" : {
+  "resourceType" : "ValueSet",
+  "status" : "active",
+  "expansion" : {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/valueset-toocostly",
+      "valueBoolean" : true
+    }],
+    "identifier" : "urn:uuid:047e713f-df28-4883-b9e4-cd4953cd8ec7",
+    "timestamp" : "2023-08-24T05:03:03.423Z",
+    "total" : 0,
+    "parameter" : [{
+      "name" : "limitedExpansion",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "excludeNested",
+      "valueBoolean" : false
+    }]
+  }
+},
+  "error" : ""
 }
 -------------------------------------------------------------------------------------

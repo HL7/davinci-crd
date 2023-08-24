@@ -4,166 +4,6 @@
   "code" : "US"
 }, "url": "http://hl7.org/fhir/ValueSet/jurisdiction", "version": "4.0.1", "langs":"[]", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"NO_MEMBERSHIP_CHECK", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
   "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "x-system-cache-id",
-    "valueString" : "dc8fd4bc-091a-424a-8a3b-6198ef146891"
-  }]
-}}####
-v: {
-  "display" : "United States of America",
-  "code" : "US",
-  "system" : "urn:iso:std:iso:3166",
-  "version" : "2018"
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "code" : "json"
-}, "url": "http://hl7.org/fhir/ValueSet/mimetypes", "version": "4.0.1", "langs":"[]", "useServer":"true", "useClient":"true", "guessSystem":"true", "valueSetMode":"ALL_CHECKS", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "x-system-cache-id",
-    "valueString" : "dc8fd4bc-091a-424a-8a3b-6198ef146891"
-  }]
-}}####
-v: {
-  "display" : "json",
-  "code" : "json",
-  "system" : "urn:ietf:bcp:13"
-}
--------------------------------------------------------------------------------------
-{"hierarchical" : false, "url": "http://hl7.org/fhir/us/core/ValueSet/us-core-condition-code", "version": "3.1.1"}####
-e: {
-  "error" : "Error from server: The code system definition for http://hl7.org/fhir/sid/icd-9-cm is a fragment, so this expansion is not permitted unless the expansion parameter \"incomplete-ok\" has a value of \"true\""
-}
--------------------------------------------------------------------------------------
-{"hierarchical" : false, "url": "http://hl7.org/fhir/us/core/ValueSet/us-core-procedure-code", "version": "3.1.1"}####
-e: {
-  "error" : "Error from server: Unable to provide support for code system http://www.ama-assn.org/go/cpt"
-}
--------------------------------------------------------------------------------------
-{"hierarchical" : false, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/serviceRequestCodes", "version": "1.1.0-ci-build"}####
-e: {
-  "error" : "Error from server: Unable to provide support for code system http://www.ama-assn.org/go/cpt"
-}
--------------------------------------------------------------------------------------
-{"hierarchical" : false, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/deviceRequest", "version": "1.1.0-ci-build"}####
-e: {
-  "error" : "Error from server: Unable to provide support for code system http://www.ama-assn.org/go/cpt"
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "270427003",
-  "display" : "Patient-initiated encounter"
-}, "url": "http://hl7.org/fhir/us/core/ValueSet/us-core-encounter-type", "version": "3.1.1", "langs":"[]", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"NO_MEMBERSHIP_CHECK", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "x-system-cache-id",
-    "valueString" : "dc8fd4bc-091a-424a-8a3b-6198ef146891"
-  }]
-}}####
-v: {
-  "display" : "Patient-initiated encounter",
-  "code" : "270427003",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/900000000000207008/version/20230131"
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "code" : "CA"
-}, "url": "http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state", "version": "3.1.1", "langs":"[]", "useServer":"true", "useClient":"true", "guessSystem":"true", "valueSetMode":"ALL_CHECKS", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "x-system-cache-id",
-    "valueString" : "dc8fd4bc-091a-424a-8a3b-6198ef146891"
-  }]
-}}####
-v: {
-  "display" : "California",
-  "code" : "CA",
-  "system" : "https://www.usps.com/"
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "code" : "h"
-}, "url": "http://hl7.org/fhir/ValueSet/units-of-time", "version": "4.0.1", "langs":"[]", "useServer":"true", "useClient":"true", "guessSystem":"true", "valueSetMode":"ALL_CHECKS", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "x-system-cache-id",
-    "valueString" : "dc8fd4bc-091a-424a-8a3b-6198ef146891"
-  }]
-}}####
-v: {
-  "display" : "hour",
-  "code" : "h",
-  "system" : "http://unitsofmeasure.org",
-  "version" : "2.0.1"
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "code" : "d"
-}, "url": "http://hl7.org/fhir/ValueSet/units-of-time", "version": "4.0.1", "langs":"[]", "useServer":"true", "useClient":"true", "guessSystem":"true", "valueSetMode":"ALL_CHECKS", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "x-system-cache-id",
-    "valueString" : "dc8fd4bc-091a-424a-8a3b-6198ef146891"
-  }]
-}}####
-v: {
-  "display" : "day",
-  "code" : "d",
-  "system" : "http://unitsofmeasure.org",
-  "version" : "2.0.1"
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "code" : "OK"
-}, "url": "http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state", "version": "3.1.1", "langs":"[]", "useServer":"true", "useClient":"true", "guessSystem":"true", "valueSetMode":"ALL_CHECKS", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "x-system-cache-id",
-    "valueString" : "dc8fd4bc-091a-424a-8a3b-6198ef146891"
-  }]
-}}####
-v: {
-  "display" : "Oklahoma",
-  "code" : "OK",
-  "system" : "https://www.usps.com/"
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "25267002",
-  "display" : "Insertion of intracardiac pacemaker (procedure)"
-}, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/serviceRequestCodes", "version": "1.1.0-ci-build", "langs":"[]", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"NO_MEMBERSHIP_CHECK", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "x-system-cache-id",
-    "valueString" : "dc8fd4bc-091a-424a-8a3b-6198ef146891"
-  }]
-}}####
-v: {
-  "display" : "Insertion of intracardiac pacemaker",
-  "code" : "25267002",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/900000000000207008/version/20230131"
-}
--------------------------------------------------------------------------------------
-{"hierarchical" : true, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/deviceRequest", "version": "1.1.0-ci-build"}####
-e: {
-  "error" : "Error from server: Unable to provide support for code system http://www.ama-assn.org/go/cpt"
-}
--------------------------------------------------------------------------------------
-{"hierarchical" : true, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/serviceRequestCodes", "version": "1.1.0-ci-build"}####
-e: {
-  "error" : "Error from server: Unable to provide support for code system http://www.ama-assn.org/go/cpt"
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "urn:iso:std:iso:3166",
-  "code" : "US"
-}, "url": "http://hl7.org/fhir/ValueSet/jurisdiction", "version": "4.0.1", "langs":"[]", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"NO_MEMBERSHIP_CHECK", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
   "id" : "terminology-settings",
   "parameter" : [{
     "name" : "system-version",
@@ -276,35 +116,6 @@ v: {
   "display" : "Oklahoma",
   "code" : "OK",
   "system" : "https://www.usps.com/"
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "25267002",
-  "display" : "Insertion of intracardiac pacemaker (procedure)"
-}, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/serviceRequestCodes", "version": "1.1.0-ci-build", "langs":"[]", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"NO_MEMBERSHIP_CHECK", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "id" : "terminology-settings",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  }]
-}}####
-v: {
-  "display" : "Insertion of intracardiac pacemaker",
-  "code" : "25267002",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20230301"
-}
--------------------------------------------------------------------------------------
-{"hierarchical" : false, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/serviceRequestCodes", "version": "1.1.0"}####
-e: {
-  "error" : "Error from server: Unable to provide support for code system http://www.ama-assn.org/go/cpt"
-}
--------------------------------------------------------------------------------------
-{"hierarchical" : false, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/deviceRequest", "version": "1.1.0"}####
-e: {
-  "error" : "Error from server: Unable to provide support for code system http://www.ama-assn.org/go/cpt"
 }
 -------------------------------------------------------------------------------------
 {"code" : {
@@ -328,11 +139,81 @@ v: {
 -------------------------------------------------------------------------------------
 {"hierarchical" : true, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/deviceRequest", "version": "1.1.0"}####
 e: {
-  "error" : "Error from server: Unable to provide support for code system http://www.ama-assn.org/go/cpt"
+  "valueSet" : {
+  "resourceType" : "ValueSet",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p style=\"border: maroon 1px solid; background-color: #FFCCCC; font-weight: bold; padding: 8px\">This value set cannot be expanded because of the way it is defined - it has an infinite number of members</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td></tr></table></div>"
+  },
+  "url" : "http://hl7.org/fhir/us/davinci-crd/ValueSet/deviceRequest",
+  "version" : "1.1.0",
+  "name" : "CRDDeviceRequests",
+  "title" : "CRD Device Request Codes Value Set",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2023-08-23T22:59:08-06:00",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US"
+    }]
+  }],
+  "expansion" : {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/valueset-toocostly",
+      "valueBoolean" : true
+    }],
+    "identifier" : "urn:uuid:35694167-9421-4da3-9b15-7dc25f7f06eb",
+    "timestamp" : "2023-08-24T05:03:07.532Z",
+    "total" : 0,
+    "parameter" : [{
+      "name" : "limitedExpansion",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "excludeNested",
+      "valueBoolean" : false
+    }]
+  }
+},
+  "error" : ""
 }
 -------------------------------------------------------------------------------------
 {"hierarchical" : true, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/serviceRequestCodes", "version": "1.1.0"}####
 e: {
-  "error" : "Error from server: Unable to provide support for code system http://www.ama-assn.org/go/cpt"
+  "valueSet" : {
+  "resourceType" : "ValueSet",
+  "url" : "http://hl7.org/fhir/us/davinci-crd/ValueSet/serviceRequestCodes",
+  "version" : "1.1.0",
+  "name" : "CRDServiceRequestCodes",
+  "title" : "CRD Service Request Codes Value Set",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2023-08-23T22:59:08-06:00",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US"
+    }]
+  }],
+  "expansion" : {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/valueset-toocostly",
+      "valueBoolean" : true
+    }],
+    "identifier" : "urn:uuid:2f591010-b097-4cee-9611-9b4943eeb1de",
+    "timestamp" : "2023-08-24T05:03:41.345Z",
+    "total" : 0,
+    "parameter" : [{
+      "name" : "limitedExpansion",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "excludeNested",
+      "valueBoolean" : false
+    }]
+  }
+},
+  "error" : ""
 }
 -------------------------------------------------------------------------------------

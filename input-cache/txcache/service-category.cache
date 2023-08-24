@@ -5,26 +5,6 @@
   "display" : "General Practice"
 }, "valueSet" :null, "langs":"[en]", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
   "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "x-system-cache-id",
-    "valueString" : "dc8fd4bc-091a-424a-8a3b-6198ef146891"
-  }]
-}}####
-v: {
-  "display" : "General Practice",
-  "code" : "17",
-  "system" : "http://terminology.hl7.org/CodeSystem/service-category",
-  "version" : "4.0.1",
-  "severity" : "warning",
-  "error" : "The system \"General Practice\" http://terminology.hl7.org/CodeSystem/service-category was found but did not contain enough information to properly validate the code (mode = example) (from Tx-Server)"
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://terminology.hl7.org/CodeSystem/service-category",
-  "code" : "17",
-  "display" : "General Practice"
-}, "valueSet" :null, "langs":"[en]", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
   "id" : "terminology-settings",
   "parameter" : [{
     "name" : "system-version",

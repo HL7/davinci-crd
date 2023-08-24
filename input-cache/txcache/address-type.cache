@@ -19,8 +19,8 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:5e932cee-fa82-41c9-894e-696181ac7c74",
-    "timestamp" : "2023-08-01T18:42:46.348Z",
+    "identifier" : "urn:uuid:560ad9d9-e989-49cd-b096-01f1d7256ef7",
+    "timestamp" : "2023-08-24T05:00:43.642Z",
     "total" : 2,
     "parameter" : [{
       "name" : "limitedExpansion",
@@ -29,6 +29,10 @@ e: {
     {
       "name" : "excludeNested",
       "valueBoolean" : true
+    },
+    {
+      "name" : "used-codesystem",
+      "valueUri" : "http://hl7.org/fhir/address-type|4.0.1"
     },
     {
       "name" : "version",

@@ -4,11 +4,11 @@
   "compose" : {
     "inactive" : true,
     "include" : [{
-      "system" : "http://www.ama-assn.org/go/cpt"
+      "system" : "urn:oid:2.16.840.1.113883.6.285"
     }]
   }
 }}####
 e: {
-  "error" : "Error from server: Unable to provide support for code system http://www.ama-assn.org/go/cpt"
+  "error" : "Error from server: Unable to provide support for code system urn:oid:2.16.840.1.113883.6.285"
 }
 -------------------------------------------------------------------------------------

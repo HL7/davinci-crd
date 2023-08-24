@@ -34,8 +34,8 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:d297a71a-e5c5-4098-ac68-8bf175c24b26",
-    "timestamp" : "2023-08-01T18:42:44.895Z",
+    "identifier" : "urn:uuid:2e068b49-b1bd-4606-bc5f-a818533430ea",
+    "timestamp" : "2023-08-24T05:00:38.736Z",
     "total" : 7,
     "parameter" : [{
       "name" : "limitedExpansion",
@@ -44,6 +44,14 @@ e: {
     {
       "name" : "excludeNested",
       "valueBoolean" : true
+    },
+    {
+      "name" : "warning-draft",
+      "valueUri" : "http://terminology.hl7.org/CodeSystem/coverage-class|0.1.0"
+    },
+    {
+      "name" : "used-codesystem",
+      "valueUri" : "http://terminology.hl7.org/CodeSystem/coverage-class|0.1.0"
     },
     {
       "name" : "version",

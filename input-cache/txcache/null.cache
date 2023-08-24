@@ -5,11 +5,11 @@ e: {
   "resourceType" : "ValueSet",
   "url" : "http://hl7.org/fhir/us/davinci-crd/ValueSet/orderDetail",
   "version" : "1.1.0",
-  "name" : "OrderDetail",
+  "name" : "MetricOrderDetail",
   "title" : "CRD Order Detail Codes Value Set",
-  "status" : "draft",
+  "status" : "active",
   "experimental" : false,
-  "date" : "2023-08-23T13:39:43-06:00",
+  "date" : "2023-08-23T22:59:08-06:00",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -17,8 +17,8 @@ e: {
     }]
   }],
   "expansion" : {
-    "identifier" : "urn:uuid:11ec23a8-dd34-42d0-b50c-238598ada997",
-    "timestamp" : "2023-08-23T19:42:50.132Z",
+    "identifier" : "urn:uuid:2245203b-92ab-4204-a5e0-8ecf76d48fa9",
+    "timestamp" : "2023-08-24T05:03:11.407Z",
     "total" : 10598,
     "parameter" : [{
       "name" : "limitedExpansion",
@@ -27,6 +27,10 @@ e: {
     {
       "name" : "excludeNested",
       "valueBoolean" : false
+    },
+    {
+      "name" : "warning-draft",
+      "valueUri" : "http://hl7.org/fhir/ValueSet/service-type|4.0.1"
     },
     {
       "name" : "used-valueset",
@@ -79,6 +83,10 @@ e: {
     {
       "name" : "version",
       "valueUri" : "http://hl7.org/fhir/us/davinci-crd/ValueSet/serviceRequestCodes|1.1.0"
+    },
+    {
+      "name" : "warning-draft",
+      "valueUri" : "http://hl7.org/fhir/ValueSet/vision-product|4.0.1"
     },
     {
       "name" : "used-valueset",
