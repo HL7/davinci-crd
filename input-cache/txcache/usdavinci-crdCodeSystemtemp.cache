@@ -6,9 +6,6 @@
     "include" : [{
       "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
       "concept" : [{
-        "code" : "no-doc"
-      },
-      {
         "code" : "clinical"
       },
       {
@@ -28,9 +25,9 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:fe2cb54e-b725-4af9-850e-ae903fbff1a1",
-    "timestamp" : "2023-08-15T20:02:00.308Z",
-    "total" : 5,
+    "identifier" : "urn:uuid:48c4d2d4-85d6-4503-8780-1a5e38cf1527",
+    "timestamp" : "2023-08-24T04:20:37.660Z",
+    "total" : 4,
     "parameter" : [{
       "name" : "limitedExpansion",
       "valueBoolean" : true
@@ -40,7 +37,7 @@ e: {
       "valueBoolean" : true
     },
     {
-      "name" : "warning-draft",
+      "name" : "used-codesystem",
       "valueUri" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp|1.1.0"
     },
     {
@@ -48,11 +45,6 @@ e: {
       "valueUri" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp|1.1.0"
     }],
     "contains" : [{
-      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-      "code" : "no-doc",
-      "display" : "No Additional Documentation"
-    },
-    {
       "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
       "code" : "clinical",
       "display" : "Clinical Documentation"
@@ -103,8 +95,8 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:dc867295-c6ad-46b0-8f52-2f3710c1bfaf",
-    "timestamp" : "2023-08-15T20:02:00.527Z",
+    "identifier" : "urn:uuid:07f826ef-bbc1-4a47-8e6b-d5310c123dce",
+    "timestamp" : "2023-08-24T04:20:37.863Z",
     "total" : 4,
     "parameter" : [{
       "name" : "limitedExpansion",
@@ -115,7 +107,7 @@ e: {
       "valueBoolean" : true
     },
     {
-      "name" : "warning-draft",
+      "name" : "used-codesystem",
       "valueUri" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp|1.1.0"
     },
     {
@@ -167,8 +159,8 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:7d8e5ebb-bcfd-4c2d-b9b1-6eb0458de50f",
-    "timestamp" : "2023-08-15T20:02:00.746Z",
+    "identifier" : "urn:uuid:f3b80f1a-b50e-478a-b055-7a0e3faa8990",
+    "timestamp" : "2023-08-24T04:20:38.457Z",
     "total" : 2,
     "parameter" : [{
       "name" : "limitedExpansion",
@@ -179,7 +171,7 @@ e: {
       "valueBoolean" : true
     },
     {
-      "name" : "warning-draft",
+      "name" : "used-codesystem",
       "valueUri" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp|1.1.0"
     },
     {
@@ -236,8 +228,8 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:d03e1a3d-9f84-4435-9f9d-732190c4b968",
-    "timestamp" : "2023-08-15T20:02:00.935Z",
+    "identifier" : "urn:uuid:4ee95b57-2004-4898-9c18-a3b5271e61e4",
+    "timestamp" : "2023-08-24T04:20:38.660Z",
     "total" : 7,
     "parameter" : [{
       "name" : "limitedExpansion",
@@ -248,7 +240,7 @@ e: {
       "valueBoolean" : true
     },
     {
-      "name" : "warning-draft",
+      "name" : "used-codesystem",
       "valueUri" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp|1.1.0"
     },
     {
@@ -318,8 +310,8 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:4114dec1-5734-4997-b56a-f21a95ca4566",
-    "timestamp" : "2023-08-15T20:02:01.136Z",
+    "identifier" : "urn:uuid:c19cb1d7-61f7-41f0-9d73-5025baf97276",
+    "timestamp" : "2023-08-24T04:20:39.269Z",
     "total" : 3,
     "parameter" : [{
       "name" : "limitedExpansion",
@@ -330,7 +322,7 @@ e: {
       "valueBoolean" : true
     },
     {
-      "name" : "warning-draft",
+      "name" : "used-codesystem",
       "valueUri" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp|1.1.0"
     },
     {
@@ -386,8 +378,8 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:5db66806-ddc2-4418-b914-607d29b38606",
-    "timestamp" : "2023-08-15T20:02:01.324Z",
+    "identifier" : "urn:uuid:4415ae38-d664-448d-a5aa-60514e0f6397",
+    "timestamp" : "2023-08-24T04:20:39.957Z",
     "total" : 5,
     "parameter" : [{
       "name" : "limitedExpansion",
@@ -398,7 +390,7 @@ e: {
       "valueBoolean" : true
     },
     {
-      "name" : "warning-draft",
+      "name" : "used-codesystem",
       "valueUri" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp|1.1.0"
     },
     {
@@ -458,8 +450,8 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:ae7d8ee7-a206-4622-919c-1616a8ce1f77",
-    "timestamp" : "2023-08-15T20:02:01.527Z",
+    "identifier" : "urn:uuid:af146da5-ca32-4970-b0a5-1b28b4379197",
+    "timestamp" : "2023-08-24T04:20:40.332Z",
     "total" : 3,
     "parameter" : [{
       "name" : "limitedExpansion",
@@ -470,7 +462,7 @@ e: {
       "valueBoolean" : true
     },
     {
-      "name" : "warning-draft",
+      "name" : "used-codesystem",
       "valueUri" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp|1.1.0"
     },
     {
@@ -517,8 +509,8 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:45fc1494-6bd1-4869-be94-c8486b896d68",
-    "timestamp" : "2023-08-15T20:02:01.730Z",
+    "identifier" : "urn:uuid:c21fdd59-dd64-4e0b-9f12-2d55e0a51ebb",
+    "timestamp" : "2023-08-24T04:20:40.629Z",
     "total" : 2,
     "parameter" : [{
       "name" : "limitedExpansion",
@@ -529,7 +521,7 @@ e: {
       "valueBoolean" : true
     },
     {
-      "name" : "warning-draft",
+      "name" : "used-codesystem",
       "valueUri" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp|1.1.0"
     },
     {
@@ -574,8 +566,8 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:f7f2c163-420b-469e-988f-1948c0bbba80",
-    "timestamp" : "2023-08-15T20:02:01.933Z",
+    "identifier" : "urn:uuid:0f0a5c19-6786-423d-ba43-393fb7a46c21",
+    "timestamp" : "2023-08-24T04:20:40.832Z",
     "total" : 3,
     "parameter" : [{
       "name" : "limitedExpansion",
@@ -586,7 +578,7 @@ e: {
       "valueBoolean" : true
     },
     {
-      "name" : "warning-draft",
+      "name" : "used-codesystem",
       "valueUri" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp|1.1.0"
     },
     {
@@ -630,8 +622,8 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:89c421f8-cf80-4769-b198-c70a7103dc94",
-    "timestamp" : "2023-08-15T20:02:02.152Z",
+    "identifier" : "urn:uuid:4c2f21de-871e-426c-9f31-32835a1d6333",
+    "timestamp" : "2023-08-24T04:20:41.051Z",
     "total" : 1,
     "parameter" : [{
       "name" : "limitedExpansion",
@@ -642,7 +634,7 @@ e: {
       "valueBoolean" : true
     },
     {
-      "name" : "warning-draft",
+      "name" : "used-codesystem",
       "valueUri" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp|1.1.0"
     },
     {

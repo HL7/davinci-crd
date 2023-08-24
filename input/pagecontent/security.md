@@ -7,8 +7,7 @@ Guidance and conformance expectations around privacy and security are provided b
 
 In addition to these, this implementation guide imposes the following additional rules:
 
-* As per the CDS Hook specification, communications between CRD Clients and CRD Servers **SHALL** use TLS.  Mutual TLS is not required by this specification but is permitted.  CRD Servers and CRD Clients **SHOULD** enforce a minimum version and other TLS configuration requirements based on current best practices.
-    * Systems **SHOULD** comply with the most recent set of NIST guidelines and **SHALL** comply with at least the next most recent guidelines.  At the time this IG is written, the current guidelines can be found [here](https://csrc.nist.gov/CSRC/media/Publications/sp/800-52/rev-2/draft/documents/sp800-52r2-draft2.pdf).
+* As per the CDS Hook specification, communications between CRD Clients and CRD Servers **SHALL** use TLS.  Mutual TLS is not required by this specification but is permitted.  CRD Servers and CRD Clients **SHOULD** enforce a minimum version and other TLS configuration requirements based on HRex rules for PHI exchange.
     * This specification does not provide guidance on certificate management between systems, though it has been proposed that Direct certificates could be used for this purpose.
 * CRD Clients **SHALL** support running applications that adhere to the SMART on FHIR [confidential app](http://www.hl7.org/fhir/smart-app-launch#support-for-public-and-confidential-apps) profile.
 * CRD Servers **SHALL** use information received solely for coverage determination and decision support purposes and **SHALL NOT** retain data received over the CRD interfaces for any purpose other than audit or providing context for form completion using DTR.

@@ -3,7 +3,7 @@ Id: ext-coverage-information
 Title: "Coverage Information"
 Description: "Captures assertions from a payer about whether the service is covered and/or requires prior authorization."
 * ^version = "1.1.0-ci-build"
-* ^status = #draft
+* ^status = #active
 * ^experimental = false
 * ^date = "2023-05-30T11:47:53-07:00"
 * ^publisher = "HL7 International - Financial Management Work Group"
@@ -29,6 +29,7 @@ Description: "Captures assertions from a payer about whether the service is cove
 * obeys crd-ci-q1 and crd-ci-q2 and crd-ci-q3 and crd-ci-q4 and crd-ci-q5
 * . ^short = "CoverageInfo"
   * ^definition = "Indicates coverage information."
+* ^extension[$fmm].valueInteger = 1
 * extension contains
     coverage 1..1 and
     covered 1..1 MS and
@@ -56,19 +57,19 @@ Description: "Captures assertions from a payer about whether the service is cove
   * ^definition = "Indicates whether the ordered/requested service is covered under patient's plan"
   * value[x] 1..1
   * value[x] only code
-  * value[x] from CoveredInfo (required)
+  * value[x] from CRDCoveredInfo (required)
 * extension[pa-needed] only Extension
   * ^short = "no-auth | auth-needed | satisfied | performpa | conditional"
   * ^definition = "Indicates whether prior auth will be needed for coverage to be provided"
   * value[x] 1..1
   * value[x] only code
-  * value[x] from CoveragePaDetail (required)
+  * value[x] from CRDCoveragePaDetail (required)
 * extension[doc-needed] only Extension
   * ^short = "no-doc | clinical | admin | both | conditional"
   * ^definition = "Indicates whether additional documentation needs to be captured (purpose in next element)"
   * value[x] 1..1
   * value[x] only code
-  * value[x] from AdditionalDocumentation (required)
+  * value[x] from CRDAdditionalDoc (required)
 * extension[doc-purpose] only Extension
   * ^short = "Documentation purpose"
   * value[x] 1..1
@@ -79,7 +80,7 @@ Description: "Captures assertions from a payer about whether the service is cove
   * ^definition = "Indicates whether information about the perfomer, location, and/or performance date is needed to determine coverage information"
   * value[x] 1..1
   * value[x] only code
-  * value[x] from InformationNeeded (required)
+  * value[x] from CRDInformationNeeded (required)
 * extension[billingCode] only Extension
   * ^short = "Billing code"
   * ^definition = "Billing code(s) that must be used in the eventual claim for the coverage assertion to hold"

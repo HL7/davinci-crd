@@ -4,7 +4,7 @@ Id: profile-devicerequest
 Title: "CRD Device Request"
 Description: "This profile specifies extensions and constraints on the DeviceRequest resource to support coverage requirements discovery."
 * ^version = "1.1.0-ci-build"
-* ^status = #draft
+* ^status = #active
 * ^experimental = false
 * ^date = "2023-05-30T11:47:53-07:00"
 * ^publisher = "HL7 International - Financial Management Work Group"
@@ -19,7 +19,7 @@ Description: "This profile specifies extensions and constraints on the DeviceReq
 * status = #draft (exactly)
 * code[x] only CodeableConcept or Reference(Device)
 * code[x] MS
-* code[x] from CRDdeviceRequests (extensible)
+* code[x] from CRDDeviceRequests (extensible)
 * parameter MS
 * subject only Reference(Patient)
 * subject MS

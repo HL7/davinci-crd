@@ -67,7 +67,7 @@
         <a href="{{site.data.info.assets}}artifacts.html">CRD-specific Artifacts</a>
       </li>
       <li>
-        <a href="http://hl7.org/fhir/us/core">US Core</a>
+        <a href="{{site.data.fhir.ver.uscore}}">US Core</a>
       </li>
     </ul>
   </li>

@@ -1,8 +1,8 @@
 ValueSet: CRDCoverageDetailCodes
 Id: coverageDetail
-Title: "CRD Coverage Detail Codes"
+Title: "CRD Coverage Detail Codes Value Set"
 Description: "Codes for name-value-pair details on a coverage assertion"
-* ^status = #draft
+* ^status = #active
 * ^experimental = false
 * CRDTempCodes#allowed-quantity
 * CRDTempCodes#allowed-period

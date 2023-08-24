@@ -16,7 +16,7 @@ canonical: http://hl7.org/fhir/us/davinci-crd
 version: 1.1.0
 name: CoverageRequirementsDiscovery
 title: Da Vinci - Coverage Requirements Discovery
-status: draft
+status: active
 experimental: false
 publisher:
   name: HL7 International - Financial Management Work Group
@@ -97,7 +97,7 @@ pages:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
         valueCode: trial-use
   cards.md:
-    title: Supported Cards
+    title: Cards Profiles
     extension:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
         valueCode: trial-use
@@ -118,3 +118,12 @@ pages:
     title: Credits
   history.md:
     title: Change History
+groups:
+  -str-logicalmodel-hooks:
+    name: "Structures: CDS Hooks Extensions"
+    description: "Models that define extensions on CDS Hooks JSON structures"
+    resources:
+      - CDSHookServicesExtensionConfig
+#      - CDSHookSuggestionActionExtensionIfNoneExist
+#      - CDSHookCardExtensionAssociatedResource
+#      - CDSHookHookExtensionConfig

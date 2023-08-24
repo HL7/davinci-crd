@@ -2,7 +2,7 @@ CodeSystem: CRDTempCodes
 Id: temp
 Title: "CRD Temporary Codes"
 Description: "Codes temporarily defined as part of the CRD implementation guide.  These will eventually migrate into an officially maintained terminology (likely either SNOMED CT or HL7's UTG code systems)."
-* ^status = #draft
+* ^status = #active
 * ^experimental = false
 * ^caseSensitive = true
 * ^hierarchyMeaning = #is-a
@@ -33,7 +33,6 @@ Description: "Codes temporarily defined as part of the CRD implementation guide.
 * #covered                 "Covered"                           "Regular coverage applies"
 * #not-covered             "Not covered"                       "No coverage or possibility of coverage for this service)"
 // Coverage guidance - doc
-* #no-doc                  "No Additional Documentation"       "There is no requirement for any additional documentation"
 * #clinical                "Clinical Documentation"            "Details most likely to originate from a clinician are required to satisfy additional documentation requirements, determine coverage and/or prior auth applicability - e.g. via DTR by clinician.  Indicates that the CRD client should expose the need to launch DTR to clinical users."
 * #admin                   "Administrative Documentation"      "Administrative details not likely to require clinical expertise are needed to satisfy additional documentation requirements, determine coverage and/or prior auth applicability - e.g. via DTR by back-end staff.  Indicates that while the CRD client might expose the ability to launch DTR as an option for clinical users, it should be clear that clinical input is not necessary and deferring the use of DTR to back-end staff is perfectly appropriate.  Some CRD clients might be configured (based on provider preference) to not even show clinicians the option to launch."
 * #both                    "Administrative & clinical doc"     "Both clinical and administrative details are required to satisfy additional documentation requirements, determine coverage and/or prior auth applicability.  Equivalent to the union of #admin and #clinical."
@@ -86,4 +85,4 @@ Description: "Codes temporarily defined as part of the CRD implementation guide.
   * #withpa              "Include in prior authorization"      "The information in this QuestionnaireResponse should be packaged into a Bundle and submitted as part of (or in association with) a prior authorization for the associated request resource(s)."
   * #withclaim           "Include with claim"                  "The information in this QuestionnaireResponse should be packaged into a Bundle and submitted as part of (or in association with) the insurance claim for the services ordered by the associated request resource(s)."
   * #withorder           "Include with order"                  "The information in this QuestionnaireResponse should be packaged into a Bundle and submitted along with (or referenced as supporting information to) the associated request resource(s) when transmitting the order to the fulfilling system."
-  * #retain-doc          "Medical necessity"                   "The information in this QuestionnaireResponse should be retained within the DTR as supporting evidence of the medical necessity of the associated request resource(s)."
+  * #retain-doc          "Medical necessity"                   "The information in this QuestionnaireResponse should be retained within the EHR as supporting evidence of the medical necessity of the associated request resource(s)."

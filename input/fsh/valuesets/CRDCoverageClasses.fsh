@@ -1,8 +1,8 @@
 ValueSet: CRDCoverageClasses
 Id: coverageClass
-Title: "CRD Coverage Classes"
+Title: "CRD Coverage Classes Value Set"
 Description: "Restriction of coverage classes for CRD purposes"
-* ^status = #draft
+* ^status = #active
 * ^experimental = false
 * CoverageClassCodes#group
 * CoverageClassCodes#subgroup

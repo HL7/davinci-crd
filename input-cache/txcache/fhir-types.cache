@@ -1,0 +1,55 @@
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "inactive" : true,
+    "include" : [{
+      "system" : "http://hl7.org/fhir/fhir-types",
+      "concept" : [{
+        "code" : "boolean"
+      },
+      {
+        "code" : "integer"
+      }]
+    }]
+  }
+}}####
+e: {
+  "valueSet" : {
+  "resourceType" : "ValueSet",
+  "status" : "active",
+  "expansion" : {
+    "identifier" : "urn:uuid:38694838-5c05-4dac-93b0-4420ef2eb4ba",
+    "timestamp" : "2023-08-24T03:47:59.016Z",
+    "total" : 2,
+    "parameter" : [{
+      "name" : "limitedExpansion",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "excludeNested",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "used-codesystem",
+      "valueUri" : "http://hl7.org/fhir/fhir-types|5.0.0"
+    },
+    {
+      "name" : "version",
+      "valueUri" : "http://hl7.org/fhir/fhir-types|5.0.0"
+    }],
+    "contains" : [{
+      "system" : "http://hl7.org/fhir/fhir-types",
+      "code" : "boolean",
+      "display" : "boolean"
+    },
+    {
+      "system" : "http://hl7.org/fhir/fhir-types",
+      "code" : "integer",
+      "display" : "integer"
+    }]
+  }
+},
+  "error" : ""
+}
+-------------------------------------------------------------------------------------

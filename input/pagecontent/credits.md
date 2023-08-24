@@ -24,7 +24,7 @@ This implementation guide was the work of the twenty-two founding [Da Vinci Proj
 
 Project participants included:
 
-* Aegis (Richard Ettema, Sandra Vance)
+* Aegis (Richard Ettema, Carie Hammond, Sandra Vance)
 * American Hospital Association (Andrea Preisler)
 * American Medical Association (Terrence Cunningham, Celine Lefebvre)
 * Allscripts (Emma Jones, Jeffrey Danford)

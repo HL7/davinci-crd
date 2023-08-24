@@ -4,7 +4,7 @@ Id: profile-servicerequest
 Title: "CRD Service Request"
 Description: "This profile specifies constraints on the ServiceRequest resource to support coverage requirements discovery."
 * ^version = "1.1.0-ci-build"
-* ^status = #draft
+* ^status = #active
 * ^experimental = false
 * ^date = "2023-05-30T11:47:53-07:00"
 * ^publisher = "HL7 International - Financial Management Work Group"

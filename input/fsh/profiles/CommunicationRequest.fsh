@@ -4,13 +4,14 @@ Id: profile-communicationrequest
 Title: "CRD Communication Request"
 Description: "This profile specifies constraints on the CommunicationRequest resource to support coverage requirements discovery."
 * ^version = "1.1.0-ci-build"
-* ^status = #draft
+* ^status = #active
 * ^experimental = false
 * ^date = "2023-05-30T11:47:53-07:00"
 * ^publisher = "HL7 International - Financial Management Work Group"
 * ^contact.telecom.system = #url
 * ^contact.telecom.value = "http://www.hl7.org/Special/committees/fm"
 * ^jurisdiction = urn:iso:std:iso:3166#US
+* ^extension[$fmm].valueInteger = 1
 * extension contains CoverageInformation named Coverage-Information 0..* MS
 * identifier MS
 * basedOn 1..1 MS

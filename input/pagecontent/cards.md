@@ -1,4 +1,4 @@
-[Cards](https://cds-hooks.hl7.org/2.0/#cds-service-response) are the mechanism used to return coverage requirements from the CRD Server to the CRD Client.
+[Cards](https://cds-hooks.hl7.org/2.0/#cds-service-response) are the mechanism used to return coverage requirements from the CRD Server to the CRD Client.  This page profiles (constrains) the general rules for cards from the CDS Hooks specification to reflect how cards must be used when complying with this specification.
 
 In addition to the [guidance provided in the CDS Hooks specification](https://cds-hooks.hl7.org/2.0/#card-attributes), the following additional guidance applies to CRD Servers when constructing cards:
 

@@ -4,13 +4,14 @@ Id: profile-taskquestionnaire
 Title: "CRD Questionnaire Task"
 Description: "This profile specifies constraints on the Task resource to support requests for form (Questionnaire) completion."
 * ^version = "1.1.0-ci-build"
-* ^status = #draft
+* ^status = #active
 * ^experimental = false
 * ^date = "2023-05-30T11:47:53-07:00"
 * ^publisher = "HL7 International - Financial Management Work Group"
 * ^contact.telecom.system = #url
 * ^contact.telecom.value = "http://www.hl7.org/Special/committees/fm"
 * ^jurisdiction = urn:iso:std:iso:3166#US
+* ^extension[$fmm].valueInteger = 1
 * basedOn MS
   * ^requirements = "Allows linking the Questionnaire to the particular 'request' that triggered its creation."
 * status only code
@@ -32,7 +33,7 @@ Description: "This profile specifies constraints on the Task resource to support
 * owner only Reference(Practitioner)
   * ^comment = "This can be populated within the CRD client to delegate responsibility for filling out the form to someone else."
 * reasonCode MS
-* reasonCode from CRDReasonCodes (extensible)
+* reasonCode from CRDTaskReason (extensible)
   * ^requirements = "Captures additional details about why the form is needed.  E.g. \"For prior authorization\" or \"For audit documentation\"."
   * ^binding.description = "CRD Task Reason"
 * input contains afterCompletion 1..* MS
@@ -42,5 +43,5 @@ Description: "This profile specifies constraints on the Task resource to support
   * type MS
   * valueCodeableConcept only CodeableConcept
   * valueCodeableConcept MS
-  * valueCodeableConcept from CRDAfterCompletionCode (extensible)
+  * valueCodeableConcept from CRDTaskAfterCompletionCode (extensible)
     * ^binding.description = "CRD After Completion"

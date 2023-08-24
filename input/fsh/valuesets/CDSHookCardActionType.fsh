@@ -1,8 +1,8 @@
 ValueSet: CDSHookCardActionType
 Id: cardActions
-Title: "CDS Hooks Card Suggestion Action Types"
+Title: "CDS Hooks Card Suggestion Action Types Value Set"
 Description: "Codes allowed for defining the type of action in a CDS Hooks suggestion"
-* ^status = #draft
+* ^status = #active
 * ^experimental = false
 * $restful-interaction#create
 * $restful-interaction#delete

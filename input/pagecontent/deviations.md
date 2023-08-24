@@ -40,7 +40,7 @@ The approach in this implementation guide is designed to allow the users or admi
 
 Extensions will be enabled in two places:
 
-1.  The [CDS Service Discovery Response](https://cds-hooks.hl7.org/2.0/#response) object that describes the service's capabilities will include an extension that describes what "configuration options" can be set by the CRD Client
+1.  The [CDS Service Discovery Response](https://cds-hooks.hl7.org/2.0/#response) object that describes the service's capabilities will include an extension that describes what [configuration options]() can be set by the CRD Client
 2.  The hook's [HTTP Request](https://cds-hooks.hl7.org/2.0/#http-request_1) object will include an extension to pass specific configuration settings as part of the hook invocation
 
 
@@ -54,7 +54,7 @@ An extension called `davinci-crd.configuration-options` will define a configurat
     *  A `description` providing a 1-2 sentence description of the effect of the configuration option.
 *  A `default` value **SHALL** also be provided to show users what to expect when an override is not specified.
 
-CRD servers **SHALL**, at minimum, offer configuration options for each type of card they support (with a code corresponding to the <a href="ValueSet-cardType.html">CRD Card Types</a> ValueSet and a type of ‘boolean’, where setting the flag to false will result in the server not returning any cards of the specified type. This allows CRD clients to control what types of cards they wish to receive at all, or to receive in particular workflow contexts or for certain users.  This configuration mechanism also allows EHRs to minimize information overload and avoid presentation of duplicative or low-utility CRD alerts.
+CRD servers **SHALL**, at minimum, offer configuration options for each type of card they support (with a code corresponding to the <a href="ValueSet-cardType.html">CRD Card Types</a> ValueSet and a type of ‘boolean’, where setting the flag to false will result in the server not returning any cards of the specified type). This allows CRD clients to control what types of cards they wish to receive at all, or to receive in particular workflow contexts or for certain users.  This configuration mechanism also allows EHRs to minimize information overload and avoid presentation of duplicative or low-utility CRD alerts.
 
 For example, a [CDS Service Response](https://cds-hooks.hl7.org/2.0/#response) from a CRD Server might look like this:
 
@@ -73,28 +73,22 @@ For example, a [CDS Service Response](https://cds-hooks.hl7.org/2.0/#response) f
     "extension": {
       "davinci-crd.configuration-options": [
         {
-          "code": "priorauth",
+          "code": "coverage-info",
           "type": "boolean",
-          "name": "Prior authorization",
-          "description": "Provides indications of whether prior authorization is required for the proposed order",
+          "name": "Coverage Information",
+          "description": "Information related to the patient's coverage, including whether a service is covered, requires prior authorization, is approved without seeking prior authorization, and/or requires additional documentation or data collection",
           "default": true
         }, {
-          "code": "prior-auth-form",
+          "code": "therapy-alternatives-opt",
           "type": "boolean",
-          "name": "Prior Authorization Forms",
-          "description": "Indicates any forms that should be completed as part of a prior authorization process",
+          "name": "Optional Therapy Alternatives",
+          "description": "Are there alternative therapies that have better coverage and/or are lower-cost for the patient",
           "default": true
         }, {
-          "code": "alt-drug",
+          "code": "therapy-alternatives-req",
           "type": "boolean",
-          "name": "Alternative therapy",
-          "description": "Provides recommendations for alternative therapy with equivalent/similar clinical effect for which the patient has better coverage, that will incur lesser cost",
-          "default": true
-        }, {
-          "code": "first-line",
-          "type": "boolean",
-          "name": "First-line therapy",
-          "description": "Provides alternative therapies that must be tried prior to the selected medication to receive coverage for the selected medication",
+          "name": "Required Therapy Alternatives",
+          "description": "Are there alternative therapies that must be tried first prior to coverage being available for the proposed therapy",
           "default": true
         }, {
           "code": "max-cards",

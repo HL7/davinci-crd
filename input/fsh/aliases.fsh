@@ -7,13 +7,14 @@ Alias: $rxnorm = http://www.nlm.nih.gov/research/umls/rxnorm
 Alias: $raceEthnicity = urn:oid:2.16.840.1.113883.6.238
 Alias: $sct = http://snomed.info/sct
 // Code Systems - HL7
+Alias: $fhir-types                   = http://hl7.org/fhir/fhir-types
+Alias: $restful-interaction          = http://hl7.org/fhir/restful-interaction
 Alias: $communication-category       = http://terminology.hl7.org/CodeSystem/communication-category
 Alias: $coverage-class               = http://terminology.hl7.org/CodeSystem/coverage-class
 Alias: $diet                         = http://terminology.hl7.org/CodeSystem/diet
 Alias: $dose-rate-type               = http://terminology.hl7.org/CodeSystem/dose-rate-type
 Alias: $ex-visionprescriptionproduct = http://terminology.hl7.org/CodeSystem/ex-visionprescriptionproduct
 Alias: $location-physical-type       = http://terminology.hl7.org/CodeSystem/location-physical-type
-Alias: $restful-interaction          = http://hl7.org/fhir/restful-interaction
 Alias: $service-category             = http://terminology.hl7.org/CodeSystem/service-category
 Alias: $service-type                 = http://terminology.hl7.org/CodeSystem/service-type
 Alias: $subscriber-relationship      = http://terminology.hl7.org/CodeSystem/subscriber-relationship
@@ -22,6 +23,7 @@ Alias: $v2-0276                      = http://terminology.hl7.org/CodeSystem/v2-
 Alias: $v2-0360                      = http://terminology.hl7.org/CodeSystem/v2-0360
 Alias: $v3-ActCode                   = http://terminology.hl7.org/CodeSystem/v3-ActCode
 Alias: $v3-ActReason                 = http://terminology.hl7.org/CodeSystem/v3-ActReason
+Alias: $v3-NullFlavor                = http://terminology.hl7.org/CodeSystem/v3-NullFlavor
 Alias: $v3-ParticipationMode         = http://terminology.hl7.org/CodeSystem/v3-ParticipationMode
 Alias: $v3-ParticipationType         = http://terminology.hl7.org/CodeSystem/v3-ParticipationType
 // Code Systems - IG

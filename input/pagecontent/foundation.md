@@ -262,7 +262,7 @@ This can be done either by using individual queries or by invoking a batch of se
 The following two examples show a batch query that could retrieve all CRD-relevant resources as well as the structure of the corresponding batch response.
 
 **Query Batch Request**<br/>
-This query presumes that a hook has been invoked and the following information has been passed in as context:
+This query presumes that an order-sign hook has been invoked and the following information has been passed in as context:
 
 ```
 "userId": "PractitionerRole/ABC",
@@ -270,7 +270,7 @@ This query presumes that a hook has been invoked and the following information h
 "encounterId": "987"
 ```
 
-As well, the `draftOrders` Bundle includes MedicationRequests that reference 2 formulary medications (MED1, MED2), to be fulfilled by one pharmacy Organization (456) and are ordered by the same PractitionerRole with id 'ABC'.  Most importantly, they are all tied to the same Coverage record with id 'DEF'.
+As well, the `draftOrders` Bundle from the context includes MedicationRequests that reference 2 formulary medications (MED1, MED2), to be fulfilled by one pharmacy Organization (456) and are ordered by the same PractitionerRole with id 'ABC'.  Most importantly, they are all tied to the same Coverage record with id 'DEF'.
 
 Note: This query also presumes that all this information would be relevant to the CRD Server.  In practice, the service would only query the information needed to determine coverage requirements.  Also, the service will only be able to query data where the scopes made available in the `fhirAuthorization.scope` permit the desired queries.
 
@@ -458,8 +458,6 @@ In addition to the real-time decision support provided by CDS Hooks, providers w
 The solution to this need to perform coverage discovery "any time" is the use of a SMART on FHIR app.  Many CRD Clients already support SMART on FHIR.  That standard allows independently developed applications to be launched from within the CRD Client (possibly within the user interface) and to interact with its data.  Clients may choose to use SMART on FHIR apps to invoke coverage requirements discovery from CRD Servers for "what-if" scenarios, using a CRD Client's existing SMART on FHIR interface.  Alternatively, they can develop such functionality internally.
 
 CRD Clients conforming with this specification **SHALL** support the SMART on FHIR interface, **SHALL** allow launching of SMART apps from within their application, and **SHALL** be capable of providing the SMART app access to information it exposes to CRD Servers using the CDS Hooks interface.
-
-The Da Vinci CRD SMART app has not yet been developed.  Once it exists, a link will be provided beneath the [CRD Confluence page](https://confluence.hl7.org/display/DVP/Coverage+Requirements+Discovery+(CRD)).  
 
 NOTES:
 
