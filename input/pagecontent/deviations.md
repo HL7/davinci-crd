@@ -40,7 +40,7 @@ The approach in this implementation guide is designed to allow the users or admi
 
 Extensions will be enabled in two places:
 
-1.  The [CDS Service Discovery Response](https://cds-hooks.hl7.org/2.0/#response) object that describes the service's capabilities will include an extension that describes what [configuration options]() can be set by the CRD Client
+1.  The [CDS Service Discovery Response](https://cds-hooks.hl7.org/2.0/#response) object that describes the service's capabilities will include an extension that describes what [configuration options](StructureDefinition-CDSHookServicesExtensionConfiguration.html) can be set by the CRD Client
 2.  The hook's [HTTP Request](https://cds-hooks.hl7.org/2.0/#http-request_1) object will include an extension to pass specific configuration settings as part of the hook invocation
 
 

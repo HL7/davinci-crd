@@ -123,7 +123,7 @@ groups:
     name: "Structures: CDS Hooks Extensions"
     description: "Models that define extensions on CDS Hooks JSON structures"
     resources:
-      - CDSHookServicesExtensionConfig
+      - CDSHookServicesExtensionConfiguration
 #      - CDSHookSuggestionActionExtensionIfNoneExist
 #      - CDSHookCardExtensionAssociatedResource
 #      - CDSHookHookExtensionConfig
