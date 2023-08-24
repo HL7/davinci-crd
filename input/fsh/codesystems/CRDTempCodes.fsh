@@ -11,7 +11,6 @@ Description: "Codes temporarily defined as part of the CRD implementation guide.
 * #prior-auth-include      "Include in prior authorization"    "Include information in prior authorization"
 * #initial-claim-include   "Include in initial claim"          "Include information in initial claim submission"
 * #all-claims-include      "Include in all claims"             "Include information in all claim submissions"
-* #to-endpoint             "Send to endpoint"                  "Send information to the specified endpoint"
 // Task reason
 * #reason-prior-auth       "Prior authorization"               "Task action is needed for prior authorization"
 // Task input codes
