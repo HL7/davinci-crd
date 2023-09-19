@@ -20,24 +20,10 @@ Description: "This profile specifies additional constraints on the US Core Medic
 * intent MS
 * doNotPerform ..0
 * reported[x] MS
-  * ^slicing.discriminator.type = #type
-  * ^slicing.discriminator.path = "$this"
-  * ^slicing.rules = #open
-* reportedBoolean only boolean
-  * ^sliceName = "reportedBoolean"
-* reportedReference only Reference(USCorePatientProfile or USCorePractitionerProfile or USCoreOrganizationProfile)
-  * ^sliceName = "reportedReference"
+* reported[x] only boolean or Reference(USCorePatientProfile or USCorePractitionerProfile or USCoreOrganizationProfile)
 * medication[x] MS
-  * ^slicing.discriminator.type = #type
-  * ^slicing.discriminator.path = "$this"
-  * ^slicing.rules = #open
-* medicationCodeableConcept only CodeableConcept
-* medicationCodeableConcept from USCoreMedicationCodes (extensible)
-  * ^sliceName = "medicationCodeableConcept"
-  * ^min = 0
-* medicationReference only Reference(USCoreMedicationProfile)
-  * ^sliceName = "medicationReference"
-  * ^min = 0
+* medication[x] from USCoreMedicationCodes (extensible)
+* medication[x] only CodeableConcept or Reference(USCoreMedicationProfile)
 * subject only Reference(Patient)
 * subject MS
 * encounter only Reference(Encounter)

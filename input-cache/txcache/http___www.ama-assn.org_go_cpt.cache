@@ -13,7 +13,11 @@
 v: {
   "severity" : "error",
   "error" : "Code '77067' not found in CPT; Unknown Code '77067' in the system 'http://www.ama-assn.org/go/cpt'; The provided code http://www.ama-assn.org/go/cpt#77067 is not in the value set 'http://hl7.org/fhir/ValueSet/@all' (from Tx-Server)",
-  "class" : "UNKNOWN"
+  "class" : "UNKNOWN",
+  "issues" : {
+  "resourceType" : "OperationOutcome"
+}
+
 }
 -------------------------------------------------------------------------------------
 {"code" : {
@@ -30,7 +34,11 @@ v: {
 v: {
   "severity" : "error",
   "error" : "Code '77067' not found in CPT; Unknown Code '77067' in the system 'http://www.ama-assn.org/go/cpt'; The provided code http://www.ama-assn.org/go/cpt#77067 is not in the value set 'http://hl7.org/fhir/ValueSet/@all' (from Tx-Server)",
-  "class" : "UNKNOWN"
+  "class" : "UNKNOWN",
+  "issues" : {
+  "resourceType" : "OperationOutcome"
+}
+
 }
 -------------------------------------------------------------------------------------
 {"hierarchical" : true, "valueSet" :{
@@ -51,8 +59,8 @@ e: {
       "url" : "http://hl7.org/fhir/StructureDefinition/valueset-toocostly",
       "valueBoolean" : true
     }],
-    "identifier" : "urn:uuid:047e713f-df28-4883-b9e4-cd4953cd8ec7",
-    "timestamp" : "2023-08-24T05:03:03.423Z",
+    "identifier" : "urn:uuid:e7d9f5a5-b4bf-4feb-ba61-fee715ad17f9",
+    "timestamp" : "2023-08-27T15:28:32.208Z",
     "total" : 0,
     "parameter" : [{
       "name" : "limitedExpansion",
@@ -65,5 +73,49 @@ e: {
   }
 },
   "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://www.ama-assn.org/go/cpt",
+  "code" : "77067"
+}, "valueSet" :null, "langs":"en, en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "id" : "terminology-settings",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  }]
+}}####
+v: {
+  "severity" : "error",
+  "error" : "Code '77067' not found in CPT; Unknown Code '77067' in the system 'http://www.ama-assn.org/go/cpt'; The provided code 'http://www.ama-assn.org/go/cpt#77067' is not in the value set 'http://hl7.org/fhir/ValueSet/@all' (from Tx-Server)",
+  "class" : "UNKNOWN",
+  "unknown-systems" : "",
+  "issues" : {
+  "resourceType" : "OperationOutcome"
+}
+
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://www.ama-assn.org/go/cpt",
+  "code" : "77067"
+}, "valueSet" :null, "langs":"", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "id" : "terminology-settings",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  }]
+}}####
+v: {
+  "severity" : "error",
+  "error" : "Code '77067' not found in CPT; Unknown Code '77067' in the system 'http://www.ama-assn.org/go/cpt'; The provided code 'http://www.ama-assn.org/go/cpt#77067' is not in the value set 'http://hl7.org/fhir/ValueSet/@all' (from Tx-Server)",
+  "class" : "UNKNOWN",
+  "unknown-systems" : "",
+  "issues" : {
+  "resourceType" : "OperationOutcome"
+}
+
 }
 -------------------------------------------------------------------------------------

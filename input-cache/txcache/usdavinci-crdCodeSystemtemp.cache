@@ -25,8 +25,8 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:b83e7348-ce42-402d-9674-5cc36c67c2ec",
-    "timestamp" : "2023-08-24T14:39:05.813Z",
+    "identifier" : "urn:uuid:6f0d6d0b-93d6-40ed-b429-93667dffdbf6",
+    "timestamp" : "2023-09-19T22:41:43.911Z",
     "total" : 4,
     "parameter" : [{
       "name" : "limitedExpansion",
@@ -88,47 +88,7 @@ e: {
   }
 }}####
 e: {
-  "valueSet" : {
-  "resourceType" : "ValueSet",
-  "status" : "active",
-  "expansion" : {
-    "identifier" : "urn:uuid:b19648d9-d8a6-445c-a095-e8f59f3dd98f",
-    "timestamp" : "2023-08-24T14:39:07.063Z",
-    "total" : 3,
-    "parameter" : [{
-      "name" : "limitedExpansion",
-      "valueBoolean" : true
-    },
-    {
-      "name" : "excludeNested",
-      "valueBoolean" : true
-    },
-    {
-      "name" : "used-codesystem",
-      "valueUri" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp|1.1.0"
-    },
-    {
-      "name" : "version",
-      "valueUri" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp|1.1.0"
-    }],
-    "contains" : [{
-      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-      "code" : "prior-auth-include",
-      "display" : "Include in prior authorization"
-    },
-    {
-      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-      "code" : "initial-claim-include",
-      "display" : "Include in initial claim"
-    },
-    {
-      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-      "code" : "all-claims-include",
-      "display" : "Include in all claims"
-    }]
-  }
-},
-  "error" : ""
+  "error" : "Error from server: Unable to provide support for code system http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp"
 }
 -------------------------------------------------------------------------------------
 {"hierarchical" : false, "valueSet" :{
@@ -147,42 +107,7 @@ e: {
   }
 }}####
 e: {
-  "valueSet" : {
-  "resourceType" : "ValueSet",
-  "status" : "active",
-  "expansion" : {
-    "identifier" : "urn:uuid:4ed9a5ff-a87b-4ae7-8562-50474338505d",
-    "timestamp" : "2023-08-24T14:39:08.703Z",
-    "total" : 2,
-    "parameter" : [{
-      "name" : "limitedExpansion",
-      "valueBoolean" : true
-    },
-    {
-      "name" : "excludeNested",
-      "valueBoolean" : true
-    },
-    {
-      "name" : "used-codesystem",
-      "valueUri" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp|1.1.0"
-    },
-    {
-      "name" : "version",
-      "valueUri" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp|1.1.0"
-    }],
-    "contains" : [{
-      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-      "code" : "gold-card",
-      "display" : "Gold card"
-    },
-    {
-      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-      "code" : "detail-code",
-      "display" : "Detail code"
-    }]
-  }
-},
-  "error" : ""
+  "error" : "Error from server: Unable to provide support for code system http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp"
 }
 -------------------------------------------------------------------------------------
 {"hierarchical" : false, "valueSet" :{
@@ -216,67 +141,7 @@ e: {
   }
 }}####
 e: {
-  "valueSet" : {
-  "resourceType" : "ValueSet",
-  "status" : "active",
-  "expansion" : {
-    "identifier" : "urn:uuid:15c5bd80-ea97-4628-8b8f-053c39a5f345",
-    "timestamp" : "2023-08-24T14:39:10.375Z",
-    "total" : 7,
-    "parameter" : [{
-      "name" : "limitedExpansion",
-      "valueBoolean" : true
-    },
-    {
-      "name" : "excludeNested",
-      "valueBoolean" : true
-    },
-    {
-      "name" : "used-codesystem",
-      "valueUri" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp|1.1.0"
-    },
-    {
-      "name" : "version",
-      "valueUri" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp|1.1.0"
-    }],
-    "contains" : [{
-      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-      "code" : "allowed-quantity",
-      "display" : "Maximum quantity"
-    },
-    {
-      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-      "code" : "allowed-period",
-      "display" : "Maximum allowed period"
-    },
-    {
-      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-      "code" : "in-network-copay",
-      "display" : "Copay for in-network"
-    },
-    {
-      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-      "code" : "out-network-copay",
-      "display" : "Copay for out-of-network"
-    },
-    {
-      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-      "code" : "auth-out-network-only",
-      "display" : "Authorization out-of-network only"
-    },
-    {
-      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-      "code" : "concurrent-review",
-      "display" : "Concurrent review"
-    },
-    {
-      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-      "code" : "appropriate-use-needed",
-      "display" : "Appropriate use"
-    }]
-  }
-},
-  "error" : ""
+  "error" : "Error from server: Unable to provide support for code system http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp"
 }
 -------------------------------------------------------------------------------------
 {"hierarchical" : false, "valueSet" :{
@@ -298,47 +163,7 @@ e: {
   }
 }}####
 e: {
-  "valueSet" : {
-  "resourceType" : "ValueSet",
-  "status" : "active",
-  "expansion" : {
-    "identifier" : "urn:uuid:cf48b407-5b7a-4baa-9b70-d44a26349031",
-    "timestamp" : "2023-08-24T14:39:13.047Z",
-    "total" : 3,
-    "parameter" : [{
-      "name" : "limitedExpansion",
-      "valueBoolean" : true
-    },
-    {
-      "name" : "excludeNested",
-      "valueBoolean" : true
-    },
-    {
-      "name" : "used-codesystem",
-      "valueUri" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp|1.1.0"
-    },
-    {
-      "name" : "version",
-      "valueUri" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp|1.1.0"
-    }],
-    "contains" : [{
-      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-      "code" : "not-covered",
-      "display" : "Not covered"
-    },
-    {
-      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-      "code" : "covered",
-      "display" : "Covered"
-    },
-    {
-      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-      "code" : "conditional",
-      "display" : "Conditional"
-    }]
-  }
-},
-  "error" : ""
+  "error" : "Error from server: Unable to provide support for code system http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp"
 }
 -------------------------------------------------------------------------------------
 {"hierarchical" : false, "valueSet" :{
@@ -366,57 +191,7 @@ e: {
   }
 }}####
 e: {
-  "valueSet" : {
-  "resourceType" : "ValueSet",
-  "status" : "active",
-  "expansion" : {
-    "identifier" : "urn:uuid:a5f51d3a-3651-4a0e-9d10-2917a163cea4",
-    "timestamp" : "2023-08-24T14:39:14.860Z",
-    "total" : 5,
-    "parameter" : [{
-      "name" : "limitedExpansion",
-      "valueBoolean" : true
-    },
-    {
-      "name" : "excludeNested",
-      "valueBoolean" : true
-    },
-    {
-      "name" : "used-codesystem",
-      "valueUri" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp|1.1.0"
-    },
-    {
-      "name" : "version",
-      "valueUri" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp|1.1.0"
-    }],
-    "contains" : [{
-      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-      "code" : "no-auth",
-      "display" : "No Prior Authorization"
-    },
-    {
-      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-      "code" : "auth-needed",
-      "display" : "Prior Authorization Needed"
-    },
-    {
-      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-      "code" : "satisfied",
-      "display" : "Authorization Satisfied"
-    },
-    {
-      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-      "code" : "performpa",
-      "display" : "Performer Prior Authorization"
-    },
-    {
-      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-      "code" : "conditional",
-      "display" : "Conditional"
-    }]
-  }
-},
-  "error" : ""
+  "error" : "Error from server: Unable to provide support for code system http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp"
 }
 -------------------------------------------------------------------------------------
 {"hierarchical" : false, "valueSet" :{
@@ -438,47 +213,7 @@ e: {
   }
 }}####
 e: {
-  "valueSet" : {
-  "resourceType" : "ValueSet",
-  "status" : "active",
-  "expansion" : {
-    "identifier" : "urn:uuid:9082f1e9-93f2-4a81-a8ac-ecc60e24d79e",
-    "timestamp" : "2023-08-24T14:39:17.610Z",
-    "total" : 3,
-    "parameter" : [{
-      "name" : "limitedExpansion",
-      "valueBoolean" : true
-    },
-    {
-      "name" : "excludeNested",
-      "valueBoolean" : true
-    },
-    {
-      "name" : "used-codesystem",
-      "valueUri" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp|1.1.0"
-    },
-    {
-      "name" : "version",
-      "valueUri" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp|1.1.0"
-    }],
-    "contains" : [{
-      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-      "code" : "performer",
-      "display" : "Performer Needed"
-    },
-    {
-      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-      "code" : "location",
-      "display" : "Location Needed"
-    },
-    {
-      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-      "code" : "timeframe",
-      "display" : "Timeframe Needed"
-    }]
-  }
-},
-  "error" : ""
+  "error" : "Error from server: Unable to provide support for code system http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp"
 }
 -------------------------------------------------------------------------------------
 {"hierarchical" : false, "valueSet" :{
@@ -497,42 +232,7 @@ e: {
   }
 }}####
 e: {
-  "valueSet" : {
-  "resourceType" : "ValueSet",
-  "status" : "active",
-  "expansion" : {
-    "identifier" : "urn:uuid:64d09eeb-7a8e-4a2d-b83d-818702a65013",
-    "timestamp" : "2023-08-24T14:39:19.594Z",
-    "total" : 2,
-    "parameter" : [{
-      "name" : "limitedExpansion",
-      "valueBoolean" : true
-    },
-    {
-      "name" : "excludeNested",
-      "valueBoolean" : true
-    },
-    {
-      "name" : "used-codesystem",
-      "valueUri" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp|1.1.0"
-    },
-    {
-      "name" : "version",
-      "valueUri" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp|1.1.0"
-    }],
-    "contains" : [{
-      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-      "code" : "payer-src",
-      "display" : "Payer-sourced"
-    },
-    {
-      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-      "code" : "provider-src",
-      "display" : "Provider-sourced"
-    }]
-  }
-},
-  "error" : ""
+  "error" : "Error from server: Unable to provide support for code system http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp"
 }
 -------------------------------------------------------------------------------------
 {"hierarchical" : false, "valueSet" :{
@@ -554,47 +254,7 @@ e: {
   }
 }}####
 e: {
-  "valueSet" : {
-  "resourceType" : "ValueSet",
-  "status" : "active",
-  "expansion" : {
-    "identifier" : "urn:uuid:3ff10182-654f-4e94-ab20-9c943c9c7538",
-    "timestamp" : "2023-08-24T14:39:21.110Z",
-    "total" : 3,
-    "parameter" : [{
-      "name" : "limitedExpansion",
-      "valueBoolean" : true
-    },
-    {
-      "name" : "excludeNested",
-      "valueBoolean" : true
-    },
-    {
-      "name" : "used-codesystem",
-      "valueUri" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp|1.1.0"
-    },
-    {
-      "name" : "version",
-      "valueUri" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp|1.1.0"
-    }],
-    "contains" : [{
-      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-      "code" : "used",
-      "display" : "Authorization Token Used"
-    },
-    {
-      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-      "code" : "not-used",
-      "display" : "Authorization Token Not Used"
-    },
-    {
-      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-      "code" : "rejected",
-      "display" : "Authorization Token Rejected"
-    }]
-  }
-},
-  "error" : ""
+  "error" : "Error from server: Unable to provide support for code system http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp"
 }
 -------------------------------------------------------------------------------------
 {"hierarchical" : false, "valueSet" :{
@@ -610,36 +270,6 @@ e: {
   }
 }}####
 e: {
-  "valueSet" : {
-  "resourceType" : "ValueSet",
-  "status" : "active",
-  "expansion" : {
-    "identifier" : "urn:uuid:4165050e-cd9b-4c20-99ac-7b56c8ff080b",
-    "timestamp" : "2023-08-24T14:39:21.719Z",
-    "total" : 1,
-    "parameter" : [{
-      "name" : "limitedExpansion",
-      "valueBoolean" : true
-    },
-    {
-      "name" : "excludeNested",
-      "valueBoolean" : true
-    },
-    {
-      "name" : "used-codesystem",
-      "valueUri" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp|1.1.0"
-    },
-    {
-      "name" : "version",
-      "valueUri" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp|1.1.0"
-    }],
-    "contains" : [{
-      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-      "code" : "reason-prior-auth",
-      "display" : "Prior authorization"
-    }]
-  }
-},
-  "error" : ""
+  "error" : "Error from server: Unable to provide support for code system http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp"
 }
 -------------------------------------------------------------------------------------
