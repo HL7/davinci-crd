@@ -2,7 +2,7 @@
 {"code" : {
   "system" : "http://www.ama-assn.org/go/cpt",
   "code" : "77067"
-}, "valueSet" :null, "langs":"[en-US, en]", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+}, "valueSet" :null, "langs":"en, en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
   "resourceType" : "Parameters",
   "id" : "terminology-settings",
   "parameter" : [{
@@ -11,9 +11,11 @@
   }]
 }}####
 v: {
-  "severity" : "error",
-  "error" : "Code '77067' not found in CPT; Unknown Code '77067' in the system 'http://www.ama-assn.org/go/cpt'; The provided code http://www.ama-assn.org/go/cpt#77067 is not in the value set 'http://hl7.org/fhir/ValueSet/@all' (from Tx-Server)",
-  "class" : "UNKNOWN",
+  "display" : "Screening mammography, bilateral (2-view study of each breast), including computer-aided detection (CAD) when performed",
+  "code" : "77067",
+  "system" : "http://www.ama-assn.org/go/cpt",
+  "version" : "2023",
+  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -23,7 +25,7 @@ v: {
 {"code" : {
   "system" : "http://www.ama-assn.org/go/cpt",
   "code" : "77067"
-}, "valueSet" :null, "langs":"[en]", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+}, "valueSet" :null, "langs":"", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
   "resourceType" : "Parameters",
   "id" : "terminology-settings",
   "parameter" : [{
@@ -32,9 +34,11 @@ v: {
   }]
 }}####
 v: {
-  "severity" : "error",
-  "error" : "Code '77067' not found in CPT; Unknown Code '77067' in the system 'http://www.ama-assn.org/go/cpt'; The provided code http://www.ama-assn.org/go/cpt#77067 is not in the value set 'http://hl7.org/fhir/ValueSet/@all' (from Tx-Server)",
-  "class" : "UNKNOWN",
+  "display" : "Screening mammography, bilateral (2-view study of each breast), including computer-aided detection (CAD) when performed",
+  "code" : "77067",
+  "system" : "http://www.ama-assn.org/go/cpt",
+  "version" : "2023",
+  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -59,8 +63,8 @@ e: {
       "url" : "http://hl7.org/fhir/StructureDefinition/valueset-toocostly",
       "valueBoolean" : true
     }],
-    "identifier" : "urn:uuid:e7d9f5a5-b4bf-4feb-ba61-fee715ad17f9",
-    "timestamp" : "2023-08-27T15:28:32.208Z",
+    "identifier" : "urn:uuid:5ace47dc-5831-4e24-8462-5dba62e8cc1b",
+    "timestamp" : "2023-09-20T03:51:42.115Z",
     "total" : 0,
     "parameter" : [{
       "name" : "limitedExpansion",
@@ -73,49 +77,5 @@ e: {
   }
 },
   "error" : ""
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://www.ama-assn.org/go/cpt",
-  "code" : "77067"
-}, "valueSet" :null, "langs":"en, en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "id" : "terminology-settings",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  }]
-}}####
-v: {
-  "severity" : "error",
-  "error" : "Code '77067' not found in CPT; Unknown Code '77067' in the system 'http://www.ama-assn.org/go/cpt'; The provided code 'http://www.ama-assn.org/go/cpt#77067' is not in the value set 'http://hl7.org/fhir/ValueSet/@all' (from Tx-Server)",
-  "class" : "UNKNOWN",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://www.ama-assn.org/go/cpt",
-  "code" : "77067"
-}, "valueSet" :null, "langs":"", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "id" : "terminology-settings",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  }]
-}}####
-v: {
-  "severity" : "error",
-  "error" : "Code '77067' not found in CPT; Unknown Code '77067' in the system 'http://www.ama-assn.org/go/cpt'; The provided code 'http://www.ama-assn.org/go/cpt#77067' is not in the value set 'http://hl7.org/fhir/ValueSet/@all' (from Tx-Server)",
-  "class" : "UNKNOWN",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
 }
 -------------------------------------------------------------------------------------

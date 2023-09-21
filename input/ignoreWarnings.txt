@@ -4,24 +4,20 @@
 WARNING: Appointment/example: Appointment.serviceCategory[0].coding[0]: The system "General Practice" http://terminology.hl7.org/CodeSystem/service-category was found but did not contain enough information to properly validate the code (mode = example) (from Tx-Server) for 'http://terminology.hl7.org/CodeSystem/service-category#17'
 WARNING: Appointment/example: Appointment.serviceType[0].coding[0]: The system "General Practice" http://terminology.hl7.org/CodeSystem/service-type was found but did not contain enough information to properly validate the code (mode = example) (from Tx-Server) for 'http://terminology.hl7.org/CodeSystem/service-type#124'
 
-# Not expecting support for CPT codes.  Have validated it's correct
-The definition for the Code System with URI 'http://www.ama-assn.org/go/cpt' doesnt provide any codes so the code cannot be validated
-Error from server: Unable to provide support for code system http://www.ama-assn.org/go/cpt
-
-# Coverage isn't part of the version of US Core we're complying with
+# Coverage isn't part of the version of US Core we're complying with.  See US Core Ticket FHIR-41752
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-coverage').baseDefinition: US FHIR Usage rules require that all profiles on Coverage derive from the core US profile
 
-# Device for CRD doesn't meet the constraints of Implantable Device.  See US Core ticket FHIR-29674
+# Device for CRD doesn't meet the constraints of Implantable Device.  See US Core Ticket FHIR-29674
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-device').baseDefinition: US FHIR Usage rules require that all profiles on Device derive from the core US profile
 
-# US Core MedicationRequest doesn't allow PractitionerRole as requester.  Have raised FHIR-29667
+# US Core MedicationRequest doesn't allow PractitionerRole as requester.  See US Core Ticket FHIR-29667
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-medicationrequest').baseDefinition: US FHIR Usage rules require that all profiles on MedicationRequest derive from the core US profile
 
-# ServiceRequest doesn't exist in the version of US-Core we're using, so can't derive from it
+# ServiceRequest doesn't exist in the version of US-Core we're using, so can't derive from it.  See US Core Ticket FHIR-41737
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-servicerequest').baseDefinition: US FHIR Usage rules require that all profiles on ServiceRequest derive from the core US profile
 
 # This identifier is intended to show that identifiers that *aren't* in one of the slices are also valid
 INFORMATION: Practitioner/example: Practitioner.identifier[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-practitioner|1.1.0
 
-# There's no expectation that the
+# There's no expectation that the example questionnaire would resolve
 The questionnaire 'http://example.org/some-payer/Questionnaire/123|1.3.0' could not be resolved, so no validation can be performed against the base questionnaire

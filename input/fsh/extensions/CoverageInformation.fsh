@@ -65,7 +65,7 @@ Description: "Captures assertions from a payer about whether the service is cove
   * value[x] only code
   * value[x] from CRDCoveragePaDetail (required)
 * extension[doc-needed] only Extension
-  * ^short = "no-doc | clinical | admin | both | conditional"
+  * ^short = "clinical | admin | both | conditional"
   * ^definition = "Indicates whether additional documentation needs to be captured (purpose in next element)"
   * value[x] 1..1
   * value[x] only code

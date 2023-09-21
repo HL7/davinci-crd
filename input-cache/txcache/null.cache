@@ -9,7 +9,7 @@ e: {
   "title" : "CRD Order Detail Codes Value Set",
   "status" : "active",
   "experimental" : false,
-  "date" : "2023-08-27T09:20:10-06:00",
+  "date" : "2023-09-19T21:48:54-06:00",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -17,8 +17,8 @@ e: {
     }]
   }],
   "expansion" : {
-    "identifier" : "urn:uuid:22121a4d-b653-4402-b85f-ec09a4519343",
-    "timestamp" : "2023-08-27T15:28:41.583Z",
+    "identifier" : "urn:uuid:e1dbc188-9d10-473c-8ed1-79efcc3bba92",
+    "timestamp" : "2023-09-20T03:51:44.193Z",
     "total" : 1598,
     "parameter" : [{
       "name" : "limitedExpansion",
