@@ -44,6 +44,7 @@ Description: "Codes temporarily defined as part of the CRD implementation guide.
 * #performer               "Performer Needed"                  "Information about who (specifically, or at least performer type and affiliation) is necessary to make a determination of coverage and/or prior auth expectations"
 * #location                "Location Needed"                   "Information about where (specific clinic/site or organization) is necessary to make a determination of coverage and/or prior auth expectations"
 * #timeframe               "Timeframe Needed"                  "Information about when the service will be performed that is more granular than the order effective period is necessary to make a determination of coverage and/or prior auth expectations"
+* #contract-window         "New Contract Window"               "The target performance time for the event falls outside the contract window for the patient's current coverage.  Information will not be available until a contract is in place covering the service time period"
 // Metric token use
 * #used                    "Authorization Token Used"          "An authorization token was used by the payer to access additional information from the provider system as part of the CDS Hook call"
   * #rejected              "Authorization Token Rejected"      "The payer attempted to use an authorization token to access additional information from the provider system as part of the CDS Hook call, however the access request failed.  (This is not used if the request succeeded but returned no records.)"

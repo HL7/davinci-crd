@@ -54,6 +54,7 @@ Description: "Codes defining whether information about the perfomer, location, a
 * CRDTempCodes#performer
 * CRDTempCodes#location
 * CRDTempCodes#timeframe
+* CRDTempCodes#contract-window
 * $v3-NullFlavor#OTH
 
 ValueSet: CRDCoverageAssertionReasons
