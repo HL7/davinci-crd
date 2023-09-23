@@ -134,6 +134,12 @@ Systems **MAY** fire calls related to orders even if there is already a coverage
 
 However, payers **SHALL NOT** send a system action to update the order unless something is new.  Payers **SHOULD** take into account the previous decision in deciding how much processing is necessary before returning a response.
 
+If a *coverage-information* extension indicates the need to collect additional information (via 'info-needed'), the extension **SHOULD** include a reference to the Questionnaire(s) to be completed.  Where Questionnaires are specified, this indicates that the payer supports <a href="http://hl7.org/fhir/us/davinci-dtr">Da Vinci DTR</a> and the relevant information can be gathered using those Questionnaires as specified in that guide.  
+
+If the payer does not support DTR for the type of information needed, the CRD service **MAY** provide a 'link' or 'information' card pointing to the forms or portal to use to capture the additional information.   The link SHOULD NOT require user authentication (i.e. no log-on needed) when accessing downloadable forms.  For portal links, it is preferred if a separate logon is not needed (e.g. with temporary/high-entropy links).  Forms downloaded from provided links can then be submitted as part of the prior authorization (e.g. PAS), claim submission, etc. based on the identified documentation purpose.
+
+While using portals or other non-Questionnaire data capture is not recommended/preferred, it may be necessary as a transitional measure.  Future versions of this IG are likely to mandate that Questionnaires be included when additional information is required.  This transitional accommodation is not intended to relax regulatory or legislative requirements that require the use of DTR.
+
 When using this response type, the proposed order or appointment being updated **SHALL** comply with the following profiles:
 
 <table class="grid">
