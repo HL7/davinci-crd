@@ -79,7 +79,7 @@ This implementation guide is organized into the following sections:
 * [Deviations and Enhancements](deviations.html) covers detailed implementation requirements and conformance expectations that are independent of particular hooks or cards
 * [Supported Hooks](hooks.html) identifies the expectations for support for specific CDS hooks
 * [Card Profiles](cards.html) defines patterns for CDS Hook cards that can be returned as part of this specification
-* [Implementation Guidance](cards.html) provides recommendations for implementation that fall outside the technical scope of the specification
+* [Implementation Guidance](implementation.html) provides recommendations for implementation that fall outside the technical scope of the specification
 * [Artifacts](allartifacts.html) introduces and provides links to the profiles, search parameters and other FHIR artifacts used in this implementation guide
 * [Downloads](downloads.html) allows download of this and other specifications, as well as other useful files
 * [Credits](credits.html) identifies the individuals and organizations involved in developing this implementation guide
