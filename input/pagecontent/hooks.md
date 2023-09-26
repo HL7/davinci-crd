@@ -129,7 +129,6 @@ The profiles expected to be used for the resources resolved to by the userId, pa
 
 Notes: 
 * CRD Servers **MAY** use this hook as a basis for associating a patient with a particular practitioner from a payer attribution perspective.
-* CRD clients and servers **SHALL**, at minimum, support returning and processing the [Coverage Information](StructureDefinition-ext-coverage-information.html) system action for all invocations of this hook.
 
 ### encounter-discharge
 This hook is described in the CDS Hook specification [here](https://cds-hooks.hl7.org/hooks/encounter-discharge/2023SepSTU1Ballot/encounter-discharge/).  This version of the CRD implementation guide refers to version 1.0 of the hook.
@@ -168,8 +167,6 @@ The profiles expected to be used for the resources resolved to by the userId, pa
     <td><a href="{{site.data.fhir.ver.uscore}}/StructureDefinition-us-core-practitionerrole.html">us-core-practitionerrole</a></td>
   </tr>
 </table>
-
-CRD clients and servers **SHALL**, at minimum, support returning and processing the [Coverage Information](StructureDefinition-ext-coverage-information.html) system action for all invocations of this hook.
 
 ### order-dispatch
 This hook is described in the CDS Hook specification [here](https://cds-hooks.hl7.org/hooks/order-dispatch/2023SepSTU1Ballot/order-dispatch/).  This version of the CRD implementation guide refers to version 1.0 of the hook.
@@ -271,7 +268,6 @@ There are no constraints or special rules related to this hook beyond the profil
 
 Notes: 
 * While this hook is defined for use when ordering, it is still relevant when proposing (e.g. as part of a consult note) or planning (e.g. as part of a care plan) the use of an intervention.  All the 'Request' resources support differentiating between plans, proposals, and orders.  Where CRD Clients have an appropriate workflow and data capture mechanism, this hook **MAY** be used in scenarios that don't involve creating a true order.
-* CRD clients and servers **SHALL**, at minimum, support returning and processing the [Coverage Information](StructureDefinition-ext-coverage-information.html) system action for all invocations of this hook.
 
 
 ### order-sign
