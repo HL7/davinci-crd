@@ -37,7 +37,7 @@ parameters:
   apply-contact: true
   globals-in-artifacts: true
 copyrightYear: 2019+
-releaseLabel: CI-build
+releaseLabel: STU 1.1
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 # │  To use a provided input/includes/menu.xml file, delete the "menu" property below.             │
