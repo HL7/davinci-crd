@@ -41,7 +41,11 @@ Description: "List of reasons for additional documentation"
 * ^status = #active
 * ^experimental = false
 * ^extension[$fmm].valueInteger = 1
-* include codes from system CRDTempCodes where concept descendent-of #_docReason
+//* include codes from system CRDTempCodes where concept descendent-of #_docReason
+* CRDTempCodes#withpa
+* CRDTempCodes#withclaim
+* CRDTempCodes#withorder
+* CRDTempCodes#retain-doc
 * $v3-NullFlavor#OTH
 
 ValueSet: CRDInformationNeeded
