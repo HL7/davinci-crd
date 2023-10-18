@@ -17,7 +17,7 @@ WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/Str
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-servicerequest').baseDefinition: US FHIR Usage rules require that all profiles on ServiceRequest derive from the core US profile
 
 # This identifier is intended to show that identifiers that *aren't* in one of the slices are also valid
-INFORMATION: Practitioner/example: Practitioner.identifier[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-practitioner|1.1.0
+INFORMATION: Practitioner/example: Practitioner.identifier[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-practitioner|2.0.0
 
 # There's no expectation that the example questionnaire would resolve
 The questionnaire 'http://example.org/some-payer/Questionnaire/123|1.3.0' could not be resolved, so no validation can be performed against the base questionnaire

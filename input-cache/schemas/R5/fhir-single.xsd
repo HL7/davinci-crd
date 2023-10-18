@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Tue, Sep 26, 2023 23:51+0000 for FHIR v6.0.0-cibuild 
+  Generated on Thu, Oct 12, 2023 04:55+0000 for FHIR v6.0.0-cibuild 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="6.0.0-cibuild">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -119,6 +119,11 @@
       <xs:enumeration value="ProductShelfLife">
         <xs:annotation>
           <xs:documentation xml:lang="en">ProductShelfLife</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RelativeTime">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">RelativeTime</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="Timing">
@@ -2559,6 +2564,56 @@
        </xs:extension>
      </xs:complexContent>
   </xs:complexType>
+  <xs:simpleType name="EvidenceVariableEventEnum">
+    <xs:restriction base="code-primitive">
+      <xs:enumeration value="study-start">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Study Start</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="treatment-start">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Start of Treatment</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="condition-detection">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Detection of Condition</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="condition-treatment">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Treatment of Condition</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="hospital-admission">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Hospital Admission</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="hospital-discharge">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Hospital Discharge</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="operative-procedure">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Operative Procedure</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="EvidenceVariableEvent">
+    <xs:annotation>
+      <xs:documentation xml:lang="en"></xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+       <xs:extension base="Element">
+         <xs:attribute name="value" type="EvidenceVariableEventEnum" use="optional"/>
+       </xs:extension>
+     </xs:complexContent>
+  </xs:complexType>
   <xs:simpleType name="ConcreteFHIRTypesEnum">
     <xs:restriction base="code-primitive">
       <xs:enumeration value="Account">
@@ -3429,6 +3484,11 @@
       <xs:enumeration value="RelatedPerson">
         <xs:annotation>
           <xs:documentation xml:lang="en">RelatedPerson</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RelativeTime">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">RelativeTime</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="RequestOrchestration">
@@ -12168,6 +12228,50 @@ The value of mustSupport SHALL be a FHIRPath resolvable on the type of the DataR
            <xs:element name="rateRange" type="Range"  maxOccurs="1"/>
            <xs:element name="rateQuantity" type="Quantity"  maxOccurs="1"/>
           </xs:choice>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RelativeTime">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">RelativeTime is used to express a point in time or an interval of time relative to an event defined in data types other than dateTime.</xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneType">
+        <xs:sequence>
+          <xs:element name="contextReference" type="Reference" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The specific event occurrence or resource context used as a base point (reference point) in time.  This establishes the context in which the 'path' is evaluated.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="contextDefinition" type="canonical" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The type of event used as a base point.  Instances of this definition will establish the context for evaluating the path to determine the base time for the offset.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="contextPath" type="string" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Path to the element defining the point in time. Any valid FHIRPath expression.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="contextCode" type="CodeableConcept" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Coded representation of the event used as a base point (reference point) in time.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">An offset or offset range before (negative values) or after (positive values) the event. Range is limited to time-valued quantities (Durations).</xs:documentation>
+            </xs:annotation>
+           <xs:element name="offsetDuration" type="Duration"  maxOccurs="1"/>
+           <xs:element name="offsetRange" type="Range"  maxOccurs="1"/>
+          </xs:choice>
+          <xs:element name="text" type="string" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Free-text (human-readable) description.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -34553,6 +34657,11 @@ See guidance around (not) making local changes to elements [here](canonicalresou
           <xs:documentation xml:lang="en">At most</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="except-subset">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Except subset</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="statistical">
         <xs:annotation>
           <xs:documentation xml:lang="en">Statistical</xs:documentation>
@@ -37342,7 +37451,7 @@ See guidance around (not) making local changes to elements [here](canonicalresou
           </xs:element>
           <xs:element name="addresses" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The identified conditions and other health record elements that are intended to be addressed by the goal.</xs:documentation>
+              <xs:documentation xml:lang="en">The identified conditions and other resources that provide the context for why the goal exists.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="note" minOccurs="0" maxOccurs="unbounded" type="Annotation">
@@ -38797,19 +38906,91 @@ See guidance around (not) making local changes to elements [here](canonicalresou
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="DomainResource">
+      <xs:extension base="CanonicalResource">
         <xs:sequence>
+          <xs:element name="url" minOccurs="0" maxOccurs="1" type="uri">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">An absolute URI that is used to identify this Group when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which an authoritative instance of this Group is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the Group is stored on different servers.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
             <xs:annotation>
               <xs:documentation xml:lang="en">Business identifiers assigned to this participant by one of the applications involved.  These identifiers remain constant as the resource is updated and propagates from server to server.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="active" minOccurs="0" maxOccurs="1" type="boolean">
+          <xs:element name="version" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Indicates whether the record for the group is available for use or is merely being retained for historical purposes.</xs:documentation>
+              <xs:documentation xml:lang="en">The identifier that is used to identify this version of the Group when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the Group author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence without additional knowledge.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="type" minOccurs="1" maxOccurs="1" type="GroupType">
+          <xs:choice minOccurs="0" maxOccurs="1" >
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Indicates the mechanism used to compare versions to determine which is more current.</xs:documentation>
+            </xs:annotation>
+            <xs:element name="versionAlgorithmString" type="string"/>
+            <xs:element name="versionAlgorithmCoding" type="Coding"/>
+          </xs:choice>
+          <xs:element name="name" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A label assigned to the group for human identification and communication.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="title" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A short, descriptive, user-friendly title for the Group.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="status" minOccurs="0" maxOccurs="1" type="PublicationStatus">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The current state of this Group.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="experimental" minOccurs="0" maxOccurs="1" type="boolean">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A Boolean value to indicate that this Group is authored for testing purposes (or education/evaluation/marketing) and is not intended for genuine usage.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="date" minOccurs="0" maxOccurs="1" type="dateTime">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The date (and optionally time) when the Group was last significantly changed. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the Group changes.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="publisher" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The name of the organization or individual responsible for the release and ongoing maintenance of the Group.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="contact" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Contact details to assist a user in finding and communicating with the publisher.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="description" minOccurs="0" maxOccurs="1" type="markdown">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Explanation of what the group represents and how it is intended to be used.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="useContext" minOccurs="0" maxOccurs="unbounded" type="UsageContext">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate Groups.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="purpose" minOccurs="0" maxOccurs="1" type="markdown">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Explanation of why this Group is needed and why it has been designed as it has.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A copyright statement relating to the Group and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the Group.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="copyrightLabel" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="type" minOccurs="0" maxOccurs="1" type="GroupType">
             <xs:annotation>
               <xs:documentation xml:lang="en">Identifies the broad classification of the kind of resources the group includes.</xs:documentation>
            </xs:annotation>
@@ -38819,22 +39000,13 @@ See guidance around (not) making local changes to elements [here](canonicalresou
               <xs:documentation xml:lang="en">Basis for membership in the Group:
 
 * 'definitional': The Group.characteristics specified are both necessary and sufficient to determine membership. All entities that meet the criteria are considered to be members of the group, whether referenced by the group or not. If members are present, they are individuals that happen to be known as meeting the Group.characteristics. The list cannot be presumed to be complete.
+* 'conceptual': The Group.characteristics specified are both necessary and sufficient to determine membership. The 'conceptual' Group is a 'definitional' Group in which the Group.type is not bound to FHIR types.
 * 'enumerated': The Group.characteristics are necessary but not sufficient to determine membership. Membership is determined by being listed as one of the Group.member.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="code" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">Provides a specific type of resource the group includes; e.g. &quot;cow&quot;, &quot;syringe&quot;, etc.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="name" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A label assigned to the group for human identification and communication.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="description" minOccurs="0" maxOccurs="1" type="markdown">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Explanation of what the group represents and how it is intended to be used.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="quantity" minOccurs="0" maxOccurs="1" type="unsignedInt">
@@ -38845,6 +39017,16 @@ See guidance around (not) making local changes to elements [here](canonicalresou
           <xs:element name="managingEntity" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">Entity responsible for defining and maintaining Group characteristics and/or registered members.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="combinationMethod" minOccurs="0" maxOccurs="1" type="GroupCharacteristicCombination">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Used to specify how two or more characteristics are combined.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="combinationThreshold" minOccurs="0" maxOccurs="1" type="positiveInt">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Provides the value of &quot;n&quot; when &quot;at-least&quot; or &quot;at-most&quot; codes are used for combinationMethod.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="characteristic" type="Group.Characteristic" minOccurs="0" maxOccurs="unbounded">
@@ -38882,15 +39064,58 @@ See guidance around (not) making local changes to elements [here](canonicalresou
             <xs:element name="valueQuantity" type="Quantity"/>
             <xs:element name="valueRange" type="Range"/>
             <xs:element name="valueReference" type="Reference"/>
+            <xs:element name="valueUri" type="uri"/>
+            <xs:element name="valueExpression" type="Expression"/>
           </xs:choice>
           <xs:element name="exclude" minOccurs="1" maxOccurs="1" type="boolean">
             <xs:annotation>
               <xs:documentation xml:lang="en">If true, indicates the characteristic is one that is NOT held by members of the group.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="description" minOccurs="0" maxOccurs="1" type="markdown">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A short, natural language description of the characteristic that could be used to communicate the criteria to an end-user.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="method" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Method for how the characteristic value was determined.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:choice minOccurs="0" maxOccurs="1" >
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Defines the characteristic (without using type and value) by either a Reference or an Expression.</xs:documentation>
+            </xs:annotation>
+            <xs:element name="determinedByReference" type="Reference"/>
+            <xs:element name="determinedByExpression" type="Expression"/>
+          </xs:choice>
+          <xs:element name="offset" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Defines the reference point for comparison when other than 0.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:choice minOccurs="0" maxOccurs="1" >
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Number of occurrences meeting the characteristic.</xs:documentation>
+            </xs:annotation>
+            <xs:element name="instancesQuantity" type="Quantity"/>
+            <xs:element name="instancesRange" type="Range"/>
+          </xs:choice>
+          <xs:choice minOccurs="0" maxOccurs="1" >
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Length of time in which the characteristic is met.</xs:documentation>
+            </xs:annotation>
+            <xs:element name="durationDuration" type="Duration"/>
+            <xs:element name="durationRange" type="Range"/>
+          </xs:choice>
           <xs:element name="period" minOccurs="0" maxOccurs="1" type="Period">
             <xs:annotation>
               <xs:documentation xml:lang="en">The period over which the characteristic is tested; e.g. the patient had an operation during the month of June.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="timing" minOccurs="0" maxOccurs="unbounded" type="RelativeTime">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Timing in which the characteristic is determined.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -38995,6 +39220,11 @@ See guidance around (not) making local changes to elements [here](canonicalresou
           <xs:documentation xml:lang="en">Definitional</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="conceptual">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Conceptual</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="enumerated">
         <xs:annotation>
           <xs:documentation xml:lang="en">Enumerated</xs:documentation>
@@ -39010,6 +39240,46 @@ See guidance around (not) making local changes to elements [here](canonicalresou
     <xs:complexContent>
       <xs:extension base="Element">
         <xs:attribute name="value" type="GroupMembershipBasisEnum" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="GroupCharacteristicCombinationEnum">
+    <xs:restriction base="code-primitive">
+      <xs:enumeration value="all-of">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">All of</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="any-of">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Any of</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="at-least">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">At least</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="at-most">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">At most</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="except-subset">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Except subset</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="GroupCharacteristicCombination">
+    <xs:annotation>
+      <xs:documentation xml:lang="en"></xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="GroupCharacteristicCombinationEnum" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>

@@ -15,7 +15,7 @@ extension:
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
     valueCode: fm
 canonical: http://hl7.org/fhir/us/davinci-crd
-version: 1.1.0
+version: 2.0.0
 name: CoverageRequirementsDiscovery
 title: Da Vinci - Coverage Requirements Discovery
 status: active
@@ -37,7 +37,8 @@ parameters:
   apply-contact: true
   globals-in-artifacts: true
 copyrightYear: 2019+
-releaseLabel: STU 1.1
+releaseLabel: STU 2.0
+
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 # │  To use a provided input/includes/menu.xml file, delete the "menu" property below.             │
