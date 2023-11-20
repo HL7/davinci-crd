@@ -15,7 +15,7 @@ extension:
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
     valueCode: fm
 canonical: http://hl7.org/fhir/us/davinci-crd
-version: 2.0.0
+version: 2.1.0-cibuild
 name: CoverageRequirementsDiscovery
 title: Da Vinci - Coverage Requirements Discovery
 status: active
@@ -37,7 +37,7 @@ parameters:
   apply-contact: true
   globals-in-artifacts: true
 copyrightYear: 2019+
-releaseLabel: STU 2.0
+releaseLabel: ci-build
 
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
