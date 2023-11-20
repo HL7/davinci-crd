@@ -71,8 +71,8 @@ For example, this CDS Hooks [Card](https://cds-hooks.hl7.org/2.0/#cds-service-re
     "url": "https://cms.gov",
     "topic": {
       "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-      "code": "coverage",
-      "display": "Coverage"
+      "code": "guideline",
+      "display": "Guideline"
     }
   },
   "links": [
