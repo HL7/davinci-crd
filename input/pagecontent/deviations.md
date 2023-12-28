@@ -56,53 +56,10 @@ An extension called `davinci-crd.configuration-options` will define a configurat
 
 CRD servers **SHALL**, at minimum, offer configuration options for each type of card they support (with a code corresponding to the <a href="ValueSet-cardType.html">CRD Card Types</a> ValueSet and a type of ‘boolean’, where setting the flag to false will result in the server not returning any cards of the specified type). This allows CRD clients to control what types of cards they wish to receive at all, or to receive in particular workflow contexts or for certain users.  This configuration mechanism also allows EHRs to minimize information overload and avoid presentation of duplicative or low-utility CRD alerts.
 
-For example, a [CDS Service Response](https://cds-hooks.hl7.org/2.0/#response) from a CRD Server might look like this:
+For example, a [CDS Discovery Response](https://cds-hooks.hl7.org/2.0/#response) from a CRD Server might look like this:
 
-{% raw %}
-```
-{
-  "services": [{
-    "hook": "order-select",
-    "title": "Payer XYZ Order Selection Requirements",
-    "description": "Indicates coverage requirements associated with draft orders, including expectations for prior authorization, recommended therapy alternatives, etc.",
-    "id": "order-select-crd",
-    "prefetch": {
-      "patient": "Patient/{{context.patientId}}",
-      "medications": "MedicationOrder?patient={{context.patientId}}"
-    },
-    "extension": {
-      "davinci-crd.configuration-options": [
-        {
-          "code": "coverage-info",
-          "type": "boolean",
-          "name": "Coverage Information",
-          "description": "Information related to the patient's coverage, including whether a service is covered, requires prior authorization, is approved without seeking prior authorization, and/or requires additional documentation or data collection",
-          "default": true
-        }, {
-          "code": "therapy-alternatives-opt",
-          "type": "boolean",
-          "name": "Optional Therapy Alternatives",
-          "description": "Are there alternative therapies that have better coverage and/or are lower-cost for the patient",
-          "default": true
-        }, {
-          "code": "therapy-alternatives-req",
-          "type": "boolean",
-          "name": "Required Therapy Alternatives",
-          "description": "Are there alternative therapies that must be tried first prior to coverage being available for the proposed therapy",
-          "default": true
-        }, {
-          "code": "max-cards",
-          "type": "integer",
-          "name": "Maximum cards",
-          "description": "Indicates the maximum number of cards to be returned from the service.  The services will prioritize cards such as highest priority ones are delivered",
-          "default": 10
-        }
-      ]
-    }
-  }]
-}
-```
-{% endraw %}
+{% include Binary-CRDServices-config-json-html.xhtml %}
+
 
 Notes:
 
@@ -127,20 +84,7 @@ An extension called `davinci-crd.configuration` will define a second configurati
 
 For example, the hook [HTTP Request](https://cds-hooks.hl7.org/2.0/#http-request_1) would look like this:
 
-```
-{
-  ...
-  "hook": "order-select",
-  ...
-  "extension": {
-    "davinci-crd.configuration": {
-      "auth-req": true,
-      "alt-drug": false,
-      "max-cards": 5
-    }
-  }
-}
-```
+{% include Binary-CRDServiceRequest-config-json-html.xhtml %}
 
 Notes:
 
@@ -166,15 +110,10 @@ Specifically, where a hook defines a context element that consists of a resource
 
 Note: Recognizing these tokens doesn't mean the client must support prefetch or the requested prefetch query, only that it recognizes the token, doesn't treat it as an error and - if it supports the query - substitutes the token correctly.
 
-For example, a prefetch for `order-select` might look like this:
+For example, a prefetch for `order-sign` might look like this:
 
-{% raw %}
-```
-"prefetch": {
-  "ins-sr": "ServiceRequest?_id={{context.draftOrders.ServiceRequest.id}}&_include=ServiceRequest:performer"
-}
-```
-{% endraw %}
+{% include Binary-CRDServices-prefetch-json-html.xhtml %}
+
 
 This might result in an executed query that looks like this: `ServiceRequest?_id=2347,10948,5881&_include=ServiceRequest:performer`
 
@@ -202,68 +141,8 @@ The `suggestion.action` object will use an extension to carry the if-none-exist 
 
 For example, this [CDS Hook Suggestion](https://cds-hooks.hl7.org/2.0/#suggestion) contains two [Actions](https://cds-hooks.hl7.org/2.0/#action) - one referencing an HL7 [Questionnaire]({{site.data.fhir.path}}questionnaire.html) and the other the [Task]({{site.data.fhir.path}}task.html) to complete the Questionnaire.  The Questionnaire will only be created if it didn't already exist:
 
-```
-"suggestions": [{
-  "label": "Add 'completion of the XYZ form' to your task list (possibly for reassignment)",
-  "actions": [{
-    "type": "create",
-    "description": "Add version 2 of the XYZ form to the clinical system's repository (if it doesn't already exist)",
-    "resource": {
-      "resourceType": "Questionnaire",
-      "url": "http://example.org/Questionnaire/XYZ",
-      "version": "2",
-      ...
-    },
-    "extension": {
-      "davinci-crd.if-none-exist": "url=http://example.org/Questionnaire/XYZ&version=2"
-    }
-  }, {
-    "type": "create",
-    "description": "Add 'Complete XYZ form' to the task list",
-    "resource": {
-      "resourceType": "Task",
-      "basedOn": "MedicationRequest/5",
-      "status": "ready",
-      "intent": "order",
-      "code": {
-        "coding": [{
-          "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-          "code": "complete-questionnaire"
-        }]
-      },
-      "description": "Complete XYZ form for inclusion in prior authorization",
-      "for": {
-        "reference": "Patient/some-patient-id"
-      },
-      "authoredOn": "2018-08-09",
-      "reasonCode": {
-        "coding": [{
-          "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-          "code": "reason-prior-auth",
-          "display": "Needed for prior authorization"
-        }]
-      },
-      "input": [{
-        "type": {
-          "text": "questionnaire"
-        },
-        "valueCanonical": "http://example.org/Questionnaire/XYZ|2"
-      },{
-        "type": {
-          "text": "afterCompletion"
-        },
-        "valueCodeableConcept": {
-          "coding": [{
-            "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-            "code": "prior-auth-include",
-            "display": "Include in prior authorization"
-          }]
-        }
-      }]
-    }
-  }]
-}]
-```
+{% include Binary-CRDServiceResponse2-conditionalCreate-json-html.xhtml %}
+
 
 #### Linkage between created resources
 The linkage between resources by identifier in different Actions within a single Suggestion doesn't require any extension to CDS Hooks, but it does require additional guidance.  For the purposes of this implementation guide, the inclusion of the `id` element in 'created' resources and references in created and updated resources within multi-action suggestions **SHALL** be handled as per FHIR's [transaction processing rules]({{site.data.fhir.path}}http.html#trules). I.e. Treating each requested action as being an entry in a FHIR transaction bundle where the base URL is the base URL of the CRD Client's server.  POST corresponds to an `action.type` of 'create' and PUT corresponds to an action.type of 'update'.  Specifically, this means that if a FHIR Reference points to the resource type and identifier of a resource of another 'create' Action in the same Suggestion, then the reference to that resource **SHALL** be updated by the server to point to the identifier assigned by the client when performing the 'create'.  CRD Clients **SHALL** perform 'creates' in an order that ensures that referenced resources are created prior to referencing resources.
@@ -317,32 +196,7 @@ This implementation guide defines a standard extension - `davinci-associated-res
 
 If a hook service is invoked on a collection of resources, all cards returned that are specific to only a subset of the resources passed as context **SHALL** disambiguate in the `detail` element which resources they're associated with in a human-friendly way.  Typically, this means using test name, drug name, or some other mechanism rather than a bare identifier as identifiers might not be visible to the end user for resources that are not yet fully 'created'.  As well, cards **SHOULD** include this new extension to allow computable linkage.
 
-{% raw %}
-```
-{
-  "extension": {
-    "davinci-associated-resource": [
-      "ServiceRequest/1",
-      "ServiceRequest/7",
-      "ServiceRequest/12"
-    ]
-  },
-  "summary": "Prior authorization details",
-  "indicator": "warning",
-  "detail": "Genomics tests A, B and C are only covered with prior authorization.",
-  "source": {
-    "label": "You're Covered Insurance",
-    "url": "https://example.com",
-    "icon": "https://example.com/img/icon-100px.png",
-    "topic": {
-      "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-      "code": "auth-req",
-      "display": "Prior Authorization Required?"
-    }
-  }
-}
-```
-{% endraw %}
+{% include Binary-CRDServiceResponse2-associated-json-html.xhtml %}
 
 
 ### Controlling hook invocation

@@ -150,14 +150,7 @@ CRD client implementations **SHOULD NOT** expect standardized prefetch key names
 
 In most cases, payers will require information about a patient’s coverage. In order to reduce the time CRD services spend on member matching, CRD clients **SHOULD** limit the coverages provided to just those relevant to the CRD service. How this happens is up to the CRD client.  Coverage prefetch will look like this:
 
-{% raw %}
-```
-"prefetch": {
-  "coverage": "Coverage?patient={{context.patient}}&amp;status=active",
-  ...
-},
-{% endraw %}
-```
+{% include Binary-CRDServices-prefetchCoverage-json-html.xhtml %}
 
 Other information will need to be retrieved using queries that are more specific to the type of hook being invoked - and the resources passed with it:
 
@@ -264,11 +257,7 @@ The following two examples show a batch query that could retrieve all CRD-releva
 **Query Batch Request**<br/>
 This query presumes that an order-sign hook has been invoked and the following information has been passed in as context:
 
-```
-"userId": "PractitionerRole/ABC",
-"patientId": "123",
-"encounterId": "987"
-```
+{% include Binary-CRDServiceRequest-context-json-html.xhtml %}
 
 As well, the `draftOrders` Bundle from the context includes MedicationRequests that reference 2 formulary medications (MED1, MED2), to be fulfilled by one pharmacy Organization (456) and are ordered by the same PractitionerRole with id 'ABC'.  Most importantly, they are all tied to the same Coverage record with id 'DEF'.
 
@@ -276,166 +265,12 @@ Note: This query also presumes that all this information would be relevant to th
 
 The bundle uses a mixture of 'read' and 'search' operations to retrieve the relevant resources.
 
-```
-{
-  "resourceType": "Bundle",
-  "type": "batch",
-  "entry": [{
-    "request": {
-      "method": "GET",
-      "url": "PractitionerRole?_id=ABC&_include=PractitionerRole:organization&_include=PractitionerRole:practitioner"
-    }
-  },{
-    "request": {
-      "method": "GET",
-      "url": "Patient/123"
-    }
-  },{
-    "request": {
-      "method": "GET",
-      "url": "Encounter/987"
-    }
-  },{
-    "request": {
-      "method": "GET",
-      "url": "Medication?_id=MED1,MED2"
-    }
-  },{
-    "request": {
-      "method": "GET",
-      "url": "Organization/456"
-    }
-  },{
-    "request": {
-      "method": "GET",
-      "url": "Coverage/DEF"
-    }
-  }]
-}
-```
+{% include Bundle-search-request-json-html.xhtml %}
 
 **Query Batch Response**<br/>
 The response is a batch-response Bundle, with each entry containing either a single resource (in response to a read) or a search response Bundle with the results of the previous search.  Each entry in the response Bundle corresponds to the GET entry in the request Bundle.
 
-```
-{
-  "resourceType": "Bundle",
-  "type": "batch-response",
-  "entry": [{
-    "resource": {
-      "resourceType": "Bundle",
-      "id": "ee0d8bb2-f7a1-4b53-bfff-902dd4513b07",
-      "meta": {
-        "lastUpdated": "2019-03-15T15:38:13.011Z"
-      },
-      "type": "searchset",
-      "total": 1,
-      "link": [{
-        "relation": "self",
-        "url": "http://someemr.org/fhir/r4/PractitionerRole??_id=123&_include=PractitionerRole:organization&_include=PractitionerRole:practitioner&_sort=_id"
-      }],
-      "entry": [{
-        "resource": {
-          "resourceType": "PractitionerRole",
-          "id": "123",
-          "meta": {
-            "lastUpdated": "2016-02-29T23:52:32.387Z"
-          },
-          "practitioner": "Practitioner/DEF",
-          "organization": "Organization/GHI",
-          ...
-        },
-        "search": {
-          "mode": "match"
-        }
-      },{
-        "resource": {
-          "resourceType": "Practitioner",
-          "id": "DEF",
-          ...
-        },
-        "search": {
-          "mode": "include"
-        }
-      },{
-        "resource": {
-          "resourceType": "Organization",
-          "id": "GHI",
-          ...
-        },
-        "search": {
-          "mode": "include"
-        }
-      }]
-    },
-    "response": {
-      "status": "200",
-      "lastModified": "2019-03-15T15:38:13.011Z"
-    }
-  },{
-    "resource": {
-      "resourceType": "Patient",
-      "id": "123",
-      ...
-    },
-    "response": {
-      "status": "200",
-      "lastModified": "2019-03-15T15:38:13.028Z"
-    }
-  },{
-    "resource": {
-      "resourceType": "Encounter",
-      "id": "987",
-      ...
-    },
-    "response": {
-      "status": "200",
-      "lastModified": "2019-03-15T15:38:13.028Z"
-    }
-  },{
-    "resource": {
-      "resourceType": "Bundle",
-      "id": "dc616366-2f3f-4cca-b02c-0f80981770db",
-      "meta": {
-        "lastUpdated": "2019-03-15T15:38:13.037Z"
-      },
-      "type": "searchset",
-      "total": 2,
-      "link": [{
-        "relation": "self",
-        "url": "http://someemr.org/fhir/r4/Medication?_id=MED1,MED2&_sort=_id"
-      }],
-      "entry": [{
-        "resource": {
-          "resourceType": "Medication",
-          "id": "MED1",
-          ...
-        },
-        "search": {
-          "mode": "match"
-        }
-      },{
-        "resource": {
-          "resourceType": "Medication",
-          "id": "MED2",
-          ...
-        },
-        "search": {
-          "mode": "match"
-        }
-      }]
-    },
-    "response": {
-      "status": "200",
-      "lastModified": "2019-03-15T15:38:13.037Z"
-    }
-  },{
-    .
-    .
-    .
-  }]
-}
-```
+{% include Bundle-search-response-trimmed-json-html.xhtml %}
 
 
 #### Query Notes

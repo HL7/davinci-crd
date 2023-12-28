@@ -4,7 +4,7 @@ In addition to the [guidance provided in the CDS Hooks specification](https://cd
 
 *  The `Card.indicator` **SHOULD** be populated from the perspective of the clinical decision maker, not the payer.  While failure to procure a prior authorization might be 'critical' from the perspective of payment, it would be - at best - a 'warning' from the perspective of clinical care.  'critical' must be reserved for reporting life or death or serious clinical outcomes.  Issues where the proposed course of action will negatively affect the ability of the payer or patient to be reimbursed would generally be a 'warning'.  Most Coverage Requirements **SHOULD** be marked as 'info'.
 
-*  The `Card.source` **SHOULD** be populated with an insurer name that the user and patient would recognize (i.e. the responsible insurer on the patient's insurance card), including in situations where coverage recommendations are being returned by a benefits manager or intermediary operating the CRD Server on behalf of the payer.  If an insurer is providing recommendations from another authority (e.g. a clinical society), the society's name and logo might be displayed, though usually only with the permission of that organization.
+*  The `Card.source.label` **SHOULD** be populated with an insurer name that the user and patient would recognize (i.e. the responsible insurer on the patient's insurance card), including in situations where coverage recommendations are being returned by a benefits manager or intermediary operating the CRD Server on behalf of the payer.  If an insurer is providing recommendations from another authority (e.g. a clinical society), the society's name and logo might be displayed, though usually only with the permission of that organization.
 
 *  `Card.source.topic` **SHALL** be populated, and has an [extensible](http://www.hl7.org/fhir/terminologies.html#extensible) binding to the ValueSet <a href="ValueSet-cardType.html">CRD Card Types.</a> The rationale is to allow CRD clients to potentially filter or track the usage of different types of cards.
 
@@ -60,35 +60,7 @@ When reasonable, an "External Reference" card **SHOULD** contain a summary of th
 
 For example, this CDS Hooks [Card](https://cds-hooks.hl7.org/2.0/#cds-service-response) contains two [Links](https://cds-hooks.hl7.org/2.0/#link) - a standard and a printer-friendly version.
 
-{% raw %}
-```
-{
-  "summary": "CMS Home Oxygen Therapy Coverage Requirements",
-  "indicator": "info",
-  "detail": "Learn about covered oxygen items and equipment for home use; coverage requirements; criteria you must meet to furnish oxygen items and equipment for home use; Advance Beneficiary Notice of Noncoverage; oxygen equipment, items, and services that are not covered; and payments for oxygen items and equipment and billing and coding guidelines.",
-  "source": {
-    "label": "Centers for Medicare & Medicaid Services",
-    "url": "https://cms.gov",
-    "topic": {
-      "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-      "code": "guideline",
-      "display": "Guideline"
-    }
-  },
-  "links": [
-    {
-      "label": "Home Oxygen Therapy Guidelines",
-      "url": "https://www.cms.gov/Outreach-and-Education/Medicare-Learning-Network-MLN/MLNProducts/Downloads/Home-Oxygen-Therapy-ICN908804.pdf",
-      "type": "absolute"
-    }, {
-      "label": "Home Oxygen Therapy Guidelines (printer-friendly)",
-      "url": "https://www.cms.gov/Outreach-and-Education/Medicare-Learning-Network-MLN/MLNProducts/Downloads/Home-Oxygen-Therapy-Text-Only.pdf",
-      "type": "absolute"
-    }
-  ]
-}
-```
-{% endraw %}
+{% include Binary-CRDServiceResponse-links-json-html.xhtml %}
 
 As much as technically possible, links provided **SHOULD** be 'deep' links that take the user to the specific place in the documentation relevant to the current hook context to minimize provider reading and navigation time.
 
@@ -177,140 +149,8 @@ When using this response type, the proposed order or appointment being updated *
 
 For example, this card indicates that a prior authorization has been satisfied for a planned procedure:
 
-```
-{
-  "systemActions": [{
-    "type": "update",
-    "resource": {
-      "resourceType": "ServiceRequest",
-      "id": "idfromcontext",
-      "extension": [
-        {
-          "url": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-coverage-information"
-          "extension": [
-            {
-              "url": "coverage",
-              "valueReference": {
-                "reference": "Coverage/example"
-              }
-            },
-            {
-              "url": "covered",
-              "valueCode": "covered"
-            },
-            {
-              "url": "pa-needed",
-              "valueCode": "satisfied"
-            },
-            {
-              "url": "billingCode",
-              "valueCoding": {
-                "system": "http://www.ama-assn.org/go/cpt",
-                "code": "77065"
-              }
-            },
-            {
-              "url": "billingCode",
-              "valueCoding": {
-                "system": "http://www.ama-assn.org/go/cpt",
-                "code": "77066"
-              }
-            },
-            {
-              "url": "billingCode",
-              "valueCoding": {
-                "system": "http://www.ama-assn.org/go/cpt",
-                "code": "77067"
-              }
-            },
-            {
-              "url": "reason",
-              "valueCodeableConcept": {
-                "text": "In-network required unless exigent circumstances"
-              }
-            },
-            {
-              "url": "detail",
-              "extension": [
-                {
-                  "url": "code",
-                  "valueCodeableConcept": {
-                    "coding": [{
-                      "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-                      "code": "auth-out-network-only"
-                    }]
-                  }
-                },
-                {
-                  "url": "value",
-                  "valueBoolean": true
-                },
-                {
-                  "url": "qualification",
-                  "valueString": "Out-of-network prior auth does not apply if delivery occurs at a service site designated as 'remote'"
-                }
-              ]
-            },
-            {
-              "url": "dependency",
-              "valueReference": {
-                "reference": "ServiceRequest/example2"
-              }
-            },
-            {
-              "url": "date",
-              "valueDate": "2019-02-15"
-            },
-            {
-              "url": "coverage-assertion-id",
-              "valueString": "12345ABC"
-            },
-            {
-              "url": "satisfied-pa-id",
-              "valueString": "Q8U119"
-            },
-            {
-              "url": "contact",
-              "valueContactPoint": {
-                "system": "url",
-                "value": "http://some-payer/xyz-sub-org/get-help-here.html"
-              }
-            }
-          ]
-        } 
-      ],
-      "status": "draft",
-      "intent": "original-order",
-      "code": {
-        "coding": [{
-          "system": "http://snomed.info/sct",
-          "code": "726551006",
-          "display": "Contrast enhanced spectral mammography (Procedure)"
-        }]
-      },
-      "subject": {
-        "reference": "Patient/123",
-        "display": "Jane Smith"
-      },
-      "encounter": {
-        "reference": "Encounter/ABC"
-      },
-      "authoredOn": "2019-02-15",
-      "requester": {
-        "reference": "PractitionerRole/987",
-        "display": "Dr. Jones"
-      },
-      "note": [
-        {
-          "authorString": "XYZ Insurance",
-          "time": "2019-02-15T15:07:18-05:00",
-          "text": "Prior authorization required for Contrast enhanced spectral mammography under coverage ABC.  (Determination 1234ABC made Feb 15, 2019)"
-        }
-      ]
-    }
-  }]
-}
-```
+{% include Binary-CRDServiceResponse-systemaction-json-html.xhtml %}
+
 CRD clients and services **SHALL** support the new CDS Hooks system action functionality to cause annotations to automatically be stored on the relevant request, appointment, etc. without any user intervention. In this case, the discrete information propagated into the order extension **SHALL** be available to the user for viewing.  However, this might be managed with icons, flyovers or alternate mechanisms than traditional CDS Hook card rendering.  The key consideration is that the user is aware that the information is available and can easily get to it.  Client implementations will be responsible for ensuring that the only changes made to the CRD client record are to add the annotations contemplated here.  CRD clients **MAY** be configured to not execute system actions under some circumstances - e.g. if the order has been cancelled/abandoned.
 
 The information added to the order here is often going to be relevant/important not only to the creator of the order, but also to its eventual performer.  This guide does not define how information around coverage is conveyed from the ordering system to the performing system.  However, the [Post-acute Orders implementation guide](http://hl7.org/fhir/us/dme-orders) does provide a mechanism for electronic sharing of orders and could be used to convey the additional notes/extensions envisioned here as well.
@@ -368,62 +208,7 @@ When using this response type, the proposed orders (and any associated resources
 
 For example, this card proposes replacing the draft prescription for a brand-name drug (shown only as the 'resourceType' and 'id' from the `draftOrders` entry) and instead creating an equivalent prescription with a generic medication.
 
-```
-"suggestions": [{
-  "label": "Change to generic (name brand not covered)",
-  "actions": [{
-    "type": "delete",
-    "description": "Remove name-brand prescription",
-    "resource": {
-      "resourceType": "MedicationRequest",
-      "id": "draftrx1"
-    }
-  }, {
-    "type": "create",
-    "description": "Add equivalent generic prescription",
-    "resource": {
-      "resourceType": "MedicationRequest",
-      "status": "draft",
-      "intent": "original-order",
-      "medicationCodeableConcept": {
-        "coding": [{
-          "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-          "code": "616447",
-          "display": "Cellcept 250 MG Oral Capsule"
-        }]
-      },
-      "subject": {
-        "reference": "Patient/123",
-        "display": "Jane Smith"
-      },
-      "encounter": {
-        "reference": "Encounter/ABC"
-      },
-      "authoredOn": "2019-02-15",
-      "requester": {
-        "reference": "PractitionerRole/987",
-        "display": "Dr. Jones"
-      },
-      "dosageInstruction": [{
-        "text": "6 tablets every 12 hours.",
-        "timing": {
-          "repeat": {
-            "frequency": 1,
-            "period": 12,
-            "periodUnit": "h"
-          }
-        },
-        "doseAndRate": [{
-          "doseQuantity": {
-            "value": 6,
-            "unit": "tablet"
-          }
-        }]
-      }]
-    }
-  }]
-}]
-```
+{% include Binary-CRDServiceResponse2-alternate-json-html.xhtml %}
 
 
 ### Identify additional orders as companions/prerequisites for current order
@@ -474,57 +259,7 @@ When using this response type, the proposed orders (and any associated resources
 
 This example proposes adding a monthly test to check liver function:
 
-```
-"suggestions": [{
-  "label": "Add monthly AST test for 1st 3 months",
-  "actions": [{
-    "type": "create",
-    "description": "Add order for AST test",
-    "resource": {
-      "resourceType": "ServiceRequest",
-      "status": "draft",
-      "intent": "original-order",
-      "category": [{
-        "coding": [{
-          "system": "http://snomed.info/sct",
-          "code": "108252007",
-          "display": "Laboratory procedure"
-        }]
-      }],
-      "code": {
-        "coding": [{
-          "system": "http://www.ama-assn.org/go/cpt",
-          "code": "80076",
-          "display": "Hepatic function panel"
-        }]
-      },
-      "subject": {
-        "reference": "Patient/123",
-        "display": "Jane Smith"
-      },
-      "encounter": {
-        "reference": "Encounter/ABC"
-      },
-      "occurrence": {
-        "boundsDuration": {
-          "value": 3,
-          "unit": "months",
-          "code": "mo",
-          "system": "http://unitsofmeasure.org"
-        },
-        "frequency": 1,
-        "period": 1,
-        "periodUnit": "mo"
-      },
-      "authoredOn": "2019-02-15",
-      "requester": {
-        "reference": "PractitionerRole/987",
-        "display": "Dr. Jones"
-      }
-    }
-  }]
-}]
-```
+{% include Binary-CRDServiceResponse2-supplement-json-html.xhtml %}
 
 ### Request form completion
 This response type can be used to present a `Card` that indicates that there are forms that need to be completed.  The indicated forms might contain documentation that must be submitted for prior authorization, attachments for claims submission, documentation that must be completed and retained as proof that clinical need protocols have been followed, or that must otherwise be retained and available for future audits.  While forms can also be expressed as static or active PDFs referenced by [External References](#external-reference), or within a [SMART Application](#launch-smart-application), this response type provides the form definition as a FHIR Questionnaire and creates a Task within the CRD client allowing the completion of the form to be appropriately scheduled and/or delegated.  Alternatively, the Practitioner could choose to execute the task and fill out the form immediately if that makes more sense from a clinical workflow perspective.
@@ -558,56 +293,7 @@ Note:
 
 The following is an example CDS Hook [Suggestion](https://cds-hooks.hl7.org/2.0/#suggestion), where the specified questionnaire is either expected to be available within the CRD Client or available for retrieval through its canonical URL.  As such, the [Action](https://cds-hooks.hl7.org/2.0/#action) only contains the FHIR [Task]({{site.data.fhir.path}}task.html) resource.  An example showing inclusion of both the Task and the referenced Questionnaire can be found [above](deviations.html#if-none-exist).
 
-```
-"suggestions": [{
-  "label": "Add 'completion of the ABC form' to your task list (possibly for reassignment)",
-  "actions": [{
-    "type": "create",
-    "description": "Add 'Complete ABC form' to the task list",
-    "resource": {
-      "resourceType": "Task",
-      "basedOn": "Appointment/27",
-      "status": "ready",
-      "intent": "order",
-      "code": {
-        "coding": [{
-          "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-          "code": "complete-questionnaire"
-        }]
-      },
-      "description": "Complete XYZ form for inclusion in prior authorization",
-      "for": {
-        "reference": "Patient/some-patient-id"
-      },
-      "authoredOn": "2018-08-09",
-      "reasonCode": {
-        "coding": [{
-          "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-          "code": "prior-auth-reason",
-          "display": "Needed for prior authorization"
-        }]
-      },
-      "input": [{
-        "type": {
-          "text": "questionnaire"
-        },
-        "valueCanonical": "http://example.org/Questionnaire/XYZ|2"
-      },{
-        "type": {
-          "text": "afterCompletion"
-        },
-        "valueCodeableConcept": {
-          "coding": [{
-            "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-            "code": "prior-auth-include",
-            "display": "Include in prior authorization"
-          }]
-        }
-      }]
-    }
-  }]
-}]
-```
+{% include Binary-CRDServiceResponse2-form-json-html.xhtml %}
 
 
 ### Create or update coverage information
@@ -619,41 +305,10 @@ NOTE: This functionality is somewhat redundant with the capabilities of the X12 
 
 This response will contain a single suggestion.  The primary action will either be a suggestion to "update" an existing Coverage instance (if the CRD Client already has one) or to "create" a new Coverage instance if the CRD Server is aware of Coverage that the CRD Client is not.  In addition, the suggestion could include updates on all relevant Request resources to add or remove links to Coverage instances, reflecting which Coverages are relevant to which types of requests.
 
-For example, this CDS Hook [Card](https://cds-hooks.hl7.org/2.0/#cds-service-response) includes a single [Suggestion](https://cds-hooks.hl7.org/2.0/#suggestion) with two [Actions](https://cds-hooks.hl7.org/2.0/#action) - one is to update the [Coverage]({{site.data.fhir.path}}coverage.html) and the second is to update the draft order [MedicationRequest]({{site.data.fhir.path}}medicationrequest.html) to reference the existing Coverage.
+For example, this CDS Hook [Card](https://cds-hooks.hl7.org/2.0/#cds-service-response) includes a single [Suggestion](https://cds-hooks.hl7.org/2.0/#suggestion) with an [Action](https://cds-hooks.hl7.org/2.0/#action) to update the [Coverage]({{site.data.fhir.path}}coverage.html).
 
-```
-{
-  "summary": "Patient coverage information is incomplete",
-  "indicator": "info",
-  "source": {
-    "label": "Some Payer",
-    "url": "https://example.com",
-    "icon": "https://example.com/img/icon-100px.png",
-    "topic": {
-      "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-      "code": "coverage",
-      "display": "Coverage"
-    }
-  },
-  "suggestions": [{
-    "label": "Update coverage information to be current",
-    "uuid": "1207df9d-9ff6-4042-985b-b8dec21038c2",
-    "actions": [{
-      "type": "update",
-      "description": "Update current coverage record",
-      "resource": {
-        "resourceType": "Coverage",
-        "id": "1234",
-        "subscriberId": "192837",
-        "class": {
-          "type": "group",
-          "value": "A1"
-        }
-      }
-    }]
-  }]
-}
-```
+{% include Binary-CRDServiceResponse2-coverage-json-html.xhtml %}
+
 
 ### Launch SMART application
 SMART apps allow more sophisticated interaction between payers and providers.  They provide full control over user interface, workflow, etc.  With permission, they can also access patient clinical data to help guide the interactive experience and minimize data entry.  Apps can provide a wide variety of functions, including eligibility checking, guiding users through form entry, providing education, etc.
@@ -666,28 +321,4 @@ NOTE: This mechanism is no longer to be used for launching [Documentation, Templ
 
 For example, this [Card](https://cds-hooks.hl7.org/2.0/#cds-service-response) contains a SMART App [Link](https://cds-hooks.hl7.org/2.0/#link) to perform an opioid assessment:
 
-```
-{
-  "summary": "Launch opioid XYZ-assessment",
-  "indicator": "info",
-  "detail": "This is an example card.",
-  "source": {
-    "label": "Some Payer",
-    "url": "https://example.com",
-    "icon": "https://example.com/img/icon-100px.png",
-    "topic": {
-      "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-      "code": "coverage",
-      "display": "Coverage"
-    }
-  },
-  "links": [{
-    "label": "Opioid XYZ-assessment",
-    "url": "https://example.org/opioid-assessment",
-    "type": "smart",
-    "appContext": "{
-        ...
-    }"
-  }]
-}
-```
+{% include Binary-CRDServiceResponse2-smart-json-html.xhtml %}
