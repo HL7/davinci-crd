@@ -11,6 +11,7 @@ Description: "This profile specifies constraints on the US Core Location profile
 * ^contact.telecom.system = #url
 * ^contact.telecom.value = "http://www.hl7.org/Special/committees/fm"
 * ^jurisdiction = urn:iso:std:iso:3166#US
+* type from CMSMappableLocationCodes (extensible)
 * address 1.. MS
 * address only Address
   * type MS

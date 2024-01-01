@@ -1,5 +1,8 @@
 This page describes the primary releases of the specification and summarizes the content for each:
 
+### Release 2.0.1
+Corrected the embedded JSON examples to be technically correct and in line with other rules in the specification
+
 ### Release 2.0.0
 A number of additional changes and enhancements.  Key differences are:
 * Renamed the 'Annotate' card to [Coverage Information](cards.html#coverage-information) and made it a system action rather than a card

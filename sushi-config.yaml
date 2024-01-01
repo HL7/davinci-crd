@@ -15,7 +15,7 @@ extension:
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
     valueCode: fm
 canonical: http://hl7.org/fhir/us/davinci-crd
-version: 2.1.0-cibuild
+version: 2.0.1
 name: CoverageRequirementsDiscovery
 title: Da Vinci - Coverage Requirements Discovery
 status: active
@@ -39,7 +39,7 @@ parameters:
 #  path-binary: input/hooks-files
     
 copyrightYear: 2019+
-releaseLabel: CI-build
+releaseLabel: STU 2
 
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
@@ -72,12 +72,6 @@ dependencies:
     version: 0.11.0
     reason: |
       Defines some of the US Core value set bound to in this IG
-  hl7.fhir.uv.tools:
-    id: tools
-    uri: 'http://hl7.org/fhir/tools/ImplementationGuide/hl7.fhir.uv.tools'
-    version: current
-    reason: |
-      Defines CDS Hooks structures leveraged in the validation of this IG
 pages:
   index.md:
     title: CRD IG Home Page
@@ -138,205 +132,3 @@ groups:
 #      - CDSHookSuggestionActionExtensionIfNoneExist
 #      - CDSHookCardExtensionAssociatedResource
 #      - CDSHookHookExtensionConfig
-resources:
-  Binary/CRDServices:
-    name: "Example CRD Services Response"
-    description: "An example of a CRD services response"
-    extension:
-      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format
-        valueCode: application/json
-      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-logical
-        valueCanonical: http://hl7.org/fhir/tools/StructureDefinition/CDSHooksServices
-      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-fragment
-        extension:
-          - url: id
-            valueId: config
-          - url: ellipseExclude
-            extension:
-              - url: exclude
-                valueString: "services.where(hook='order-sign')"
-          - url: ellipseExclude
-            extension:
-              - url: base
-                valueString: "services.prefetch"
-              - url: exclude
-                valueString: "$this.where(key='patient' or key='encounter')"
-          - url: ellipseExclude
-            extension:
-              - url: base
-                valueString: "services.extension.`davinci-crd.configuration-options`"
-              - url: exclude
-                valueString: "$this.where(code='coverage-info' or code='max-cards')"
-      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-fragment
-        extension:
-          - url: id
-            valueId: prefetch
-          - url: base
-            valueString: services.where(hook='appointment-book')
-          - url: ellipseExclude
-            extension:
-              - url: exclude
-                valueString: "prefetch"
-
-      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-fragment
-        extension:
-          - url: id
-            valueId: prefetchCoverage
-          - url: base
-            valueString: services.where(hook='appointment-book')
-          - url: ellipseExclude
-            extension:
-              - url: exclude
-                valueString: "prefetch"
-          - url: ellipseExclude
-            extension:
-              - url: base
-                valueString: "prefetch"
-              - url: exclude
-                valueString: "$this.where(key='coverage')"
-  Binary/CRDServiceRequest:
-    name: "Example CRD Service Requestion with MedicationRequests"
-    description: "An example of a CRD request for order-sign with MedicationRequests"
-    extension:
-      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format
-        valueCode: application/json
-      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-logical
-        valueCanonical: http://hl7.org/fhir/tools/StructureDefinition/CDSHooksRequest
-      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-fragment
-        extension:
-          - url: id
-            valueId: config
-          - url: ellipseExclude
-            extension:
-              - url: exclude
-                valueString: "hook | extension"
-      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-fragment
-        extension:
-          - url: id
-            valueId: context
-          - url: base
-            valueString: context
-  Binary/CRDServiceRequest2:
-    name: "Example CRD Service Request with ServiceRequests"
-    description: "An example of a CRD request for order-sign with ServiceRequests"
-    extension:
-      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format
-        valueCode: application/json
-      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-logical
-        valueCanonical: http://hl7.org/fhir/tools/StructureDefinition/CDSHooksRequest
-  Binary/CRDServiceResponse:
-    name: "Example CRD Service Response"
-    description: "An example of a CRD response with links"
-    extension:
-      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format
-        valueCode: application/json
-      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-logical
-        valueCanonical: http://hl7.org/fhir/tools/StructureDefinition/CDSHooksResponse
-      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-fragment
-        extension:
-          - url: id
-            valueId: links
-          - url: base
-            valueString: cards.where(links.exists())
-          - url: ellipse
-            valueString: "uuid"
-      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-fragment
-        extension:
-          - url: id
-            valueId: systemaction
-          - url: base
-            valueString: systemActions
-          - url: ellipse
-            valueString: "resource.children().where(is(Extension).not())"
-  Binary/CRDServiceResponse2:
-    name: "Example CRD Service Response - Coverage Information"
-    description: "An example CRD response with Coverage Information extension"
-    extension:
-      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format
-        valueCode: application/json
-      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-logical
-        valueCanonical: http://hl7.org/fhir/tools/StructureDefinition/CDSHooksResponse
-      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-fragment
-        extension:
-          - url: id
-            valueId: alternate
-          - url: base
-            valueString: cards.where(source.topic.where(code='therapy-alternatives-req').exists()).suggestions
-          - url: ellipseExclude
-            extension:
-              - url: base
-                valueString: "actions.resource"
-              - url: exclude
-                valueString: "id | medication"
-      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-fragment
-        extension:
-          - url: id
-            valueId: supplement
-          - url: base
-            valueString: cards.where(source.topic.where(code='clinical-reminder').exists()).suggestions
-      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-fragment
-        extension:
-          - url: id
-            valueId: form
-          - url: base
-            valueString: cards.where(source.topic.where(code='123').exists()).suggestions
-          - url: ellipseExclude
-            extension:
-              - url: base
-                valueString: "actions.where(resource.ofType(Questionnaire)).resource"
-              - url: exclude
-                valueString: "url"
-
-      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-fragment
-        extension:
-          - url: id
-            valueId: coverage
-          - url: base
-            valueString: cards.where(source.topic.where(code='insurance').exists())
-      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-fragment
-        extension:
-          - url: id
-            valueId: smart
-          - url: base
-            valueString: cards.where(source.topic.where(code='guideline').exists())
-      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-fragment
-        extension:
-          - url: id
-            valueId: conditionalCreate
-          - url: base
-            valueString: cards.where(source.topic.where(code='123').exists()).suggestions
-          - url: ellipse
-            valueString: "actions.where(resource.ofType(Questionnaire)).resource.item"
-          - url: ellipseExclude
-            extension:
-              - url: base
-                valueString: "actions.where(resource.ofType(Task)).resource"
-              - url: exclude
-                valueString: "input"
-      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-fragment
-        extension:
-          - url: id
-            valueId: associated
-          - url: base
-            valueString: cards.where(source.topic.where(code='therapy-alternatives-req').exists())
-          - url: ellipseExclude
-            extension:
-              - url: exclude
-                valueString: "extension | summary | indicator"
-  Bundle/search-request:
-    name: "Example EHR search"
-    description: "Sample of an CRD service searching an EHR that does not support prefetch"
-  Bundle/search-response:
-    name: "Example EHR response"
-    description: "The response to a CRD service query for information not returned in prefetch"
-    extension:
-      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-fragment
-        extension:
-          - url: id
-            valueId: trimmed
-          - url: ellipseExclude
-            extension:
-              - url: base
-                valueString: "Bundle.entry.resource | Bundle.entry.resource.entry.resource"
-              - url: exclude
-                valueString: "id"

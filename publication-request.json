@@ -1,11 +1,11 @@
 {
   "package-id" : "hl7.fhir.us.davinci-crd",
-  "version" : "2.0.0",
+  "version" : "2.0.1",
   "milestone" : true,
 	"path": "http://hl7.org/fhir/us/davinci-crd/STU2",
   "status" : "trial-use",
   "mode" : "milestone",
   "sequence" : "STU 2.0",
-  "desc" : "STU 2.0 Release",
-  "descmd" : "STU 2.0 Release.  See [list of changes](http://hl7.org/fhir/us/sdoh-clinicalcare/STU2/history.html#2.0.0)"
+  "desc" : "STU 2.0.1 Release",
+  "descmd" : "STU 2.0.0 First Technical Correction.  See [list of changes](http://hl7.org/fhir/us/sdoh-clinicalcare/STU2/history.html#2.0.1)"
 }
