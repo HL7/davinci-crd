@@ -5,7 +5,7 @@
   "version" : "2.0.0",
   "name" : "FHIR Reference Server Teminology Capability Statement",
   "status" : "active",
-  "date" : "2023-12-11T05:12:46.496Z",
+  "date" : "2024-01-01T08:01:51.278Z",
   "contact" : [{
     "telecom" : [{
       "system" : "other",
@@ -14,6 +14,9 @@
   }],
   "description" : "Standard Teminology Capability Statement for the open source Reference FHIR Server provided by Health Intersections",
   "codeSystem" : [{
+    "uri" : "http://cap.org/eCP"
+  },
+  {
     "uri" : "http://cds-hooks.hl7.org/CodeSystem/indicator"
   },
   {
@@ -1302,6 +1305,9 @@
   },
   {
     "uri" : "http://terminology.hl7.org/CodeSystem/hl7-work-group"
+  },
+  {
+    "uri" : "http://terminology.hl7.org/CodeSystem/icd-o-3"
   },
   {
     "uri" : "http://terminology.hl7.org/CodeSystem/immunization-evaluation-dose-status"
@@ -3564,6 +3570,9 @@
   },
   {
     "uri" : "http://www.ama-assn.org/go/cpt"
+  },
+  {
+    "uri" : "http://www.cms.gov/Medicare/Coding/ICD10"
   },
   {
     "uri" : "http://www.nlm.nih.gov/research/umls/rxnorm"
