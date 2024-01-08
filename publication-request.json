@@ -4,7 +4,7 @@
   "milestone" : true,
 	"path": "http://hl7.org/fhir/us/davinci-crd/STU2",
   "status" : "trial-use",
-  "mode" : "milestone",
+  "mode" : "technical-correction",
   "sequence" : "STU 2.0",
   "desc" : "STU 2.0.1 Release",
   "descmd" : "STU 2.0.0 First Technical Correction.  See [list of changes](http://hl7.org/fhir/us/sdoh-clinicalcare/STU2/history.html#2.0.1)"
