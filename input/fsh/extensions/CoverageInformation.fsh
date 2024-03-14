@@ -15,6 +15,8 @@ Description: "Captures assertions from a payer about whether the service is cove
 * ^context[+].type = #element
 * ^context[=].expression = "Encounter"
 * ^context[+].type = #element
+* ^context[=].expression = "Expires"
+* ^context[+].type = #element
 * ^context[=].expression = "NutritionOrder"
 * ^context[+].type = #element
 * ^context[=].expression = "CommunicationRequest"
@@ -46,7 +48,8 @@ Description: "Captures assertions from a payer about whether the service is cove
     date 1..1 and
     coverage-assertion-id 1..1 and
     satisfied-pa-id 0..1 and
-    contact 0..*
+    contact 0..* and 
+    expiry-date 0..1
 * extension[coverage] only Extension
   * ^short = "Reference to Coverage"
   * ^definition = "Reference to Coverage that assertion applies to."
@@ -147,6 +150,11 @@ Description: "Captures assertions from a payer about whether the service is cove
   * ^definition = "Phone number, fax number, email address, website, or other ContactPoint that can be used to ask questions/escalate issues related to a coverage assertion."
   * ^comment = "This **SHOULD** only be populated if the contact information is context-specific rather than a generic contact for the payer as a whole."
   * value[x] only ContactPoint
+* extension[expiry-date] only Extension
+  * ^short = "Expiration date"
+  * ^definition = "If a date after which the coverage assertion made would no longer be valid is known, it must be indicate.  If such a date will never exist, there is no need for code to support this element."
+  * value[x] 0..1
+  * value[x] only date
 * url only uri
 
 Invariant: crd-ci-q1
