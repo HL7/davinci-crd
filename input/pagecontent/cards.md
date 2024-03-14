@@ -646,6 +646,8 @@ For example, this CDS Hook [Card](https://cds-hooks.hl7.org/2.0/#cds-service-res
 }</code></pre>
 {% endraw %}
 
+If returning a card rather than a system action, this card type SHOULD NOT be returned for hook types that are likely to be triggered by clinical users rather than administrative staff.  I.e. Cards of this type would be appropriate for hooks such as encounter-start or appointment-book, but would not be appropriate for order-select or order-sign.
+
 ### Launch SMART application
 SMART apps allow more sophisticated interaction between payers and providers.  They provide full control over user interface, workflow, etc.  With permission, they can also access patient clinical data to help guide the interactive experience and minimize data entry.  Apps can provide a wide variety of functions, including eligibility checking, guiding users through form entry, providing education, etc.
 
