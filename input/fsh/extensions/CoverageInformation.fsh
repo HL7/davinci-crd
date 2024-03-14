@@ -152,7 +152,8 @@ Description: "Captures assertions from a payer about whether the service is cove
   * value[x] only ContactPoint
 * extension[expiry-date] only Extension
   * ^short = "Expiration date"
-  * ^definition = "If a date after which the coverage assertion made would no longer be valid is known, it must be indicate.  If such a date will never exist, there is no need for code to support this element."
+  * ^definition = "Date after which the coverage assertion would no longer be valid."
+  * ^comment = "In this case, mustSupport means that if the payer knows of an expiry date, they must share it.  However, if the payer never has expiry dates for their assertions, it is fine to omit."
   * value[x] 0..1
   * value[x] only date
 * url only uri
