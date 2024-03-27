@@ -30,7 +30,7 @@ Usage: #example
     * value = "http://some-payer.org/xyz-sub-org/get-help-here.html"
 * status = #draft
 * intent = #original-order
-* medicationCodeableConcept = $rxnorm#616447 "Cellcept 250 MG Oral Capsule"
+* medicationCodeableConcept = $rxnorm#616447 "mycophenolate mofetil 250 MG Oral Capsule [Cellcept]"
 * subject = Reference(http://example.org/Patient/123) "Jane Smith"
 * encounter = Reference(http://example.org/Encounter/ABC)
 * authoredOn = "2019-02-15"

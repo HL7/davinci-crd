@@ -7,6 +7,9 @@ Description: "Codes temporarily defined as part of the CRD implementation guide.
 * ^caseSensitive = true
 * ^hierarchyMeaning = #is-a
 * ^content = #complete
+* ^property[0].code = #abstract
+* ^property[0].uri = "http://hl7.org/fhir/concept-properties#notSelectable"
+* ^property[0].type = #boolean
 // after-completion code
 * #prior-auth-include      "Include in prior authorization"    "Include information in prior authorization"
 * #initial-claim-include   "Include in initial claim"          "Include information in initial claim submission"

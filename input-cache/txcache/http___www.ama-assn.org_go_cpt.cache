@@ -2,7 +2,7 @@
 {"code" : {
   "system" : "http://www.ama-assn.org/go/cpt",
   "code" : "77067"
-}, "valueSet" :null, "langs":"en, en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+}, "valueSet" :null, "langs":"en, en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
   "resourceType" : "Parameters",
   "id" : "terminology-settings",
   "parameter" : [{
@@ -15,6 +15,7 @@ v: {
   "code" : "77067",
   "system" : "http://www.ama-assn.org/go/cpt",
   "version" : "2023",
+  "server" : "http://tx.fhir.org/r4",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -25,7 +26,7 @@ v: {
 {"code" : {
   "system" : "http://www.ama-assn.org/go/cpt",
   "code" : "77067"
-}, "valueSet" :null, "langs":"", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+}, "valueSet" :null, "langs":"", "useServer":"true", "useClient":"true", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
   "resourceType" : "Parameters",
   "id" : "terminology-settings",
   "parameter" : [{
@@ -38,6 +39,7 @@ v: {
   "code" : "77067",
   "system" : "http://www.ama-assn.org/go/cpt",
   "version" : "2023",
+  "server" : "http://tx.fhir.org/r4",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -55,27 +57,7 @@ v: {
   }
 }}####
 e: {
-  "valueSet" : {
-  "resourceType" : "ValueSet",
-  "status" : "active",
-  "expansion" : {
-    "extension" : [{
-      "url" : "http://hl7.org/fhir/StructureDefinition/valueset-toocostly",
-      "valueBoolean" : true
-    }],
-    "identifier" : "urn:uuid:8342198e-9c3a-41ec-94bc-85451b4cef76",
-    "timestamp" : "2024-01-01T08:02:57.684Z",
-    "total" : 0,
-    "parameter" : [{
-      "name" : "limitedExpansion",
-      "valueBoolean" : true
-    },
-    {
-      "name" : "excludeNested",
-      "valueBoolean" : false
-    }]
-  }
-},
-  "error" : ""
+  "from-server" : true,
+  "error" : "Error from http://tx.fhir.org/r4: The code System \"http://www.ama-assn.org/go/cpt\" has a grammar, and cannot be enumerated directly"
 }
 -------------------------------------------------------------------------------------
