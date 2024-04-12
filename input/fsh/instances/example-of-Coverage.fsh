@@ -1,10 +1,10 @@
 Instance: example-of-Coverage
-InstanceOf: Coverage
+InstanceOf: CRDCoverage
 Title: "Coverage example"
 Description: "Example identified coverage populated based on CRD profile"
 Usage: #example
 * id = "example"
-* identifier[MBIdentifier]
+* identifier[memberid]
   * system = "http://example.com/fhir/NampingSystem/certificate"
   * value = "12345"
 * status = #active

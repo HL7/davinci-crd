@@ -1,5 +1,5 @@
 Instance: example-of-MedicationRequest
-InstanceOf: MedicationRequest
+InstanceOf: CRDMedicationRequest
 Title: "MedicationRequest example"
 Description: "Example medication request populated based on CRD profile"
 Usage: #example

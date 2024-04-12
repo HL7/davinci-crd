@@ -69,7 +69,7 @@ The profiles expected to be used for the resources resolved to by the userId, pa
     <td/>
   </tr>
   <tr>
-    <td><a href="StructureDefinition-profile-encounter.html">profile-encounter</a></td>
+    <td><a href="StructureDefinition-profile-encounter3.1.html">profile-encounter3.1 (US-Core 3.1.1)</a> or <a href="StructureDefinition-profile-encounter6.1.html">profile-encounter6.1 (US-Core 6.1.0)</a></td>
     <td/>
   </tr>
   <tr>
@@ -110,7 +110,7 @@ The profiles expected to be used for the resources resolved to by the userId, pa
     </tr>
   </thead>
   <tr>
-    <td><a href="StructureDefinition-profile-encounter.html">profile-encounter</a></td>
+    <td><a href="StructureDefinition-profile-encounter3.1.html">profile-encounter3.1 (US-Core 3.1.1)</a> or <a href="StructureDefinition-profile-encounter6.1.html">profile-encounter6.1 (US-Core 6.1.0)</a></td>
     <td/>
   </tr>
   <tr>
@@ -151,7 +151,7 @@ The profiles expected to be used for the resources resolved to by the userId, pa
     </tr>
   </thead>
   <tr>
-    <td><a href="StructureDefinition-profile-encounter.html">profile-encounter</a></td>
+    <td><a href="StructureDefinition-profile-encounter3.1.html">profile-encounter3.1 (US-Core 3.1.1)</a> or <a href="StructureDefinition-profile-encounter6.1.html">profile-encounter6.1 (US-Core 6.1.0)</a></td>
     <td/>
   </tr>
   <tr>
@@ -231,7 +231,7 @@ There are no constraints or special rules related to this hook beyond the profil
     <td/>
   </tr>
   <tr>
-    <td><a href="StructureDefinition-profile-encounter.html">profile-encounter</a></td>
+    <td><a href="StructureDefinition-profile-encounter3.1.html">profile-encounter3.1 (US-Core 3.1.1)</a> or <a href="StructureDefinition-profile-encounter6.1.html">profile-encounter6.1 (US-Core 6.1.0)</a></td>
     <td/>
   </tr>
   <tr>

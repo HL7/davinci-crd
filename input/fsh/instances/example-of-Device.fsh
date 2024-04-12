@@ -1,5 +1,5 @@
 Instance: example-of-Device
-InstanceOf: Device
+InstanceOf: CRDDevice
 Title: "Device example"
 Description: "Example device populated based on CRD profile"
 Usage: #example

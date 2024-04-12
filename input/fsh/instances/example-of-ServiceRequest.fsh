@@ -1,5 +1,5 @@
 Instance: example-of-ServiceRequest
-InstanceOf: ServiceRequest
+InstanceOf: CRDServiceRequest
 Title: "ServiceRequest example"
 Description: "Example service request populated based on CRD profile"
 Usage: #example
@@ -14,4 +14,4 @@ Usage: #example
 * requester = Reference(Practitioner/example) "Dr. Beverly Crusher"
 * performer = Reference(http://example.org/fhir/Practitioner/example2) "Dr Cecil Surgeon"
 * locationReference = Reference(Location/example)
-* reasonCode.text = "Bradycardia"
+* reasonCode = $sct#48867003 "Bradycardia"

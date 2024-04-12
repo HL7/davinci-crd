@@ -1,5 +1,5 @@
 Instance: questionnaire-example
-InstanceOf: TaskQuestionnaire
+InstanceOf: CRDTaskQuestionnaire
 Title: "Questionnaire Task example"
 Description: "Example questionnaire-completion Task populated based on CRD profile"
 Usage: #example

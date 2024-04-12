@@ -1,11 +1,11 @@
 Instance: example-of-Practitioner
-InstanceOf: Practitioner
+InstanceOf: CRDPractitioner
 Title: "Practitioner example"
 Description: "Example practitioner populated based on CRD profile"
 Usage: #example
 * id = "example"
 * identifier[NPI]
-  * value = "9941339108"
+  * value = "1234567893"
 * identifier[+]
   * system = "http://www.acme.org/practitioners"
   * value = "25456"

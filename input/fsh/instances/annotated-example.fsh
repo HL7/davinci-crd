@@ -1,5 +1,5 @@
 Instance: annotated-example
-InstanceOf: MedicationRequest
+InstanceOf: CRDMedicationRequest
 Title: "MedicationRequest annotated example"
 Description: "Example medication request with an annotation showing coverage expectations"
 Usage: #example

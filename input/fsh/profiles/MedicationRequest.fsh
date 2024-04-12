@@ -1,49 +1,31 @@
-Profile: MedicationRequest
-Parent: $MedicationRequest
+Profile: CRDMedicationRequest
+Parent: USCoreMedicationRequestProfile
 Id: profile-medicationrequest
 Title: "CRD Medication Request"
 Description: "This profile specifies additional constraints on the US Core MedicationRequest profile to support coverage requirements discovery."
-* ^version = "1.1.0-ci-build"
-* ^status = #active
 * ^experimental = false
-* ^date = "2023-05-30T11:47:53-07:00"
-* ^publisher = "HL7 International - Financial Management Work Group"
-* ^contact.telecom.system = #url
-* ^contact.telecom.value = "http://www.hl7.org/Special/committees/fm"
-* ^jurisdiction = urn:iso:std:iso:3166#US
-* extension contains CoverageInformation named Coverage-Information 0..* MS
+* extension contains CRDCoverageInformation named Coverage-Information 0..* MS
 * extension[Coverage-Information] ^short = "Coverage Info"
 * identifier MS
-* status only code
-* status = #draft (exactly)
-* status MS
-* intent MS
 * doNotPerform ..0
-* reported[x] MS
-* reported[x] only boolean or Reference(USCorePatientProfile or USCorePractitionerProfile or USCoreOrganizationProfile)
-* medication[x] MS
-* medication[x] from USCoreMedicationCodes (extensible)
-* medication[x] only CodeableConcept or Reference(USCoreMedicationProfile)
-* subject only Reference(Patient)
-* subject MS
-* encounter only Reference(Encounter)
-* encounter MS
+* reported[x] only boolean or Reference(CRDPatient or CRDPractitioner or CRDOrganization)
+//* reported[x] only boolean or Reference(CRDPatient or CRDPractitioner or CRDOrganization)
+* medication[x] from $USCoreMedicationCodes (extensible)
+* encounter only Reference(CRDEncounter3_1 or CRDEncounter6_1)
   * ^comment = "potentially relevant for CRD in some situations."
-* authoredOn 1.. MS
-* requester 1.. MS
-* requester only Reference(Practitioner or USCorePractitionerRoleProfile)
-* performer only Reference(Practitioner or USCorePractitionerRoleProfile)
+* authoredOn 1..
+* requester 1..
+//* requester only Reference(CRDPractitioner or HRexPractitionerRole)
+* requester only Reference(CRDPractitioner)
 * performer MS
+* performer only Reference(CRDPractitioner or HRexPractitionerRole)
 * reasonCode MS
   * ^comment = "potentially relevant for CRD in some situations."
-* reasonReference only Reference(USCoreCondition or USCoreLaboratoryResultObservationProfile)
 * reasonReference MS
   * ^comment = "potentially relevant for CRD in some situations."
-* basedOn only Reference(MedicationRequest or ServiceRequest)
+//* reasonReference only Reference(USCoreConditionProblemsHealthConcernsProfile or USCoreConditionUSCoreConditionEncounterDiagnosisProfile or USCoreLaboratoryResultObservationProfile)
+* basedOn only Reference(CRDMedicationRequest or CRDServiceRequest)
   * ^comment = "potentially relevant for CRD in some situations."
-* dosageInstruction MS
-  * text MS
-* dispenseRequest MS
 * substitution MS
-* priorPrescription only Reference(MedicationRequest)
 * priorPrescription MS
+* priorPrescription only Reference(CRDMedicationRequest)

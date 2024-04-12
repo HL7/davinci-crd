@@ -1,5 +1,5 @@
 Instance: example-of-NutritionOrder
-InstanceOf: NutritionOrder
+InstanceOf: CRDNutritionOrder
 Title: "NutritionOder example"
 Description: "Example nutrition order populated based on CRD profile"
 Usage: #example

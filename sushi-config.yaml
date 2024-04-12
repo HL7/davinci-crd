@@ -15,7 +15,7 @@ extension:
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
     valueCode: fm
 canonical: http://hl7.org/fhir/us/davinci-crd
-version: 2.0.1
+version: 2.1.0-preview
 name: CoverageRequirementsDiscovery
 title: Da Vinci - Coverage Requirements Discovery
 status: active
@@ -48,7 +48,7 @@ releaseLabel: STU 2
 dependencies:
   hl7.fhir.us.core:
     id: uscore
-    version: 3.1.1
+    version: 6.1.0
     reason: |
       Defines U.S. EHR expectations on a range of resources that will be passed to and/or queried by CRD servers
   hl7.fhir.uv.sdc:
@@ -58,7 +58,7 @@ dependencies:
       Defines expecations for Questionnaires prompted for by cards
   hl7.fhir.us.davinci-hrex:
     id: hrex
-    version: 1.0.0
+    version: current
     reason: |
       Defines common conformance rules across all Da Vinci IGs, as well as additional constraints and profiles beyond U.S. Core
   hl7.fhir.extensions.r5:
@@ -124,11 +124,16 @@ pages:
   history.md:
     title: Change History
 groups:
-  -str-logicalmodel-hooks:
+  - str-logicalmodel-hooks:
     name: "Structures: CDS Hooks Extensions"
     description: "Models that define extensions on CDS Hooks JSON structures"
     resources:
       - CDSHookServicesExtensionConfiguration
 #      - CDSHookSuggestionActionExtensionIfNoneExist
 #      - CDSHookCardExtensionAssociatedResource
-#      - CDSHookHookExtensionConfig
+#      - CDSHookHookExtensionConfigresources:
+resources:
+  Encounter/example:
+    extension:
+      - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-ImplementationGuide.definition.resource.profile
+        valueCanonical: http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-encounter3.1

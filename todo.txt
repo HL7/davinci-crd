@@ -1,0 +1,4 @@
+Procedure adds new code systems in 6.1.0 that would technically have needed to be accompanied by a SNOMED code in 3.1.1.  However, no one seems to have interpreted the Extensible binding as meaning that, so probably doesn't matter.
+Laboratory observation prohibits effectivePeriod and tightens value to Quantity, CodeableConcept, String
+MedicationRequest did allow Patient and Organization as requester.  Now it's just Practitioner - is that ok?
+MedicationRequest.requester prohibits PractitionerRole and only allows Practitioner

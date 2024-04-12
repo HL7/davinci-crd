@@ -1,6 +1,16 @@
 {
   "systems" : [
     {
+      "system" : "http://hl7.org/fhir/sid/icd-10-cm",
+      "authoritative" : ["http://tx.fhir.org/r4"],
+      "candidates" : []
+    },
+    {
+      "system" : "http://hl7.org/fhir/sid/icd-9-cm",
+      "authoritative" : ["http://tx.fhir.org/r4"],
+      "candidates" : []
+    },
+    {
       "system" : "http://loinc.org",
       "authoritative" : [],
       "candidates" : ["http://tx.fhir.org/r4", "https://tx.ontoserver.csiro.au/fhir"]
@@ -42,6 +52,11 @@
     },
     {
       "system" : "http://www.nlm.nih.gov/research/umls/rxnorm",
+      "authoritative" : [],
+      "candidates" : ["http://tx.fhir.org/r4"]
+    },
+    {
+      "system" : "http://www.nlm.nih.gov/research/umls/rxnorm|09052023",
       "authoritative" : [],
       "candidates" : ["http://tx.fhir.org/r4"]
     },

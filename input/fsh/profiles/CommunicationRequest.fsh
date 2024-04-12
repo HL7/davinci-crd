@@ -1,29 +1,22 @@
-Profile: CommunicationRequest
+Profile: CRDCommunicationRequest
 Parent: $CommunicationRequest
 Id: profile-communicationrequest
 Title: "CRD Communication Request"
 Description: "This profile specifies constraints on the CommunicationRequest resource to support coverage requirements discovery."
-* ^version = "1.1.0-ci-build"
-* ^status = #active
 * ^experimental = false
-* ^date = "2023-05-30T11:47:53-07:00"
-* ^publisher = "HL7 International - Financial Management Work Group"
-* ^contact.telecom.system = #url
-* ^contact.telecom.value = "http://www.hl7.org/Special/committees/fm"
-* ^jurisdiction = urn:iso:std:iso:3166#US
 * ^extension[$fmm].valueInteger = 1
-* extension contains CoverageInformation named Coverage-Information 0..* MS
+* extension contains CRDCoverageInformation named Coverage-Information 0..* MS
 * identifier MS
 * basedOn 1..1 MS
-* replaces only Reference(CommunicationRequest)
+* replaces only Reference(CRDCommunicationRequest)
   * ^comment = "potentially relevant for CRD in some situations."
-* status only code
-* status = #draft (exactly)
+//* status only code
 * status MS
+* status = #draft (exactly)
 * doNotPerform ..0
 * subject 1.. MS
-* subject only Reference(Patient)
-* encounter only Reference(Encounter)
+* subject only Reference(CRDPatient)
+* encounter only Reference(CRDEncounter3_1 or CRDEncounter6_1)
   * ^comment = "potentially relevant for CRD in some situations."
 * payload 1.. MS
   * extension contains $extension-CommunicationRequest.payload.content named codeableConcept 1..1 MS
@@ -32,12 +25,12 @@ Description: "This profile specifies constraints on the CommunicationRequest res
 * occurrence[x] MS
 * authoredOn 1.. MS
 * requester 1.. MS
-* requester only Reference(Practitioner or USCorePractitionerRoleProfile)
-* recipient only Reference(Practitioner or USCorePractitionerRoleProfile or USCoreOrganizationProfile)
+* requester only Reference(CRDPractitioner or HRexPractitionerRole)
 * recipient MS
-* sender only Reference(Practitioner or USCorePractitionerRoleProfile or USCoreOrganizationProfile)
+* recipient only Reference(CRDPractitioner or HRexPractitionerRole or CRDOrganization)
 * sender MS
+* sender only Reference(CRDPractitioner or HRexPractitionerRole or CRDOrganization)
 * reasonCode MS
-* reasonReference only Reference(USCoreCondition or USCoreLaboratoryResultObservationProfile)
+//* reasonReference only Reference(USCoreConditionProblemsHealthConcernsProfile or USCoreConditionUSCoreConditionEncounterDiagnosisProfile or USCoreLaboratoryResultObservationProfile)
 * reasonReference MS
   * ^comment = "potentially relevant for CRD in some situations."

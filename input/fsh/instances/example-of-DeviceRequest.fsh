@@ -1,5 +1,5 @@
 Instance: example-of-DeviceRequest
-InstanceOf: DeviceRequest
+InstanceOf: CRDDeviceRequest
 Title: "DeviceRequest example"
 Description: "Example devicerequest populated based on CRD profile"
 Usage: #example

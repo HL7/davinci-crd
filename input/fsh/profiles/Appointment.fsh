@@ -1,20 +1,12 @@
-Profile: Appointment
+Profile: CRDAppointment
 Parent: $Appointment
 Id: profile-appointment
 Title: "CRD Appointment"
 Description: "This profile specifies extensions and constraints on the Appointment resource to support coverage requirements discovery."
-* ^version = "1.1.0-ci-build"
-* ^status = #active
 * ^experimental = false
-* ^date = "2023-05-30T11:47:53-07:00"
-* ^publisher = "HL7 International - Financial Management Work Group"
-* ^contact.telecom.system = #url
-* ^contact.telecom.value = "http://www.hl7.org/Special/committees/fm"
-* ^jurisdiction = urn:iso:std:iso:3166#US
-* extension contains CoverageInformation named Coverage-Information 0..* MS
+* extension contains CRDCoverageInformation named Coverage-Information 0..* MS
 * extension[Coverage-Information] ^short = "Coverage Info"
 * identifier MS
-* status only code
 * status MS
   * ^short = "Appointment status"
   * ^example.label = "General"
@@ -23,16 +15,17 @@ Description: "This profile specifies extensions and constraints on the Appointme
 * serviceType MS
 * specialty MS
 * appointmentType MS
-* reasonReference only Reference(USCoreCondition or Procedure)
 * reasonReference MS
+//* reasonReference only Reference(USCoreConditionProblemsHealthConcernsProfile or USCoreConditionUSCoreConditionEncounterDiagnosisProfile or USCoreProcedureProfile)
   * ^comment = "potentially relevant for CRD in some situations."
 * start 1.. MS
 * end 1.. MS
-* basedOn only Reference(ServiceRequest)
+* basedOn only Reference(CRDServiceRequest)
   * ^comment = "potentially relevant for CRD in some situations."
 * participant MS
-  * actor only Reference(Patient or Practitioner or Location)
   * actor MS
     * ^short = "Patient, Practitioner  or Location"
+  * actor only Reference(CRDPatient or CRDPractitioner or CRDLocation)
+// TODO: Add RelatedPerson?
   * status MS
 * requestedPeriod 1..1 MS

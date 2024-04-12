@@ -1,5 +1,5 @@
 Instance: example-of-CommunicationRequest
-InstanceOf: CommunicationRequest
+InstanceOf: CRDCommunicationRequest
 Title: "CommunicationRequest example"
 Description: "Example communication request populated based on CRD profile"
 Usage: #example

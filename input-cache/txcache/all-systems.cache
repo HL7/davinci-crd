@@ -78,7 +78,7 @@ v: {
   "system" : "http://snomed.info/sct",
   "code" : "270427003",
   "display" : "Patient-initiated encounter"
-}, "url": "http://hl7.org/fhir/us/core/ValueSet/us-core-encounter-type", "version": "3.1.1", "langs":"", "useServer":"true", "useClient":"true", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+}, "url": "http://hl7.org/fhir/us/core/ValueSet/us-core-encounter-type", "version": "6.1.0", "langs":"", "useServer":"true", "useClient":"true", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
   "resourceType" : "Parameters",
   "id" : "terminology-settings",
   "parameter" : [{
@@ -101,7 +101,36 @@ v: {
 -------------------------------------------------------------------------------------
 {"code" : {
   "code" : "CA"
-}, "url": "http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state", "version": "3.1.1", "langs":"", "useServer":"true", "useClient":"true", "guessSystem":"true", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "https://www.usps.com/"
+    }]
+  }
+}, "langs":"", "useServer":"true", "useClient":"false", "guessSystem":"true", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "id" : "terminology-settings",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  }]
+}}####
+v: {
+  "display" : "California",
+  "code" : "CA",
+  "system" : "https://www.usps.com/",
+  "server" : "http://tx.fhir.org/r4",
+  "unknown-systems" : "",
+  "issues" : {
+  "resourceType" : "OperationOutcome"
+}
+
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "code" : "CA"
+}, "url": "http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state", "version": "6.1.0", "langs":"", "useServer":"true", "useClient":"true", "guessSystem":"true", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
   "resourceType" : "Parameters",
   "id" : "terminology-settings",
   "parameter" : [{
@@ -145,6 +174,31 @@ v: {
 }
 -------------------------------------------------------------------------------------
 {"code" : {
+  "system" : "http://snomed.info/sct",
+  "code" : "11840006",
+  "display" : "Traveler's Diarrhea (disorder)"
+}, "url": "http://hl7.org/fhir/us/core/ValueSet/us-core-condition-code", "version": "6.1.0", "langs":"", "useServer":"true", "useClient":"true", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "id" : "terminology-settings",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  }]
+}}####
+v: {
+  "display" : "Traveler's diarrhea",
+  "code" : "11840006",
+  "system" : "http://snomed.info/sct",
+  "version" : "http://snomed.info/sct/731000124108/version/20230901",
+  "server" : "http://tx.fhir.org/r4",
+  "unknown-systems" : "",
+  "issues" : {
+  "resourceType" : "OperationOutcome"
+}
+
+}
+-------------------------------------------------------------------------------------
+{"code" : {
   "code" : "d"
 }, "url": "http://hl7.org/fhir/ValueSet/units-of-time", "version": "4.0.1", "langs":"", "useServer":"true", "useClient":"true", "guessSystem":"true", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
   "resourceType" : "Parameters",
@@ -169,7 +223,14 @@ v: {
 -------------------------------------------------------------------------------------
 {"code" : {
   "code" : "OK"
-}, "url": "http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state", "version": "3.1.1", "langs":"", "useServer":"true", "useClient":"true", "guessSystem":"true", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "https://www.usps.com/"
+    }]
+  }
+}, "langs":"", "useServer":"true", "useClient":"false", "guessSystem":"true", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
   "resourceType" : "Parameters",
   "id" : "terminology-settings",
   "parameter" : [{
@@ -190,10 +251,83 @@ v: {
 }
 -------------------------------------------------------------------------------------
 {"code" : {
+  "code" : "OK"
+}, "url": "http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state", "version": "6.1.0", "langs":"", "useServer":"true", "useClient":"true", "guessSystem":"true", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "id" : "terminology-settings",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  }]
+}}####
+v: {
+  "display" : "Oklahoma",
+  "code" : "OK",
+  "system" : "https://www.usps.com/",
+  "server" : "http://tx.fhir.org/r4",
+  "unknown-systems" : "",
+  "issues" : {
+  "resourceType" : "OperationOutcome"
+}
+
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "code" : "MA"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "https://www.usps.com/"
+    }]
+  }
+}, "langs":"", "useServer":"true", "useClient":"false", "guessSystem":"true", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "id" : "terminology-settings",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  }]
+}}####
+v: {
+  "display" : "Massachusetts",
+  "code" : "MA",
+  "system" : "https://www.usps.com/",
+  "server" : "http://tx.fhir.org/r4",
+  "unknown-systems" : "",
+  "issues" : {
+  "resourceType" : "OperationOutcome"
+}
+
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "code" : "MA"
+}, "url": "http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state", "version": "6.1.0", "langs":"", "useServer":"true", "useClient":"true", "guessSystem":"true", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "id" : "terminology-settings",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  }]
+}}####
+v: {
+  "display" : "Massachusetts",
+  "code" : "MA",
+  "system" : "https://www.usps.com/",
+  "server" : "http://tx.fhir.org/r4",
+  "unknown-systems" : "",
+  "issues" : {
+  "resourceType" : "OperationOutcome"
+}
+
+}
+-------------------------------------------------------------------------------------
+{"code" : {
   "system" : "http://snomed.info/sct",
   "code" : "25267002",
   "display" : "Insertion of intracardiac pacemaker (procedure)"
-}, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/serviceRequestCodes", "version": "2.0.1", "langs":"", "useServer":"true", "useClient":"true", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+}, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/serviceRequestCodes", "version": "2.1.0-preview", "langs":"", "useServer":"true", "useClient":"true", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
   "resourceType" : "Parameters",
   "id" : "terminology-settings",
   "parameter" : [{
@@ -214,7 +348,32 @@ v: {
 
 }
 -------------------------------------------------------------------------------------
-{"hierarchical" : true, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/deviceRequest", "version": "2.0.1"}####
+{"code" : {
+  "system" : "http://snomed.info/sct",
+  "code" : "48867003",
+  "display" : "Bradycardia"
+}, "url": "http://hl7.org/fhir/us/core/ValueSet/us-core-condition-code", "version": "6.1.0", "langs":"", "useServer":"true", "useClient":"true", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "id" : "terminology-settings",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  }]
+}}####
+v: {
+  "display" : "Bradycardia",
+  "code" : "48867003",
+  "system" : "http://snomed.info/sct",
+  "version" : "http://snomed.info/sct/731000124108/version/20230901",
+  "server" : "http://tx.fhir.org/r4",
+  "unknown-systems" : "",
+  "issues" : {
+  "resourceType" : "OperationOutcome"
+}
+
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : true, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/deviceRequest", "version": "2.1.0-preview"}####
 e: {
   "valueSet" : {
   "resourceType" : "ValueSet",
@@ -223,12 +382,12 @@ e: {
     "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p style=\"border: maroon 1px solid; background-color: #FFCCCC; font-weight: bold; padding: 8px\">This value set cannot be expanded because of the way it is defined - it has an infinite number of members.</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td></tr></table></div>"
   },
   "url" : "http://hl7.org/fhir/us/davinci-crd/ValueSet/deviceRequest",
-  "version" : "2.0.1",
+  "version" : "2.1.0-preview",
   "name" : "CRDDeviceRequests",
   "title" : "CRD Device Request Codes Value Set",
   "status" : "active",
   "experimental" : false,
-  "date" : "2024-03-25T23:18:36-06:00",
+  "date" : "2024-04-11T21:05:02-06:00",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -240,8 +399,8 @@ e: {
       "url" : "http://hl7.org/fhir/StructureDefinition/valueset-toocostly",
       "valueBoolean" : true
     }],
-    "identifier" : "urn:uuid:7b6e15ef-44ec-4b39-8b5b-9b7296615dc3",
-    "timestamp" : "2024-03-26T05:20:43.869Z",
+    "identifier" : "urn:uuid:7b3b838e-39cc-4964-86ae-f23eb4ea82f2",
+    "timestamp" : "2024-04-12T03:06:54.150Z",
     "total" : 0,
     "offset" : 0,
     "parameter" : [{
@@ -265,17 +424,17 @@ e: {
   "error" : ""
 }
 -------------------------------------------------------------------------------------
-{"hierarchical" : true, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/serviceRequestCodes", "version": "2.0.1"}####
+{"hierarchical" : true, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/serviceRequestCodes", "version": "2.1.0-preview"}####
 e: {
   "valueSet" : {
   "resourceType" : "ValueSet",
   "url" : "http://hl7.org/fhir/us/davinci-crd/ValueSet/serviceRequestCodes",
-  "version" : "2.0.1",
+  "version" : "2.1.0-preview",
   "name" : "CRDServiceRequestCodes",
   "title" : "CRD Service Request Codes Value Set",
   "status" : "active",
   "experimental" : false,
-  "date" : "2024-03-25T23:18:36-06:00",
+  "date" : "2024-04-11T21:05:02-06:00",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -287,8 +446,8 @@ e: {
       "url" : "http://hl7.org/fhir/StructureDefinition/valueset-toocostly",
       "valueBoolean" : true
     }],
-    "identifier" : "urn:uuid:1c030123-3a2b-49b9-b1cd-054b0f367801",
-    "timestamp" : "2024-03-26T05:20:52.385Z",
+    "identifier" : "urn:uuid:42102bc9-dd19-4580-9d71-9bca6b2239b8",
+    "timestamp" : "2024-04-12T03:07:01.822Z",
     "total" : 0,
     "offset" : 0,
     "parameter" : [{

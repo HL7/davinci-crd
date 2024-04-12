@@ -1,5 +1,5 @@
 Instance: example-of-Appointment
-InstanceOf: Appointment
+InstanceOf: CRDAppointment
 Title: "Appointment example"
 Description: "Example appointment populated based on CRD profile"
 Usage: #example

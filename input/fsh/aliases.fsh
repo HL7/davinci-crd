@@ -44,3 +44,6 @@ Alias: $VisionPrescription   = http://hl7.org/fhir/StructureDefinition/VisionPre
 Alias: $extension-CommunicationRequest.payload.content = http://hl7.org/fhir/5.0/StructureDefinition/extension-CommunicationRequest.payload.content[x]
 Alias: $fmm                                            = http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm
 Alias: $standards-status                               = http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+Alias: $compliesWithProfile                            = http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile
+// ValueSets
+Alias: $USCoreMedicationCodes = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1010.4

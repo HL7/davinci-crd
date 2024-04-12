@@ -1,36 +1,29 @@
-Profile: TaskQuestionnaire
+Profile: CRDTaskQuestionnaire
 Parent: SDCTaskQuestionnaire
 Id: profile-taskquestionnaire
 Title: "CRD Questionnaire Task"
 Description: "This profile specifies constraints on the Task resource to support requests for form (Questionnaire) completion."
-* ^version = "1.1.0-ci-build"
-* ^status = #active
 * ^experimental = false
-* ^date = "2023-05-30T11:47:53-07:00"
-* ^publisher = "HL7 International - Financial Management Work Group"
-* ^contact.telecom.system = #url
-* ^contact.telecom.value = "http://www.hl7.org/Special/committees/fm"
-* ^jurisdiction = urn:iso:std:iso:3166#US
 * ^extension[$fmm].valueInteger = 1
 * basedOn MS
   * ^requirements = "Allows linking the Questionnaire to the particular 'request' that triggered its creation."
-* status only code
-* status = #ready (exactly)
+//* status only code
 * status MS
-* intent only code
-* intent = #order (exactly)
+* status = #ready (exactly)
+//* intent only code
 * intent MS
+* intent = #order (exactly)
 * for 1.. MS
-* for only Reference(USCorePatientProfile)
-* encounter only Reference(Encounter)
+* for only Reference(CRDPatient)
 * encounter MS
+* encounter only Reference(CRDEncounter3_1 or CRDEncounter6_1)
   * ^comment = "This should be set to the same encounter as specified in the launch context (if any)."
 * authoredOn 1.. MS
 * requester 1.. MS
-* requester only Reference(Organization)
+* requester only Reference(CRDOrganization)
   * ^short = "Payer requesting form completion"
 * owner 0..1 MS
-* owner only Reference(Practitioner)
+* owner only Reference(CRDPractitioner)
   * ^comment = "This can be populated within the CRD client to delegate responsibility for filling out the form to someone else."
 * reasonCode MS
 * reasonCode from CRDTaskReason (extensible)
@@ -41,7 +34,7 @@ Description: "This profile specifies constraints on the Task resource to support
   * type only CodeableConcept
   * type = $temp#after-completion-action
   * type MS
-  * valueCodeableConcept only CodeableConcept
   * valueCodeableConcept MS
+  * valueCodeableConcept only CodeableConcept
   * valueCodeableConcept from CRDTaskAfterCompletionCode (extensible)
     * ^binding.description = "CRD After Completion"

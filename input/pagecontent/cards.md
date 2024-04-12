@@ -315,7 +315,7 @@ When using this response type, the proposed orders (and any associated resources
     <td/>
   </tr>
   <tr>
-    <td><a href="StructureDefinition-profile-encounter.html">profile-encounter<sup>†</sup></a></td>
+    <td><a href="StructureDefinition-profile-encounter3.1.html">profile-encounter3.1<sup>†</sup> (US-Core 3.1.1)</a> or <a href="StructureDefinition-profile-encounter6.1.html">profile-encounter6.1<sup>†</sup> (US-Core 6.1.0)</a></td>
     <td/>
   </tr>
   <tr>

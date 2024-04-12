@@ -1,12 +1,12 @@
 Instance: example-of-Organization
-InstanceOf: Organization
+InstanceOf: CRDOrganization
 Title: "Organization example"
 Description: "Example organization populated based on CRD profile"
 Usage: #example
 * id = "example"
 * identifier
   * system = "http://hl7.org/fhir/sid/us-npi"
-  * value = "12345678"
+  * value = "1234567893"
 * active = true
 * name = "University Medical Center"
 * telecom[0]

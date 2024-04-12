@@ -1,5 +1,5 @@
 Instance: example-of-Location
-InstanceOf: Location
+InstanceOf: CRDLocation
 Title: "Location example"
 Description: "Example location populated based on CRD profile"
 Usage: #example

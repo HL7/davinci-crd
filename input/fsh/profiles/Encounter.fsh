@@ -1,34 +1,30 @@
-Profile: Encounter
+Profile: CRDEncounter6_1
 Parent: USCoreEncounterProfile
-Id: profile-encounter
-Title: "CRD Encounter"
-Description: "This profile specifies additional extensions and constraints on the US Core Encounter profile to support coverage requirements discovery."
-* ^version = "1.1.0-ci-build"
-* ^status = #active
+Id: profile-encounter6.1
+Title: "CRD Encounter - USCDI 3"
+Description: "This profile specifies additional extensions and constraints on the US Core Encounter profile to support coverage requirements discovery.  Compliant with USCDI 3"
 * ^experimental = false
-* ^date = "2023-05-30T11:47:53-07:00"
-* ^publisher = "HL7 International - Financial Management Work Group"
-* ^contact.telecom.system = #url
-* ^contact.telecom.value = "http://www.hl7.org/Special/committees/fm"
-* ^jurisdiction = urn:iso:std:iso:3166#US
-* extension contains CoverageInformation named Coverage-Information 0..* MS
+* extension contains CRDCoverageInformation named Coverage-Information 0..* MS
 * serviceType MS
-* subject only Reference(Patient)
-* subject MS
-* basedOn only Reference(ServiceRequest)
-* participant.individual only Reference(Practitioner)
-* participant.individual MS
-* appointment only Reference(Appointment)
+* subject only Reference(CRDPatient)
+* basedOn only Reference(CRDServiceRequest)
 * appointment MS
+* appointment only Reference(CRDAppointment)
 * length MS
-* reasonCode MS
-* reasonReference only Reference(USCoreCondition or Procedure)
-* reasonReference MS
 * diagnosis MS
   * condition MS
-* location MS
-  * location only Reference(Location)
-  * location MS
+* location
+  * location only Reference(CRDLocation)
   * status MS
   * period MS
-* partOf only Reference(Encounter)
+* partOf only Reference(CRDEncounter6_1 or CRDEncounter3_1)
+
+Profile: CRDEncounter3_1
+Parent: CRDEncounter6_1
+Id: profile-encounter3.1
+Title: "CRD Encounter - USCDI 1"
+Description: "This profile specifies additional extensions and constraints on the US Core Encounter profile to support coverage requirements discovery.  Compliant with USCDI 1"
+* ^experimental = false
+* ^extension[$compliesWithProfile].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|3.1.1"
+* participant.individual only Reference(USCorePractitionerProfile)
+* partOf only Reference(CRDEncounter3_1)

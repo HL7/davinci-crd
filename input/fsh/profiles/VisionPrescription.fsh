@@ -1,32 +1,25 @@
-Profile: VisionPrescription
+Profile: CRDVisionPrescription
 Parent: $VisionPrescription
 Id: profile-visionprescription
 Title: "CRD Vision Prescription"
 Description: "This profile defines an initial profile on the VisionPrescription resource to support coverage requirements discovery."
-* ^version = "1.1.0-ci-build"
-* ^status = #active
 * ^experimental = false
-* ^date = "2023-05-30T11:47:53-07:00"
-* ^publisher = "HL7 International - Financial Management Work Group"
-* ^contact.telecom.system = #url
-* ^contact.telecom.value = "http://www.hl7.org/Special/committees/fm"
-* ^jurisdiction = urn:iso:std:iso:3166#US
 * ^extension[$fmm].valueInteger = 1
-* extension contains CoverageInformation named Coverage-Information 0..* MS
+* extension contains CRDCoverageInformation named Coverage-Information 0..* MS
 * extension[Coverage-Information] ^short = "Coverage Info"
 * identifier MS
-* status only code
-* status = #draft (exactly)
+//* status only code
 * status MS
+* status = #draft (exactly)
 * created MS
-* patient only Reference(Patient)
 * patient MS
-* encounter only Reference(Encounter)
+* patient only Reference(CRDPatient)
+* encounter only Reference(CRDEncounter3_1 or CRDEncounter6_1)
 * encounter MS
   * ^comment = "potentially relevant for CRD in some situations."
 * dateWritten MS
 * prescriber 1.. MS
-* prescriber only Reference(Practitioner or USCorePractitionerRoleProfile)
+* prescriber only Reference(CRDPractitioner or HRexPractitionerRole)
 * lensSpecification MS
   * product MS
   * eye MS

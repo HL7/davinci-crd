@@ -1,5 +1,5 @@
 Instance: example-of-Patient
-InstanceOf: Patient
+InstanceOf: CRDPatient
 Title: "Patient example"
 Description: "Example patient populated based on CRD profile"
 Usage: #example

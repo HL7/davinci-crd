@@ -1,15 +1,9 @@
-Extension: CoverageInformation
+Extension: CRDCoverageInformation
 Id: ext-coverage-information
 Title: "Coverage Information"
 Description: "Captures assertions from a payer about whether the service is covered and/or requires prior authorization."
 * ^version = "1.1.0-ci-build"
-* ^status = #active
 * ^experimental = false
-* ^date = "2023-05-30T11:47:53-07:00"
-* ^publisher = "HL7 International - Financial Management Work Group"
-* ^contact.telecom.system = #url
-* ^contact.telecom.value = "http://www.hl7.org/Special/committees/fm"
-* ^jurisdiction = urn:iso:std:iso:3166#US
 * ^context[0].type = #element
 * ^context[=].expression = "Appointment"
 * ^context[+].type = #element
@@ -51,7 +45,7 @@ Description: "Captures assertions from a payer about whether the service is cove
   * ^short = "Reference to Coverage"
   * ^definition = "Reference to Coverage that assertion applies to."
   * value[x] 1..1
-  * value[x] only Reference(Coverage)
+  * value[x] only Reference(CRDCoverage)
 * extension[covered] only Extension
   * ^short = "covered | not-covered | conditional"
   * ^definition = "Indicates whether the ordered/requested service is covered under patient's plan"
@@ -116,7 +110,7 @@ Description: "Captures assertions from a payer about whether the service is cove
 * extension[dependency] ^short = "Resources that impact this assertion"
   * ^definition = "If present, indicates that the determination represented here is dependent on the content, determination, and possibly execution of the referenced order(s)"
   * ^requirements = "For example, the authorization decision on a request for post-surgical physiotherapy might be dependent on the order for the surgery itself.  If coverage for the surgery is not approved or the order for the surgery is cancelled, that might impact the decision on covering the physiotherapy."
-  * value[x] only Reference(Appointment or CommunicationRequest or DeviceRequest or MedicationRequest or NutritionOrder or ServiceRequest)
+  * value[x] only Reference(CRDAppointment or CRDCommunicationRequest or CRDDeviceRequest or CRDMedicationRequest or CRDNutritionOrder or CRDServiceRequest)
 * extension[questionnaire] only Extension
   * ^short = "Questionnaire"
   * ^definition = "A form to be filled out to gather more information.  Only for use if the response indicates a need to use DTR"
@@ -128,7 +122,7 @@ Description: "Captures assertions from a payer about whether the service is cove
   * ^definition = "A reference to a partially completed Questionnaire Response that is intended to be used as a basis for subsequent form filling in DTR."
   * ^comment = "If a QuestionnaireResponse is provided, no corresponding 'questionnaire' extension should be present - the canonical for the needed Questionnaire will be found inside the QuestionnaireResponse."
   * ^condition = "crd-ci-q1"
-  * value[x] only Reference(QuestionnaireResponse)
+  * value[x] only Reference(SDCQuestionnaireResponse)
     * ^comment = "QuestionnaireResponse.author SHALL have a type of Device, with an identifier and display value.  It MAY have a Reference.reference, but need not do so."
 * extension[date] only Extension
   * ^short = "Assertion date"

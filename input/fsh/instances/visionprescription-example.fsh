@@ -1,5 +1,5 @@
 Instance: visionprescription-example
-InstanceOf: VisionPrescription
+InstanceOf: CRDVisionPrescription
 Title: "VisionPrescription example"
 Description: "Example vision prescription based on CRD profile"
 Usage: #example

@@ -46,7 +46,7 @@ This implementation guide is designed to allow for initial support of basic capa
 ### Systems
 This implementation guide sets expectations for two types of systems:
 
-[CRD Clients](CapabilityStatement-crd-client.html) are typically systems that healthcare providers use at the point of care, including electronic medical records systems, pharmacy systems, and other provider and administrative systems used for ordering, documenting, and executing patient-related services. Users of these systems have a need for coverage requirements information to support care planning.
+CRD Clients are typically systems that healthcare providers use at the point of care, including electronic medical records systems, pharmacy systems, and other provider and administrative systems used for ordering, documenting, and executing patient-related services. Users of these systems have a need for coverage requirements information to support care planning.
 
 Examples of potential CRD clients include EHRs, EMRs, practice management systems, scheduling systems, patient registration systems, etc.  
 
@@ -57,16 +57,19 @@ The CRD client may actually involve multiple systems. For example, the systems t
 * The 'access token' and FHIR endpoint exposed to the CRD service has access to all relevant data, independent of which physical data store it resides in.
 * The intermediary could take on the responsibility for the FHIR interface, determining appropriate payer to route calls to, etc.
 
+There are two distinct CRD client sets of capabilities, one for [USCDI 1 (US-Core 3.1.1)](CapabilityStatement-crd-client3.1.html) and one for [USCDI 3 (US-Core 6.1.0)](CapabilityStatement-crd-client6.1.html).  Typically a client would support only one or the other based on which US Core release it supports internally.
+
 <blockquote class="stu-note">
 <p>
 When CRD clients are made up of multiple systems, there will be orchestration requirements to allow these multiple systems to interact in a way for them to appear as a single monolithic system from the perspective of the CRD server.  This IG provides some discussion of this on the <a href="epa.html">ePA Coordinators page</a>, though it does not (yet) provide any standardization about how system components should interoperate to achieve this monolithic behavior.  If there is industry interest, future releases of this IG may work to standardize some of these "intra-client" interactions.
 </p>
 </blockquote>
 
-[CRD Servers](CapabilityStatement-crd-server.html) (or servers) are systems that act on behalf of payer organizations to share information with healthcare providers about rules and requirements related to healthcare products and services covered by a patient's payer.  A CRD Server might provide coverage information related to one or more insurance plans. CRD Servers are a type of CDS Service as defined in the [CDS Hooks Specification](https://cds-hooks.hl7.org/2.0).
+CRD Servers (or servers) are systems that act on behalf of payer organizations to share information with healthcare providers about rules and requirements related to healthcare products and services covered by a patient's payer.  A CRD Server might provide coverage information related to one or more insurance plans. CRD Servers are a type of CDS Service as defined in the [CDS Hooks Specification](https://cds-hooks.hl7.org/2.0).
 
 Payers may have multiple back-end functions that handle different types of decision support and/or different types of services.  However, for the purpose of CRD conformance, payers **SHALL** have a single endpoint (managed by themselves or a delegate) that can handle responding to all CRD service calls.  CRD servers are free to route the information from those calls to back-end services as needed.  This routing may evolve over time and should have no impact on CRD client calls.
 
+There are also two distinct CRD server sets of capabilities, again one for [USCDI 1 (US-Core 3.1.1)](CapabilityStatement-crd-server3.1.html) and one for [USCDI 3 (US-Core 6.1.0)](CapabilityStatement-crd-server6.1.html).  Ideally payers will be able to handle both, but they are not presently required to.
 
 ### Content and Organization
 This implementation guide is organized into the following sections:

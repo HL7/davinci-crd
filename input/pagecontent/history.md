@@ -42,7 +42,7 @@ Added a number of enhancements and some changes to approach.  Key differences ar
 * Clarified expectations about [controlling hook invocation](deviations.html#controlling-hook-invocation)
 * Provided guidance on [external references](cards.html#external-reference)
 * Corrected cardType codes to use the IG temporary code system, as it is likely that long-term these codes won't all live as part of the IG
-* Added CapabilityStatements describing [CRD client](CapabilityStatement-crd-client.html) and [CRD Server](CapabilityStatement-crd-server.html) responsibilities
+* Added CapabilityStatements describing CRD client and CRD Server responsibilities
 
 
 As well there were various other adjustments to specification language, profiles, and examples to align with these changes and to correct minor typos or improve wording.
