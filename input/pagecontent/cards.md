@@ -320,7 +320,7 @@ When using this response type, the proposed orders (and any associated resources
   </tr>
   <tr>
     <td/>
-    <td><a href="{{site.data.fhir.ver.uscore}}/StructureDefinition-us-core-medication.html">us-core-medication</a></td>
+    <td><a href="{{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-medication.html">us-core-medication</a></td>
   </tr>
   <tr>
     <td><a href="StructureDefinition-profile-medicationrequest.html">profile-medicationrequest</a></td>
@@ -403,7 +403,7 @@ When using this response type, the proposed orders (and any associated resources
   </tr>
   <tr>
     <td/>
-    <td><a href="{{site.data.fhir.ver.uscore}}/StructureDefinition-us-core-medication.html">us-core-medication</a></td>
+    <td><a href="{{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-medication.html">us-core-medication</a></td>
   </tr>
   <tr>
     <td><a href="StructureDefinition-profile-medicationrequest.html">profile-medicationrequest</a></td>

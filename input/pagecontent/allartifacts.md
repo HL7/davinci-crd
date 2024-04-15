@@ -10,7 +10,10 @@ As a result, there are 2 different lists of artifacts - one for this Da Vinci im
     <td><a href="artifacts.html">CRD-Specific Artifacts</a></td>
   </tr>
   <tr>
-    <td><a href="{{site.data.fhir.ver.uscore}}">US Core IG</a></td>
+    <td><a href="{{site.data.fhir.ver.uscore3}}profiles.html">US Core 3.1 artifacts</a></td>
+  </tr>
+  <tr>
+    <td><a href="{{site.data.fhir.ver.uscore6}}profiles-and-extensions.html">US Core 6.1 artifacts</a></td>
   </tr>
 </table>
 

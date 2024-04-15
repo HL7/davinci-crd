@@ -82,7 +82,7 @@ The profiles expected to be used for the resources resolved to by the userId, pa
   </tr>
   <tr>
     <td/>
-    <td><a href="{{site.data.fhir.ver.uscore}}/StructureDefinition-us-core-practitionerrole.html">us-core-practitionerrole</a></td>
+    <td><a href="{{site.data.fhir.ver.hrex}}/StructureDefinition-hrex-practitionerrole.html">hrex-practitionerrole</a></td>
   </tr>
 </table>
 
@@ -123,7 +123,7 @@ The profiles expected to be used for the resources resolved to by the userId, pa
   </tr>
   <tr>
     <td/>
-    <td><a href="{{site.data.fhir.ver.uscore}}/StructureDefinition-us-core-practitionerrole.html">us-core-practitionerrole</a></td>
+    <td><a href="{{site.data.fhir.ver.hrex}}/StructureDefinition-hrex-practitionerrole.html">hrex-practitionerrole</a></td>
   </tr>
 </table>
 
@@ -164,7 +164,7 @@ The profiles expected to be used for the resources resolved to by the userId, pa
   </tr>
   <tr>
     <td/>
-    <td><a href="{{site.data.fhir.ver.uscore}}/StructureDefinition-us-core-practitionerrole.html">us-core-practitionerrole</a></td>
+    <td><a href="{{site.data.fhir.ver.hrex}}/StructureDefinition-hrex-practitionerrole.html">hrex-practitionerrole</a></td>
   </tr>
 </table>
 
@@ -252,7 +252,7 @@ There are no constraints or special rules related to this hook beyond the profil
   </tr>
   <tr>
     <td/>
-    <td><a href="{{site.data.fhir.ver.uscore}}/StructureDefinition-us-core-practitionerrole.html">us-core-practitionerrole<sup>†</sup></a></td>
+    <td><a href="{{site.data.fhir.ver.hrex}}/StructureDefinition-hrex-practitionerrole.html">hrex-practitionerrole<sup>†</sup></a></td>
   </tr>
   <tr>
     <td><a href="StructureDefinition-profile-servicerequest.html">profile-servicerequest</a></td>

@@ -35,6 +35,9 @@ The definition for the Code System with URI 'https://www.cms.gov/Medicare/Coding
 # This example intentionally uses text rather than a code and the concept represented can't be expressed in the value set
 WARNING: Binary/CRDServiceResponse: CDSHooksResponse.systemActions[0].resource/*ServiceRequest/idfromcontext*/.extension[0].extension[6].value.ofType(CodeableConcept): No code provided, and a code should be provided from the value set 'CRD Coverage Assertion Reasons' (http://hl7.org/fhir/us/davinci-crd/ValueSet/coverageAssertionReasons|2.1.0-cibuild)
 
+# This is indeed a large value set and it's ok that the expansion doesn't show everything
+INFORMATION: ValueSet.where(id = 'orderDetail'): The value set expansion is too large, and only a subset has been displayed
+
 # These are incorrectly declared as 'draft' in their source IGs and there's not much we can do about it
 %Reference to draft CodeSystem http://hl7.org/fhir/uv/sdc/CodeSystem/temp|3.0.0
 %Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/communication-category|0.1.0

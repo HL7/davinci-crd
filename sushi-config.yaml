@@ -46,11 +46,17 @@ releaseLabel: STU 2
 # │  To use a provided input/includes/menu.xml file, delete the "menu" property below.             │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 dependencies:
+  hl7.fhir.us.core.3.1.1:
+    version: 3.1.1
+    uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
+    id: uscore3
+    reason: |
+      Defines U.S. Core 1 EHR expectations on a range of resources that will be passed to and/or queried by CRD servers.  
   hl7.fhir.us.core:
-    id: uscore
+    id: uscore6
     version: 6.1.0
     reason: |
-      Defines U.S. EHR expectations on a range of resources that will be passed to and/or queried by CRD servers
+      Defines U.S. Core 3 EHR expectations on a range of resources that will be passed to and/or queried by CRD servers
   hl7.fhir.uv.sdc:
     id: sdc
     version: 3.0.0

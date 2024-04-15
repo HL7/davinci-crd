@@ -67,7 +67,10 @@
         <a href="{{site.data.info.assets}}artifacts.html">CRD-specific Artifacts</a>
       </li>
       <li>
-        <a href="{{site.data.fhir.ver.uscore}}">US Core</a>
+        <a href="{{site.data.fhir.ver.uscore3}}profiles.html">US Core 3.1.1 Artifacts</a>
+      </li>
+      <li>
+        <a href="{{site.data.fhir.ver.uscore6}}profiles-and-extensions.html">US Core 6.1.0 Artifacts</a>
       </li>
     </ul>
   </li>
@@ -77,10 +80,13 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a target="_blank" href="{{site.data.fhir.path}}index.html">FHIR R4 Spec <img src="external.png" style="text-align: baseline"/></a>
+        <a target="_blank" href="{{site.data.fhir.path}}index.html">FHIR R4 Spec</a>
       </li>
       <li>
-        <a target="_blank" href="{{site.data.fhir.ver.uscore}}">US Core<img src="external.png" style="text-align: baseline"/></a>
+        <a target="_blank" href="{{site.data.fhir.ver.uscore3}}">US Core 3.1.1</a>
+      </li>
+      <li>
+        <a target="_blank" href="{{site.data.fhir.ver.uscore6}}">US Core 6.1.0</a>
       </li>
       <li>
         <a target="_blank" href="https://cds-hooks.hl7.org/2.0">CDS Hooks <img src="external.png" style="text-align: baseline"/></a>
