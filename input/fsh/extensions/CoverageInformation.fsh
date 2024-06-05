@@ -149,9 +149,9 @@ Severity: #error
 Expression: "extension.where(url='questionnaire' or url='response').exists() implies (extension.where(url = 'doc-needed').exists() and extension.where(url = 'doc-needed').all(value != 'no-doc'))"
 
 Invariant: crd-ci-q2
-Description: "If covered is set to 'not-covered', then 'pa-needed' should not exist."
+Description: "If covered is set to 'not-covered', then 'pa-needed' must not exist."
 Severity: #error
-Expression: "extension.where(url = 'covered' and value != 'not-covered') implies extension.where(url = 'pa-needed').exists()"
+Expression: "extension.where(url = 'covered' and value = 'not-covered') implies extension.where(url = 'pa-needed').exists().not()"
 
 Invariant: crd-ci-q3
 Description: "If 'info-needed' exists, then at least one of 'covered', 'pa-needed', or 'doc-needed' must be 'conditional'."
