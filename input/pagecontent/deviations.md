@@ -8,7 +8,7 @@ This implementation guide extends/customizes CDS Hooks in 5 ways: additional hoo
 
 ### Additional order-dispatch hook
 
-Based on implementer feedback, CRD has identified the need for an additional location within CRD client workflow where payer decision support might be relevant - the process of dispatching a non-directed order to a specific performer.  (E.g. selecting a referral recipient, choosing an imaging center, picking a lab, etc.)  To support this use-case, a new proposed [order-dispatch](https://cds-hooks.org/hooks/order-dispatch) has been proposed.  Implementers **MAY** choose to provide support for this new hook.
+Based on implementer feedback, CRD has identified the need for an additional location within CRD client workflow where payer decision support might be relevant - the process of dispatching a non-directed order to a specific performer.  (E.g., selecting a referral recipient, choosing an imaging center, picking a lab, etc.)  To support this use-case, a new proposed [order-dispatch](https://cds-hooks.org/hooks/order-dispatch) has been proposed.  Implementers **MAY** choose to provide support for this new hook.
 
 ### Additional Hook scope
 In the [current build](https://cds-hooks.org/hooks/order-sign/), the order-sign hook can be used for both 'draft' orders that are newly created as well as for updated orders that are active.  The balloted version of the hooks this IG release is bound to are limited to draft orders.  This IG adopts the newer wording, meaning that the order-sign hook can be triggered both on newly created orders, as well as when orders are updated (changing status, changing time-frame, etc.).  The hook can also be re-triggered if there is a key change to the context, most typically the establishment of new or renewed coverage relevant to the order.
@@ -18,7 +18,7 @@ Two of the hooks used by this specification (`order-select` and `order-sign`) id
 
 * [CommunicationRequest]({{site.data.fhir.path}}communicationrequest.html) - Needed to trigger CRD when a provider requests that another provider transfer patient records or other supporting information to another organization or agency.
 
-* [Task]({{site.data.fhir.path}}task.html) - Task is used to seek fulfillment of an order from service providers.  Because coverage can be influenced by who is asked to perform an order, coverage requirements can be relevant here.  As well, task is used to request changes to existing therapies (e.g. stopping a medication, suspending a therapy, etc.) and changes to therapy can also have impacts on coverage requirements.
+* [Task]({{site.data.fhir.path}}task.html) - Task is used to seek fulfillment of an order from service providers.  Because coverage can be influenced by who is asked to perform an order, coverage requirements can be relevant here.  As well, task is used to request changes to existing therapies (e.g., stopping a medication, suspending a therapy, etc.) and changes to therapy can also have impacts on coverage requirements.
 
 The proposal to add these resources to the existing hook definitions [can be found](https://github.com/cds-hooks/docs/issues/396) on the CDS hooks [issue tracker](https://github.com/cds-hooks/docs/issues).
 
@@ -94,7 +94,7 @@ Notes:
 
 *  This version of the implementation guide provides only limited standardization of the codes, names, types, or descriptions for configuration options for CRD Servers.  Future versions of the CRD specification may standardize additional configuration options that have been identified as useful by individual payer and CRD client experimentation - thereby improving consistency in behavior across payer services to ease the burden on those performing configuration.
 
-*  There is no mechanism to express co-occurrence rules amongst configuration options.  Guidance can be given about allowed combinations in descriptions, but payer services **SHALL** gracefully handle disallowed/nonsensical combinations.  I.e. the CRD Server must:
+*  There is no mechanism to express co-occurrence rules amongst configuration options.  Guidance can be given about allowed combinations in descriptions, but payer services **SHALL** gracefully handle disallowed/nonsensical combinations.  I.e., the CRD Server must:
 
     *  allow for the possibility that CRD Clients might not adhere to their co-occurrence rules,
 
@@ -138,7 +138,7 @@ Notes:
 
 * Because support for some configuration is required for all CRD servers, the following requirements apply:
     *  CRD Servers **SHALL** behave in the manner prescribed by any supported configuration information received from the CRD Client.
-    *  CRD Servers **SHALL NOT** require the inclusion of configuration information in a hook call (i.e. no hook invocation is permitted to fail because configuration information was not included).
+    *  CRD Servers **SHALL NOT** require the inclusion of configuration information in a hook call (i.e., no hook invocation is permitted to fail because configuration information was not included).
     *  CRD Clients **MAY** send configuration information that CRD Servers do not support. In this case, the CRD Server **SHALL** ignore the unsupported configuration information.
 
 *  This specification provides no guidance on exactly when/how CRD Clients are expected to manage hook configuration.  This could be done at the level of provider roles, individual providers, location from which the hook is invoked, or other means.  CRD Clients can experiment and determine what types of configuration make the most sense and at what levels they can support managing/persisting configuration information.
@@ -149,7 +149,7 @@ One of the options supported in CDS Hooks is the ability for a service to reques
 
 A [proposal](https://github.com/cds-hooks/docs/issues/377) has been submitted suggesting how to address this issue.  This version of the implementation guide pre-adopts that proposal.
 
-Specifically, where a hook defines a context element that consists of a resource or collection of resources (e.g. [order-select.draftOrders](https://cds-hooks.hl7.org/hooks/order-select/2020May/order-select.html#context) or [order-sign.draftOrders](https://cds-hooks.hl7.org/hooks/order-sign/2020May/order-sign#context)), systems **SHALL** recognize context tokens of the form `context.<context property>.<FHIR resource name>.id` in prefetch queries.  Those tokens **SHALL** evaluate to a comma-separated list of the identifiers of all resources of the specified type within that context key.
+Specifically, where a hook defines a context element that consists of a resource or collection of resources (e.g., [order-select.draftOrders](https://cds-hooks.hl7.org/hooks/order-select/2020May/order-select.html#context) or [order-sign.draftOrders](https://cds-hooks.hl7.org/hooks/order-sign/2020May/order-sign#context)), systems **SHALL** recognize context tokens of the form `context.<context property>.<FHIR resource name>.id` in prefetch queries.  Those tokens **SHALL** evaluate to a comma-separated list of the identifiers of all resources of the specified type within that context key.
 
 Note: Recognizing these tokens doesn't mean the client must support prefetch or the requested prefetch query, only that it recognizes the token, doesn't treat it as an error and - if it supports the query - substitutes the token correctly.
 
@@ -214,7 +214,7 @@ For example, this [CDS Hook Suggestion](https://cds-hooks.hl7.org/2.0/#suggestio
 
 
 #### Linkage between created resources
-The linkage between resources by `id` in different Actions within a single Suggestion doesn't require any extension to CDS Hooks, but it does require additional guidance.  For the purposes of this implementation guide, the inclusion of the `id` element in 'created' resources and references in created and updated resources within multi-action suggestions **SHALL** be handled as per FHIR's [transaction processing rules]({{site.data.fhir.path}}http.html#trules). I.e. Treating each requested action as being an entry in a FHIR transaction bundle where the base URL is the base URL of the CRD Client's server.  POST corresponds to an `action.type` of 'create' and PUT corresponds to an action.type of 'update'.  Specifically, this means that if a FHIR Reference points to the resource type and `id` of a resource of another 'create' Action in the same Suggestion, then the reference to that resource **SHALL** be updated by the server to point to the `id` assigned by the client when performing the 'create'.  CRD Clients **SHALL** perform 'creates' in an order that ensures that referenced resources are created prior to referencing resources.
+The linkage between resources by `id` in different Actions within a single Suggestion doesn't require any extension to CDS Hooks, but it does require additional guidance.  For the purposes of this implementation guide, the inclusion of the `id` element in 'created' resources and references in created and updated resources within multi-action suggestions **SHALL** be handled as per FHIR's [transaction processing rules]({{site.data.fhir.path}}http.html#trules). I.e., Treating each requested action as being an entry in a FHIR transaction bundle where the base URL is the base URL of the CRD Client's server.  POST corresponds to an `action.type` of 'create' and PUT corresponds to an action.type of 'update'.  Specifically, this means that if a FHIR Reference points to the resource type and `id` of a resource of another 'create' Action in the same Suggestion, then the reference to that resource **SHALL** be updated by the server to point to the `id` assigned by the client when performing the 'create'.  CRD Clients **SHALL** perform 'creates' in an order that ensures that referenced resources are created prior to referencing resources.
 
 For example, the following [CDS Hook Suggestion](https://cds-hooks.hl7.org/2.0/#suggestion) will cause the creation of a new [ServiceRequest]({{site.data.fhir.path}}servicerequest.html) that will be pointed to by a newly created ([DeviceRequest]({{site.data.fhir.path}}devicerequest.html) resource).  The ClaimResponse would be created before the MedicationRequest would be updated:
 
@@ -282,6 +282,6 @@ Provider systems **SHALL** only invoke hooks on payer services where the patient
 
 To avoid confusion for providers, where a patient has multiple active coverages that could be relevant to the current order/appointment/etc., CRD clients **SHALL** select from those coverages which is most likely to be primary and only solicit coverage information for that one payer.  If they invoke CRD on other payers, CRD clients **SHALL** ensure that card types that return coverage information are disabled for those 'likely secondary' payers.
 
-NOTE: There is no expectation that CRD clients will only make calls to payer services that are 'known' to provide coverage for the proposed service.  In some cases, the EMR will not know at time of order entry which payer(s) will have claims submitted to them.  Also, a payer with active coverage might have information relevant to the order even if a claim will never be submitted to them (e.g. contraindications) or require a formal declaration of non-coverage, even though that declaration is a given.
+NOTE: There is no expectation that CRD clients will only make calls to payer services that are 'known' to provide coverage for the proposed service.  In some cases, the EMR will not know at time of order entry which payer(s) will have claims submitted to them.  Also, a payer with active coverage might have information relevant to the order even if a claim will never be submitted to them (e.g., contraindications) or require a formal declaration of non-coverage, even though that declaration is a given.
 
 Where the patient has multiple active coverages that the CRD client deems appropriate to call the respective CRD servers for, the CRD client **SHALL** invoke all CRD server calls in parallel and display results simultaneously to ensure timely response to user action.

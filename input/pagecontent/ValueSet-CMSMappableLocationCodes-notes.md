@@ -2,7 +2,7 @@
 
 ### CMS Mapping
 
-The 'temporary' codes defined in this value set map to the CMS codes directly.  I.e. CRDTempCodes '4 - Homeless Shelter' corresponds directly to CMS code 4 with the same meaning.  For codes that already exist in HL7-defined code systems, the mapping is as follows:
+The 'temporary' codes defined in this value set map to the CMS codes directly.  I.e., CRDTempCodes '4 - Homeless Shelter' corresponds directly to CMS code 4 with the same meaning.  For codes that already exist in HL7-defined code systems, the mapping is as follows:
 
 |CMS Code|CMS Label|HL7 code system URI|HL7 Code|HL7 Label|
 |--------|---------|-------------------|--------|---------|

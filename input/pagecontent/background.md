@@ -76,7 +76,7 @@ Provider systems will use the specification and workflows defined by [CDS Hooks 
 SMART on FHIR is expected to be used in two principal ways:
 
 ##### Ad-hoc Coverage Requirements Discovery
-CDS Hooks provides a mechanism for payers to advise clinicians on coverage requirements as part of their regular workflow - when ordering medications, making referrals, scheduling appointments, discharging patients, etc.  However, sometimes clinicians may be interested in learning about coverage requirements without going through the workflow steps within their CRD client.  I.e. they don't want to actually create a referral, they just want to ask the question "what would the requirements be if I *wanted* to create a referral?
+CDS Hooks provides a mechanism for payers to advise clinicians on coverage requirements as part of their regular workflow - when ordering medications, making referrals, scheduling appointments, discharging patients, etc.  However, sometimes clinicians may be interested in learning about coverage requirements without going through the workflow steps within their CRD client.  I.e., they don't want to actually create a referral, they just want to ask the question "what would the requirements be if I *wanted* to create a referral?
 
 Discussion of how a SMART on FHIR app can be used to trigger CDS Hooks from within an CRD client to perform such what-if scenarios can be found [here](foundation.html#smart-on-fhir-hook-invocation).
 

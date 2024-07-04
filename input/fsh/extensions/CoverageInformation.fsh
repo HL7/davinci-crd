@@ -94,7 +94,7 @@ Description: "Captures assertions from a payer about whether the service is cove
 * extension[reason] only Extension
   * ^short = "Reason for assertion"
   * ^definition = "Indicates the 'reason' for the coverage assertion"
-  * ^comment = "This can be used whenever the reason may not be obvious to the practitioner.  E.g. prior authorization waived because the provider is gold-carded; patient is no longer a minor and hasn't been registered as an adult dependent; patient has reached their limit for this type of service this year; etc.  Additional standard reason codes may be introduced in the future.  If no standard code applies, use text."
+  * ^comment = "This can be used whenever the reason may not be obvious to the practitioner.  E.g., prior authorization waived because the provider is gold-carded; patient is no longer a minor and hasn't been registered as an adult dependent; patient has reached their limit for this type of service this year; etc.  Additional standard reason codes may be introduced in the future.  If no standard code applies, use text."
   * value[x] 1..1
   * value[x] only CodeableConcept
   * value[x] from CRDCoverageAssertionReasons (extensible)
@@ -114,7 +114,7 @@ Description: "Captures assertions from a payer about whether the service is cove
     * ^definition = "The detail or qualification that applies to this coverage assertion."
     * value[x] only boolean or string or SimpleQuantity or Period
   * extension[qualification] ^short = "Additional info about detail"
-    * ^definition = "Additional text that qualifies/expands on the computable detail.  E.g. 'Provided coverage is renewed' or 'Does not account for deductible'"
+    * ^definition = "Additional text that qualifies/expands on the computable detail.  E.g., 'Provided coverage is renewed' or 'Does not account for deductible'"
     * value[x] only string
 * extension[dependency] ^short = "Resources that impact this assertion"
   * ^definition = "If present, indicates that the determination represented here is dependent on the content, determination, and possibly execution of the referenced order(s)"
