@@ -12,7 +12,7 @@ In the absence of guidance from the CDS Hooks specification, CRD Servers are exp
 
 * If the CRD Server encounters an error when processing the request, the system **SHALL** return an appropriate error HTTP Response Code, starting with the digit "4" or "5", indicating that there was an error.
 * The CRD Server **SHOULD** provide an OperationOutcome for internal issue tracking by the client system.
-* The CRD Client **MAY** display to the user that the Coverage Requirements Discovery Service is unavailable.  If additional information (e.g., number to call) is available, it **MAY** also be included in the message to the user.
+* The CRD Client **MAY** display to the user that the Coverage Requirements Discovery Service is unavailable.  If additional information (e.g. number to call) is available, it **MAY** also be included in the message to the user.
 * While any 4xx or 5xx response code could be raised, the CRD Server **SHALL** use the 400 and 422 codes in a manner consistent with the FHIR RESTful Create Action, specifically:
     * 400 - Bad Request - The request is not parsable as JSON
     * 422 - Unprocessable Entity - The request is valid JSON, but is not conformant to CDS Hooks, FHIR resources, or required profiles
@@ -45,11 +45,11 @@ This hook would be triggered when the user of a CRD Client books a future appoin
 
 Potentially relevant CRD advice related to this hook might include:
 
-* Requirements related to the intended location and/or participants (e.g., warnings about out-of-network)
+* Requirements related to the intended location and/or participants (e.g. warnings about out-of-network)
 
-* Requirements related to the service being booked (e.g., is prior authorization needed? Is the service covered? Is the indication appropriate? Is special documentation required?)
+* Requirements related to the service being booked (e.g. Is prior authorization needed? Is the service covered? Is the indication appropriate? Is special documentation required?)
 
-* Requirements related to the timing of the service (e.g., is the coverage still expected to be in effect? is the service too soon since the last service of that type?)
+* Requirements related to the timing of the service (e.g. is the coverage still expected to be in effect? is the service too soon since the last service of that type?)
 
 * Reminders about additional services that are recommended to be scheduled or booked for the same patient - either as part of the scheduled encounter or as part of additional appointments that could be created at the same time
 
@@ -187,9 +187,9 @@ Support for this hook is optional, as not all information will necessarily be av
 
 First, because it fires earlier in the user's system interactions, it provides an opportunity for CRD services to initiate back-end queries that might take time to complete so that relevant information is already retrieved and cached before Order Sign is reached.  This increases performance and makes it easier for CRD services to respond in the required timeframe.
 
-Second, where a CRD service is able to provide guidance to providers earlier in the process (e.g., upon selection of a service but before entering detailed instructions), it can help to make the provider experience more efficient.  (If a provider knows up-front that a service won't be paid for but an alternative would be, they might be happier if they can save the time on entering full details before finding this out.)  Not all providers or EHRs will necessarily want to receive 'proactive' decision support during the order entry process.  EHRs can be configured as to what types of cards they're interested in receiving back for this hook, including no cards at all if the hook is being invoked solely for performance/caching reasons.
+Second, where a CRD service is able to provide guidance to providers earlier in the process (e.g. upon selection of a service but before entering detailed instructions), it can help to make the provider experience more efficient.  (If a provider knows up-front that a service won't be paid for but an alternative would be, they might be happier if they can save the time on entering full details before finding this out.)  Not all providers or EHRs will necessarily want to receive 'proactive' decision support during the order entry process.  EHRs can be configured as to what types of cards they're interested in receiving back for this hook, including no cards at all if the hook is being invoked solely for performance/caching reasons.
 
-This hook allows multiple resource types to be present. Resources provided could all be the same type or be a mixture of types.  Coverage requirements **SHOULD** be limited only to those resources that are included in the `selections` context, though the content of other resources **SHOULD** also be considered before making recommendations about what additional actions are necessary.  (I.e., don't recommend an action if there's already a draft order to perform that action.)  
+This hook allows multiple resource types to be present. Resources provided could all be the same type or be a mixture of types.  Coverage requirements **SHOULD** be limited only to those resources that are included in the `selections` context, though the content of other resources **SHOULD** also be considered before making recommendations about what additional actions are necessary.  (I.e. don't recommend an action if there's already a draft order to perform that action.)  
 
 The different relevant resource types are as follows (support can vary between clients):
 
@@ -203,7 +203,7 @@ The different relevant resource types are as follows (support can vary between c
 
 **NutritionOrder**: Used to order the preparation of specific meal types.  Generally used for in-patient care, but potentially also relevant for homecare.
 
-<sup>*</sup> - Note: in the medication space, regulations may mandate alternate standards for some of the functionality covered by CRD for certain classes of medications.  e.g.,NCPDP Script
+<sup>*</sup> - Note: in the medication space, regulations may mandate alternate standards for some of the functionality covered by CRD for certain classes of medications.  E.g. NCPDP Script
 
 
 Coverage requirement responses might include:
@@ -267,7 +267,7 @@ There are no constraints or special rules related to this hook beyond the profil
 <sup>†</sup> While this hook does not explicitly list PractitionerRole as an expected resource type for userId, it is not prohibited and is included to allow linking the user to a Practitioner in a specific role acting on behalf of a specific Organization.
 
 Notes: 
-* While this hook is defined for use when ordering, it is still relevant when proposing (e.g., as part of a consult note) or planning (e.g., as part of a care plan) the use of an intervention.  All the 'Request' resources support differentiating between plans, proposals, and orders.  Where CRD Clients have an appropriate workflow and data capture mechanism, this hook **MAY** be used in scenarios that don't involve creating a true order.
+* While this hook is defined for use when ordering, it is still relevant when proposing (e.g. as part of a consult note) or planning (e.g. as part of a care plan) the use of an intervention.  All the 'Request' resources support differentiating between plans, proposals, and orders.  Where CRD Clients have an appropriate workflow and data capture mechanism, this hook **MAY** be used in scenarios that don't involve creating a true order.
 
 
 ### order-sign

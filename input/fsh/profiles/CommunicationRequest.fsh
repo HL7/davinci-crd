@@ -27,7 +27,7 @@ Description: "This profile specifies constraints on the CommunicationRequest res
   * ^comment = "potentially relevant for CRD in some situations."
 * payload 1.. MS
   * extension contains $extension-CommunicationRequest.payload.content named codeableConcept 1..1 MS
-  * extension[codeableConcept] ^comment = "If the actual communication request being authored is conveying resources or an attachment, the CRD client SHALL either determine a coded way to indicate what information sharing is being requested or shall omit sharing the CommunicationRequest - i.e., don't bother calling the hook service."
+  * extension[codeableConcept] ^comment = "If the actual communication request being authored is conveying resources or an attachment, the CRD client SHALL either determine a coded way to indicate what information sharing is being requested or shall omit sharing the CommunicationRequest - i.e. don't bother calling the hook service."
     * value[x] only CodeableConcept
 * occurrence[x] MS
 * authoredOn 1.. MS

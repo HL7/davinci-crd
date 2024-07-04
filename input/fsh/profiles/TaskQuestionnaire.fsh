@@ -34,7 +34,7 @@ Description: "This profile specifies constraints on the Task resource to support
   * ^comment = "This can be populated within the CRD client to delegate responsibility for filling out the form to someone else."
 * reasonCode MS
 * reasonCode from CRDTaskReason (extensible)
-  * ^requirements = "Captures additional details about why the form is needed.  E.g., \"For prior authorization\" or \"For audit documentation\"."
+  * ^requirements = "Captures additional details about why the form is needed.  E.g. \"For prior authorization\" or \"For audit documentation\"."
   * ^binding.description = "CRD Task Reason"
 * input contains afterCompletion 1..* MS
 * input[afterCompletion] ^definition = "Indicates the action to take after completing the form."

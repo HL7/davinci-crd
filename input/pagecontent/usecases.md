@@ -8,7 +8,7 @@ Providers need to easily discover which payer covered services, medications (not
 
 
 This implementation guide defines a FHIR based API that providers can use to discover, in real time, specific payer requirements that may affect whether services or devices provided to a patient are covered by their responsible payer.  The Coverage Requirement Discovery may be based on:
-* Plan conditions only (i.e., without Protected Health Information - PHI), or also
+* Plan conditions only (i.e. without Protected Health Information - PHI), or also
 * Plan member identification (PHI) and, potentially, clinical information needed to determine requirements.
 
 When needed, the API will allow payers with authorization to query provider systems for additional patient information needed to inform the guidance provided - for example by determining what information already exists or what steps have already occurred.
@@ -72,7 +72,7 @@ A healthcare provider decides that a clinical action is needed or wants to explo
 Based on whether the provider has decided to perform the action or just wishes to explore, they will proceed to 2a or 2b.
 
 **2a. Provider performs EMR action**<br/>
-The provider uses an EMR to initiate the clinical action from step #1, entering required information (e.g., a drug, a type of referral or appointment, etc.) into forms provided by the EMR.
+The provider uses an EMR to initiate the clinical action from step #1, entering required information (e.g. a drug, a type of referral or appointment, etc.) into forms provided by the EMR.
 
 **2b. Provider starts 'CRD what-if'**<br/>
 The provider uses an EMR to launch a 'What if?' CRD SMART app to explore payer coverage requirements.  The provider indicates the type of action they're considering into the CRD SMART app which prompts for additional information relevant to coverage determination, such as the proposed drug, type of referral or appointment, etc.
@@ -85,20 +85,20 @@ Note:
 * Payer server requirements are expected to be static. The EMR or CRD SMART app may choose to cache information received.
 * Modular EMR systems may need to retrieve the coverage type or other information required by the CRD Server from other systems within the provider's environment.
 
-It is up to payers to determine whether and how long to cache information such as "is member covered" and "what are coverage rules for service x", as well as if and how to check whether cached information is 'dirty' (i.e., the underlying record has changed).  From a performance perspective, if follow-on hooks (i.e., Order Dispatch or a subsequent Order Sign for revisions) are invoked, there is no expectation information will be cached if no hook for that patient have fired in the last 24 hours, which is why the response time target is longer in that situation.
+It is up to payers to determine whether and how long to cache information such as "is member covered" and "what are coverage rules for service x", as well as if and how to check whether cached information is 'dirty' (i.e. the underlying record has changed).  From a performance perspective, if follow-on hooks (i.e. Order Dispatch or a subsequent Order Sign for revisions) are invoked, there is no expectation information will be cached if no hook for that patient have fired in the last 24 hours, which is why the response time target is longer in that situation.
 
-In the event decisions are made based on 'dirty' cached data, the unique identifier provided with the Coverage Information extension will allow the payer to trace what information the decision was based on.  In general, if a decision is based on information outside the payer's control (e.g., a policy being cancelled), they will not be held to the decision conveyed to the CRD client.  If a decision is based on changes within the payer's control (e.g., rules for when prior authorization is needed have changed), payers are expected to respect the decision that was conveyed to the CRD client.
+In the event decisions are made based on 'dirty' cached data, the unique identifier provided with the Coverage Information extension will allow the payer to trace what information the decision was based on.  In general, if a decision is based on information outside the payer's control (e.g. a policy being cancelled), they will not be held to the decision conveyed to the CRD client.  If a decision is based on changes within the payer's control (e.g. rules for when prior authorization is needed have changed), payers are expected to respect the decision that was conveyed to the CRD client.
 
 **4. System starts CRD query**<br/>
 The EMR (in the background as the provider is typing) or the CRD SMART app (once enough information has been provided) initiates a query to the CRD Server providing the patient's coverage type and/or identity along with information about the proposed clinical action.  The EMR might also provide the CRD Server with one or more of the following:
 * a 'token' to allow the CRD Server to temporarily and securely request additional patient information from the EMR in step #5.
-* configuration information that indicates the type of information the EMR user is interested in receiving (e.g., whether prior authorization or clinical documentation is required, or products covered or recommended by the plan.
+* configuration information that indicates the type of information the EMR user is interested in receiving (e.g. whether prior authorization or clinical documentation is required, or products covered or recommended by the plan.
 
 Note:
 * Configuration options - received in step #3 - might be managed by the EMR and information provided could be specific to the context of the request, a user role, or an individual user.
 
 **5. (Optional) Payer service gets additional data**<br/>
-If additional information is needed to process the query, the CRD Server may use the EMR's secure API, with the temporary access token provided in step #4, to request additional information from the patient's record.  (In some cases, the EHR may provide information up-front based on pre-fetch requests from the payer's configuration information.) Examples include requests for information needed to assess whether the action is needed (e.g., an allergy to a first line medication, lab result), whether recommended next steps are in place (e.g., follow-up visits scheduled, lab tests ordered to monitor effectiveness/safety), etc.  The CRD Server might submit multiple queries for different types of data to determine coverage requirements.
+If additional information is needed to process the query, the CRD Server may use the EMR's secure API, with the temporary access token provided in step #4, to request additional information from the patient's record.  (In some cases, the EHR may provide information up-front based on pre-fetch requests from the payer's configuration information.) Examples include requests for information needed to assess whether the action is needed (e.g. an allergy to a first line medication, lab result), whether recommended next steps are in place (e.g. follow-up visits scheduled, lab tests ordered to monitor effectiveness/safety), etc.  The CRD Server might submit multiple queries for different types of data to determine coverage requirements.
 
 Note:
 * By requesting additional information directly from the EMR, a CRD Server can determine what documentation already exists and what requirements already exist, using that information to make the most accurate assessment possible before providing cards to the user that suggest additional documentation is necessary or prior authorization needs to be requested.  CRD Servers should always attempt to gather what information they can automatically before providing responses that might require human action, such as completing a Questionnaire or launching DTR.
@@ -110,7 +110,7 @@ Based on the information provided/retrieved, the payer system returns guidance t
 * A link to external documentation describing coverage requirements to help inform/educate providers (not as a substitute for electronic prior authorization)
 * Links to specific forms or templates that need to be completed
 * A link to open a SMART application that allows the provider to provide needed information or additional detail to help guide coverage requirements discovery
-* Links with recommendations to substitute the planned action with a different action and/or to add additional actions (e.g., proposals to replace a proposed drug to a required first-line treatment or a drug covered by the patient's plan, to add a concurrent medication, additional diagnostic tests, etc.)
+* Links with recommendations to substitute the planned action with a different action and/or to add additional actions (e.g. proposals to replace a proposed drug to a required first-line treatment or a drug covered by the patient's plan, to add a concurrent medication, additional diagnostic tests, etc.)
 
 Payer requirements might include the need for prior authorization, forms that must be completed, medical documentation that must exist or be provided, recommendations on alternative therapies, etc.
 
@@ -132,7 +132,7 @@ If the response includes links to additional information or apps, the provider c
 While the primary purpose of this implementation guide is to ensure that healthcare providers using EMRs are aware of insurance plan requirements that might impact payment for services rendered, the CRD architecture and infrastructure can potentially be used for other purposes that enhance the provider-payer-patient relationship:
 * Providing guidance to providers about lower-cost or better-covered product alternatives
 * Identifying in-network providers for the delivery of services
-* Making providers aware of clinical risks (e.g., potential drug-drug interactions) based on payer knowledge from previous claims
+* Making providers aware of clinical risks (e.g. potential drug-drug interactions) based on payer knowledge from previous claims
 * Improving accountable care delivery by making recommendations related to clinical practice guidelines or best practices
 * Expanding usage beyond EMRs to allied healthcare providers (dentistry, vision care, physiotherapy, etc.)
 * Surfacing the CRD back-end to patients, their care-givers, and/or healthcare providers through a web-based user interface to support exploring coverage requirements without the use of an EMR
