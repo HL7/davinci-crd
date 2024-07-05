@@ -95,9 +95,9 @@
 <page deprecated="true" key="profiles" name="(profiles)"/>
 <page key="artifacts" name="Artifact List"/>
 <page key="deviations" name="CDS Hook Deviations and Enhancements"/>
+<page key="cards" name="CDS Hook Response Profiles"/>
 <page key="index" name="CRD IG Home Page"/>
 <page key="metrics" name="CRD Metrics"/>
-<page key="cards" name="Cards Profiles"/>
 <page key="history" name="Change History"/>
 <page key="credits" name="Credits"/>
 <page key="downloads" name="Downloads"/>
