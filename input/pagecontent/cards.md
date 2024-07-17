@@ -131,7 +131,7 @@ Systems **MAY** fire calls related to orders even if there is already a coverage
 
 However, payers **SHALL NOT** send a system action to update the order unless something is new.  Payers **SHOULD** take into account the previous decision in deciding how much processing is necessary before returning a response.
 
-If a *coverage-information* extension indicates the need to collect additional information (via 'info-needed'), the extension **SHOULD** include a reference to the Questionnaire(s) to be completed.  Where Questionnaires are specified, this indicates that the payer supports <a href="http://hl7.org/fhir/us/davinci-dtr">Da Vinci DTR</a> and the relevant information can be gathered using those Questionnaires as specified in that guide.  
+If a *coverage-information* extension indicates the need to collect additional information (via 'doc-needed'), the extension **SHOULD** include a reference to the Questionnaire(s) to be completed.  Where Questionnaires are specified, this indicates that the payer supports <a href="http://hl7.org/fhir/us/davinci-dtr">Da Vinci DTR</a> and the relevant information can be gathered using those Questionnaires as specified in that guide.  
 
 When a Coverage Information response type indicating that additional clinical documentation is needed and the CRD client supports DTR, CRD Clients SHALL ensure that clinical users have an opportunity to launch their DTR solution as part of the current workflow. Where a Coverage Information indicates that additional administrative documentation is needed, CRD Clients SHOULD allow clinical users to have an opportunity to launch their DTR solution, but SHOULD make it clear that the information to be captured is non-clinical.
 
