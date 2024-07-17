@@ -33,7 +33,7 @@ Description: "Captures assertions from a payer about whether the service is cove
   * ^definition = "Indicates coverage information."
 * ^extension[$fmm].valueInteger = 1
 * extension contains
-    coverage 1..1 and
+    coverage 1..1 MS and
     covered 1..1 MS and
     pa-needed 0..1 MS and
     doc-needed 0..1 MS and
