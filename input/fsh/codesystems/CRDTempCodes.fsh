@@ -27,7 +27,7 @@ Description: "Codes temporarily defined as part of the CRD implementation guide.
 * #concurrent-review       "Concurrent review"                 "Additional payer-defined documentation will be required prior to claim payment.  Value should be a boolean."
 * #appropriate-use-needed  "Appropriate use"                   "Payer-defined appropriate use process must be invoked to determine coverage.  Value should be a boolean."
 // Coverage guidance - general
-* #conditional             "Conditional"                       "Decision cannot be made without more information (more detailed code, service rendering information, etc.)"
+* #conditional             "Conditional"                       "There is the potential for information requirements from a participant type not listed.  However, a decision on whether there in fact are additional information requirements cannot be made without more information (more detailed code, service rendering information, etc.)"
 // Coverage guidance - covered
 * #covered                 "Covered"                           "Regular coverage applies"
 * #not-covered             "Not covered"                       "No coverage or possibility of coverage for this service)"
@@ -35,6 +35,7 @@ Description: "Codes temporarily defined as part of the CRD implementation guide.
 * #clinical                "Clinical Documentation"            "Details most likely to originate from a clinician are required to satisfy additional documentation requirements, determine coverage and/or prior auth applicability - e.g. via DTR by clinician.  Indicates that the CRD client should expose the need to launch DTR to clinical users."
 * #admin                   "Administrative Documentation"      "Administrative details not likely to require clinical expertise are needed to satisfy additional documentation requirements, determine coverage and/or prior auth applicability - e.g. via DTR by back-end staff.  Indicates that while the CRD client might expose the ability to launch DTR as an option for clinical users, it should be clear that clinical input is not necessary and deferring the use of DTR to back-end staff is perfectly appropriate.  Some CRD clients might be configured (based on provider preference) to not even show clinicians the option to launch."
 * #both                    "Administrative & clinical doc"     "Both clinical and administrative details are required to satisfy additional documentation requirements, determine coverage and/or prior auth applicability.  Equivalent to the union of #admin and #clinical."
+* #patient                 "Administrative & clinical doc"     "Details most likely to originate from the patient or their personal representative (e.g. parent, spouse, etc.) are required to satisfy additional documentation requirements, determine coverage and/or prior auth applicability.  For example, information about household composition, accessibility considerations, etc.  This should be used when the data needs to come from the patient themselves, rather than a clinician's assessment of the patient"
 // Coverage guidance - auth
 * #no-auth                 "No Prior Authorization"            "The ordered service does not require prior authorization"
 * #auth-needed             "Prior Authorization Needed"        "The ordered service will require prior authorization" 

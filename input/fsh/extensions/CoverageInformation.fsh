@@ -36,7 +36,7 @@ Description: "Captures assertions from a payer about whether the service is cove
     coverage 1..1 MS and
     covered 1..1 MS and
     pa-needed 0..1 MS and
-    doc-needed 0..1 MS and
+    doc-needed 0..* MS and
     doc-purpose 0..* MS and
     info-needed 0..* MS and
     billingCode 0..* and
@@ -68,7 +68,7 @@ Description: "Captures assertions from a payer about whether the service is cove
   * value[x] only code
   * value[x] from CRDCoveragePaDetail (required)
 * extension[doc-needed] only Extension
-  * ^short = "clinical | admin | both | conditional"
+  * ^short = "clinical | admin | patient | conditional"
   * ^definition = "Indicates whether additional documentation needs to be captured (purpose in next element)"
   * value[x] 1..1
   * value[x] only code

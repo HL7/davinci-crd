@@ -31,7 +31,7 @@ Description: "Codes defining whether additional documentation needs to be captur
 * ^extension[$fmm].valueInteger = 1
 * CRDTempCodes#clinical
 * CRDTempCodes#admin
-* CRDTempCodes#both
+* CRDTempCodes#patient
 * CRDTempCodes#conditional
 
 ValueSet: CRDDocReason
