@@ -17,6 +17,9 @@
 <artifact id="ValueSet/cdsHookType" key="ValueSet-cdsHookType" name="CDS Hook Types Value Set"/>
 <artifact deprecated="true" id="Task/action-example" key="Task-action-example" name="CDS Hook deferred action example"/>
 <artifact id="ValueSet/cardActions" key="ValueSet-cardActions" name="CDS Hooks Card Suggestion Action Types Value Set"/>
+<artifact id="StructureDefinition/CDSHookServiceRequestExtensionRequestConfig" key="StructureDefinition-CDSHookServiceRequestExtensionRequestConfig" name="CDS Hooks Service Request Configuration Extension"/>
+<artifact id="StructureDefinition/CDSHookServiceResponseExtensionAssociatedResource" key="StructureDefinition-CDSHookServiceResponseExtensionAssociatedResource" name="CDS Hooks Service Response Associated Resource Extension"/>
+<artifact id="StructureDefinition/CDSHookServiceResponseExtensionIfNoneExist" key="StructureDefinition-CDSHookServiceResponseExtensionIfNoneExist" name="CDS Hooks Service Response If-None-Exist Extension"/>
 <artifact id="StructureDefinition/CDSHookServicesExtensionConfiguration" key="StructureDefinition-CDSHookServicesExtensionConfig" name="CDS Hooks Services Configuration Extension"/>
 <artifact id="ValueSet/CMSMappableLocationCodes" key="ValueSet-CMSMappableLocationCodes" name="CMS Mappable Location Codes"/>
 <artifact id="ValueSet/afterCompletionCode" key="ValueSet-afterCompletionCode" name="CRD After Completion Code Value Set"/>
@@ -79,6 +82,13 @@
 <artifact id="DeviceRequest/example" key="DeviceRequest-example" name="DeviceRequest example"/>
 <artifact deprecated="true" id="SearchParameter/encounter-insurance" key="SearchParameter-encounter-insurance" name="Encounter Insurance Search Parameter"/>
 <artifact id="Encounter/example" key="Encounter-example" name="Encounter example"/>
+<artifact id="Binary/CRDServiceRequest2" key="Binary-CRDServiceRequest2" name="Example CRD Service Request with ServiceRequests"/>
+<artifact id="Binary/CRDServiceRequest" key="Binary-CRDServiceRequest" name="Example CRD Service Requestion with MedicationRequests"/>
+<artifact id="Binary/CRDServiceResponse" key="Binary-CRDServiceResponse" name="Example CRD Service Response"/>
+<artifact id="Binary/CRDServiceResponse2" key="Binary-CRDServiceResponse2" name="Example CRD Service Response - Coverage Information"/>
+<artifact id="Binary/CRDServices" key="Binary-CRDServices" name="Example CRD Services Response"/>
+<artifact id="Bundle/search-response" key="Bundle-search-response" name="Example EHR response"/>
+<artifact id="Bundle/search-request" key="Bundle-search-request" name="Example EHR search"/>
 <artifact deprecated="true" id="StructureDefinition/ext-insurance" key="StructureDefinition-ext-insurance" name="InsuranceExtension"/>
 <artifact id="Location/example" key="Location-example" name="Location example"/>
 <artifact deprecated="true" id="SearchParameter/medicationrequest-insurance" key="SearchParameter-medicationrequest-insurance" name="MedicationRequest Insurance Search Parameter"/>

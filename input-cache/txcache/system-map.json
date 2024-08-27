@@ -1,6 +1,11 @@
 {
   "systems" : [
     {
+      "system" : "http://example.org/fhir/CodeSystem/SomeCodes",
+      "authoritative" : [],
+      "candidates" : []
+    },
+    {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "authoritative" : ["http://tx.fhir.org/r4"],
       "candidates" : []
@@ -14,6 +19,11 @@
       "system" : "http://loinc.org",
       "authoritative" : [],
       "candidates" : ["http://tx.fhir.org/r4", "https://tx.ontoserver.csiro.au/fhir"]
+    },
+    {
+      "system" : "http://nucc.org/provider-taxonomy",
+      "authoritative" : [],
+      "candidates" : ["http://tx.fhir.org/r4"]
     },
     {
       "system" : "http://snomed.info/sct",
@@ -59,6 +69,11 @@
       "system" : "http://www.nlm.nih.gov/research/umls/rxnorm|09052023",
       "authoritative" : [],
       "candidates" : ["http://tx.fhir.org/r4"]
+    },
+    {
+      "system" : "https://example.org/some-organization/device-codes",
+      "authoritative" : [],
+      "candidates" : []
     },
     {
       "system" : "https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets",

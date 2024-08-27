@@ -31,6 +31,7 @@ A definition for CodeSystem 'http://example.org/fhir/CodeSystem/SomeCodes' could
 
 # Nothing we can do about this
 The definition for the Code System with URI 'https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets' doesnt provide any codes so the code cannot be validated
+A definition for CodeSystem 'https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets' could not be found, so the code cannot be validated
 
 # This example intentionally uses text rather than a code and the concept represented can't be expressed in the value set
 WARNING: Binary/CRDServiceResponse: CDSHooksResponse.systemActions[0].resource/*ServiceRequest/idfromcontext*/.extension[0].extension[6].value.ofType(CodeableConcept): No code provided, and a code should be provided from the value set 'CRD Coverage Assertion Reasons' (http://hl7.org/fhir/us/davinci-crd/ValueSet/coverageAssertionReasons|2.1.0-cibuild)
@@ -39,16 +40,17 @@ WARNING: Binary/CRDServiceResponse: CDSHooksResponse.systemActions[0].resource/*
 INFORMATION: ValueSet.where(id = 'orderDetail'): The value set expansion is too large, and only a subset has been displayed
 
 # These are incorrectly declared as 'draft' in their source IGs and there's not much we can do about it
-%Reference to draft CodeSystem http://hl7.org/fhir/uv/sdc/CodeSystem/temp|3.0.0
-%Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/communication-category|0.1.0
-%Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/coverage-class|0.1.0
-%Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/diet|0.1.0
-%Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/dose-rate-type|0.1.0
-%Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/ex-visionprescriptionproduct|0.1.0
-%Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/location-physical-type|1.0.0
-%Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/organization-type|0.1.0
-%Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/service-category|4.0.1
-%Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/service-type|4.0.1
+Reference to draft CodeSystem http://hl7.org/fhir/uv/sdc/CodeSystem/temp|3.0.0
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/communication-category|1.0.0
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/coverage-class|1.0.0
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/diet|1.0.0
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/dose-rate-type|1.0.0
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/ex-visionprescriptionproduct|1.0.0
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/location-physical-type|2.0.0
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/organization-type|2.0.0
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/service-category|1.1.0
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/service-type|1.1.0
+
 
 # These patterns are all for slices and are merely constraining the system, so this is intentional
 INFORMATION: StructureDefinition/profile-organization: StructureDefinition.snapshot.element[10].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)

@@ -124,6 +124,7 @@ Description: "Captures assertions from a payer about whether the service is cove
   * ^condition = "crd-ci-q1"
   * value[x] only Reference(SDCQuestionnaireResponse)
     * ^comment = "QuestionnaireResponse.author SHALL have a type of Device, with an identifier and display value.  It MAY have a Reference.reference, but need not do so."
+    * ^type[0].aggregation = #contained
 * extension[date] only Extension
   * ^short = "Assertion date"
   * ^definition = "Date on which assertion was made."
@@ -151,7 +152,7 @@ Expression: "extension.where(url='questionnaire' or url='response').exists() imp
 Invariant: crd-ci-q2
 Description: "If covered is set to 'not-covered', then 'pa-needed' must not exist."
 Severity: #error
-Expression: "extension.where(url = 'covered' and value = 'not-covered') implies extension.where(url = 'pa-needed').exists().not()"
+Expression: "extension.where(url = 'covered' and value = 'not-covered').exists() implies extension.where(url = 'pa-needed').exists().not()"
 
 Invariant: crd-ci-q3
 Description: "If 'info-needed' exists, then at least one of 'covered', 'pa-needed', or 'doc-needed' must be 'conditional'."

@@ -46,6 +46,12 @@ releaseLabel: STU 2
 # │  To use a provided input/includes/menu.xml file, delete the "menu" property below.             │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 dependencies:
+  hl7.terminology:
+    version: 6.0.2
+    uri: http://terminology.hl7.org/ImplementationGuide/hl7.terminology
+    id: tx
+    reason: |
+      Shared terminology used across HL7 specifications
   hl7.fhir.us.core.3.1.1:
     version: 3.1.1
     uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
@@ -64,7 +70,7 @@ dependencies:
       Defines expecations for Questionnaires prompted for by cards
   hl7.fhir.us.davinci-hrex:
     id: hrex
-    version: current
+    version: 1.1.0-ballot
     reason: |
       Defines common conformance rules across all Da Vinci IGs, as well as additional constraints and profiles beyond U.S. Core
   hl7.fhir.extensions.r5:
@@ -75,9 +81,15 @@ dependencies:
   us.nlm.vsac:
     id: vsac
     uri: 'http://fhir.org/packages/us.nlm.vsac/ImplementationGuide/us.nlm.vsac'
-    version: 0.11.0
+    version: 0.19.0
     reason: |
       Defines some of the US Core value set bound to in this IG
+  hl7.fhir.uv.tools:
+    id: tools
+    uri: 'http://hl7.org/fhir/tools/ImplementationGuide/hl7.fhir.uv.tools'
+    version: current
+    reason: |
+      Defines CDS Hooks structures leveraged in the validation of this IG
 pages:
   index.md:
     title: CRD IG Home Page
@@ -143,3 +155,49 @@ resources:
     extension:
       - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-ImplementationGuide.definition.resource.profile
         valueCanonical: http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-encounter3.1
+  Binary/CRDServices:
+    name: "Example CRD Services Response"
+    description: "An example of a CRD services response"
+    extension:
+      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format
+        valueCode: application/json
+      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-logical
+        valueCanonical: http://hl7.org/fhir/tools/StructureDefinition/CDSHooksServices
+  Binary/CRDServiceRequest:
+    name: "Example CRD Service Requestion with MedicationRequests"
+    description: "An example of a CRD request for order-sign with MedicationRequests"
+    extension:
+      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format
+        valueCode: application/json
+      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-logical
+        valueCanonical: http://hl7.org/fhir/tools/StructureDefinition/CDSHooksRequest
+  Binary/CRDServiceRequest2:
+    name: "Example CRD Service Request with ServiceRequests"
+    description: "An example of a CRD request for order-sign with ServiceRequests"
+    extension:
+      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format
+        valueCode: application/json
+      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-logical
+        valueCanonical: http://hl7.org/fhir/tools/StructureDefinition/CDSHooksRequest
+  Binary/CRDServiceResponse:
+    name: "Example CRD Service Response"
+    description: "An example of a CRD response with links"
+    extension:
+      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format
+        valueCode: application/json
+      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-logical
+        valueCanonical: http://hl7.org/fhir/tools/StructureDefinition/CDSHooksResponse
+  Binary/CRDServiceResponse2:
+    name: "Example CRD Service Response - Coverage Information"
+    description: "An example CRD response with Coverage Information extension"
+    extension:
+      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format
+        valueCode: application/json
+      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-logical
+        valueCanonical: http://hl7.org/fhir/tools/StructureDefinition/CDSHooksResponse
+  Bundle/search-request:
+    name: "Example EHR search"
+    description: "Sample of an CRD service searching an EHR that does not support prefetch"
+  Bundle/search-response:
+    name: "Example EHR response"
+    description: "The response to a CRD service query for information not returned in prefetch"
