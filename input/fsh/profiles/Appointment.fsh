@@ -25,7 +25,7 @@ Description: "This profile specifies extensions and constraints on the Appointme
 * participant MS
   * actor MS
     * ^short = "Patient, Practitioner  or Location"
-  * actor only Reference(CRDPatient or USCorePractitionerProfile or CRDLocation)
+  * actor only Reference(CRDPatient or USCorePractitionerProfile or USCorePractitionerRoleProfile or CRDLocation)
 // TODO: Add RelatedPerson?
   * status MS
 * requestedPeriod 1..1 MS
