@@ -1,0 +1,33 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "CDSHookServiceResponseExtensionIfNoneExist",
+  "url": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CDSHookServiceResponseExtensionIfNoneExist",
+  "name": "CDSHookServiceResponseExtensionIfNoneExist",
+  "title": "CDS Hooks Service Response If-None-Exist Extension",
+  "status": "active",
+  "experimental": false,
+  "description": "Indicates a value to assert as an if-none-exist header on a create or update action",
+  "fhirVersion": "4.0.1",
+  "kind": "primitive-type",
+  "abstract": false,
+  "type": "string",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/string",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "string",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/elementdefinition-json-name",
+            "valueString": "davinci-crd.if-none-exist"
+          }
+        ],
+        "path": "string",
+        "short": "if-none-exist header value",
+        "definition": "Indicates a value to assert as an if-none-exist header on a create or update action",
+        "max": "1"
+      }
+    ]
+  }
+}

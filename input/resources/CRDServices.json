@@ -1,0 +1,471 @@
+{
+  "services": [
+    {
+      "hook": "appointment-book",
+      "title": "Payer XYZ Appointment Booking Decision Support",
+      "description": "Indicates coverage requirements associated with draft orders, including expectations for prior authorization, recommended therapy alternatives, etc.",
+      "id": "appointment-book-crd",
+      "prefetch": {
+        "patient": "Patient/{{context.patientId}}",
+        "encounter": "Encounter?_id={{context.encounterId}}&_include=Encounter:service-provider&_include=Encounter:practitioner&_include=Encounter:location",
+        "coverage": "Coverage?patient={{context.patient}}&status=active",        
+        "appointment": "Appointment?_id={{context.appointments.Appointment.id}}&_include=Appointment:practitioner:PractitionerRole&_include:iterate=PractitionerRole:organization&_include:iterate=PractitionerRole:practitioner&_include=Appointment:location"
+      },
+      "extension": {
+        "davinci-crd.configuration-options": [
+          {
+            "code": "coverage-info",
+            "type": "boolean",
+            "name": "Coverage Information",
+            "description": "Information related to the patient's coverage, including whether a scheduled service is covered, requires prior authorization, is approved without seeking prior authorization, and/or requires additional documentation or data collection",
+            "default": true
+          },
+          {
+            "code": "insurance",
+            "type": "boolean",
+            "name": "Insurance Updates",
+            "description": "Allows a provider to receive updates to the patient's coverage information from the payer (e.g. expiry date, coverage extensions)",
+            "default": true
+          },
+          {
+            "code": "clinical-reminder",
+            "type": "boolean",
+            "name": "Clinical Reminders",
+            "description": "Alerts that a patient is due for certain screening or other therapy (based on payer recorded date of last intervention) that could potentially be performed at the time of the appointment, or for which an additional appointment might be made",
+            "default": true
+          },
+          {
+            "code": "duplicate-therapy",
+            "type": "boolean",
+            "name": "Duplicate Therapy",
+            "description": "Alerts that the service being booked is in close proximity to an already delivered or scheduled service and may be unnecessary",
+            "default": true
+          },
+          {
+            "code": "off-guideline",
+            "type": "boolean",
+            "name": "Off Guideline",
+            "description": "Alerts that a proposed appointment might be counter to a best-practice guideline, with opportunity to review the guideline",
+            "default": true
+          },
+          {
+            "code": "guideline",
+            "type": "boolean",
+            "name": "Guidelines",
+            "description": "Indication that there is a guideline available for the proposed appointment (with an option to view)",
+            "default": true
+          },
+          {
+            "code": "cost",
+            "type": "boolean",
+            "name": "Cost Information",
+            "description": "Information about the anticipated cost to the patient for the service being scheduled based on their coverage",
+            "default": true
+          },
+          {
+            "code": "claim",
+            "type": "boolean",
+            "name": "Claim Guidance",
+            "description": "Information about what steps need to be taken to submit a claim for the service",
+            "default": true
+          },
+          {
+            "code": "network",
+            "type": "boolean",
+            "name": "Network Information",
+            "description": "Information about in-network providers that could deliver the scheduled service (or in-network alternatives for an order directed out-of-network)",
+            "default": true
+          },
+          {
+            "code": "appropriate-use",
+            "type": "boolean",
+            "name": "Appropriate use",
+            "description": "Guidance on whether appropriate-use documentation is needed",
+            "default": true
+          },
+          {
+            "code": "max-cards",
+            "type": "integer",
+            "name": "Maximum cards",
+            "description": "Indicates the maximum number of cards to be returned from the service.  The services will prioritize cards such as highest priority ones are delivered",
+            "default": 10
+          }
+        ]
+      }
+    },
+    {
+      "hook": "encounter-start",
+      "title": "Payer XYZ Start of Encounter Decision Support",
+      "description": "Guidance provided at the start of an encounter",
+      "id": "encounter-start-crd",
+      "prefetch": {
+        "patient": "Patient/{{context.patientId}}",
+        "encounter": "Encounter?_id={{context.encounterId}}&_include=Encounter:service-provider&_include=Encounter:practitioner&_include=Encounter:location",
+        "coverage": "Coverage?patient={{context.patient}}&status=active"
+      },
+      "extension": {
+        "davinci-crd.configuration-options": [
+          {
+            "code": "coverage-info",
+            "type": "boolean",
+            "name": "Coverage Information",
+            "description": "Information related to the patient's coverage, including whether the service(s) for which the patient is being admitted are covered, require prior authorization, are approved without seeking prior authorization, and/or require additional documentation or data collection",
+            "default": true
+          },
+          {
+            "code": "insurance",
+            "type": "boolean",
+            "name": "Insurance Updates",
+            "description": "Allows a provider to receive updates to the patient's coverage information from the payer (e.g. expiry date, coverage extensions)",
+            "default": true
+          },
+          {
+            "code": "clinical-reminder",
+            "type": "boolean",
+            "name": "Clinical Reminders",
+            "description": "Alerts that a patient is due for certain screening or other therapy (based on payer recorded date of last intervention) that could potentially be performed as part of this encounter",
+            "default": true
+          },
+          {
+            "code": "duplicate-therapy",
+            "type": "boolean",
+            "name": "Duplicate Therapy",
+            "description": "Alerts that the being performed is in close proximity to an already delivered or scheduled service and may be unnecessary",
+            "default": true
+          },
+          {
+            "code": "off-guideline",
+            "type": "boolean",
+            "name": "Off Guideline",
+            "description": "Alerts that one or more of the services for this encounter might be counter to a best-practice guideline, with opportunity to review the guideline",
+            "default": true
+          },
+          {
+            "code": "guideline",
+            "type": "boolean",
+            "name": "Guidelines",
+            "description": "Indication that there is a guideline available for one or more of the services for the current encounter (with an option to view)",
+            "default": true
+          },
+          {
+            "code": "claim",
+            "type": "boolean",
+            "name": "Claim Guidance",
+            "description": "Information about what steps need to be taken to submit a claim for services delivered during the encounter",
+            "default": true
+          },
+          {
+            "code": "appropriate-use",
+            "type": "boolean",
+            "name": "Appropriate use",
+            "description": "Guidance on whether appropriate-use documentation is needed",
+            "default": true
+          },
+          {
+            "code": "max-cards",
+            "type": "integer",
+            "name": "Maximum cards",
+            "description": "Indicates the maximum number of cards to be returned from the service.  The services will prioritize cards such as highest priority ones are delivered",
+            "default": 10
+          }
+        ]
+      }
+    },
+    {
+      "hook": "encounter-discharge",
+      "title": "Payer XYZ Encounter Discharge Decision Support",
+      "description": "Guidance provided at the time an encounter is ending",
+      "id": "encounter-discharge-crd",
+      "prefetch": {
+        "patient": "Patient/{{context.patientId}}",
+        "encounter": "Encounter?_id={{context.encounterId}}&_include=Encounter:service-provider&_include=Encounter:practitioner&_include=Encounter:location",
+        "coverage": "Coverage?patient={{context.patient}}&status=active"
+      },
+      "extension": {
+        "davinci-crd.configuration-options": [
+          {
+            "code": "clinical-reminder",
+            "type": "boolean",
+            "name": "Clinical Reminders",
+            "description": "Alerts that a patient is due for certain screening or other therapy (based on payer recorded date of last intervention) that could potentially be performed as part of this encounter",
+            "default": true
+          },
+          {
+            "code": "claim",
+            "type": "boolean",
+            "name": "Claim Guidance",
+            "description": "Information about what steps need to be taken to submit a claim for services delivered during the encounter",
+            "default": true
+          },
+          {
+            "code": "max-cards",
+            "type": "integer",
+            "name": "Maximum cards",
+            "description": "Indicates the maximum number of cards to be returned from the service.  The services will prioritize cards such as highest priority ones are delivered",
+            "default": 10
+          }
+        ]
+      }
+    },
+    {
+      "hook": "order-dispatch",
+      "title": "Payer XYZ Order Dispatch Decision Support",
+      "description": "Guidance provided at the time an order is being routed to a specific performer",
+      "id": "order-dispatch-crd",
+      "prefetch": {
+        "patient": "Patient/{{context.patientId}}",
+        "encounter": "Encounter?_id={{context.encounterId}}&_include=Encounter:service-provider&_include=Encounter:practitioner&_include=Encounter:location",
+        "coverage": "Coverage?patient={{context.patient}}&status=active",        
+        "device": "DeviceRequest?_id={{context.draftOrders.DeviceRequest.id}}&_include=DeviceRequest:performer&_include=DeviceRequest:requester&_include=DeviceRequest:device&_include:iterate=PractitionerRole:organization&_include:iterate=PractitionerRole:practitioner",
+        "medication": "MedicationRequest?_id={{context.draftOrders.MedicationRequest.id}}&_include=MedicationRequest:intended-dispenser&_include=MedicationRequest:requester:PractitionerRole&_include=MedicationRequest:medication&_include:iterate=PractitionerRole:organization&_include:iterate=PractitionerRole:practitioner",
+        "nutrition": "NutritionOrder?_id={{context.draftOrders.NutritionOrder.id}}&_include=NutritionOrder:provider&_include=NutritionOrder:requester&_include:iterate=PractitionerRole:organization&_include:iterate=PractitionerRole:practitioner&_include=NutritionOrder:encounter&_include:iterate=Encounter:location",
+        "servicerequest": "ServiceRequest?_id={{context.draftOrders.ServiceRequest.id}}&_include=ServiceRequest:performer&_include=ServiceRequest:requester&_include:iterate=PractitionerRole:organization&_include:iterate=PractitionerRole:practitioner"
+      },
+      "extension": {
+        "davinci-crd.configuration-options": [
+          {
+            "code": "coverage-info",
+            "type": "boolean",
+            "name": "Coverage Information",
+            "description": "Information related to the patient's coverage, including whether a service is covered, requires prior authorization, is approved without seeking prior authorization, and/or requires additional documentation or data collection",
+            "default": true
+          },
+          {
+            "code": "max-cards",
+            "type": "integer",
+            "name": "Maximum cards",
+            "description": "Indicates the maximum number of cards to be returned from the service.  The services will prioritize cards such as highest priority ones are delivered",
+            "default": 10
+          }
+        ]
+      }
+    },
+    {
+      "hook": "order-select",
+      "title": "Payer XYZ Order Selection Decision Support",
+      "description": "Indicates coverage requirements associated with draft orders, including expectations for prior authorization, recommended therapy alternatives, etc.",
+      "id": "order-select-crd",
+      "prefetch": {
+        "patient": "Patient/{{context.patientId}}",
+        "coverage": "Coverage?patient={{context.patient}}&status=active",
+        "encounter": "Encounter?_id={{context.encounterId}}&_include=Encounter:service-provider&_include=Encounter:practitioner&_include=Encounter:location",
+        "device": "DeviceRequest?_id={{context.draftOrders.DeviceRequest.id}}&_include=DeviceRequest:performer&_include=DeviceRequest:requester&_include=DeviceRequest:device&_include:iterate=PractitionerRole:organization&_include:iterate=PractitionerRole:practitioner",
+        "medication": "MedicationRequest?_id={{context.draftOrders.MedicationRequest.id}}&_include=MedicationRequest:intended-dispenser&_include=MedicationRequest:requester:PractitionerRole&_include=MedicationRequest:medication&_include:iterate=PractitionerRole:organization&_include:iterate=PractitionerRole:practitioner",
+        "nutrition": "NutritionOrder?_id={{context.draftOrders.NutritionOrder.id}}&_include=NutritionOrder:provider&_include=NutritionOrder:requester&_include:iterate=PractitionerRole:organization&_include:iterate=PractitionerRole:practitioner&_include=NutritionOrder:encounter&_include:iterate=Encounter:location",
+        "servicerequest": "ServiceRequest?_id={{context.draftOrders.ServiceRequest.id}}&_include=ServiceRequest:performer&_include=ServiceRequest:requester&_include:iterate=PractitionerRole:organization&_include:iterate=PractitionerRole:practitioner"
+      },
+      "extension": {
+        "davinci-crd.configuration-options": [
+          {
+            "code": "coverage-info",
+            "type": "boolean",
+            "name": "Coverage Information",
+            "description": "Information related to the patient's coverage, including whether a service is covered, requires prior authorization, is approved without seeking prior authorization, and/or requires additional documentation or data collection",
+            "default": true
+          },
+          {
+            "code": "insurance",
+            "type": "boolean",
+            "name": "Insurance Updates",
+            "description": "Allows a provider to receive updates to the patient's coverage information from the payer (e.g. expiry date, coverage extensions)",
+            "default": true
+          },
+          {
+            "code": "clinical-reminder",
+            "type": "boolean",
+            "name": "Clinical Reminders",
+            "description": "Alerts that a patient is due for certain screening or other therapy (based on payer recorded date of last intervention) that could potentially be performed at the time of the appointment, or for which an additional appointment might be made",
+            "default": true
+          },
+          {
+            "code": "duplicate-therapy",
+            "type": "boolean",
+            "name": "Duplicate Therapy",
+            "description": "Alerts that the service being booked is in close proximity to an already delivered or scheduled service and may be unnecessary",
+            "default": true
+          },
+          {
+            "code": "off-guideline",
+            "type": "boolean",
+            "name": "Off Guideline",
+            "description": "Alerts that a proposed appointment might be counter to a best-practice guideline, with opportunity to review the guideline",
+            "default": true
+          },
+          {
+            "code": "guideline",
+            "type": "boolean",
+            "name": "Guidelines",
+            "description": "Indication that there is a guideline available for the proposed appointment (with an option to view)",
+            "default": true
+          },
+          {
+            "code": "cost",
+            "type": "boolean",
+            "name": "Cost Information",
+            "description": "Information about the anticipated cost to the patient for the service being scheduled based on their coverage",
+            "default": true
+          },
+          {
+            "code": "claim",
+            "type": "boolean",
+            "name": "Claim Guidance",
+            "description": "Information about what steps need to be taken to submit a claim for the service",
+            "default": true
+          },
+          {
+            "code": "network",
+            "type": "boolean",
+            "name": "Network Information",
+            "description": "Information about in-network providers that could deliver the scheduled service (or in-network alternatives for an order directed out-of-network)",
+            "default": true
+          },
+          {
+            "code": "appropriate-use",
+            "type": "boolean",
+            "name": "Appropriate use",
+            "description": "Guidance on whether appropriate-use documentation is needed",
+            "default": true
+          },
+          {
+            "code": "therapy-alternatives-opt",
+            "type": "boolean",
+            "name": "Optional Therapy Alternatives",
+            "description": "Are there alternative therapies that have better coverage and/or are lower-cost for the patient",
+            "default": true
+          },
+          {
+            "code": "therapy-alternatives-req",
+            "type": "boolean",
+            "name": "Required Therapy Alternatives",
+            "description": "Are there alternative therapies that must be tried first prior to coverage being available for the proposed therapy",
+            "default": true
+          },
+          {
+            "code": "contraindication",
+            "type": "boolean",
+            "name": "Contraindication",
+            "description": "Notices that an order may be contraindicated based on information the payer has in their record that the provider doesn't have in theirs",
+            "default": true
+          },
+          {
+            "code": "max-cards",
+            "type": "integer",
+            "name": "Maximum cards",
+            "description": "Indicates the maximum number of cards to be returned from the service.  The services will prioritize cards such as highest priority ones are delivered",
+            "default": 10
+          }
+        ]
+      }
+    },
+    {
+      "hook": "order-sign",
+      "title": "Payer XYZ Order Sign Decision Support",
+      "description": "Guidance related to orders being signed",
+      "id": "order-sign-crd",
+      "prefetch": {
+        "patient": "Patient/{{context.patientId}}",
+        "encounter": "Encounter?_id={{context.encounterId}}&_include=Encounter:service-provider&_include=Encounter:practitioner&_include=Encounter:location",
+        "coverage": "Coverage?patient={{context.patient}}&status=active",        
+        "device": "DeviceRequest?_id={{context.draftOrders.DeviceRequest.id}}&_include=DeviceRequest:performer&_include=DeviceRequest:requester&_include=DeviceRequest:device&_include:iterate=PractitionerRole:organization&_include:iterate=PractitionerRole:practitioner",
+        "medication": "MedicationRequest?_id={{context.draftOrders.MedicationRequest.id}}&_include=MedicationRequest:intended-dispenser&_include=MedicationRequest:requester:PractitionerRole&_include=MedicationRequest:medication&_include:iterate=PractitionerRole:organization&_include:iterate=PractitionerRole:practitioner",
+        "nutrition": "NutritionOrder?_id={{context.draftOrders.NutritionOrder.id}}&_include=NutritionOrder:provider&_include=NutritionOrder:requester&_include:iterate=PractitionerRole:organization&_include:iterate=PractitionerRole:practitioner&_include=NutritionOrder:encounter&_include:iterate=Encounter:location",
+        "servicerequest": "ServiceRequest?_id={{context.draftOrders.ServiceRequest.id}}&_include=ServiceRequest:performer&_include=ServiceRequest:requester&_include:iterate=PractitionerRole:organization&_include:iterate=PractitionerRole:practitioner"
+      },
+      "extension": {
+        "davinci-crd.configuration-options": [
+          {
+            "code": "coverage-info",
+            "type": "boolean",
+            "name": "Coverage Information",
+            "description": "Information related to the patient's coverage, including whether a service is covered, requires prior authorization, is approved without seeking prior authorization, and/or requires additional documentation or data collection",
+            "default": true
+          },
+          {
+            "code": "insurance",
+            "type": "boolean",
+            "name": "Insurance Updates",
+            "description": "Allows a provider to receive updates to the patient's coverage information from the payer (e.g. expiry date, coverage extensions)",
+            "default": true
+          },
+          {
+            "code": "duplicate-therapy",
+            "type": "boolean",
+            "name": "Duplicate Therapy",
+            "description": "Alerts that the service being ordered is in close proximity to an already delivered or scheduled service and may be unnecessary",
+            "default": true
+          },
+          {
+            "code": "off-guideline",
+            "type": "boolean",
+            "name": "Off Guideline",
+            "description": "Alerts that an included order might be counter to a best-practice guideline, with opportunity to review the guideline",
+            "default": true
+          },
+          {
+            "code": "guideline",
+            "type": "boolean",
+            "name": "Guidelines",
+            "description": "Indication that there is a guideline available for the proposed appointment (with an option to view)",
+            "default": true
+          },
+          {
+            "code": "cost",
+            "type": "boolean",
+            "name": "Cost Information",
+            "description": "Information about the anticipated cost to the patient for services being ordered",
+            "default": true
+          },
+          {
+            "code": "claim",
+            "type": "boolean",
+            "name": "Claim Guidance",
+            "description": "Information about what steps need to be taken to submit a claim for the service",
+            "default": true
+          },
+          {
+            "code": "network",
+            "type": "boolean",
+            "name": "Network Information",
+            "description": "Information about in-network providers that could deliver the scheduled service (or in-network alternatives for an order directed out-of-network)",
+            "default": true
+          },
+          {
+            "code": "appropriate-use",
+            "type": "boolean",
+            "name": "Appropriate use",
+            "description": "Guidance on whether appropriate-use documentation is needed",
+            "default": true
+          },
+          {
+            "code": "therapy-alternatives-opt",
+            "type": "boolean",
+            "name": "Optional Therapy Alternatives",
+            "description": "Are there alternative therapies that have better coverage and/or are lower-cost for the patient",
+            "default": true
+          },
+          {
+            "code": "therapy-alternatives-req",
+            "type": "boolean",
+            "name": "Required Therapy Alternatives",
+            "description": "Are there alternative therapies that must be tried first prior to coverage being available for the proposed therapy",
+            "default": true
+          },
+          {
+            "code": "contraindication",
+            "type": "boolean",
+            "name": "Contraindication",
+            "description": "Notices that an order may be contraindicated based on information the payer has in their record that the provider doesn't have in theirs",
+            "default": true
+          },
+          {
+            "code": "max-cards",
+            "type": "integer",
+            "name": "Maximum cards",
+            "description": "Indicates the maximum number of cards to be returned from the service.  The services will prioritize cards such as highest priority ones are delivered",
+            "default": 10
+          }
+        ]
+      }
+    }
+  ]
+}

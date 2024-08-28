@@ -1,0 +1,6 @@
+{
+  "resourceType" : "Binary",  
+  "id" : "CRDServiceRequest2",
+  "contentType" : "application/json",
+  "data" : "CRDServiceRequest2.json"
+}

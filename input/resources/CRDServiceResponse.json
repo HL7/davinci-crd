@@ -1,0 +1,287 @@
+{
+  "cards": [
+    {
+      "summary": "Patient is overdue for a PAP smear",
+      "indicator": "info",
+      "detail": "Last date on record for a PAP test for this patient was May, 2014.  Tests should ideally be performed every 1-3 years",
+      "source": {
+        "label": "You're Covered Insurance",
+        "url": "https://example.com",
+        "icon": "https://example.com/img/icon-100px.png",
+        "topic": {
+          "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+          "code": "clinical-reminder",
+          "display": "Clinical Reminder"
+        }
+      }
+    },
+    {
+      "extension": {
+        "davinci-crd.associated-resource": [
+          "ServiceRequest/2468"
+        ]
+      },
+      "uuid": "07bc9814-9d2a-11ee-8c90-0242ac120002",
+      "summary": "CMS Home Oxygen Therapy Coverage Requirements",
+      "indicator": "info",
+      "detail": "Learn about covered oxygen items and equipment for home use; coverage requirements; criteria you must meet to furnish oxygen items and equipment for home use; Advance Beneficiary Notice of Noncoverage; oxygen equipment, items, and services that are not covered; and payments for oxygen items and equipment and billing and coding guidelines.",
+      "source": {
+        "label": "Centers for Medicare & Medicaid Services",
+        "url": "https://cms.gov",
+        "topic": {
+          "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+          "code": "guideline",
+          "display": "Guideline"
+        }
+      },
+      "links": [
+        {
+          "label": "Home Oxygen Therapy Guidelines",
+          "url": "https://www.cms.gov/Outreach-and-Education/Medicare-Learning-Network-MLN/MLNProducts/Downloads/Home-Oxygen-Therapy-ICN908804.pdf",
+          "type": "absolute"
+        },
+        {
+          "label": "Home Oxygen Therapy Guidelines (printer-friendly)",
+          "url": "https://www.cms.gov/Outreach-and-Education/Medicare-Learning-Network-MLN/MLNProducts/Downloads/Home-Oxygen-Therapy-Text-Only.pdf",
+          "type": "absolute"
+        }
+      ]
+    },
+    {
+      "extension": {
+        "davinci-crd.associated-resource": [
+          "ServiceRequest/2468"
+        ]
+      },
+      "uuid": "0941cda0-91d7-42db-b5af-0ebbef2507bf",
+      "summary": "Replace rental order with purchase order (to reduce long-term costs)",
+      "indicator": "info",
+      "detail": "Mrs. Baxter has been on home oxygen for over 18 months and purchase is more efficient.  Payer XYZ has negotiated a discount on Acme brand portable oxygen systems which will result in a cost only slightly higher than anual rental",
+      "source": {
+        "label": "Centers for Medicare & Medicaid Services",
+        "url": "https://cms.gov",
+        "topic": {
+          "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+          "code": "therapy-alternatives-opt",
+          "display": "Optional Therapy Alternatives"
+        }
+      },
+      "suggestions": [
+        {
+          "label": "Change to an order for purchase",
+          "actions": [
+            {
+              "type": "delete",
+              "description": "Remove rental order",
+              "resourceId": [
+                "ServiceRequest/2468"
+              ]
+            },
+            {
+              "type": "create",
+              "description": "Add purchase order",
+              "resource": {
+                "resourceType": "ServiceRequest",
+                "id": "AAA",
+                "text": {
+                  "status": "generated",
+                  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Portable gaseous oxygen system, purchase; includes regulator, flowmeter, humidifier, cannula or mask, and tubing for Amy V. Baxter<br/>Requested by Dr. Jones, Feb 15, 2019</div>"
+                },
+                "status": "draft",
+                "intent": "original-order",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets",
+                      "code": "E0430",
+                      "display": "Portable gaseous oxygen system, purchase; includes regulator, flowmeter, humidifier, cannula or mask, and tubing"
+                    }
+                  ]
+                },
+                "subject": {
+                  "reference": "http://example.org/fhir/Patient/123"
+                },
+                "encounter": {
+                  "reference": "http://example.org/fhir/Encounter/987"
+                },
+                "authoredOn": "2019-02-15",
+                "requester": {
+                  "reference": "http://example.org/fhir/PractitionerRole/ABC",
+                  "display": "Dr. Jones"
+                }
+              }
+            },
+            {
+              "type": "create",
+              "description": "Add specific (discounted) device order",
+              "resource": {
+                "resourceType": "DeviceRequest",
+                "id": "BBB",
+                "text": {
+                  "status": "generated",
+                  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Order for Acme ZZZ portable gaseous oxygen system for Amy V. Baxter<br/>Requested by Dr. Jones, Feb 15, 2019</div>"
+                },
+                "basedOn": [
+                  {
+                    "reference": "ServiceRequest/AAA"
+                  } 
+                ],
+                "status": "draft",
+                "intent": "original-order",
+                "codeCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "https://example.org/some-organization/device-codes",
+                      "code": "ZZZ",
+                      "display": "Acme ZZZ Portable gaseous oxygen system"
+                    }
+                  ]
+                },
+                "subject": {
+                  "reference": "http://example.org/fhir/Patient/123"
+                },
+                "encounter": {
+                  "reference": "http://example.org/fhir/Encounter/987"
+                },
+                "authoredOn": "2019-02-15",
+                "requester": {
+                  "reference": "http://example.org/fhir/PractitionerRole/ABC",
+                  "display": "Dr. Jones"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "systemActions": [
+    {
+      "type": "update",
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "id": "idfromcontext",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-coverage-information",
+            "extension": [
+              {
+                "url": "coverage",
+                "valueReference": {
+                  "reference": "http://example.org/fhir/Coverage/example"
+                }
+              },
+              {
+                "url": "covered",
+                "valueCode": "covered"
+              },
+              {
+                "url": "pa-needed",
+                "valueCode": "satisfied"
+              },
+              {
+                "url": "billingCode",
+                "valueCoding": {
+                  "system": "http://www.ama-assn.org/go/cpt",
+                  "code": "77065"
+                }
+              },
+              {
+                "url": "billingCode",
+                "valueCoding": {
+                  "system": "http://www.ama-assn.org/go/cpt",
+                  "code": "77066"
+                }
+              },
+              {
+                "url": "billingCode",
+                "valueCoding": {
+                  "system": "http://www.ama-assn.org/go/cpt",
+                  "code": "77067"
+                }
+              },
+              {
+                "url": "reason",
+                "valueCodeableConcept": {
+                  "text": "In-network required unless exigent circumstances"
+                }
+              },
+              {
+                "url": "detail",
+                "extension": [
+                  {
+                    "url": "code",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+                          "code": "auth-out-network-only"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "url": "value",
+                    "valueBoolean": true
+                  },
+                  {
+                    "url": "qualification",
+                    "valueString": "Out-of-network prior auth does not apply if delivery occurs at a service site designated as 'remote'"
+                  }
+                ]
+              },
+              {
+                "url": "dependency",
+                "valueReference": {
+                  "reference": "http://example.org/fhir/ServiceRequest/example2"
+                }
+              },
+              {
+                "url": "date",
+                "valueDate": "2019-02-15"
+              },
+              {
+                "url": "coverage-assertion-id",
+                "valueString": "12345ABC"
+              },
+              {
+                "url": "satisfied-pa-id",
+                "valueString": "Q8U119"
+              },
+              {
+                "url": "contact",
+                "valueContactPoint": {
+                  "system": "url",
+                  "value": "http://some-payer/xyz-sub-org/get-help-here.html"
+                }
+              }
+            ]
+          }
+        ],
+        "status": "draft",
+        "intent": "original-order",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "726551006",
+              "display": "Contrast enhanced spectral mammography (Procedure)"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "http://example.org/fhir/Patient/123",
+          "display": "Jane Smith"
+        },
+        "encounter": {
+          "reference": "http://example.org/fhir/Encounter/987"
+        },
+        "authoredOn": "2019-02-15",
+        "requester": {
+          "reference": "http://example.org/fhir/PractitionerRole/ABC",
+          "display": "Dr. Jones"
+        }
+      }
+    }
+  ]
+}
