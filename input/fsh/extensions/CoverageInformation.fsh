@@ -9,6 +9,8 @@ Description: "Captures assertions from a payer about whether the service is cove
 * ^context[+].type = #element
 * ^context[=].expression = "Encounter"
 * ^context[+].type = #element
+* ^context[=].expression = "Expires"
+* ^context[+].type = #element
 * ^context[=].expression = "NutritionOrder"
 * ^context[+].type = #element
 * ^context[=].expression = "CommunicationRequest"
@@ -25,10 +27,10 @@ Description: "Captures assertions from a payer about whether the service is cove
   * ^definition = "Indicates coverage information."
 * ^extension[$fmm].valueInteger = 1
 * extension contains
-    coverage 1..1 and
+    coverage 1..1 MS and
     covered 1..1 MS and
     pa-needed 0..1 MS and
-    doc-needed 0..1 MS and
+    doc-needed 0..* MS and
     doc-purpose 0..* MS and
     info-needed 0..* MS and
     billingCode 0..* and
@@ -40,7 +42,8 @@ Description: "Captures assertions from a payer about whether the service is cove
     date 1..1 and
     coverage-assertion-id 1..1 and
     satisfied-pa-id 0..1 and
-    contact 0..*
+    contact 0..* and 
+    expiry-date 0..1
 * extension[coverage] only Extension
   * ^short = "Reference to Coverage"
   * ^definition = "Reference to Coverage that assertion applies to."
@@ -59,7 +62,7 @@ Description: "Captures assertions from a payer about whether the service is cove
   * value[x] only code
   * value[x] from CRDCoveragePaDetail (required)
 * extension[doc-needed] only Extension
-  * ^short = "clinical | admin | both | conditional"
+  * ^short = "clinical | admin | patient | conditional"
   * ^definition = "Indicates whether additional documentation needs to be captured (purpose in next element)"
   * value[x] 1..1
   * value[x] only code
@@ -142,6 +145,12 @@ Description: "Captures assertions from a payer about whether the service is cove
   * ^definition = "Phone number, fax number, email address, website, or other ContactPoint that can be used to ask questions/escalate issues related to a coverage assertion."
   * ^comment = "This **SHOULD** only be populated if the contact information is context-specific rather than a generic contact for the payer as a whole."
   * value[x] only ContactPoint
+* extension[expiry-date] only Extension
+  * ^short = "Expiration date"
+  * ^definition = "Date after which the coverage assertion would no longer be valid."
+  * ^comment = "In this case, mustSupport means that if the payer knows of an expiry date, they must share it.  However, if the payer never has expiry dates for their assertions, it is fine to omit."
+  * value[x] 0..1
+  * value[x] only date
 * url only uri
 
 Invariant: crd-ci-q1
