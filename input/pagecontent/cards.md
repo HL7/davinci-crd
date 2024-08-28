@@ -35,7 +35,8 @@ The sections below describe the different types of [responses](https://cds-hooks
 
 Of the response types in this guide, conformant CRD Clients **SHALL** support the [External Reference](#external-reference), [Instructions](#instructions-response-type), and  [Coverage Information](#coverage-information-response-type) responses and **SHOULD** support the remaining types.
 
-CRD Services **SHALL**, at minimum, demonstrate an ability to return the same as those listed as ‘SHALL’ for clients above.
+CRD Services **SHALL**, at minimum, demonstrate an ability to return the same as those listed as ‘SHALL’ for clients above.  Also see specific support expectations for the [coverage information response type](#coverage-information-response-type).
+
 
 NOTE: Support for a response type does not mean that all orders/appointments/etc. will necessarily receive card guidance, merely that it must be able to return those response types for at least a subset of CRD invocations.
 
@@ -72,6 +73,13 @@ This example CDS Hook [Card](https://cds-hooks.hl7.org/2.0/#cds-service-response
 
 ### Coverage Information Response Type
 This response type uses a <a href="https://cds-hooks.hl7.org/2.0/#system-action">systemAction</a> to automatically update the order or other resource in the CRD Client with an extension that conveys information related to the coverage of the order.  This response type **SHALL NOT** use a card.
+
+Support expectations for this hook by CDS Services are as follows:
+
+1. Payers **SHALL** support supplying coverage information for all primary hooks (order-sign, order-dispatch, appointment-book).
+2. Payers **MAY** support supplying coverage information for all other hooks.
+3. Payers SHALL supply coverage information for all hooks where they support it unless the EHR sends a configuration option asking them not to.
+4. If coverage information is evaluated, a system action **SHALL** be returned for each in-scope 'request' resource unless that 'request' resource already has a coverage-information extension and the payer has no new information to add.
 
 A new FHIR [coverage-information](StructureDefinition-ext-coverage-information.html) extension is defined that allows assertions around coverage and prior authorization to also be captured computably, including what assertion is made, what coverage the assertion is made with respect to, when the assertion was made, and - optionally - a trace id that can be used for audit purposes.
 
