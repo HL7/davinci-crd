@@ -36,7 +36,6 @@ Description: "Captures assertions from a payer about whether the service is cove
     detail 0..* and
     dependency 0..* and
     questionnaire 0..* and
-    response 0..* and
     date 1..1 and
     coverage-assertion-id 1..1 and
     satisfied-pa-id 0..1 and
@@ -118,14 +117,6 @@ Description: "Captures assertions from a payer about whether the service is cove
   * ^condition = "crd-ci-q1"
   * value[x] only canonical
     * ^type.targetProfile = "http://hl7.org/fhir/StructureDefinition/Questionnaire"
-* extension[response] only Extension
-  * ^short = "Questionnaire Response"
-  * ^definition = "A reference to a partially completed Questionnaire Response that is intended to be used as a basis for subsequent form filling in DTR."
-  * ^comment = "If a QuestionnaireResponse is provided, no corresponding 'questionnaire' extension should be present - the canonical for the needed Questionnaire will be found inside the QuestionnaireResponse."
-  * ^condition = "crd-ci-q1"
-  * value[x] only Reference(SDCQuestionnaireResponse)
-    * ^comment = "QuestionnaireResponse.author SHALL have a type of Device, with an identifier and display value.  It MAY have a Reference.reference, but need not do so."
-    * ^type[0].aggregation = #contained
 * extension[date] only Extension
   * ^short = "Assertion date"
   * ^definition = "Date on which assertion was made."

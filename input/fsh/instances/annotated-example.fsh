@@ -21,7 +21,6 @@ Usage: #example
     * extension[value].valueBoolean = true
     * extension[qualification].valueString = "Out-of-network prior auth does not apply if delivery occurs at a service site designated as 'remote'"
   * extension[questionnaire].valueCanonical = "http://example.org/some-payer/Questionnaire/123|1.3.0"
-  * extension[response].valueReference.reference = "#qr"
   * extension[date].valueDate = "2019-02-15"
   * extension[coverage-assertion-id].valueString = "12345ABC"
   * extension[satisfied-pa-id].valueString = "XXYYZ"
@@ -49,21 +48,3 @@ Usage: #example
   * doseAndRate.doseQuantity
     * value = 6
     * unit = "tablet"
-
-Instance: qr
-InstanceOf: QuestionnaireResponse
-Usage: #inline
-* questionnaire = "http://example.org/some-payer/Questionnaire/123|1.3.0"
-* subject = Reference(http://example.org/Patient/123) "Jane Smith"
-* status = #in-progress
-* authored = "2019-02-15"
-* author
-  * identifier
-    * system = "http://some-payer.org/xyz-sub-org/identifiers/application-ids"
-    * value = "payer-CRD-service-id"
-  * display = "Some payer app name"
-* item[+]
-  * linkId = "A1234"
-  * text = "How many previous treatments have been tried for this issue?"
-  * answer[+]
-    * valueInteger = 2
