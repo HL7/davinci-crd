@@ -5,9 +5,9 @@ Corrected the embedded JSON examples to be technically correct and in line with 
 
 ### Release 2.0.0
 A number of additional changes and enhancements.  Key differences are:
-* Renamed the 'Annotate' card to [Coverage Information](cards.html#coverage-information) and made it a system action rather than a card
+* Renamed the 'Annotate' card to [Coverage Information](cards.html#coverage-information-response-type) and made it a system action rather than a card
 * Removed the Unsolicited determination card type
-* Added system action as an optional feature of the [form completion](cards.html#request-form-completion) and [update coverage information](cards.html#create-or-update-coverage-information) cards
+* Added system action as an optional feature of the [form completion](cards.html#request-form-completion-response-type) and [update coverage information](cards.html#create-or-update-coverage-information-response-type) cards
 * Removed guidance on deferring card actions (as it's no longer terribly relevant for CRD and SMART now defines a mechanism)
 * Added additional properties to the [coverage-information](StructureDefinition-ext-coverage-information.html) extension including the ability to specify questionnaires and draft responses for DTR, authorized billing codes, dependencies on other orders, and other details.
 * Removed support for 'de-identified' invocation of CRD
@@ -40,7 +40,7 @@ Added a number of enhancements and some changes to approach.  Key differences ar
 * Added guidance on [enabling a CRD server](foundation.html#enabling-a-crd-server)
 * Added guidance on [CRD access tokens](foundation.html#crd-access-tokens)
 * Clarified expectations about [controlling hook invocation](deviations.html#controlling-hook-invocation)
-* Provided guidance on [external references](cards.html#external-reference)
+* Provided guidance on [external references](cards.html#external-reference-response-type)
 * Corrected cardType codes to use the IG temporary code system, as it is likely that long-term these codes won't all live as part of the IG
 * Added CapabilityStatements describing CRD client and CRD Server responsibilities
 
