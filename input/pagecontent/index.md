@@ -61,7 +61,7 @@ The CRD client may actually involve multiple systems. For example, the systems t
 * The 'access token' and FHIR endpoint exposed to the CRD service has access to all relevant data, independent of which physical data store it resides in.
 * The intermediary could take on the responsibility for the FHIR interface, determining appropriate payer to route calls to, etc.
 
-There are two distinct CRD client sets of capabilities, one for [USCDI 1 (US-Core 3.1.1)](CapabilityStatement-crd-client3.1.html) and one for [USCDI 3 (US-Core 6.1.0)](CapabilityStatement-crd-client6.1.html).  Typically a client would support only one or the other based on which US Core release it supports internally.
+There are two distinct CRD client sets of capabilities, one for [USCDI v1 (US-Core 3.1.1)](CapabilityStatement-crd-client3.1.html) and one for [USCDI v3 (US-Core 6.1.0)](CapabilityStatement-crd-client6.1.html).  Typically a client would support only one or the other based on which US Core release it supports internally.
 
 <blockquote class="stu-note">
 <p>
@@ -71,7 +71,7 @@ When CRD clients are made up of multiple systems, there will be orchestration re
 
 CRD Servers (or servers) are systems that act on behalf of payer organizations to share information with healthcare providers about rules and requirements related to healthcare products and services covered by a patient's payer.  A CRD Server might provide coverage information related to one or more insurance plans. CRD Servers are a type of CDS Service as defined in the [CDS Hooks Specification](https://cds-hooks.hl7.org/2.0).
 
-There are also two distinct CRD server sets of capabilities, one for [USCDI 1 (US-Core 3.1.1)](CapabilityStatement-crd-server3.1.html) and one for [USCDI 3 (US-Core 6.1.0)](CapabilityStatement-crd-server6.1.html).  Ideally payers will be able to handle both, but they are not presently required to.
+There are also two distinct CRD server sets of capabilities, one for [USCDI v1 (US-Core 3.1.1)](CapabilityStatement-crd-server3.1.html) and one for [USCDI v3 (US-Core 6.1.0)](CapabilityStatement-crd-server6.1.html).  Ideally payers will be able to handle both, but they are not presently required to.
 
 ### Content and Organization
 This implementation guide is organized into the following sections:
