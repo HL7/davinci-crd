@@ -67,9 +67,7 @@ When CRD clients are made up of multiple systems, there will be orchestration re
 
 CRD Servers (or servers) are systems that act on behalf of payer organizations to share information with healthcare providers about rules and requirements related to healthcare products and services covered by a patient's payer.  A CRD Server might provide coverage information related to one or more insurance plans. CRD Servers are a type of CDS Service as defined in the [CDS Hooks Specification](https://cds-hooks.hl7.org/2.0).
 
-Payers may have multiple back-end functions that handle different types of decision support and/or different types of services.  However, for the purpose of CRD conformance, payers **SHALL** have a single endpoint (managed by themselves or a delegate) that can handle responding to all CRD service calls.  CRD servers are free to route the information from those calls to back-end services as needed.  This routing may evolve over time and should have no impact on CRD client calls.
-
-There are also two distinct CRD server sets of capabilities, again one for [USCDI 1 (US-Core 3.1.1)](CapabilityStatement-crd-server3.1.html) and one for [USCDI 3 (US-Core 6.1.0)](CapabilityStatement-crd-server6.1.html).  Ideally payers will be able to handle both, but they are not presently required to.
+There are also two distinct CRD server sets of capabilities, one for [USCDI 1 (US-Core 3.1.1)](CapabilityStatement-crd-server3.1.html) and one for [USCDI 3 (US-Core 6.1.0)](CapabilityStatement-crd-server6.1.html).  Ideally payers will be able to handle both, but they are not presently required to.
 
 ### Content and Organization
 This implementation guide is organized into the following sections:

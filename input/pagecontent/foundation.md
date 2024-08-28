@@ -83,6 +83,9 @@ CDS Hooks are intended to improve healthcare provider care planning processes by
 
 Payers and service providers **SHALL** ensure that CDS Hooks return only messages and information relevant and useful to the intended recipient.
 
+### CRD Servers
+Payers may have multiple back-end functions that handle different types of decision support and/or different types of services.  If a payer supports endpoint discovery, they **SHALL** have at most a single endpoint for each Coverage (e.g. Medicare, Medicaid, or commercial) they provide coverage under.  (In FHIR, a Coverage instance essentially corresponds with the identification information on an insurance card, irrespective of the types of coverages available under that card.)  If a payer does not support endpoint discovery, they **SHALL** expose only one CRD endpoint capable of handling all Coverages.  All CRD requests for the patient Coverage, irrespective of type of service, will be sent to a single endpoint.  CRD servers are free to route the information from their endpoint(s) to back-end services as needed.  This routing may evolve over time and should have no impact on CRD client calls.
+
 ### Enabling a CRD Server
 When a CRD client configures itself to support a payer's CRD service, it will need to identify which payer(s) the service supports.  This is needed to ensure that the CRD client only sends CRD calls to services that the patient has current coverage for.  The CRD service is responsible for any internal routing based on which processing organization handles the decisions.  For this purpose, payer means 'The organization listed on the member's insurance card'.
 
