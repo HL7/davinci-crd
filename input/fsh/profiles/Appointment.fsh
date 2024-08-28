@@ -11,6 +11,7 @@ Description: "This profile specifies extensions and constraints on the Appointme
   * ^short = "Appointment status"
   * ^example.label = "General"
   * ^example.valueCode = #proposed
+  * ^comment "This will be 'proposed' when using an initial appointment-book, but may be 'booked' or other values for appointment-book representing edits to the appointment."
 * serviceCategory MS
 * serviceType MS
 * specialty MS

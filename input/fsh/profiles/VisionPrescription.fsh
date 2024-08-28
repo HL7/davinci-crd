@@ -10,7 +10,9 @@ Description: "This profile defines an initial profile on the VisionPrescription 
 * identifier MS
 //* status only code
 * status MS
-* status = #draft (exactly)
+  * ^example.label = "General"
+  * ^example.valueCode = #draft
+  * ^comment "This will be 'draft' when using order-select or an initial order-sign, but may be 'active' or other values for order-sign representing edits to the order or for order-dispatch."
 * created MS
 * patient MS
 * patient only Reference(CRDPatient)

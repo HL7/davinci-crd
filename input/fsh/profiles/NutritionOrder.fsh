@@ -8,9 +8,10 @@ Description: "This profile specifies extensions and constraints on the Nutrition
 * extension contains CRDCoverageInformation named Coverage-Information 0..* MS
 * extension[Coverage-Information] ^short = "Coverage Info"
 * identifier MS
-//* status only code
 * status MS
-* status = #draft (exactly)
+  * ^example.label = "General"
+  * ^example.valueCode = #draft
+  * ^comment "This will be 'draft' when using order-select or an initial order-sign, but may be 'active' or other values for order-sign representing edits to the order or for order-dispatch."
 * patient MS
 * patient only Reference(CRDPatient)
 * encounter MS

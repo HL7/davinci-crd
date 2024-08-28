@@ -8,8 +8,9 @@ Description: "This profile specifies extensions and constraints on the DeviceReq
 * identifier MS
 * basedOn MS
 * status 1.. MS
-//* status only code
-* status = #draft (exactly)
+  * ^example.label = "General"
+  * ^example.valueCode = #draft
+  * ^comment "This will be 'draft' when using order-select or an initial order-sign, but may be 'active' or other values for order-sign representing edits to the order or for order-dispatch."
 * code[x] MS
 * code[x] only CodeableConcept or Reference(CRDDevice)
 * code[x] from CRDDeviceRequests (extensible)

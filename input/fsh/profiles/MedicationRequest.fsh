@@ -7,6 +7,10 @@ Description: "This profile specifies additional constraints on the US Core Medic
 * extension contains CRDCoverageInformation named Coverage-Information 0..* MS
 * extension[Coverage-Information] ^short = "Coverage Info"
 * identifier MS
+* status MS
+  * ^example.label = "General"
+  * ^example.valueCode = #draft
+  * ^comment "This will be 'draft' when using order-select or an initial order-sign, but may be 'active' or other values for order-sign representing edits to the order or for order-dispatch."
 * doNotPerform ..0
 * reported[x] only boolean or Reference(CRDPatient or USCorePractitionerProfile or CRDOrganization)
 //* reported[x] only boolean or Reference(CRDPatient or USCorePractitionerProfile or CRDOrganization)

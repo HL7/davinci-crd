@@ -10,9 +10,10 @@ Description: "This profile specifies constraints on the CommunicationRequest res
 * basedOn 1..1 MS
 * replaces only Reference(CRDCommunicationRequest)
   * ^comment = "potentially relevant for CRD in some situations."
-//* status only code
 * status MS
-* status = #draft (exactly)
+  * ^example.label = "General"
+  * ^example.valueCode = #draft
+  * ^comment "This will be 'draft' when using order-select or an initial order-sign, but may be 'active' or other values for order-sign representing edits to the order, for order-dispatch or when referenced by an appointment."
 * doNotPerform ..0
 * subject 1.. MS
 * subject only Reference(CRDPatient)

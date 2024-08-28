@@ -9,9 +9,10 @@ Description: "This profile specifies constraints on the ServiceRequest resource 
 * identifier MS
 * basedOn only Reference(CRDServiceRequest or CRDMedicationRequest)
 * basedOn MS
-//* status only code
 * status MS
-* status = #draft (exactly)
+  * ^example.label = "General"
+  * ^example.valueCode = #draft
+  * ^comment "This will be 'draft' when using order-select or an initial order-sign, but may be 'active' or other values for order-sign representing edits to the order or for order-dispatch."
 * doNotPerform MS
   * ^comment = "...Client systems that do not allow ordering services with 'doNotPerform' of 'true' do not need to add support for this capability.  CRD services SHALL understand this element if populated.  Typically, 'doNotPerform' orders will not result in coverage-related card responses and might not result in any decision support at all.  In some cases, a payer might have documentation or other requirements relating to doNotPerform orders that they wish to communicate."
 * code 1.. MS
