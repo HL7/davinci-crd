@@ -63,6 +63,7 @@ Description: "Captures assertions from a payer about whether the service is cove
 * extension[doc-needed] only Extension
   * ^short = "clinical | admin | patient | conditional"
   * ^definition = "Indicates whether additional documentation needs to be captured (purpose in next element)"
+  * ^comment = "See additional guidance in the [notes](#doc-needed-vs-info-needed)"
   * value[x] 1..1
   * value[x] only code
   * value[x] from CRDAdditionalDoc (required)
@@ -75,6 +76,7 @@ Description: "Captures assertions from a payer about whether the service is cove
 * extension[info-needed] only Extension
   * ^short = "performer | location | timeframe"
   * ^definition = "Indicates whether information about the perfomer, location, and/or performance date is needed to determine coverage information"
+  * ^comment = "See additional guidance in the [notes](#doc-needed-vs-info-needed)"
   * ^condition[+] = crd-ci-q3
   * value[x] 1..1
   * value[x] only code
