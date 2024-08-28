@@ -118,7 +118,7 @@ Description: "Captures assertions from a payer about whether the service is cove
   * ^requirements = "For example, the authorization decision on a request for post-surgical physiotherapy might be dependent on the order for the surgery itself.  If coverage for the surgery is not approved or the order for the surgery is cancelled, that might impact the decision on covering the physiotherapy."
   * value[x] only Reference(CRDAppointment or CRDCommunicationRequest or CRDDeviceRequest or CRDMedicationRequest or CRDNutritionOrder or CRDServiceRequest)
 * extension[questionnaire] only Extension
-  * ^short = "Questionnaire"
+  * ^short = "Questionnaire to complete"
   * ^definition = "A form to be filled out to gather more information.  Only for use if the response indicates a need to use DTR"
   * ^condition[+] = "crd-ci-q1"
   * value[x] only canonical
@@ -129,15 +129,17 @@ Description: "Captures assertions from a payer about whether the service is cove
   * value[x] 1..1
   * value[x] only date
 * extension[coverage-assertion-id] only Extension
-  * ^short = "coverage-assertion-id"
+  * ^short = "Coverage assertion trace number"
   * ^definition = "Trace identifier to allow tracking the guidance in source system.  This identifier can also be used used to re-establish cached context information when subsequently launching DTR."
   * value[x] only string
 * extension[satisfied-pa-id] only Extension
-  * ^short = "satisfied-pa-id"
+  * ^short = "Satisfied prior auth number"
+  * ^definition = "An identifier indicating that prior authorization requirements have been met"
+  * ^comment = "When operating under the CMS enforcement discretion, this element is a prior authorization number and can be submitted in the corresponding X12 element when submitting an eventual claim"
   * ^condition = crd-ci-q5
   * value[x] only string
 * extension[contact] only Extension
-  * ^short = "Contact"
+  * ^short = "Contact information"
   * ^definition = "Phone number, fax number, email address, website, or other ContactPoint that can be used to ask questions/escalate issues related to a coverage assertion."
   * ^comment = "This **SHOULD** only be populated if the contact information is context-specific rather than a generic contact for the payer as a whole."
   * value[x] only ContactPoint
