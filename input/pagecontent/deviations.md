@@ -6,10 +6,6 @@ Each capability listed here has been proposed to the CDS Hooks community and cou
 
 This implementation guide extends/customizes CDS Hooks in 5 ways: additional hook resources, a hook configuration mechanism, additional prefetch capabilities, additional response capabilities, and the ability to link hooks to their corresponding request.  Each are described below:
 
-### Additional order-dispatch hook
-
-Based on implementer feedback, CRD has identified the need for an additional location within CRD client workflow where payer decision support might be relevant - the process of dispatching a non-directed order to a specific performer.  (E.g. selecting a referral recipient, choosing an imaging center, picking a lab, etc.)  To support this use-case, a new proposed [order-dispatch](https://cds-hooks.org/hooks/order-dispatch) has been proposed.  Implementers **MAY** choose to provide support for this new hook.
-
 ### Additional Hook scope
 In the [current build](https://cds-hooks.org/hooks/order-sign/), the order-sign hook can be used for both 'draft' orders that are newly created as well as for updated orders that are active.  The balloted version of the hooks this IG release is bound to are limited to draft orders.  This IG adopts the newer wording, meaning that the order-sign hook can be triggered both on newly created orders, as well as when orders are updated (changing status, changing time-frame, etc.).  The hook can also be re-triggered if there is a key change to the context, most typically the establishment of new or renewed coverage relevant to the order.
 

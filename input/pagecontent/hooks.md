@@ -206,7 +206,7 @@ The different relevant resource types are as follows (support can vary between c
 <sup>*</sup> - Note: in the medication space, regulations may mandate alternate standards for some of the functionality covered by CRD for certain classes of medications.  E.g. NCPDP Script
 
 
-Coverage requirement responses might include:
+CRD responses might include:
 
 * Information about preauthorization and clinical documentation requirements, including forms to be completed
 
