@@ -20,7 +20,7 @@ Description: "Captures assertions from a payer about whether the service is cove
 * ^context[=].expression = "MedicationRequest"
 * ^context[0].type = #element
 * ^context[=].expression = "QuestionnaireResponse"
-* obeys crd-ci-q1 and crd-ci-q2 and crd-ci-q3 and crd-ci-q4 and crd-ci-q5
+* obeys crd-ci-q1 and crd-ci-q2 and crd-ci-q3 and crd-ci-q4 and crd-ci-q5 and crd-ci-q6
 * . ^short = "CoverageInfo"
   * ^definition = "Indicates coverage information."
 * ^extension[$fmm].valueInteger = 1
@@ -55,6 +55,8 @@ Description: "Captures assertions from a payer about whether the service is cove
 * extension[pa-needed] only Extension
   * ^short = "no-auth | auth-needed | satisfied | performpa | conditional"
   * ^definition = "Indicates whether prior auth will be needed for coverage to be provided"
+  * ^condition[+] = crd-ci-q2
+  * ^condition[+] = crd-ci-q5
   * value[x] 1..1
   * value[x] only code
   * value[x] from CRDCoveragePaDetail (required)
@@ -66,12 +68,14 @@ Description: "Captures assertions from a payer about whether the service is cove
   * value[x] from CRDAdditionalDoc (required)
 * extension[doc-purpose] only Extension
   * ^short = "Documentation purpose"
+  * ^condition[+] = crd-ci-q4
   * value[x] 1..1
   * value[x] only code
   * value[x] from CRDDocReason (required)
 * extension[info-needed] only Extension
   * ^short = "performer | location | timeframe"
   * ^definition = "Indicates whether information about the perfomer, location, and/or performance date is needed to determine coverage information"
+  * ^condition[+] = crd-ci-q3
   * value[x] 1..1
   * value[x] only code
   * value[x] from CRDInformationNeeded (required)
@@ -86,9 +90,11 @@ Description: "Captures assertions from a payer about whether the service is cove
   * ^short = "Reason for assertion"
   * ^definition = "Indicates the 'reason' for the coverage assertion"
   * ^comment = "This can be used whenever the reason may not be obvious to the practitioner.  E.g. prior authorization waived because the provider is gold-carded; patient is no longer a minor and hasn't been registered as an adult dependent; patient has reached their limit for this type of service this year; etc.  Additional standard reason codes may be introduced in the future.  If no standard code applies, use text."
+  * ^condition[+] = crd-ci-q7
   * value[x] 1..1
   * value[x] only CodeableConcept
   * value[x] from CRDCoverageAssertionReasons (extensible)
+  * ^condition[+] = crd-ci-q6
 * extension[detail] only Extension
   * ^short = "detail for assertion"
   * ^definition = "Indicates the 'detail' for the coverage assertion"
@@ -114,7 +120,7 @@ Description: "Captures assertions from a payer about whether the service is cove
 * extension[questionnaire] only Extension
   * ^short = "Questionnaire"
   * ^definition = "A form to be filled out to gather more information.  Only for use if the response indicates a need to use DTR"
-  * ^condition = "crd-ci-q1"
+  * ^condition[+] = "crd-ci-q1"
   * value[x] only canonical
     * ^type.targetProfile = "http://hl7.org/fhir/StructureDefinition/Questionnaire"
 * extension[date] only Extension
@@ -128,6 +134,7 @@ Description: "Captures assertions from a payer about whether the service is cove
   * value[x] only string
 * extension[satisfied-pa-id] only Extension
   * ^short = "satisfied-pa-id"
+  * ^condition = crd-ci-q5
   * value[x] only string
 * extension[contact] only Extension
   * ^short = "Contact"
@@ -143,9 +150,9 @@ Description: "Captures assertions from a payer about whether the service is cove
 * url only uri
 
 Invariant: crd-ci-q1
-Description: "Questionnaire and QuestionnaireResponse are only allowed when doc-needed exists and not equal to 'no-doc'"
+Description: "Questionnaire is only allowed when doc-needed exists and not equal to 'no-doc'"
 Severity: #error
-Expression: "extension.where(url='questionnaire' or url='response').exists() implies (extension.where(url = 'doc-needed').exists() and extension.where(url = 'doc-needed').all(value != 'no-doc'))"
+Expression: "extension.where(url='questionnaire').exists() implies (extension.where(url = 'doc-needed').exists() and extension.where(url = 'doc-needed').all(value != 'no-doc'))"
 
 Invariant: crd-ci-q2
 Description: "If covered is set to 'not-covered', then 'pa-needed' must not exist."
@@ -153,9 +160,9 @@ Severity: #error
 Expression: "extension.where(url = 'covered' and value = 'not-covered').exists() implies extension.where(url = 'pa-needed').exists().not()"
 
 Invariant: crd-ci-q3
-Description: "If 'info-needed' exists, then at least one of 'covered', 'pa-needed', or 'doc-needed' must be 'conditional'."
+Description: "'info-needed' SHALL exist if and only if at least one of 'covered', 'pa-needed', or 'doc-needed' is set to 'conditional'."
 Severity: #error
-Expression: "extension.where(url = 'info-needed').exists() implies extension.where((url = 'covered' or url = 'pa-needed' or url = 'doc-needed') and value = 'conditional').count() >= 1"
+Expression: "extension.where((url = 'covered' or url = 'pa-needed' or url = 'doc-needed') and value = 'conditional').count() >= 1 implies extension.where(url = 'info-needed').exists()"
 
 Invariant: crd-ci-q4
 Description: "If 'pa-needed' is 'satisfied', then 'Doc-purpose' can't be 'PA'."
@@ -166,3 +173,13 @@ Invariant: crd-ci-q5
 Description: "'satisfied-pa-id' must exist if and only if 'pa-needed' is set to 'satisfied'."
 Severity: #error
 Expression: "extension.where(url = 'pa-needed' and value = 'satisfied').exists() = extension.where(url = 'satisfied-pa-id').exists()"
+
+Invariant: crd-ci-q6
+Description: "If 'info-needed' is Other, then reason must be specified"
+Severity: #error
+Expression: "extension.where(url = 'info-needed' and value = 'Other').exists() implies extension.where(url = 'reason').exists()"
+
+Invariant: crd-ci-q7
+Description: "If reason.coding is present and is not from the extensible value set, then reason.text must be present"
+Severity: #error
+Expression: reason.empty() or reason.text().exists() or reason.memberOf('http://hl7.org/fhir/us/davinci-crd/ValueSet/coverageAssertionReasons')
