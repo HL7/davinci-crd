@@ -31,16 +31,16 @@ Description: "Captures assertions from a payer about whether the service is cove
     doc-needed 0..* MS and
     doc-purpose 0..* MS and
     info-needed 0..* MS and
-    billingCode 0..* and
-    reason 0..* and
-    detail 0..* and
-    dependency 0..* and
-    questionnaire 0..* and
-    date 1..1 and
-    coverage-assertion-id 1..1 and
-    satisfied-pa-id 0..1 and
-    contact 0..* and 
-    expiry-date 0..1
+    billingCode 0..* MS and
+    reason 0..* MS and
+    detail 0..* MS and
+    dependency 0..* MS and
+    questionnaire 0..* MS and
+    date 1..1 MS and
+    coverage-assertion-id 1..1 MS and
+    satisfied-pa-id 0..1 MS and
+    contact 0..* MS and 
+    expiry-date 0..1 MS
 * extension[coverage] only Extension
   * ^short = "Reference to Coverage"
   * ^definition = "Reference to Coverage that assertion applies to."
