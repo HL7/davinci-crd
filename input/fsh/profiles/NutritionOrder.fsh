@@ -18,7 +18,7 @@ Description: "This profile specifies extensions and constraints on the Nutrition
   * ^comment = "potentially relevant for CRD in some situations."
 * dateTime MS
 * orderer 1.. MS
-* orderer only Reference(CRDPractitioner or HRexPractitionerRole)
+* orderer only Reference(USCorePractitionerProfile or HRexPractitionerRole)
 * allergyIntolerance MS
 * foodPreferenceModifier MS
 * excludeFoodModifier MS

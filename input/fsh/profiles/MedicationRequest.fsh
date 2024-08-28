@@ -8,17 +8,17 @@ Description: "This profile specifies additional constraints on the US Core Medic
 * extension[Coverage-Information] ^short = "Coverage Info"
 * identifier MS
 * doNotPerform ..0
-* reported[x] only boolean or Reference(CRDPatient or CRDPractitioner or CRDOrganization)
-//* reported[x] only boolean or Reference(CRDPatient or CRDPractitioner or CRDOrganization)
+* reported[x] only boolean or Reference(CRDPatient or USCorePractitionerProfile or CRDOrganization)
+//* reported[x] only boolean or Reference(CRDPatient or USCorePractitionerProfile or CRDOrganization)
 * medication[x] from $USCoreMedicationCodes (extensible)
 * encounter only Reference(CRDEncounter3_1 or CRDEncounter6_1)
   * ^comment = "potentially relevant for CRD in some situations."
 * authoredOn 1..
 * requester 1..
-//* requester only Reference(CRDPractitioner or HRexPractitionerRole)
-* requester only Reference(CRDPractitioner)
+//* requester only Reference(USCorePractitionerProfile or HRexPractitionerRole)
+* requester only Reference(USCorePractitionerProfile)
 * performer MS
-* performer only Reference(CRDPractitioner or HRexPractitionerRole)
+* performer only Reference(USCorePractitionerProfile or HRexPractitionerRole)
 * reasonCode MS
   * ^comment = "potentially relevant for CRD in some situations."
 * reasonReference MS

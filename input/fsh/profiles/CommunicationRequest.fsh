@@ -25,11 +25,11 @@ Description: "This profile specifies constraints on the CommunicationRequest res
 * occurrence[x] MS
 * authoredOn 1.. MS
 * requester 1.. MS
-* requester only Reference(CRDPractitioner or HRexPractitionerRole)
+* requester only Reference(USCorePractitionerProfile or HRexPractitionerRole)
 * recipient MS
-* recipient only Reference(CRDPractitioner or HRexPractitionerRole or CRDOrganization)
+* recipient only Reference(USCorePractitionerProfile or HRexPractitionerRole or CRDOrganization)
 * sender MS
-* sender only Reference(CRDPractitioner or HRexPractitionerRole or CRDOrganization)
+* sender only Reference(USCorePractitionerProfile or HRexPractitionerRole or CRDOrganization)
 * reasonCode MS
 //* reasonReference only Reference(USCoreConditionProblemsHealthConcernsProfile or USCoreConditionUSCoreConditionEncounterDiagnosisProfile or USCoreLaboratoryResultObservationProfile)
 * reasonReference MS

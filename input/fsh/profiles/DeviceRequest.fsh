@@ -21,9 +21,9 @@ Description: "This profile specifies extensions and constraints on the DeviceReq
 * occurrence[x] MS
 * authoredOn 1.. MS
 * requester 1.. MS
-* requester only Reference(CRDPractitioner or HRexPractitionerRole)
+* requester only Reference(USCorePractitionerProfile or HRexPractitionerRole)
 * performer MS
-* performer only Reference(CRDPractitioner or HRexPractitionerRole)
+* performer only Reference(USCorePractitionerProfile or HRexPractitionerRole)
 * reasonCode MS
 //* reasonReference only Reference(USCoreConditionProblemsHealthConcernsProfile or USCoreConditionUSCoreConditionEncounterDiagnosisProfile or USCoreLaboratoryResultObservationProfile)
 * reasonReference MS

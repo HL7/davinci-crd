@@ -19,7 +19,7 @@ Description: "This profile defines an initial profile on the VisionPrescription 
   * ^comment = "potentially relevant for CRD in some situations."
 * dateWritten MS
 * prescriber 1.. MS
-* prescriber only Reference(CRDPractitioner or HRexPractitionerRole)
+* prescriber only Reference(USCorePractitionerProfile or HRexPractitionerRole)
 * lensSpecification MS
   * product MS
   * eye MS

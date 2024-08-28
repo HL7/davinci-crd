@@ -27,8 +27,8 @@ Description: "This profile specifies constraints on the ServiceRequest resource 
 * occurrence[x] MS
 * authoredOn 1.. MS
 * requester 1.. MS
-* requester only Reference(CRDPractitioner or HRexPractitionerRole)
-* performer only Reference(CRDPractitioner or HRexPractitionerRole)
+* requester only Reference(USCorePractitionerProfile or HRexPractitionerRole)
+* performer only Reference(USCorePractitionerProfile or HRexPractitionerRole)
 * performer MS
 * locationReference 0..1 MS
 * locationReference only Reference(CRDLocation)
