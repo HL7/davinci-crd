@@ -43,6 +43,10 @@ This implementation guide supports both Protected Health Information (PHI)-speci
 This implementation guide is designed to allow for initial support of basic capabilities and to subsequently build new features over time.
 
 
+<blockquote class="stu-note" markdown="1">
+On Feb 28, 2024, the Office of Burden Reduction and Health Informatics (OBRHI) National Standards Group (NSG) announced an [enforcement discretion](https://www.cms.gov/files/document/discretion-x12-278-enforcement-guidance-letter-remediated-2024-02-28.pdf) that they would not enforce the requirement to use the X12 278 for prior authorization if the covered entities were using the FHIR- based Prior Authorization API as described in the CMS Interoperability and Prior Authorization final rule (CMS-0057-F). This allows payers to return a prior authorization number for use in the X12 837 in coverage extension of the CRD and DTR IGs or as part of the all FHIR exchange of the Prior Authorization Response Bundle in the PAS IG.  For CRD, this specifically means that the satisfied-pa-id in the [Coverage Information extension](StructureDefinition-ext-coverage-information.html) can be used as an X12 prior authorization number.
+</blockquote>
+
 ### Systems
 This implementation guide sets expectations for two types of systems:
 
