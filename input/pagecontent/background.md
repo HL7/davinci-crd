@@ -82,6 +82,9 @@ CDS Hooks provides a mechanism for payers to advise clinicians on coverage requi
 
 Discussion of how a SMART on FHIR app can be used to trigger CDS Hooks from within an CRD client to perform such what-if scenarios can be found [here](foundation.html#smart-on-fhir-hook-invocation).
 
+##### Apps for Decision Support
+Payers may recommend the launch of SMART apps that are relevant to the activity the user is performing.  For example, an app might help guide order creation for specialized patient needs, help evaluate alternative therapies, determine whether complimentary therapy is necessary/appropriate, etc.  These might have clinical or administrative purposes.  Recommendations for such apps would be returned by the [SMART app response ype](cards.html#launch-smart-application-response-type).
+
 ### Architectural Approach
 The approach taken to meet the requirements of the Coverage Requirements Discovery use-case was selected after evaluating the various interoperability choices provided by FHIR.  Specifically, the project team evaluated the possible architectural approaches as described in the HRex specification's [Approaches to Exchanging FHIR Data]({{site.data.fhir.ver.hrex}}/exchanging.html) guide.  The following bullets describe the path choices driven by use-case requirements:
 
