@@ -3,7 +3,6 @@ InstanceOf: CRDMedicationRequest
 Title: "MedicationRequest annotated example"
 Description: "Example medication request with an annotation showing coverage expectations"
 Usage: #example
-* contained[+] = qr
 * extension[Coverage-Information]
   * extension[coverage].valueReference = Reference(Coverage/example)
   * extension[covered].valueCode = $temp#conditional

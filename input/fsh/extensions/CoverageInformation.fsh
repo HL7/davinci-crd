@@ -152,9 +152,9 @@ Description: "Captures assertions from a payer about whether the service is cove
 * url only uri
 
 Invariant: crd-ci-q1
-Description: "Questionnaire is only allowed when doc-needed exists and not equal to 'no-doc'"
+Description: "Questionnaire is only allowed when doc-needed exists"
 Severity: #error
-Expression: "extension.where(url='questionnaire').exists() implies (extension.where(url = 'doc-needed').exists() and extension.where(url = 'doc-needed').all(value != 'no-doc'))"
+Expression: "extension.where(url='questionnaire').exists() implies extension.where(url = 'doc-needed').exists()"
 
 Invariant: crd-ci-q2
 Description: "If covered is set to 'not-covered', then 'pa-needed' must not exist."
@@ -167,9 +167,9 @@ Severity: #error
 Expression: "extension.where((url = 'covered' or url = 'pa-needed' or url = 'doc-needed') and value = 'conditional').count() >= 1 implies extension.where(url = 'info-needed').exists()"
 
 Invariant: crd-ci-q4
-Description: "If 'pa-needed' is 'satisfied', then 'Doc-purpose' can't be 'PA'."
+Description: "If 'pa-needed' is 'satisfied', then 'Doc-purpose' can't be 'withpa'."
 Severity: #error
-Expression: "extension.where(url = 'pa-needed' and value = 'satisfied') and extension.where(url = 'doc-purpose').exists() implies extension.where(url = 'doc-purpose').all(value != 'PA')"
+Expression: "extension.where(url = 'pa-needed' and value = 'satisfied') and extension.where(url = 'doc-purpose').exists() implies extension.where(url = 'doc-purpose').all(value != 'withpa')"
 
 Invariant: crd-ci-q5
 Description: "'satisfied-pa-id' must exist if and only if 'pa-needed' is set to 'satisfied'."
@@ -184,4 +184,4 @@ Expression: "extension.where(url = 'info-needed' and value = 'Other').exists() i
 Invariant: crd-ci-q7
 Description: "If reason.coding is present and is not from the extensible value set, then reason.text must be present"
 Severity: #error
-Expression: reason.empty() or reason.text().exists() or reason.memberOf('http://hl7.org/fhir/us/davinci-crd/ValueSet/coverageAssertionReasons')
+Expression: "reason.empty() or reason.text().exists() or reason.memberOf('http://hl7.org/fhir/us/davinci-crd/ValueSet/coverageAssertionReasons')"
