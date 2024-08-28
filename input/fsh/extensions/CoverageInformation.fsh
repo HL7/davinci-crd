@@ -9,8 +9,6 @@ Description: "Captures assertions from a payer about whether the service is cove
 * ^context[+].type = #element
 * ^context[=].expression = "Encounter"
 * ^context[+].type = #element
-* ^context[=].expression = "Expires"
-* ^context[+].type = #element
 * ^context[=].expression = "NutritionOrder"
 * ^context[+].type = #element
 * ^context[=].expression = "CommunicationRequest"

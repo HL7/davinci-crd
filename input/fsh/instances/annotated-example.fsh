@@ -28,6 +28,7 @@ Usage: #example
   * extension[contact].valueContactPoint
     * system = #url
     * value = "http://some-payer.org/xyz-sub-org/get-help-here.html"
+  * extension[expiry-date].valueDate = "2019-08-01"
 * status = #draft
 * intent = #original-order
 * medicationCodeableConcept = $rxnorm#616447 "mycophenolate mofetil 250 MG Oral Capsule [Cellcept]"
