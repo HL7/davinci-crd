@@ -109,7 +109,7 @@ Description: "Captures assertions from a payer about whether the service is cove
     * value[x] from CRDCoverageDetailCodes (extensible)
   * extension[value] ^short = "Value of name-value pair"
     * ^definition = "The detail or qualification that applies to this coverage assertion."
-    * value[x] only boolean or string or SimpleQuantity or Period
+    * value[x] only boolean or string or url or SimpleQuantity or Period
   * extension[qualification] ^short = "Additional info about detail"
     * ^definition = "Additional text that qualifies/expands on the computable detail.  E.g. 'Provided coverage is renewed' or 'Does not account for deductible'"
     * value[x] only string

@@ -29,6 +29,10 @@ Description: "Codes temporarily defined as part of the CRD implementation guide.
 * #auth-out-network-only   "Authorization out-of-network only" "Authorization is only necessary if out-of-network.  Value should be a boolean."
 * #concurrent-review       "Concurrent review"                 "Additional payer-defined documentation will be required prior to claim payment.  Value should be a boolean."
 * #appropriate-use-needed  "Appropriate use"                   "Payer-defined appropriate use process must be invoked to determine coverage.  Value should be a boolean."
+* #policy-link             "Policy Link"                       "A URL pointing to the specific portion of a payer policy, coverage agreement or similar authoritative document that provides a portion of the basis for the decision documented in the coverage-information.  Value should be a url."
+* #instructions            "Instructions"                      "Information to display to the user that gives guidance about what steps to take in achieving the recommended actions identified by this coverage-information (e.g. special instructions about requesting authorization, details about information needed, details about data retention, etc.).  Value should be a string."
+  * #instructions-clinical   "Clinical instructions"           "Instructions specifically intended for the use of clinical (rather than administrative staff)"
+  * #instructions-admin      "Administrative Instructions"     "Instructions specifically intended for the use of administrative (rather than clinical staff)"
 // Coverage guidance - general
 * #conditional             "Conditional"                       "There is the potential for information requirements from a participant type not listed.  However, a decision on whether there in fact are additional information requirements cannot be made without more information (more detailed code, service rendering information, etc.)"
 // Coverage guidance - covered
