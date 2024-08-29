@@ -9,6 +9,7 @@ Alias: $sct = http://snomed.info/sct
 // Code Systems - HL7
 Alias: $fhir-types                   = http://hl7.org/fhir/fhir-types
 Alias: $restful-interaction          = http://hl7.org/fhir/restful-interaction
+Alias: $task-code                    = http://hl7.org/fhir/CodeSystem/task-code
 Alias: $communication-category       = http://terminology.hl7.org/CodeSystem/communication-category
 Alias: $coverage-class               = http://terminology.hl7.org/CodeSystem/coverage-class
 Alias: $diet                         = http://terminology.hl7.org/CodeSystem/diet

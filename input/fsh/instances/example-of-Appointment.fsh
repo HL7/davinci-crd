@@ -3,7 +3,7 @@ InstanceOf: CRDAppointmentWithOrder
 Title: "Appointment ServiceRequest example"
 Description: "Example appointment tied to a SeriveRequest based on CRD profile"
 Usage: #example
-* id = "example"
+* id = "example1"
 * status = #proposed
 * appointmentType = $v2-0276#FOLLOWUP "A follow up visit from a previous appointment"
 * reasonReference = Reference(http://example.org/fhir/Condition/example) "Heart problem"
@@ -36,7 +36,7 @@ InstanceOf: CRDAppointmentNoOrder
 Title: "Appointment example"
 Description: "Example stand-alone appointment populated based on CRD profile"
 Usage: #example
-* id = "example"
+* id = "example2"
 * status = #proposed
 * serviceCategory = $service-category#17 "General Practice"
 * serviceType = $service-type#124 "General Practice"

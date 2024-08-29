@@ -65,7 +65,7 @@ The profiles expected to be used for the resources resolved to by the userId, pa
     </tr>
   </thead>
   <tr>
-    <td><a href="StructureDefinition-profile-appointment.html">profile-appointment</a></td>
+    <td><a href="StructureDefinition-profile-appointment-with-order.html">profile-appointment-with-order</a> or <a href="StructureDefinition-profile-appointment-no-order.html">profile-appointment-no-order</a></td>
     <td/>
   </tr>
   <tr>
@@ -174,6 +174,86 @@ This hook is described in the CDS Hook specification [here](https://cds-hooks.hl
 This is a new hook that allows for decision support to be provided when the intended performer of a service is not chosen when the order is written, but instead at some later time-point, quite frequently by someone other than the practitioner who wrote the order.  Because knowing 'who' will perform the service is often relevant when determining coverage and prior authorization requirements, and because it is also a useful point for providing guidance such as suggesting alternative "in-network" providers, this is a useful point in client workflow to provide decision support.
 
 This hook will fire at some point after (possibly well after) the [order-sign](#order-sign) hook fires.  It only passes the patient id, order id, performer, and (optionally) the Task that describes the fulfillment request as part of the context.  This specification does not require use of the Task resource.
+
+This hook allows multiple resource types to be present. Resources provided could all be the same type or be a mixture of types.  Coverage requirements **SHOULD** be limited only to those resources that are included in the `dispatchedOrders` context, though the content of other resources **SHOULD** also be considered before making recommendations about what additional actions are necessary.  (I.e. don't recommend an action if there's already an order to perform that action.)  
+
+The different relevant resource types are as follows (support can vary between clients):
+
+**CommunicationRequest**: Used when a provider requests that another provider transfer patient records or other supporting information to another organization or agency.
+
+**DeviceRequest**: Used for durable medical equipment orders, such as wheelchairs, prosthetics, diabetic supplies, etc.  It can also be used to order glasses and other vision-correction devices.
+
+**MedicationRequest**: Used to order inpatient and outpatient medications.<sup>*</sup>  Can also be used to order vaccinations.
+
+**ServiceRequest**: Used to order a referral, lab tests, diagnostic imaging, and sometimes to schedule a future appointment (also see [appointment-book](#appointment-book)).
+
+**NutritionOrder**: Used to order the preparation of specific meal types.  Generally used for in-patient care, but potentially also relevant for homecare.
+
+<sup>*</sup> - Note: in the medication space, regulations may mandate alternate standards for some of the functionality covered by CRD for certain classes of medications.  E.g. NCPDP Script
+
+
+CRD responses might include:
+
+* Information about preauthorization and clinical documentation requirements, including forms to be completed
+
+* Alternative performers (e.g. in-network providers)
+
+
+There are no constraints or special rules related to this hook beyond the profiles expected to be used for the resources resolved to by the `patientId` or `encounterId` or in the `dispatchedOrders` context element:
+
+<table class="grid">
+  <thead>
+    <tr>
+      <th>CRD Profiles</th>
+      <th>US Core Profiles</th>
+    </tr>
+  </thead>
+  <tr>
+    <td><a href="StructureDefinition-profile-devicerequest.html">profile-devicerequest</a></td>
+    <td/>
+  </tr>
+  <tr>
+    <td><a href="StructureDefinition-profile-encounter3.1.html">profile-encounter3.1 (US-Core 3.1.1)</a> or <a href="StructureDefinition-profile-encounter6.1.html">profile-encounter6.1 (US-Core 6.1.0)</a></td>
+    <td/>
+  </tr>
+  <tr>
+    <td><a href="StructureDefinition-profile-medicationrequest.html">profile-medicationrequest</a></td>
+    <td/>
+  </tr>
+  <tr>
+    <td><a href="StructureDefinition-profile-nutritionorder.html">profile-nutritionorder</a></td>
+    <td/>
+  </tr>
+  <tr>
+    <td><a href="StructureDefinition-profile-patient.html">profile-patient</a></td>
+    <td/>
+  </tr>
+  <tr>
+    <td><a href="StructureDefinition-profile-practitioner.html">profile-practitioner</a></td>
+    <td/>
+  </tr>
+  <tr>
+    <td/>
+    <td><a href="{{site.data.fhir.ver.hrex}}/StructureDefinition-hrex-practitionerrole.html">hrex-practitionerrole<sup>†</sup></a></td>
+  </tr>
+  <tr>
+    <td><a href="StructureDefinition-profile-servicerequest.html">profile-servicerequest</a></td>
+    <td/>
+  </tr>
+  <tr>
+    <td><a href="StructureDefinition-profile-task-dispatch.html">profile-task-dispatch</a></td>
+    <td/>
+  </tr>
+  <tr>
+    <td><a href="StructureDefinition-profile-visionprescription.html">profile-visionprescription</a></td>
+    <td/>
+  </tr>
+</table>
+
+<sup>†</sup> While this hook does not explicitly list PractitionerRole as an expected resource type for userId, it is not prohibited and is included to allow linking the user to a Practitioner in a specific role acting on behalf of a specific Organization.
+
+
+
 
 Notes: 
 * CRD Servers **MAY** use this hook as a basis for associating a patient with a particular practitioner from a payer attribution perspective.

@@ -40,9 +40,10 @@ Profile: CRDAppointmentWithOrder
 Parent: CRDAppointmentBase
 Id: profile-appointment-with-order
 Description: "An appointment where the details of what the appointment is being booked for are provided in the associated ServiceRequest"
+* ^extension[$fmm].valueInteger = 1
 * ^experimental = false
 * ^abstract = true
-* basedOn MS 1..*
+* basedOn 1.. MS
 * basedOn only Reference(CRDServiceRequest)
   * ^comment = "potentially relevant for CRD in some situations."
 
@@ -50,6 +51,7 @@ Profile: CRDAppointmentNoOrder
 Parent: CRDAppointmentBase
 Id: profile-appointment-no-order
 Description: "An appointment where the details of what the appointment is being booked for are provided inline and there is no associated ServiceRequest"
+* ^extension[$fmm].valueInteger = 1
 * ^experimental = false
 * ^abstract = true
 * extension contains CRDCoverageInformation named Coverage-Information 0..* MS
