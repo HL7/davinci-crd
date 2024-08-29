@@ -207,7 +207,7 @@ Other information will need to be retrieved using queries that are more specific
     <td>
       <code>Encounter?_id={{context.encounterId}}<br/>
       &_include=Encounter:patient<br/>
-      &_include=Encounter:service-provider<br/>
+      &_include=Encounter:service-provider<sup>†</sup><br/>
       &_include=Encounter:practitioner<br/>
       &_include=Encounter:location<br/><br/>
       Coverage?patient={{context.patient}}</code>
@@ -257,6 +257,9 @@ Other information will need to be retrieved using queries that are more specific
     <td>No performer location</td>
   </tr>
 </table>
+<p>
+<sup>†</sup> The service-provider search type is only relevant if the CRD Client supports the serviceProvider element, which is not mustSupport.
+</p>
 {% endraw %}
 
 #### FHIR Resource Access
