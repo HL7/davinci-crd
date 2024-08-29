@@ -56,7 +56,7 @@
 <artifact id="ValueSet/orderDetail" key="ValueSet-orderDetail" name="CRD Order Detail Codes Value Set"/>
 <artifact id="StructureDefinition/profile-organization" key="StructureDefinition-profile-organization" name="CRD Organization"/>
 <artifact id="StructureDefinition/profile-patient" key="StructureDefinition-profile-patient" name="CRD Patient"/>
-<artifact id="StructureDefinition/profile-practitioner" key="StructureDefinition-profile-practitioner" name="CRD Practitioner"/>
+<artifact deprecated="true" id="StructureDefinition/profile-practitioner" key="StructureDefinition-profile-practitioner" name="CRD Practitioner"/>
 <artifact id="StructureDefinition/profile-taskquestionnaire" key="StructureDefinition-profile-taskquestionnaire" name="CRD Questionnaire Task"/>
 <artifact deprecated="true" id="CapabilityStatement/crd-server" key="CapabilityStatement-crd-server" name="CRD Server"/>
 <artifact id="CapabilityStatement/crd-server3.1" key="CapabilityStatement-crd-server3.1" name="CRD Server USCDI 1"/>
@@ -99,7 +99,7 @@
 <artifact id="Organization/example" key="Organization-example" name="Organization example"/>
 <artifact id="Patient/example" key="Patient-example" name="Patient example"/>
 <artifact deprecated="true" id="StructureDefinition/profile-patient-deident" key="StructureDefinition-profile-patient-deident" name="PatientDident"/>
-<artifact id="Practitioner/example" key="Practitioner-example" name="Practitioner example"/>
+<artifact deprecated="true" id="Practitioner/example" key="Practitioner-example" name="Practitioner example"/>
 <artifact deprecated="true" id="ClaimResponse/priorauth-example" key="ClaimResponse-priorauth-example" name="Prior Authorization example"/>
 <artifact id="Task/questionnaire-example" key="Task-questionnaire-example" name="Questionnaire Task example"/>
 <artifact deprecated="true" id="SearchParameter/servicerequest-insurance" key="SearchParameter-servicerequest-insurance" name="ServiceRequest Insurance Search Parameter"/>

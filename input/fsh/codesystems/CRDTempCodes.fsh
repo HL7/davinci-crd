@@ -65,7 +65,7 @@ Description: "Codes temporarily defined as part of the CRD implementation guide.
   * ^property.valueBoolean = true
 // Card types
   * #coverage-info            "Coverage Information"           "Information related to the patient's coverage, including whether a service is covered, requires prior authorization, is approved without seeking prior authorization, and/or requires additional documentation or data collection"
-    *#unsolicited-determ      "Unsolicited Determination"      "The payer might provide an unsolicited approval of the service as having prior authorization requirements met without a formal submission of a prior authorization request"
+    * #unsolicited-determ     "Unsolicited Determination"      "The payer might provide an unsolicited approval of the service as having prior authorization requirements met without a formal submission of a prior authorization request"
   * #claim                    "Claim"                          "Information about what steps need to be taken to submit a claim for the service"
   * #insurance                "Insurance"                      "Allows a provider to update the patient's coverage information with additional details from the payer (e.g. expiry date, coverage extensions)"
   * #limits                   "Limits"                         "Messages warning about the patient approaching or exceeding their limits for a particular type of coverage or expiry date for coverage in general"

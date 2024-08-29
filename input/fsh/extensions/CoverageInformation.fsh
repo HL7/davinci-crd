@@ -20,7 +20,7 @@ Description: "Captures assertions from a payer about whether the service is cove
 * ^context[=].expression = "MedicationRequest"
 * ^context[0].type = #element
 * ^context[=].expression = "QuestionnaireResponse"
-* obeys crd-ci-q1 and crd-ci-q2 and crd-ci-q3 and crd-ci-q4 and crd-ci-q5 and crd-ci-q6
+* obeys crd-ci-q1 and crd-ci-q2 and crd-ci-q3 and crd-ci-q4 and crd-ci-q5 and crd-ci-q6 and crd-ci-q7
 * . ^short = "CoverageInfo"
   * ^definition = "Indicates coverage information."
 * ^extension[$fmm].valueInteger = 1
@@ -118,7 +118,7 @@ Description: "Captures assertions from a payer about whether the service is cove
 * extension[dependency] ^short = "Resources that impact this assertion"
   * ^definition = "If present, indicates that the determination represented here is dependent on the content, determination, and possibly execution of the referenced order(s)"
   * ^requirements = "For example, the authorization decision on a request for post-surgical physiotherapy might be dependent on the order for the surgery itself.  If coverage for the surgery is not approved or the order for the surgery is cancelled, that might impact the decision on covering the physiotherapy."
-  * value[x] only Reference(CRDAppointment or CRDCommunicationRequest or CRDDeviceRequest or CRDMedicationRequest or CRDNutritionOrder or CRDServiceRequest)
+  * value[x] only Reference(CRDAppointmentWithOrder or CRDAppointmentNoOrder or CRDCommunicationRequest or CRDDeviceRequest or CRDMedicationRequest or CRDNutritionOrder or CRDServiceRequest)
 * extension[questionnaire] only Extension
   * ^short = "Questionnaire to complete"
   * ^definition = "A form to be filled out to gather more information.  Only for use if the response indicates a need to use DTR"

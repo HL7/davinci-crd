@@ -9,7 +9,7 @@ Description: "This profile specifies additional extensions and constraints on th
 * subject only Reference(CRDPatient)
 * basedOn only Reference(CRDServiceRequest)
 * appointment MS
-* appointment only Reference(CRDAppointment)
+* appointment only Reference(CRDAppointmentWithOrder or CRDAppointmentNoOrder)
 * length MS
 * diagnosis MS
   * condition MS
