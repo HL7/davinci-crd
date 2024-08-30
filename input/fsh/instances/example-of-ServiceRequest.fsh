@@ -11,7 +11,7 @@ Usage: #example
   * text = "Implant Pacemaker"
 * subject = Reference(Patient/example)
 * authoredOn = "2015-03-30"
-* requester = Reference(Practitioner/example) "Dr. Beverly Crusher"
-* performer = Reference(http://example.org/fhir/Practitioner/example2) "Dr Cecil Surgeon"
+* requester = Reference(Practitioner/full) "Dr. Beverly Crusher"
+* performer = Reference(http://example.org/fhir/Practitioner/full2) "Dr Cecil Surgeon"
 * locationReference = Reference(Location/example)
 * reasonCode = $sct#48867003 "Bradycardia"

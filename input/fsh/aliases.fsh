@@ -24,9 +24,11 @@ Alias: $v2-0276                      = http://terminology.hl7.org/CodeSystem/v2-
 Alias: $v2-0360                      = http://terminology.hl7.org/CodeSystem/v2-0360
 Alias: $v3-ActCode                   = http://terminology.hl7.org/CodeSystem/v3-ActCode
 Alias: $v3-ActReason                 = http://terminology.hl7.org/CodeSystem/v3-ActReason
+Alias: $v3-LocationRoleType          = http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType
 Alias: $v3-NullFlavor                = http://terminology.hl7.org/CodeSystem/v3-NullFlavor
 Alias: $v3-ParticipationMode         = http://terminology.hl7.org/CodeSystem/v3-ParticipationMode
 Alias: $v3-ParticipationType         = http://terminology.hl7.org/CodeSystem/v3-ParticipationType
+Alias: $v3-RoleCode                  = http://terminology.hl7.org/CodeSystem/v3-RoleCode
 // Code Systems - IG
 Alias: $temp           = http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp
 Alias: $temp_1         = http://hl7.org/fhir/uv/sdc/CodeSystem/temp

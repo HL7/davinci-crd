@@ -15,7 +15,7 @@ Usage: #example
 * subject = Reference(Patient/example)
 * encounter = Reference(Encounter/example)
 * authoredOn = "2015-01-15"
-* requester = Reference(Practitioner/example)
+* requester = Reference(Practitioner/full)
 * reasonCode = $sct#11840006 "Traveler's Diarrhea (disorder)"
 * note.text = "Patient told to take with food"
 * dosageInstruction[0]

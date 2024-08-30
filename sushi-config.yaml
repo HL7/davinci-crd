@@ -147,9 +147,9 @@ groups:
     description: "Models that define extensions on CDS Hooks JSON structures"
     resources:
       - CDSHookServicesExtensionConfiguration
-#      - CDSHookSuggestionActionExtensionIfNoneExist
-#      - CDSHookCardExtensionAssociatedResource
-#      - CDSHookHookExtensionConfigresources:
+      - CDSHookServiceResponseExtensionIfNoneExist
+      - CDSHookServiceResponseExtensionAssociatedResource
+      - CDSHookServiceRequestExtensionRequestConfig
 resources:
   Encounter/example:
     extension:

@@ -20,7 +20,7 @@ Usage: #example
   * status = #accepted
 * participant[+]
   * type = $v3-ParticipationType#ATND
-  * actor = Reference(Practitioner/example) "Dr Adam Careful"
+  * actor = Reference(Practitioner/full) "Dr Adam Careful"
   * required = #required
   * status = #accepted
 * participant[+]
@@ -55,7 +55,7 @@ Usage: #example
   * status = #accepted
 * participant[+]
   * type = $v3-ParticipationType#ATND
-  * actor = Reference(Practitioner/example) "Dr Adam Careful"
+  * actor = Reference(Practitioner/full) "Dr Adam Careful"
   * required = #required
   * status = #accepted
 * participant[+]

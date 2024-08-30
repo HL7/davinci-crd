@@ -7,7 +7,7 @@ Corrected the embedded JSON examples to be technically correct and in line with 
 A number of additional changes and enhancements.  Key differences are:
 * Renamed the 'Annotate' card to [Coverage Information](cards.html#coverage-information-response-type) and made it a system action rather than a card
 * Removed the Unsolicited determination card type
-* Added system action as an optional feature of the [form completion](cards.html#request-form-completion-response-type) and [update coverage information](cards.html#create-or-update-coverage-information-response-type) cards
+* Added system action as an optional feature of the [form completion](cards.html#request-form-completion-response-type) and [update coverage information](cards.html#create-or-update-coverage-records-response-type) cards
 * Removed guidance on deferring card actions (as it's no longer terribly relevant for CRD and SMART now defines a mechanism)
 * Added additional properties to the [coverage-information](StructureDefinition-ext-coverage-information.html) extension including the ability to specify questionnaires and draft responses for DTR, authorized billing codes, dependencies on other orders, and other details.
 * Removed support for 'de-identified' invocation of CRD

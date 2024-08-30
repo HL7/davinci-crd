@@ -11,6 +11,7 @@ Usage: #example
 * alias[+] = "University Medical Center, South Wing, second floor"
 * description = "Second floor of the Old South Wing, formerly in use by Psychiatry"
 * mode = #instance
+* type = $v3-RoleCode#HOSP
 * telecom[0]
   * system = #phone
   * value = "2328"

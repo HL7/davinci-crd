@@ -10,7 +10,7 @@ Usage: #example
 * created = "2014-06-15"
 * patient = Reference(Patient/example)
 * dateWritten = "2014-06-15"
-* prescriber = Reference(Practitioner/example)
+* prescriber = Reference(Practitioner/full)
 * lensSpecification[0]
   * product = $ex-visionprescriptionproduct#lens
   * eye = #right

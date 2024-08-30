@@ -14,7 +14,7 @@ Usage: #example
 * type = $sct#270427003 "Patient-initiated encounter"
 * priority = $sct#310361003 "Non-urgent cardiological admission"
 * subject = Reference(Patient/example)
-* participant.individual = Reference(Practitioner/example)
+* participant.individual = Reference(Practitioner/full)
 * length = 140 'min' "min"
 * reasonCode = $sct#34068001 "Heart valve replacement"
 * hospitalization

@@ -16,7 +16,8 @@ Usage: #definition
   * mode = #server
   * documentation = "A CRD Client provides a FHIR server endpoint, returning patient information to the CRD server, ensuring it has the needed information to perform decision support."
   * security.description = "Implementations **SHALL** meet the general security requirements documented in the [[http://hl7.org/fhir/us/davinci-hrex/STU1/security.html|HRex implementation guide]]."
-  * insert CSresourceCRD(#Appointment, profile-appointment)
+  * insert CSresourceCRD(#Appointment, profile-appointment-with-order)
+    * resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-appointment-no-order"
     * resource[=].versioning = #versioned-update
     * insert CSinteraction(#SHOULD, #update, [[Allows annotating the appointment in response to a card.  (Support is mandatory if the system supports Appointments)]])
   * insert CSresourceCRD(#CommunicationRequest, profile-communicationrequest)
@@ -57,9 +58,9 @@ Usage: #definition
     * insert CSinteraction(#SHOULD, #read, [[Allows retrieval of ordering and/or performing organization's information if not retrieved as part of pre-fetch.  (Support is mandatory if not supported as part of pre-fetch.)]])
   * insert CSresourceCRD(#Patient, profile-patient)
     * insert CSinteraction(#SHOULD, #read, [[Allows retrieval of the patient demographics if patient is not retrieved as part of pre-fetch.  (Support is mandatory if not supported as part of pre-fetch.)]])
-  * insert CSresourceCRD(#Practitioner, profile-practitioner)
+  * insert CSresource(#Practitioner, "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-practitioner")
     * insert CSinteraction(#SHOULD, #read, [[Allows retrieval of ordering and/or performing provider's information if not retrieved as part of pre-fetch.  (Support is mandatory if not supported as part of pre-fetch.)]])
-  * insert CSresource(#PractitionerRole, "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole")
+  * insert CSresource(#PractitionerRole, "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-practitionerrole")
     * insert CSinteraction(#SHOULD, #search-type, [[Allows retrieval of ordering and/or performing provider's (including associated Practitioners and Organizations) if not retrieved as part of pre-fetch.  (Support is mandatory if not supported as part of pre-fetch.)]])
     * resource[=].searchInclude[+] = "PractitionerRole:organization"
     * resource[=].searchInclude[+] = "PractitionerRole:practitioner"
@@ -87,7 +88,8 @@ Usage: #definition
   * mode = #server
   * documentation = "A CRD Client provides a FHIR server endpoint, returning patient information to the CRD server, ensuring it has the needed information to perform decision support."
   * security.description = "Implementations **SHALL** meet the general security requirements documented in the [[http://hl7.org/fhir/us/davinci-hrex/STU1/security.html|HRex implementation guide]]."
-  * insert CSresourceCRD(#Appointment, profile-appointment)
+  * insert CSresourceCRD(#Appointment, profile-appointment-with-order)
+    * resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-appointment-no-order"
     * resource[=].versioning = #versioned-update
     * insert CSinteraction(#SHOULD, #update, [[Allows annotating the appointment in response to a card.  (Support is mandatory if the system supports Appointments)]])
   * insert CSresourceCRD(#CommunicationRequest, profile-communicationrequest)
@@ -128,9 +130,9 @@ Usage: #definition
     * insert CSinteraction(#SHOULD, #read, [[Allows retrieval of ordering and/or performing organization's information if not retrieved as part of pre-fetch.  (Support is mandatory if not supported as part of pre-fetch.)]])
   * insert CSresourceCRD(#Patient, profile-patient)
     * insert CSinteraction(#SHOULD, #read, [[Allows retrieval of the patient demographics if patient is not retrieved as part of pre-fetch.  (Support is mandatory if not supported as part of pre-fetch.)]])
-  * insert CSresourceCRD(#Practitioner, profile-practitioner)
+  * insert CSresource(#Practitioner, "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-practitioner")
     * insert CSinteraction(#SHOULD, #read, [[Allows retrieval of ordering and/or performing provider's information if not retrieved as part of pre-fetch.  (Support is mandatory if not supported as part of pre-fetch.)]])
-  * insert CSresource(#PractitionerRole, "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole")
+  * insert CSresource(#PractitionerRole, "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-practitionerrole")
     * insert CSinteraction(#SHOULD, #search-type, [[Allows retrieval of ordering and/or performing provider's (including associated Practitioners and Organizations) if not retrieved as part of pre-fetch.  (Support is mandatory if not supported as part of pre-fetch.)]])
     * resource[=].searchInclude[+] = "PractitionerRole:organization"
     * resource[=].searchInclude[+] = "PractitionerRole:practitioner"

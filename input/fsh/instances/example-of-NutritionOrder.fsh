@@ -12,7 +12,7 @@ Usage: #example
 * patient = Reference(Patient/example)
 * encounter = Reference(Encounter/example)
 * dateTime = "2014-09-17"
-* orderer = Reference(Practitioner/example)
+* orderer = Reference(Practitioner/full)
 * allergyIntolerance = Reference(http://example.org/fhir/AllergyIntolerance/example) "Cashew Nuts"
 * foodPreferenceModifier = $diet#dairy-free
 * excludeFoodModifier = $sct#227493005 "Cashew Nut"

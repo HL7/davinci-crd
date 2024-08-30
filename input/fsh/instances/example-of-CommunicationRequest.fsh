@@ -22,6 +22,6 @@ Usage: #example
   * contentString = "Liver pathology biopsy report"
 * occurrenceDateTime = "2016-06-10T11:01:10-08:00"
 * authoredOn = "2016-06-10T11:01:10-08:00"
-* requester = Reference(Practitioner/example)
+* requester = Reference(Practitioner/full)
 * recipient = Reference(Organization/example)
 * sender = Reference(http://example.org/fhir/someOtherProvider)

@@ -63,7 +63,7 @@ Description: "Captures assertions from a payer about whether the service is cove
 * extension[doc-needed] only Extension
   * ^short = "clinical | admin | patient | conditional"
   * ^definition = "Indicates whether additional documentation needs to be captured (purpose in next element)"
-  * ^comment = "See additional guidance in the [notes](#doc-needed-vs-info-needed)"
+  * ^comment = "See additional guidance in the [notes](StructureDefinition-ext-coverage-information.html#doc-needed-vs-info-needed)"
   * value[x] 1..1
   * value[x] only code
   * value[x] from CRDAdditionalDoc (required)
@@ -76,7 +76,7 @@ Description: "Captures assertions from a payer about whether the service is cove
 * extension[info-needed] only Extension
   * ^short = "performer | location | timeframe"
   * ^definition = "Indicates whether information about the perfomer, location, and/or performance date is needed to determine coverage information"
-  * ^comment = "See additional guidance in the [notes](#doc-needed-vs-info-needed)"
+  * ^comment = "See additional guidance in the [notes](StructureDefinition-ext-coverage-information.html#doc-needed-vs-info-needed)"
   * ^condition[+] = crd-ci-q3
   * value[x] 1..1
   * value[x] only code
@@ -186,4 +186,4 @@ Expression: "extension.where(url = 'info-needed' and value = 'Other').exists() i
 Invariant: crd-ci-q7
 Description: "If reason.coding is present and is not from the extensible value set, then reason.text must be present"
 Severity: #error
-Expression: "reason.empty() or reason.text().exists() or reason.memberOf('http://hl7.org/fhir/us/davinci-crd/ValueSet/coverageAssertionReasons')"
+Expression: "extension.where(url = 'reason').empty() or extension.where(url = 'reason').value.text.exists() or extension.where(url = 'reason').value.memberOf('http://hl7.org/fhir/us/davinci-crd/ValueSet/coverageAssertionReasons')"

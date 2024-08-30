@@ -33,7 +33,7 @@ In addition to the [guidance provided in the CDS Hooks specification](https://cd
 ### Potential CRD Response Types
 The sections below describe the different types of [responses](https://cds-hooks.hl7.org/2.0/#cds-service-response) that CRD Services can use when returning coverage requirements to CRD Clients, including CRD-specific profiles on cards to describe CRD-expected behavior. It is possible that some CRD Services and CRD Clients will support response patterns than those listed here, but such behavior is outside the scope of this specification. Future versions of this specification might standardize additional response types.
 
-Of the response types in this guide, conformant CRD Clients **SHALL** support the [External Reference](#external-reference), [Instructions](#instructions-response-type), and  [Coverage Information](#coverage-information-response-type) responses and **SHOULD** support the remaining types.
+Of the response types in this guide, conformant CRD Clients **SHALL** support the [External Reference](#external-reference-response-type), [Instructions](#instructions-response-type), and  [Coverage Information](#coverage-information-response-type) responses and **SHOULD** support the remaining types.
 
 CRD Services **SHALL**, at minimum, demonstrate an ability to return the same as those listed as ‘SHALL’ for clients above.  Also see specific support expectations for the [coverage information response type](#coverage-information-response-type).
 
@@ -115,7 +115,11 @@ When using this response type, the proposed order or appointment being updated *
     </tr>
   </thead>
   <tr>
-    <td><a href="StructureDefinition-profile-appointment.html">profile-appointment</a></td>
+    <td><a href="StructureDefinition-profile-appointment-with-order.html">profile-appointment-with-order</a></td>
+    <td/>
+  </tr>
+  <tr>
+    <td><a href="StructureDefinition-profile-appointment-no-order.html">profile-appointment-no-order</a></td>
     <td/>
   </tr>
   <tr>
@@ -258,7 +262,7 @@ This example proposes adding a monthly test to check liver function:
 ### Request Form Completion Response Type
 NOTE: DTR is the preferred solution where forms are needed for capture of information for payer purposes including, but not limited to, prior authorization, claims submission, or audit because of its ability to minimize data entry burden. This response type SHOULD only be used when DTR is not available or applicable.
 
-This response type can be used to present a `Card` that indicates that there are forms that need to be completed.  The indicated forms might contain documentation that must be submitted for prior authorization, attachments for claims submission, documentation that must be completed and retained as proof that clinical need protocols have been followed, or that must otherwise be retained and available for future audits.  While forms can also be expressed as static or active PDFs referenced by [External References](#external-reference), or within a [SMART Application](#launch-smart-application-response-type), this response type provides the form definition as a FHIR Questionnaire and creates a Task within the CRD client allowing the completion of the form to be appropriately scheduled and/or delegated.  Alternatively, the Practitioner could choose to execute the task and fill out the form immediately if that makes more sense from a clinical workflow perspective.
+This response type can be used to present a `Card` that indicates that there are forms that need to be completed.  The indicated forms might contain documentation that must be submitted for prior authorization, attachments for claims submission, documentation that must be completed and retained as proof that clinical need protocols have been followed, or that must otherwise be retained and available for future audits.  While forms can also be expressed as static or active PDFs referenced by [External References](#external-reference-response-type), or within a [SMART Application](#launch-smart-application-response-type), this response type provides the form definition as a FHIR Questionnaire and creates a Task within the CRD client allowing the completion of the form to be appropriately scheduled and/or delegated.  Alternatively, the Practitioner could choose to execute the task and fill out the form immediately if that makes more sense from a clinical workflow perspective.
 
 This suggestion will always include a "create" action for the Task.  The Task will point to the questionnaire to be completed using a `Task.input` element with a `Task.input.type.text` of "questionnaire" and the canonical URL for the questionnaire in `Task.input.valueCanonical`.  Additional `Task.input` elements will provide information about how the completed questionnaire is to be submitted to the payer with a service endpoint if required.  The `Task.code` will always include the CRD-specific `complete-questionnaire` code.  The reason for completion will be conveyed in `Task.reasonCode`.  The Questionnaire might also be included with a separate conditional "create" action or it might be excluded with the presumption it will already be available or retrievable by the client via its canonical URL, either from the original source or from a local registry.
 
