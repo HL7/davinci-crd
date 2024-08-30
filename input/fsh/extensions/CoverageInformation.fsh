@@ -7,19 +7,21 @@ Description: "Captures assertions from a payer about whether the service is cove
 * ^context[0].type = #element
 * ^context[=].expression = "Appointment"
 * ^context[+].type = #element
-* ^context[=].expression = "Encounter"
-* ^context[+].type = #element
-* ^context[=].expression = "NutritionOrder"
-* ^context[+].type = #element
 * ^context[=].expression = "CommunicationRequest"
+* ^context[+].type = #element
+* ^context[=].expression = "Encounter"
 * ^context[+].type = #element
 * ^context[=].expression = "DeviceRequest"
 * ^context[+].type = #element
+* ^context[=].expression = "MedicationRequest"
+* ^context[+].type = #element
+* ^context[=].expression = "NutritionOrder"
+* ^context[+].type = #element
+* ^context[=].expression = "QuestionnaireResponse"
+* ^context[+].type = #element
 * ^context[=].expression = "ServiceRequest"
 * ^context[+].type = #element
-* ^context[=].expression = "MedicationRequest"
-* ^context[0].type = #element
-* ^context[=].expression = "QuestionnaireResponse"
+* ^context[=].expression = "VisionPrescription"
 * obeys crd-ci-q1 and crd-ci-q2 and crd-ci-q3 and crd-ci-q4 and crd-ci-q5 and crd-ci-q6 and crd-ci-q7
 * . ^short = "CoverageInfo"
   * ^definition = "Indicates coverage information."
