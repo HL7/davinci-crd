@@ -41,9 +41,11 @@ This implementation guide uses terminology, notations and design principles that
 * [How to Read Resource & Profile Definitions]({{site.data.fhir.path}}formats.html)
 * [Base Resource]({{site.data.fhir.path}}resource.html)
 
+<div class="modified-content" markdown="1">
 This implementation guide supports the [R4]({{site.data.fhir.path}}index.html) version of the FHIR standard and builds on the US Core [3.1 (USCDI v1)]({{site.data.fhir.ver.uscore3}}) and [6.1 (USCDI 3v)]({{site.data.fhir.ver.uscore6}}) implementation guides and implementers need to familiarize themselves with the profiles in those guides.  In most cases, the profiles in this IG conform with both releases of US Core.  Where that is not possible (specifically in the case of Encounter), separate profiles have been created for use by CRD clients that support USCDI v1 vs. those that support USCDI v3.  Clients **SHALL** support one of the two profiles (and versions of US Core).  CRD Servers **SHALL** be able to handle both.
 
 This IG also draws on content from the [Davinci Health Record Exchange (HRex)]({{site.data.fhir.ver.hrex}}) and [Structured Data Capture (SDC)]({{site.data.fhir.ver.sdc}}) implementation guides.
+</div>
 
 Implementers should also familiarize themselves with the FHIR resources used within the guide:
 
@@ -82,8 +84,10 @@ CDS Hooks provides a mechanism for payers to advise clinicians on coverage requi
 
 Discussion of how a SMART on FHIR app can be used to trigger CDS Hooks from within an CRD client to perform such what-if scenarios can be found [here](foundation.html#smart-on-fhir-hook-invocation).
 
+<div class="added-content" markdown="1">
 ##### Apps for Decision Support
 Payers may recommend the launch of SMART apps that are relevant to the activity the user is performing.  For example, an app might help guide order creation for specialized patient needs, help evaluate alternative therapies, determine whether complimentary therapy is necessary/appropriate, etc.  These might have clinical or administrative purposes.  Recommendations for such apps would be returned by the [SMART app response ype](cards.html#launch-smart-application-response-type).
+</div>
 
 ### Architectural Approach
 The approach taken to meet the requirements of the Coverage Requirements Discovery use-case was selected after evaluating the various interoperability choices provided by FHIR.  Specifically, the project team evaluated the possible architectural approaches as described in the HRex specification's [Approaches to Exchanging FHIR Data]({{site.data.fhir.ver.hrex}}/exchanging.html) guide.  The following bullets describe the path choices driven by use-case requirements:

@@ -2,7 +2,9 @@
 
 ### Usage
 <br/>
-CRD Clients **SHALL** use this profile to provide `appointments` context objects to CRD Servers when invoking the [appointment-book](hooks.html#appointment-book) hook as well as to [resolve other references](foundation.html#additional-data-retrieval) to Appointment resources.
+<div class="new-content" markdown="1">
+This profile on Task defines the additional information that may optionally be provided when invoking an [order-dispatch](hooks.html#order-dispatch) hook.
 
 Information provided in [Must Support]({{site.data.fhir.path}}profiling.html#mustsupport) elements will commonly be required for CRD Servers to perform coverage requirements discovery.
+</br>
 <br/>

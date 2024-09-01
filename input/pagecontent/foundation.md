@@ -29,6 +29,7 @@ This implementation guide uses specific terminology to flag statements that have
 #### MustSupport
 Profiles in this implementation guide make use of the [mustSupport]({{site.data.fhir.path}}profiling.html#mustsupport) element.
 
+<div class="modified-content" markdown="1">
 For data provided from CRD clients:
 
 * If the CRD client maintains the data element and surfaces it to users, then it **SHALL** be exposed in their FHIR interface when the data exists and privacy constraints permit.
@@ -41,6 +42,7 @@ For responses provided by CRD servers:
 
 * CRD clients **SHALL** make the data available to their users or leverage the data within their workflow as necessary to effect the intention of the provided decision support
 
+</div>
 
 NOTE: These requirements are somewhat different from US-Core and HRex because the implementation needs are different.  In US-Core, there is generally an expectation for clients to modify code and persistence layers to add support mustSupport elements for supported profiles.  This expectation does not hold for CRD.  However, CRD does require surfacing elements in the FHIR interface if the system maintains the element.
 
@@ -92,8 +94,10 @@ CDS Hooks are intended to improve healthcare provider care planning processes by
 
 Payers and service providers **SHALL** ensure that CDS Hooks return only messages and information relevant and useful to the intended recipient.
 
+<div class="new-content" markdown="1">
 ### CRD Servers
 Payers may have multiple back-end functions that handle different types of decision support and/or different types of services.  If a payer supports [endpoint discovery]({{site.data.fhir.ver.hrex}}/endpoint-discovery.html), they **SHALL** have at most a single endpoint for each Coverage (e.g. Medicare, Medicaid, or commercial) they provide coverage under.  (In FHIR, a Coverage instance essentially corresponds with the identification information on an insurance card, irrespective of the types of coverages available under that card.)  If a payer does not support endpoint discovery, they **SHALL** expose only one CRD endpoint capable of handling all Coverages.  All CRD requests for the patient Coverage, irrespective of type of service, will be sent to a single endpoint.  CRD servers are free to route the information from their endpoint(s) to back-end services as needed.  This routing may evolve over time and should have no impact on CRD client calls.
+</div>
 
 ### Enabling a CRD Server
 When a CRD client configures itself to support a payer's CRD service, it will need to identify which payer(s) the service supports.  This is needed to ensure that the CRD client only sends CRD calls to services that the patient has current coverage for.  The CRD service is responsible for any internal routing based on which processing organization handles the decisions.  For this purpose, payer means 'The organization listed on the member's insurance card'.
@@ -257,7 +261,7 @@ Other information will need to be retrieved using queries that are more specific
     <td>No performer location</td>
   </tr>
 </table>
-<p>
+<p class="new-content" markdown="1">
 <sup>†</sup> The service-provider search type is only relevant if the CRD Client supports the serviceProvider element, which is not mustSupport.
 </p>
 {% endraw %}

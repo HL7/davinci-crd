@@ -43,9 +43,11 @@ This implementation guide supports both Protected Health Information (PHI)-speci
 This implementation guide is designed to allow for initial support of basic capabilities and to subsequently build new features over time.
 
 
+<div class="new-content" markdown="1">
 <blockquote class="stu-note" markdown="1">
 On Feb 28, 2024, the Office of Burden Reduction and Health Informatics (OBRHI) National Standards Group (NSG) announced an [enforcement discretion](https://www.cms.gov/files/document/discretion-x12-278-enforcement-guidance-letter-remediated-2024-02-28.pdf) that they would not enforce the requirement to use the X12 278 for prior authorization if the covered entities were using the FHIR- based Prior Authorization API as described in the CMS Interoperability and Prior Authorization final rule (CMS-0057-F). This allows payers to return a prior authorization number for use in the X12 837 in coverage extension of the CRD and DTR IGs or as part of the all FHIR exchange of the Prior Authorization Response Bundle in the PAS IG.  For CRD, this specifically means that the satisfied-pa-id in the [Coverage Information extension](StructureDefinition-ext-coverage-information.html) can be used as an X12 prior authorization number.
 </blockquote>
+</div>
 
 ### Systems
 This implementation guide sets expectations for two types of systems:
@@ -61,7 +63,9 @@ The CRD client may actually involve multiple systems. For example, the systems t
 * The 'access token' and FHIR endpoint exposed to the CRD service has access to all relevant data, independent of which physical data store it resides in.
 * The intermediary could take on the responsibility for the FHIR interface, determining appropriate payer to route calls to, etc.
 
+<div class="new-content" markdown="1">
 There are two distinct CRD client sets of capabilities, one for [USCDI v1 (US-Core 3.1.1)](CapabilityStatement-crd-client3.1.html) and one for [USCDI v3 (US-Core 6.1.0)](CapabilityStatement-crd-client6.1.html).  Typically a client would support only one or the other based on which US Core release it supports internally.
+</div>
 
 <blockquote class="stu-note">
 <p>
@@ -70,8 +74,10 @@ When CRD clients are made up of multiple systems, there will be orchestration re
 </blockquote>
 
 CRD Servers (or servers) are systems that act on behalf of payer organizations to share information with healthcare providers about rules and requirements related to healthcare products and services covered by a patient's payer.  A CRD Server might provide coverage information related to one or more insurance plans. CRD Servers are a type of CDS Service as defined in the [CDS Hooks Specification](https://cds-hooks.hl7.org/2.0).
+<div class="new-content" markdown="1">
 
 There are also two distinct CRD server sets of capabilities, one for [USCDI v1 (US-Core 3.1.1)](CapabilityStatement-crd-server3.1.html) and one for [USCDI v3 (US-Core 6.1.0)](CapabilityStatement-crd-server6.1.html).  Ideally payers will be able to handle both, but they are not presently required to.
+</div>
 
 ### Content and Organization
 This implementation guide is organized into the following sections:
