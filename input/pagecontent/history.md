@@ -1,7 +1,15 @@
 This page describes the primary releases of the specification and summarizes the content for each:
 
 ### Release 2.1.0-ballot
-A variety of minor corrections and clarifications to wording and examples.
+Significant Coverage Information changes:
+* [FHIR-46088](https://jira.hl7.org/browse/FHIR-46088) - Set MS expectations (and general expectations too)
+* [FHIR-46460](https://jira.hl7.org/browse/FHIR-46460) - Remove 'response' element
+* [FHIR-46089](https://jira.hl7.org/browse/FHIR-46089) - Tightened invariants around info-needed
+* [FHIR-44410](https://jira.hl7.org/browse/FHIR-44410) - Add support for policy links and information as qualifiers
+* [FHIR-45440](https://jira.hl7.org/browse/FHIR-45440) - Added new configuration option for 'wanting information' ServiceRequest and one not
+* [FHIR-44909](https://jira.hl7.org/browse/FHIR-44909) - Added support for additional information from patient
+
+Significant other changes:
 * [FHIR-46440](https://jira.hl7.org/browse/FHIR-46640), [FHIR-46603](https://jira.hl7.org/browse/FHIR-46603) - Set expectations for endpoints and endpoint discovery
 * [FHIR-45551](https://jira.hl7.org/browse/FHIR-45551) - Removed the CRD Practitioner profile (use HRex instead)
 * [FHIR-46254](https://jira.hl7.org/browse/FHIR-46254) - Define a Task profile for order-dispatch hook
@@ -14,15 +22,10 @@ A variety of minor corrections and clarifications to wording and examples.
 * [FHIR-45295](https://jira.hl7.org/browse/FHIR-45295) - Relax expections on Request statuses to not have to be 'draft'
 * [FHIR-44388](https://jira.hl7.org/browse/FHIR-44388) - Split Appointment profile into two - one pointing to 
 * [FHIR-45230](https://jira.hl7.org/browse/FHIR-45230) - Relaxed 'reason' constraints in profiles to align with US Core
+* [FHIR-46793](https://jira.hl7.org/browse/FHIR-46793) - Set expectations for CRD clients to query data when possible
 
-Coverage Information changes:
-* [FHIR-46088](https://jira.hl7.org/browse/FHIR-46088) - Set MS expectations (and general expectations too)
-* [FHIR-46460](https://jira.hl7.org/browse/FHIR-46460) - Remove 'response' element
-* [FHIR-46089](https://jira.hl7.org/browse/FHIR-46089) - Tightened invariants around info-needed
-* [FHIR-44410](https://jira.hl7.org/browse/FHIR-44410) - Add support for policy links and information as qualifiers
-* [FHIR-45440](https://jira.hl7.org/browse/FHIR-45440) - Added new configuration option for 'wanting information'
-ServiceRequest and one not
-* [FHIR-44909](https://jira.hl7.org/browse/FHIR-44909) - Added support for additional information from patient
+A variety of minor corrections and clarifications to wording and examples.
+
 
 ### Release 2.0.1
 Corrected the embedded JSON examples to be technically correct and in line with other rules in the specification
