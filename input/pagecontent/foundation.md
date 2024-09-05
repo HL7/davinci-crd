@@ -166,7 +166,17 @@ CRD client implementations **SHOULD NOT** expect standardized prefetch key names
 
 In most cases, payers will require information about a patient’s coverage. In order to reduce the time CRD services spend on member matching, CRD clients **SHOULD** limit the coverages provided to just those relevant to the CRD service. How this happens is up to the CRD client.  Coverage prefetch will look like this:
 
-{% fragment Binary/CRDServices JSON BASE:services.where(hook='appointment-book') EXCEPT:prefetch.where(key='coverage') %}
+<!-- fragment Binary/CRDServices JSON BASE:services.where(hook='appointment-book') EXCEPT:prefetch.where(key='coverage') -->
+{% raw %}
+<pre class="json" style="white-space: pre; text-wrap: nowrap; width: auto;"><code class="language-json" style="white-space: pre; text-wrap: nowrap;">{
+  ...
+  "prefetch" : {
+    "<a href="https://build.fhir.org/ig/FHIR/fhir-tools-ig/StructureDefinition-CDSHooksServices.html#CDSHooksServices.services.prefetch.value">encounter</a>" : "Encounter?_id=&amp;_include=Encounter:service-provider&amp;_include=Encounter:practitioner&amp;_include=Encounter:location",
+    "<a href="https://build.fhir.org/ig/FHIR/fhir-tools-ig/StructureDefinition-CDSHooksServices.html#CDSHooksServices.services.prefetch.value">coverage</a>" : "Coverage?patient=&amp;status=active",
+    "<a href="https://build.fhir.org/ig/FHIR/fhir-tools-ig/StructureDefinition-CDSHooksServices.html#CDSHooksServices.services.prefetch.value">appointment</a>" : "Appointment?_id=&amp;_include=Appointment:practitioner:PractitionerRole&amp;_include:iterate=PractitionerRole:organization&amp;_include:iterate=PractitionerRole:practitioner&amp;_include=Appointment:location"
+  }
+}</code></pre>
+{% endraw %}
 
 Other information will need to be retrieved using queries that are more specific to the type of hook being invoked - and the resources passed with it:
 
@@ -276,7 +286,86 @@ The following two examples show a batch query that could retrieve all CRD-releva
 **Query Batch Request**<br/>
 This query presumes that an order-sign hook has been invoked and the following information has been passed in as context:
 
-{% fragment Binary/CRDServiceRequest JSON BASE:context %}
+<!-- fragment Binary/CRDServiceRequest JSON BASE:context -->
+{% raw %}
+<pre class="json" style="white-space: pre; text-wrap: nowrap; width: auto;"><code class="language-json" style="white-space: pre; text-wrap: nowrap;">{
+  "<a href="https://build.fhir.org/ig/FHIR/fhir-tools-ig/StructureDefinition-CDSHookOrderSignContext.html#CDSHookOrderSignContext.userId">userId</a>" : "Practitioner/ABC",
+  "<a href="https://build.fhir.org/ig/FHIR/fhir-tools-ig/StructureDefinition-CDSHookOrderSignContext.html#CDSHookOrderSignContext.patientId">patientId</a>" : "123",
+  "<a href="https://build.fhir.org/ig/FHIR/fhir-tools-ig/StructureDefinition-CDSHookOrderSignContext.html#CDSHookOrderSignContext.encounterId">encounterId</a>" : "987",
+  "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle">draftOrders</a>" : {
+    "<a href="http://hl7.org/fhir/R4/bundle.html">resourceType</a>" : "Bundle",
+    "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.type">type</a>" : "collection",
+    "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry">entry</a>" : [
+      {
+        "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.fullUrl">fullUrl</a>" : "http://example.org/someEHR/fhir/ServiceRequest/1357",
+        "<a href="http://hl7.org/fhir/R4/servicerequest.html#ServiceRequest">resource</a>" : {
+          "<a href="http://hl7.org/fhir/R4/servicerequest.html">resourceType</a>" : "ServiceRequest",
+          "<a href="http://hl7.org/fhir/R4/servicerequest.html#ServiceRequest.id">id</a>" : "1357",
+          "<a href="http://hl7.org/fhir/R4/servicerequest.html#ServiceRequest.text">text</a>" : {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "generated",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;Contrast enhanced spectral mammography (Procedure) for Amy V. Baxter&lt;br/&gt;Requested by Dr. Jones, Feb 15, 2019&lt;/div&gt;"
+          },
+          "<a href="http://hl7.org/fhir/R4/servicerequest.html#ServiceRequest.status">status</a>" : "draft",
+          "<a href="http://hl7.org/fhir/R4/servicerequest.html#ServiceRequest.intent">intent</a>" : "original-order",
+          "<a href="http://hl7.org/fhir/R4/servicerequest.html#ServiceRequest.code">code</a>" : {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://snomed.info/sct",
+                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "726551006",
+                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Contrast enhanced spectral mammography (Procedure)"
+              }
+            ]
+          },
+          "<a href="http://hl7.org/fhir/R4/servicerequest.html#ServiceRequest.subject">subject</a>" : {
+            "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "http://example.org/fhir/Patient/123"
+          },
+          "<a href="http://hl7.org/fhir/R4/servicerequest.html#ServiceRequest.encounter">encounter</a>" : {
+            "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "http://example.org/fhir/Encounter/987"
+          },
+          "<a href="http://hl7.org/fhir/R4/servicerequest.html#ServiceRequest.authoredOn">authoredOn</a>" : "2019-02-15",
+          "<a href="http://hl7.org/fhir/R4/servicerequest.html#ServiceRequest.requester">requester</a>" : {
+            "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "http://example.org/fhir/PractitionerRole/ABC",
+            "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a>" : "Dr. Jones"
+          }
+        }
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.fullUrl">fullUrl</a>" : "http://example.org/someEHR/fhir/ServiceRequest/2468",
+        "<a href="http://hl7.org/fhir/R4/servicerequest.html#ServiceRequest">resource</a>" : {
+          "<a href="http://hl7.org/fhir/R4/servicerequest.html">resourceType</a>" : "ServiceRequest",
+          "<a href="http://hl7.org/fhir/R4/servicerequest.html#ServiceRequest.id">id</a>" : "2468",
+          "<a href="http://hl7.org/fhir/R4/servicerequest.html#ServiceRequest.text">text</a>" : {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "generated",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;Portable gaseous oxygen system, rental; includes portable container, regulator, flowmeter, humidifier, cannula or mask, and tubing for Amy V. Baxter&lt;br/&gt;Requested by Dr. Jones, Feb 15, 2019&lt;/div&gt;"
+          },
+          "<a href="http://hl7.org/fhir/R4/servicerequest.html#ServiceRequest.status">status</a>" : "draft",
+          "<a href="http://hl7.org/fhir/R4/servicerequest.html#ServiceRequest.intent">intent</a>" : "original-order",
+          "<a href="http://hl7.org/fhir/R4/servicerequest.html#ServiceRequest.code">code</a>" : {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets",
+                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "E0431",
+                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Portable gaseous oxygen system, rental; includes portable container, regulator, flowmeter, humidifier, cannula or mask, and tubing"
+              }
+            ]
+          },
+          "<a href="http://hl7.org/fhir/R4/servicerequest.html#ServiceRequest.subject">subject</a>" : {
+            "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "http://example.org/fhir/Patient/123"
+          },
+          "<a href="http://hl7.org/fhir/R4/servicerequest.html#ServiceRequest.encounter">encounter</a>" : {
+            "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "http://example.org/fhir/Encounter/987"
+          },
+          "<a href="http://hl7.org/fhir/R4/servicerequest.html#ServiceRequest.authoredOn">authoredOn</a>" : "2019-02-15",
+          "<a href="http://hl7.org/fhir/R4/servicerequest.html#ServiceRequest.requester">requester</a>" : {
+            "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "http://example.org/fhir/PractitionerRole/ABC",
+            "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a>" : "Dr. Jones"
+          }
+        }
+      }
+    ]
+  }
+}</code></pre>
+{% endraw %}
 
 As well, the `draftOrders` Bundle from the context includes MedicationRequests that reference 2 formulary medications (MED1, MED2), to be fulfilled by one pharmacy Organization (456) and are ordered by the same PractitionerRole with id 'ABC'.  Most importantly, they are all tied to the same Coverage record with id 'DEF'.
 
@@ -287,7 +376,200 @@ The bundle uses a mixture of 'read' and 'search' operations to retrieve the rele
 **Query Batch Response**<br/>
 The response is a batch-response Bundle, with each entry containing either a single resource (in response to a read) or a search response Bundle with the results of the previous search.  Each entry in the response Bundle corresponds to the GET entry in the request Bundle.
 
-{% fragment Bundle/search-response JSON EXCEPT:id BASE:entry.resource.where(($this is Bundle).not()) | entry.resource.entry.resource %}
+<!-- fragment Bundle/search-response JSON EXCEPT:id BASE:entry.resource.where(($this is Bundle).not()) | entry.resource.entry.resource -->
+{% raw %}
+<pre class="json" style="white-space: pre; text-wrap: nowrap; width: auto;"><code class="language-json" style="white-space: pre; text-wrap: nowrap;">{
+  "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle">resourceType</a>" : "Bundle",
+  "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.id">id</a>" : "search-response",
+  "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.type">type</a>" : "batch-response",
+  "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry">entry</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.fullUrl">fullUrl</a>" : "http://example.org/someEHR/fhir/Patient/123",
+      "<a href="http://hl7.org/fhir/R4/patient.html#Patient">resource</a>" : {
+        "<a href="http://hl7.org/fhir/R4/patient.html">resourceType</a>" : "Patient",
+        "<a href="http://hl7.org/fhir/R4/patient.html#Patient.id">id</a>" : "123",
+        ...
+      },
+      "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.response">response</a>" : {
+        "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.response.status">status</a>" : "200",
+        "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.response.lastModified">lastModified</a>" : "2019-03-15T15:38:13.028Z"
+      }
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.fullUrl">fullUrl</a>" : "urn:uuid:f95e9abf-1c8f-4873-ad15-f6f016334568",
+      "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle">resource</a>" : {
+        "<a href="http://hl7.org/fhir/R4/bundle.html">resourceType</a>" : "Bundle",
+        "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.id">id</a>" : "f95e9abf-1c8f-4873-ad15-f6f016334568",
+        "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.type">type</a>" : "searchset",
+        "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.total">total</a>" : 1,
+        "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.link">link</a>" : [
+          {
+            "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.link.relation">relation</a>" : "self",
+            "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.link.url">url</a>" : "Encounter?_id=987&amp;_include=Encounter:service-provider&amp;_include=Encounter:practitioner&amp;_include=Encounter:location"
+          }
+        ],
+        "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry">entry</a>" : [
+          {
+            "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.fullUrl">fullUrl</a>" : "http://example.org/someEHR/fhir/Encounter/987",
+            "<a href="http://hl7.org/fhir/R4/encounter.html#Encounter">resource</a>" : {
+              "<a href="http://hl7.org/fhir/R4/encounter.html">resourceType</a>" : "Encounter",
+              "<a href="http://hl7.org/fhir/R4/encounter.html#Encounter.id">id</a>" : "987",
+              ...
+            },
+            "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.search">search</a>" : {
+              "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.search.mode">mode</a>" : "match"
+            }
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.fullUrl">fullUrl</a>" : "http://example.org/someEHR/fhir/Location/hospital",
+            "<a href="http://hl7.org/fhir/R4/location.html#Location">resource</a>" : {
+              "<a href="http://hl7.org/fhir/R4/location.html">resourceType</a>" : "Location",
+              "<a href="http://hl7.org/fhir/R4/location.html#Location.id">id</a>" : "hospital",
+              ...
+            },
+            "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.search">search</a>" : {
+              "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.search.mode">mode</a>" : "include"
+            }
+          }
+        ]
+      },
+      "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.response">response</a>" : {
+        "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.response.status">status</a>" : "200",
+        "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.response.lastModified">lastModified</a>" : "2019-03-15T15:38:13.028Z"
+      }
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.fullUrl">fullUrl</a>" : "urn:uuid:c81d99b6-caf9-4e01-8eda-0550a837def3",
+      "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle">resource</a>" : {
+        "<a href="http://hl7.org/fhir/R4/bundle.html">resourceType</a>" : "Bundle",
+        "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.id">id</a>" : "c81d99b6-caf9-4e01-8eda-0550a837def3",
+        "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.type">type</a>" : "searchset",
+        "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.total">total</a>" : 1,
+        "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.link">link</a>" : [
+          {
+            "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.link.relation">relation</a>" : "self",
+            "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.link.url">url</a>" : "http://example.org/someEHR/fhir/r4/Coverage?patient=123&amp;status=active"
+          }
+        ],
+        "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry">entry</a>" : [
+          {
+            "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.fullUrl">fullUrl</a>" : "http://example.org/someEHR/fhir/Coverage/COV1",
+            "<a href="http://hl7.org/fhir/R4/coverage.html#Coverage">resource</a>" : {
+              "<a href="http://hl7.org/fhir/R4/coverage.html">resourceType</a>" : "Coverage",
+              "<a href="http://hl7.org/fhir/R4/coverage.html#Coverage.id">id</a>" : "COV1",
+              ...
+            },
+            "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.search">search</a>" : {
+              "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.search.mode">mode</a>" : "match"
+            }
+          }
+        ]
+      },
+      "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.response">response</a>" : {
+        "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.response.status">status</a>" : "200",
+        "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.response.lastModified">lastModified</a>" : "2019-03-15T15:38:13.028Z"
+      }
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.fullUrl">fullUrl</a>" : "urn:uuid:dc616366-2f3f-4cca-b02c-0f80981770db",
+      "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle">resource</a>" : {
+        "<a href="http://hl7.org/fhir/R4/bundle.html">resourceType</a>" : "Bundle",
+        "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.id">id</a>" : "dc616366-2f3f-4cca-b02c-0f80981770db",
+        "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.type">type</a>" : "searchset",
+        "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.total">total</a>" : 2,
+        "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.link">link</a>" : [
+          {
+            "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.link.relation">relation</a>" : "self",
+            "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.link.url">url</a>" : "http://example.org/someEHR/fhir/r4/Medication?_id=MED1,MED2&amp;_sort=_id"
+          }
+        ],
+        "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry">entry</a>" : [
+          {
+            "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.fullUrl">fullUrl</a>" : "http://example.org/someEHR/fhir/Mediation/MED1",
+            "<a href="http://hl7.org/fhir/R4/medication.html#Medication">resource</a>" : {
+              "<a href="http://hl7.org/fhir/R4/medication.html">resourceType</a>" : "Medication",
+              "<a href="http://hl7.org/fhir/R4/medication.html#Medication.id">id</a>" : "MED1",
+              ...
+            },
+            "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.search">search</a>" : {
+              "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.search.mode">mode</a>" : "match"
+            }
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.fullUrl">fullUrl</a>" : "http://example.org/someEHR/fhir/Mediation/MED2",
+            "<a href="http://hl7.org/fhir/R4/medication.html#Medication">resource</a>" : {
+              "<a href="http://hl7.org/fhir/R4/medication.html">resourceType</a>" : "Medication",
+              "<a href="http://hl7.org/fhir/R4/medication.html#Medication.id">id</a>" : "MED2",
+              ...
+            },
+            "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.search">search</a>" : {
+              "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.search.mode">mode</a>" : "match"
+            }
+          }
+        ]
+      },
+      "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.response">response</a>" : {
+        "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.response.status">status</a>" : "200",
+        "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.response.lastModified">lastModified</a>" : "2019-03-15T15:38:13.037Z"
+      }
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.fullUrl">fullUrl</a>" : "urn:uuid:ee0d8bb2-f7a1-4b53-bfff-902dd4513b07",
+      "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle">resource</a>" : {
+        "<a href="http://hl7.org/fhir/R4/bundle.html">resourceType</a>" : "Bundle",
+        "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.id">id</a>" : "ee0d8bb2-f7a1-4b53-bfff-902dd4513b07",
+        "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.type">type</a>" : "searchset",
+        "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.total">total</a>" : 1,
+        "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.link">link</a>" : [
+          {
+            "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.link.relation">relation</a>" : "self",
+            "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.link.url">url</a>" : "http://example.org/someEHR/fhir/r4/PractitionerRole?_id=123&amp;_include=PractitionerRole:organization&amp;_include=PractitionerRole:practitioner&amp;_sort=_id"
+          }
+        ],
+        "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry">entry</a>" : [
+          {
+            "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.fullUrl">fullUrl</a>" : "http://example.org/someEHR/fhir/PractitionerRole/ABC",
+            "<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole">resource</a>" : {
+              "<a href="http://hl7.org/fhir/R4/practitionerrole.html">resourceType</a>" : "PractitionerRole",
+              "<a href="http://hl7.org/fhir/R4/practitionerrole.html#PractitionerRole.id">id</a>" : "ABC",
+              ...
+            },
+            "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.search">search</a>" : {
+              "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.search.mode">mode</a>" : "match"
+            }
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.fullUrl">fullUrl</a>" : "http://example.org/someEHR/fhir/Practitioner/DEF",
+            "<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner">resource</a>" : {
+              "<a href="http://hl7.org/fhir/R4/practitioner.html">resourceType</a>" : "Practitioner",
+              "<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.id">id</a>" : "DEF",
+              ...
+            },
+            "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.search">search</a>" : {
+              "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.search.mode">mode</a>" : "include"
+            }
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.fullUrl">fullUrl</a>" : "http://example.org/someEHR/fhir/Organization/GHI",
+            "<a href="http://hl7.org/fhir/R4/organization.html#Organization">resource</a>" : {
+              "<a href="http://hl7.org/fhir/R4/organization.html">resourceType</a>" : "Organization",
+              "<a href="http://hl7.org/fhir/R4/organization.html#Organization.id">id</a>" : "GHI",
+              ...
+            },
+            "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.search">search</a>" : {
+              "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.search.mode">mode</a>" : "include"
+            }
+          }
+        ]
+      },
+      "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.response">response</a>" : {
+        "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.response.status">status</a>" : "200",
+        "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.response.lastModified">lastModified</a>" : "2019-03-15T15:38:13.011Z"
+      }
+    }
+  ]
+}</code></pre>
+{% endraw %}
 
 
 #### Query Notes
