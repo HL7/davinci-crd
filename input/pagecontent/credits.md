@@ -1,10 +1,10 @@
 ### Credits
 Technical Lead and Primary Author:
-* Lloyd McKenzie (Dogwood Healthcare Consulting)
+* Lloyd McKenzie (Dogwood Health Consulting)
 
 Additional Authors:
-* Raman Dhanoa (Dogwood Healthcare Consulting)
-* Russel Buchanan (Gevity Consulting/Accenture)
+* Raman Dhanoa (Dogwood Health Consulting)
+* Russell Buchanan (Gevity Consulting/Accenture)
 
 Project leads:
 * Robert Dieterle (Enable Care, LLC)
@@ -21,7 +21,7 @@ Technical support and guidance:
 This implementation guide was initiated by the twenty-two founding [Da Vinci Project](http://hl7.org/about/davinci) member organizations.
 
 Regular project participants included:
-* 1 Up Health (Joe McCaffrey)
+* 1upHealth (Joe McCaffrey)
 * Aegis (Richard Ettema, Carie Hammond, Jamie Parker, Sandra Vance)
 * Aetna CVS (Janice Hsieh, Kathy Berne, Kiba Polk, Muhammad Ali, Ron Health, Shilpi Jain, Sudhansu Mishra)
 * American Hospital Association (Andrea Preisler)
@@ -36,7 +36,7 @@ Regular project participants included:
 * Cerner (Hans Buitendijk, Kevin Shekleton, Michelle Miller)
 * Cognizant (Alyson Broxton, James Bound)
 * Cognosante (Mary Kay McDaniel)
-* Dogwood Healthcare Consulting (Jean Duteau)
+* Dogwood Health Consulting (Jean Duteau)
 * Drummond (Tim Bennett)
 * Edifecs (Artim Sopin)
 * eHealth Exchange (Keith Brick, Scott Rossignol, Tiffanie Hickman)
@@ -45,7 +45,7 @@ Regular project participants included:
 * Evernorth (Steve Whitney, Stuart Kirchner)
 * Evicore (Anup Evernorth)
 * Health Care Data Standards (Mary Kay McDaniel)
-* Health LX (David Riddle)
+* HealthLX (David Riddle)
 * Independent Health (Christopher Gracon)
 * Infor (Brian Lind, Rob Brull)
 * Kaiser Permanente (Walter Suarez)
@@ -59,7 +59,7 @@ Regular project participants included:
 * Peraton (Michael Cabral)
 * Philips (Bas van den Heuvel)
 * RFA Ltd (Rachel Foerster)
-* Smile Digital Health (Jonell Digital, Marie Casimina, Thao Michaels)
+* Smile Digital Health (Jonell Sakyi, Marie Casimina, Thao Michaels)
 * Surescripts (Brian Morris)
 * Quest Diagnostics (Freida Hall)
 * United Healthcare (Nicholas Radov)
