@@ -211,7 +211,7 @@ The linkage between resources by `id` in different Actions within a single Sugge
 
 For example, the following [CDS Hook Suggestion](https://cds-hooks.hl7.org/2.0/#suggestion) will cause the creation of a new [ServiceRequest]({{site.data.fhir.path}}servicerequest.html) that will be pointed to by a newly created ([DeviceRequest]({{site.data.fhir.path}}devicerequest.html) resource).  The ClaimResponse would be created before the MedicationRequest would be updated:
 
-<!-- fragment Binary/CRDServiceResponse JSON BASE:cards.where(source.topic.where(code='therapy-alternatives-opt').exists()).suggestions ELLIPSE:actions.where(type='delete') EXCEPT:id | basedOn BASE:actions.resource -->
+<!-- fragment Binary/CRDServiceResponse JSON BASE:cards.where(source.topic.where(code='therapy-alternatives-opt').exists()).suggestions ELLIDE:actions.where(type='delete') EXCEPT:id | basedOn BASE:actions.resource -->
 {% raw %}
 <pre class="json" style="white-space: pre; text-wrap: nowrap; width: auto;"><code class="language-json" style="white-space: pre; text-wrap: nowrap;">{
   "<a href="https://build.fhir.org/ig/FHIR/fhir-tools-ig/StructureDefinition-CDSHooksResponse.html#CDSHooksResponse.cards.suggestions.label">label</a>" : "Change to an order for purchase",

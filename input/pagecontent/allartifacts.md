@@ -15,6 +15,9 @@ As a result, there are 2 different lists of artifacts: one for this Da Vinci imp
   <tr>
     <td><a href="{{site.data.fhir.ver.uscore6}}profiles-and-extensions.html">US Core 6.1 artifacts</a></td>
   </tr>
+  <tr>
+    <td><a href="{{site.data.fhir.ver.uscore7}}profiles-and-extensions.html">US Core 7.0 artifacts</a></td>
+  </tr>
 </table>
 
 Additional information about the use of these artifacts, Coverage Requirements Discovery (CRD), and the use of US Core can be found in the [Foundational section](foundation.html#profiles).

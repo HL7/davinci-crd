@@ -736,7 +736,6 @@ v: {
   "error" : "The Coding references a value set, not a code system ('http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType'); The provided code 'http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType#PHARM' was not found in the value set 'http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType|3.0.0'",
   "class" : "UNKNOWN",
   "server" : "http://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",
   "issue" : [{
@@ -795,7 +794,6 @@ v: {
   "error" : "The Coding references a value set, not a code system ('http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType'); The provided code 'http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType#SCHOOL' was not found in the value set 'http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType|3.0.0'",
   "class" : "UNKNOWN",
   "server" : "http://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",
   "issue" : [{
@@ -854,7 +852,6 @@ v: {
   "error" : "The Coding references a value set, not a code system ('http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType'); The provided code 'http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType#PROFF' was not found in the value set 'http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType|3.0.0'",
   "class" : "UNKNOWN",
   "server" : "http://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",
   "issue" : [{
@@ -913,7 +910,6 @@ v: {
   "error" : "The Coding references a value set, not a code system ('http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType'); The provided code 'http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType#MOBL' was not found in the value set 'http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType|3.0.0'",
   "class" : "UNKNOWN",
   "server" : "http://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",
   "issue" : [{
@@ -972,7 +968,6 @@ v: {
   "error" : "The Coding references a value set, not a code system ('http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType'); The provided code 'http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType#WORK' was not found in the value set 'http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType|3.0.0'",
   "class" : "UNKNOWN",
   "server" : "http://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",
   "issue" : [{
@@ -1031,7 +1026,6 @@ v: {
   "error" : "The Coding references a value set, not a code system ('http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType'); The provided code 'http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType#HOSP' was not found in the value set 'http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType|3.0.0'",
   "class" : "UNKNOWN",
   "server" : "http://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",
   "issue" : [{
@@ -1090,7 +1084,6 @@ v: {
   "error" : "The Coding references a value set, not a code system ('http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType'); The provided code 'http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType#ER' was not found in the value set 'http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType|3.0.0'",
   "class" : "UNKNOWN",
   "server" : "http://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",
   "issue" : [{
@@ -1149,7 +1142,6 @@ v: {
   "error" : "The Coding references a value set, not a code system ('http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType'); The provided code 'http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType#SU' was not found in the value set 'http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType|3.0.0'",
   "class" : "UNKNOWN",
   "server" : "http://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",
   "issue" : [{
@@ -1208,7 +1200,6 @@ v: {
   "error" : "The Coding references a value set, not a code system ('http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType'); The provided code 'http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType#MHSP' was not found in the value set 'http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType|3.0.0'",
   "class" : "UNKNOWN",
   "server" : "http://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",
   "issue" : [{
@@ -1267,7 +1258,6 @@ v: {
   "error" : "The Coding references a value set, not a code system ('http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType'); The provided code 'http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType#SNF' was not found in the value set 'http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType|3.0.0'",
   "class" : "UNKNOWN",
   "server" : "http://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",
   "issue" : [{
@@ -1326,7 +1316,6 @@ v: {
   "error" : "The Coding references a value set, not a code system ('http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType'); The provided code 'http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType#NCCF' was not found in the value set 'http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType|3.0.0'",
   "class" : "UNKNOWN",
   "server" : "http://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",
   "issue" : [{
@@ -1385,7 +1374,6 @@ v: {
   "error" : "The Coding references a value set, not a code system ('http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType'); The provided code 'http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType#AMB' was not found in the value set 'http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType|3.0.0'",
   "class" : "UNKNOWN",
   "server" : "http://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",
   "issue" : [{
@@ -1444,7 +1432,6 @@ v: {
   "error" : "The Coding references a value set, not a code system ('http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType'); The provided code 'http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType#PHU' was not found in the value set 'http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType|3.0.0'",
   "class" : "UNKNOWN",
   "server" : "http://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",
   "issue" : [{
@@ -1503,7 +1490,6 @@ v: {
   "error" : "The Coding references a value set, not a code system ('http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType'); The provided code 'http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType#RHII' was not found in the value set 'http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType|3.0.0'",
   "class" : "UNKNOWN",
   "server" : "http://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",
   "issue" : [{
@@ -1562,7 +1548,6 @@ v: {
   "error" : "The Coding references a value set, not a code system ('http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType'); The provided code 'http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType#SURF' was not found in the value set 'http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType|3.0.0'",
   "class" : "UNKNOWN",
   "server" : "http://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",
   "issue" : [{
@@ -1621,7 +1606,6 @@ v: {
   "error" : "The Coding references a value set, not a code system ('http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType'); The provided code 'http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType#PSYCHF' was not found in the value set 'http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType|3.0.0'",
   "class" : "UNKNOWN",
   "server" : "http://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",
   "issue" : [{
@@ -1680,7 +1664,6 @@ v: {
   "error" : "The Coding references a value set, not a code system ('http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType'); The provided code 'http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType#RHU' was not found in the value set 'http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType|3.0.0'",
   "class" : "UNKNOWN",
   "server" : "http://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",
   "issue" : [{
@@ -1739,7 +1722,6 @@ v: {
   "error" : "The Coding references a value set, not a code system ('http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType'); The provided code 'http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType#MBL' was not found in the value set 'http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType|3.0.0'",
   "class" : "UNKNOWN",
   "server" : "http://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",
   "issue" : [{
@@ -1776,6 +1758,50 @@ v: {
     "location" : ["Coding.code"],
     "expression" : ["Coding.code"]
   }]
+}
+
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "code" : "CA"
+}, "url": "http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state", "version": "7.0.0", "langs":"en-CA", "useServer":"true", "useClient":"true", "guessSystem":"true", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "id" : "terminology-settings",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  }]
+}}####
+v: {
+  "display" : "California",
+  "code" : "CA",
+  "system" : "https://www.usps.com/",
+  "server" : "http://tx.fhir.org/r4",
+  "unknown-systems" : "",
+  "issues" : {
+  "resourceType" : "OperationOutcome"
+}
+
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "code" : "OK"
+}, "url": "http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state", "version": "7.0.0", "langs":"en-CA", "useServer":"true", "useClient":"true", "guessSystem":"true", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "id" : "terminology-settings",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  }]
+}}####
+v: {
+  "display" : "Oklahoma",
+  "code" : "OK",
+  "system" : "https://www.usps.com/",
+  "server" : "http://tx.fhir.org/r4",
+  "unknown-systems" : "",
+  "issues" : {
+  "resourceType" : "OperationOutcome"
 }
 
 }

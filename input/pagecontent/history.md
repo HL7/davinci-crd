@@ -1,6 +1,6 @@
 This page describes the primary releases of the specification and summarizes the content for each:
 
-### Release 2.1.0-ballot
+### Release 2.1.0-preview
 Significant Coverage Information changes:
 * [FHIR-46088](https://jira.hl7.org/browse/FHIR-46088) - Set MS expectations (and general expectations too)
 * [FHIR-46460](https://jira.hl7.org/browse/FHIR-46460) - Remove 'response' element

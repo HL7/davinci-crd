@@ -233,7 +233,7 @@ When using this response type, the proposed order or appointment being updated *
 
 For example, this card indicates that a prior authorization has been satisfied for a planned procedure:
 
-<!-- fragment Binary/CRDServiceResponse JSON BASE:systemActions ELLIPSE:resource.children().where(is(Extension).not()) -->
+<!-- fragment Binary/CRDServiceResponse JSON BASE:systemActions ELLIDE:resource.children().where(is(Extension).not()) -->
 {% raw %}
         <pre class="json" style="white-space: pre; text-wrap: nowrap; width: auto;"><code class="language-json" style="white-space: pre; text-wrap: nowrap;">{
   "<a href="https://build.fhir.org/ig/FHIR/fhir-tools-ig/StructureDefinition-CDSHooksResponse.html#CDSHooksResponse.cards.suggestions.actions.type">type</a>" : "update",

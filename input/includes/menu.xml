@@ -72,6 +72,9 @@
       <li>
         <a href="{{site.data.fhir.ver.uscore6}}profiles-and-extensions.html">US Core 6.1.0 Artifacts</a>
       </li>
+      <li>
+        <a href="{{site.data.fhir.ver.uscore7}}profiles-and-extensions.html">US Core 7.0.0 Artifacts</a>
+      </li>
     </ul>
   </li>
   <li class="dropdown">
@@ -87,6 +90,9 @@
       </li>
       <li>
         <a target="_blank" href="{{site.data.fhir.ver.uscore6}}">US Core 6.1.0</a>
+      </li>
+      <li>
+        <a target="_blank" href="{{site.data.fhir.ver.uscore7}}">US Core 7.0.0</a>
       </li>
       <li>
         <a target="_blank" href="https://cds-hooks.hl7.org/2.0">CDS Hooks <img src="external.png" style="text-align: baseline"/></a>
