@@ -6,7 +6,7 @@ Description: "This profile specifies additional constraints on the US Core Patie
 * ^experimental = false
 * . ^definition = "This profile specifies additional constraints on the US Core Patient profile to support coverage requirements discovery."
 * ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|3.1.1"
-* ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|7.0.0"
+* ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|6.1.0"
 * identifier MS
   * ^slicing.discriminator[0].type = #value
   * ^slicing.discriminator[=].path = "type.coding.system"
