@@ -1,9 +1,10 @@
 Profile: CRDServiceRequest
-Parent: USCoreServiceRequestProfile
+Parent: USCoreServiceRequestProfile|6.1.0
 Id: profile-servicerequest
 Title: "CRD Service Request"
 Description: "This profile specifies constraints on the ServiceRequest resource to support coverage requirements discovery."
 * ^experimental = false
+* ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|7.0.0"
 * extension contains CRDCoverageInformation named Coverage-Information 0..* MS
 * extension[Coverage-Information] ^short = "Coverage Info"
 * identifier MS

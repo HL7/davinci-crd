@@ -1,9 +1,10 @@
 Profile: CRDMedicationRequest
-Parent: USCoreMedicationRequestProfile
+Parent: USCoreMedicationRequestProfile|6.1.0
 Id: profile-medicationrequest
 Title: "CRD Medication Request"
 Description: "This profile specifies additional constraints on the US Core MedicationRequest profile to support coverage requirements discovery."
 * ^experimental = false
+* ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|7.0.0"
 * extension contains CRDCoverageInformation named Coverage-Information 0..* MS
 * extension[Coverage-Information] ^short = "Coverage Info"
 * identifier MS
