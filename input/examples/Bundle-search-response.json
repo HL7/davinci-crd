@@ -148,7 +148,7 @@
               "id": "987",
               "text" : {
                 "status" : "generated",
-                "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>status</b>: finished</p><p><b>class</b>: ambulatory (Details: http://terminology.hl7.org/CodeSystem/v3-ActCode code AMB = 'ambulatory', stated as 'ambulatory')</p><p><b>type</b>: Office Visit <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.3.0/CodeSystem-CPT.html\">Current Procedural Terminology (CPT®)</a>#99211)</span></p><p><b>subject</b>: <a href=\"Patient-example.html\">Patient/example</a> &quot; SHAW&quot;</p><p><b>period</b>: 2015-11-01 17:00:14-0500 --&gt; 2015-11-01 18:00:14-0500</p><h3>Locations</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Location</b></td></tr><tr><td style=\"display: none\">*</td><td>Holy Family Hospital</td></tr></table></div>"
+                "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>status</b>: finished</p><p><b>class</b>: ambulatory</p><p><b>type</b>: Office Visit</p><p><b>subject</b>: <a href=\"Patient-example.html\">Patient/example</a> &quot; SHAW&quot;</p><p><b>period</b>: 2015-11-01 17:00:14-0500 --&gt; 2015-11-01 18:00:14-0500</p><h3>Locations</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Location</b></td></tr><tr><td style=\"display: none\">*</td><td>Holy Family Hospital</td></tr></table></div>"
               },
               "status": "finished",
               "class": {
@@ -242,7 +242,7 @@
               "id": "COV1",
               "text" : {
                 "status" : "generated",
-                "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>identifier</b>: Member Number:\u00a088800933501</p><p><b>status</b>: active</p><p><b>type</b>: PPO <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://nahdo.org/sopt\">Source of Payment Typology</a>#3712; <a href=\"http://terminology.hl7.org/5.3.0/CodeSystem-v3-ActCode.html\">ActCode</a>#PPO &quot;preferred provider organization policy&quot;)</span></p><p><b>subscriberId</b>: 888009335</p><p><b>beneficiary</b>: <a href=\"Patient-example.html\">Patient/example</a> &quot; SHAW&quot;</p><p><b>relationship</b>: Self <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.3.0/CodeSystem-subscriber-relationship.html\">SubscriberPolicyholder Relationship Codes</a>#self)</span></p><p><b>period</b>: 2020-01-01 --&gt; (ongoing)</p><p><b>payor</b>: Acme Health Plan</p><blockquote><p><b>class</b></p><p><b>type</b>: An employee group <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.3.0/CodeSystem-coverage-class.html\">Coverage Class Codes</a>#group &quot;Group&quot;)</span></p><p><b>value</b>: xyz</p><p><b>name</b>: XYZ employee Group Plan</p></blockquote><blockquote><p><b>class</b></p><p><b>type</b>: A specific suite of benefits. <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.3.0/CodeSystem-coverage-class.html\">Coverage Class Codes</a>#plan &quot;Plan&quot;)</span></p><p><b>value</b>: gold</p><p><b>name</b>: Acme Gold Plan</p></blockquote></div>"
+                "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>identifier</b>: Member Number:\u00a088800933501</p><p><b>status</b>: active</p><p><b>type</b>: PPO</p><p><b>subscriberId</b>: 888009335</p><p><b>beneficiary</b>: <a href=\"Patient-example.html\">Patient/example</a> &quot; SHAW&quot;</p><p><b>relationship</b>: Self</p><p><b>period</b>: 2020-01-01 --&gt; (ongoing)</p><p><b>payor</b>: Acme Health Plan</p><blockquote><p><b>class</b></p><p><b>type</b>: An employee group</p><p><b>value</b>: xyz</p><p><b>name</b>: XYZ employee Group Plan</p></blockquote><blockquote><p><b>class</b></p><p><b>type</b>: A specific suite of benefits.</p><p><b>value</b>: gold</p><p><b>name</b>: Acme Gold Plan</p></blockquote></div>"
   },
               "identifier": [
                 {
@@ -465,7 +465,7 @@
               "id": "DEF",
               "text" : {
                 "status" : "generated",
-                "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>identifier</b>: id:\u00a0<a href=\"http://terminology.hl7.org/5.3.0/NamingSystem-npi.html\">#</a>9941339100, id:\u00a025456</p><p><b>name</b>: Ronald Bone </p><p><b>address</b>: 1003 HEALTHCARE DR AMHERST MA 01002 (WORK)</p></div>"
+                "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>identifier</b>: <a href=\"https://terminology.hl7.org/NamingSystem-npi.html\">United States National Provider Identifier (NPI)</a> 9941339100, id:\u00a025456</p><p><b>name</b>: Ronald Bone </p><p><b>address</b>: 1003 HEALTHCARE DR AMHERST MA 01002 (WORK)</p></div>"
               },
               "identifier": [
                 {
@@ -525,7 +525,7 @@
               "id": "GHI",
               "text" : {
                 "status" : "generated",
-                "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>identifier</b>: id:\u00a0<a href=\"http://terminology.hl7.org/5.3.0/NamingSystem-npi.html\">#</a>1407071236, id:\u00a0121111111</p><p><b>active</b>: true</p><p><b>type</b>: Healthcare Provider <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.3.0/CodeSystem-organization-type.html\">Organization type</a>#prov)</span></p><p><b>name</b>: Acme Clinic</p><p><b>telecom</b>: ph: (+1) 734-677-7777, <a href=\"mailto:customer-service@acme-clinic.org\">customer-service@acme-clinic.org</a></p><p><b>address</b>: 3300 WASHTENAW AVE STE 227 AMHERST MA 01002 USA </p></div>"
+                "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>identifier</b>: <a href=\"https://terminology.hl7.org/NamingSystem-npi.html\">United States National Provider Identifier (NPI)</a> 1407071236, id:\u00a0121111111</p><p><b>active</b>: true</p><p><b>type</b>: Healthcare Provider</p><p><b>name</b>: Acme Clinic</p><p><b>telecom</b>: ph: (+1) 734-677-7777, <a href=\"mailto:customer-service@acme-clinic.org\">customer-service@acme-clinic.org</a></p><p><b>address</b>: 3300 WASHTENAW AVE STE 227 AMHERST MA 01002 USA </p></div>"
               },
               "identifier": [
                 {

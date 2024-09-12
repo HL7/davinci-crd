@@ -36,6 +36,8 @@ parameters:
   apply-publisher: true
   apply-contact: true
   globals-in-artifacts: true
+  version-comparison: 2.0.0
+
 #  path-binary: input/hooks-files
     
 copyrightYear: 2019+
