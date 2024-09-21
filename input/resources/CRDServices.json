@@ -9,7 +9,7 @@
         "patient": "Patient/{{context.patientId}}",
         "encounter": "Encounter?_id={{context.encounterId}}&_include=Encounter:service-provider&_include=Encounter:practitioner&_include=Encounter:location",
         "coverage": "Coverage?patient={{context.patientId}}&status=active",        
-        "appointment": "Appointment?_id={{context.appointments.Appointment.id}}&_include=Appointment:practitioner:PractitionerRole&_include:iterate=PractitionerRole:organization&_include:iterate=PractitionerRole:practitioner&_include=Appointment:location"
+        "appointment": "Appointment?_id={{context.appointments.entry.resource.ofType(Appointment).id}}&_include=Appointment:practitioner:PractitionerRole&_include:iterate=PractitionerRole:organization&_include:iterate=PractitionerRole:practitioner&_include=Appointment:location"
       },
       "extension": {
         "davinci-crd.configuration-options": [

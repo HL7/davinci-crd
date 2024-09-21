@@ -152,15 +152,15 @@ Note: Recognizing these tokens doesn't mean the client must support prefetch or 
 
 For example, a prefetch for `order-sign` might look like this:
 
-<!-- fragment Binary/CRDServices JSON BASE:services.where(hook='appointment-book') EXCEPT:prefetch -->
 {% raw %}
+<!-- fragment Binary/CRDServices JSON BASE:services.where(hook='appointment-book') EXCEPT:prefetch -->
 <pre class="json" style="white-space: pre; text-wrap: nowrap; width: auto;"><code class="language-json" style="white-space: pre; text-wrap: nowrap;">{
   ...
   "prefetch" : {
-    "<a href="https://build.fhir.org/ig/FHIR/fhir-tools-ig/StructureDefinition-CDSHooksServices.html#CDSHooksServices.services.prefetch.value">patient</a>" : "Patient/",
-    "<a href="https://build.fhir.org/ig/FHIR/fhir-tools-ig/StructureDefinition-CDSHooksServices.html#CDSHooksServices.services.prefetch.value">encounter</a>" : "Encounter?_id=&amp;_include=Encounter:service-provider&amp;_include=Encounter:practitioner&amp;_include=Encounter:location",
-    "<a href="https://build.fhir.org/ig/FHIR/fhir-tools-ig/StructureDefinition-CDSHooksServices.html#CDSHooksServices.services.prefetch.value">coverage</a>" : "Coverage?patient=&amp;status=active",
-    "<a href="https://build.fhir.org/ig/FHIR/fhir-tools-ig/StructureDefinition-CDSHooksServices.html#CDSHooksServices.services.prefetch.value">appointment</a>" : "Appointment?_id=&amp;_include=Appointment:practitioner:PractitionerRole&amp;_include:iterate=PractitionerRole:organization&amp;_include:iterate=PractitionerRole:practitioner&amp;_include=Appointment:location"
+    "<a href="https://build.fhir.org/ig/FHIR/fhir-tools-ig/StructureDefinition-CDSHooksServices.html#CDSHooksServices.services.prefetch.value">patient</a>" : "Patient/{{context.patientId}}",
+    "<a href="https://build.fhir.org/ig/FHIR/fhir-tools-ig/StructureDefinition-CDSHooksServices.html#CDSHooksServices.services.prefetch.value">encounter</a>" : "Encounter?_id={{context.encounterId}}&amp;_include=Encounter:service-provider&amp;_include=Encounter:practitioner&amp;_include=Encounter:location",
+    "<a href="https://build.fhir.org/ig/FHIR/fhir-tools-ig/StructureDefinition-CDSHooksServices.html#CDSHooksServices.services.prefetch.value">coverage</a>" : "Coverage?patient={{context.patientId}}&amp;status=active",
+    "<a href="https://build.fhir.org/ig/FHIR/fhir-tools-ig/StructureDefinition-CDSHooksServices.html#CDSHooksServices.services.prefetch.value">appointment</a>" : "Appointment?_id={{context.appointments.entry.resource.ofType(Appointment).id}}&amp;_include=Appointment:practitioner:PractitionerRole&amp;_include:iterate=PractitionerRole:organization&amp;_include:iterate=PractitionerRole:practitioner&amp;_include=Appointment:location"
   }
 }</code></pre>{% endraw %}
 

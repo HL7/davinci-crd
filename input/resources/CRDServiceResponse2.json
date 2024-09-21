@@ -3,7 +3,9 @@
     {
       "extension": {
         "davinci-crd.associated-resource": [
-          "MedicationRequest/2222"
+          {
+            "reference": "MedicationRequest/2222"
+          }
         ]
       },
       "uuid": "a1c2d18b-bc29-4ce9-be70-f6c26e1d78d8",
@@ -34,6 +36,7 @@
               "description": "Add lower-cost alternative",
               "resource": {
                 "resourceType": "MedicationRequest",
+                "id": "1",
                 "status": "draft",
                 "intent": "original-order",
                 "medicationCodeableConcept": {
@@ -99,7 +102,9 @@
     {
       "extension": {
         "davinci-crd.associated-resource": [
-          "MedicationRequest/1111"
+          {
+            "reference": "MedicationRequest/1111"
+          }
         ]
       },
       "uuid": "9cda1f90-48ce-4b1e-abc7-970c65c4bab9",
@@ -124,6 +129,7 @@
               "description": "Add order for AST test",
               "resource": {
                 "resourceType": "ServiceRequest",
+                "id": "1",
                 "status": "draft",
                 "intent": "original-order",
                 "category": [
@@ -180,7 +186,9 @@
     {
       "extension": {
         "davinci-crd.associated-resource": [
-          "MedicationRequest/2222"
+          {
+            "reference": "MedicationRequest/2222"
+          }
         ]
       },
       "uuid": "ba18576a-1905-4e2c-b5fd-cf04171dc291",
@@ -205,6 +213,7 @@
               "description": "Add version 2 of the XYZ form to the clinical system's repository (if it doesn't already exist)",
               "resource": {
                 "resourceType": "Questionnaire",
+                "id": "1",
                 "url": "http://example.org/Questionnaire/XYZ",
                 "version": "2",
                 "status": "active",
@@ -225,6 +234,7 @@
               "description": "Add 'Complete ABC form' to the task list",
               "resource": {
                 "resourceType": "Task",
+                "id": "1",
                 "basedOn": [
                   {
                     "reference": "http://example.org/fhir/Appointment/27"
@@ -334,7 +344,9 @@
     {
       "extension": {
         "davinci-crd.associated-resource": [
-          "MedicationRequest/2222"
+          {
+            "reference": "MedicationRequest/2222"
+          }
         ]
       },
       "uuid": "353cd963-2ecd-46f9-958b-ed7d2bbf6e01",

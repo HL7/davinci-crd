@@ -18,7 +18,9 @@
     {
       "extension": {
         "davinci-crd.associated-resource": [
-          "ServiceRequest/2468"
+          {
+            "reference": "ServiceRequest/2468"
+          }
         ]
       },
       "uuid": "07bc9814-9d2a-11ee-8c90-0242ac120002",
@@ -50,7 +52,9 @@
     {
       "extension": {
         "davinci-crd.associated-resource": [
-          "ServiceRequest/2468"
+          {
+            "reference": "ServiceRequest/2468"
+          }
         ]
       },
       "uuid": "0941cda0-91d7-42db-b5af-0ebbef2507bf",
@@ -123,7 +127,7 @@
                 },
                 "basedOn": [
                   {
-                    "reference": "ServiceRequest/AAA"
+                    "reference": "http://example.org/ServiceRequest/AAA"
                   } 
                 ],
                 "status": "draft",
