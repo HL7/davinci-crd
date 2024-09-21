@@ -216,10 +216,10 @@
         "patient": "Patient/{{context.patientId}}",
         "encounter": "Encounter?_id={{context.encounterId}}&_include=Encounter:service-provider&_include=Encounter:practitioner&_include=Encounter:location",
         "coverage": "Coverage?patient={{context.patientId}}&status=active",        
-        "device": "DeviceRequest?_id={{context.dispatchedOrders.DeviceRequest.id}}&_include=DeviceRequest:performer&_include=DeviceRequest:requester&_include=DeviceRequest:device&_include:iterate=PractitionerRole:organization&_include:iterate=PractitionerRole:practitioner",
-        "medication": "MedicationRequest?_id={{context.dispatchedOrders.MedicationRequest.id}}&_include=MedicationRequest:intended-dispenser&_include=MedicationRequest:requester:PractitionerRole&_include=MedicationRequest:medication&_include:iterate=PractitionerRole:organization&_include:iterate=PractitionerRole:practitioner",
-        "nutrition": "NutritionOrder?_id={{context.dispatchedOrders.NutritionOrder.id}}&_include=NutritionOrder:provider&_include=NutritionOrder:requester&_include:iterate=PractitionerRole:organization&_include:iterate=PractitionerRole:practitioner&_include=NutritionOrder:encounter&_include:iterate=Encounter:location",
-        "servicerequest": "ServiceRequest?_id={{context.dispatchedOrders.ServiceRequest.id}}&_include=ServiceRequest:performer&_include=ServiceRequest:requester&_include:iterate=PractitionerRole:organization&_include:iterate=PractitionerRole:practitioner"
+        "device": "DeviceRequest?_id={{context.dispatchedOrders.entry.resource.ofType(DeviceRequest).id}}&_include=DeviceRequest:performer&_include=DeviceRequest:requester&_include=DeviceRequest:device&_include:iterate=PractitionerRole:organization&_include:iterate=PractitionerRole:practitioner",
+        "medication": "MedicationRequest?_id={{context.dispatchedOrders.entry.resource.ofType(MedicationRequest).id}}&_include=MedicationRequest:intended-dispenser&_include=MedicationRequest:requester:PractitionerRole&_include=MedicationRequest:medication&_include:iterate=PractitionerRole:organization&_include:iterate=PractitionerRole:practitioner",
+        "nutrition": "NutritionOrder?_id={{context.dispatchedOrders.entry.resource.ofType(NutritionOrder).id}}&_include=NutritionOrder:provider&_include=NutritionOrder:requester&_include:iterate=PractitionerRole:organization&_include:iterate=PractitionerRole:practitioner&_include=NutritionOrder:encounter&_include:iterate=Encounter:location",
+        "servicerequest": "ServiceRequest?_id={{context.dispatchedOrders.entry.resource.ofType(ServiceRequest).id}}&_include=ServiceRequest:performer&_include=ServiceRequest:requester&_include:iterate=PractitionerRole:organization&_include:iterate=PractitionerRole:practitioner"
       },
       "extension": {
         "davinci-crd.configuration-options": [
@@ -249,10 +249,10 @@
         "patient": "Patient/{{context.patientId}}",
         "coverage": "Coverage?patient={{context.patientId}}&status=active",
         "encounter": "Encounter?_id={{context.encounterId}}&_include=Encounter:service-provider&_include=Encounter:practitioner&_include=Encounter:location",
-        "device": "DeviceRequest?_id={{context.draftOrders.DeviceRequest.id}}&_include=DeviceRequest:performer&_include=DeviceRequest:requester&_include=DeviceRequest:device&_include:iterate=PractitionerRole:organization&_include:iterate=PractitionerRole:practitioner",
-        "medication": "MedicationRequest?_id={{context.draftOrders.MedicationRequest.id}}&_include=MedicationRequest:intended-dispenser&_include=MedicationRequest:requester:PractitionerRole&_include=MedicationRequest:medication&_include:iterate=PractitionerRole:organization&_include:iterate=PractitionerRole:practitioner",
-        "nutrition": "NutritionOrder?_id={{context.draftOrders.NutritionOrder.id}}&_include=NutritionOrder:provider&_include=NutritionOrder:requester&_include:iterate=PractitionerRole:organization&_include:iterate=PractitionerRole:practitioner&_include=NutritionOrder:encounter&_include:iterate=Encounter:location",
-        "servicerequest": "ServiceRequest?_id={{context.draftOrders.ServiceRequest.id}}&_include=ServiceRequest:performer&_include=ServiceRequest:requester&_include:iterate=PractitionerRole:organization&_include:iterate=PractitionerRole:practitioner"
+        "device": "DeviceRequest?_id={{context.draftOrders.entry.resource.ofType(DeviceRequest).id}}&_include=DeviceRequest:performer&_include=DeviceRequest:requester&_include=DeviceRequest:device&_include:iterate=PractitionerRole:organization&_include:iterate=PractitionerRole:practitioner",
+        "medication": "MedicationRequest?_id={{context.draftOrders.entry.resource.ofType(MedicationRequest).id}}&_include=MedicationRequest:intended-dispenser&_include=MedicationRequest:requester:PractitionerRole&_include=MedicationRequest:medication&_include:iterate=PractitionerRole:organization&_include:iterate=PractitionerRole:practitioner",
+        "nutrition": "NutritionOrder?_id={{context.draftOrders.entry.resource.ofType(NutritionOrder).id}}&_include=NutritionOrder:provider&_include=NutritionOrder:requester&_include:iterate=PractitionerRole:organization&_include:iterate=PractitionerRole:practitioner&_include=NutritionOrder:encounter&_include:iterate=Encounter:location",
+        "servicerequest": "ServiceRequest?_id={{context.draftOrders.entry.resource.ofType(ServiceRequest).id}}&_include=ServiceRequest:performer&_include=ServiceRequest:requester&_include:iterate=PractitionerRole:organization&_include:iterate=PractitionerRole:practitioner"
       },
       "extension": {
         "davinci-crd.configuration-options": [
@@ -366,10 +366,10 @@
         "patient": "Patient/{{context.patientId}}",
         "encounter": "Encounter?_id={{context.encounterId}}&_include=Encounter:service-provider&_include=Encounter:practitioner&_include=Encounter:location",
         "coverage": "Coverage?patient={{context.patientId}}&status=active",        
-        "device": "DeviceRequest?_id={{context.draftOrders.DeviceRequest.id}}&_include=DeviceRequest:performer&_include=DeviceRequest:requester&_include=DeviceRequest:device&_include:iterate=PractitionerRole:organization&_include:iterate=PractitionerRole:practitioner",
-        "medication": "MedicationRequest?_id={{context.draftOrders.MedicationRequest.id}}&_include=MedicationRequest:intended-dispenser&_include=MedicationRequest:requester:PractitionerRole&_include=MedicationRequest:medication&_include:iterate=PractitionerRole:organization&_include:iterate=PractitionerRole:practitioner",
-        "nutrition": "NutritionOrder?_id={{context.draftOrders.NutritionOrder.id}}&_include=NutritionOrder:provider&_include=NutritionOrder:requester&_include:iterate=PractitionerRole:organization&_include:iterate=PractitionerRole:practitioner&_include=NutritionOrder:encounter&_include:iterate=Encounter:location",
-        "servicerequest": "ServiceRequest?_id={{context.draftOrders.ServiceRequest.id}}&_include=ServiceRequest:performer&_include=ServiceRequest:requester&_include:iterate=PractitionerRole:organization&_include:iterate=PractitionerRole:practitioner"
+        "device": "DeviceRequest?_id={{context.draftOrders.entry.resource.ofType(DeviceRequest).id}}&_include=DeviceRequest:performer&_include=DeviceRequest:requester&_include=DeviceRequest:device&_include:iterate=PractitionerRole:organization&_include:iterate=PractitionerRole:practitioner",
+        "medication": "MedicationRequest?_id={{context.draftOrders.entry.resource.ofType(MedicationRequest).id}}&_include=MedicationRequest:intended-dispenser&_include=MedicationRequest:requester:PractitionerRole&_include=MedicationRequest:medication&_include:iterate=PractitionerRole:organization&_include:iterate=PractitionerRole:practitioner",
+        "nutrition": "NutritionOrder?_id={{context.draftOrders.entry.resource.ofType(NutritionOrder).id}}&_include=NutritionOrder:provider&_include=NutritionOrder:requester&_include:iterate=PractitionerRole:organization&_include:iterate=PractitionerRole:practitioner&_include=NutritionOrder:encounter&_include:iterate=Encounter:location",
+        "servicerequest": "ServiceRequest?_id={{context.draftOrders.entry.resource.ofType(ServiceRequest).id}}&_include=ServiceRequest:performer&_include=ServiceRequest:requester&_include:iterate=PractitionerRole:organization&_include:iterate=PractitionerRole:practitioner"
       },
       "extension": {
         "davinci-crd.configuration-options": [
