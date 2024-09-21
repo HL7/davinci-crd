@@ -1,5 +1,10 @@
 == Suppressed Messages ==
 
+# In https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/Inter-IG.20link.20issue, Grahame confirms this is a US Core 7 issue - nothing we can do about it.
+ERROR: D:\Git\_IGs\davinci-crd2\output\StructureDefinition-profile-servicerequest-definitions.html#/html/body/div/div/div/div/div/div/div/table/tr/td/p/a at Line 509, column 686: The link 'http://hl7.org/fhir/us/core/STU7/servicerequest-example-di.html' for "CT Scan example" cannot be resolved
+ERROR: D:\Git\_IGs\davinci-crd2\output\StructureDefinition-profile-servicerequest-definitions.html#/html/body/div/div/div/div/div/div/div/table/tr/td/p/a at Line 671, column 595: The link 'http://hl7.org/fhir/us/core/STU7/servicerequest-example-di.html' for "CT Scan example" cannot be resolved
+
+
 # The underlying code systems are marked as content=example in THO.  Have submitted https://jira.hl7.org/browse/UP-451 to fix this.  Have manually verified that the codes exist and display names are correct
 WARNING: Appointment/example: Appointment.serviceCategory[0]: The system http://terminology.hl7.org/CodeSystem/service-category was found but did not contain enough information to properly validate the code "17" ("General Practice") (mode = example)
 WARNING: Appointment/example: Appointment.serviceType[0]: The system http://terminology.hl7.org/CodeSystem/service-type was found but did not contain enough information to properly validate the code "124" ("General Practice") (mode = example)
