@@ -54,36 +54,8 @@ CRD servers **SHALL**, at minimum, offer configuration options for each type of 
 
 For example, a [CDS Discovery Response](https://cds-hooks.hl7.org/2.0/#response) from a CRD Server might look like this:
 
-<!-- fragment Binary/CRDServices JSON EXCEPT:services.where(hook='order-sign') EXCEPT:hook | extension BASE:services EXCEPT:`davinci-crd.configuration-options`.where(code='coverage-info' or code='max-cards') BASE:services.extension -->
 {% raw %}
-<pre class="json" style="white-space: pre; text-wrap: nowrap; width: auto;"><code class="language-json" style="white-space: pre; text-wrap: nowrap;">{
-  "<a href="https://build.fhir.org/ig/FHIR/fhir-tools-ig/StructureDefinition-CDSHooksServices.html#CDSHooksServices.services">services</a>" : [
-    ...
-    {
-      "<a href="https://build.fhir.org/ig/FHIR/fhir-tools-ig/StructureDefinition-CDSHooksServices.html#CDSHooksServices.services.extension">extension</a>" : {
-        "<a href="StructureDefinition-CDSHookServicesExtensionConfiguration.html#CDSHookServicesExtensionConfiguration">davinci-crd.configuration-options</a>" : [
-          {
-            "<a href="StructureDefinition-CDSHookServicesExtensionConfiguration.html#CDSHookServicesExtensionConfiguration.code">code</a>" : "coverage-info",
-            "<a href="StructureDefinition-CDSHookServicesExtensionConfiguration.html#CDSHookServicesExtensionConfiguration.type">type</a>" : "boolean",
-            "<a href="StructureDefinition-CDSHookServicesExtensionConfiguration.html#CDSHookServicesExtensionConfiguration.name">name</a>" : "Coverage Information",
-            "<a href="StructureDefinition-CDSHookServicesExtensionConfiguration.html#CDSHookServicesExtensionConfiguration.description">description</a>" : "Information related to the patient's coverage, including whether a service is covered, requires prior authorization, is approved without seeking prior authorization, and/or requires additional documentation or data collection",
-            "<a href="StructureDefinition-CDSHookServicesExtensionConfiguration.html#CDSHookServicesExtensionConfiguration.default">default</a>" : true
-          },
-          ...
-          {
-            "<a href="StructureDefinition-CDSHookServicesExtensionConfiguration.html#CDSHookServicesExtensionConfiguration.code">code</a>" : "max-cards",
-            "<a href="StructureDefinition-CDSHookServicesExtensionConfiguration.html#CDSHookServicesExtensionConfiguration.type">type</a>" : "integer",
-            "<a href="StructureDefinition-CDSHookServicesExtensionConfiguration.html#CDSHookServicesExtensionConfiguration.name">name</a>" : "Maximum cards",
-            "<a href="StructureDefinition-CDSHookServicesExtensionConfiguration.html#CDSHookServicesExtensionConfiguration.description">description</a>" : "Indicates the maximum number of cards to be returned from the service.  The services will prioritize cards such as highest priority ones are delivered",
-            "<a href="StructureDefinition-CDSHookServicesExtensionConfiguration.html#CDSHookServicesExtensionConfiguration.default">default</a>" : 10
-          }
-        ]
-      },
-      "<a href="https://build.fhir.org/ig/FHIR/fhir-tools-ig/StructureDefinition-CDSHooksServices.html#CDSHooksServices.services.hook">hook</a>" : "order-sign",
-      ...
-    }
-  ]
-}</code></pre>
+{% fragment Binary/CRDServices JSON EXCEPT:services.where(hook='order-sign') EXCEPT:hook | extension BASE:services EXCEPT:`davinci-crd.configuration-options`.where(code='coverage-info' or code='max-cards') BASE:services.extension %}
 {% endraw %}
 
 Notes:
@@ -109,21 +81,7 @@ An extension called `davinci-crd.configuration` will define a second configurati
 
 For example, the hook [HTTP Request](https://cds-hooks.hl7.org/2.0/#http-request_1) would look like this:
 
-<!-- fragment Binary/CRDServiceRequest JSON EXCEPT:hook | extension -->
-{% raw %}
-<pre class="json" style="white-space: pre; text-wrap: nowrap; width: auto;"><code class="language-json" style="white-space: pre; text-wrap: nowrap;">{
-  "<a href="https://build.fhir.org/ig/FHIR/fhir-tools-ig/StructureDefinition-CDSHooksRequest.html#CDSHooksRequest.extension">extension</a>" : {
-    "davinci-crd.configuration" : {
-      "<a href="StructureDefinition-CDSHookServiceRequestExtensionRequestConfig.html#CDSHookServiceRequestExtensionRequestConfig.value">cost</a>" : false,
-      "<a href="StructureDefinition-CDSHookServiceRequestExtensionRequestConfig.html#CDSHookServiceRequestExtensionRequestConfig.value">claim</a>" : false,
-      "<a href="StructureDefinition-CDSHookServiceRequestExtensionRequestConfig.html#CDSHookServiceRequestExtensionRequestConfig.value">appropriate-use</a>" : false,
-      "<a href="StructureDefinition-CDSHookServiceRequestExtensionRequestConfig.html#CDSHookServiceRequestExtensionRequestConfig.value">max-cards</a>" : 5
-    }
-  },
-  "<a href="https://build.fhir.org/ig/FHIR/fhir-tools-ig/StructureDefinition-CDSHooksRequest.html#CDSHooksRequest.hook">hook</a>" : "order-sign",
-  ...
-}</code></pre>
-{% endraw %}
+{% fragment Binary/CRDServiceRequest JSON EXCEPT:hook | extension %}
 
 
 Notes:
@@ -153,16 +111,8 @@ Note: Recognizing these tokens doesn't mean the client must support prefetch or 
 For example, a prefetch for `order-sign` might look like this:
 
 {% raw %}
-<!-- fragment Binary/CRDServices JSON BASE:services.where(hook='appointment-book') EXCEPT:prefetch -->
-<pre class="json" style="white-space: pre; text-wrap: nowrap; width: auto;"><code class="language-json" style="white-space: pre; text-wrap: nowrap;">{
-  ...
-  "prefetch" : {
-    "<a href="https://build.fhir.org/ig/FHIR/fhir-tools-ig/StructureDefinition-CDSHooksServices.html#CDSHooksServices.services.prefetch.value">patient</a>" : "Patient/{{context.patientId}}",
-    "<a href="https://build.fhir.org/ig/FHIR/fhir-tools-ig/StructureDefinition-CDSHooksServices.html#CDSHooksServices.services.prefetch.value">encounter</a>" : "Encounter?_id={{context.encounterId}}&amp;_include=Encounter:service-provider&amp;_include=Encounter:practitioner&amp;_include=Encounter:location",
-    "<a href="https://build.fhir.org/ig/FHIR/fhir-tools-ig/StructureDefinition-CDSHooksServices.html#CDSHooksServices.services.prefetch.value">coverage</a>" : "Coverage?patient={{context.patientId}}&amp;status=active",
-    "<a href="https://build.fhir.org/ig/FHIR/fhir-tools-ig/StructureDefinition-CDSHooksServices.html#CDSHooksServices.services.prefetch.value">appointment</a>" : "Appointment?_id={{context.appointments.entry.resource.ofType(Appointment).id}}&amp;_include=Appointment:practitioner:PractitionerRole&amp;_include:iterate=PractitionerRole:organization&amp;_include:iterate=PractitionerRole:practitioner&amp;_include=Appointment:location"
-  }
-}</code></pre>{% endraw %}
+{% fragment Binary/CRDServices JSON BASE:services.where(hook='appointment-book') EXCEPT:prefetch %}
+{% endraw %}
 
 
 This might result in an executed query that looks like this: `ServiceRequest?_id=2347,10948,5881&_include=ServiceRequest:performer`
@@ -191,19 +141,7 @@ The `suggestion.action` object will use an extension to carry the if-none-exist 
 
 For example, this [CDS Hook Suggestion](https://cds-hooks.hl7.org/2.0/#suggestion) contains two [Actions](https://cds-hooks.hl7.org/2.0/#action) - one referencing an HL7 [Questionnaire]({{site.data.fhir.path}}questionnaire.html) and the other the [Task]({{site.data.fhir.path}}task.html) to complete the Questionnaire.  The Questionnaire will only be created if it didn't already exist:
 
-<!-- fragment Binary/CRDServiceResponse2 JSON BASE:cards.where(source.topic.where(code='123').exists()).suggestions.actions.where(resource is Questionnaire) EXCEPT:url | version BASE:resource -->
-{% raw %}
-<pre class="json" style="white-space: pre; text-wrap: nowrap; width: auto;"><code class="language-json" style="white-space: pre; text-wrap: nowrap;">{
-  "<a href="https://build.fhir.org/ig/FHIR/fhir-tools-ig/StructureDefinition-CDSHooksResponse.html#CDSHooksResponse.cards.suggestions.actions.type">type</a>" : "create",
-  "<a href="https://build.fhir.org/ig/FHIR/fhir-tools-ig/StructureDefinition-CDSHooksResponse.html#CDSHooksResponse.cards.suggestions.actions.description">description</a>" : "Add version 2 of the XYZ form to the clinical system's repository (if it doesn't already exist)",
-  "<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire">resource</a>" : {
-    "<a href="http://hl7.org/fhir/R4/questionnaire.html">resourceType</a>" : "Questionnaire",
-    "<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.url">url</a>" : "http://example.org/Questionnaire/XYZ",
-    "<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.version">version</a>" : "2",
-    ...
-  }
-}</code></pre>
-{% endraw %}
+{% fragment Binary/CRDServiceResponse2 JSON BASE:cards.where(source.topic.where(code='123').exists()).suggestions.actions.where(resource is Questionnaire) EXCEPT:url | version BASE:resource %}
 
 
 #### Linkage between created resources
@@ -211,39 +149,7 @@ The linkage between resources by `id` in different Actions within a single Sugge
 
 For example, the following [CDS Hook Suggestion](https://cds-hooks.hl7.org/2.0/#suggestion) will cause the creation of a new [ServiceRequest]({{site.data.fhir.path}}servicerequest.html) that will be pointed to by a newly created ([DeviceRequest]({{site.data.fhir.path}}devicerequest.html) resource).  The ClaimResponse would be created before the MedicationRequest would be updated:
 
-<!-- fragment Binary/CRDServiceResponse JSON BASE:cards.where(source.topic.where(code='therapy-alternatives-opt').exists()).suggestions ELLIDE:actions.where(type='delete') EXCEPT:id | basedOn BASE:actions.resource -->
-{% raw %}
-<pre class="json" style="white-space: pre; text-wrap: nowrap; width: auto;"><code class="language-json" style="white-space: pre; text-wrap: nowrap;">{
-  "<a href="https://build.fhir.org/ig/FHIR/fhir-tools-ig/StructureDefinition-CDSHooksResponse.html#CDSHooksResponse.cards.suggestions.label">label</a>" : "Change to an order for purchase",
-  "<a href="https://build.fhir.org/ig/FHIR/fhir-tools-ig/StructureDefinition-CDSHooksResponse.html#CDSHooksResponse.cards.suggestions.actions">actions</a>" : [
-    ...
-    {
-      "<a href="https://build.fhir.org/ig/FHIR/fhir-tools-ig/StructureDefinition-CDSHooksResponse.html#CDSHooksResponse.cards.suggestions.actions.type">type</a>" : "create",
-      "<a href="https://build.fhir.org/ig/FHIR/fhir-tools-ig/StructureDefinition-CDSHooksResponse.html#CDSHooksResponse.cards.suggestions.actions.description">description</a>" : "Add purchase order",
-      "<a href="http://hl7.org/fhir/R4/servicerequest.html#ServiceRequest">resource</a>" : {
-        "<a href="http://hl7.org/fhir/R4/servicerequest.html">resourceType</a>" : "ServiceRequest",
-        "<a href="http://hl7.org/fhir/R4/servicerequest.html#ServiceRequest.id">id</a>" : "AAA",
-        ...
-      }
-    },
-    {
-      "<a href="https://build.fhir.org/ig/FHIR/fhir-tools-ig/StructureDefinition-CDSHooksResponse.html#CDSHooksResponse.cards.suggestions.actions.type">type</a>" : "create",
-      "<a href="https://build.fhir.org/ig/FHIR/fhir-tools-ig/StructureDefinition-CDSHooksResponse.html#CDSHooksResponse.cards.suggestions.actions.description">description</a>" : "Add specific (discounted) device order",
-      "<a href="http://hl7.org/fhir/R4/devicerequest.html#DeviceRequest">resource</a>" : {
-        "<a href="http://hl7.org/fhir/R4/devicerequest.html">resourceType</a>" : "DeviceRequest",
-        "<a href="http://hl7.org/fhir/R4/devicerequest.html#DeviceRequest.id">id</a>" : "BBB",
-        ...
-        "<a href="http://hl7.org/fhir/R4/devicerequest.html#DeviceRequest.basedOn">basedOn</a>" : [
-          {
-            "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "ServiceRequest/AAA"
-          }
-        ],
-        ...
-      }
-    }
-  ]
-}</code></pre>
-{% endraw %}
+{% fragment Binary/CRDServiceResponse JSON BASE:cards.where(source.topic.where(code='therapy-alternatives-opt').exists()).suggestions ELIDE:actions.where(type='delete') EXCEPT:id | basedOn BASE:actions.resource %}
 
 Note: Sending existing prior authorizations is not in scope for this version of the IG.
 
@@ -254,15 +160,7 @@ This implementation guide defines a standard extension - `davinci-associated-res
 
 If a hook service is invoked on a collection of resources, all cards returned that are specific to only a subset of the resources passed as context **SHALL** disambiguate in the `detail` element which resources they're associated with in a human-friendly way.  Typically, this means using test name, drug name, or some other mechanism rather than a bare identifier as identifiers might not be visible to the end user for resources that are not yet fully 'created'.  As well, cards **SHOULD** include this new extension to allow computable linkage.
 
-<!-- fragment Binary/CRDServiceResponse2 JSON BASE:cards.where(source.topic.where(code='therapy-alternatives-req').exists()) EXCEPT:extension | summary | indicator -->
-{% raw %}
-<pre class="json" style="white-space: pre; text-wrap: nowrap; width: auto;"><code class="language-json" style="white-space: pre; text-wrap: nowrap;">{
-  ...
-  "<a href="https://build.fhir.org/ig/FHIR/fhir-tools-ig/StructureDefinition-CDSHooksResponse.html#CDSHooksResponse.cards.summary">summary</a>" : "Replace order with covered generic?",
-  "<a href="https://build.fhir.org/ig/FHIR/fhir-tools-ig/StructureDefinition-CDSHooksResponse.html#CDSHooksResponse.cards.indicator">indicator</a>" : "info",
-  ...
-}</code></pre>
-{% endraw %}
+{% fragment Binary/CRDServiceResponse2 JSON BASE:cards.where(source.topic.where(code='therapy-alternatives-req').exists()) EXCEPT:extension | summary | indicator %}
 
 
 ### Controlling hook invocation
