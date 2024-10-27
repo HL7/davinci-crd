@@ -152,7 +152,7 @@ In most cases, payers will require information about a patient’s coverage. In 
 {% fragment Binary/CRDServices JSON BASE:services.where(hook='appointment-book') EXCEPT:prefetch.where(key='coverage') %}
 {% endraw %}
 
-Other information will need to be retrieved using queries that are more specific to the type of hook being invoked and the resources passed with it:
+Other information will need to be retrieved using queries that are more specific to the type of hook being invoked and the resources passed with it.  The table below lists the prefetch queries to retrieve common key information for each type of context resource.  Note that the queries use `draftOrders` as the context, which will hold for order-select and order-sign hooks, but will need to be `dispatchedOrders` for order-dispatch hooks.
 
 {% raw %}
 <table class="grid">
