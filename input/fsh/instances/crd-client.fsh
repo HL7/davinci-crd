@@ -15,7 +15,7 @@ Usage: #definition
 * rest
   * mode = #server
   * documentation = "A CRD Client provides a FHIR server endpoint, returning patient information to the CRD server, ensuring it has the needed information to perform decision support."
-  * security.description = "Implementations **SHALL** meet the general security requirements documented in the [[http://hl7.org/fhir/us/davinci-hrex/STU1/security.html|HRex implementation guide]]."
+  * security.description = "Implementations **SHALL** meet the general security requirements documented in the [HRex implementation guide](http://hl7.org/fhir/us/davinci-hrex/STU1/security.html)."
   * insert CSresourceCRD(#Appointment, profile-appointment-with-order)
     * resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-appointment-no-order"
     * resource[=].versioning = #versioned-update
@@ -31,7 +31,7 @@ Usage: #definition
     * insert CSinteraction(#SHOULD, #search-type, [[Allows retrieval of the encounter for a nutrition order (including referenced location) if not retrieved as part of pre-fetch.  (Support is mandatory if not supported as part of pre-fetch.)]])
     * resource[=].versioning = #versioned-update
     * resource[=].searchInclude = "Encounter:location"
-    * insert CSsearch(#SHALL, "patient", "http://hl7.org/fhir/SearchParameter/Coverage-patient", #reference, [[foo]])
+    * insert CSsearch(#SHALL, "patient", "http://hl7.org/fhir/SearchParameter/Coverage-patient", #reference, [[Allows filtering encounters based on the patient focus of the encounter]])
     * insert CSsearch(#SHALL, "_id", "http://hl7.org/fhir/SearchParameter/Resource-id", #token, [[Allows searching for a Encounter by id]])
     * insert CSsearch(#SHALL, "organization", "http://hl7.org/fhir/SearchParameter/Encounter-location", #reference, [[Allows performing an _include on Location when retrieving an Encounter]])
   * insert CSresourceCRD(#MedicationRequest, profile-medicationrequest)
@@ -103,7 +103,7 @@ Usage: #definition
     * insert CSinteraction(#SHOULD, #search-type, [[Allows retrieval of the encounter for a nutrition order (including referenced location) if not retrieved as part of pre-fetch.  (Support is mandatory if not supported as part of pre-fetch.)]])
     * resource[=].versioning = #versioned-update
     * resource[=].searchInclude = "Encounter:location"
-    * insert CSsearch(#SHALL, "patient", "http://hl7.org/fhir/SearchParameter/Coverage-patient", #reference, [[foo]])
+    * insert CSsearch(#SHALL, "patient", "http://hl7.org/fhir/SearchParameter/Coverage-patient", #reference, [[Allows filtering encounters based on the patient focus of the encounter]])
     * insert CSsearch(#SHALL, "_id", "http://hl7.org/fhir/SearchParameter/Resource-id", #token, [[Allows searching for a Encounter by id]])
     * insert CSsearch(#SHALL, "organization", "http://hl7.org/fhir/SearchParameter/Encounter-location", #reference, [[Allows performing an _include on Location when retrieving an Encounter]])
   * insert CSresourceCRD(#MedicationRequest, profile-medicationrequest)
