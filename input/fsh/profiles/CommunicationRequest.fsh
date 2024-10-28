@@ -17,7 +17,7 @@ Description: "This profile specifies constraints on the CommunicationRequest res
 * doNotPerform ..0
 * subject 1.. MS
 * subject only Reference(CRDPatient)
-* encounter only Reference(CRDEncounter3_1 or CRDEncounter6_1)
+* encounter only Reference(CRDEncounter)
   * ^comment = "potentially relevant for CRD in some situations."
 * payload 1.. MS
   * extension contains $extension-CommunicationRequest.payload.content named codeableConcept 1..1 MS

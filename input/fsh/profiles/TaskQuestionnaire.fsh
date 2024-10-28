@@ -16,7 +16,7 @@ Description: "This profile specifies constraints on the Task resource to support
 * for 1.. MS
 * for only Reference(CRDPatient)
 * encounter MS
-* encounter only Reference(CRDEncounter3_1 or CRDEncounter6_1)
+* encounter only Reference(CRDEncounter)
   * ^comment = "This should be set to the same encounter as specified in the launch context (if any)."
 * authoredOn 1.. MS
 * requester 1.. MS

@@ -16,7 +16,7 @@ Description: "This profile defines an initial profile on the VisionPrescription 
 * created MS
 * patient MS
 * patient only Reference(CRDPatient)
-* encounter only Reference(CRDEncounter3_1 or CRDEncounter6_1)
+* encounter only Reference(CRDEncounter)
 * encounter MS
   * ^comment = "potentially relevant for CRD in some situations."
 * dateWritten MS

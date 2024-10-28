@@ -1,6 +1,5 @@
 Instance: Encounter-example
-InstanceOf: CRDEncounter6_1
-//InstanceOf: CRDEncounter3_1
+InstanceOf: CRDEncounter
 Title: "Encounter example"
 Description: "Example encounter populated based on CRD profile"
 Usage: #example

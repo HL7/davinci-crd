@@ -16,7 +16,7 @@ Description: "This profile specifies additional constraints on the US Core Medic
 * reported[x] only boolean or Reference(CRDPatient or USCorePractitionerProfile or CRDOrganization)
 //* reported[x] only boolean or Reference(CRDPatient or USCorePractitionerProfile or CRDOrganization)
 * medication[x] from $USCoreMedicationCodes (extensible)
-* encounter only Reference(CRDEncounter3_1 or CRDEncounter6_1)
+* encounter only Reference(CRDEncounter)
   * ^comment = "potentially relevant for CRD in some situations."
 * authoredOn 1..
 * requester 1..

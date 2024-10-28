@@ -64,7 +64,7 @@ The CRD client may actually involve multiple systems. For example, the systems t
 * The intermediary could take on the responsibility for the FHIR interface, such as determining which payer should receive a coverage request.
 
 <div class="new-content" markdown="1">
-There are two distinct sets of capabilities for CRD clients, one for [USCDI v1 (US-Core 3.1.1)](CapabilityStatement-crd-client3.1.html) and one for [USCDI v3 (US-Core 6.1.0)](CapabilityStatement-crd-client6.1.html).  Typically a client would support only one or the other based on which US Core release it supports internally.
+There are three distinct sets of capabilities for CRD clients, one for [USCDI v1 (US-Core 3.1.1)](CapabilityStatement-crd-client3.1.html), one for [USCDI v3 (US-Core 6.1.0)](CapabilityStatement-crd-client6.1.html), and one for [USCDI v4 (US-Core 7.0.0)](CapabilityStatement-crd-client7.0.html).  Typically a client would support only one of these based on which US Core release it supports internally.  There is a single CRD server set of capabilities which must be able to handle data from any of the three supported USCDI versions.
 </div>
 
 <blockquote class="stu-note">
@@ -76,7 +76,7 @@ When CRD clients are made up of multiple systems, there will be orchestration re
 CRD servers (or servers) are systems that act on behalf of payer organizations to share information with healthcare providers about rules and requirements related to healthcare products and services covered by a patient's health plan. A CRD server will provide coverage information related to one or more insurance plans. CRD servers are a type of CDS service as defined in the CDS Hooks Specification.
 <div class="new-content" markdown="1">
 
-There are als two distinct sets of capabilities for CRD servers, one for [USCDI v1 (US-Core 3.1.1)](CapabilityStatement-crd-server3.1.html) and one for [USCDI v3 (US-Core 6.1.0)](CapabilityStatement-crd-server6.1.html).  Ideally payers will be able to handle both, but they are not presently required to.
+There are is a single [set of capabilities for CRD servers](CapabilityStatement-crd-server.html) that spans USCDI v1 (US-Core 3.1.1) USCDI v3 (US-Core 6.1.0), and USCDI v4 (US-Core 7.0.0) expectations.  Payers will need to be handle content from any of the releases, as CRD clients will be transitioning support for the versions at different times - and in some cases may provide content that spans a mixture of versions.
 </div>
 
 ### Content and Organization

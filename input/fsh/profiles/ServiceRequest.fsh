@@ -24,7 +24,7 @@ Description: "This profile specifies constraints on the ServiceRequest resource 
 * quantity[x] MS
 * subject MS
 * subject only Reference(CRDPatient)
-* encounter only Reference(CRDEncounter3_1 or CRDEncounter6_1)
+* encounter only Reference(CRDEncounter)
   * ^comment = "potentially relevant for CRD in some situations."
 * occurrence[x] MS
 * authoredOn 1.. MS

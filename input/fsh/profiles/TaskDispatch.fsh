@@ -16,7 +16,7 @@ Description: "This profile specifies constraints on the Task resource to capture
 * for 1.. MS
 * for only Reference(CRDPatient)
 * owner MS
-* owner only Reference(HRexPractitioner or HRexPractitionerRole or USCoreOrganizationProfile)
+* owner only Reference(USCorePractitionerProfile or HRexPractitionerRole or USCoreOrganizationProfile)
 * location MS
 * location only Reference(USCoreLocation)
 * restriction MS

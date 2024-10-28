@@ -15,7 +15,7 @@ Description: "This profile specifies extensions and constraints on the Nutrition
 * patient MS
 * patient only Reference(CRDPatient)
 * encounter MS
-* encounter only Reference(CRDEncounter3_1 or CRDEncounter6_1)
+* encounter only Reference(CRDEncounter)
   * ^comment = "potentially relevant for CRD in some situations."
 * dateTime MS
 * orderer 1.. MS

@@ -78,7 +78,7 @@ dependencies:
       Defines expecations for Questionnaires prompted for by cards
   hl7.fhir.us.davinci-hrex:
     id: hrex
-    version: 1.1.0-ballot
+    version: current
     reason: |
       Defines common conformance rules across all Da Vinci IGs, as well as additional constraints and profiles beyond U.S. Core
   hl7.fhir.extensions.r5:
@@ -159,10 +159,6 @@ groups:
       - CDSHookServiceResponseExtensionAssociatedResource
       - CDSHookServiceRequestExtensionRequestConfig
 resources:
-  Encounter/example:
-    extension:
-      - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-ImplementationGuide.definition.resource.profile
-        valueCanonical: http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-encounter3.1
   Binary/CRDServices:
     name: "Example CRD Services Response"
     description: "An example of a CRD services response"

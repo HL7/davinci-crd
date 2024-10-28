@@ -1,7 +1,7 @@
 Instance: Practitioner-full
-InstanceOf: HRexPractitioner
+InstanceOf: USCorePractitionerProfile
 Title: "Practitioner full example"
-Description: "An example showing a fully populated HRex Practitioner instance (used in CRD examples)"
+Description: "An example showing a fully populated US Core Practitioner instance (used in CRD examples)"
 Usage: #example
 * id = "full"
 * identifier[0]
