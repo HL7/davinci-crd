@@ -68,7 +68,7 @@ This response type presents a card with one or more links to external web pages,
 
 The card **SHALL** have at least one `Card.link`. The `Link.type` **SHALL** have a type of "absolute".
 
-When reasonable, an "External Reference" card **SHOULD** contain a summary of the actionable information from the external reference.
+When reasonable, an "External Reference" card **SHOULD** contain a summary of the actionable information from the external reference in the `detail` element.
 
 For example, this CDS Hooks [Card](https://cds-hooks.hl7.org/2.0/#cds-service-response) contains two [Links](https://cds-hooks.hl7.org/2.0/#link) - a standard and a printer-friendly version.
 
