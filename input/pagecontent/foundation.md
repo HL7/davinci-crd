@@ -113,7 +113,7 @@ In order to initiate this process, the payer responsible for a given CRD server 
 ### CRD Access Tokens
 When a CRD client invokes a CRD server via CDS Hooks, it will provide an access token that allows the CRD server to retrieve additional patient information. The base rules for this token are defined in the [CDS Hooks specification](https://cds-hooks.hl7.org/2.0/#passing-the-access-token-to-the-cds-service). This specification imposes some additional constraints:
 
-* The CRD client **SHOULD** limit the scopes provided in their access token to those identified by the CRD service as necessary to perform their decision support.
+* The CRD client **SHALL** limit the scopes provided in their access token as narrowly as feasible to reflect the data requirements identified by the CRD service as necessary to perform their decision support.
 
 * Such access tokens **SHOULD** have an expiration time of no longer than 30 seconds which should be sufficient for even 'parallel' decision support with something like 'Order Select' where a user is continuing to work while the decision support call is processing.
 
