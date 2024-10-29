@@ -76,16 +76,6 @@ For example, this CDS Hooks [Card](https://cds-hooks.hl7.org/2.0/#cds-service-re
 
 <p>As much as technically possible, links provided <strong>SHOULD</strong> be 'deep' links that take the user to the specific place in the documentation relevant to the current hook context to minimize provider reading and navigation time.</p>
 
-<h3 id="instructions-response-type">Instructions Response Type</h3>
-<div class="modified-content">
-  <p>This response type presents a card with textual guidance to display to the user making the decisions. The text might provide clinical guidelines, suggested changes, or rules around prior authorization. It can be generated in a more sophisticated context for the payer, while remaining easy to consume for the provider because it allows returned information to be tuned to the specific context of the order/encounter that triggered the hook. In some cases, the text returned might be generated uniquely each time a hook is fired. CRD services <strong>SHALL NOT</strong> use these cards to direct users to a portal for the purpose of initiating prior authorization or determining coverage. Use the <a href="#coverage-information-response-type">Coverage Information</a> response instead.</p>
-</div>
-
-<p>This example CDS Hook <a href="https://cds-hooks.hl7.org/2.0/#cds-service-response">Card</a> just contains a message:</p>
-
-{% fragment Binary/CRDServiceResponse JSON BASE:cards.where(links.exists()) %}
-
-As much as technically possible, links provided **SHOULD** be 'deep' links that take the user to the specific place in the documentation relevant to the current hook context to minimize provider reading and navigation time.
 
 ### Instructions Response Type
 <div class="modified-content" markdown="1">
