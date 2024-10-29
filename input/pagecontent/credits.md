@@ -29,7 +29,7 @@ Regular project participants included:
 * Allscripts (Emma Jones, Jeffrey Danford)
 * Availity (Ian Vankirk)
 * Blue Cross Blue Shield of Alabama (Tony Benson, Kevin Lambert, Chris Johnson, Gini McGlothin, Morry Payne, Clarissa Winchester)
-* Blue Cross Blue Shield North Carolina (Bhanu Cross)
+* Blue Cross Blue Shield North Carolina (Bhanu Vemuri)
 * Blue Cross Blue Shield Tennessee (Susan Langford)
 * CAQH Core (Don Taylor)
 * Centers for Medicare and Medicaid Services - CMS (Jessica Czulewicz)
