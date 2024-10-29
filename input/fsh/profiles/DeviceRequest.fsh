@@ -23,8 +23,12 @@ Description: "This profile specifies extensions and constraints on the DeviceReq
 * authoredOn 1.. MS
 * requester 1.. MS
 * requester only Reference(USCorePractitionerProfile or HRexPractitionerRole)
+  * ^type[0].targetProfile[0].extension[$typeMS].valueBoolean = true
+  * ^type[0].targetProfile[1].extension[$typeMS].valueBoolean = true
 * performer MS
 * performer only Reference(USCorePractitionerProfile or HRexPractitionerRole)
+  * ^type[0].targetProfile[0].extension[$typeMS].valueBoolean = true
+  * ^type[0].targetProfile[1].extension[$typeMS].valueBoolean = true
 * reasonCode MS
 //* reasonReference only Reference(USCoreConditionProblemsHealthConcernsProfile or USCoreConditionUSCoreConditionEncounterDiagnosisProfile or USCoreLaboratoryResultObservationProfile)
 * reasonReference MS

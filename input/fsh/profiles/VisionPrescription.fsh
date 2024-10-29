@@ -22,6 +22,8 @@ Description: "This profile defines an initial profile on the VisionPrescription 
 * dateWritten MS
 * prescriber 1.. MS
 * prescriber only Reference(USCorePractitionerProfile or HRexPractitionerRole)
+  * ^type[0].targetProfile[0].extension[$typeMS].valueBoolean = true
+  * ^type[0].targetProfile[1].extension[$typeMS].valueBoolean = true
 * lensSpecification MS
   * product MS
   * eye MS

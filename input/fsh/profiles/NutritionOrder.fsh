@@ -20,6 +20,8 @@ Description: "This profile specifies extensions and constraints on the Nutrition
 * dateTime MS
 * orderer 1.. MS
 * orderer only Reference(USCorePractitionerProfile or HRexPractitionerRole)
+  * ^type[0].targetProfile[0].extension[$typeMS].valueBoolean = true
+  * ^type[0].targetProfile[1].extension[$typeMS].valueBoolean = true
 * allergyIntolerance MS
 * foodPreferenceModifier MS
 * excludeFoodModifier MS

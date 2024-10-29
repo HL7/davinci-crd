@@ -48,5 +48,6 @@ Alias: $extension-CommunicationRequest.payload.content = http://hl7.org/fhir/5.0
 Alias: $fmm                                            = http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm
 Alias: $standards-status                               = http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
 Alias: $compliesWithProfile                            = http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile
+Alias: $typeMS                                         = http://hl7.org/fhir/StructureDefinition/elementdefinition-type-must-support
 // ValueSets
 Alias: $USCoreMedicationCodes = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1010.4

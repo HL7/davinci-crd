@@ -19,11 +19,13 @@ Description: "This profile specifies additional constraints on the US Core Medic
 * encounter only Reference(CRDEncounter)
   * ^comment = "potentially relevant for CRD in some situations."
 * authoredOn 1..
-* requester 1..
+* requester 1.. MS
 //* requester only Reference(USCorePractitionerProfile or HRexPractitionerRole)
 * requester only Reference(USCorePractitionerProfile)
 * performer MS
 * performer only Reference(USCorePractitionerProfile or HRexPractitionerRole)
+  * ^type[0].targetProfile[0].extension[$typeMS].valueBoolean = true
+  * ^type[0].targetProfile[1].extension[$typeMS].valueBoolean = true
 * reasonCode MS
   * ^comment = "potentially relevant for CRD in some situations."
 * reasonReference MS

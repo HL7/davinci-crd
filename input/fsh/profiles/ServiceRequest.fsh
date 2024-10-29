@@ -30,7 +30,11 @@ Description: "This profile specifies constraints on the ServiceRequest resource 
 * authoredOn 1.. MS
 * requester 1.. MS
 * requester only Reference(USCorePractitionerProfile or HRexPractitionerRole)
+  * ^type[0].targetProfile[0].extension[$typeMS].valueBoolean = true
+  * ^type[0].targetProfile[1].extension[$typeMS].valueBoolean = true
 * performer only Reference(USCorePractitionerProfile or HRexPractitionerRole)
+  * ^type[0].targetProfile[0].extension[$typeMS].valueBoolean = true
+  * ^type[0].targetProfile[1].extension[$typeMS].valueBoolean = true
 * performer MS
 * locationReference 0..1 MS
 * locationReference only Reference(CRDLocation)

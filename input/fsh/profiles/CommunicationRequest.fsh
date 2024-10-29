@@ -27,10 +27,18 @@ Description: "This profile specifies constraints on the CommunicationRequest res
 * authoredOn 1.. MS
 * requester 1.. MS
 * requester only Reference(USCorePractitionerProfile or HRexPractitionerRole)
+  * ^type[0].targetProfile[0].extension[$typeMS].valueBoolean = true
+  * ^type[0].targetProfile[1].extension[$typeMS].valueBoolean = true
 * recipient MS
 * recipient only Reference(USCorePractitionerProfile or HRexPractitionerRole or CRDOrganization)
+  * ^type[0].targetProfile[0].extension[$typeMS].valueBoolean = true
+  * ^type[0].targetProfile[1].extension[$typeMS].valueBoolean = true
+  * ^type[0].targetProfile[2].extension[$typeMS].valueBoolean = true
 * sender MS
 * sender only Reference(USCorePractitionerProfile or HRexPractitionerRole or CRDOrganization)
+  * ^type[0].targetProfile[0].extension[$typeMS].valueBoolean = true
+  * ^type[0].targetProfile[1].extension[$typeMS].valueBoolean = true
+  * ^type[0].targetProfile[2].extension[$typeMS].valueBoolean = true
 * reasonCode MS
 //* reasonReference only Reference(USCoreConditionProblemsHealthConcernsProfile or USCoreConditionUSCoreConditionEncounterDiagnosisProfile or USCoreLaboratoryResultObservationProfile)
 * reasonReference MS
