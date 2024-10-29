@@ -61,12 +61,12 @@ The profiles expected to be used for the resources resolved to by the userId, pa
   <thead>
     <tr>
       <th>CRD Profiles</th>
-      <th>US Core Profiles</th>
+      <th>HRex &amp; US Core Profiles</th>
     </tr>
   </thead>
   <tr>
     <td>
-<div class="modified-content" markdown="1">
+<div class="modified-content">
     <a href="StructureDefinition-profile-appointment-with-order.html">profile-appointment-with-order</a> or <a href="StructureDefinition-profile-appointment-no-order.html">profile-appointment-no-order</a>
 </div>
     </td>
@@ -81,8 +81,10 @@ The profiles expected to be used for the resources resolved to by the userId, pa
     <td/>
   </tr>
   <tr>
-    <td><a href="{{site.data.fhir.ver.uscore7}}/StructureDefinition-profile-practitioner.html">US Core practitioner</a></td>
     <td/>
+    <td><div class="modified-content">
+<a href="{{site.data.fhir.ver.uscore7}}/StructureDefinition-profile-practitioner.html">US Core practitioner</a>
+</div></td>
   </tr>
   <tr>
     <td/>
@@ -110,7 +112,7 @@ The profiles expected to be used for the resources resolved to by the userId, pa
   <thead>
     <tr>
       <th>CRD Profiles</th>
-      <th>US Core Profiles</th>
+      <th>HRex &amp; US Core Profiles</th>
     </tr>
   </thead>
   <tr>
@@ -122,8 +124,10 @@ The profiles expected to be used for the resources resolved to by the userId, pa
     <td/>
   </tr>
   <tr>
-    <td><a href="{{site.data.fhir.ver.uscore7}}/StructureDefinition-profile-practitioner.html">US Core practitioner</a></td>
     <td/>
+    <td><div class="modified-content">
+      <a href="{{site.data.fhir.ver.uscore7}}/StructureDefinition-profile-practitioner.html">US Core practitioner</a>
+    </div></td>
   </tr>
   <tr>
     <td/>
@@ -151,7 +155,7 @@ The profiles expected to be used for the resources resolved to by the userId, pa
   <thead>
     <tr>
       <th>CRD Profiles</th>
-      <th>US Core Profiles</th>
+      <th>HRex &amp; US Core Profiles</th>
     </tr>
   </thead>
   <tr>
@@ -163,8 +167,10 @@ The profiles expected to be used for the resources resolved to by the userId, pa
     <td/>
   </tr>
   <tr>
-    <td><a href="{{site.data.fhir.ver.uscore7}}/StructureDefinition-profile-practitioner.html">US Core practitioner</a></td>
     <td/>
+    <td><div class="modified-content">
+      <a href="{{site.data.fhir.ver.uscore7}}/StructureDefinition-profile-practitioner.html">US Core practitioner</a>
+    </div></td>
   </tr>
   <tr>
     <td/>
@@ -210,7 +216,7 @@ There are no constraints or special rules related to this hook beyond the profil
   <thead>
     <tr>
       <th>CRD Profiles</th>
-      <th>US Core Profiles</th>
+      <th>HRex &amp; US Core Profiles</th>
     </tr>
   </thead>
   <tr>
@@ -234,8 +240,10 @@ There are no constraints or special rules related to this hook beyond the profil
     <td/>
   </tr>
   <tr>
-    <td><a href="{{site.data.fhir.ver.uscore7}}/StructureDefinition-profile-practitioner.html">US Core practitioner</a></td>
     <td/>
+    <td><div class="modified-content">
+    <a href="{{site.data.fhir.ver.uscore7}}/StructureDefinition-profile-practitioner.html">US Core practitioner</a>
+    </div></td>
   </tr>
   <tr>
     <td/>
@@ -308,7 +316,7 @@ There are no constraints or special rules related to this hook beyond the profil
   <thead>
     <tr>
       <th>CRD Profiles</th>
-      <th>US Core Profiles</th>
+      <th>HRex &amp; US Core Profiles</th>
     </tr>
   </thead>
   <tr>
@@ -332,8 +340,10 @@ There are no constraints or special rules related to this hook beyond the profil
     <td/>
   </tr>
   <tr>
-    <td><a href="{{site.data.fhir.ver.uscore7}}/StructureDefinition-profile-practitioner.html">US Core practitioner</a></td>
     <td/>
+    <td><div class="modified-content">
+    <a href="{{site.data.fhir.ver.uscore7}}/StructureDefinition-profile-practitioner.html">US Core practitioner</a>
+    </div></td>
   </tr>
   <tr>
     <td/>
