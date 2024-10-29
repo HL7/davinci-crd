@@ -78,7 +78,9 @@ Provider systems will use the specification and workflows defined by [CDS Hooks 
 SMART on FHIR is expected to be used in two principal ways:
 
 ##### *Ad Hoc* Coverage Requirements Discovery
-CDS Hooks provides a mechanism for payers to advise clinicians on coverage requirements as part of their regular workflow: when ordering medications, making referrals, scheduling appointments, discharging patients, etc. However, sometimes clinicians may be interested in learning about coverage requirements without going through the workflow steps within their CRD client. In this case, they don't want to actually create a referral, they just want to ask the question "what would the requirements be if I *wanted* to create a referral?
+CDS Hooks provides a mechanism for payers to advise clinicians on coverage requirements as part of their regular workflow: when ordering medications, making referrals, scheduling appointments, discharging patients, etc. However, sometimes clinicians may be interested in learning about coverage requirements without going through the workflow steps within their CRD client. In this case, they don't want to actually create a referral, they just want to ask the question "what would the requirements or recommendations be if I *wanted* to create a referral?
+
+Such recommendations might be from decision support (such as ImmunizationRecommendation or a CarePlan with an intent of 'proposed') or from standard protocols (e.g. "this patient is due for a pap smear").  In such cases, the EHR can support automated generation of 'draft' requests (such as MedicationRequest or ServiceRequest) based on the decision support or protocol resources and use them when invoking CRD.  Alternatively, the EHR might support launching a SMART on FHIR app that would capture the key information needed to drive a CRD response.
 
 Discussion of how a SMART on FHIR app can be used to trigger CDS Hooks from within an CRD client to perform such what-if scenarios can be found [here](foundation.html#smart-on-fhir-hook-invocation).
 
