@@ -128,7 +128,16 @@ NOTE: Launching DTR does not necessarily mean launching a SMART on FHIR applicat
 
 When invoking CRD, there may be situations where 'needed' information is not available.  For example, the date of birth might be 'unknown' and there might only be a subscriber id but not a member id.  Alternatively, the payer may not be able to find a member with the specified identifier.  In such situations, this is NOT considered an error with the CDS Hook invocation.  A successful response with a coverage-information system action is still necessary.
 
-The CRD service **SHOULD** either prompt for the additional needed information using DTR or return a coverage-information extension indicating that the patient is not covered with a reason indicating the issue (e.g. the member could not be found/resolved).</div>
+The CRD service **SHOULD** either prompt for the additional needed information using DTR or return a coverage-information extension indicating that the patient is not covered with a reason indicating the issue (e.g. the member could not be found/resolved).
+
+As an example:
+Order Type (i.e. inpatient vs. outpatient) will sometimes be known when the Location is identified - the specified location might only deliver outpatient services or inpatient services.  In situations where a service might be delivered in more than one way at that location (some patients will be processed as a day patient, others will be handled as an in-patient, and in some cases the determination will only be made based on how the procedure goes).  In that second situation, the ordering system typically won't determine (or know) the basis on which the service will be delivered, though in some cases it might be inferred by the code.  In most situations, the decision is made by the performer.
+
+If the coverage decision is dependent on inpatient vs. outpatient, the CRD service has two options:
+
+* Ideally, return a response for each scenario - this is the answer if delivered as inpatient, this is the answer if delivered as outpatient
+* Return a response indicating that a more detailed code is necessary and in the 'reason' clarify that the payer needs to know if the procedure will be delivered on an inpatient vs. outpatient basis.
+</div>
 
 If the payer does not support DTR for the type of information needed, the CRD service **MAY** provide a 'link' or 'information' card pointing to the forms or portal to use to capture the additional information. The link **SHOULD NOT** require user authentication (i.e., no log-on needed) when accessing downloadable forms. For portal links, it is preferred if a separate logon is not needed (e.g., with temporary/high-entropy links). Forms downloaded from provided links can then be submitted as part of the prior authorization (e.g., PAS), claim submission, etc. based on the identified documentation purpose.
 
