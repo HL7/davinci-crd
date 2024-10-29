@@ -50,7 +50,8 @@ Description: "Captures assertions from a payer about whether the service is cove
   * value[x] only Reference(CRDCoverage)
 * extension[covered] only Extension
   * ^short = "covered | not-covered | conditional"
-  * ^definition = "Indicates whether the ordered/requested service is covered under patient's plan"
+  * ^definition = "Indicates whether the ordered/requested service is covered under patient's plan.  This includes checking of whether the proposed service is a benefit under the patient's plan.  It **MAY** also involve checking whether the patient has reached their limits under the current plan period, but is not required to."
+  * ^comment = "Details on why coverage does not exist would be conveyed in the 'reason' element."
   * value[x] 1..1
   * value[x] only code
   * value[x] from CRDCoveredInfo (required)
