@@ -273,6 +273,10 @@ The response is a batch response Bundle, with each entry containing either a sin
 
 {% fragment Bundle/search-response JSON EXCEPT:id BASE:entry.resource.where(($this is Bundle).not()) | entry.resource.entry.resource %}
 
+<div class="new-content" markdown="1">
+#### Error Handling
+The use of an HTTP 412 response to the CDS Hook invocation is for situations where the requested prefetch was not provided and the CRD service was unable to invoke the queries itself.  It **SHALL NOT** to be used in situations where the prefetch was provided or the query was successfully performed but the record in question did not have all the data the payer might have needed/desired.  Indicating additional information through DTR is the preferred approach when managing situations where the needed information isn't queryable from the EHR.  Similarly, HTTP 4xx or 5xx responses are only appropriate if there was an internal failure of the service, not if the payer business rules for "needed data" were not met.  Error codes indicate that there is a technical issue that should be fixed.
+</div>
 
 #### Query Notes
 *  Conformant CRD clients **SHOULD** be able to perform all the queries defined here and, where needed, **SHOULD** implement interfaces to [_include]({{site.data.fhir.path}}search.html#include) resources not available in the client's database.
