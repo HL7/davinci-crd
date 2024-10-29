@@ -124,7 +124,8 @@ Description: "Captures assertions from a payer about whether the service is cove
   * value[x] only Reference(CRDAppointmentWithOrder or CRDAppointmentNoOrder or CRDCommunicationRequest or CRDDeviceRequest or CRDMedicationRequest or CRDNutritionOrder or CRDServiceRequest)
 * extension[questionnaire] only Extension
   * ^short = "Questionnaire to complete"
-  * ^definition = "A form to be filled out to gather more information.  Only for use if the response indicates a need to use DTR"
+  * ^definition = "A form to be filled out to gather more information."
+  * ^comment = "If using DTR, this will be used by DTR to determine the Questionnaire packages to be returned.  If empty, DTR will determine the questionnaire packages itself.  If not using DTR, providing a Questionnaire url is the only way to indicate what form to complete.""
   * ^condition[+] = "crd-ci-q1"
   * value[x] only canonical
     * ^type.targetProfile = "http://hl7.org/fhir/StructureDefinition/Questionnaire"
