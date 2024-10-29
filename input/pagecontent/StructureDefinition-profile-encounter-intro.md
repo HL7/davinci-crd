@@ -8,6 +8,7 @@ CRD Clients **SHALL** use this profile to [resolve references](foundation.html#a
 * [encounter-discharge](hooks.html#encounter-discharge)
 * [order-select](hooks.html#order-select)
 * [order-sign](hooks.html#order-sign)
+* [order-dispatch](hooks.html#order-dispatch)
 
 Information provided in [Must Support]({{site.data.fhir.path}}profiling.html#mustsupport) elements will commonly be required for CRD Servers to perform coverage requirements discovery.
 <br/>
