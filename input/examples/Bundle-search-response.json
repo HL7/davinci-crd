@@ -335,75 +335,6 @@
       }
     },
     {
-      "fullUrl": "urn:uuid:dc616366-2f3f-4cca-b02c-0f80981770db",
-      "resource": {
-        "resourceType": "Bundle",
-        "id": "dc616366-2f3f-4cca-b02c-0f80981770db",
-        "type": "searchset",
-        "total": 2,
-        "link": [
-          {
-            "relation": "self",
-            "url": "http://example.org/someEHR/fhir/r4/Medication?_id=MED1,MED2&_sort=_id"
-          }
-        ],
-        "entry": [
-          {
-            "fullUrl": "http://example.org/someEHR/fhir/Mediation/MED1",
-            "resource": {
-              "resourceType": "Medication",
-              "id": "MED1",
-              "text": {
-                "status": "generated",
-                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">diclofenac potassium 50 MG Oral Tablet</div>"
-              },
-              "code": {
-                "coding": [
-                  {
-                    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-                    "code": "855942",
-                    "display": "diclofenac potassium 50 MG Oral Tablet"
-                  }
-                ],
-                "text": "diclofenac potassium 50 MG Oral Tablet"
-              }
-            },
-            "search": {
-              "mode": "match"
-            }
-          },
-          {
-            "fullUrl": "http://example.org/someEHR/fhir/Mediation/MED2",
-            "resource": {
-              "resourceType": "Medication",
-              "id": "MED2",
-              "text": {
-                "status": "generated",
-                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Abuse-Deterrent 12 HR oxycodone hydrochloride 10 MG Extended Release Oral Tablet [Oxycontin]</div>"
-              },
-              "code": {
-                "coding": [
-                  {
-                    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-                    "code": "1049504",
-                    "display": "Abuse-Deterrent 12 HR oxycodone hydrochloride 10 MG Extended Release Oral Tablet [Oxycontin]"
-                  }
-                ],
-                "text": "Abuse-Deterrent 12 HR oxycodone hydrochloride 10 MG Extended Release Oral Tablet [Oxycontin]"
-              }
-            },
-            "search": {
-              "mode": "match"
-            }
-          }
-        ]
-      },
-      "response": {
-        "status": "200",
-        "lastModified": "2019-03-15T15:38:13.037Z"
-      }
-    },
-    {
       "fullUrl": "urn:uuid:ee0d8bb2-f7a1-4b53-bfff-902dd4513b07",
       "resource": {
         "resourceType": "Bundle",
@@ -413,7 +344,7 @@
         "link": [
           {
             "relation": "self",
-            "url": "http://example.org/someEHR/fhir/r4/PractitionerRole?_id=123&_include=PractitionerRole:organization&_include=PractitionerRole:practitioner&_sort=_id"
+            "url": "http://example.org/someEHR/fhir/r4/PractitionerRole?_id=ABC,XYZ&_include=PractitionerRole:organization&_include=PractitionerRole:practitioner&_sort=_id"
           }
         ],
         "entry": [
@@ -427,7 +358,7 @@
               },
               "text" : {
                 "status" : "generated",
-                "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">Dr. Ronald Bone, primary care physician at Acme Clinic</div>"
+                "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">Dr. Ronald Bone, Family medicine specialist at Acme Clinic</div>"
               },
               "practitioner": {
                 "reference": "http://example.org/someEHR/fhir/Practitioner/DEF",
@@ -441,14 +372,14 @@
                 {
                   "coding": [
                     {
-                      "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationFunction",
-                      "code": "PCP",
-                      "display": "primary care physician"
+                      "system": "http://snomed.info/sct",
+                      "code": "62247001",
+                      "display": "Family medicine specialist"
                     },
                     {
                       "system": "http://nucc.org/provider-taxonomy",
-                      "code": "261QP2300X",
-                      "display": "Primary Care Clinic/Center"
+                      "code": "207Q00000X",
+                      "display": "Family Medicine"
                     }
                   ]
                 }
@@ -496,6 +427,102 @@
                   "family": "Bone",
                   "given": [
                     "Ronald"
+                  ],
+                  "prefix": [
+                    "Dr"
+                  ]
+                }
+              ],
+              "address": [
+                {
+                  "use": "work",
+                  "line": [
+                    "1003 HEALTHCARE DR"
+                  ],
+                  "city": "AMHERST",
+                  "state": "MA",
+                  "postalCode": "01002"
+                }
+              ]
+            },
+            "search": {
+              "mode": "include"
+            }
+          },
+          {
+            "fullUrl": "http://example.org/someEHR/fhir/PractitionerRole/XYZ",
+            "resource": {
+              "resourceType": "PractitionerRole",
+              "id": "XYZ",
+              "meta": {
+                "lastUpdated": "2012-05-18T11:02:59.313Z"
+              },
+              "text" : {
+                "status" : "generated",
+                "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">Dr. Carol Cardio, Cardiologist at Acme Clinic</div>"
+              },
+              "practitioner": {
+                "reference": "http://example.org/someEHR/fhir/Practitioner/TUV",
+                "display": "Dr. Carol Cardio"
+              },
+              "organization": {
+                "reference": "http://example.org/someEHR/fhir/Organization/GHI",
+                "display": "Acme Clinic"
+              },
+              "code": [
+                {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationFunction",
+                      "code": "17561000",
+                      "display": "Cardiologist"
+                    }
+                  ]
+                }
+              ]
+            },
+            "search": {
+              "mode": "match"
+            }
+          },
+          {
+            "fullUrl": "http://example.org/someEHR/fhir/Practitioner/TUV",
+            "resource": {
+              "resourceType": "Practitioner",
+              "id": "TUV",
+              "text" : {
+                "status" : "generated",
+                "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>identifier</b>: <a href=\"https://terminology.hl7.org/NamingSystem-npi.html\">United States National Provider Identifier (NPI)</a> 9941339100, id:\u00a025456</p><p><b>name</b>: Carol Cario </p><p><b>address</b>: 1003 HEALTHCARE DR AMHERST MA 01002 (WORK)</p></div>"
+              },
+              "identifier": [
+                {
+                  "system": "http://hl7.org/fhir/sid/us-npi",
+                  "value": "9941339027"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-jurisdiction",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "https://www.usps.com/",
+                            "code": "MA"
+                          }
+                        ],
+                        "text": "Massachusetts"
+                      }
+                    }
+                  ],
+                  "system": "http://www.acme.org/practitioners",
+                  "value": "25456"
+                }
+              ],
+              "name": [
+                {
+                  "family": "Cardio",
+                  "given": [
+                    "Carol"
                   ],
                   "prefix": [
                     "Dr"

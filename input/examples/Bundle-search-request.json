@@ -24,13 +24,7 @@
     {
       "request": {
         "method": "GET",
-        "url": "Medication?_id=MED1,MED2"
-      }
-    },
-    {
-      "request": {
-        "method": "GET",
-        "url": "PractitionerRole?_id=ABC&_include=PractitionerRole:organization&_include=PractitionerRole:practitioner"
+        "url": "PractitionerRole?_id=ABC,XYZ&_include=PractitionerRole:organization&_include=PractitionerRole:practitioner"
       }
     }
   ]

@@ -261,19 +261,20 @@ The following two examples show a batch query that could retrieve all CRD-releva
 
 **Query Batch Request**<br/>
 This query presumes that an `order-sign` hook has been invoked and the following information has been passed in as context:
+* The patient identifier 123
+* The encounter identifier 987
+* Two ServiceRequests with different PractitionerRole performers (ABC and DEF)
 
-{% fragment Binary/CRDServiceRequest JSON BASE:context %}
+{% fragment Bundle/search-request JSON %}
 
-As well, the `draftOrders` Bundle from the context includes `MedicationRequests` that reference 2 formulary medications (MED1, MED2), to be fulfilled by one pharmacy Organization (456) and are ordered by the same `PractitionerRole` with id `ABC`. Most importantly, they are all tied to the same Coverage record with id `DEF`.
+Note: This query also presumes that all this information would be relevant to the CRD server in the decisions it needed to make. In practice, the service would only query the information needed to determine coverage requirements. Also, the service will only be able to query data where the scopes made available in the `fhirAuthorization.scope` permit the desired queries.
 
-Note: This query also presumes that all this information would be relevant to the CRD server. In practice, the service would only query the information needed to determine coverage requirements. Also, the service will only be able to query data where the scopes made available in the `fhirAuthorization.scope` permit the desired queries.
-
-The bundle uses a mixture of read and search operations to retrieve the relevant resources.
+The Batch bundle uses a mixture of read and search operations to retrieve the relevant resources.
 
 **Query Batch Response**<br/>
 The response is a batch response Bundle, with each entry containing either a single resource (in response to a read) or a search response Bundle with the results of the previous search. Each entry in the response bundle corresponds to the GET entry in the request Bundle.
 
-{% fragment Bundle/search-response JSON EXCEPT:id BASE:entry.resource.where(($this is Bundle).not()) | entry.resource.entry.resource %}
+{% fragment Bundle/search-response JSON EXCEPT:id|practitioner BASE:entry.resource.where(($this is Bundle).not()) | entry.resource.entry.resource %}
 
 <div class="new-content" markdown="1">
 #### Error Handling
