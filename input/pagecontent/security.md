@@ -14,7 +14,3 @@ In addition to these, this implementation guide imposes the following additional
 * CRD clients are the final arbiters of what data can or cannot be shared with CRD servers.  It is up to clients to ensure they support their obligations as health data custodians, including legal, policy, and patient consent-based restrictions. Withholding information might limit the completeness or accuracy of coverage requirements discovery advice retrieved using the interfaces within this guide. The inability of a CRD server to provide full advice does not relieve providers of their responsibility to ensure that payer coverage requirements are met.
 * CRD clients **SHALL** ensure that the resource identifiers exposed over the CRD interface are distinct from and have no determinable relationship with any business identifiers associated with those records. For example, the Patient.id element cannot be the same as or contain in some fashion a patient's social security number or medical record number.
 * Access to patient information to meet decision support requirements is subject to regulations such as HIPAA "minimum necessary" and CRD clients **SHOULD** audit access to check for reasonableness and appropriateness.
-
-### Sharing Information with Payers
-
-All information sharing that occurs through making CRD calls is subject to the privacy and security considerations documented [here]({{site.data.fhir.ver.hrex}}/security.html).
