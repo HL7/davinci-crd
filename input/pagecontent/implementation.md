@@ -68,4 +68,9 @@ CRD services have a few options here:
 3. In some cases, the modifiers can be inferred from existing data about the patient. For example, if a treatment is sometimes given for diabetes treatment, and other times given for weight control, the payer could examine the record to see if there is a current condition indicating diabetes or obesity. If only one of the conditions exists, the payer can reasonably infer that as the reason for treatement (and can record their assumption as part of the coverage-information returned).
 
 4. If modifiers are relevant to the coverage determination, there's no ability to infer their values from other information in the order or the patient's record, and the determination of potential coverage outcomes is too complex to simply return two or three alternative contingent coverage-information instances that reflect the level of coverage in different circumstances, the payer can use DTR to solicit the additional needed information.
+
+Where a payer has made inferences beyond what's explicit in the CRD request, the response SHOULD make clear what assumptions around billing codes, in/out-of-network, delivery location were made in providing the response.  For example:
+
+* presumed billing codes can be conveyed in the [billingCode element](StructureDefinition-ext-coverage-information-definitions.html#diff_Extension.extension:billingCode).
+* limitations on quantity, period, or expectations about in-network/out-of-network can be conveyed in the [detail element](StructureDefinition-ext-coverage-information-definitions.html#diff_Extension.extension:detail).
 </div>
