@@ -257,7 +257,7 @@ Other information will need to be retrieved using queries that are more specific
 #### FHIR Resource Access
 If information needed is not provided by prefetch, the CRD server can query the client directly using the [FHIR resource access](https://cds-hooks.hl7.org/2.0/#fhir-resource-access) mechanism defined in the CDS Hooks specification.
 
-This can be done either by using individual queries or by invoking a batch of separate queries. In either case, the HTTP call that performs the query or executes the batch must pass the `fhirAuthorization.accessToken` in the authorization header as defined in the [OAuth specification](https://www.oauth.com/oauth2-servers/accessing-data/making-api-requests).
+This can be done either by using individual queries or by invoking a batch of separate queries. In either case, the HTTP call that performs the query or executes the batch must pass the `fhirAuthorization.access_token` in the authorization header as defined in the [CDS Hooks specification](https://cds-hooks.hl7.org/2.0/#fhir-resource-access).
 
 The following two examples show a batch query that could retrieve all CRD-relevant resources as well as the structure of the corresponding batch response.
 
