@@ -1684,6 +1684,30 @@ v: {
   "system" : "http://snomed.info/sct",
   "version" : "http://snomed.info/sct/731000124108/version/20240901",
   "server" : "http://tx.fhir.org/r4",
+  "issues" : {
+  "resourceType" : "OperationOutcome"
+}
+
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://snomed.info/sct",
+  "code" : "17561000",
+  "display" : "Cardiologist"
+}, "valueSet" :null, "langs":"en-CA", "useServer":"true", "useClient":"false", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "id" : "terminology-settings",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  }]
+}}####
+v: {
+  "display" : "Cardiologist",
+  "code" : "17561000",
+  "system" : "http://snomed.info/sct",
+  "version" : "http://snomed.info/sct/731000124108/version/20240901",
+  "server" : "http://tx.fhir.org/r4",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"

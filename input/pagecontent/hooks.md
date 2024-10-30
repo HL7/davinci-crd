@@ -80,7 +80,7 @@ The profiles expected to be used for the resources resolved to by the userId, pa
   </tr>
   <tr>
     <td/>
-    <td><a href="{{site.data.fhir.ver.uscore7}}/StructureDefinition-profile-practitioner.html">US Core practitioner</a></td>
+    <td><a href="{{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-practitioner.html">US Core practitioner</a></td>
   </tr>
   <tr>
     <td/>
@@ -121,7 +121,7 @@ The profiles expected to be used for the resources resolved to by the userId, pa
   </tr>
   <tr>
     <td/>
-    <td><a href="{{site.data.fhir.ver.uscore7}}/StructureDefinition-profile-practitioner.html">US Core practitioner</a></td>
+    <td><a href="{{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-practitioner.html">US Core practitioner</a></td>
   </tr>
   <tr>
     <td/>
@@ -162,7 +162,7 @@ The profiles expected to be used for the resources resolved to by the userId, pa
   </tr>
   <tr>
     <td/>
-    <td><a href="{{site.data.fhir.ver.uscore7}}/StructureDefinition-profile-practitioner.html">US Core practitioner</a></td>
+    <td><a href="{{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-practitioner.html">US Core practitioner</a></td>
   </tr>
   <tr>
     <td/>
@@ -232,7 +232,7 @@ There are no constraints or special rules related to this hook beyond the profil
   </tr>
   <tr>
     <td/>
-    <td><a href="{{site.data.fhir.ver.uscore7}}/StructureDefinition-profile-practitioner.html">US Core practitioner</a></td>
+    <td><a href="{{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-practitioner.html">US Core practitioner</a></td>
   </tr>
   <tr>
     <td/>
@@ -329,7 +329,7 @@ There are no constraints or special rules related to this hook beyond the profil
   </tr>
   <tr>
     <td/>
-    <td><a href="{{site.data.fhir.ver.uscore7}}/StructureDefinition-profile-practitioner.html">US Core practitioner</a></td>
+    <td><a href="{{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-practitioner.html">US Core practitioner</a></td>
   </tr>
   <tr>
     <td/>

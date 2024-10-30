@@ -379,7 +379,7 @@
                     {
                       "system": "http://nucc.org/provider-taxonomy",
                       "code": "207Q00000X",
-                      "display": "Family Medicine"
+                      "display": "Family Medicine Physician"
                     }
                   ]
                 }
@@ -473,7 +473,7 @@
                 {
                   "coding": [
                     {
-                      "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationFunction",
+                      "system": "http://snomed.info/sct",
                       "code": "17561000",
                       "display": "Cardiologist"
                     }

@@ -1,11 +1,11 @@
 {
   "package-id" : "hl7.fhir.us.davinci-crd",
-  "version" : "2.1.0-preview",
+  "version" : "2.1.0",
   "milestone" : true,
-	"path": "http://hl7.org/fhir/us/davinci-crd/STU2.1-preview",
+	"path": "http://hl7.org/fhir/us/davinci-crd/STU2.1",
   "status" : "trial-use",
   "mode" : "milestone",
   "sequence" : "STU 2.1",
-  "desc" : "STU 2.1.0 Peer ReviewRelease",
-  "descmd" : "STU 2.1.0 Peer Review STU update with US Core 6.1.  See [list of changes](http://hl7.org/fhir/us/davinci-crd/STU2.1/history.html#2.1.0-preview)"
+  "desc" : "STU 2.1.0",
+  "descmd" : "2.1.0 STU update with US Core 6.1 and 7.0.  See [list of changes](http://hl7.org/fhir/us/davinci-crd/STU2.1/history.html#2.1.0)"
 }

@@ -11,11 +11,11 @@ extension:
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
     valueCode: trial-use
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm
-    valueInteger: 2
+    valueInteger: 3
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
     valueCode: fm
 canonical: http://hl7.org/fhir/us/davinci-crd
-version: 2.1.0-preview
+version: 2.1.0
 name: CoverageRequirementsDiscovery
 title: Da Vinci - Coverage Requirements Discovery
 status: active
@@ -36,7 +36,7 @@ parameters:
   apply-publisher: true
   apply-contact: true
   globals-in-artifacts: true
-  version-comparison: 2.0.0
+  version-comparison: 2.0.0, 2.1.0-preview
 
 #  path-binary: input/hooks-files
     

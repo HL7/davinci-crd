@@ -44,7 +44,6 @@ v: {
   "error" : "Wrong Display Name 'Family Medicine' for http://nucc.org/provider-taxonomy#207Q00000X. Valid display is 'Family Medicine Physician' (for the language(s) 'en-CA')",
   "class" : "UNKNOWN",
   "server" : "http://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",
   "issue" : [{
@@ -64,6 +63,31 @@ v: {
     "location" : ["Coding.display"],
     "expression" : ["Coding.display"]
   }]
+}
+
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://nucc.org/provider-taxonomy",
+  "code" : "207Q00000X",
+  "display" : "Family Medicine Physician"
+}, "valueSet" :null, "langs":"en-CA", "useServer":"true", "useClient":"false", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "id" : "terminology-settings",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  }]
+}}####
+v: {
+  "display" : "Family Medicine Physician",
+  "code" : "207Q00000X",
+  "system" : "http://nucc.org/provider-taxonomy",
+  "version" : "22.1",
+  "server" : "http://tx.fhir.org/r4",
+  "unknown-systems" : "",
+  "issues" : {
+  "resourceType" : "OperationOutcome"
 }
 
 }

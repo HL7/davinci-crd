@@ -1,5 +1,13 @@
 This page describes the primary releases of the specification and summarizes the content for each:
 
+### Release 2.1.0
+* [FHIR-47329](https://jira.hl7.org/browse/FHIR-47329), [FHIR-48622](https://jira.hl7.org/browse/FHIR-48622) - Added support for USCDI v4 (US Core 7.0.0) and clarify language about what multi-US-Core release implementation means
+* [FHIR-48352](https://jira.hl7.org/browse/FHIR-48352) - Set mustSupport expectations for practitioner, practitionerRole and organization for multi-target relationships
+* [FHIR-48430](https://jira.hl7.org/browse/FHIR-48430) - Set clearer expectations for handling failure states
+* [FHIR-48559](https://jira.hl7.org/browse/FHIR-48559) - Make ability to bypass CRD services that are running too long a 'SHALL'
+* [FHIR-48560](https://jira.hl7.org/browse/FHIR-48560) - Make clear that clients need to constrain scopes provided to what's needed
+* [FHIR-48722](https://jira.hl7.org/browse/FHIR-48722) - Collapse the 2 Encounter profiles (USCDI 1, USCDI 3+4) into one
+
 ### Release 2.1.0-preview
 Significant Coverage Information changes:
 * [FHIR-46088](https://jira.hl7.org/browse/FHIR-46088) - Set MS expectations (and general expectations too)
