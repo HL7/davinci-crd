@@ -27,7 +27,6 @@ This implementation guide uses specific terminology to flag statements that have
 #### MustSupport
 Profiles in this implementation guide make use of the [mustSupport]({{site.data.fhir.path}}profiling.html#mustsupport) element.
 
-<div class="modified-content" markdown="1">
 For data provided from CRD clients:
 
 * If the CRD client maintains the data element and surfaces it to users, then it **SHALL** be exposed in their FHIR interface when the data exists and privacy constraints permit.
@@ -39,7 +38,6 @@ For responses provided by CRD servers:
 * CRD servers **SHALL** populate the element if an appropriate value exists. 
 
 * CRD clients **SHALL** make the data available to the appropriate user (clinical or administrative) or leverage the data within their workflow as necessary to follow the intention of the provided decision support.
-</div>
 
 NOTE: These requirements are somewhat different from US Core and HRex because the implementation needs are different. In US Core, there is generally an expectation for clients to modify code and persistence layers to add support for 'mustSupport' elements in profiles. This expectation does not hold for CRD. However, CRD does require surfacing elements in the FHIR interface if the system maintains the element.
 
@@ -64,9 +62,7 @@ This specification sets a target duration in which CRD services are expected to 
 
 The authors of this IG acknowledge that this may limit the payer from providing full responses to all calls where a response is theoretically possible. Systems should provide the best information they can in a timely fashion and rely on other layers of the payment and adjudication process to catch issues that require longer processing. For example, if a system is able to provide a response on eligibility within the time window, but not on whether prior authorization is needed, it can return cards indicating the service is covered, but that DTR is needed (to determine prior authorization requirements). Where a payer responds with a coverage information extension indicating doc-needed of 'clinical', 'admin', or 'patient' and the payer supports DTR, they **SHOULD** support gathering the additional information via DTR. This expectation is intended to change to **SHALL** in a future release.
 
-<div class="new-content" markdown="1">
 The expectation of CRD is that CRD services **SHOULD** query all data necessary to make their coverage determination decisions if that data is available for query in the EHR and that data is not returned in prefetch.  Coverage determination decisions are: whether the service is covered, whether prior authorization is required, and whether additional information needs to be gathered.  It is not acceptable for a CRD service to rely exclusively on DTR as a mechanism to retrieve data.  DTR is for data retrieval that requires human intervention or review.  There may be circumstances where time constraints prevent all needed data from being retrieved, in which case DTR retrieval of data that would not typically need human review may be necessary.  However, this should never be the design objective.  This query requirement may be tightened to 'SHALL' in a future release.
-</div>
 
 CRD services are encouraged to leverage hooks fired earlier in the workflow (even if they do not provide decision support in response to those hooks) as an opportunity to begin caching relevant information for use when providing responses to later hooks. For example, when an 'Encounter Start' hook fires, the CRD service can retrieve and cache the patient's current coverage information and details about their specific plans, limits, etc. When an 'Order Select' fires, the service can cache information about coverage and authorization rules associated with the ordered service. Potentially relevant information such as past labs, prior therapies, or relevant diagnoses can also be retrieved from the EHR. As a result, when an 'Order Sign' or 'Order Dispatch' hook fires, the CRD service should have almost all information needed to render an immediate decision, allowing response times to be met much more easily.
 
@@ -89,12 +85,10 @@ CDS Hooks are intended to improve healthcare provider care-planning processes by
 
 Payers and service providers **SHALL** ensure that CDS Hooks return only messages and information relevant and useful to the intended recipient.
 
-<div class="new-content" markdown="1">
 ### CRD Servers
 Payers may have multiple back-end functions that handle different types of decision support and/or different types of services. If a payer supports [endpoint discovery]({{site.data.fhir.ver.hrex}}/endpoint-discovery.html), they **SHALL** have at most a single endpoint for each coverage (e.g., Medicare, Medicaid, or commercial) they provide coverage under. In FHIR, a coverage instance essentially corresponds with the identification information on an insurance card, irrespective of the types of coverage available under that card. If a payer does not support endpoint discovery, they **SHALL** expose only one CRD endpoint capable of handling all coverages. All CRD requests for the patient coverage, irrespective of type of service, will be sent to a single endpoint. CRD servers are free to route the information from their endpoint(s) to back-end services as needed. This routing may evolve over time and should have no impact on CRD client calls.
 
 Initial setup of connectivity between client and payer will have a manual component to establish security credentials and a trust relationship (unless both parties are part of a shared trust network).  Dynamic endpoint discovery allows for the potential for the use of different endpoints for different coverages and/or evolution of what endpoints are used for different coverage over time without changing security credential or legal agreement expectations.
-</div>
 
 ### Enabling a CRD Server
 When a CRD client configures itself to support a payer's CRD service, it will need to identify which payer(s) the service supports. This is needed to ensure that the CRD client only sends CRD calls to services that the patient has current coverage for. The CRD service is responsible for any internal routing based on which processing organization handles the decisions. For this purpose, payer means the organization listed on the member's insurance card.
@@ -251,7 +245,7 @@ Other information will need to be retrieved using queries that are more specific
     <td>No performer location</td>
   </tr>
 </table>
-<p class="new-content" markdown="1">
+<p>
 <sup>†</sup> The service-provider search type is only relevant if the CRD client supports the 'serviceProvider' element, which is not 'mustSupport'.
 </p>
 {% endraw %}
@@ -280,10 +274,8 @@ The response is a batch response Bundle, with each entry containing either a sin
 
 {% fragment Bundle/search-response JSON EXCEPT:id|practitioner BASE:entry.resource.where(($this is Bundle).not()) | entry.resource.entry.resource %}
 
-<div class="new-content" markdown="1">
 #### Error Handling
 The use of an HTTP 412 response to the CDS Hook invocation is for situations where the requested prefetch was not provided and the CRD service was unable to invoke the queries itself.  It **SHALL NOT** to be used in situations where the prefetch was provided or the query was successfully performed but the record in question did not have all the data the payer might have needed/desired.  Indicating additional information through DTR is the preferred approach when managing situations where the needed information isn't queryable from the EHR.  Similarly, HTTP 4xx or 5xx responses are only appropriate if there was an internal failure of the service, not if the payer business rules for "needed data" were not met.  Error codes indicate that there is a technical issue that should be fixed.
-</div>
 
 #### Query Notes
 *  Conformant CRD clients **SHOULD** be able to perform all the queries defined here and, where needed, **SHOULD** implement interfaces to [_include]({{site.data.fhir.path}}search.html#include) resources not available in the client's database.

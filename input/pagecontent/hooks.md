@@ -67,11 +67,7 @@ The profiles expected to be used for the resources resolved to by the userId, pa
     </tr>
   </thead>
   <tr>
-    <td>
-<div class="modified-content">
-    <a href="StructureDefinition-profile-appointment-with-order.html">profile-appointment-with-order</a> or <a href="StructureDefinition-profile-appointment-no-order.html">profile-appointment-no-order</a>
-</div>
-    </td>
+    <td><a href="StructureDefinition-profile-appointment-with-order.html">profile-appointment-with-order</a> or <a href="StructureDefinition-profile-appointment-no-order.html">profile-appointment-no-order</a></td>
     <td/>
   </tr>
   <tr>
@@ -84,9 +80,7 @@ The profiles expected to be used for the resources resolved to by the userId, pa
   </tr>
   <tr>
     <td/>
-    <td><div class="modified-content">
-<a href="{{site.data.fhir.ver.uscore7}}/StructureDefinition-profile-practitioner.html">US Core practitioner</a>
-</div></td>
+    <td><a href="{{site.data.fhir.ver.uscore7}}/StructureDefinition-profile-practitioner.html">US Core practitioner</a></td>
   </tr>
   <tr>
     <td/>
@@ -127,9 +121,7 @@ The profiles expected to be used for the resources resolved to by the userId, pa
   </tr>
   <tr>
     <td/>
-    <td><div class="modified-content">
-      <a href="{{site.data.fhir.ver.uscore7}}/StructureDefinition-profile-practitioner.html">US Core practitioner</a>
-    </div></td>
+    <td><a href="{{site.data.fhir.ver.uscore7}}/StructureDefinition-profile-practitioner.html">US Core practitioner</a></td>
   </tr>
   <tr>
     <td/>
@@ -170,9 +162,7 @@ The profiles expected to be used for the resources resolved to by the userId, pa
   </tr>
   <tr>
     <td/>
-    <td><div class="modified-content">
-      <a href="{{site.data.fhir.ver.uscore7}}/StructureDefinition-profile-practitioner.html">US Core practitioner</a>
-    </div></td>
+    <td><a href="{{site.data.fhir.ver.uscore7}}/StructureDefinition-profile-practitioner.html">US Core practitioner</a></td>
   </tr>
   <tr>
     <td/>
@@ -187,7 +177,6 @@ This is a new hook that allows for decision support to be provided when the inte
 
 This hook will fire at some point after (possibly well after) the [order-sign](#order-sign) hook fires.  It only passes the patient id, order id, performer, and (optionally) the Task that describes the fulfillment request as part of the context.  This specification does not require use of the Task resource.
 
-<div class="new-content" markdown="1">
 This hook allows multiple resource types to be present. Resources provided could all be the same type or be a mixture of types.  Coverage requirements **SHOULD** be limited only to those resources that are included in the `dispatchedOrders` context, though the content of other resources **SHOULD** also be considered before making recommendations about what additional actions are necessary.  (I.e. don't recommend an action if there's already an order to perform that action.)  
 
 The different relevant resource types are as follows (support can vary between clients):
@@ -243,9 +232,7 @@ There are no constraints or special rules related to this hook beyond the profil
   </tr>
   <tr>
     <td/>
-    <td><div class="modified-content">
-    <a href="{{site.data.fhir.ver.uscore7}}/StructureDefinition-profile-practitioner.html">US Core practitioner</a>
-    </div></td>
+    <td><a href="{{site.data.fhir.ver.uscore7}}/StructureDefinition-profile-practitioner.html">US Core practitioner</a></td>
   </tr>
   <tr>
     <td/>
@@ -266,7 +253,6 @@ There are no constraints or special rules related to this hook beyond the profil
 </table>
 
 <sup>†</sup> While this hook does not explicitly list PractitionerRole as an expected resource type for userId, it is not prohibited and is included to allow linking the user to a Practitioner in a specific role acting on behalf of a specific Organization.
-</div>
 
 
 
@@ -343,9 +329,7 @@ There are no constraints or special rules related to this hook beyond the profil
   </tr>
   <tr>
     <td/>
-    <td><div class="modified-content">
-    <a href="{{site.data.fhir.ver.uscore7}}/StructureDefinition-profile-practitioner.html">US Core practitioner</a>
-    </div></td>
+    <td><a href="{{site.data.fhir.ver.uscore7}}/StructureDefinition-profile-practitioner.html">US Core practitioner</a></td>
   </tr>
   <tr>
     <td/>

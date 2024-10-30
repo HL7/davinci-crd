@@ -14,7 +14,6 @@ Key aspects of interoperability for this specification include agreement on how 
 
 ### Impact on payer processes
 
-<div class="modified-content" markdown="1">
 CRD functionality will typically not be able to be fully implemented using payers' existing adjudication engines. The business process involved is quite different:
 
 * Traditional adjudication engines expect a formal submission of a prior authorization request that includes all elements necessary for adjudication, including specific billing codes, modifier codes, billing diagnoses, service types, etc. The specific performer, quantity, performer, timeframe, etc. will all be known and properly specified. A specific response is expected *only* for the service described.
@@ -50,11 +49,9 @@ CRD servers will need to support these clinical terminologies or map them to int
 In situations where CRD clients are aware of the likely billing codes at the time of ordering, they **MAY** send these codes as additional CodeableConcept.coding repetitions to assist in server processing. If using CPT, note the ability to convey CPT modifier codes via post-coordination as described in the [Using CPT](https://terminology.hl7.org/CPT.html) page on terminology.hl7.org. However, payers cannot depend on such additional codings being present. Mappings will be required.
 
 This guide does not define how mappings between "ordered" codes and "potential resulting billing codes" are produced. Ideally, such mappings would be informed by payer knowledge of what sorts of claims typically result from orders of a particular type. In some cases, the mappings could vary based on performing organization or practitioner. Mappings will need to evolve as clinical and billing practices evolve and as the clinical and billing terminologies change.
-</div>
 
 It is more efficient if mappings can be shared across payers and providers. This implementation guide encourages industry participants to cooperate on the development of shared mappings and/or to work with terminology developers (e.g. AMA for CPT codes) to develop shared mappings as part of their code maintenance process.
 
-<div class="new-content" markdown="1">
 #### Service Types, Billing Diagnoses and Other Modifiers
 
 Often when submitting a claim or prior authorization request, the billing code does not stand alone. Instead, additional codes might be present that indicate information such as the level of complexity of the patient's condition, the reason the service is being delivered, exceptional circumstances such as "off hours", etc. This information often won't be present in the clinical resource transmitted in the CDS Hooks call.
@@ -73,4 +70,3 @@ Where a payer has made inferences beyond what's explicit in the CRD request, the
 
 * presumed billing codes can be conveyed in the [billingCode element](StructureDefinition-ext-coverage-information-definitions.html#diff_Extension.extension:billingCode).
 * limitations on quantity, period, or expectations about in-network/out-of-network can be conveyed in the [detail element](StructureDefinition-ext-coverage-information-definitions.html#diff_Extension.extension:detail).
-</div>

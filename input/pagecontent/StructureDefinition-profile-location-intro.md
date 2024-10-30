@@ -6,7 +6,5 @@ CRD Clients **SHALL** use this profile to [resolve references](foundation.html#a
 
 Information provided in [Must Support]({{site.data.fhir.path}}profiling.html#mustsupport) elements will commonly be required for CRD Servers to perform coverage requirements discovery.
 
-<div class="new-content" markdown="1">
 The location types codes must come from HL7-defined codes when possible.  A ConceptMap to CMS location codes is available [here](ConceptMap-HL7Location-CRDTemp.html).
-</div>
 <br/>

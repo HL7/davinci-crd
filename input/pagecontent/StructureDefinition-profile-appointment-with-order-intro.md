@@ -2,11 +2,9 @@
 
 ### Usage
 <br/>
-<div class="modified-content" markdown="1">
 CRD Clients **SHALL** use either this profile and/or the [no-order](StructureDefinition-profile-appointment-no-order.html) to provide `appointments` context objects to CRD Servers when invoking the [appointment-book](hooks.html#appointment-book) hook as well as to [resolve other references](foundation.html#additional-data-retrieval) to Appointment resources.
 
 This profile conveys the details of the appointment in an associated [ServiceRequest](StructureDefinition-profile-servicerequest.html).
-</div>
 
 Information provided in [Must Support]({{site.data.fhir.path}}profiling.html#mustsupport) elements will commonly be required for CRD Servers to perform coverage requirements discovery.
 <br/>
