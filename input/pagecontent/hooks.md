@@ -17,7 +17,7 @@ In the absence of guidance from the CDS Hooks specification, CRD Servers are exp
     * 400 - Bad Request - The request is not parsable as JSON or is not valid against the CRD specification.  Also used if a CRD service receives a call where the primary Coverage (either provided by prefetch or queried by the payer) does not have a payer.identifier that identifies a payer that is handled by that CRD service endpoint, the server SHALL return a 400 error and SHOULD provide an OperationOutcome.  This includes situations where no Coverage is accessible, multiple Coverages are accessible, or the provided Coverage does not have a payer.identifier at all.
     * 422 - Unprocessable Entity - The request is valid JSON, but is not conformant to CDS Hooks, FHIR resources, or required profiles
 
-### Hook-Categories
+### Hook Categories
 The hooks supported by this guide can be categorized into two types: 'primary' hooks and 'supporting' hooks.
 
 The 'primary' hooks are [Appointment Book](#appointment-book), [Orders Sign](#order-sign), and [Order Dispatch](#order-dispatch).  CRD Servers **SHALL**, at minimum, return a [Coverage Information](StructureDefinition-ext-coverage-information.html) system action for these hooks, even if the response indicates that further information is needed or that the level of detail provided is insufficient to determine coverage.
@@ -28,11 +28,13 @@ The following sections describe the hooks covered by this implementation guide a
 
 The hooks listed on the CDS hooks website are subject to update by the community at any time until they go through the ballot process.  However, all substantive changes are noted in the *Change Log* section at the bottom of the page describing each hook.  For each hook listed below, this specification identifies a specific version.  For the sake of interoperability, implementers are expected to adhere to the interface defined in the specified version of each hook, though compatible changes from future versions can also be supported.  CRD Servers **SHALL** handle unrecognized context elements by ignoring them.
 
-Below is a summary diagram that outlines all the hooks, indicating when responses are mandatory or optional, and provides insights into what contributes to caching and attribution. 
+Below is a summary diagram that outlines all the hooks, indicating when responses are mandatory or optional, and provides insights into what contributes to caching and attribution.
+
+Note: Any hook can theoretically be used to assert a relationship from a member attribution perspective.   The two hooks highlighted are the most appropriate ones as they could theoretically allow information to flow from the payer as part of the 'current' care delivery.  Hooks later in the workflow would typically be too late to allow data to flow in a way that would allow that information to be taken into account in the current care event.
 
 {::options parse_block_html="false" /}
 <figure>
-  <img height="600px" src="hooks.png" alt="Hooks Diagram"/>
+  <img height="800px" src="hooks.png" alt="Hooks Diagram"/>
   <figcaption><b>    Figure 2: Hooks Summary Diagram</b></figcaption>
   <p></p>
 </figure>
