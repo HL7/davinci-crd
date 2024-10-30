@@ -88,7 +88,7 @@ This example CDS Hook [card](https://cds-hooks.hl7.org/2.0/#cds-service-response
 
 ### Coverage Information Response Type
 <div class="modified-content" markdown="1">
-This response type uses a <a href="https://cds-hooks.hl7.org/2.0/#system-action">systemAction</a> to automatically update the order or other resource in the CRD client with an extension that conveys information related to the coverage of the order. This response type **SHALL NOT** use a card.
+This response type uses a <a href="https://cds-hooks.hl7.org/2.0/#system-action">systemAction</a> to automatically update the order or other resource in the CRD client with an extension that conveys information related to the coverage of the order. As discussed on the [home page](index.html#cmsdiscretion), the functionality of this response type has been enhanced to allow directly returning a prior authorization number as part of a CRD response.  Regardless of the content, this response type **SHALL NOT** use a card.
 
 Support expectations for this hook by CDS services are as follows:
 
