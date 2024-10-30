@@ -111,7 +111,7 @@ Note: Recognizing these tokens doesn't mean the client must support prefetch or 
 For example, a prefetch for `order-sign` might look like this:
 
 {% raw %}
-{% fragment Binary/CRDServices JSON BASE:services.where(hook='appointment-book') EXCEPT:prefetch %}
+{% fragment Binary/CRDServices JSON BASE:services.where(hook='order-sign') EXCEPT:prefetch %}
 {% endraw %}
 
 
