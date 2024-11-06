@@ -83,25 +83,25 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a target="_blank" href="{{site.data.fhir.path}}index.html">FHIR R4 Spec</a>
+        <a href="{{site.data.fhir.path}}index.html">FHIR R4 Spec</a>
       </li>
       <li>
-        <a target="_blank" href="{{site.data.fhir.ver.hrex}}">HRex 1.1.0</a>
+        <a href="{{site.data.fhir.ver.hrex}}">HRex 1.1.0</a>
       </li>
       <li>
-        <a target="_blank" href="{{site.data.fhir.ver.uscore3}}">US Core 3.1.1</a>
+        <a href="{{site.data.fhir.ver.uscore3}}">US Core 3.1.1</a>
       </li>
       <li>
-        <a target="_blank" href="{{site.data.fhir.ver.uscore6}}">US Core 6.1.0</a>
+        <a href="{{site.data.fhir.ver.uscore6}}">US Core 6.1.0</a>
       </li>
       <li>
-        <a target="_blank" href="{{site.data.fhir.ver.uscore7}}">US Core 7.0.0</a>
+        <a href="{{site.data.fhir.ver.uscore7}}">US Core 7.0.0</a>
       </li>
       <li>
-        <a target="_blank" href="https://cds-hooks.hl7.org/2.0">CDS Hooks <img src="external.png" style="text-align: baseline"/></a>
+        <a href="https://cds-hooks.hl7.org/2.0">CDS Hooks <img src="external.png" style="text-align: baseline"/></a>
       </li>
       <li>
-        <a target="_blank" href="http://hl7.org/fhir/smart-app-launch/index.html">SMART on FHIR <img src="external.png" style="text-align: baseline"/></a>
+        <a href="http://hl7.org/fhir/smart-app-launch/index.html">SMART on FHIR <img src="external.png" style="text-align: baseline"/></a>
       </li>
     </ul>
   </li>
@@ -111,19 +111,19 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a target="_blank" href="https://chat.fhir.org/#narrow/stream/180803-Da-Vinci-CRD">Discussion Forum</a>
+        <a href="https://chat.fhir.org/#narrow/stream/180803-Da-Vinci-CRD">Discussion Forum</a>
       </li>
       <li>
-        <a target="_blank" href="https://confluence.hl7.org/pages/viewpage.action?pageId=91980079">Project Page</a>
+        <a href="https://confluence.hl7.org/pages/viewpage.action?pageId=91980079">Project Page</a>
       </li>
       <li>
-        <a target="_blank" href="https://confluence.hl7.org/display/DVP/CRD+Implementer+Support">Implementer Support</a>
+        <a href="https://confluence.hl7.org/display/DVP/CRD+Implementer+Support">Implementer Support</a>
       </li>
       <li>
-        <a target="_blank" href="https://jira.hl7.org/secure/Dashboard.jspa?selectPageId=17027">Specification Dashboard</a>
+        <a href="https://jira.hl7.org/secure/Dashboard.jspa?selectPageId=17027">Specification Dashboard</a>
       </li>
       <li>
-        <a target="_blank" href="https://jira.hl7.org/secure/CreateIssueDetails!init.jspa?pid=10405&amp;issuetype=10600&amp;customfield_11302=FHIR-us-davinci-crd">Propose a Change</a>
+        <a href="https://jira.hl7.org/secure/CreateIssueDetails!init.jspa?pid=10405&amp;issuetype=10600&amp;customfield_11302=FHIR-us-davinci-crd">Propose a Change</a>
       </li>
       <li>
         <a href="{{site.data.info.assets}}downloads.html">Downloads</a>

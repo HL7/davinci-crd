@@ -158,7 +158,7 @@ pages:
   history.md:
     title: Change History
 groups:
-  - str-logicalmodel-hooks:
+  -str-logicalmodel-hooks:
     name: "Structures: CDS Hooks Extensions"
     description: "Models that define extensions on CDS Hooks JSON structures"
     resources:
@@ -166,12 +166,12 @@ groups:
       - CDSHookServiceResponseExtensionIfNoneExist
       - CDSHookServiceResponseExtensionAssociatedResource
       - CDSHookServiceRequestExtensionRequestConfig
-  - ex-example-hooks:
-    id: ex-example-hooks
+  -ex-example-hooks:
     name: "Example: CDS Hooks Examples"
     description: "Examples of CDS Hooks JSON instances"
 resources:
   Binary/CRDServices:
+    groupingId: "-ex-example-hooks"
     name: "Example CRD Services Response"
     description: "An example of a CRD services response"
     extension:
@@ -180,6 +180,7 @@ resources:
       - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-logical
         valueCanonical: http://hl7.org/fhir/tools/StructureDefinition/CDSHooksServices
   Binary/CRDServiceRequest:
+    groupingId: "-ex-example-hooks"
     name: "Example CRD Service Requestion with MedicationRequests"
     description: "An example of a CRD request for order-sign with MedicationRequests"
     extension:
@@ -188,6 +189,7 @@ resources:
       - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-logical
         valueCanonical: http://hl7.org/fhir/tools/StructureDefinition/CDSHooksRequest
   Binary/CRDServiceRequest2:
+    groupingId: "-ex-example-hooks"
     name: "Example CRD Service Request with ServiceRequests"
     description: "An example of a CRD request for order-sign with ServiceRequests"
     extension:
@@ -196,6 +198,7 @@ resources:
       - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-logical
         valueCanonical: http://hl7.org/fhir/tools/StructureDefinition/CDSHooksRequest
   Binary/CRDServiceResponse:
+    groupingId: "-ex-example-hooks"
     name: "Example CRD Service Response"
     description: "An example of a CRD response with links"
     extension:
@@ -204,6 +207,7 @@ resources:
       - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-logical
         valueCanonical: http://hl7.org/fhir/tools/StructureDefinition/CDSHooksResponse
   Binary/CRDServiceResponse2:
+    groupingId: "-ex-example-hooks"
     name: "Example CRD Service Response - Coverage Information"
     description: "An example CRD response with Coverage Information extension"
     extension:
