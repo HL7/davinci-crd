@@ -6,54 +6,14 @@ defines specific requirements for systems wishing to conform to this Coverage Re
 
 The requirements and expectations described here are not intended to be exhaustive. The purpose of this implementation guide is to establish a baseline of expected behavior that communication partners can rely on and then build upon. Future versions of this specification will evolve based on implementer feedback. Therefore, CRD servers and CRD clients **MAY** mutually agree to support additional hooks, additional card patterns, additional resources, additional extensions, etc. not found in this specification. Although CRD servers and CRD clients are not required to support any capabilities defined beyond this specification, the intent is to support innovations that extend the specification in a manner that allows payers and providers to adopt those extensions in a mutually agreeable way.
 
-### Context
+### Pre-reading
+Before reading this formal specification, implementers are encouraged to first familiarize themselves with some of the key background portions of this implementation guide:
 
-#### Pre-reading
-Before reading this formal specification, implementers are encouraged to first familiarize themselves with two other key portions of this implementation guide:
+* The [Reading this IG](background.html) page, which provides guidance for those who may be new to FHIR, reading FHIR IGs, or understanding some of the other key technologies used in this guide.
 
-* The [Use Cases & Overview](usecases.html) page, which provides context for what this formal specification is trying to accomplish and will give a sense of both the business context and general process flow enabled by the formal specification below.
+* The [Use Cases](usecases.html) page, which provides context for what this formal specification is trying to accomplish and will give a sense of both the business context and general process flow enabled by the formal specification below.
 
-* The [Technical Background](background.html) page, which provides information about the underlying specifications and recommends portions that must be read and understood to have the necessary foundation to understand the constraints and usage guidance described here.
-
-#### Conventions
-This implementation guide uses specific terminology to flag statements that have relevance for the evaluation of conformance with the guide:
-
-* **SHALL** indicates requirements that must be met to be conformant with the specification.
-
-* **SHOULD** indicates behaviors that are strongly recommended and which could result in interoperability issues or sub-optimal behavior if not adhered to, but which do not - for this version of the specification - affect the determination of specification conformance.
-
-* **MAY** indicates optional behaviors that implementers are free to consider but where there is no recommendation for or against adoption.
-
-#### MustSupport
-Profiles in this implementation guide make use of the [mustSupport]({{site.data.fhir.path}}profiling.html#mustsupport) element.
-
-For data provided from CRD clients:
-
-* If the CRD client maintains the data element and surfaces it to users, then it **SHALL** be exposed in their FHIR interface when the data exists and privacy constraints permit.
-
-* CRD servers **SHALL** leverage mustSupport elements as available and appropriate to provide decision support.
-
-For responses provided by CRD servers:
-
-* CRD servers **SHALL** populate the element if an appropriate value exists. 
-
-* CRD clients **SHALL** make the data available to the appropriate user (clinical or administrative) or leverage the data within their workflow as necessary to follow the intention of the provided decision support.
-
-NOTE: These requirements are somewhat different from US Core and HRex because the implementation needs are different. In US Core, there is generally an expectation for clients to modify code and persistence layers to add support for 'mustSupport' elements in profiles. This expectation does not hold for CRD. However, CRD does require surfacing elements in the FHIR interface if the system maintains the element.
-
-#### Profiles
-This specification makes significant use of [FHIR profiles]({{site.data.fhir.path}}profiling.html), search parameter definitions, and terminology artifacts to describe the content to be shared as part of CDS Hook calls. The implementation guide supports FHIR [R4]({{site.data.fhir.path}}) with profiles listed for each type of hook.
-
-The full set of profiles defined in this implementation guide can be found by following the links on the [Artifacts](allartifacts.html) page.
-
-#### US Core
-This implementation guide also leverages the [US Core 3.1]({{site.data.fhir.ver.uscore3}}), [US Core 6.1]({{site.data.fhir.ver.uscore6}}), and [US Core 7.0]({{site.data.fhir.ver.uscore7}}) set of profiles defined by HL7 for sharing non-veterinary EHR individual health data in the United States. Where US Core profiles exist, this guide either leverages them directly or uses them as a base for any additional constraints needed to support the coverage requirements discovery use case. Where no constraints are needed, this IG does not define additional profiles, as all US Core profiles are deemed to be part of this IG and available for use in CRD communications. For example, the US Core Observation and Condition profiles are likely to be of interest in at least some CRD scenarios and may be used by solutions conformant to this guide.
-
-Where US Core profiles do not yet exist (e.g., for several of the 'Request' resources), profiles have been created that try to align with existing US Core profiles in terms of elements exposed and terminologies used.
-
-Note that, in some cases, the US Core profiles require support for data elements that are not necessarily relevant to the CRD use case. The authors of this IG believe that leveraging existing standard interfaces will promote greater (and quicker) interoperability than would a more finely-tuned custom interface. CRD clients might still choose to restrict what information is exposed to CRD servers based on their internal data access and governance rules.
-
-Conformance expectations with respect to US Core in this IG are the same as [those defined in HRex]({{site.data.fhir.ver.hrex}}/conformance.html#uscore).
+* The [Burden Reduction](burden.html) page, which provides information about how this guide works together with other Da Vinci guides in the burden reduction space.
 
 ### Performance
 Depending on their location within the workflow, CDS Hooks may be processed in a synchronous manner. This means that the user who is performing the business action that triggers the hook might be blocked from continuing the action until cards have been returned by the CDS service. For example, a CRD client might not allow progress of an 'order sign' business action until decision support has been returned from all order-sign services and the user has had a chance to interact with any cards they deem relevant. The corollary to this is that services must respond to hook invocations quickly to avoid impeding clinician workflow - and turning the intended benefit of CRD into a detriment.

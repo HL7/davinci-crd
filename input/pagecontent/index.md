@@ -76,20 +76,34 @@ CRD servers (or servers) are systems that act on behalf of payer organizations t
 There are is a single [set of capabilities for CRD servers](CapabilityStatement-crd-server.html) that spans USCDI v1 (US-Core 3.1.1) USCDI v3 (US-Core 6.1.0), and USCDI v4 (US-Core 7.0.0) expectations.  Payers will need to be handle content from any of the releases, as CRD clients will be transitioning support for the versions at different times - and in some cases may provide content that spans a mixture of versions.
 
 ### Content and Organization
-This implementation guide is organized into the following sections:
+This implementation guide (and the menu for it) is organized into the following sections:
 
-* [Use Cases and Overview](usecases.html) describes the intent of the implementation guide, gives examples of its use, and provides a high-level overview of expected process flow
-* [Technical Background](background.html) identifies related specifications this implementation guide builds upon that developers should read and understand prior to implementing this specification
-* [ePA Coordinators](epa.html) acknowledges that neither the payer nor provider systems involved in CRD are monolithic and shows how the various components of provider and payer systems might interact with "ePA Coordinator" systems to satisfy the requirements of this IG
-* [Foundational Guidance](foundation.html) covers the detailed requirements and conformance expectations that apply to all implementations
-* [Privacy, Security, and Safety](security.html) covers considerations around data access, protection, and similar concepts that apply to all implementations
-* [Deviations and Enhancements](deviations.html) covers detailed implementation requirements and conformance expectations that are independent of particular hooks or cards
-* [Supported Hooks](hooks.html) identifies the expectations for support for specific CDS hooks
-* [Card Profiles](cards.html) defines patterns for CDS Hook cards that can be returned as part of this specification
-* [Implementation Guidance](implementation.html) provides recommendations for implementation that fall outside the technical scope of the specification
-* [Artifacts](allartifacts.html) introduces and provides links to the profiles, search parameters and other FHIR artifacts used in this implementation guide
-* [Downloads](downloads.html) allows download of this and other specifications, as well as other useful files
-* [Credits](credits.html) identifies the individuals and organizations involved in developing this implementation guide
+* *Background* - Supporting informative pages that do not set conformance expectations
+  * [Reading this IG](background.html) points to key pages in the FHIR spec and other source specifications that must be understood in order to understand this guide
+  * [Use Cases](usecases.html) describes the intent of the implementation guide, gives examples of its use, and provides a high-level overview of expected process flow
+  * [Project and Participants](credits.html) gives a high-level overview of Da Vinci and identifies the individuals and organizations involved in developing this implementation guide
+  * [Burden Reduction](burden.html) identifies related specifications this implementation guide builds upon that developers should read and understand prior to implementing this specification
+  * [ePA Coordinators](epa.html) acknowledges that neither the payer nor provider systems involved in CRD are monolithic and shows how the various components of provider and payer systems might interact with "ePA Coordinator" systems to satisfy the requirements of this IG
+* *Specification* - Pages that set conformance expectations
+  * [Conformance Expectations](conformance.html) defines base language and expectations for declaring conformance with the guide
+  * [Privacy, Security, and Safety](security.html) covers considerations around data access, protection, and similar concepts that apply to all implementations
+  * [Foundational Guidance](foundation.html) covers high-level conofmrance expectations  that apply to all implementations
+  * [Deviations and Enhancements](deviations.html) covers detailed implementation requirements and conformance expectations that are independent of particular hooks or cards
+  * [Supported Hooks](hooks.html) identifies the expectations for support for specific CDS hooks
+  * [Hook Response Profiles](cards.html) defines patterns for CDS Hook cards and system actions that can be returned as part of this specification
+  * [Implementation Guidance](implementation.html) provides recommendations for implementation that fall outside the technical scope of the specification
+  * [CRD Metrics](metrics.html) provides a logical model describing how to capture data that may be relevant to measuring or reporting on CRD use
+* *FHIR Artifacts*
+  * [Artifacts Overview](allartifacts.html) introduces and provides links to the profiles, search parameters and other FHIR artifacts used in this implementation guide
+  * Additional links point to complete lists of all artifacts defined in this guides as well as ancestor guides
+* *Base Specifications* - Quick links to the various specifications this guide derives from
+* *Support* - Links to help with use of this guide
+  * *Discussion Forum* is a place to ask questions about the guide, discuss potential issues, and search through prior discussions
+  * *Project Home* includes information about project calls, agendas, past minutes, and instructions for how to participate
+  * *Implementer Support* provides information about reference implementations, resources for testing, known errata, regulatory considerations, and practical implementation pathways
+  * *Project Dashoard* shows new and historical issues that have been logged against the specification, proposed dispositions, unapplied changes, etc.
+  * *Propose a Change* allows formal submission of requests for change to the specification.  (Consider raising on the discussion forum first.)
+  * [Downloads](downloads.html) allows download of this and other specifications, as well as other useful files
 
 ### Dependencies
 This guide is based on the [FHIR R4]({{site.data.fhir.path}}) specification that is mandated for use in the U.S. as well as the [CDS Hooks 2.0](https://cds-hooks.hl7.org/2.0) and [CDS Hooks CI Build](https://cds-hooks.org/specification/current/) releases of the CDS Hooks specification.  It also leverages the [SMART on FHIR](http://hl7.org/fhir/smart-app-launch) specification for CRD clients that opt to use that approach for "what-if" scenarios.

@@ -1,27 +1,3 @@
-### Da Vinci
-Da Vinci is an HL7-sponsored project that brings together U.S. payers, providers, and technology suppliers (including CRD client vendors) to help payers and providers improve clinical, quality, cost, and care management outcomes using FHIR-related technologies. The project organizes meetings (face-to-face and conference calls) and connectathons to find ways to leverage FHIR technologies to support and integrate value-based care (VBC) data exchange across communities. Da Vinci identifies value-based care use cases of interest to its members and to the broader community.
-
-The process that Da Vinci has adopted includes:
-1. identifying business, clinical, technical, and testing requirements
-2. developing and balloting a FHIR-based implementation guide (IG)
-3. developing reference implementations (RIs) to demonstrate that the concepts in the IG are possible to implement
-4. piloting the standard
-5. supporting the production use of the IG to enable exchange of data to support interoperability for value-based care
-
-Additional information about Da Vinci, its members, the use cases, and the implementation guides being developed can all be found on the [HL7 website](http://www.hl7.org/about/davinci). Meeting minutes and other materials can be found on the [Da Vinci Confluence page](https://confluence.hl7.org/display/DVP).
-
-{% include burdenReduction.md %}
-
-### Systems
-The CRD implementation guide defines the responsibilities of the two types of systems involved in a CRD solution:
-
-**CRD clients** are typically systems that healthcare providers use at the point of care including electronic medical records systems, pharmacy systems, and other provider and administrative systems used for ordering, documenting, and executing patient-related services. Users of these systems need coverage requirements information to support care planning.
-
-**CRD servers** (or servers) are systems that act on behalf of payer organizations to share information with healthcare providers about rules and requirements related to healthcare products and services covered by a patient's health plan. A CRD server will provide coverage information related to one or more insurance plans. CRD servers are a type of CDS service as defined in the CDS Hooks Specification.
-
-### Users
-The 'CDS' in 'CDS Hooks' stands for 'Clinical Decision Support'. However, the mechanism actually supports a variety of types of decision support and the responsible HL7 work group has confirmed that conveying guidance that isn't strictly clinical, and providing guidance to non-clinical users (clerks, schedulers, etc.) is appropriate. Because all decision support provided by a CRD server is fully automated, there will be no human intervention on the payer side. If an automated system doesn't have enough information to provide guidance without human input, then no guidance will be provided.
-
 ### Underlying Technologies
 This guide is based on the [HL7 FHIR]({{site.data.fhir.path}}index.html) standard, as well as the [CDS Hooks](https://cds-hooks.hl7.org) and [SMART on FHIR](http://hl7.org/fhir/smart-app-launch/index.html) specifications, which build additional capabilities on top of FHIR. This architecture is intended to maximize the number of provider systems that conform to this guide, as well as to allow for easy growth and extensibility of system capabilities in the future.
 

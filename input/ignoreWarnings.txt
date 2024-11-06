@@ -1,15 +1,18 @@
 == Suppressed Messages ==
 
 # This will go away once HRex 1.1 is published
-ERROR: D:\Git\_IGs\davinci-crd2\output\CapabilityStatement-crd-server.html#/html/body/div/div/div/div/div/div/div/div/blockquote/div/p/a at Line 365, column 165: The link 'http://hl7.org/fhir/us/davinci-hrex/STU1.1/security.html' for "HRex implementation guide" cannot be resolved
+ERROR: D:\Git\_IGs\davinci-crd2\output\CapabilityStatement-crd-server.html#/html/body/div/div/div/div/div/div/div/div/blockquote/div/p/a at Line 374, column 165: The link 'http://hl7.org/fhir/us/davinci-hrex/STU1.1/security.html' for "HRex implementation guide" cannot be resolved
 ERROR: CapabilityStatement.text.div: Hyperlink 'http://hl7.org/fhir/us/davinci-hrex/STU1.1/security.html' at 'div/div/div/blockquote/div/p/a' for 'HRex implementation guide' does not resolve
 
 # In https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/Inter-IG.20link.20issue, Grahame confirms this is a US Core 7 issue - nothing we can do about it.
-ERROR: D:\Git\_IGs\davinci-crd2\output\StructureDefinition-profile-servicerequest-definitions.html#/html/body/div/div/div/div/div/div/div/table/tr/td/p/a at Line 512, column 686: The link 'http://hl7.org/fhir/us/core/STU7/servicerequest-example-di.html' for "CT Scan example" cannot be resolved
-ERROR: D:\Git\_IGs\davinci-crd2\output\StructureDefinition-profile-servicerequest-definitions.html#/html/body/div/div/div/div/div/div/div/table/tr/td/p/a at Line 674, column 595: The link 'http://hl7.org/fhir/us/core/STU7/servicerequest-example-di.html' for "CT Scan example" cannot be resolved
+ERROR: D:\Git\_IGs\davinci-crd2\output\StructureDefinition-profile-servicerequest-definitions.html#/html/body/div/div/div/div/div/div/div/table/tr/td/p/a at Line 521, column 686: The link 'http://hl7.org/fhir/us/core/STU7/servicerequest-example-di.html' for "CT Scan example" cannot be resolved
+ERROR: D:\Git\_IGs\davinci-crd2\output\StructureDefinition-profile-servicerequest-definitions.html#/html/body/div/div/div/div/div/div/div/table/tr/td/p/a at Line 683, column 595: The link 'http://hl7.org/fhir/us/core/STU7/servicerequest-example-di.html' for "CT Scan example" cannot be resolved
+
+# This *is* referenced.  Tooling is incorrectly reporting this warning.  Raised on Zulip
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CDSHookServiceResponseExtensionAssociatedResource'): The Implementation Guide contains no examples for this data type profile
 
 # This link is intended to be version-independent
-WARNING: D:\Git\_IGs\davinci-crd2\output\background.html#/html/body/div/div/div/div/div/ol/li/a at Line 313, column 8: The link 'http://hl7.org/fhir/us/davinci-crd' for "Coverage Requirements Discovery (CRD)" is a canonical link and is therefore unsafe with regard to versions
+WARNING: D:\Git\_IGs\davinci-crd2\output\burden.html#/html/body/div/div/div/div/div/ol/li/a at Line 305, column 8: The link 'http://hl7.org/fhir/us/davinci-crd' for "Coverage Requirements Discovery (CRD)" is a canonical link and is therefore unsafe with regard to versions
 
 # This will occur in the next major release
 INFORMATION: CodeSystem/temp: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)

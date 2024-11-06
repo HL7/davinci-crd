@@ -1,9 +1,6 @@
 <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
   <li>
-    <a href="{{site.data.info.assets}}toc.html">Table of Contents</a>
-  </li>
-  <li>
-    <a href="{{site.data.info.assets}}index.html">Home</a>
+    <a href="{{site.data.info.assets}}index.html">IG Home</a>
   </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Background<b class="caret">
@@ -11,19 +8,19 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="{{site.data.info.assets}}usecases.html">Use Cases and Overview</a>
+        <a href="{{site.data.info.assets}}background.html">Reading this IG</a>
       </li>
       <li>
-        <a href="{{site.data.info.assets}}background.html">Technical Background</a>
+        <a href="{{site.data.info.assets}}usecases.html">Use Cases</a>
+      </li>
+      <li>
+        <a href="{{site.data.info.assets}}credits.html">Project and Participants</a>
+      </li>
+      <li>
+        <a href="{{site.data.info.assets}}burden.html">Burden Reduction</a>
       </li>
       <li>
         <a href="{{site.data.info.assets}}epa.html">ePA Coordinators</a>
-      </li>
-      <li>
-        <a href="{{site.data.info.assets}}credits.html">Credits</a>
-      </li>
-      <li>
-        <a href="{{site.data.info.assets}}history.html">Change History</a>
       </li>
     </ul>
   </li>
@@ -33,10 +30,13 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="{{site.data.info.assets}}foundation.html">Foundational Guidance</a>
+        <a href="{{site.data.info.assets}}conformance.html">Conformance Expectations</a>
       </li>
       <li>
-        <a href="{{site.data.info.assets}}security.html">Privacy, Security, and Safety</a>
+        <a href="{{site.data.info.assets}}security.html">Privacy, Safety, and Security</a>
+      </li>
+      <li>
+        <a href="{{site.data.info.assets}}foundation.html">Foundational Guidance</a>
       </li>
       <li>
         <a href="{{site.data.info.assets}}deviations.html">Deviations and Enhancements</a>
@@ -45,7 +45,7 @@
         <a href="{{site.data.info.assets}}hooks.html">Supported Hooks</a>
       </li>
       <li>
-        <a href="{{site.data.info.assets}}cards.html">Card Profiles</a>
+        <a href="{{site.data.info.assets}}cards.html">Hook Response Profiles</a>
       </li>
       <li>
         <a href="{{site.data.info.assets}}implementation.html">Implementation Guidance</a>
@@ -86,6 +86,9 @@
         <a target="_blank" href="{{site.data.fhir.path}}index.html">FHIR R4 Spec</a>
       </li>
       <li>
+        <a target="_blank" href="{{site.data.fhir.ver.hrex}}">HRex 1.1.0</a>
+      </li>
+      <li>
         <a target="_blank" href="{{site.data.fhir.ver.uscore3}}">US Core 3.1.1</a>
       </li>
       <li>
@@ -108,20 +111,26 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a target="_blank" href="https://confluence.hl7.org/pages/viewpage.action?pageId=91980079">Project Home</a>
-      </li>
-      <li>
         <a target="_blank" href="https://chat.fhir.org/#narrow/stream/180803-Da-Vinci-CRD">Discussion Forum</a>
       </li>
       <li>
-        <a target="_blank" href="https://confluence.hl7.org/display/DVP/CRD+Supplemental+Guide">Supplemental Guide</a>
+        <a target="_blank" href="https://confluence.hl7.org/pages/viewpage.action?pageId=91980079">Project Page</a>
       </li>
       <li>
-        <a target="_blank" href="http://hl7.org/fhir-issues">Propose a Change</a>
+        <a target="_blank" href="https://confluence.hl7.org/display/DVP/CRD+Implementer+Support">Implementer Support</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://jira.hl7.org/secure/Dashboard.jspa?selectPageId=17027">Specification Dashboard</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://jira.hl7.org/secure/CreateIssueDetails!init.jspa?pid=10405&amp;issuetype=10600&amp;customfield_11302=FHIR-us-davinci-crd">Propose a Change</a>
       </li>
       <li>
         <a href="{{site.data.info.assets}}downloads.html">Downloads</a>
       </li>
     </ul>
+  </li>
+  <li>
+    <a href="{{site.data.info.assets}}history.html">Change Log</a>
   </li>
 </ul>

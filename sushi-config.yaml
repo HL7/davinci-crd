@@ -101,19 +101,28 @@ dependencies:
 pages:
   index.md:
     title: CRD IG Home Page
-  usecases.md:
-    title: Use Cases and Overview
   background.md:
-    title: Technical Background
+    title: Reading this IG
+  usecases.md:
+    title: Use Cases
+  credits.md:
+    title: Project and Participants
+  burden.md:
+    title: Burden Reduction
   epa.md:
     title: ePA Coordinators
-  foundation.md:
-    title: Foundational Requirements
+  conformance.md:
+    title: Conformance Expectations
     extension:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
         valueCode: trial-use
   security.md:
     title: Privacy, Security, and Safety
+    extension:
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: trial-use
+  foundation.md:
+    title: Foundational Requirements
     extension:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
         valueCode: trial-use
@@ -145,8 +154,6 @@ pages:
       title: Artifact List
   downloads.md:
     title: Downloads
-  credits.md:
-    title: Credits
   history.md:
     title: Change History
 groups:
@@ -158,6 +165,10 @@ groups:
       - CDSHookServiceResponseExtensionIfNoneExist
       - CDSHookServiceResponseExtensionAssociatedResource
       - CDSHookServiceRequestExtensionRequestConfig
+  - ex-example-hooks:
+    id: ex-example-hooks
+    name: "Examples: CDS Hooks Examples"
+    description: "Examples of CDS Hooks JSON instances"
 resources:
   Binary/CRDServices:
     name: "Example CRD Services Response"

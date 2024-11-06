@@ -20,7 +20,7 @@ As a result, there are 2 different lists of artifacts: one for this Da Vinci imp
   </tr>
 </table>
 
-Additional information about the use of these artifacts, Coverage Requirements Discovery (CRD), and the use of US Core can be found in the [Foundational section](foundation.html#profiles).
+Additional information about the use of these artifacts, Coverage Requirements Discovery (CRD), and the use of US Core can be found in the [Conformance section](conformance.html#profiles).
 
 These FHIR artifacts define the clinical data that can be provided by CRD clients when invoking CDS Hooks, queried (or retrieved using [prefetch](foundation.html#prefetch)) from CRD clients by CRD servers and/or returned to client systems by hook services within [cards](cards.html).
 

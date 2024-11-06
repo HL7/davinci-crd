@@ -1,0 +1,1002 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "davinci-crd",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+      "valueCode": "trial-use"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+      "valueInteger": 3
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+      "valueCode": "fm"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/davinci-crd/ImplementationGuide/davinci-crd",
+  "version": "2.1.0",
+  "name": "CoverageRequirementsDiscovery",
+  "title": "Da Vinci - Coverage Requirements Discovery",
+  "status": "active",
+  "experimental": false,
+  "publisher": "HL7 International / Financial Management",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/fm"
+        }
+      ]
+    }
+  ],
+  "description": "Guidelines for conveying coverage requirements to clinicians when planning treatment",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "US",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "packageId": "hl7.fhir.us.davinci-crd",
+  "license": "CC0-1.0",
+  "fhirVersion": [
+    "4.0.1"
+  ],
+  "dependsOn": [
+    {
+      "id": "tx",
+      "packageId": "hl7.terminology",
+      "uri": "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
+      "version": "6.0.2",
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-ImplementationGuide.dependsOn.reason",
+          "valueMarkdown": "Shared terminology used across HL7 specifications\n"
+        }
+      ]
+    },
+    {
+      "id": "uscore3",
+      "packageId": "hl7.fhir.us.core.v311",
+      "uri": "http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core",
+      "version": "3.1.1",
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-ImplementationGuide.dependsOn.reason",
+          "valueMarkdown": "Defines USCDI v1 EHR expectations on a range of resources that will be passed to and/or queried by CRD servers.  \n"
+        }
+      ]
+    },
+    {
+      "id": "uscore6",
+      "packageId": "hl7.fhir.us.core",
+      "version": "6.1.0",
+      "uri": "http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core",
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-ImplementationGuide.dependsOn.reason",
+          "valueMarkdown": "Defines USCDI v3 EHR expectations on a range of resources that will be passed to and/or queried by CRD servers\n"
+        }
+      ]
+    },
+    {
+      "id": "uscore7",
+      "packageId": "hl7.fhir.us.core.v700",
+      "uri": "http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core",
+      "version": "7.0.0",
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-ImplementationGuide.dependsOn.reason",
+          "valueMarkdown": "Defines USCDI v4 EHR expectations on a range of resources that will be passed to and/or queried by CRD servers.  \n"
+        }
+      ]
+    },
+    {
+      "id": "sdc",
+      "packageId": "hl7.fhir.uv.sdc",
+      "version": "3.0.0",
+      "uri": "http://hl7.org/fhir/uv/sdc/ImplementationGuide/hl7.fhir.uv.sdc",
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-ImplementationGuide.dependsOn.reason",
+          "valueMarkdown": "Defines expecations for Questionnaires prompted for by cards\n"
+        }
+      ]
+    },
+    {
+      "id": "hrex",
+      "packageId": "hl7.fhir.us.davinci-hrex",
+      "version": "current",
+      "uri": "http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex",
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-ImplementationGuide.dependsOn.reason",
+          "valueMarkdown": "Defines common conformance rules across all Da Vinci IGs, as well as additional constraints and profiles beyond U.S. Core\n"
+        }
+      ]
+    },
+    {
+      "id": "vsac",
+      "packageId": "us.nlm.vsac",
+      "uri": "http://fhir.org/packages/us.nlm.vsac/ImplementationGuide/us.nlm.vsac",
+      "version": "0.19.0",
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-ImplementationGuide.dependsOn.reason",
+          "valueMarkdown": "Defines some of the US Core value set bound to in this IG\n"
+        }
+      ]
+    },
+    {
+      "id": "tools",
+      "packageId": "hl7.fhir.uv.tools",
+      "uri": "http://hl7.org/fhir/tools/ImplementationGuide/hl7.fhir.uv.tools",
+      "version": "current",
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-ImplementationGuide.dependsOn.reason",
+          "valueMarkdown": "Defines CDS Hooks structures leveraged in the validation of this IG\n"
+        }
+      ]
+    }
+  ],
+  "definition": {
+    "grouping": [
+      {
+        "id": "-str-logicalmodel-hooks",
+        "name": "Structures: CDS Hooks Extensions",
+        "description": "Models that define extensions on CDS Hooks JSON structures"
+      },
+      {
+        "id": "-ex-example-hooks",
+        "name": "Example: CDS Hooks Examples",
+        "description": "Examples of CDS Hooks JSON instances"
+      }
+    ],
+    "resource": [
+      {
+        "reference": {
+          "reference": "Appointment/example2"
+        },
+        "name": "Appointment example",
+        "description": "Example stand-alone appointment populated based on CRD profile",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-appointment-no-order"
+      },
+      {
+        "reference": {
+          "reference": "Appointment/example1"
+        },
+        "name": "Appointment ServiceRequest example",
+        "description": "Example appointment tied to a SeriveRequest based on CRD profile",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-appointment-with-order"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/cdsHookType"
+        },
+        "name": "CDS Hook Types Value Set",
+        "description": "Codes identifying a type of CDS Hook",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/cardActions"
+        },
+        "name": "CDS Hooks Card Suggestion Action Types Value Set",
+        "description": "Codes allowed for defining the type of action in a CDS Hooks suggestion",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/CDSHookServiceRequestExtensionRequestConfig"
+        },
+        "description": "Allows passing configuration parameters when invoking a card",
+        "exampleBoolean": false,
+        "name": "CDS Hooks Service Request Configuration Extension",
+        "groupingId": "-str-logicalmodel-hooks"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/CDSHookServiceResponseExtensionAssociatedResource"
+        },
+        "description": "Indicates a request resource that is one of those that drove the creation of the card",
+        "exampleBoolean": false,
+        "name": "CDS Hooks Service Response Associated Resource Extension",
+        "groupingId": "-str-logicalmodel-hooks"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/CDSHookServiceResponseExtensionIfNoneExist"
+        },
+        "description": "Indicates a value to assert as an if-none-exist header on a create or update action",
+        "exampleBoolean": false,
+        "name": "CDS Hooks Service Response If-None-Exist Extension",
+        "groupingId": "-str-logicalmodel-hooks"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/CDSHookServicesExtensionConfiguration"
+        },
+        "description": "An extension for the CDS Hooks 'services' object that indicates configuration options supported by the CDS server",
+        "exampleBoolean": false,
+        "name": "CDS Hooks Services Configuration Extension",
+        "groupingId": "-str-logicalmodel-hooks"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/cmslocationcodes"
+        },
+        "name": "CMS Location Codes Value Set",
+        "description": "Numeric codes defined by CMS to identify types of locations",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/CMSMappableLocationCodes"
+        },
+        "name": "CMS Mappable Location Codes",
+        "description": "Extends the base HL7-defined value set codes with supplementary codes needed to provide full coverage to the CMS location code set",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CommunicationRequest/example"
+        },
+        "name": "CommunicationRequest example",
+        "description": "Example communication request populated based on CRD profile",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-communicationrequest"
+      },
+      {
+        "reference": {
+          "reference": "Coverage/example"
+        },
+        "name": "Coverage example",
+        "description": "Example identified coverage populated based on CRD profile",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-coverage"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ext-coverage-information"
+        },
+        "name": "Coverage Information",
+        "description": "Captures assertions from a payer about whether the service is covered and/or requires prior authorization.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/afterCompletionCode"
+        },
+        "name": "CRD After Completion Code Value Set",
+        "description": "Actions to take after completing form",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/profile-appointment-base"
+        },
+        "name": "CRD Base Appointment",
+        "description": "This profile specifies extensions and constraints on the Appointment resource to support coverage requirements discovery.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/cardType"
+        },
+        "name": "CRD Card Types Value Set",
+        "description": "List of card types defined by the CRD spec",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/crd-client3.1"
+        },
+        "name": "CRD Client USCDI 1",
+        "description": "This statement defines the expected capabilities of systems wishing to conform to the ''CRD Client'' role for USCDI 1 (US Core 3.1.1).  This role is responsible for initiating CDS Hooks calls and consuming received decision support.  It is *also* responsible for returning data requested by the CRD Server needed to provide that decision support.  This capability statement doesn't define the CDS Hooks capabilities as there is no standard way to do that as yet.  Instead, it focuses on the 'server' capabilities needed to respond to CRD Server queries.  These capabilities are based on US Core.\n\nIn addition to the U.S. core expectations, the CRD Client **SHALL** support all 'SHOULD' 'read' and 'search' capabilities listed below for resources referenced in supported hooks and order types if it does not support returning the associated resources as part of CDS Hooks pre-fetch.  The CRD Client **SHALL** also support 'update' functionality for all resources listed below where the client allows invoking hooks based on the resource.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/crd-client6.1"
+        },
+        "name": "CRD Client USCDI 3",
+        "description": "This statement defines the expected capabilities of systems wishing to conform to the ''CRD Client'' role for USCDI 3 (US-Core 6.1.0).  This role is responsible for initiating CDS Hooks calls and consuming received decision support.  It is *also* responsible for returning data requested by the CRD Server needed to provide that decision support.  This capability statement doesn't define the CDS Hooks capabilities as there is no standard way to do that as yet.  Instead, it focuses on the 'server' capabilities needed to respond to CRD Server queries.  These capabilities are based on US Core.\n\nIn addition to the U.S. core expectations, the CRD Client **SHALL** support all 'SHOULD' 'read' and 'search' capabilities listed below for resources referenced in supported hooks and order types if it does not support returning the associated resources as part of CDS Hooks pre-fetch.  The CRD Client **SHALL** also support 'update' functionality for all resources listed below where the client allows invoking hooks based on the resource.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/crd-client7.0"
+        },
+        "name": "CRD Client USCDI 4",
+        "description": "This statement defines the expected capabilities of systems wishing to conform to the ''CRD Client'' role for USCDI 4 (US-Core 7.9.0).  This role is responsible for initiating CDS Hooks calls and consuming received decision support.  It is *also* responsible for returning data requested by the CRD Server needed to provide that decision support.  This capability statement doesn't define the CDS Hooks capabilities as there is no standard way to do that as yet.  Instead, it focuses on the 'server' capabilities needed to respond to CRD Server queries.  These capabilities are based on US Core.\n\nIn addition to the U.S. core expectations, the CRD Client **SHALL** support all 'SHOULD' 'read' and 'search' capabilities listed below for resources referenced in supported hooks and order types if it does not support returning the associated resources as part of CDS Hooks pre-fetch.  The CRD Client **SHALL** also support 'update' functionality for all resources listed below where the client allows invoking hooks based on the resource.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/profile-communicationrequest"
+        },
+        "name": "CRD Communication Request",
+        "description": "This profile specifies constraints on the CommunicationRequest resource to support coverage requirements discovery.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/configTypes"
+        },
+        "name": "CRD Configuration Code Data Types Value Set",
+        "description": "Allowed data types for configuration settings in the CDS Hook configuration extension",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/profile-coverage"
+        },
+        "name": "CRD Coverage",
+        "description": "This profile specifies constraints on the Coverage resource to support coverage requirements discovery.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/coverageAssertionReasons"
+        },
+        "name": "CRD Coverage Assertion Reasons",
+        "description": "Reasons for a coverage assertion in the coverage-information extension",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/coverageClass"
+        },
+        "name": "CRD Coverage Classes Value Set",
+        "description": "Restriction of coverage classes for CRD purposes",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/coverageDetail"
+        },
+        "name": "CRD Coverage Detail Codes Value Set",
+        "description": "Codes for name-value-pair details on a coverage assertion",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/AdditionalDocumentation"
+        },
+        "name": "CRD Coverage Information Additional Documentation Value Set",
+        "description": "Codes defining whether additional documentation needs to be captured",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/coverageInfo"
+        },
+        "name": "CRD Coverage Information Covered Value Set",
+        "description": "Codes defining whether the ordered/requested service is covered under patient's plan",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/DocReason"
+        },
+        "name": "CRD Coverage Information Documentation Reason Value Set",
+        "description": "List of reasons for additional documentation",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/coveragePaDetail"
+        },
+        "name": "CRD Coverage Information Prior Authorization Value Set",
+        "description": "Codes defining whether prior auth will be needed for coverage to be provided",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/profile-device"
+        },
+        "name": "CRD Device",
+        "description": "This profile specifies additional constraints on the US Core Device Profile to support coverage requirements discovery.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/profile-devicerequest"
+        },
+        "name": "CRD Device Request",
+        "description": "This profile specifies extensions and constraints on the DeviceRequest resource to support coverage requirements discovery.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/deviceRequest"
+        },
+        "name": "CRD Device Request Codes Value Set",
+        "description": "Codes for ordering devices.\n\nNOTE: This value set contains many inappropriate codes because the underlying code systems do not provide a straight-forward mechanism to select only device-related codes and, given the evolving nature of the underlying code systems, strict enumeration is not a viable approach to defining the value set.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/profile-task-dispatch"
+        },
+        "name": "CRD Dispatch Task",
+        "description": "This profile specifies constraints on the Task resource to capture details of dispatching a request to a particular performer.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/profile-encounter"
+        },
+        "name": "CRD Encounter",
+        "description": "This profile specifies additional extensions and constraints on the US Core Encounter profile to support coverage requirements discovery.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/informationNeeded"
+        },
+        "name": "CRD Information Needed Value Set",
+        "description": "Codes defining whether information about the perfomer, location, and/or performance date is needed to determine coverage information",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/profile-location"
+        },
+        "name": "CRD Location",
+        "description": "This profile specifies constraints on the US Core Location profile to support coverage requirements discovery.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/locationAddressType"
+        },
+        "name": "CRD Location Address Types Value Set",
+        "description": "Address codes allowed for CRD locations - those that are physical addresses",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/profile-medicationrequest"
+        },
+        "name": "CRD Medication Request",
+        "description": "This profile specifies additional constraints on the US Core MedicationRequest profile to support coverage requirements discovery.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/CRDMetricData"
+        },
+        "name": "CRD Metric Data",
+        "description": "A logical model describing the information that should be captured by CRD implementers about every CRD invocation to support measures evaluating CRD implementation",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/metricDataSource"
+        },
+        "name": "CRD Metric Data Source Value Set",
+        "description": "A list of codes indicating the perspective from which metric data was captured",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/metricTokenUse"
+        },
+        "name": "CRD Metric Token Use",
+        "description": "A list of codes indicating whether an access token was used as part of CDS Hook processing",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/profile-nutritionorder"
+        },
+        "name": "CRD Nutrition Order",
+        "description": "This profile specifies extensions and constraints on the NutritionOrder resource to support coverage requirements discovery.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/orderDetail"
+        },
+        "name": "CRD Order Detail Codes Value Set",
+        "description": "Detail codes for products and services that are the focus of a CRD call",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/profile-organization"
+        },
+        "name": "CRD Organization",
+        "description": "This profile specifies additional constraints on the US Core Organization profile to support coverage requirements discovery.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/profile-patient"
+        },
+        "name": "CRD Patient",
+        "description": "This profile specifies additional constraints on the US Core Patient profile to support coverage requirements discovery.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/profile-taskquestionnaire"
+        },
+        "name": "CRD Questionnaire Task",
+        "description": "This profile specifies constraints on the Task resource to support requests for form (Questionnaire) completion.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/crd-server"
+        },
+        "name": "CRD Server USCDI 1, 3, 4",
+        "description": "This statement defines the expected capabilities of systems wishing to conform to the ''CRD Server'' role for USCDI 1 (US-Core 3.1.1), USCDI 3 (US-Core 6.1.0), and USCDI 4 (US-Core 7.0.0).  This role is responsible for responding to CDS Hooks calls and responding with appropriate decision support.  Much of its interactions will be with payer back-end systems over non-FHIR protocols.  This CapabilityStatement does not describe these 'server <-> payer' interactions.  Instead, it focuses on the ability of the CRD service to interact with the CRD client's FHIR endpoint to retrieve additional data.  All such interactions are optional, as their necessity is dependent on what types of information is needed to support payer rules, the types of coverage the payer offers, and the degree of sophistication of the decision support offered by the CRD server.  All resources and search parameters supported by US Core are fair game, though the [3.1.1](CapabilityStatement-crd-client3.1.html), [6.1.0](CapabilityStatement-crd-client6.1.html), and [7.0.0](CapabilityStatement-crd-client7.0.html) clients might vary in which resources they support.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/profile-servicerequest"
+        },
+        "name": "CRD Service Request",
+        "description": "This profile specifies constraints on the ServiceRequest resource to support coverage requirements discovery.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/serviceRequestCodes"
+        },
+        "name": "CRD Service Request Codes Value Set",
+        "description": "Example value set defines a set of CPT, SNOMED CT, HCPCS Level II and LOINC codes mirroring bindings found in the US Core Procedure and Observation Lab profiles",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/taskReason"
+        },
+        "name": "CRD Task Reason Codes Value Set",
+        "description": "Reasons for creating tasks in CRD",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/temp"
+        },
+        "name": "CRD Temporary Codes",
+        "description": "Codes temporarily defined as part of the CRD implementation guide.  These will eventually migrate into an officially maintained terminology (likely either SNOMED CT or HL7's UTG code systems).",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/profile-visionprescription"
+        },
+        "name": "CRD Vision Prescription",
+        "description": "This profile defines an initial profile on the VisionPrescription resource to support coverage requirements discovery.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/profile-appointment-no-order"
+        },
+        "name": "CRDAppointmentNoOrder",
+        "description": "An appointment where the details of what the appointment is being booked for are provided inline and there is no associated ServiceRequest",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/profile-appointment-with-order"
+        },
+        "name": "CRDAppointmentWithOrder",
+        "description": "An appointment where the details of what the appointment is being booked for are provided in the associated ServiceRequest",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Device/example"
+        },
+        "name": "Device example",
+        "description": "Example device populated based on CRD profile",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-device"
+      },
+      {
+        "reference": {
+          "reference": "DeviceRequest/example"
+        },
+        "name": "DeviceRequest example",
+        "description": "Example devicerequest populated based on CRD profile",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-devicerequest"
+      },
+      {
+        "reference": {
+          "reference": "Task/task-dispatch-example"
+        },
+        "name": "Dispatch Task example",
+        "description": "Example dispatch Task populated based on CRD profile",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-task-dispatch"
+      },
+      {
+        "reference": {
+          "reference": "Encounter/example"
+        },
+        "name": "Encounter example",
+        "description": "Example encounter populated based on CRD profile",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-encounter"
+      },
+      {
+        "reference": {
+          "reference": "Binary/CRDServiceRequest2"
+        },
+        "name": "Example CRD Service Request with ServiceRequests",
+        "description": "An example of a CRD request for order-sign with ServiceRequests",
+        "groupingId": "-ex-example-hooks",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format",
+            "valueCode": "application/json"
+          },
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-logical",
+            "valueCanonical": "http://hl7.org/fhir/tools/StructureDefinition/CDSHooksRequest"
+          }
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Binary/CRDServiceRequest"
+        },
+        "name": "Example CRD Service Requestion with MedicationRequests",
+        "description": "An example of a CRD request for order-sign with MedicationRequests",
+        "groupingId": "-ex-example-hooks",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format",
+            "valueCode": "application/json"
+          },
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-logical",
+            "valueCanonical": "http://hl7.org/fhir/tools/StructureDefinition/CDSHooksRequest"
+          }
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Binary/CRDServiceResponse"
+        },
+        "name": "Example CRD Service Response",
+        "description": "An example of a CRD response with links",
+        "groupingId": "-ex-example-hooks",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format",
+            "valueCode": "application/json"
+          },
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-logical",
+            "valueCanonical": "http://hl7.org/fhir/tools/StructureDefinition/CDSHooksResponse"
+          }
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Binary/CRDServiceResponse2"
+        },
+        "name": "Example CRD Service Response - Coverage Information",
+        "description": "An example CRD response with Coverage Information extension",
+        "groupingId": "-ex-example-hooks",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format",
+            "valueCode": "application/json"
+          },
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-logical",
+            "valueCanonical": "http://hl7.org/fhir/tools/StructureDefinition/CDSHooksResponse"
+          }
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Binary/CRDServices"
+        },
+        "name": "Example CRD Services Response",
+        "description": "An example of a CRD services response",
+        "groupingId": "-ex-example-hooks",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format",
+            "valueCode": "application/json"
+          },
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-logical",
+            "valueCanonical": "http://hl7.org/fhir/tools/StructureDefinition/CDSHooksServices"
+          }
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Bundle/search-response"
+        },
+        "description": "The response to a CRD service query for information not returned in prefetch",
+        "name": "Example EHR response",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Bundle/search-request"
+        },
+        "description": "Sample of an CRD service searching an EHR that does not support prefetch",
+        "name": "Example EHR search",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "ConceptMap/HL7Location-CRDTemp"
+        },
+        "name": "HL7 Location code to CMS location code",
+        "description": "A mapping between the location code mandated by HL7 with the equivalent concepts in the CMS code system (where equivalents exist)",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Location/example"
+        },
+        "name": "Location example",
+        "description": "Example location populated based on CRD profile",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-location"
+      },
+      {
+        "reference": {
+          "reference": "MedicationRequest/annotated-example"
+        },
+        "name": "MedicationRequest annotated example",
+        "description": "Example medication request with an annotation showing coverage expectations",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-medicationrequest"
+      },
+      {
+        "reference": {
+          "reference": "MedicationRequest/example"
+        },
+        "name": "MedicationRequest example",
+        "description": "Example medication request populated based on CRD profile",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-medicationrequest"
+      },
+      {
+        "reference": {
+          "reference": "NutritionOrder/example"
+        },
+        "name": "NutritionOder example",
+        "description": "Example nutrition order populated based on CRD profile",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-nutritionorder"
+      },
+      {
+        "reference": {
+          "reference": "Organization/example"
+        },
+        "name": "Organization example",
+        "description": "Example organization populated based on CRD profile",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-organization"
+      },
+      {
+        "reference": {
+          "reference": "Patient/example"
+        },
+        "name": "Patient example",
+        "description": "Example patient populated based on CRD profile",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-patient"
+      },
+      {
+        "reference": {
+          "reference": "Practitioner/full"
+        },
+        "name": "Practitioner full example",
+        "description": "An example showing a fully populated US Core Practitioner instance (used in CRD examples)",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Task/questionnaire-example"
+        },
+        "name": "Questionnaire Task example",
+        "description": "Example questionnaire-completion Task populated based on CRD profile",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-taskquestionnaire"
+      },
+      {
+        "reference": {
+          "reference": "ServiceRequest/example"
+        },
+        "name": "ServiceRequest example",
+        "description": "Example service request populated based on CRD profile",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-servicerequest"
+      },
+      {
+        "reference": {
+          "reference": "VisionPrescription/visionprescription-example"
+        },
+        "name": "VisionPrescription example",
+        "description": "Example vision prescription based on CRD profile",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-visionprescription"
+      }
+    ],
+    "page": {
+      "nameUrl": "toc.html",
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": [
+        {
+          "nameUrl": "index.html",
+          "title": "CRD IG Home Page",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "background.html",
+          "title": "Reading this IG",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "usecases.html",
+          "title": "Use Cases",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "credits.html",
+          "title": "Project and Participants",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "burden.html",
+          "title": "Burden Reduction",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "epa.html",
+          "title": "ePA Coordinators",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "conformance.html",
+          "title": "Conformance Expectations",
+          "generation": "markdown",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+              "valueCode": "trial-use"
+            }
+          ]
+        },
+        {
+          "nameUrl": "security.html",
+          "title": "Privacy, Safety, and Security",
+          "generation": "markdown",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+              "valueCode": "trial-use"
+            }
+          ]
+        },
+        {
+          "nameUrl": "foundation.html",
+          "title": "Foundational Requirements",
+          "generation": "markdown",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+              "valueCode": "trial-use"
+            }
+          ]
+        },
+        {
+          "nameUrl": "deviations.html",
+          "title": "CDS Hook Deviations and Enhancements",
+          "generation": "markdown",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+              "valueCode": "trial-use"
+            }
+          ]
+        },
+        {
+          "nameUrl": "hooks.html",
+          "title": "Supported Hooks",
+          "generation": "markdown",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+              "valueCode": "trial-use"
+            }
+          ]
+        },
+        {
+          "nameUrl": "cards.html",
+          "title": "CDS Hook Response Profiles",
+          "generation": "markdown",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+              "valueCode": "trial-use"
+            }
+          ]
+        },
+        {
+          "nameUrl": "implementation.html",
+          "title": "Implementation Considerations",
+          "generation": "markdown",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+              "valueCode": "trial-use"
+            }
+          ]
+        },
+        {
+          "nameUrl": "metrics.html",
+          "title": "CRD Metrics",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "allartifacts.html",
+          "title": "FHIR Artifacts",
+          "generation": "markdown",
+          "page": [
+            {
+              "nameUrl": "artifacts.html",
+              "title": "Artifact List",
+              "generation": "html"
+            }
+          ]
+        },
+        {
+          "nameUrl": "downloads.html",
+          "title": "Downloads",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "history.html",
+          "title": "Change History",
+          "generation": "markdown"
+        }
+      ]
+    },
+    "parameter": [
+      {
+        "code": "copyrightyear",
+        "value": "2019+"
+      },
+      {
+        "code": "releaselabel",
+        "value": "STU 2"
+      },
+      {
+        "code": "path-expansion-params",
+        "value": "../../input/terminology-settings.json"
+      },
+      {
+        "code": "apply-publisher",
+        "value": "true"
+      },
+      {
+        "code": "apply-contact",
+        "value": "true"
+      },
+      {
+        "code": "globals-in-artifacts",
+        "value": "true"
+      },
+      {
+        "code": "version-comparison",
+        "value": "2.0.0, 2.1.0-preview"
+      },
+      {
+        "code": "path-history",
+        "value": "http://hl7.org/fhir/us/davinci-crd/history.html"
+      }
+    ]
+  }
+}
