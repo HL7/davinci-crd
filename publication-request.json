@@ -6,6 +6,6 @@
   "status" : "trial-use",
   "mode" : "milestone",
   "sequence" : "STU 2.1",
-  "desc" : "STU 2.1.0",
-  "descmd" : "2.1.0 STU update with US Core 6.1 and 7.0.  See [list of changes](http://hl7.org/fhir/us/davinci-crd/STU2.1/history.html#2.1.0)"
+  "desc" : "STU 2.1.0 Release",
+  "descmd" : "STU 2.1.0 update with US Core 6.1 and 7.0.  See [list of changes](http://hl7.org/fhir/us/davinci-crd/STU2.1/history.html#2.1.0)"
 }
