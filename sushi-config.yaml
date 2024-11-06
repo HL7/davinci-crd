@@ -37,6 +37,7 @@ parameters:
   apply-contact: true
   globals-in-artifacts: true
   version-comparison: 2.0.0, 2.1.0-preview
+  shownav: true
 
 #  path-binary: input/hooks-files
     

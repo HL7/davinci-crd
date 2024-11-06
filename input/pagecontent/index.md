@@ -2,7 +2,7 @@
 {% endraw %}
 <blockquote class="stu-note">
 <p>
-This proposed STU update of the specification reflects several changes based on implementer feedback about the Coverage Requirements Discovery (hereafter,CRD) specification arising from detailed review, connectathons and implementation experience.  Significant changes to the specification are highlighted in green.  "STU notes" call out additional key considerations where feedback is desired.
+This STU update of the specification reflects several changes based on implementer feedback about the Coverage Requirements Discovery (hereafter,CRD) specification arising from detailed review, connectathons and implementation experience.  "STU notes" call out additional key considerations where feedback is desired.
 </p>
 <p>
 This specification is a Standard for Trial Use.  It is expected to continue to evolve and improve through connectathon testing and feedback from early adopters.
@@ -22,7 +22,7 @@ This implementation guide is dependent on other specifications.  Please submit a
 Individuals interested in participating in the Coverage Requirements Discovery implementation guide project or other HL7 Da Vinci projects can find information about Da Vinci [here](http://www.hl7.org/about/davinci).
 </p>
 <p>
-A summary of the major changes from the previous release can be found <a href="history.html">here</a>.  Major changes are highlighted in the specification as "added" or "changed".  Minor changes to wording are not highlighted, though there is a link at the bottom of each page allowing comparison to the prior published release.
+A summary of the major changes from the previous release can be found <a href="history.html">here</a>.
 </p>
 </blockquote>
 
@@ -118,4 +118,3 @@ This implementation guide defines additional constraints and usage expectations 
 This implementation guide and the underlying FHIR specification are licensed as public domain under the [FHIR license](http://hl7.org/fhir/R4/license.html#license). The license page also describes rules for the use of the FHIR name and logo.
 
 {% include ip-statements.xhtml %}
-
