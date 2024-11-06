@@ -117,7 +117,7 @@ pages:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
         valueCode: trial-use
   security.md:
-    title: Privacy, Security, and Safety
+    title: Privacy, Safety, and Security
     extension:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
         valueCode: trial-use
@@ -167,7 +167,7 @@ groups:
       - CDSHookServiceRequestExtensionRequestConfig
   - ex-example-hooks:
     id: ex-example-hooks
-    name: "Examples: CDS Hooks Examples"
+    name: "Example: CDS Hooks Examples"
     description: "Examples of CDS Hooks JSON instances"
 resources:
   Binary/CRDServices:

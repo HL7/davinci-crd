@@ -86,7 +86,7 @@ This implementation guide (and the menu for it) is organized into the following 
   * [ePA Coordinators](epa.html) acknowledges that neither the payer nor provider systems involved in CRD are monolithic and shows how the various components of provider and payer systems might interact with "ePA Coordinator" systems to satisfy the requirements of this IG
 * *Specification* - Pages that set conformance expectations
   * [Conformance Expectations](conformance.html) defines base language and expectations for declaring conformance with the guide
-  * [Privacy, Security, and Safety](security.html) covers considerations around data access, protection, and similar concepts that apply to all implementations
+  * [Privacy, Safety, and Security](security.html) covers considerations around data access, protection, and similar concepts that apply to all implementations
   * [Foundational Guidance](foundation.html) covers high-level conofmrance expectations  that apply to all implementations
   * [Deviations and Enhancements](deviations.html) covers detailed implementation requirements and conformance expectations that are independent of particular hooks or cards
   * [Supported Hooks](hooks.html) identifies the expectations for support for specific CDS hooks
