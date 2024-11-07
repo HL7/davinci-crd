@@ -4,10 +4,10 @@
 %The link 'http://hl7.org/fhir/us/davinci-hrex/STU1.1/security.html' for "HRex implementation guide" cannot be resolved
 ERROR: CapabilityStatement.text.div: Hyperlink 'http://hl7.org/fhir/us/davinci-hrex/STU1.1/security.html' at 'div/div/div/blockquote/div/p/a' for 'HRex implementation guide' does not resolve
 
-# In https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/Inter-IG.20link.20issue, Grahame confirms this is a US Core 7 issue - nothing we can do about it.
+# In https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/Inter-IG.20link.20issue, confirmed this is a US Core 7 issue - nothing we can do about it.
 %The link 'http://hl7.org/fhir/us/core/STU7/servicerequest-example-di.html' for "CT Scan example" cannot be resolved
 
-# This *is* referenced.  Tooling is incorrectly reporting this warning.  Raised on Zulip
+# This *is* referenced.  Tooling is incorrectly reporting this warning.  Raised on Zulip - lloyd add link
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CDSHookServiceResponseExtensionAssociatedResource'): The Implementation Guide contains no examples for this data type profile
 
 # This link is intended to be version-independent
@@ -23,17 +23,21 @@ WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/Str
 A definition for CodeSystem 'https://example.org/some-organization/device-codes' could not be found, so the code cannot be validated
 A definition for CodeSystem 'http://example.org/fhir/CodeSystem/SomeCodes' could not be found, so the code cannot be validated
 
-# Nothing we can do about this
+# This terminology server limitation
 A definition for CodeSystem 'https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets' could not be found, so the code cannot be validated
 
-
-# This is indeed a large value set and it's ok that the expansion doesn't show everything
-INFORMATION: ValueSet.where(id = 'orderDetail'): The value set expansion is too large, and only a subset has been displayed
-
-# These are incorrectly declared as 'draft' in their source IGs and there's not much we can do about it
+# These are incorrectly declared as 'draft' in their source IGs
 Reference to draft CodeSystem http://hl7.org/fhir/uv/sdc/CodeSystem/temp|3.0.0
 Reference to draft CodeSystem http://hl7.org/fhir/CodeSystem/task-code|4.0.1
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/communication-category|1.0.0
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/coverage-class|1.0.0
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/diet|1.0.0
 Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/dose-rate-type|1.0.0
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/ex-visionprescriptionproduct|1.0.0
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/location-physical-type|2.0.0
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/organization-type|2.0.0
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/service-category|1.1.0
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/service-type|1.1.0
 
 
 # These patterns are all for slices and are merely constraining the system, so this is intentional
