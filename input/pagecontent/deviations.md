@@ -102,9 +102,35 @@ Notes:
 ### Additional prefetch capabilities
 One of the options supported in CDS Hooks is the ability for a service to request that certain data be [prefetched](https://cds-hooks.hl7.org/2.0/#prefetch-template) for efficiency reasons and to simplify processing for the CDS service.  However, there is a limit in that, in the current CDS Hooks specification, prefetch can only use hook context information that is expressed as a simple key value.  It cannot leverage context information passed as resources.
 
-A [proposal](https://github.com/cds-hooks/docs/issues/377) has been submitted suggesting how to address this issue.  This version of the implementation guide pre-adopts that proposal.
+A [proposal](https://github.com/cds-hooks/docs/issues/377) has been submitted suggesting how to address this issue.  The work group responsible for the specification has proposed adopting a modified version of this proposal that does not include _include support.  This version of the implementation guide pre-adopts that proposal.
 
-Specifically, where a hook defines a context element that consists of a resource or collection of resources (e.g. [order-select.draftOrders](https://cds-hooks.hl7.org/hooks/order-select/2020May/order-select.html#context) or [order-sign.draftOrders](https://cds-hooks.hl7.org/hooks/order-sign/2020May/order-sign#context)), systems **SHALL** recognize context tokens of the form `context.<context property>.<FHIR resource name>.id` in prefetch queries.  Those tokens **SHALL** evaluate to a comma-separated list of the identifiers of all resources of the specified type within that context key.
+Specifically, where a hook defines a context element that consists of a resource or collection of resources (e.g. [order-select.draftOrders](https://cds-hooks.hl7.org/hooks/order-select/2020May/order-select.html#context) or [order-sign.draftOrders](https://cds-hooks.hl7.org/hooks/order-sign/2020May/order-sign#context)), systems **SHALL** support a limited subset of [X-FHIR-Query]({{site.data.fhir.ver.sdc}}/expressions.html#x-fhir-query-enhancements).
+
+The limitations on the XPath expressions that can be used are as follows:
+* variables are limited to 'context' and the data elements reachable from it. (e.g. `_id={{context.draftOrders.entry.resource.ofType(ServiceRequest).location.id()}}`)
+* functions are limited to today(), ofType(), resolve(), and a new function read() (discussed below)
+* addition or subtraction of 'days' (e.g. `lt{{today() - 7 days}}`)
+
+Additional restrictions on prefetch in general are that only the following are expected to be supported:
+* instance level read interactions (for resources with known ids such as Patient, Practitioner, or Encounter)
+* type level search interactions; e.g. patient={{context.patientId}}
+* Resource references (e.g. patient={{context.patientId}})
+* token search parameters using equality (e.g. code=4548-4) and optionally the :in modifier (no other modifiers for token parameters)
+* date search parameters on date, dateTime, instant, or Period types only, and using only the prefixes eq, lt, gt, ge, le
+* the _count parameter to limit the number of results returned
+* the _sort parameter to allow for most recent and first queries
+
+Prefetches can depend on the results of prior prefeches.  In this case, the result of the prior prefetch can be expressed as a variable using the name specified in the prefetch.  For example, if one prefetch value was defined as:
+  `"encounter": "Encounter?_id={{%context.encounterId}}"`
+then a subsequent prefetch could be defined as:
+  `"practitioners" : "Practitioner?_id=%encounter.participant.individual.resolve().ofType(Practitioner).id"`
+  
+NOTE: Dependencies on other prefetches should be minimized as it limits what queries can be perfomred in parallel.
+
+
+
+Full details of this syntax should appear in the next version of the [CDS Hooks]() specification
+(recognize context tokens of the form `context.<context property>.[some limited FHIRPath expression](https://build.fhir.org/ig/HL7/cds-hooks/branches/prefetch-enhancements/#prefetch-template) in prefetch queries.  Those tokens **SHALL** evaluate to a comma-separated list of the identifiers of all resources of the specified type within that context key.
 
 Note: Recognizing these tokens doesn't mean the client must support prefetch or the requested prefetch query, only that it recognizes the token, doesn't treat it as an error and - if it supports the query - substitutes the token correctly.
 
@@ -117,14 +143,6 @@ For example, a prefetch for `order-sign` might look like this:
 
 This might result in an executed query that looks like this: `ServiceRequest?_id=2347,10948,5881&_include=ServiceRequest:performer`
 
-<blockquote class="stu-note">
-<p>
-This proposed pre-adoption is not CDS Hooks conformant.  It is possible that the CDS Hooks community will adopt an alternative solution or choose not to make any changes.  Community discussion about this proposal can be found on the CDS Hooks issue list <a href="https://github.com/cds-hooks/docs/issues/377">here</a> and in Jira <a href="https://jira.hl7.org/browse/FHIR-35804">here</a>.  This implementation guide will be updated to align with the decision of the community and might, if necessary, fall back to the use of extensions if CDS Hooks does not choose to support prefetch based on context resources and the payer community determines that prefetch is still required.
-</p>
-<p>
-In addition to this preadoption, this implementation guide presumes support for prefetch query capabilities more sophisticated than the recommended <a href="https://cds-hooks.hl7.org/2.0/#prefetch-query-restrictions">prefetch query restrictions</a> in the CDS Hooks specification.  Specifically, the use of <a href="{{site.data.fhir.path}}search.html#include">_include</a>, as seen in the example above.  It also uses a query-like mechanism to reference 'draft' orders that might not yet be available in the CRD client's repository for query, which will require query-like functionality to be implemented against in-memory objects.
-</p>
-</blockquote>
 
 ### Additional response capabilities
 CDS Hooks supports suggestions that involve multiple actions.  Coverage Requirements Discovery uses this in one situation where additional capabilities will be needed:
