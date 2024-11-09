@@ -106,7 +106,7 @@ In addition to the [base prefetch capabilities](https://cds-hooks.hl7.org/2.0/#p
 
 CRD client implementations **SHOULD NOT** expect standardized prefetch key names. CRD clients supporting prefetch **SHALL** inspect the CDS Hooks discovery endpoint to determine exact prefetch key names and queries.
 
-In most cases, payers will require information about a patient’s coverage. In order to reduce the time CRD services spend on member matching, CRD clients **SHOULD** limit the coverages provided to just those relevant to the CRD service. How this happens is up to the CRD client. Coverage prefetch will look like this:
+In most cases, payers will require information about a patient’s coverage. As mentioned in [Controlling Hook Invocation](deviations.html#controlling-hook-invocation), whether returned as part of prefetch or returned via query, Coverage **SHALL** be limited to a single instance. How this happens is up to the CRD client. Coverage prefetch will look like this:
 
 {% raw %}
 {% fragment Binary/CRDServices JSON BASE:services.where(hook='appointment-book') EXCEPT:prefetch.where(key='coverage') %}
