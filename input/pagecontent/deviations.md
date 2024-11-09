@@ -125,14 +125,9 @@ Prefetches can depend on the results of prior prefeches.  In this case, the resu
 then a subsequent prefetch could be defined as:
   `"practitioners" : "Practitioner?_id=%encounter.participant.individual.resolve().ofType(Practitioner).id"`
   
-NOTE: Dependencies on other prefetches should be minimized as it limits what queries can be perfomred in parallel.
+NOTE: Dependencies on other prefetches should be minimized as it limits what queries can be perfomred in parallel.  Prefetches with dependencies **SHALL** be listed after the prefetches they depend on.
 
-
-
-Full details of this syntax should appear in the next version of the [CDS Hooks]() specification
-(recognize context tokens of the form `context.<context property>.[some limited FHIRPath expression](https://build.fhir.org/ig/HL7/cds-hooks/branches/prefetch-enhancements/#prefetch-template) in prefetch queries.  Those tokens **SHALL** evaluate to a comma-separated list of the identifiers of all resources of the specified type within that context key.
-
-Note: Recognizing these tokens doesn't mean the client must support prefetch or the requested prefetch query, only that it recognizes the token, doesn't treat it as an error and - if it supports the query - substitutes the token correctly.
+Recognizing these tokens doesn't mean the client must support prefetch or the requested prefetch query, only that it recognizes the token, doesn't treat it as an error and - if it supports the query - substitutes the token correctly.
 
 For example, a prefetch for `order-sign` might look like this:
 
@@ -141,7 +136,7 @@ For example, a prefetch for `order-sign` might look like this:
 {% endraw %}
 
 
-This might result in an executed query that looks like this: `ServiceRequest?_id=2347,10948,5881&_include=ServiceRequest:performer`
+This might result in an executed query that looks like this: `Practitioner?_id=2347,10948,5881`
 
 
 ### Additional response capabilities
