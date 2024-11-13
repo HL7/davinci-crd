@@ -1,5 +1,8 @@
 == Suppressed Messages ==
 
+# This will require a change to SUSHI
+The discriminator type 'pattern' has been deprecated. Use type=fixed with a pattern[x] instead
+
 # This will go away once HRex 1.1 is published
 %The link 'http://hl7.org/fhir/us/davinci-hrex/STU1.1/security.html' for "HRex implementation guide" cannot be resolved
 ERROR: CapabilityStatement.text.div: Hyperlink 'http://hl7.org/fhir/us/davinci-hrex/STU1.1/security.html' at 'div/div/div/blockquote/div/p/a' for 'HRex implementation guide' does not resolve
