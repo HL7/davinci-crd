@@ -5,7 +5,7 @@
   "version" : "2.0.0",
   "name" : "FHIR Reference Server Teminology Capability Statement",
   "status" : "active",
-  "date" : "2024-11-07T05:32:43.660Z",
+  "date" : "2024-11-13T03:43:44.832Z",
   "contact" : [{
     "telecom" : [{
       "system" : "other",

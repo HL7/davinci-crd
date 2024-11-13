@@ -430,7 +430,7 @@ e: {
   "title" : "CRD Device Request Codes Value Set",
   "status" : "active",
   "experimental" : false,
-  "date" : "2024-11-06T22:33:10-07:00",
+  "date" : "2024-11-12T20:44:18-07:00",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -442,8 +442,8 @@ e: {
       "url" : "http://hl7.org/fhir/StructureDefinition/valueset-toocostly",
       "valueBoolean" : true
     }],
-    "identifier" : "urn:uuid:0d9eaee2-e116-48b8-a365-75042cb55bd2",
-    "timestamp" : "2024-11-07T05:36:54.333Z",
+    "identifier" : "urn:uuid:e36a5812-769d-4557-abfd-ae389bcf5658",
+    "timestamp" : "2024-11-13T03:48:45.487Z",
     "total" : 0,
     "offset" : 0,
     "parameter" : [{
@@ -481,7 +481,7 @@ e: {
   "title" : "CRD Service Request Codes Value Set",
   "status" : "active",
   "experimental" : false,
-  "date" : "2024-11-06T22:33:10-07:00",
+  "date" : "2024-11-12T20:44:18-07:00",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -493,8 +493,8 @@ e: {
       "url" : "http://hl7.org/fhir/StructureDefinition/valueset-toocostly",
       "valueBoolean" : true
     }],
-    "identifier" : "urn:uuid:c3e54328-f879-4ac0-b9a3-a4ef48932d03",
-    "timestamp" : "2024-11-07T05:38:15.333Z",
+    "identifier" : "urn:uuid:e76aa6e0-fcdc-4fb1-ac17-ad7287372391",
+    "timestamp" : "2024-11-13T03:50:12.690Z",
     "total" : 0,
     "offset" : 0,
     "parameter" : [{

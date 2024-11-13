@@ -9,7 +9,7 @@ e: {
   "title" : "CRD Order Detail Codes Value Set",
   "status" : "active",
   "experimental" : false,
-  "date" : "2024-11-06T22:33:10-07:00",
+  "date" : "2024-11-12T20:44:18-07:00",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -21,8 +21,8 @@ e: {
       "url" : "http://hl7.org/fhir/StructureDefinition/valueset-toocostly",
       "valueBoolean" : true
     }],
-    "identifier" : "urn:uuid:9d648f0e-cb76-4666-8c3d-8dfaf789c2d9",
-    "timestamp" : "2024-11-07T05:38:06.848Z",
+    "identifier" : "urn:uuid:dbb2f23e-100c-4c22-9dc5-a517f7160f58",
+    "timestamp" : "2024-11-13T03:50:03.486Z",
     "total" : 596,
     "offset" : 0,
     "parameter" : [{

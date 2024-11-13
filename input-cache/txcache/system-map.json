@@ -13,7 +13,7 @@
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "authoritative" : ["http://tx.fhir.org/r4"],
-      "candidates" : []
+      "candidates" : ["https://smt.esante.gouv.fr/fhir"]
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-9-cm",
