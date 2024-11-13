@@ -8,7 +8,7 @@ Description: "This profile specifies additional constraints on the US Core Patie
 * ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|3.1.1"
 * ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|6.1.0"
 * identifier MS
-  * ^slicing.discriminator[+].type = #pattern
+  * ^slicing.discriminator[+].type = #value
   * ^slicing.discriminator[=].path = "type"
   * ^slicing.rules = #open
 * identifier contains MRIdentifier 1..1 MS

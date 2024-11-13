@@ -1,7 +1,13 @@
 == Suppressed Messages ==
 
-# This will require a change to SUSHI
-The discriminator type 'pattern' has been deprecated. Use type=fixed with a pattern[x] instead
+# These are inherited from US Core and SDC
+WARNING: StructureDefinition/profile-coverage: StructureDefinition.snapshot.element[9].slicing.discriminator[0]: The discriminator type 'pattern' has been deprecated. Use type=fixed with a pattern[x] instead
+WARNING: StructureDefinition/profile-coverage: StructureDefinition.snapshot.element[29].slicing.discriminator[0]: The discriminator type 'pattern' has been deprecated. Use type=fixed with a pattern[x] instead
+WARNING: StructureDefinition/profile-medicationrequest: StructureDefinition.snapshot.element[15].slicing.discriminator[0]: The discriminator type 'pattern' has been deprecated. Use type=fixed with a pattern[x] instead
+WARNING: StructureDefinition/profile-organization: StructureDefinition.snapshot.element[9].slicing.discriminator[0]: The discriminator type 'pattern' has been deprecated. Use type=fixed with a pattern[x] instead
+WARNING: StructureDefinition/profile-servicerequest: StructureDefinition.snapshot.element[18].slicing.discriminator[0]: The discriminator type 'pattern' has been deprecated. Use type=fixed with a pattern[x] instead
+WARNING: StructureDefinition/profile-taskquestionnaire: StructureDefinition.snapshot.element[44].slicing.discriminator[0]: The discriminator type 'pattern' has been deprecated. Use type=fixed with a pattern[x] instead
+WARNING: StructureDefinition/profile-taskquestionnaire: StructureDefinition.snapshot.element[69].slicing.discriminator[0]: The discriminator type 'pattern' has been deprecated. Use type=fixed with a pattern[x] instead
 
 # This will go away once HRex 1.1 is published
 %The link 'http://hl7.org/fhir/us/davinci-hrex/STU1.1/security.html' for "HRex implementation guide" cannot be resolved
