@@ -108,11 +108,14 @@ This implementation guide (and the menu for it) is organized into the following 
 ### Dependencies
 This guide is based on the [FHIR R4]({{site.data.fhir.path}}) specification that is mandated for use in the U.S. as well as the [CDS Hooks 2.0](https://cds-hooks.hl7.org/2.0) and [CDS Hooks CI Build](https://cds-hooks.org/specification/current/) releases of the CDS Hooks specification.  It also leverages the [SMART on FHIR](http://hl7.org/fhir/smart-app-launch) specification for CRD clients that opt to use that approach for "what-if" scenarios.
 
-In addition, this guide also relies on a number of parent implementation guides:
+In addition, this guide also relies on and defines additional constraints and usage expectations on the content of a number of other implementation guides:
 
+New table:
+{% include dependency-table-nontech.xhtml %}
+
+Old table:
 {% include dependency-table-short.xhtml %}
-
-This implementation guide defines additional constraints and usage expectations above and beyond the information found in these base specifications.
+The complete hierarchy of IG dependencies can be seen on the [QA page](qa.html).
 
 ### Intellectual Property Considerations
 This implementation guide and the underlying FHIR specification are licensed as public domain under the [FHIR license](http://hl7.org/fhir/R4/license.html#license). The license page also describes rules for the use of the FHIR name and logo.
