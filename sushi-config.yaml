@@ -70,7 +70,7 @@ dependencies:
     id: sdc
     version: 3.0.0
     reason: |
-      Defines expecations for Questionnaires prompted for by cards
+      Defines expectations for Questionnaires prompted for by cards
   hl7.fhir.us.davinci-hrex:
     id: hrex
     version: current
@@ -86,7 +86,7 @@ dependencies:
     uri: 'http://fhir.org/packages/us.nlm.vsac/ImplementationGuide/us.nlm.vsac'
     version: 0.19.0
     reason: |
-      Defines some of the US Core value set bound to in this IG
+      Uses the latest version of the VSAC codes
 pages:
   index.md:
     title: CRD IG Home Page
