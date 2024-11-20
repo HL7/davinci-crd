@@ -7,7 +7,7 @@ Alias: $rxnorm = http://www.nlm.nih.gov/research/umls/rxnorm
 Alias: $raceEthnicity = urn:oid:2.16.840.1.113883.6.238
 Alias: $sct = http://snomed.info/sct
 // Code Systems - HL7
-Alias: $fhir-types                   = http://hl7.org/fhir/fhir-types
+Alias: $fhir-types                   = http://hl7.org/fhir/data-types
 Alias: $restful-interaction          = http://hl7.org/fhir/restful-interaction
 Alias: $task-code                    = http://hl7.org/fhir/CodeSystem/task-code
 Alias: $communication-category       = http://terminology.hl7.org/CodeSystem/communication-category
