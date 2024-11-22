@@ -1,12 +1,12 @@
 Profile: CRDLocation
-Parent: USCoreLocation|6.1.0
+Parent: USCoreLocationProfile|7.0.0
 Id: profile-location
 Title: "CRD Location"
 Description: "This profile specifies constraints on the US Core Location profile to support coverage requirements discovery."
 * obeys crd-loc1
 * ^experimental = false
-* ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location|3.1.1"
 * ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location|6.1.0"
+* ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location|3.1.1"
 * type MS
 * type from CMSMappableLocationCodes (extensible)
   * ^condition[+] = crd-loc1

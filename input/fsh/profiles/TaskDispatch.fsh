@@ -21,7 +21,7 @@ Description: "This profile specifies constraints on the Task resource to capture
   * ^type[0].targetProfile[1].extension[$typeMS].valueBoolean = true
   * ^type[0].targetProfile[2].extension[$typeMS].valueBoolean = true
 * location MS
-* location only Reference(USCoreLocation)
+* location only Reference(CRDLocation)
 * restriction MS
   * repetitions MS
   * period MS

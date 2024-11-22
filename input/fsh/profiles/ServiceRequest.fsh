@@ -1,5 +1,5 @@
 Profile: CRDServiceRequest
-Parent: USCoreServiceRequestProfile|6.1.0
+Parent: USCoreServiceRequestProfile|7.0.0
 Id: profile-servicerequest
 Title: "CRD Service Request"
 Description: "This profile specifies constraints on the ServiceRequest resource to support coverage requirements discovery."

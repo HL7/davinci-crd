@@ -36,7 +36,9 @@ parameters:
   apply-publisher: true
   apply-contact: true
   globals-in-artifacts: true
-  version-comparison: 2.0.0, 2.1.0-preview
+  version-comparison: 
+   - 2.0.0
+   - 2.1.0-preview
   shownav: true
 
 #  path-binary: input/hooks-files
@@ -49,23 +51,24 @@ releaseLabel: STU 2.1
 # │  To use a provided input/includes/menu.xml file, delete the "menu" property below.             │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 dependencies:
-  hl7.fhir.us.core.v311:
-    version: 3.1.1
-    uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
-    id: uscore3
-    reason: |
-      Defines USCDI v1 EHR expectations on a range of resources that will be passed to and/or queried by CRD servers.  
   hl7.fhir.us.core:
-    id: uscore6
-    version: 6.1.0
-    reason: |
-      Defines USCDI v3 EHR expectations on a range of resources that will be passed to and/or queried by CRD servers
-  hl7.fhir.us.core.v700:
+    id: uscore7
     version: 7.0.0
     uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
-    id: uscore7
     reason: |
       Defines USCDI v4 EHR expectations on a range of resources that will be passed to and/or queried by CRD servers.  
+  hl7.fhir.us.core.v610:
+    id: uscore6
+    version: 6.1.0
+    uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
+    reason: |
+      Defines USCDI v3 EHR expectations on a range of resources that will be passed to and/or queried by CRD servers
+  hl7.fhir.us.core.v311:
+    id: uscore3
+    version: 3.1.1
+    uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
+    reason: |
+      Defines USCDI v1 EHR expectations on a range of resources that will be passed to and/or queried by CRD servers.  
   hl7.fhir.uv.sdc:
     id: sdc
     version: 3.0.0
@@ -83,7 +86,7 @@ dependencies:
       Makes available certain R5 elements for use as part of this R4 IG
   us.nlm.vsac:
     id: vsac
-    uri: 'http://fhir.org/packages/us.nlm.vsac/ImplementationGuide/us.nlm.vsac'
+    uri: http://fhir.org/packages/us.nlm.vsac/ImplementationGuide/us.nlm.vsac
     version: 0.19.0
     reason: |
       Uses the latest version of the VSAC codes

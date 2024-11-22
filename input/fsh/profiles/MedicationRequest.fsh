@@ -1,5 +1,5 @@
 Profile: CRDMedicationRequest
-Parent: USCoreMedicationRequestProfile|6.1.0
+Parent: USCoreMedicationRequestProfile|7.0.0
 Id: profile-medicationrequest
 Title: "CRD Medication Request"
 Description: "This profile specifies additional constraints on the US Core MedicationRequest profile to support coverage requirements discovery."

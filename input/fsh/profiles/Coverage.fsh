@@ -1,5 +1,5 @@
 Profile: CRDCoverage
-Parent: USCoreCoverageProfile|6.1.0
+Parent: USCoreCoverageProfile|7.0.0
 Id: profile-coverage
 Title: "CRD Coverage"
 Description: "This profile specifies constraints on the Coverage resource to support coverage requirements discovery."

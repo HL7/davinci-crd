@@ -1,10 +1,10 @@
 Profile: CRDEncounter
-Parent: USCoreEncounterProfile|6.1.0
+Parent: USCoreEncounterProfile|7.0.0
 Id: profile-encounter
 Title: "CRD Encounter"
 Description: "This profile specifies additional extensions and constraints on the US Core Encounter profile to support coverage requirements discovery."
 * ^experimental = false
-* ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|7.0.0"
+* ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|6.1.0"
 * ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|3.1.1"
 * extension contains CRDCoverageInformation named Coverage-Information 0..* MS
 * serviceType MS
