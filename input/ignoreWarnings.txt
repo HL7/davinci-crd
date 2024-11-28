@@ -1,5 +1,16 @@
 == Suppressed Messages ==
 
+# These versions are before we started including Jira references in the change log and there's little value in going back to document them now
+WARNING: DA VINCI: The Change Log page (history.html) does not include any Jira tracker items links for the section with title Release 2.0.1
+WARNING: DA VINCI: The Change Log page (history.html) does not include any Jira tracker items links for the section with title Release 2.0.0
+WARNING: DA VINCI: The Change Log page (history.html) does not include any Jira tracker items links for the section with title Release 1.1.0
+WARNING: DA VINCI: The Change Log page (history.html) does not include any Jira tracker items links for the section with title Release 1.0.0
+
+# These versions are before we started detailed tracking of changes and there's little value in going back to document them now
+WARNING: DA VINCI: The Change Log page (history.html) does not include an h3 section for the version 1.1.0-ballot
+WARNING: DA VINCI: The Change Log page (history.html) does not include an h3 section for the version 0.3.0
+WARNING: DA VINCI: The Change Log page (history.html) does not include an h3 section for the version 0.1.0
+
 # These are inherited from US Core and SDC
 INFORMATION: StructureDefinition/profile-coverage: StructureDefinition.snapshot.element[9].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: StructureDefinition/profile-coverage: StructureDefinition.snapshot.element[29].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)

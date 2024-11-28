@@ -12,7 +12,7 @@ This implementation guide uses terminology, notations and design principles that
 * [FHIR Data Types]({{site.data.fhir.path}}datatypes.html)
 * [Using Codes]({{site.data.fhir.path}}terminologies.html)
 * [References Between Resources]({{site.data.fhir.path}}references.html)
-* [How to Read Resource & Profile Definitions]({{site.data.fhir.path}}formats.html)
+* [How to Read Resource & Profile Definitions]({{site.data.fhir.path}}formats.html) and additional [IG reading guidance](https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html)
 * [Base Resource]({{site.data.fhir.path}}resource.html)
 
 This implementation guide supports the [R4]({{site.data.fhir.path}}index.html) version of the FHIR standard and builds on the US Core [3.1 (USCDI v1)]({{site.data.fhir.ver.uscore3}}), [6.1 (USCDI v3)]({{site.data.fhir.ver.uscore6}}) and [7.0 (USCDI v4)]({{site.data.fhir.ver.uscore7}}) implementation guides and implementers need to familiarize themselves with the profiles in those guides. The profiles in this IG conform with all three releases of US Core. CRD clients **SHALL** support at least one of the three profiles (and versions of US Core). CRD servers **SHALL** be able to handle all three.
@@ -22,27 +22,39 @@ This IG also draws on content from the [Davinci Health Record Exchange (HRex)]({
 Implementers should also familiarize themselves with the FHIR resources used within the guide:
 
 <table>
-    <td>
-      <a href="{{site.data.fhir.path}}appointment.html">Appointment</a><br/>
-      <a href="{{site.data.fhir.path}}claimresponse.html">ClaimResponse</a><br/>
-      <a href="{{site.data.fhir.path}}coverage.html">Coverage</a><br/>
-      <a href="{{site.data.fhir.path}}communicationrequest.html">CommunicationRequest</a><br/>
-      <a href="{{site.data.fhir.path}}device.html">Device</a><br/>
-      <a href="{{site.data.fhir.path}}devicerequest.html">DeviceRequest</a><br/>
-      <a href="{{site.data.fhir.path}}encounter.html">Encounter</a><br/>
-      <a href="{{site.data.fhir.path}}location.html">Location</a><br/>
-      <a href="{{site.data.fhir.path}}organization.html">Organization</a><br/>
-      <a href="{{site.data.fhir.path}}medication.html">Medication</a><br/>
-      <a href="{{site.data.fhir.path}}medicationrequest.html">MedicationRequest</a><br/>
-      <a href="{{site.data.fhir.path}}nutritionorder.html">NutritionOrder</a><br/>
-      <a href="{{site.data.fhir.path}}patient.html">Patient</a><br/>
-      <a href="{{site.data.fhir.path}}practitioner.html">Practitioner</a><br/>
-      <a href="{{site.data.fhir.path}}practitionerrole.html">PractitionerRole</a><br/>
-      <a href="{{site.data.fhir.path}}questionnaire.html">Questionnaire</a><br/>
-      <a href="{{site.data.fhir.path}}servicerequest.html">ServiceRequest</a><br/>
-      <a href="{{site.data.fhir.path}}task.html">Task</a><br/>
-      <a href="{{site.data.fhir.path}}visionprescription.html">VisionPrescription</a>
-    </td>
+  <thead>
+    <tr>
+      <th>Resource</th>
+      <th>Relevance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td><a href="{{site.data.fhir.path}}appointment.html">Appointment</a></td><td>One of the resources that can trigger payer decision support</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}binary.html">Binary</a></td><td>Used to represent example instances of CDS Hook JSON structions</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}bundle.html">Bundle</a></td><td>Used when delivering collections of resources in a CDS Hook call, also used for queries</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}capabilitystatement.html">CapabilityStatement</a></td><td>Used to define conformance expectations for this guide</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}codesystem.html">CodeSystem</a></td><td>Used to define custom codes specific to this guide</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}conceptmap.html">ConceptMap</a></td><td>Used to map location codes between terminologies</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}coverage.html">Coverage</a></td><td>Used to identify the member and the relevant insurance coverage to a payer</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}communicationrequest.html">CommunicationRequest</a></td><td>One of the resources that can trigger payer decision support</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}device.html">Device</a></td><td>Supporting information for device requests</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}devicerequest.html">DeviceRequest</a></td><td>One of the resources that can trigger payer decision support</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}encounter.html">Encounter</a></td><td>Oner of the resources that can trigger payer decision support, and also provides context for other resources</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}location.html">Location</a></td><td>Supporting information for encounters and request resources</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}organization.html">Organization</a></td><td>Used when identifying providers in Encounters, Tasks, and all requests</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}medication.html">Medication</a></td><td>Supporting information for medication requests</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}medicationrequest.html">MedicationRequest</a></td><td>One of the resources that can trigger payer decision support</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}nutritionorder.html">NutritionOrder</a></td><td>One of the resources that can trigger payer decision support</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}patient.html">Patient</a></td><td>Demographic information relevant to all requests</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}practitioner.html">Practitioner</a></td><td>Used when identifying providers in Encounters, Tasks, and all requests</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}practitionerrole.html">PractitionerRole</a></td><td>Used when identifying providers in Encounters, Tasks, and all requests</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}questionnaire.html">Questionnaire</a></td><td>Used to support capture of additional information when not using DTR</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}servicerequest.html">ServiceRequest</a></td><td>One of the resources that can trigger payer decision support</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}structuredefinition.html">StructureDefinition</a></td><td>Used when profiling resource, defining extensions, and defining profiles and extensions on CDS Hook models</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}task.html">Task</a></td><td></td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}valueset.html">ValueSet</a></td><td>Used to define collections of codes used by CRD profiles</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}visionprescription.html">VisionPrescription</a></td><td>One of the resources that can trigger payer decision support</td></tr>
+  </tbody>
 </table>
 
 #### CDS Hooks

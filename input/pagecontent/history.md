@@ -83,5 +83,5 @@ Added a number of enhancements and some changes to approach.  Key differences ar
 As well there were various other adjustments to specification language, profiles, and examples to align with these changes and to correct minor typos or improve wording.
 
 
-### Release 1.0
+### Release 1.0.0
 Initial release of the CRD specification.
