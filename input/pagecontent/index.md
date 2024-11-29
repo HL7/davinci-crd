@@ -110,8 +110,6 @@ This guide is based on the [FHIR R4]({{site.data.fhir.path}}) specification that
 
 In addition, this guide also relies on a number of parent implementation guides:
 
-{% include dependency-table-nontech.xhtml %}
-
 {% include dependency-table-short.xhtml %}
 
 This implementation guide defines additional constraints and usage expectations above and beyond the information found in these base specifications.
