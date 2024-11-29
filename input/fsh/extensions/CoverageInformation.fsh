@@ -46,6 +46,7 @@ Description: "Captures assertions from a payer about whether the service is cove
 * extension[coverage] only Extension
   * ^short = "Reference to Coverage"
   * ^definition = "Reference to Coverage that assertion applies to."
+  * ^comment = "This will always be a link to a Coverage resource on the CRD client's system - typically accessed via prefetch or direct query using the CDS-Hooks token.  If no coverage instance is available, the coverage-information extension cannot be returned."
   * value[x] 1..1
   * value[x] only Reference(CRDCoverage)
 * extension[covered] only Extension
