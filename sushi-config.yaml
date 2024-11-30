@@ -33,6 +33,7 @@ license: CC0-1.0
 fhirVersion: 4.0.1
 parameters:
   path-expansion-params: "../../input/terminology-settings.json"
+  auto-oid-root: 2.16.840.1.113883.4.642.40.18
   apply-publisher: true
   apply-contact: true
   globals-in-artifacts: true
