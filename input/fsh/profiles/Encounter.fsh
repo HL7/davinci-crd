@@ -4,8 +4,8 @@ Id: profile-encounter
 Title: "CRD Encounter"
 Description: "This profile specifies additional extensions and constraints on the US Core Encounter profile to support coverage requirements discovery."
 * ^experimental = false
-* ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|6.1.0"
-* ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|3.1.1"
+* ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|6.1.0"
+* ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|3.1.1"
 * extension contains CRDCoverageInformation named Coverage-Information 0..* MS
 * serviceType MS
 * subject only Reference(CRDPatient)
