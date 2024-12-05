@@ -27,9 +27,7 @@
             {
               "type": "delete",
               "description": "Remove name-brand prescription",
-              "resourceId": [
-                "MedicationRequest/2222"
-              ]
+              "resourceId": "MedicationRequest/2222"
             },
             {
               "type": "create",
@@ -97,7 +95,8 @@
             }
           ]
         }
-      ]
+      ],
+      "selectionBehavior": "any"
     },
     {
       "extension": {
@@ -181,7 +180,8 @@
             }
           ]
         }
-      ]
+      ],
+      "selectionBehavior": "any"
     },
     {
       "extension": {
@@ -281,7 +281,8 @@
             }
           ]
         }
-      ]
+      ],
+      "selectionBehavior": "any"
     },
     {
       "uuid": "5561ec1e-78c5-48aa-8fc0-037c476452bf",
@@ -339,7 +340,8 @@
             }
           ]
         }
-      ]
+      ],
+      "selectionBehavior": "any"
     },
     {
       "extension": {
