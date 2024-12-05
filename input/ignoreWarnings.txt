@@ -1,5 +1,9 @@
 == Suppressed Messages ==
 
+# This is a problem with the Tooling IG model used to validate the CDS Hooks instances.  A correction to the tooling IG has been submitted.  The examples have been confirmed to be correct
+The property resourceId must be a JSON Array, not a Primitive property (at CDSHooksResponse.cards[2].suggestions[0].actions[0])
+Constraint failed: cds-resp-2: 'A resourceId not a resource must be provided when type = delete'
+
 # These versions are before we started including Jira references in the change log and there's little value in going back to document them now
 WARNING: DA VINCI: The Change Log page (history.html) does not include any Jira tracker items links for the section with title Release 2.0.1
 WARNING: DA VINCI: The Change Log page (history.html) does not include any Jira tracker items links for the section with title Release 2.0.0
