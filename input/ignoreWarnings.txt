@@ -1,4 +1,7 @@
 == Suppressed Messages ==
+# This is an error in the source definition.  These should not be arrays
+ERROR: Binary/CRDServiceResponse: CDSHooksResponse.cards[2].suggestions[0].actions[0].resourceId: The property resourceId must be a JSON Array, not a Primitive property (at CDSHooksResponse.cards[2].suggestions[0].actions[0])
+ERROR: Binary/CRDServiceResponse2: CDSHooksResponse.cards[0].suggestions[0].actions[0].resourceId: The property resourceId must be a JSON Array, not a Primitive property (at CDSHooksResponse.cards[0].suggestions[0].actions[0])
 
 # This is a problem with the Tooling IG model used to validate the CDS Hooks instances.  A correction to the tooling IG has been submitted.  The examples have been confirmed to be correct
 The property resourceId must be a JSON Array, not a Primitive property (at CDSHooksResponse.cards[2].suggestions[0].actions[0])
