@@ -213,3 +213,4 @@ resources:
   Bundle/search-response:
     name: "Example EHR response"
     description: "The response to a CRD service query for information not returned in prefetch"
+
