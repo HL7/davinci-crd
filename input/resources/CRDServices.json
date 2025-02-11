@@ -8,7 +8,7 @@
       "prefetch": {
         "patient": "Patient/{{%context.patientId}}",
         "encounter": "Encounter/{{%context.encounterId}}",
-        "coverage": "Coverage?patient={{%context.patientId}}&status=active}}",        
+        "coverage": "Coverage?patient={{%context.patientId}}&status=active",        
         "practitioners" : "Practitioner?_id={{%encounter.participant.individual.resolve().ofType(Practitioner).id|%encounter.participant.individual.resolve().ofType(PractitionerRole).practitioner.resolve().id|%encounter.serviceProvider.resolve().ofType(Practitioner).id|%encounter.serviceProvider.resolve().ofType(PractitionerRole).practitioner.resolve().id|%context.appointments.entry.resource.participant.actor.resolve().ofType(Practitioner).id|%context.appointments.entry.resource.participant.actor.resolve().ofType(PractitionerRole).practitioner.resolve().id}}",
         "practitionerRoles" : "PractitionerRole?_id={{%encounter.participant.individual.resolve().ofType(PractitionerRole).id|%encounter.serviceProvider.resolve().ofType(PractitionerRole).id|%context.appointments.entry.resource.participant.actor.resolve().ofType(PractitionerRole).id}}",
         "organizations" : "Organization?_id={{%encounter.participant.individual.resolve().ofType(PractitionerRole).organization.resolve().id|%encounter.serviceProvider.resolve().ofType(PractitionerRole).organization.resolve().id|%context.appointments.entry.resource.participant.actor.resolve().ofType(PractitionerRole).organization.resolve().id}}",
@@ -104,10 +104,10 @@
       "prefetch": {
         "patient": "Patient/{{%context.patientId}}",
         "encounter": "Encounter/{{%context.encounterId}}",
-        "coverage": "Coverage?patient={{%context.patientId}}&status=active}}",
+        "coverage": "Coverage?patient={{%context.patientId}}&status=active",
         "practitioners" : "Practitioner?_id={{%encounter.participant.individual.resolve().ofType(Practitioner).id|%encounter.participant.individual.resolve().ofType(PractitionerRole).practitioner.resolve().id|%encounter.serviceProvider.resolve().ofType(Practitioner).id|%encounter.serviceProvider.resolve().ofType(PractitionerRole).practitioner.resolve().id}}",
-        "practitionerRoles" : "PractitionerRole?_id={{%encounter.participant.individual.resolve().ofType(PractitionerRole).id|%encounter.serviceProvider.resolve().ofType(PractitionerRole).id",
-        "organizations" : "Organization?_id=%encounter.participant.individual.resolve().ofType(PractitionerRole).organization.resolve().id|%encounter.serviceProvider.resolve().ofType(PractitionerRole).organization.resolve().id}}",
+        "practitionerRoles" : "PractitionerRole?_id={{%encounter.participant.individual.resolve().ofType(PractitionerRole).id|%encounter.serviceProvider.resolve().ofType(PractitionerRole).id}}",
+        "organizations" : "Organization?_id={{%encounter.participant.individual.resolve().ofType(PractitionerRole).organization.resolve().id|%encounter.serviceProvider.resolve().ofType(PractitionerRole).organization.resolve().id}}",
         "locations" : "Practitioner?_id={{%encounter.location.location.resolve().ofType(Location).id}}|%encounter.serviceProvider.resolve().ofType(PractitionerRole).location.resolve().id}}"
       },
       "extension": {
@@ -186,7 +186,7 @@
       "prefetch": {
         "patient": "Patient/{{%context.patientId}}",
         "encounter": "Encounter/{{%context.encounterId}}",
-        "coverage": "Coverage?patient={{%context.patientId}}&status=active}}",
+        "coverage": "Coverage?patient={{%context.patientId}}&status=active",
         "practitioners" : "Practitioner?_id={{%encounter.participant.individual.resolve().ofType(Practitioner).id|%encounter.participant.individual.resolve().ofType(PractitionerRole).practitioner.resolve().id|%encounter.serviceProvider.resolve().ofType(Practitioner).id|%encounter.serviceProvider.resolve().ofType(PractitionerRole).practitioner.resolve().id}}",
         "practitionerRoles" : "PractitionerRole?_id={{%encounter.participant.individual.resolve().ofType(PractitionerRole).id|%encounter.serviceProvider.resolve().ofType(PractitionerRole).id}}",
         "organizations" : "Organization?_id={{%encounter.participant.individual.resolve().ofType(PractitionerRole).organization.resolve().id|%encounter.serviceProvider.resolve().ofType(PractitionerRole).organization.resolve().id}}",
@@ -226,7 +226,7 @@
       "prefetch": {
         "patient": "Patient/{{%context.patientId}}",
         "encounter": "Encounter/{{%context.encounterId}}",
-        "coverage": "Coverage?patient={{%context.patientId}}&status=active}}",        
+        "coverage": "Coverage?patient={{%context.patientId}}&status=active",        
         "device": "Device?_id={{%context.dispatchedOrders.entry.resource.ofType(DeviceRequest).code.resolve().id}}",
         "medication": "Medication?_id={{%context.dispatchedOrders.entry.resource.ofType(MedicationRequest).mediation}}",
         "practitioners" : "Practitioner?_id={{%encounter.participant.individual.resolve().ofType(Practitioner).id|%encounter.participant.individual.resolve().ofType(PractitionerRole).practitioner.resolve().id|%encounter.serviceProvider.resolve().ofType(Practitioner).id|%encounter.serviceProvider.resolve().ofType(PractitionerRole).practitioner.resolve().id|%context.dispatchedOrders.entry.resource.requester.resolve().ofType(Practitioner).id|%context.dispatchedOrders.entry.resource.orderer.resolve().ofType(Practitioner).id|%context.dispatchedOrders.entry.resource.performer.resolve().ofType(Practitioner).id|%context.dispatchedOrders.entry.resource.requester.resolve().ofType(PractitionerRole).practitioner.resolve().id|%context.dispatchedOrders.entry.resource.orderer.resolve().ofType(PractitionerRole).practitioner.resolve().id|%context.dispatchedOrders.entry.resource.performer.resolve().ofType(PractitionerRole).practitioner.resolve().id}}",
@@ -261,7 +261,7 @@
       "prefetch": {
         "patient": "Patient/{{%context.patientId}}",
         "encounter": "Encounter/{{%context.encounterId}}",
-        "coverage": "Coverage?patient={{%context.patientId}}&status=active}}",        
+        "coverage": "Coverage?patient={{%context.patientId}}&status=active",        
         "device": "Device?_id={{%context.draftOrders.entry.resource.ofType(DeviceRequest).code.resolve().id}}",
         "medication": "Medication?_id={{%context.draftOrders.entry.resource.ofType(MedicationRequest).mediation}}",
         "practitioners" : "Practitioner?_id={{%encounter.participant.individual.resolve().ofType(Practitioner).id|%encounter.participant.individual.resolve().ofType(PractitionerRole).practitioner.resolve().id|%encounter.serviceProvider.resolve().ofType(Practitioner).id|%encounter.serviceProvider.resolve().ofType(PractitionerRole).practitioner.resolve().id|%context.draftOrders.entry.resource.requester.resolve().ofType(Practitioner).id|%context.draftOrders.entry.resource.orderer.resolve().ofType(Practitioner).id|%context.draftOrders.entry.resource.performer.resolve().ofType(Practitioner).id|%context.draftOrders.entry.resource.requester.resolve().ofType(PractitionerRole).practitioner.resolve().id|%context.draftOrders.entry.resource.orderer.resolve().ofType(PractitionerRole).practitioner.resolve().id|%context.draftOrders.entry.resource.performer.resolve().ofType(PractitionerRole).practitioner.resolve().id}}",
@@ -380,7 +380,7 @@
       "prefetch": {
         "patient": "Patient/{{%context.patientId}}",
         "encounter": "Encounter/{{%context.encounterId}}",
-        "coverage": "Coverage?patient={{%context.patientId}}&status=active}}",        
+        "coverage": "Coverage?patient={{%context.patientId}}&status=active",        
         "device": "Device?_id={{%context.draftOrders.entry.resource.ofType(DeviceRequest).code.resolve().id}}",
         "medication": "Medication?_id={{%context.draftOrders.entry.resource.ofType(MedicationRequest).mediation}}",
         "practitioners" : "Practitioner?_id={{%encounter.participant.individual.resolve().ofType(Practitioner).id|%encounter.participant.individual.resolve().ofType(PractitionerRole).practitioner.resolve().id|%encounter.serviceProvider.resolve().ofType(Practitioner).id|%encounter.serviceProvider.resolve().ofType(PractitionerRole).practitioner.resolve().id|%context.draftOrders.entry.resource.requester.resolve().ofType(Practitioner).id|%context.draftOrders.entry.resource.orderer.resolve().ofType(Practitioner).id|%context.draftOrders.entry.resource.performer.resolve().ofType(Practitioner).id|%context.draftOrders.entry.resource.requester.resolve().ofType(PractitionerRole).practitioner.resolve().id|%context.draftOrders.entry.resource.orderer.resolve().ofType(PractitionerRole).practitioner.resolve().id|%context.draftOrders.entry.resource.performer.resolve().ofType(PractitionerRole).practitioner.resolve().id}}",
