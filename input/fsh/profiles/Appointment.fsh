@@ -39,6 +39,7 @@ Expression: "end.exists() or requestedPeriod.end.exists()"
 Profile: CRDAppointmentWithOrder
 Parent: CRDAppointmentBase
 Id: profile-appointment-with-order
+Title: "CRD Appointment with Order"
 Description: "An appointment where the details of what the appointment is being booked for are provided in the associated ServiceRequest"
 * ^extension[$fmm].valueInteger = 1
 * ^experimental = false
@@ -50,6 +51,7 @@ Description: "An appointment where the details of what the appointment is being 
 Profile: CRDAppointmentNoOrder
 Parent: CRDAppointmentBase
 Id: profile-appointment-no-order
+Title: "CRD Appointment without Order"
 Description: "An appointment where the details of what the appointment is being booked for are provided inline and there is no associated ServiceRequest"
 * ^extension[$fmm].valueInteger = 1
 * ^experimental = false
