@@ -132,16 +132,32 @@ Other information will need to be retrieved using queries that are more specific
     <td>
       <code>Appointment?_id={{context.appointments.entry.resource.id}}<br/>
       &_include=Appointment:patient<br/>
-      &_include=Appointment:practitioner:PractitionerRole<br/>
-      &_include:iterate=PractitionerRole:organization<br/>
-      &_include:iterate=PractitionerRole:practitioner<br/>
+      &_include=Appointment:practitioner<br/>
       &_include=Appointment:location<br/>
       &_include=Appointment:based-on:ServiceRequest<br/>
+      &_include:iterate=PractitionerRole:organization<br/>
+      &_include:iterate=PractitionerRole:practitioner<br/>
+      &_include:iterate=PractitionerRole:location<br/>
       &_include:iterate=ServiceRequest:performer<br/>
       &_include:iterate=ServiceRequest:requester<br/><br/>
       Coverage?patient={{context.patient}}</code>
     </td>
-    <td>No requester</td>
+    <td>Location only through performer</td>
+  </tr>
+  <tr>
+    <td>CommunicationRequest</td>
+    <td>
+      <code>CommunicationRequest?_id={{context.draftOrders.entry.resource.ofType(CommunicationRequest).id}}<br/>
+      &_include=CommunicationRequest:patient<br/>
+      &_include=CommunicationRequest:recipient<br/>
+      &_include=CommunicationRequest:requester<br/>
+      &_include=CommunicationRequest:sender<br/>
+      &_include:iterate=PractitionerRole:organization<br/>
+      &_include:iterate=PractitionerRole:practitioner<br/>
+      &_include:iterate=PractitionerRole:location<br/><br/>
+      Coverage?patient={{context.patient}}</code>
+    </td>
+    <td>Location only through performer</td>
   </tr>
   <tr>
     <td>DeviceRequest</td>
@@ -152,10 +168,11 @@ Other information will need to be retrieved using queries that are more specific
       &_include=DeviceRequest:requester<br/>
       &_include=DeviceRequest:device<br/>
       &_include:iterate=PractitionerRole:organization<br/>
-      &_include:iterate=PractitionerRole:practitioner<br/><br/>
+      &_include:iterate=PractitionerRole:practitioner<br/>
+      &_include:iterate=PractitionerRole:location<br/><br/>
       Coverage?patient={{context.patient}}</code>
     </td>
-    <td>No performing location</td>
+    <td>Location only through performer</td>
   </tr>
   <tr>
     <td>Encounter</td>
@@ -164,7 +181,10 @@ Other information will need to be retrieved using queries that are more specific
       &_include=Encounter:patient<br/>
       &_include=Encounter:service-provider<sup>†</sup><br/>
       &_include=Encounter:practitioner<br/>
-      &_include=Encounter:location<br/><br/>
+      &_include=Encounter:location<br/>
+      &_include:iterate=PractitionerRole:organization<br/>
+      &_include:iterate=PractitionerRole:practitioner<br/>
+      &_include:iterate=PractitionerRole:location<br/><br/>
       Coverage?patient={{context.patient}}</code>
     </td>
     <td>No requester</td>
@@ -178,10 +198,11 @@ Other information will need to be retrieved using queries that are more specific
       &_include=MedicationRequest:requester:PractitionerRole<br/>
       &_include=MedicationRequest:medication<br/>
       &_include:iterate=PractitionerRole:organization<br/>
-      &_include:iterate=PractitionerRole:practitioner</br>
+      &_include:iterate=PractitionerRole:practitioner<br/>
+      &_include:iterate=PractitionerRole:location<br/><br/>
       Coverage?patient={{context.patient}}</code>
     </td>
-    <td>No performing location</td>
+    <td>Location only through performer</td>
   </tr>
   <tr>
     <td>NutritionOrder</td>
@@ -190,10 +211,11 @@ Other information will need to be retrieved using queries that are more specific
       &_include=NutritionOrder:patient<br/>
       &_include=NutritionOrder:provider<br/>
       &_include=NutritionOrder:requester<br/>
+      &_include=NutritionOrder:encounter<br/>
       &_include:iterate=PractitionerRole:organization<br/>
       &_include:iterate=PractitionerRole:practitioner<br/>
-      &_include=NutritionOrder:encounter<br/>
-      &_include:iterate=Encounter:location<br/>
+      &_include:iterate=PractitionerRole:location<br/>
+      &_include:iterate=Encounter:location<br/><br/>
       Coverage?patient={{context.patient}}</code>
     </td>
     <td>Location only through request encounter</td>
@@ -206,10 +228,24 @@ Other information will need to be retrieved using queries that are more specific
       &_include=ServiceRequest:performer<br/>
       &_include=ServiceRequest:requester<br/>
       &_include:iterate=PractitionerRole:organization<br/>
-      &_include:iterate=PractitionerRole:practitioner</br>
+      &_include:iterate=PractitionerRole:practitioner<br/>
+      &_include:iterate=PractitionerRole:location<br/><br/>
       Coverage?patient={{context.patient}}</code>
     </td>
-    <td>No performer location</td>
+    <td>Location only through performer</td>
+  </tr>
+  <tr>
+    <td>VisionPrescription</td>
+    <td>
+      <code>VisionPrescription?_id={{context.draftOrders.entry.resource.ofType(VisionPrescription).id}}<br/>
+      &_include=VisionPrescription:patient<br/>
+      &_include=VisionPrescription:prescriber<br/>
+      &_include:iterate=PractitionerRole:organization<br/>
+      &_include:iterate=PractitionerRole:practitioner<br/>
+      &_include:iterate=PractitionerRole:location<br/><br/>
+      Coverage?patient={{context.patient}}</code>
+    </td>
+    <td>Location only through performer</td>
   </tr>
 </table>
 <p>

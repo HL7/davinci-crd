@@ -28,6 +28,8 @@
 <artifact id="ValueSet/CMSMappableLocationCodes" key="ValueSet-CMSMappableLocationCodes" name="CMS Mappable Location Codes"/>
 <artifact id="ValueSet/afterCompletionCode" key="ValueSet-afterCompletionCode" name="CRD After Completion Code Value Set"/>
 <artifact deprecated="true" id="StructureDefinition/profile-appointment" key="StructureDefinition-profile-appointment" name="CRD Appointment"/>
+<artifact id="StructureDefinition/profile-appointment-with-order" key="StructureDefinition-profile-appointment-with-order" name="CRD Appointment with Order"/>
+<artifact id="StructureDefinition/profile-appointment-no-order" key="StructureDefinition-profile-appointment-no-order" name="CRD Appointment without Order"/>
 <artifact id="StructureDefinition/profile-appointment-base" key="StructureDefinition-profile-appointment-base" name="CRD Base Appointment"/>
 <artifact deprecated="true" id="CodeSystem/cardType" key="CodeSystem-cardType" name="CRD Card Types Code System"/>
 <artifact id="ValueSet/cardType" key="ValueSet-cardType" name="CRD Card Types Value Set"/>
@@ -73,8 +75,6 @@
 <artifact id="ValueSet/taskReason" key="ValueSet-taskReasonCode" name="CRD Task Reason Codes Value Set"/>
 <artifact id="CodeSystem/temp" key="CodeSystem-temp" name="CRD Temporary Codes"/>
 <artifact id="StructureDefinition/profile-visionprescription" key="StructureDefinition-profile-visionprescription" name="CRD Vision Prescription"/>
-<artifact id="StructureDefinition/profile-appointment-no-order" key="StructureDefinition-profile-appointment-no-order" name="CRDAppointmentNoOrder"/>
-<artifact id="StructureDefinition/profile-appointment-with-order" key="StructureDefinition-profile-appointment-with-order" name="CRDAppointmentWithOrder"/>
 <artifact deprecated="true" id="StructureDefinition/profile-crdcardtask" key="StructureDefinition-profile-crdcardtask" name="CRDCardTask"/>
 <artifact deprecated="true" id="StructureDefinition/profile-claimresponse" key="StructureDefinition-profile-claimresponse" name="ClaimResponse"/>
 <artifact deprecated="true" id="SearchParameter/communicationrequest-insurance" key="SearchParameter-communicationrequest-insurance" name="CommunicationRequest Insurance Search Parameter"/>
