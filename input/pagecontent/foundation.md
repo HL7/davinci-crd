@@ -130,7 +130,7 @@ Other information will need to be retrieved using queries that are more specific
   <tr>
     <td>Appointment</td>
     <td>
-      <code>Appointment?_id={{context.appointments.Appointment.id}}<br/>
+      <code>Appointment?_id={{context.appointments.entry.resource.id}}<br/>
       &_include=Appointment:patient<br/>
       &_include=Appointment:practitioner:PractitionerRole<br/>
       &_include:iterate=PractitionerRole:organization<br/>
@@ -146,7 +146,7 @@ Other information will need to be retrieved using queries that are more specific
   <tr>
     <td>DeviceRequest</td>
     <td>
-      <code>DeviceRequest?_id={{context.draftOrders.DeviceRequest.id}}<br/>
+      <code>DeviceRequest?_id={{context.draftOrders.entry.resource.ofType(DeviceRequest).id}}<br/>
       &_include=DeviceRequest:patient<br/>
       &_include=DeviceRequest:performer<br/>
       &_include=DeviceRequest:requester<br/>
@@ -172,7 +172,7 @@ Other information will need to be retrieved using queries that are more specific
   <tr>
     <td>MedicationRequest</td>
     <td>
-      <code>MedicationRequest?_id={{context.draftOrders.MedicationRequest.id}}<br/>
+      <code>MedicationRequest?_id={{context.draftOrders.entry.resource.ofType(MedicationRequest).id}}<br/>
       &_include=MedicationRequest:patient<br/>
       &_include=MedicationRequest:intended-dispenser<br/>
       &_include=MedicationRequest:requester:PractitionerRole<br/>
@@ -186,7 +186,7 @@ Other information will need to be retrieved using queries that are more specific
   <tr>
     <td>NutritionOrder</td>
     <td>
-      <code>NutritionOrder?_id={{context.draftOrders.NutritionOrder.id}}<br/>
+      <code>NutritionOrder?_id={{context.draftOrders.entry.resource.ofType(NutritionOrder).id}}<br/>
       &_include=NutritionOrder:patient<br/>
       &_include=NutritionOrder:provider<br/>
       &_include=NutritionOrder:requester<br/>
@@ -201,7 +201,7 @@ Other information will need to be retrieved using queries that are more specific
   <tr>
     <td>ServiceRequest</td>
     <td>
-      <code>ServiceRequest?_id={{context.draftOrders.ServiceRequest.id}}<br/>
+      <code>ServiceRequest?_id={{context.draftOrders.entry.resource.ofType(ServiceRequest).id}}<br/>
       &_include=ServiceRequest:patient<br/>
       &_include=ServiceRequest:performer<br/>
       &_include=ServiceRequest:requester<br/>
