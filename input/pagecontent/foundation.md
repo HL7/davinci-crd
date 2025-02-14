@@ -135,7 +135,10 @@ Other information will need to be retrieved using queries that are more specific
       &_include=Appointment:practitioner:PractitionerRole<br/>
       &_include:iterate=PractitionerRole:organization<br/>
       &_include:iterate=PractitionerRole:practitioner<br/>
-      &_include=Appointment:location<br/><br/>
+      &_include=Appointment:location<br/>
+      &_include=Appointment:based-on:ServiceRequest<br/>
+      &_include:iterate=ServiceRequest:performer<br/>
+      &_include:iterate=ServiceRequest:requester<br/><br/>
       Coverage?patient={{context.patient}}</code>
     </td>
     <td>No requester</td>
