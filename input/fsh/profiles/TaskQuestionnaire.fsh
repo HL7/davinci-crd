@@ -34,7 +34,7 @@ Description: "This profile specifies constraints on the Task resource to support
   * type only CodeableConcept
   * type = $temp#after-completion-action
   * type MS
-  * value only CodeableConcept
-  * value MS
-  * value from CRDTaskAfterCompletionCode (extensible)
+  * value[x] only CodeableConcept
+  * value[x] MS
+  * value[x] from CRDTaskAfterCompletionCode (extensible)
     * ^binding.description = "CRD After Completion"
