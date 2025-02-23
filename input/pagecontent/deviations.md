@@ -142,7 +142,7 @@ This might result in an executed query that looks like this: `Practitioner?_id=2
 ### Additional response capabilities
 CDS Hooks supports suggestions that involve multiple actions.  Coverage Requirements Discovery uses this in one situation where additional capabilities will be needed:
 
-*  Creating a Task to complete a Questionnaire; and
+*  Creating a Task to complete a Questionnaire
 
 In this case, the creation of the Questionnaire needs to be conditional - it **SHOULD** only occur if that specific Questionnaire version doesn't already exist, and the payer service **SHALL** query to determine if the client has a copy of the Questionnaire before sending the request.  This capability is supported in FHIR's [transaction]({{site.data.fhir.path}}http.html#transaction)  
 functionality.  However, not all the capabilities/guidance included there has been incorporated into CDS Hooks 'suggestions', in part to keep the specification simpler.

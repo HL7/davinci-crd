@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Fri, Feb 14, 2025 07:03+0000 for FHIR v6.0.0-ballot2 
+  Generated on Wed, Feb 19, 2025 14:22+0000 for FHIR v6.0.0-ballot2 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="6.0.0-ballot2">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -16075,12 +16075,12 @@ A coverage may only be responsible for specific types of charges, and the sequen
   </xs:complexType>
   <xs:element name="ActorDefinition" type="ActorDefinition">
     <xs:annotation>
-      <xs:documentation xml:lang="en">Provides a definition of an actor - human or system - that plays a role in a process, such as data exchange, along with associated obligations.</xs:documentation>
+      <xs:documentation xml:lang="en">Provides a definition of an actor - a system, individual, non-system device, or collective - that plays a role in a process, such as data exchange, along with associated obligations.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:complexType name="ActorDefinition">
     <xs:annotation>
-      <xs:documentation xml:lang="en">Provides a definition of an actor - human or system - that plays a role in a process, such as data exchange, along with associated obligations.</xs:documentation>
+      <xs:documentation xml:lang="en">Provides a definition of an actor - a system, individual, non-system device, or collective - that plays a role in a process, such as data exchange, along with associated obligations.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -16195,7 +16195,7 @@ A coverage may only be responsible for specific types of charges, and the sequen
           </xs:element>
           <xs:element name="baseDefinition" minOccurs="0" maxOccurs="unbounded" type="canonical">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A url that identifies the definition of this actor in another IG (which IG must be listed in the dependencies). This actor inherits all the obligations etc. as defined in the other IG.</xs:documentation>
+              <xs:documentation xml:lang="en">An ActorDefinition that is a super-type of this actor.  This actor inherits all of the obligations that apply to the referenced actor definition and can be used wherever the referenced ActorDefinition can.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -16204,14 +16204,64 @@ A coverage may only be responsible for specific types of charges, and the sequen
   </xs:complexType>
   <xs:simpleType name="ExampleScenarioActorTypeEnum">
     <xs:restriction base="code-primitive">
-      <xs:enumeration value="person">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Person</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="system">
         <xs:annotation>
           <xs:documentation xml:lang="en">System</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="non-system">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Non System</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="individual">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Individual</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="patient">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Patient</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="practitioner">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Practitioner</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="related-person">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Related Person</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="device">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Device</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="collective">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Collective</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="care-team">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Care Team</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="group">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Group</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="healthcare-service">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Healthcare Service</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="organization">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Organization</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
@@ -33928,12 +33978,12 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
               <xs:documentation xml:lang="en">Aspect of certainty being rated.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="rating" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+          <xs:element name="rating" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">Assessment or judgement of the aspect.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="rater" minOccurs="0" maxOccurs="1" type="string">
+          <xs:element name="rater" minOccurs="0" maxOccurs="unbounded" type="string">
             <xs:annotation>
               <xs:documentation xml:lang="en">Individual or group who did the rating.</xs:documentation>
            </xs:annotation>
@@ -34855,7 +34905,7 @@ See guidance around (not) making local changes to elements [here](canonicalresou
               <xs:documentation xml:lang="en">A unique string within the scenario that is used to reference the actor.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="type" minOccurs="1" maxOccurs="1" type="ExampleScenarioActorType">
+          <xs:element name="type" minOccurs="0" maxOccurs="1" type="ExampleScenarioActorType">
             <xs:annotation>
               <xs:documentation xml:lang="en">The category of actor - person or system.</xs:documentation>
            </xs:annotation>
@@ -34868,6 +34918,11 @@ See guidance around (not) making local changes to elements [here](canonicalresou
           <xs:element name="description" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
               <xs:documentation xml:lang="en">An explanation of who/what the actor is and its role in the scenario.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="definition" minOccurs="0" maxOccurs="1" type="canonical">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The formal definition of the actor in the scenario.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -53653,9 +53708,9 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">A description or definition of which activities are allowed to be done on the data.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="limit" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+          <xs:element name="limit" type="Permission.Limit" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">What limits apply to the use of the data.</xs:documentation>
+              <xs:documentation xml:lang="en">What restrictions must be applied to the use of the data by the actor.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -53755,6 +53810,32 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           <xs:element name="reference" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">The actor(s) authorized for the defined activity.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Permission.Limit">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Permission resource holds access rules for a given data and context.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="control" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">One or more coded restriction such as a refrain or obligation.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="tag" minOccurs="0" maxOccurs="unbounded" type="Coding">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">When this rule authorized data use, any data that is tagged with the code here must be redacted from the data provided for that authorized use.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="element" minOccurs="0" maxOccurs="unbounded" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">When this rule authorized data use, the data at the path indicated here, must be redacted from the authorized data provided for that authorized use.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -55434,7 +55515,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:choice>
           <xs:element name="recorded" minOccurs="0" maxOccurs="1" type="instant">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The instant of time at which the activity was recorded.</xs:documentation>
+              <xs:documentation xml:lang="en">The date and time at which the provenance information was recorded / updated, whether in the FHIR Provenance resource or in some other form that is later communicated in the FHIR Provenance.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="policy" minOccurs="0" maxOccurs="unbounded" type="uri">

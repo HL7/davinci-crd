@@ -5,6 +5,7 @@
   "http://hl7.org/fhir/fhir-types|null" : null,
   "https://www.usps.com/|null" : null,
   "http://www.nlm.nih.gov/research/umls/rxnorm|11062023" : null,
+  "http://unstats.un.org/unsd/methods/m49/m49.htm|null" : null,
   "http://terminology.hl7.org/CodeSystem/v3-AdministrativeGender|2023-02-01" : null,
   "http://www.nlm.nih.gov/research/umls/rxnorm|05062024" : null,
   "http://example.org/fhir/CodeSystem/SomeCodes|null" : null,
