@@ -73,6 +73,8 @@ Description: "Captures assertions from a payer about whether the service is cove
   * value[x] from CRDAdditionalDoc (required)
 * extension[doc-purpose] only Extension
   * ^short = "withpa | withclaim | withorder | retain-doc | OTH"
+  * ^definition = "Indicates the reason(s) for the additional documentation that needs to be captured"
+  * ^requirements = "Knowing what the information will be used for may influence who will fill out the form(s) and how quickly the organization will get around to filling them out"
   * ^condition[+] = crd-ci-q4
   * value[x] 1..1
   * value[x] only code

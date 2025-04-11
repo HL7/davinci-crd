@@ -37,6 +37,7 @@ parameters:
   apply-publisher: true
   apply-contact: true
   globals-in-artifacts: true
+  pin-canonicals: pin-multiples
   version-comparison: 
    - 2.0.0
    - 2.1.0-preview
