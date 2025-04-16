@@ -90,5 +90,3 @@ RuleSet: CommonClient
     * insert CSsearch(#SHALL, "_id", "http://hl7.org/fhir/SearchParameter/Resource-id", #token, [[Allows searching for a PractitionerRole by id]])
     * insert CSsearch(#SHALL, "organization", "http://hl7.org/fhir/SearchParameter/PractitionerRole-organization", #reference, [[Allows performing an _include on Organization when retrieving a PractitionerRole]])
     * insert CSsearch(#SHALL, "practitioner", "http://hl7.org/fhir/SearchParameter/PractitionerRole-practitioner", #reference, [[Allows performing an _include on Practitioner when retrieving a PractitionerRole]])
-  * insert CSresourceCRD(#Task, profile-taskquestionnaire)
-    * insert CSinteraction(#SHOULD, #create, [[Needed to allow support for cards returning deferrable cards and/or requests to complete Questionnaires.]])

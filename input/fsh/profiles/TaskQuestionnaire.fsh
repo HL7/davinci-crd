@@ -9,10 +9,10 @@ Description: "This profile specifies constraints on the Task resource to support
   * ^requirements = "Allows linking the Questionnaire to the particular 'request' that triggered its creation."
 //* status only code
 * status MS
-* status = #ready (exactly)
+* status = #ready
 //* intent only code
 * intent MS
-* intent = #order (exactly)
+* intent = #order
 * for 1.. MS
 * for only Reference(CRDPatient)
 * encounter MS
@@ -26,15 +26,4 @@ Description: "This profile specifies constraints on the Task resource to support
 * owner only Reference(USCorePractitionerProfile)
   * ^comment = "This can be populated within the CRD client to delegate responsibility for filling out the form to someone else."
 * reasonCode MS
-* reasonCode from CRDTaskReason (extensible)
-  * ^requirements = "Captures additional details about why the form is needed.  E.g. \"For prior authorization\" or \"For audit documentation\"."
-  * ^binding.description = "CRD Task Reason"
-* input contains afterCompletion 1..* MS
-* input[afterCompletion] ^definition = "Indicates the action to take after completing the form."
-  * type only CodeableConcept
-  * type = $temp#after-completion-action
-  * type MS
-  * value[x] only CodeableConcept
-  * value[x] MS
-  * value[x] from CRDTaskAfterCompletionCode (extensible)
-    * ^binding.description = "CRD After Completion"
+  * text MS

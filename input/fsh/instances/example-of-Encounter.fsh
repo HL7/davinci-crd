@@ -6,7 +6,7 @@ Usage: #example
 * id = "example"
 * identifier
   * use = #official
-  * system = "http://www.amc.nl/zorgportal/identifiers/visits"
+  * system = "http://example.org/zorgportal/identifiers/visits"
   * value = "v1451"
 * status = #in-progress
 * class = $v3-ActCode#AMB "ambulatory"
@@ -19,7 +19,7 @@ Usage: #example
 * hospitalization
   * preAdmissionIdentifier
     * use = #official
-    * system = "http://www.amc.nl/zorgportal/identifiers/pre-admissions"
+    * system = "http://example.org/zorgportal/identifiers/pre-admissions"
     * value = "93042"
   * admitSource = $sct#305956004 "Referral by physician"
   * dischargeDisposition = $sct#306689006 "Discharge to home"

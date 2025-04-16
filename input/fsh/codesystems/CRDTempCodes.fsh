@@ -10,17 +10,46 @@ Description: "Codes temporarily defined as part of the CRD implementation guide.
 * ^property[0].code = #abstract
 * ^property[0].uri = "http://hl7.org/fhir/concept-properties#notSelectable"
 * ^property[0].type = #boolean
-// after-completion code
-* #prior-auth-include      "Include in prior authorization"    "Include information in prior authorization"
-* #initial-claim-include   "Include in initial claim"          "Include information in initial claim submission"
-* #all-claims-include      "Include in all claims"             "Include information in all claim submissions"
-// Task reason
-* #reason-prior-auth       "Prior authorization"               "Task action is needed for prior authorization"
-// Task input codes
-* #after-completion-action "After-completion action"           "A task input indicating an action that should be taken after a QuestionnaireResponse has been completed on a specified Questionnaire.  (Multiple completion actions can be specified.)"
+// Coverage guidance - general
+* #conditional             "Conditional"                       "There is the potential for information requirements from a participant type not listed.  However, a decision on whether there in fact are additional information requirements cannot be made without more information (more detailed code, service rendering information, etc.)"
+// Coverage guidance - covered
+* #covered                 "Covered"                           "Regular coverage applies"
+* #not-covered             "Not covered"                       "No coverage or possibility of coverage for this service)"
+// Coverage guidance - auth
+* #no-auth                 "No Prior Authorization"            "The ordered service does not require prior authorization"
+* #auth-needed             "Prior Authorization Needed"        "The ordered service will require prior authorization" 
+  * #performpa             "Performer Prior Authorization"     "Prior authorization is needed for the service, however such prior authoriation must be initiated by the performing (rather than ordering) provider."
+* #satisfied               "Authorization Satisfied"           "While prior authorization would typically be needed, the conditions evaluated by prior authorization have already been evaluated and therefore prior authorization can be bypassed"
+// Coverage guidance - doc
+* #clinical                "Clinical Documentation"            "Details most likely to originate from a clinician are required to satisfy additional documentation requirements, determine coverage and/or prior auth applicability - e.g. via DTR by clinician.  Indicates that the CRD client should expose the need to launch DTR to clinical users."
+* #admin                   "Administrative Documentation"      "Administrative details not likely to require clinical expertise are needed to satisfy additional documentation requirements, determine coverage and/or prior auth applicability - e.g. via DTR by back-end staff.  Indicates that while the CRD client might expose the ability to launch DTR as an option for clinical users, it should be clear that clinical input is not necessary and deferring the use of DTR to back-end staff is perfectly appropriate.  Some CRD clients might be configured (based on provider preference) to not even show clinicians the option to launch."
+//* #both                    "Administrative & clinical doc"     "Both clinical and administrative details are required to satisfy additional documentation requirements, determine coverage and/or prior auth applicability.  Equivalent to the union of #admin and #clinical."
+* #patient                 "Administrative & clinical doc"     "Details most likely to originate from the patient or their personal representative (e.g. parent, spouse, etc.) are required to satisfy additional documentation requirements, determine coverage and/or prior auth applicability.  For example, information about household composition, accessibility considerations, etc.  This should be used when the data needs to come from the patient themselves, rather than a clinician's assessment of the patient"
+* #_docReason              "Additional Information Purposes"   "A collector for codes representing different reasons for capturing additional information"
+  * ^property.code = #abstract
+  * ^property.valueBoolean = true
+  * #withpa              "Include in prior authorization"      "The information in this QuestionnaireResponse should be packaged into a Bundle and submitted as part of (or in association with) a prior authorization for the associated request resource(s)."
+  * #withclaim           "Include with claim"                  "The information in this QuestionnaireResponse should be packaged into a Bundle and submitted as part of (or in association with) the insurance claim for the services ordered by the associated request resource(s)."
+  * #withorder           "Include with order"                  "The information in this QuestionnaireResponse should be packaged into a Bundle and submitted along with (or referenced as supporting information to) the associated request resource(s) when transmitting the order to the fulfilling system."
+  * #retain-doc          "Medical necessity"                   "The information in this QuestionnaireResponse should be retained within the EHR as supporting evidence of the medical necessity of the associated request resource(s)."
+// Coverage guidance - info needed
+* #performer               "Performer Needed"                  "Information about who (specifically, or at least performer type and affiliation) is necessary to make a determination of coverage and/or prior auth expectations"
+* #location                "Location Needed"                   "Information about where (specific clinic/site or organization) is necessary to make a determination of coverage and/or prior auth expectations"
+* #timeframe               "Timeframe Needed"                  "Information about when the service will be performed that is more granular than the order effective period is necessary to make a determination of coverage and/or prior auth expectations"
+* #contract-window         "New Contract Window"               "The target performance time for the event falls outside the contract window for the patient's current coverage.  Information will not be available until a contract is in place covering the service time period"
+* #detail-code             "Detail code"                       "The ordered code is at too high a level of granularity to make decisions about coverage/pa/etc.  Can only be present if something is 'conditional'"
+
+// Metric token use
+* #used                    "Authorization Token Used"          "An authorization token was used by the payer to access additional information from the provider system as part of the CDS Hook call"
+  * #rejected              "Authorization Token Rejected"      "The payer attempted to use an authorization token to access additional information from the provider system as part of the CDS Hook call, however the access request failed.  (This is not used if the request succeeded but returned no records.)"
+* #not-used                "Authorization Token Not Used"      "The payer did not attempt to use an authorization token to access additional information from the provider system as part of the CDS Hook call"
+// Metric data source
+* #provider-src            "Provider-sourced"                  "The metric information was captured from the provider system's perspective"
+* #payer-src               "Payer-sourced"                     "The metric information was captured from the payer system's perspective"
+
 // Coverage assertion reasons
 * #gold-card               "Gold card"                         "Ordering Practitioner has been granted 'gold card' status with this payer/coverage type."
-* #detail-code             "Detail code"                       "The ordered code is at too high a level of granularity to make decisions about coverage/pa/etc.  Can only be present if something is 'conditional'"
+
 // Coverage detail types
 * #allowed-quantity        "Maximum quantity"                  "Indicates limitations on the number of services/products allowed (possibly per time period).  Value should be a Quantity"
 * #allowed-period          "Maximum allowed period"            "Indicates the maximum period of time that can be covered in a single order.  Value should be a Period"
@@ -33,37 +62,11 @@ Description: "Codes temporarily defined as part of the CRD implementation guide.
 * #instructions            "Instructions"                      "Information to display to the user that gives guidance about what steps to take in achieving the recommended actions identified by this coverage-information (e.g. special instructions about requesting authorization, details about information needed, details about data retention, etc.).  Value should be a string."
   * #instructions-clinical   "Clinical instructions"           "Instructions specifically intended for the use of clinical (rather than administrative staff)"
   * #instructions-admin      "Administrative Instructions"     "Instructions specifically intended for the use of administrative (rather than clinical staff)"
-// Coverage guidance - general
-* #conditional             "Conditional"                       "There is the potential for information requirements from a participant type not listed.  However, a decision on whether there in fact are additional information requirements cannot be made without more information (more detailed code, service rendering information, etc.)"
-// Coverage guidance - covered
-* #covered                 "Covered"                           "Regular coverage applies"
-* #not-covered             "Not covered"                       "No coverage or possibility of coverage for this service)"
-// Coverage guidance - doc
-* #clinical                "Clinical Documentation"            "Details most likely to originate from a clinician are required to satisfy additional documentation requirements, determine coverage and/or prior auth applicability - e.g. via DTR by clinician.  Indicates that the CRD client should expose the need to launch DTR to clinical users."
-* #admin                   "Administrative Documentation"      "Administrative details not likely to require clinical expertise are needed to satisfy additional documentation requirements, determine coverage and/or prior auth applicability - e.g. via DTR by back-end staff.  Indicates that while the CRD client might expose the ability to launch DTR as an option for clinical users, it should be clear that clinical input is not necessary and deferring the use of DTR to back-end staff is perfectly appropriate.  Some CRD clients might be configured (based on provider preference) to not even show clinicians the option to launch."
-* #both                    "Administrative & clinical doc"     "Both clinical and administrative details are required to satisfy additional documentation requirements, determine coverage and/or prior auth applicability.  Equivalent to the union of #admin and #clinical."
-* #patient                 "Administrative & clinical doc"     "Details most likely to originate from the patient or their personal representative (e.g. parent, spouse, etc.) are required to satisfy additional documentation requirements, determine coverage and/or prior auth applicability.  For example, information about household composition, accessibility considerations, etc.  This should be used when the data needs to come from the patient themselves, rather than a clinician's assessment of the patient"
-// Coverage guidance - auth
-* #no-auth                 "No Prior Authorization"            "The ordered service does not require prior authorization"
-* #auth-needed             "Prior Authorization Needed"        "The ordered service will require prior authorization" 
-  * #performpa             "Performer Prior Authorization"     "Prior authorization is needed for the service, however such prior authoriation must be initiated by the performing (rather than ordering) provider."
-* #satisfied               "Authorization Satisfied"           "While prior authorization would typically be needed, the conditions evaluated by prior authorization have already been evaluated and therefore prior authorization can be bypassed"
-// Coverage guidance - info needed
-* #performer               "Performer Needed"                  "Information about who (specifically, or at least performer type and affiliation) is necessary to make a determination of coverage and/or prior auth expectations"
-* #location                "Location Needed"                   "Information about where (specific clinic/site or organization) is necessary to make a determination of coverage and/or prior auth expectations"
-* #timeframe               "Timeframe Needed"                  "Information about when the service will be performed that is more granular than the order effective period is necessary to make a determination of coverage and/or prior auth expectations"
-* #contract-window         "New Contract Window"               "The target performance time for the event falls outside the contract window for the patient's current coverage.  Information will not be available until a contract is in place covering the service time period"
-// Metric token use
-* #used                    "Authorization Token Used"          "An authorization token was used by the payer to access additional information from the provider system as part of the CDS Hook call"
-  * #rejected              "Authorization Token Rejected"      "The payer attempted to use an authorization token to access additional information from the provider system as part of the CDS Hook call, however the access request failed.  (This is not used if the request succeeded but returned no records.)"
-* #not-used                "Authorization Token Not Used"      "The payer did not attempt to use an authorization token to access additional information from the provider system as part of the CDS Hook call"
-// Metric data source
-* #provider-src            "Provider-sourced"                  "The metric information was captured from the provider system's perspective"
-* #payer-src               "Payer-sourced"                     "The metric information was captured from the payer system's perspective"
+
+// Card types
 * #_cardType               "Card Type (abstract)"              "A collector for different profiles on CDS Hooks card"
   * ^property.code = #abstract
   * ^property.valueBoolean = true
-// Card types
   * #coverage-info            "Coverage Information"           "Information related to the patient's coverage, including whether a service is covered, requires prior authorization, is approved without seeking prior authorization, and/or requires additional documentation or data collection"
     * #unsolicited-determ     "Unsolicited Determination"      "An unsolicited approval of the service as having prior authorization requirements met without a formal submission of a prior authorization request"
   * #claim                    "Claim"                          "Information about what steps need to be taken to submit a claim for the service"
@@ -79,6 +82,7 @@ Description: "Codes temporarily defined as part of the CRD implementation guide.
   * #contraindication         "Contraindication"               "Notice that the proposed intervention may be contraindicated based on information the payer has in their record that the provider doesn't have in theirs"
   * #guideline                "Guideline"                      "Indication that there is a guideline available for the proposed therapy (with an option to view)"
   * #off-guideline            "Off Guideline"                  "Notice that the proposed therapy may be contrary to best-practice guidelines, typically with an option to view the relevant guideline"
+
 * #_HookType               "CDS Hook Type (abstract)"          "A collector for the different types of CDS Hooks"
   * ^property.code = #abstract
   * ^property.valueBoolean = true
@@ -88,13 +92,7 @@ Description: "Codes temporarily defined as part of the CRD implementation guide.
   * #order-dispatch"     "Order Dispatch"
   * #order-select        "Order Select"
   * #order-sign          "Order Sign"
-* #_docReason              "Additional Information Purposes"   "A collector for codes representing different reasons for capturing additional information"
-  * ^property.code = #abstract
-  * ^property.valueBoolean = true
-  * #withpa              "Include in prior authorization"      "The information in this QuestionnaireResponse should be packaged into a Bundle and submitted as part of (or in association with) a prior authorization for the associated request resource(s)."
-  * #withclaim           "Include with claim"                  "The information in this QuestionnaireResponse should be packaged into a Bundle and submitted as part of (or in association with) the insurance claim for the services ordered by the associated request resource(s)."
-  * #withorder           "Include with order"                  "The information in this QuestionnaireResponse should be packaged into a Bundle and submitted along with (or referenced as supporting information to) the associated request resource(s) when transmitting the order to the fulfilling system."
-  * #retain-doc          "Medical necessity"                   "The information in this QuestionnaireResponse should be retained within the EHR as supporting evidence of the medical necessity of the associated request resource(s)."
+
 * #_cmsLocation          "CMS Location codes"                  "A collector for CMS location codes"
   * #1 "Pharmacy **" "A facility or location where drugs and other medically related items and services are sold, dispensed, or otherwise provided directly to patients."
   * #2 "Telehealth Provided Other than in Patient's Home" "The location where health services and health related services are provided or received, through telecommunication technology. Patient is not located in their home when receiving health services or health related services through telecommunication technology."

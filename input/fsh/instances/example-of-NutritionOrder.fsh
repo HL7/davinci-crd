@@ -5,7 +5,7 @@ Description: "Example nutrition order populated based on CRD profile"
 Usage: #example
 * id = "example"
 * identifier
-  * system = "http://goodhealthhospital.org/nutrition-requests"
+  * system = "http://example.org/nutrition-requests"
   * value = "123"
 * status = #draft
 * intent = #order

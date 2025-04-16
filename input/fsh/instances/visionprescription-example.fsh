@@ -4,7 +4,7 @@ Title: "VisionPrescription example"
 Description: "Example vision prescription based on CRD profile"
 Usage: #example
 * identifier
-  * system = "http://www.happysight.com/prescription"
+  * system = "http://example.org/prescription"
   * value = "15013"
 * status = #draft
 * created = "2014-06-15"

@@ -7,7 +7,7 @@ Usage: #example
 * contained = med0320
 * identifier
   * use = #official
-  * system = "http://www.bmc.nl/portal/prescriptions"
+  * system = "http://example.org/portal/prescriptions"
   * value = "12345689"
 * status = #draft
 * intent = #order

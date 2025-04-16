@@ -15,7 +15,7 @@ extension:
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
     valueCode: fm
 canonical: http://hl7.org/fhir/us/davinci-crd
-version: 2.1.0
+version: 2.2.0-cibuild
 name: CoverageRequirementsDiscovery
 title: Da Vinci - Coverage Requirements Discovery
 status: active
@@ -39,8 +39,7 @@ parameters:
   globals-in-artifacts: true
   pin-canonicals: pin-multiples
   version-comparison: 
-   - 2.0.0
-   - 2.1.0-preview
+   - 2.1.0
   shownav: true
 
 #  path-binary: input/hooks-files
@@ -95,7 +94,7 @@ dependencies:
   hl7.fhir.uv.tools:
     id: tools
     uri: http://hl7.org/fhir/tools/ImplementationGuide/hl7.fhir.uv.tools
-    version: current
+    version: 0.4.0
     reason: |
       Defines the CDS Hooks logical models
 pages:

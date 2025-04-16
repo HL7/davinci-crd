@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/us/davinci-crd/2022May" ciUrl="http://build.fhir.org/ig/HL7/davinci-crd" defaultVersion="2.1.0" defaultWorkgroup="fm" gitUrl="https://github.com/HL7/davinci-crd" url="http://hl7.org/fhir/us/davinci-crd">
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/us/davinci-crd/2022May" ciUrl="http://build.fhir.org/ig/HL7/davinci-crd" defaultVersion="2.2.0" defaultWorkgroup="fm" gitUrl="https://github.com/HL7/davinci-crd" url="http://hl7.org/fhir/us/davinci-crd">
 <version code="current" url="http://build.fhir.org/ig/HL7/davinci-crd"/>
+<version code="2.2.0" url="http://hl7.org/fhir/us/davinci-crd/STU2.2"/>
 <version code="2.1.0" url="http://hl7.org/fhir/us/davinci-crd/STU2.1"/>
 <version code="2.1.0-preview" deprecated="true" url="http://hl7.org/fhir/us/davinci-crd/STU2.1-preview"/>
 <version code="2.0.1" deprecated="true" url="http://hl7.org/fhir/us/davinci-crd/STU2"/>
@@ -26,7 +27,7 @@
 <artifact id="StructureDefinition/CDSHookServicesExtensionConfiguration" key="StructureDefinition-CDSHookServicesExtensionConfig" name="CDS Hooks Services Configuration Extension"/>
 <artifact id="ValueSet/cmslocationcodes" key="ValueSet-cmslocationcodes" name="CMS Location Codes Value Set"/>
 <artifact id="ValueSet/CMSMappableLocationCodes" key="ValueSet-CMSMappableLocationCodes" name="CMS Mappable Location Codes"/>
-<artifact id="ValueSet/afterCompletionCode" key="ValueSet-afterCompletionCode" name="CRD After Completion Code Value Set"/>
+<artifact deprecated="true" id="ValueSet/afterCompletionCode" key="ValueSet-afterCompletionCode" name="CRD After Completion Code Value Set"/>
 <artifact deprecated="true" id="StructureDefinition/profile-appointment" key="StructureDefinition-profile-appointment" name="CRD Appointment"/>
 <artifact id="StructureDefinition/profile-appointment-with-order" key="StructureDefinition-profile-appointment-with-order" name="CRD Appointment with Order"/>
 <artifact id="StructureDefinition/profile-appointment-no-order" key="StructureDefinition-profile-appointment-no-order" name="CRD Appointment without Order"/>
@@ -72,7 +73,7 @@
 <artifact deprecated="true" id="CapabilityStatement/crd-server6.1" key="CapabilityStatement-crd-server6.1" name="CRD Server USCDI 3"/>
 <artifact id="StructureDefinition/profile-servicerequest" key="StructureDefinition-profile-servicerequest" name="CRD Service Request"/>
 <artifact id="ValueSet/serviceRequestCodes" key="ValueSet-serviceRequestCodes" name="CRD Service Request Codes Value Set"/>
-<artifact id="ValueSet/taskReason" key="ValueSet-taskReasonCode" name="CRD Task Reason Codes Value Set"/>
+<artifact deprecated="true" id="ValueSet/taskReason" key="ValueSet-taskReasonCode" name="CRD Task Reason Codes Value Set"/>
 <artifact id="CodeSystem/temp" key="CodeSystem-temp" name="CRD Temporary Codes"/>
 <artifact id="StructureDefinition/profile-visionprescription" key="StructureDefinition-profile-visionprescription" name="CRD Vision Prescription"/>
 <artifact deprecated="true" id="StructureDefinition/profile-crdcardtask" key="StructureDefinition-profile-crdcardtask" name="CRDCardTask"/>

@@ -20,7 +20,7 @@ Usage: #example
 * identifier[MRIdentifier]
   * use = #usual
   * type.text = "Medical Record Number"
-  * system = "http://hospital.smarthealthit.org"
+  * system = "http://example.org/NamingSystem/mrn"
   * value = "1032702"
 * active = true
 * name[+]
@@ -42,7 +42,7 @@ Usage: #example
   * use = #home
 * telecom[+]
   * system = #email
-  * value = "amy.shaw@example.com"
+  * value = "amy.shaw@example.org"
 * gender = #female
 * birthDate = "1987-02-20"
 * address[+]

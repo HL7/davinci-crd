@@ -5,7 +5,7 @@ Description: "Example communication request populated based on CRD profile"
 Usage: #example
 * id = "example"
 * identifier
-  * system = "http://www.jurisdiction.com/insurer/123456"
+  * system = "http://example.org/insurer/123456"
   * value = "ABC123"
 * basedOn.display = "EligibilityRequest"
 * replaces.display = "prior CommunicationRequest"

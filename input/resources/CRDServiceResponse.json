@@ -6,8 +6,8 @@
       "detail": "Last date on record for a PAP test for this patient was May, 2014.  Tests should ideally be performed every 1-3 years",
       "source": {
         "label": "You're Covered Insurance",
-        "url": "https://example.com",
-        "icon": "https://example.com/img/icon-100px.png",
+        "url": "https://example.org",
+        "icon": "https://example.org/img/icon-100px.png",
         "topic": {
           "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
           "code": "clinical-reminder",
@@ -29,7 +29,7 @@
       "detail": "Learn about covered oxygen items and equipment for home use; coverage requirements; criteria you must meet to furnish oxygen items and equipment for home use; Advance Beneficiary Notice of Noncoverage; oxygen equipment, items, and services that are not covered; and payments for oxygen items and equipment and billing and coding guidelines.",
       "source": {
         "label": "Centers for Medicare & Medicaid Services",
-        "url": "https://cms.gov",
+        "url": "https://example.org/cms",
         "topic": {
           "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
           "code": "guideline",
@@ -39,12 +39,12 @@
       "links": [
         {
           "label": "Home Oxygen Therapy Guidelines",
-          "url": "https://www.cms.gov/Outreach-and-Education/Medicare-Learning-Network-MLN/MLNProducts/Downloads/Home-Oxygen-Therapy-ICN908804.pdf",
+          "url": "https://example.org/cms/Outreach-and-Education/Medicare-Learning-Network-MLN/MLNProducts/Downloads/Home-Oxygen-Therapy-ICN908804.pdf",
           "type": "absolute"
         },
         {
           "label": "Home Oxygen Therapy Guidelines (printer-friendly)",
-          "url": "https://www.cms.gov/Outreach-and-Education/Medicare-Learning-Network-MLN/MLNProducts/Downloads/Home-Oxygen-Therapy-Text-Only.pdf",
+          "url": "https://example.org/cms/Outreach-and-Education/Medicare-Learning-Network-MLN/MLNProducts/Downloads/Home-Oxygen-Therapy-Text-Only.pdf",
           "type": "absolute"
         }
       ]
@@ -63,7 +63,7 @@
       "detail": "Mrs. Baxter has been on home oxygen for over 18 months and purchase is more efficient.  Payer XYZ has negotiated a discount on Acme brand portable oxygen systems which will result in a cost only slightly higher than anual rental",
       "source": {
         "label": "Centers for Medicare & Medicaid Services",
-        "url": "https://cms.gov",
+        "url": "https://example.org/cms",
         "topic": {
           "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
           "code": "therapy-alternatives-opt",

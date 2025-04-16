@@ -5,7 +5,7 @@ Description: "Example identified coverage populated based on CRD profile"
 Usage: #example
 * id = "example"
 * identifier[memberid]
-  * system = "http://example.com/fhir/NampingSystem/certificate"
+  * system = "http://example.org/fhir/NampingSystem/certificate"
   * value = "12345"
 * status = #active
 * type = $v3-ActCode#EHCPOL "extended healthcare"

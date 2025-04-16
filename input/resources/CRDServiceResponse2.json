@@ -13,7 +13,7 @@
       "indicator": "info",
       "source": {
         "label": "Centers for Medicare & Medicaid Services",
-        "url": "https://cms.gov",
+        "url": "https://example.org/cms",
         "topic": {
           "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
           "code": "therapy-alternatives-req",
@@ -112,7 +112,7 @@
       "indicator": "info",
       "source": {
         "label": "Centers for Medicare & Medicaid Services",
-        "url": "https://cms.gov",
+        "url": "https://example.org/cms",
         "topic": {
           "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
           "code": "clinical-reminder",
@@ -197,7 +197,7 @@
       "indicator": "info",
       "source": {
         "label": "Centers for Medicare & Medicaid Services",
-        "url": "https://cms.gov",
+        "url": "https://example.org/cms",
         "topic": {
           "system": "http://example.org/fhir/CodeSystem/SomeCodes",
           "code": "123",
@@ -290,8 +290,8 @@
       "indicator": "info",
       "source": {
         "label": "Some Payer",
-        "url": "https://example.com",
-        "icon": "https://example.com/img/icon-100px.png",
+        "url": "https://example.org",
+        "icon": "https://example.org/img/icon-100px.png",
         "topic": {
           "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
           "code": "insurance",
@@ -356,8 +356,8 @@
       "indicator": "info",
       "source": {
         "label": "Some Payer",
-        "url": "https://example.com",
-        "icon": "https://example.com/img/icon-100px.png",
+        "url": "https://example.org",
+        "icon": "https://example.org/img/icon-100px.png",
         "topic": {
           "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
           "code": "guideline",
