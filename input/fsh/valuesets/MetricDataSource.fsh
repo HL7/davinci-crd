@@ -5,5 +5,5 @@ Description: "A list of codes indicating the perspective from which metric data 
 * ^status = #active
 * ^experimental = false
 * ^extension[$fmm].valueInteger = 1
-* CRDTempCodes#payer-src
-* CRDTempCodes#provider-src
+* CRDMetricCodes#payer-src
+* CRDMetricCodes#provider-src

@@ -1,0 +1,56 @@
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "inactive" : false,
+    "include" : [{
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/coverage-information-codes",
+      "concept" : [{
+        "code" : "withpa"
+      },
+      {
+        "code" : "withclaim"
+      },
+      {
+        "code" : "withorder"
+      },
+      {
+        "code" : "retain-doc"
+      }]
+    }]
+  }
+}}####
+e: {
+  "from-server" : true,
+  "error" : "Error from http://tx.fhir.org/r4: Unable to provide support for code system http://hl7.org/fhir/us/davinci-crd/CodeSystem/coverage-information-codes"
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "inactive" : false,
+    "include" : [{
+      "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/coverage-information-codes",
+      "concept" : [{
+        "code" : "performer"
+      },
+      {
+        "code" : "location"
+      },
+      {
+        "code" : "timeframe"
+      },
+      {
+        "code" : "contract-window"
+      },
+      {
+        "code" : "detail-code"
+      }]
+    }]
+  }
+}}####
+e: {
+  "from-server" : true,
+  "error" : "Error from http://tx.fhir.org/r4: Unable to provide support for code system http://hl7.org/fhir/us/davinci-crd/CodeSystem/coverage-information-codes"
+}
+-------------------------------------------------------------------------------------

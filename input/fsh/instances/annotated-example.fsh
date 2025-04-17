@@ -5,11 +5,11 @@ Description: "Example medication request with an annotation showing coverage exp
 Usage: #example
 * extension[Coverage-Information]
   * extension[coverage].valueReference = Reference(Coverage/example)
-  * extension[covered].valueCode = $temp#conditional
-  * extension[pa-needed].valueCode = $temp#satisfied
-  * extension[doc-needed].valueCode = $temp#admin
-  * extension[doc-purpose].valueCode = $temp#withclaim
-  * extension[info-needed].valueCode = $temp#performer
+  * extension[covered].valueCode = CoverageInformationCodes#conditional
+  * extension[pa-needed].valueCode = CoverageInformationCodes#satisfied
+  * extension[doc-needed].valueCode = CoverageInformationCodes#admin
+  * extension[doc-purpose].valueCode = CoverageInformationCodes#withclaim
+  * extension[info-needed].valueCode = CoverageInformationCodes#performer
   * extension[billingCode].valueCoding = $cpt#77065
   * extension[billingCode].valueCoding = $cpt#77066
   * extension[billingCode].valueCoding = $cpt#77067

@@ -59,6 +59,7 @@
 <artifact id="StructureDefinition/profile-location" key="StructureDefinition-profile-location" name="CRD Location"/>
 <artifact id="ValueSet/locationAddressType" key="ValueSet-locationAddressType" name="CRD Location Address Types Value Set"/>
 <artifact id="StructureDefinition/profile-medicationrequest" key="StructureDefinition-profile-medicationrequest" name="CRD Medication Request"/>
+<artifact id="CodeSystem/crd-metric-codes" key="CodeSystem-crd-metric-codes" name="CRD Metric Codes"/>
 <artifact id="StructureDefinition/CRDMetricData" key="StructureDefinition-CRDMetricData" name="CRD Metric Data"/>
 <artifact id="ValueSet/metricDataSource" key="ValueSet-metricDataSource" name="CRD Metric Data Source Value Set"/>
 <artifact id="ValueSet/metricTokenUse" key="ValueSet-metricTokenUse" name="CRD Metric Token Use"/>
@@ -83,6 +84,7 @@
 <artifact deprecated="true" id="CodeSystem/coverageGuidance" key="CodeSystem-coverageGuidance" name="Coverage Guidance Code System"/>
 <artifact deprecated="true" id="ValueSet/coverageGuidance" key="ValueSet-coverageGuidance" name="Coverage Guidance Value Set"/>
 <artifact id="StructureDefinition/ext-coverage-information" key="StructureDefinition-ext-coverage-information" name="Coverage Information"/>
+<artifact id="CodeSystem/coverage-information-codes" key="CodeSystem-coverage-information-codes" name="Coverage Information Codes"/>
 <artifact id="Coverage/example" key="Coverage-example" name="Coverage example"/>
 <artifact deprecated="true" id="StructureDefinition/profile-coverage-deident" key="StructureDefinition-profile-coverage-deident" name="CoverageDeident"/>
 <artifact deprecated="true" id="Coverage/deident-example" key="Coverage-deident-example" name="De-identified Coverage example"/>

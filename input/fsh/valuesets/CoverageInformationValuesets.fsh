@@ -5,9 +5,9 @@ Description: "Codes defining whether the ordered/requested service is covered un
 * ^status = #active
 * ^experimental = false
 * ^extension[$fmm].valueInteger = 1
-* CRDTempCodes#not-covered
-* CRDTempCodes#covered
-* CRDTempCodes#conditional
+* CoverageInformationCodes#not-covered
+* CoverageInformationCodes#covered
+* CoverageInformationCodes#conditional
 
 ValueSet: CRDCoveragePaDetail
 Id: coveragePaDetail
@@ -16,11 +16,11 @@ Description: "Codes defining whether prior auth will be needed for coverage to b
 * ^status = #active
 * ^experimental = false
 * ^extension[$fmm].valueInteger = 1
-* CRDTempCodes#no-auth
-* CRDTempCodes#auth-needed
-* CRDTempCodes#satisfied
-* CRDTempCodes#performpa
-* CRDTempCodes#conditional
+* CoverageInformationCodes#no-auth
+* CoverageInformationCodes#auth-needed
+* CoverageInformationCodes#satisfied
+* CoverageInformationCodes#performpa
+* CoverageInformationCodes#conditional
 
 ValueSet: CRDAdditionalDoc
 Id: AdditionalDocumentation
@@ -29,10 +29,10 @@ Description: "Codes defining whether additional documentation needs to be captur
 * ^status = #active
 * ^experimental = false
 * ^extension[$fmm].valueInteger = 1
-* CRDTempCodes#clinical
-* CRDTempCodes#admin
-* CRDTempCodes#patient
-* CRDTempCodes#conditional
+* CoverageInformationCodes#clinical
+* CoverageInformationCodes#admin
+* CoverageInformationCodes#patient
+* CoverageInformationCodes#conditional
 
 ValueSet: CRDDocReason
 Id: DocReason
@@ -42,10 +42,10 @@ Description: "List of reasons for additional documentation"
 * ^experimental = false
 * ^extension[$fmm].valueInteger = 1
 //* include codes from system CRDTempCodes where concept descendent-of #_docReason
-* CRDTempCodes#withpa
-* CRDTempCodes#withclaim
-* CRDTempCodes#withorder
-* CRDTempCodes#retain-doc
+* CoverageInformationCodes#withpa
+* CoverageInformationCodes#withclaim
+* CoverageInformationCodes#withorder
+* CoverageInformationCodes#retain-doc
 * $v3-NullFlavor#OTH
 
 ValueSet: CRDInformationNeeded
@@ -55,10 +55,11 @@ Description: "Codes defining whether information about the perfomer, location, a
 * ^status = #active
 * ^experimental = false
 * ^extension[$fmm].valueInteger = 1
-* CRDTempCodes#performer
-* CRDTempCodes#location
-* CRDTempCodes#timeframe
-* CRDTempCodes#contract-window
+* CoverageInformationCodes#performer
+* CoverageInformationCodes#location
+* CoverageInformationCodes#timeframe
+* CoverageInformationCodes#contract-window
+* CoverageInformationCodes#detail-code
 * $v3-NullFlavor#OTH
 
 ValueSet: CRDCoverageAssertionReasons
@@ -69,4 +70,3 @@ Description: "Reasons for a coverage assertion in the coverage-information exten
 * ^experimental = false
 * ^extension[$fmm].valueInteger = 1
 * CRDTempCodes#gold-card
-* CRDTempCodes#detail-code
