@@ -23,7 +23,7 @@
         "id": "CDSHookServiceRequestExtensionRequestConfig",
         "extension": [
           {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/elementdefinition-json-name",
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/json-name",
             "valueString": "davinci-crd.configuration"
           },
           {
