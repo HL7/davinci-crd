@@ -1,7 +1,32 @@
 This page describes the primary releases of the specification and summarizes the content for each:
 
 ### Release 2.2.0
-* TODO
+
+**Substantive and breaking changes**:
+* [FHIR-49801](https://jira.hl7.org/browse/FHIR-49801) - Update appointment prefetch to include ServiceRequest
+* [FHIR-50276](https://jira.hl7.org/browse/FHIR-50276) - Moved codes out of the tmporary code system to their permanent home
+* [FHIR-49637](https://jira.hl7.org/browse/FHIR-49637) - Added standard reason codes for member not found and reason not found
+* [FHIR-49754	
+](https://jira.hl7.org/browse/FHIR-49754	
+) - Moved info-needed code from 'reason' to 'info-needed' element
+* [FHIR-49792](https://jira.hl7.org/browse/FHIR-49792) - Added a 'category' element to coverage-information.detail; merged instructions-clinical and instructions-admin detail codes into 'instructions'
+* [FHIR-49827](https://jira.hl7.org/browse/FHIR-49827) - Revised crd-ci-q4 constraint to add noauth and not-covered as relevant prior auth decisions
+* [FHIR-49829](https://jira.hl7.org/browse/FHIR-49829) - Added constraint: If doc-purpose is present with a value other than 'conditional', then doc-reason must be present.
+* [FHIR-50492](https://jira.hl7.org/browse/FHIR-50492), [FHIR-50494](https://jira.hl7.org/browse/FHIR-50494), [FHIR-50495](https://jira.hl7.org/browse/FHIR-50495), [FHIR-50496](https://jira.hl7.org/browse/FHIR-50496) - Enforce that US Core profiles are enforced for CommunicationRequest, DeviceRequest and ServiceRequest reason, as well as Encounter.diagnosis and procedure
+* [FHIR-49983](https://jira.hl7.org/browse/FHIR-49983) - Allow communicating 'possible billing codes' as part of order codes
+* [FHIR-49794](https://jira.hl7.org/browse/FHIR-49794) - Prohibit Questionnaire Tasks from having a 'focus' element
+* [FHIR-50269](https://jira.hl7.org/browse/FHIR-50269) - Remove 'after completion' input from Questionnaire Task
+* [FHIR-49894](https://jira.hl7.org/browse/FHIR-49894) - Add rule that info-needed of OTH requires detail
+* [FHIR-49830](https://jira.hl7.org/browse/FHIR-49830) - Explicitly require giving clinician a chance to launch DTR if info-needed=patient
+* [FHIR-50102](https://jira.hl7.org/browse/FHIR-50102) - Require payers to not make changes to resources when adding coverage-information extension
+* [FHIR-49128](https://jira.hl7.org/browse/FHIR-49128) - Tighten expectations on prefetch processing
+* [FHIR-49742](https://jira.hl7.org/browse/FHIR-49742) - Make clear that having an access token is reqiured
+* [FHIR-49909](https://jira.hl7.org/browse/FHIR-49909) - Tighten requirements about ignoring unexpected elements
+* [FHIR-50051](https://jira.hl7.org/browse/FHIR-50051) - Update to current version of CDS Hooks
+* [FHIR-49897](https://jira.hl7.org/browse/FHIR-49897) - Add expectations around patient-pay
+
+**Non-substantive changes**:
+TODO
 
 ### Release 2.1.0
 * [FHIR-47329](https://jira.hl7.org/browse/FHIR-47329), [FHIR-48622](https://jira.hl7.org/browse/FHIR-48622) - Added support for USCDI v4 (US Core 7.0.0) and clarify language about what multi-US-Core release implementation means
