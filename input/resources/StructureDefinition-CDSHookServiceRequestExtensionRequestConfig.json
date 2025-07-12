@@ -13,13 +13,17 @@
   "type": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CDSHookServiceRequestExtensionRequestConfig",
   "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Base",
   "derivation": "specialization",
+  "context" : [{
+    "type" : "element",
+    "expression" : "CDSHooksRequest.extension"
+  }],
   "differential": {
     "element": [
       {
         "id": "CDSHookServiceRequestExtensionRequestConfig",
         "extension": [
           {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/elementdefinition-json-name",
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/json-name",
             "valueString": "davinci-crd.configuration"
           },
           {

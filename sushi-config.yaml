@@ -91,12 +91,12 @@ dependencies:
     version: 0.19.0
     reason: |
       Uses the latest version of the VSAC codes
-  hl7.fhir.uv.tools:
-    id: tools
-    uri: http://hl7.org/fhir/tools/ImplementationGuide/hl7.fhir.uv.tools
-    version: 0.4.0
-    reason: |
-      Defines the CDS Hooks logical models
+#  hl7.fhir.uv.tools:
+#    id: tools
+#    uri: http://hl7.org/fhir/tools/ImplementationGuide/hl7.fhir.uv.tools.r4
+#    version: current
+#    reason: |
+#      Defines the CDS Hooks logical models
 pages:
   index.md:
     title: CRD IG Home Page

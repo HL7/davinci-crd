@@ -20,9 +20,9 @@ Description: "Codes used within 'code' elements in the CRD Metric logical model.
 * #_HookType               "CDS Hook Type (abstract)"          "A collector for the different types of CDS Hooks"
   * ^property.code = #abstract
   * ^property.valueBoolean = true
-  * #appointment-book    "Appointment Book"
-  * #encounter-start     "Encounter Start"
-  * #encounter-discharge "Encounter Discharge"
-  * #order-dispatch"     "Order Dispatch"
-  * #order-select        "Order Select"
-  * #order-sign          "Order Sign"
+  * #appointment-book    "Appointment Book"     "CDS Hook Appointment Book Hook"
+  * #encounter-start     "Encounter Start"      "CDS Hook Encounter Start Hook"
+  * #encounter-discharge "Encounter Discharge"  "CDS Hook Encounter Discharge Hook"
+  * #order-dispatch"     "Order Dispatch"       "CDS Hook Order Dispatch Hook"
+  * #order-select        "Order Select"         "CDS Hook Order Select Hook"
+  * #order-sign          "Order Sign"           "CDS Hook Order Sign Hook"
