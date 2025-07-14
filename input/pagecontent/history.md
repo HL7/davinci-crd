@@ -24,6 +24,7 @@ This page describes the primary releases of the specification and summarizes the
 * [FHIR-49909](https://jira.hl7.org/browse/FHIR-49909) - Tighten requirements about ignoring unexpected elements
 * [FHIR-50051](https://jira.hl7.org/browse/FHIR-50051) - Update to current version of CDS Hooks
 * [FHIR-49897](https://jira.hl7.org/browse/FHIR-49897) - Add expectations around patient-pay
+* [FHIR-50318](https://jira.hl7.org/browse/FHIR-50318) - Added expectation to put coverage-expectation extension on ServiceRequest for appointments based on ServiceRequest (clarification) [link](cards.html#FHIR-50318)
 
 **Non-substantive changes**:
 TODO

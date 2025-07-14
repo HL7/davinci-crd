@@ -85,6 +85,11 @@ Support expectations for this hook by CDS services are as follows:
 
 A new FHIR [coverage-information](StructureDefinition-ext-coverage-information.html) extension is defined that allows assertions around coverage and prior authorization to also be captured computably, including what assertion is made, what coverage the assertion is made with respect to, when the assertion was made, and - optionally - a trace ID that can be used for audit purposes.
 
+<a name="FHIR-50318"> </a>
+<span class="new-content">
+The extension generally gets added to the request reource that was passed to the CDS server (the Appointment, Encounter, ServiceRequest, etc.).  There is one exception, which is if an Appointment is 'basedOn' a ServiceRequest, the system action requesting a resoruce update to add or change the coverage-information extension(s) will be against the ServiceRequest, not the appointment.
+</span>
+
 Assertions about coverage, prior authorization requirements, etc. are contingent on the eventual claim for the ordered service being aligned with payer expectations. Because the order/appointment/etc. will not have the same information that would typically be included in a formal request for prior authorization or pre-determination, the payer will need to infer from the order what billing codes, qualifiers, dollar amounts, etc. would typically be involved. In some cases, the answer might differ depending on factors such as in/out of network, when the service is delivered, etc. These qualifiers around when the coverage assertion is considered valid **SHALL** be included as part of the annotation.
 
 If a CRD service has provided limitations about when a coverage assertion applies that turn out to not be consistent with what the provider intends to do (e.g., payer says "covered if billed as X", but provider intends to bill as Y), then the provider can always use the normal prior authorization process to solicit an authorization that more precisely aligns with their expectations for how the service will eventually be billed.
