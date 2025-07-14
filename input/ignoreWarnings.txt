@@ -52,7 +52,9 @@ INFORMATION: StructureDefinition/profile-organization: StructureDefinition.snaps
 %to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
 %to 3.0.0 from choices of 2.2.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#6.1.0)
 %to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r5#6.2.0)
+%to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r5#6.5.0)
 %to 3.0.0 from choices of 2.2.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r5#6.2.0)
+%to 3.0.0 from choices of 2.2.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r5#6.5.0)
 %to 20240606 from choices of 20170601 (us.nlm.vsac#0.11.0), 20240606 (us.nlm.vsac#0.19.0)
 
 # 11. We're inheriting the use of these extensions from the core spec

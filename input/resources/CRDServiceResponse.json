@@ -60,7 +60,7 @@
       "uuid": "0941cda0-91d7-42db-b5af-0ebbef2507bf",
       "summary": "Replace rental order with purchase order (to reduce long-term costs)",
       "indicator": "info",
-      "detail": "Mrs. Baxter has been on home oxygen for over 18 months and purchase is more efficient.  Payer XYZ has negotiated a discount on Acme brand portable oxygen systems which will result in a cost only slightly higher than anual rental",
+      "detail": "Mrs. Baxter has been on home oxygen for over 18 months and purchase is more efficient.  Payer XYZ has negotiated a discount on Acme brand portable oxygen systems which will result in a cost only slightly higher than annual rental",
       "source": {
         "label": "Centers for Medicare & Medicaid Services",
         "url": "https://example.org/cms",
