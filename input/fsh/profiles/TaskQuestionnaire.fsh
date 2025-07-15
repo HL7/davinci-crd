@@ -13,6 +13,8 @@ Description: "This profile specifies constraints on the Task resource to support
 //* intent only code
 * intent MS
 * intent = #order
+* focus 0..0
+  * ^requirements = "Questionnaire tasks resulting from decision support are never orders, merely to-dos"
 * for 1.. MS
 * for only Reference(CRDPatient)
 * encounter MS
@@ -27,3 +29,4 @@ Description: "This profile specifies constraints on the Task resource to support
   * ^comment = "This can be populated within the CRD client to delegate responsibility for filling out the form to someone else."
 * reasonCode MS
   * text MS
+* input[questionnaire] 1..1
