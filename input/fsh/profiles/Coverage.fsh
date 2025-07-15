@@ -12,7 +12,7 @@ Description: "This profile specifies constraints on the Coverage resource to sup
 * subscriber only Reference(CRDPatient)
 * beneficiary only Reference(CRDPatient)
 * dependent MS
-* payor only Reference(CRDPatient or CRDOrganization)
+* payor only Reference(CRDOrganization)
 * order MS
 * network MS
 * costToBeneficiary ..0
