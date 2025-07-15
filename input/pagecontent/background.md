@@ -51,7 +51,7 @@ Implementers should also familiarize themselves with the FHIR resources used wit
     <tr><td><a href="{{site.data.fhir.path}}questionnaire.html">Questionnaire</a></td><td>Used to support capture of additional information when not using DTR</td></tr>
     <tr><td><a href="{{site.data.fhir.path}}servicerequest.html">ServiceRequest</a></td><td>One of the resources that can trigger payer decision support</td></tr>
     <tr><td><a href="{{site.data.fhir.path}}structuredefinition.html">StructureDefinition</a></td><td>Used when profiling resource, defining extensions, and defining profiles and extensions on CDS Hook models</td></tr>
-    <tr><td><a href="{{site.data.fhir.path}}task.html">Task</a></td><td></td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}task.html">Task</a></td><td>Used to manage dispatching of orders to performing providers or locations</td></tr>
     <tr><td><a href="{{site.data.fhir.path}}valueset.html">ValueSet</a></td><td>Used to define collections of codes used by CRD profiles</td></tr>
     <tr><td><a href="{{site.data.fhir.path}}visionprescription.html">VisionPrescription</a></td><td>One of the resources that can trigger payer decision support</td></tr>
   </tbody>
