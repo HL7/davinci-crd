@@ -73,3 +73,14 @@ Description: "Reasons for a coverage assertion in the coverage-information exten
 * CRDTempCodes#no-member-found
 * CRDTempCodes#no-active-coverage
 * CRDTempCodes#auth-out-network
+
+ValueSet: CRDCoverageDetailCategories
+Id: coverageDetailCategories
+Title: "CRD Coverage Detail Categories"
+Description: "Codes that define the type of coverage information detail being provided"
+* ^status = #active
+* ^experimental = false
+* ^extension[$fmm].valueInteger = 1
+* CoverageInformationCodes#cat-limitation
+* CoverageInformationCodes#cat-decisional
+* CoverageInformationCodes#cat-other

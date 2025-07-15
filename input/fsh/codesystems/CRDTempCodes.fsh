@@ -17,16 +17,23 @@ Description: "Codes temporarily defined as part of the CRD implementation guide.
 * #auth-out-network        "Authorization needed out-of-network" "Authorization is necessary if out-of-network."
 
 // Coverage detail types - https://jira.hl7.org/browse/UP-670
-* #allowed-quantity        "Maximum quantity"                  "Indicates limitations on the number of services/products allowed (possibly per time period).  Value should be a Quantity"
-* #allowed-period          "Maximum allowed period"            "Indicates the maximum period of time that can be covered in a single order.  Value should be a Period"
-* #in-network-copay        "Copay for in-network"              "Indicates a percentage co-pay to expect if delivered in-network.  Value should be a Quantity."
-* #out-network-copay       "Copay for out-of-network"          "Indicates a percentage co-pay to expect if delivered out-of-network.  Value should be a Quantity."
-* #concurrent-review       "Concurrent review"                 "Additional payer-defined documentation will be required prior to claim payment.  Value should be a boolean."
-* #appropriate-use-needed  "Appropriate use"                   "Payer-defined appropriate use process must be invoked to determine coverage.  Value should be a boolean."
-* #policy-link             "Policy Link"                       "A URL pointing to the specific portion of a payer policy, coverage agreement or similar authoritative document that provides a portion of the basis for the decision documented in the coverage-information.  Value should be a url."
-* #instructions            "Instructions"                      "Information to display to the user that gives guidance about what steps to take in achieving the recommended actions identified by this coverage-information (e.g. special instructions about requesting authorization, details about information needed, details about data retention, etc.).  Value should be a string."
-  * #instructions-clinical   "Clinical instructions"           "Instructions specifically intended for the use of clinical (rather than administrative staff)"
-  * #instructions-admin      "Administrative Instructions"     "Instructions specifically intended for the use of administrative (rather than clinical staff)"
+* #_limitation              "Limitation details"                "Identifies detail codes that define limitations of coverage.  (Category should be 'cat-limitation')"
+  * ^property.code = #abstract
+  * ^property.valueBoolean = true
+  * #allowed-quantity       "Maximum quantity"                  "Indicates limitations on the number of services/products allowed (possibly per time period).  Value should be a Quantity"
+  * #allowed-period         "Maximum allowed period"            "Indicates the maximum period of time that can be covered in a single order.  Value should be a Period"
+* #_decisional              "Decisional details"                "Identifies detail codes that may impact patient and clinician decision making  (Category should be 'cat-decisional')"
+  * ^property.code = #abstract
+  * ^property.valueBoolean = true
+  * #in-network-copay       "Copay for in-network"              "Indicates a percentage co-pay to expect if delivered in-network.  Value should be a Quantity."
+  * #out-network-copay      "Copay for out-of-network"          "Indicates a percentage co-pay to expect if delivered out-of-network.  Value should be a Quantity."
+  * #concurrent-review      "Concurrent review"                 "Additional payer-defined documentation will be required prior to claim payment.  Value should be a boolean."
+  * #appropriate-use-needed "Appropriate use"                   "Payer-defined appropriate use process must be invoked to determine coverage.  Value should be a boolean."
+* #_other                   "Other details"                     "Identifies detail codes that are generally not relevant to clinicians/patients  (Category should be 'cat-other')"
+  * ^property.code = #abstract
+  * ^property.valueBoolean = true
+  * #policy-link            "Policy Link"                       "A URL pointing to the specific portion of a payer policy, coverage agreement or similar authoritative document that provides a portion of the basis for the decision documented in the coverage-information.  Value should be a url."
+* #instructions             "Instructions"                      "Information to display to the user that gives guidance about what steps to take in achieving the recommended actions identified by this coverage-information (e.g. special instructions about requesting authorization, details about information needed, details about data retention, etc.).  Value should be a string.  (Category may vary.)"
 
 // Card types - https://jira.hl7.org/browse/UP-669
 * #_cardType               "Card Type (abstract)"              "A collector for different profiles on CDS Hooks card"

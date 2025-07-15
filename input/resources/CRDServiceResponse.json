@@ -218,6 +218,10 @@
                 "url": "detail",
                 "extension": [
                   {
+                    "url": "category",
+                    "valueCode": "cat-limitation"
+                  },
+                  {
                     "url": "code",
                     "valueCodeableConcept": {
                       "coding": [

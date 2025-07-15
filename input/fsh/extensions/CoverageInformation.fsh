@@ -109,9 +109,15 @@ Description: "Captures assertions from a payer about whether the service is cove
   * ^definition = "Indicates the 'detail' for the coverage assertion"
   * ^comment = "Additional information that qualifies, describes, or provides additional guidance about coverage or documentation requirements."
   * extension contains
+      category 1..1 and
       code 1..1 and
       value 1..1 and
       qualification 0..1
+  * extension[category] ^short = "Type of detail"
+    * ^definition = "Indicates the nature of the detail, which in turn provides guidance for when it should be displayed."
+    * ^comment = "CRD clients **SHOULD** make both limitation and decisional details available to clinical users."
+    * value[x] only code
+    * value[x] from CRDCoverageDetailCategories (required)
   * extension[code] ^short = "Name of name-value pair"
     * ^definition = "The type of detail or qualification expressed."
     * value[x] only CodeableConcept

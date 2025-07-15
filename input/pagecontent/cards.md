@@ -84,7 +84,6 @@ Support expectations for this hook by CDS services are as follows:
 4. If coverage information is evaluated, a system action **SHALL** be returned for each in-scope request resource unless that request resource already has a coverage-information extension and the payer has no new information to add.
 
 A new FHIR [coverage-information](StructureDefinition-ext-coverage-information.html) extension is defined that allows assertions around coverage and prior authorization to also be captured computably, including what assertion is made, what coverage the assertion is made with respect to, when the assertion was made, and - optionally - a trace ID that can be used for audit purposes.
-
 <a name="FHIR-50318"> </a>
 <p class="new-content">
 The extension generally gets added to the request reource that was passed to the CDS server (the Appointment, Encounter, ServiceRequest, etc.).  There is one exception, which is if an Appointment is 'basedOn' a ServiceRequest, the system action requesting a resoruce update to add or change the coverage-information extension(s) will be against the ServiceRequest, not the appointment.
@@ -95,7 +94,6 @@ Assertions about coverage, prior authorization requirements, etc. are contingent
 If a CRD service has provided limitations about when a coverage assertion applies that turn out to not be consistent with what the provider intends to do (e.g., payer says "covered if billed as X", but provider intends to bill as Y), then the provider can always use the normal prior authorization process to solicit an authorization that more precisely aligns with their expectations for how the service will eventually be billed.
 
 If a CRD client submits a claim related to an order for which it has received a coverage-information extension for the coverage type associated with the claim, that claim **SHALL** include the `coverage-assertion-id` and, if applicable, the `satisfied-pa-id` in the X12 837 K3 segment. Further details about the specific location of each element will be available in the X12 specifications. These identifiers will provide the necessary context to allow the payer to respect any commitments made as part of the CRD call and also to link together CRD results and eventual claims for analytics purposes.
-
 <a name="FHIR-51420"> </a>
 <p class="modified-content">In some cases, multiple *coverage-information* extension repetitions may be added by the CRD service. This might represent different guidance for different coverages the service supports for the same patient or different expectations (related to coverage, prior auth, or additional information) for different billing codes, different qualifiers (e.g., in-network vs out-of-network), etc. If multiple extension repetitions are present, all repetitions referencing differing insurance (coverage-information.coverage) **SHALL** have distinct coverage-assertion-ids and satisfied-pa-ids, if present. Where multiple repetitions apply to the same coverage, they MAY have the same coverage-assertion-ids and satisfied-pa-ids (if present).  It is possible that some repetitions for a coverage might have satisfied prior authorization with an ID, while others will not.</p>
 
@@ -120,16 +118,15 @@ While using portals or other non-questionnaire data capture is not recommended o
 If the CRD service is unable to resolve the patient, the Coverage Information **SHALL** indicate "not covered" with a reason code of [no-member-found](ValueSet-coverageAssertionReasons.html#x-http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp-no-member-found).
 
 If the CRD is able to resolve the patient but they do not have active coverage, the Coverage Information **SHALL** indicate "not covered" with a reason of [no-active-coverage](ValueSet-coverageAssertionReasons.html#x-http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp-no-active-coverage).
-
 <a name="FHIR-51413"> </a>
-<p class="new-content">
-This specification allows returning either a single coverage-information repetition that says "conditional" or multiple coverage-information repetitions with specific assumptions that then indicate "covered", "auth-needed", etc.  The recommended criteria for deciding whether to return a single or multiple is as follows:
-
-* If the decision is driven by different subsets of billing codes or different time-frames (i.e. discrete information that can be conveyed using coverage-information.billingCode or detail codes of allowed-period), then use multiple repetitions.
-* If the decision is driven by other information that can't be easily listed in the coverage-information (e.g. what specific provider delivers the service, where it happens, etc.) then use 'Conditional' and indicate the specific additional information needed to make a decision.
-
-For example, if the payer doesn't know whether authorization is necessary (or if the service is covered at all) because it's necessary to know whether the performer will be in network or not, this SHOULD be conveyed as a single coverage-information extension that is marked as 'conditional' for authorization and/or coverage with info-needed set to at least include provider and/or location, with a 'reason' indicating the authorization rules.  This might be the standard code of auth-out-network-only.
-</p>
+<div class="new-content">
+<p>This specification allows returning either a single coverage-information repetition that says "conditional" or multiple coverage-information repetitions with specific assumptions that then indicate "covered", "auth-needed", etc.  The recommended criteria for deciding whether to return a single or multiple is as follows:</p>
+<ul>
+<li>If the decision is driven by different subsets of billing codes or different time-frames (i.e. discrete information that can be conveyed using coverage-information.billingCode or detail codes of allowed-period), then use multiple repetitions.</li>
+<li>If the decision is driven by other information that can't be easily listed in the coverage-information (e.g. what specific provider delivers the service, where it happens, etc.) then use 'Conditional' and indicate the specific additional information needed to make a decision.</li>
+</ul>
+<p>For example, if the payer doesn't know whether authorization is necessary (or if the service is covered at all) because it's necessary to know whether the performer will be in network or not, this SHOULD be conveyed as a single coverage-information extension that is marked as 'conditional' for authorization and/or coverage with info-needed set to at least include provider and/or location, with a 'reason' indicating the authorization rules.  This might be the standard code of auth-out-network-only.</p>
+</div>
 
 When using this response type, the proposed order or appointment being updated **SHALL** comply with the following profiles:
 
