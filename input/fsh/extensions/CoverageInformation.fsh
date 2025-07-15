@@ -80,7 +80,7 @@ Description: "Captures assertions from a payer about whether the service is cove
   * value[x] only code
   * value[x] from CRDDocReason (required)
 * extension[info-needed] only Extension
-  * ^short = "performer | location | timeframe | contract-window | OTH"
+  * ^short = "performer | location | timeframe | contract-window | detail-code | OTH"
   * ^definition = "Indicates whether information about the perfomer, location, and/or performance date is needed to determine coverage information"
   * ^comment = "See additional guidance in the [notes](StructureDefinition-ext-coverage-information.html#doc-needed-vs-info-needed)"
   * ^condition[+] = crd-ci-q3
