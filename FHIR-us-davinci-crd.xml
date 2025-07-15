@@ -95,10 +95,10 @@
 <artifact id="Task/task-dispatch-example" key="Task-task-dispatch-example" name="Dispatch Task example"/>
 <artifact deprecated="true" id="SearchParameter/encounter-insurance" key="SearchParameter-encounter-insurance" name="Encounter Insurance Search Parameter"/>
 <artifact id="Encounter/example" key="Encounter-example" name="Encounter example"/>
-<artifact id="Binary/CRDServiceRequest2" key="Binary-CRDServiceRequest2" name="Example CRD Service Request with ServiceRequests"/>
-<artifact id="Binary/CRDServiceRequest" key="Binary-CRDServiceRequest" name="Example CRD Service Requestion with MedicationRequests"/>
-<artifact id="Binary/CRDServiceResponse" key="Binary-CRDServiceResponse" name="Example CRD Service Response"/>
-<artifact id="Binary/CRDServiceResponse2" key="Binary-CRDServiceResponse2" name="Example CRD Service Response - Coverage Information"/>
+<artifact id="Binary/CRDServiceResponse" key="Binary-CRDServiceResponse" name="Example CRD Response with: Links, Information, Coverage Information, and Order Replacement example"/>
+<artifact id="Binary/CRDServiceResponse2" key="Binary-CRDServiceResponse2" name="Example CRD Response with: Order Replacement, Order supplement, Form Completion, Coverage Update, SMART launch"/>
+<artifact id="Binary/CRDServiceRequest2" key="Binary-CRDServiceRequest2" name="Example CRD Service Request with MedicationRequests"/>
+<artifact id="Binary/CRDServiceRequest" key="Binary-CRDServiceRequest" name="Example CRD Service Requestion with ServiceRequests"/>
 <artifact id="Binary/CRDServices" key="Binary-CRDServices" name="Example CRD Services Response"/>
 <artifact id="Bundle/search-response" key="Bundle-search-response" name="Example EHR response"/>
 <artifact id="Bundle/search-request" key="Bundle-search-request" name="Example EHR search"/>
