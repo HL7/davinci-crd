@@ -22,7 +22,7 @@ Description: "Captures assertions from a payer about whether the service is cove
 * ^context[=].expression = "ServiceRequest"
 * ^context[+].type = #element
 * ^context[=].expression = "VisionPrescription"
-* obeys crd-ci-q1 and crd-ci-q2 and crd-ci-q3 and crd-ci-q4 and crd-ci-q5 and crd-ci-q6 and crd-ci-q7
+* obeys crd-ci-q1 and crd-ci-q2 and crd-ci-q3 and crd-ci-q4 and crd-ci-q5 and crd-ci-q6 and crd-ci-q7 and crd-ci-q8
 * . ^short = "CoverageInfo"
   * ^definition = "Indicates coverage information."
 * ^extension[$fmm].valueInteger = 1
@@ -99,6 +99,7 @@ Description: "Captures assertions from a payer about whether the service is cove
   * ^definition = "Indicates the 'reason' for the coverage assertion"
   * ^comment = "This can be used whenever the reason may not be obvious to the practitioner.  E.g. prior authorization waived because the provider is gold-carded; patient is no longer a minor and hasn't been registered as an adult dependent; patient has reached their limit for this type of service this year; etc.  Additional standard reason codes may be introduced in the future.  If no standard code applies, use text."
   * ^condition[+] = crd-ci-q7
+  * ^condition[+] = crd-ci-q8
   * value[x] 1..1
   * value[x] only CodeableConcept
   * value[x] from CRDCoverageAssertionReasons (extensible)
@@ -194,3 +195,8 @@ Invariant: crd-ci-q7
 Description: "If reason.coding is present and is not from the extensible value set, then reason.text must be present"
 Severity: #error
 Expression: "extension.where(url = 'reason').empty() or extension.where(url = 'reason').value.text.exists() or extension.where(url = 'reason').value.memberOf('http://hl7.org/fhir/us/davinci-crd/ValueSet/coverageAssertionReasons')"
+
+Invariant: crd-ci-q8
+Description: "If doc-purpose is present with a value other than 'conditional', then reason must be present"
+Severity: #error
+Expression: "extension.where(url = 'doc-purpose' and value != 'conditional').exists() implies extension.where(url = 'reason').exists()"
