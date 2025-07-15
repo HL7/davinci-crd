@@ -40,6 +40,6 @@ Description: "This profile specifies constraints on the CommunicationRequest res
   * ^type[0].targetProfile[1].extension[$typeMS].valueBoolean = true
   * ^type[0].targetProfile[2].extension[$typeMS].valueBoolean = true
 * reasonCode MS
-//* reasonReference only Reference(USCoreConditionProblemsHealthConcernsProfile or USCoreConditionUSCoreConditionEncounterDiagnosisProfile or USCoreLaboratoryResultObservationProfile)
+* reasonReference only Reference(USCoreConditionProblemsHealthConcernsProfile or USCoreConditionUSCoreConditionEncounterDiagnosisProfile or USCoreDiagnosticReportProfileLaboratoryReporting or USCoreDiagnosticReportProfileNoteExchange or USCoreDocumentReferenceProfile or Observation)
 * reasonReference MS
-  * ^comment = "potentially relevant for CRD in some situations."
+  * ^comment = "Observations **SHOULD** use US Core profiles when applicable, but not all relevant observations have appropriate US Core profiles (and there are too many to practically list all US Core profiles)."
