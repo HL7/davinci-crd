@@ -8,7 +8,6 @@ Description: "Codes for name-value-pair details on a coverage assertion"
 * CRDTempCodes#allowed-period
 * CRDTempCodes#in-network-copay
 * CRDTempCodes#out-network-copay
-* CRDTempCodes#auth-out-network-only
 * CRDTempCodes#concurrent-review
 * CRDTempCodes#appropriate-use-needed
 * CRDTempCodes#policy-link

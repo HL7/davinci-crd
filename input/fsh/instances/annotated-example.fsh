@@ -13,12 +13,12 @@ Usage: #example
   * extension[billingCode].valueCoding = $cpt#77065
   * extension[billingCode].valueCoding = $cpt#77066
   * extension[billingCode].valueCoding = $cpt#77067
-  * extension[reason].valueCodeableConcept.text = "In-network required unless exigent circumstances"
+  * extension[reason].valueCodeableConcept.text = "Prior auth waved due to gold-card status"
   * extension[reason].valueCodeableConcept = $temp#gold-card
   * extension[detail]
-    * extension[code].valueCodeableConcept = $temp#auth-out-network-only
-    * extension[value].valueBoolean = true
-    * extension[qualification].valueString = "Out-of-network prior auth does not apply if delivery occurs at a service site designated as 'remote'"
+    * extension[code].valueCodeableConcept = $temp#policy-link
+    * extension[value].valueUrl = "http://example.org/somepayer/policy123.pdf#abc"
+    * extension[qualification].valueString = "Additional policy details can be found here"
   * extension[questionnaire].valueCanonical = "http://example.org/some-payer/Questionnaire/123|1.3.0"
   * extension[date].valueDate = "2019-02-15"
   * extension[coverage-assertion-id].valueString = "12345ABC"

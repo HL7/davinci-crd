@@ -11,16 +11,16 @@ Description: "Codes temporarily defined as part of the CRD implementation guide.
 * ^property[0].uri = "http://hl7.org/fhir/concept-properties#notSelectable"
 * ^property[0].type = #boolean
 // Coverage assertion reasons - https://jira.hl7.org/browse/UP-668
-* #gold-card               "Gold card"                         "Ordering Practitioner has been granted 'gold card' status with this payer/coverage type."
-* #no-member-found         "Member not found"                  "The CRD service was unable to find a matching member, so no coverage information can be provided"
-* #no-active-coverage      "Coverage not active"               "The referenced insurance coverage for the member is not active, so no coverage information can be provided"
+* #gold-card               "Gold card"                           "Ordering Practitioner has been granted 'gold card' status with this payer/coverage type."
+* #no-member-found         "Member not found"                    "The CRD service was unable to find a matching member, so no coverage information can be provided"
+* #no-active-coverage      "Coverage not active"                 "The referenced insurance coverage for the member is not active, so no coverage information can be provided"
+* #auth-out-network        "Authorization needed out-of-network" "Authorization is necessary if out-of-network."
 
 // Coverage detail types - https://jira.hl7.org/browse/UP-670
 * #allowed-quantity        "Maximum quantity"                  "Indicates limitations on the number of services/products allowed (possibly per time period).  Value should be a Quantity"
 * #allowed-period          "Maximum allowed period"            "Indicates the maximum period of time that can be covered in a single order.  Value should be a Period"
 * #in-network-copay        "Copay for in-network"              "Indicates a percentage co-pay to expect if delivered in-network.  Value should be a Quantity."
 * #out-network-copay       "Copay for out-of-network"          "Indicates a percentage co-pay to expect if delivered out-of-network.  Value should be a Quantity."
-* #auth-out-network-only   "Authorization out-of-network only" "Authorization is only necessary if out-of-network.  Value should be a boolean."
 * #concurrent-review       "Concurrent review"                 "Additional payer-defined documentation will be required prior to claim payment.  Value should be a boolean."
 * #appropriate-use-needed  "Appropriate use"                   "Payer-defined appropriate use process must be invoked to determine coverage.  Value should be a boolean."
 * #policy-link             "Policy Link"                       "A URL pointing to the specific portion of a payer policy, coverage agreement or similar authoritative document that provides a portion of the basis for the decision documented in the coverage-information.  Value should be a url."

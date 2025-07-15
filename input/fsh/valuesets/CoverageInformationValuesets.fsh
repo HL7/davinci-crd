@@ -70,3 +70,6 @@ Description: "Reasons for a coverage assertion in the coverage-information exten
 * ^experimental = false
 * ^extension[$fmm].valueInteger = 1
 * CRDTempCodes#gold-card
+* CRDTempCodes#no-member-found
+* CRDTempCodes#no-active-coverage
+* CRDTempCodes#auth-out-network
