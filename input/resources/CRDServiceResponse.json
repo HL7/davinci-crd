@@ -206,6 +206,11 @@
               {
                 "url": "reason",
                 "valueCodeableConcept": {
+                  "coding": [{
+                    "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+                    "code": "auth-out-network",
+                    "display": "Authorization needed out-of-network"
+                  }],
                   "text": "In-network required unless exigent circumstances"
                 }
               },
@@ -218,18 +223,22 @@
                       "coding": [
                         {
                           "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-                          "code": "auth-out-network-only"
+                          "code": "out-network-copay"
                         }
                       ]
                     }
                   },
                   {
                     "url": "value",
-                    "valueBoolean": true
+                    "valueQuantity": {
+                      "system": "http://unitsofmeasure.org",
+                      "code": "%",
+                      "value": 10
+                    }
                   },
                   {
                     "url": "qualification",
-                    "valueString": "Out-of-network prior auth does not apply if delivery occurs at a service site designated as 'remote'"
+                    "valueString": "Copay minimum is $15"
                   }
                 ]
               },
