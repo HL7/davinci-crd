@@ -1,6 +1,6 @@
 This page describes the primary releases of the specification and summarizes the content for each:
 
-### Release 2.2.0
+### Release 2.2.0-ballot
 
 **Breaking changes**:
 * [FHIR-49801](https://jira.hl7.org/browse/FHIR-49801) - Update appointment prefetch to include ServiceRequest
@@ -36,6 +36,7 @@ This page describes the primary releases of the specification and summarizes the
 
 **Substative changes**
 * [FHIR-49813](https://jira.hl7.org/browse/FHIR-49813) - Allow PractitionerRole as an Encounter.participant
+* [FHIR-51420](https://jira.hl7.org/browse/FHIR-51420) - Allow coverage-information ids to be unique for the same coverage within a request resource.
 
 **Non-substantive changes**:
 * [FHIR-49153](https://jira.hl7.org/browse/FHIR-49153), [FHIR-51036](https://jira.hl7.org/browse/FHIR-51036), [FHIR-49094](https://jira.hl7.org/browse/FHIR-49094) - Corrected names and descriptions of CDS Hooks request and response examples (correction)
