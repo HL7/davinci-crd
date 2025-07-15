@@ -116,9 +116,9 @@ If the payer does not support DTR for the type of information needed, the CRD se
 
 While using portals or other non-questionnaire data capture is not recommended or preferred, it may be necessary as a transitional measure. Future versions of this IG are likely to mandate that questionnaires be included when additional information is required. This transitional accommodation is not intended to relax regulatory or legislative requirements that require the use of DTR.
 
-If the CRD service is unable to resolve the patient, the Coverage Information **SHALL** indicate "not covered" with a reason of 'Member Not Found'.
+If the CRD service is unable to resolve the patient, the Coverage Information **SHALL** indicate "not covered" with a reason code of [no-member-found](ValueSet-coverageAssertionReasons.html#x-http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp-no-member-found).
 
-If the CRD is able to resolve the patient but they do not have active coverage, the Coverage Information **SHALL** indicate "not covered" with a reason of 'No Active Coverage'.
+If the CRD is able to resolve the patient but they do not have active coverage, the Coverage Information **SHALL** indicate "not covered" with a reason of [no-active-coverage](ValueSet-coverageAssertionReasons.html#x-http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp-no-active-coverage).
 
 When using this response type, the proposed order or appointment being updated **SHALL** comply with the following profiles:
 
