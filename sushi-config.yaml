@@ -197,7 +197,7 @@ resources:
         valueCanonical: http://hl7.org/fhir/tools/StructureDefinition/CDSHooksRequest
   Binary/CRDServiceResponse:
     groupingId: "-ex-example-hooks"
-    name: "Example CRD Service Response"
+    name: "Example CRD Response with: Links, Information, Coverage Information, and Order Replacement example"
     description: "An example of a CRD response all 'mustSupport' response types, plus 'change order' response type"
     extension:
       - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format
@@ -206,7 +206,7 @@ resources:
         valueCanonical: http://hl7.org/fhir/tools/StructureDefinition/CDSHooksResponse
   Binary/CRDServiceResponse2:
     groupingId: "-ex-example-hooks"
-    name: "Example CRD Service Response - optional responses"
+    name: "Example CRD Response with: Order Replacement, Order supplement, Form Completion, Coverage Update, SMART launch"
     description: "An example CRD response with various optional response types"
     extension:
       - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format
