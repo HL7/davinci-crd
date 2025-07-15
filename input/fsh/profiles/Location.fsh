@@ -10,8 +10,7 @@ Description: "This profile specifies constraints on the US Core Location profile
 * type MS
 * type from CMSMappableLocationCodes (extensible)
   * ^condition[+] = crd-loc1
-* address 1..
-* address only Address
+* address
   * type MS
   * type from CRDLocationAddressTypes (required)
     * ^short = "physical | both"
