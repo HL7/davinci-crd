@@ -2,7 +2,7 @@ This page describes the primary releases of the specification and summarizes the
 
 ### Release 2.2.0
 
-**Substantive and breaking changes**:
+**Breaking changes**:
 * [FHIR-49801](https://jira.hl7.org/browse/FHIR-49801) - Update appointment prefetch to include ServiceRequest
 * [FHIR-50276](https://jira.hl7.org/browse/FHIR-50276) - Moved codes out of the tmporary code system to their permanent home
 * [FHIR-49637](https://jira.hl7.org/browse/FHIR-49637) - Added standard reason codes for member not found and reason not found
@@ -26,6 +26,9 @@ This page describes the primary releases of the specification and summarizes the
 * [FHIR-49897](https://jira.hl7.org/browse/FHIR-49897) - Add expectations around patient-pay
 * [FHIR-50318](https://jira.hl7.org/browse/FHIR-50318) - Added expectation to put coverage-expectation extension on ServiceRequest for appointments based on ServiceRequest (clarification) [link](cards.html#FHIR-50318)
 * [FHIR-49637](https://jira.hl7.org/browse/FHIR-49637) - Defined explicit codes for 'no-member-found' and 'no-active-coverage', and required their use (enhancement)
+
+**Substative changes**
+* [FHIR-49827](https://jira.hl7.org/browse/FHIR-49827) - update crd-ci-q4 contraint on coverage-information to say 'noauth' and 'not-covered' in addition to 'satisfied' as reasons why you can't have a doc purpose of with-pa
 
 **Non-substantive changes**:
 * [FHIR-49153](https://jira.hl7.org/browse/FHIR-49153), [FHIR-51036](https://jira.hl7.org/browse/FHIR-51036), [FHIR-49094](https://jira.hl7.org/browse/FHIR-49094) - Corrected names and descriptions of CDS Hooks request and response examples (correction)

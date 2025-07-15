@@ -176,9 +176,9 @@ Severity: #error
 Expression: "extension.where((url = 'covered' or url = 'pa-needed' or url = 'doc-needed') and value = 'conditional').count() >= 1 implies extension.where(url = 'info-needed').exists()"
 
 Invariant: crd-ci-q4
-Description: "If 'pa-needed' is 'satisfied', then 'Doc-purpose' can't be 'withpa'."
+Description: "If 'pa-needed' is 'satisfied', 'noauth', or 'not-covered', then 'Doc-purpose' can't be 'withpa'."
 Severity: #error
-Expression: "extension.where(url = 'pa-needed' and value = 'satisfied') and extension.where(url = 'doc-purpose').exists() implies extension.where(url = 'doc-purpose').all(value != 'withpa')"
+Expression: "extension.where(url = 'pa-needed' and (value = 'satisfied' or value = 'noauth' or value = 'not-covered')) and extension.where(url = 'doc-purpose').exists() implies extension.where(url = 'doc-purpose').all(value != 'withpa')"
 
 Invariant: crd-ci-q5
 Description: "'satisfied-pa-id' must exist if and only if 'pa-needed' is set to 'satisfied'."
