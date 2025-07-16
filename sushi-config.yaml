@@ -195,6 +195,15 @@ resources:
         valueCode: application/json
       - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-logical
         valueCanonical: http://hl7.org/fhir/tools/StructureDefinition/CDSHooksRequest
+  Binary/CRDServiceRequest3:
+    groupingId: "-ex-example-hooks"
+    name: "Example CRD Service Request with CommunicationRequest"
+    description: "An example of a CRD request for order-sign with CommunicationRequest"
+    extension:
+      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format
+        valueCode: application/json
+      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-logical
+        valueCanonical: http://hl7.org/fhir/tools/StructureDefinition/CDSHooksRequest
   Binary/CRDServiceResponse:
     groupingId: "-ex-example-hooks"
     name: "Example CRD Response with: Links, Information, Coverage Information, and Order Replacement example"
@@ -208,6 +217,15 @@ resources:
     groupingId: "-ex-example-hooks"
     name: "Example CRD Response with: Order Replacement, Order supplement, Form Completion, Coverage Update, SMART launch"
     description: "An example CRD response with various optional response types"
+    extension:
+      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format
+        valueCode: application/json
+      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-logical
+        valueCanonical: http://hl7.org/fhir/tools/StructureDefinition/CDSHooksResponse
+  Binary/CRDServiceResponse3:
+    groupingId: "-ex-example-hooks"
+    name: "Example CRD Response wit simple Coverage Information"
+    description: "An example CRD response to a CommunicationRequest with a simple Coverage Information system action"
     extension:
       - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format
         valueCode: application/json

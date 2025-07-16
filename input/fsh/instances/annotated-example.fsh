@@ -16,6 +16,7 @@ Usage: #example
   * extension[reason].valueCodeableConcept.text = "Prior auth waved due to gold-card status"
   * extension[reason].valueCodeableConcept = $temp#gold-card
   * extension[detail]
+    * extension[category].valueCode = CoverageInformationCodes#cat-other
     * extension[code].valueCodeableConcept = $temp#policy-link
     * extension[value].valueUrl = "http://example.org/somepayer/policy123.pdf#abc"
     * extension[qualification].valueString = "Additional policy details can be found here"

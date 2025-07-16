@@ -1,0 +1,96 @@
+{
+  "cards": [
+  ],
+  "systemActions": [
+    {
+      "type": "update",
+      "resource": {
+        "resourceType": "CommunicationRequest",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-coverage-information",
+            "extension": [
+              {
+                "url": "covered",
+                "valueCode": "covered"
+              },
+              {
+                "url": "pa-needed",
+                "valueCode": "no-auth"
+              },
+              {
+                "url": "coverage",
+                "valueReference": {
+                  "reference": "Coverage/example-coverage-id"
+                }
+              },
+              {
+                "url": "date",
+                "valueDate": "2022-11-16"
+              },
+              {
+                "url": "coverage-assertion-id",
+                "valueString": "example-assertion-id-123"
+              }
+            ]
+          }
+        ],
+        "id": "example",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Request for transfer of Liver Pathology biopsy report for Amy V. Baxter from Dr. Smith to Good Health Clinic<br/>Requested by Dr. Jones, June 10, 2016</div>"
+        },
+        "identifier": [
+          {
+            "system": "http://example.org/insurer/123456",
+            "value": "ABC123"
+          }
+        ],
+        "basedOn": [
+          {
+            "reference": "http://example.org/fhir/EligibilityRequest/xyz"
+          }
+        ],
+        "status": "draft",
+        "subject": {
+          "reference": "http://example.org/fhir/Patient/123"
+        },
+        "payload": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-CommunicationRequest.payload.content[x]",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "http://loinc.org",
+                      "code": "65752-8",
+                      "display": "Liver Pathology biopsy report"
+                    }
+                  ]
+                }
+              }
+            ],
+            "contentString": "Liver pathology biopsy report"
+          }
+        ],
+        "occurrenceDateTime": "2016-06-10T11:01:10-08:00",
+        "authoredOn": "2016-06-10T11:01:10-08:00",
+        "requester": {
+          "reference": "http://example.org/fhir/PractitionerRole/ABC",
+          "display": "Dr. Jones"
+        },
+        "recipient": [
+          {
+            "reference": "http://example.org/Organization/clinicA",
+            "display": "Good Health Clinic"
+          }
+        ],
+        "sender": {
+          "reference": "http://example.org/fhir/PractitionerRole/someOtherProvider",
+          "display": "Dr. Smith"
+        }
+      }
+    }
+  ]
+}

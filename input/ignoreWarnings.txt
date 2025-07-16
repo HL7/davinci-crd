@@ -71,10 +71,11 @@ WARNING: ValueSet/informationNeeded: ValueSet.compose.include[1]: There are mult
 INFORMATION: ValueSet.where(id = 'orderDetail'): The value set expansion is too large, and only a subset has been displayed
 
 # 14. These are example values and are not expected to resolve
-WARNING: Binary/CRDServiceRequest2: CDSHooksRequest.context.userId: No definition could be found for URL value 'Practitioner/ABC'
 WARNING: Binary/CRDServiceRequest: CDSHooksRequest.context.userId: No definition could be found for URL value 'Practitioner/ABC'
-WARNING: Binary/CRDServiceResponse2: CDSHooksResponse.cards[0].suggestions[0].actions[0].resourceId: No definition could be found for URL value 'MedicationRequest/2222'
+WARNING: Binary/CRDServiceRequest2: CDSHooksRequest.context.userId: No definition could be found for URL value 'Practitioner/ABC'
+WARNING: Binary/CRDServiceRequest2: CDSHooksRequest.context.userId: No definition could be found for URL value 'Practitioner/ABC'
 WARNING: Binary/CRDServiceResponse: CDSHooksResponse.cards[2].suggestions[0].actions[0].resourceId: No definition could be found for URL value 'ServiceRequest/2468'
+WARNING: Binary/CRDServiceResponse2: CDSHooksResponse.cards[0].suggestions[0].actions[0].resourceId: No definition could be found for URL value 'MedicationRequest/2222'
 
 # 15. This is inherited from SDC
 INFORMATION: StructureDefinition/profile-taskquestionnaire: StructureDefinition.snapshot.element[48].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
