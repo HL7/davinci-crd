@@ -100,6 +100,8 @@ If a CRD client submits a claim related to an order for which it has received a 
 Systems **MAY** make calls related to orders even if there is already a coverage assertion recorded on the order. There is always the possibility that context has changed or new information available in the order will result in a new decision or additional guidance. The payer might also have other useful information not related to coverage or authorization. Information about the order or context might change between an initial `order-select` or `order-sign` and a subsequent `order-dispatch` or other hook invocation.
 
 However, payers **SHALL NOT** send a system action to update the order unless something is new. Payers **SHOULD** take into account the previous decision in deciding how much processing is necessary before returning a response.
+<a name="FHIR-50102"> </a>
+<p class="additional-content">When returning a system action to update a resource with this response type, the resource content **SHALL NOT** make changes any data elements other than adding or modifying coverage-information extensions</p>
 
 If a *coverage-information* extension indicates the need to collect additional information (via 'doc-needed'), the extension **SHOULD** include a reference to the questionnaire(s) to be completed. If the payer supports Da Vinci DTR, the indicated forms will be the ones completed within the DTR form filler.  If no Questionnaires are specified, DTR will determine the needed forms itself.  For systems that don't support DTR (e.g. because the coverage isn't subject to regulation mandating DTR), the indicated Questionnaire canonicals can be used to determine data to be gathered in some other (non-DTR) way.
 
