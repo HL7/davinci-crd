@@ -14,7 +14,7 @@ Description: "This profile specifies additional extensions and constraints on th
 * appointment only Reference(CRDAppointmentWithOrder or CRDAppointmentNoOrder)
 * length MS
 * diagnosis MS
-  * condition only Reference(USCoreConditionProblemsHealthConcernsProfile or USCoreConditionUSCoreConditionEncounterDiagnosisProfile or USCoreProcedureProfile)
+  * condition only Reference(USCoreConditionProblemsHealthConcernsProfile or USCoreConditionEncounterDiagnosisProfile or USCoreProcedureProfile)
   * condition MS
 * location
   * location only Reference(CRDLocation)

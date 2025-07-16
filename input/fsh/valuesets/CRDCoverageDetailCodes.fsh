@@ -12,5 +12,3 @@ Description: "Codes for name-value-pair details on a coverage assertion"
 * CRDTempCodes#appropriate-use-needed
 * CRDTempCodes#policy-link
 * CRDTempCodes#instructions
-* CRDTempCodes#instructions-clinical
-* CRDTempCodes#instructions-admin
