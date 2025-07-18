@@ -50,6 +50,13 @@ Payers may have multiple back-end functions that handle different types of decis
 
 Initial setup of connectivity between client and payer will have a manual component to establish security credentials and a trust relationship (unless both parties are part of a shared trust network).  Dynamic endpoint discovery allows for the potential for the use of different endpoints for different coverages and/or evolution of what endpoints are used for different coverage over time without changing security credential or legal agreement expectations.
 
+<a name="FHIR-49753"> </a>
+<div class="additional-content">
+<p>In early stages of CRD adoption, CRD clients and services are likely to manually coordinate the rollout of new features.  However, the long-term goal is that, through QHINs or other trust networks, and/or certification, manual coordination will not be necessary.</p>
+
+<p>When the connection between a particular client and server have evolved to an automated configuration approach, CRD Clients <b>SHOULD</b> perform the discovery process on the CRD server at least once per day to detect any changes to supported hooks, prefetch requirements, and/or configuration options.  As well, if a CRD client encounters an error when invoking a hook, they <b>SHOULD</b> re-run the discovery process before failing.  NOTE: Changes to CRD server capabilities will not necessarily be taken advantage of dynamically by the CRD client - i.e. manual steps might be necessary.</p>
+</div>
+
 ### Enabling a CRD Server
 When a CRD client configures itself to support a payer's CRD service, it will need to identify which payer(s) the service supports. This is needed to ensure that the CRD client only sends CRD calls to services that the patient has current coverage for. The CRD service is responsible for any internal routing based on which processing organization handles the decisions. For this purpose, payer means the organization listed on the member's insurance card.
 
