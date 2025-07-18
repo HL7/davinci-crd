@@ -290,6 +290,9 @@ The response is a batch response Bundle, with each entry containing either a sin
 #### Error Handling
 The use of an HTTP 412 response to the CDS Hook invocation is for situations where the requested prefetch was not provided and the CRD service was unable to invoke the queries itself.  It **SHALL NOT** to be used in situations where the prefetch was provided or the query was successfully performed but the record in question did not have all the data the payer might have needed/desired.  Indicating additional information through DTR is the preferred approach when managing situations where the needed information isn't queryable from the EHR.  Similarly, HTTP 4xx or 5xx responses are only appropriate if there was an internal failure of the service, not if the payer business rules for "needed data" were not met.  Error codes indicate that there is a technical issue that should be fixed.
 
+<a name="FHIR-49909"> </a>
+<p class="additional-content">New versions of CDS Hooks may introduce additional data elements into any of the CRD request and response structures.  In addition, CDS Hooks allows the definition of arbitrary extension elements in several locations within its data structures.  It is possible that some parties to a CRD exchange may migrate to a newer CDS Hooks version and/or include extensions intended for use by other consumers and that there may therefore be elements present in an instance that are unexpected.  CRD clients and servers **SHALL** ignore unexpected elements when processing instances.</p>
+
 #### Query Notes
 *  Conformant CRD clients **SHOULD** be able to perform all of the queries defined in the [prefetch](#prefetch) section above and, where needed, **SHOULD** implement interfaces to [_include]({{site.data.fhir.path}}search.html#include) resources not available in the client's database.
 
