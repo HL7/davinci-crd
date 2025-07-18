@@ -64,6 +64,7 @@ This page describes the primary releases of the specification and summarizes the
 * [FHIR-49833](https://jira.hl7.org/browse/FHIR-49833) - Reframed warnings about the _include search mechanism to reflect the fact that it is no longer used in prefetch.  (correction) [link](foundation.html#FHIR-49833)
 * [FHIR-49085](https://jira.hl7.org/browse/FHIR-49085) - In diagram, corrected "Payer CDA System" to "Payer CDS System" (correction) [link](hooks.html#hook-categories)
 * [FHIR-49762](https://jira.hl7.org/browse/FHIR-49762) - Added VisionPrescription to the list of supported 'Request' resources for order-select and order-dispatch.  (They were already in the technical list, just not the HTML.) (correction) [link](hooks#order-dispatch) [link](hooks#order-select)
+* [FHIR-48553](https://jira.hl7.org/browse/FHIR-48553) - Improved language in first intro paragraph (clarification) [link](index.html#FHIR-48553)
 
 
 ### Release 2.1.0
