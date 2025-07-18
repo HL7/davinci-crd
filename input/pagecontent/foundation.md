@@ -117,6 +117,8 @@ Coverage prefetch will look like this:
 A recommended set of prefetch expectations for all hook types can be found [here](Binary-CRDServices.html).
 
 Other information will need to be retrieved using queries that are more specific to the type of hook being invoked and the resources passed with it.  The table below lists the queries to retrieve common key information for each type of context resource if not using prefetch.  Note that the queries use `draftOrders` as the context, which will hold for order-select and order-sign hooks, but will need to be `dispatchedOrders` for order-dispatch hooks.
+<a name="FHIR-50009"> </a>
+<p class="modified-content">The queries below make use of _include to reduce the overall number of queries that need to be performed.  However, not all CRD clients will support _include at all or will support all _include search parameters leveraged in these examples.  CRD services that choose to take advantage of _include will need to adapt their queries based on the support declared in the CRD client's CapabilityStatement.</p>
 
 {% raw %}
 <table class="grid">
