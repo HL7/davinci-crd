@@ -31,7 +31,7 @@ Description: "A logical model describing the information that should be captured
   * details         0..1 CodeableConcept "More detailed error code"            "The issue.details value from the OperationOutcome for this issue."
   * details         from OperationOutcomeCodes   (example)
     * ^requirements = "Because these codes are not standardized, they will primarily only be useful for evaluation between communication partners, not for comparison across implementations"
-* tokenUse          0..1 code            "used | not-used | rejected"          "Indicates whether the provided access token was used to retrieve additional information.  Rejected indicates that when used, the access failed."
+* tokenUse          1..1 code            "used | not-used | rejected"          "Indicates whether the provided access token was used to retrieve additional information.  Rejected indicates that when used, the access failed."
 * tokenUse          from MetricTokenUse          (example)
 * orderDetail       0..* CodeableConcept "Service or product code(s)"          "The code or codes defining the type of product or service from the focal Request or "
 * orderDetail       from MetricOrderDetail       (extensible)
