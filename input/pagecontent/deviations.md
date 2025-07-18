@@ -9,13 +9,6 @@ This implementation guide extends/customizes CDS Hooks in 5 ways: additional hoo
 ### Additional Hook scope
 In the [current build](https://cds-hooks.org/hooks/order-sign/), the order-sign hook can be used for both 'draft' orders that are newly created as well as for updated orders that are active.  The balloted version of the hooks this IG release is bound to are limited to draft orders.  This IG adopts the newer wording, meaning that the order-sign hook can be triggered both on newly created orders, as well as when orders are updated (changing status, changing time-frame, etc.).  The hook can also be re-triggered if there is a key change to the context, most typically the establishment of new or renewed coverage relevant to the order.
 
-### Additional Hook resources
-Three of the hooks used by this specification (`order-select`, `order-sign`, and order-dispatch) identify specific "order" resources that can be passed as part of the hook invocation.  CRD has use-cases for one additional resource type to be passed to this hook.  Specifically:
-
-* [CommunicationRequest]({{site.data.fhir.path}}communicationrequest.html) - Needed to trigger CRD when a provider requests that another provider transfer patient records or other supporting information to another organization or agency.  In some cases, there can be insurance-billable costs associated with such actions where coverage information or other decision support will be relevant.
-
-The proposal to add this resources to the existing hook definitions [can be found](https://github.com/cds-hooks/docs/issues/396) on the CDS hooks [issue tracker](https://github.com/cds-hooks/docs/issues).
-
 ### New hook configuration mechanism
 The CRD Servers provided by payers will support discovery of different types of coverage requirements that will return different types of information to users on [CDS Cards](https://cds-hooks.hl7.org/2.0/#cds-service-response), such as:
 
