@@ -4,6 +4,10 @@ This page lists considerations and recommendations for implementation that fall 
 
 Some CRD clients might suppress certain types of payer guidance as being the 'default' presumption. For example, "Covered, no prior authorization required". In cases where CRD systems do this, there might be an issue if the CRD service becomes unable to respond and the CRD client does not clearly flag to the user that the service is not available. In that case, providers might incorrectly presume that authorization is not needed. Clients that perform such suppression of messages **SHALL** mitigate this potential for misinterpretation.
 
+### Availability
+<a name="FHIR-48625"> </a>
+<p class="modified-content">While CRD availability isn't mission critical, outages will negatively impact both provider and payer healthcare experiences.  CRD servers <b>SHOULD</b> strive to achieve a minimum of 3-9s availability for there services and strive to provide at least some level of useful response to CRD clients even if some of their back-end systems are unavailable.</p>
+
 ### Limitations on Accuracy
 
 In rare situations, circumstances might change in a way that invalidates information provided by a CRD server prior to execution of an ordered service. For example, coverage is terminated or changed by the employer, or data in the record is subsequently found to be erroneous. Providers (and where provided information is shared with them, patients) will need to be aware that, irrespective of this guide's expectations for [accuracy](foundation.html#accuracy), assertions made by a CRD server are always "point-in-time" and do not constitute an irrevocable promise any more than equivalent assertions made via telephone, fax, or mail.
