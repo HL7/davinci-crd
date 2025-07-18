@@ -34,10 +34,8 @@ In addition to the [guidance provided in the CDS Hooks specification](https://cd
 
 ### Potential CRD Response Types
 The sections below describe the different types of [responses](https://cds-hooks.hl7.org/2.0/#cds-service-response) that CRD services can use when returning coverage requirements to CRD clients, including CRD-specific profiles on cards to describe CRD-expected behavior. It is possible that some CRD services and CRD clients will support response patterns other than those listed here, but such behavior is outside the scope of this specification. Future versions of this specification might standardize additional response types.
-
-Of the response types in this guide, conformant CRD clients **SHALL** support the [External Reference](#external-reference-response-type), [Instructions](#instructions-response-type), and [Coverage Information](#coverage-information-response-type) responses and **SHOULD** support the remaining types.
-
-CRD services **SHALL**, at minimum, demonstrate an ability to return the same as those listed as ‘SHALL’ for clients above. Also see specific support expectations for the [coverage information response type](#coverage-information-response-type).
+<a name="FHIR-50009"> </a>
+<p class="modified-content">Conformant CRD clients and services **SHALL** support the [Coverage Information](#coverage-information-response-type) (see specific support expectations documented there) and **SHOULD** support the remaining types.</p>
 
 NOTE: Support for a response type does not mean that all orders, appointments, etc. will necessarily receive card guidance, merely that it must be able to return those response types for at least a subset of CRD invocations.
 
