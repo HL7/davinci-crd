@@ -110,7 +110,8 @@ There are two possible mechanisms that can be used by the service to gather the 
 #### Prefetch
 Prefetch is an optional capability of CDS Hooks that allows the client to perform certain query functions on behalf of the CRD server and provide the results in the initial hook invocation. This allows the client to optimize query performance and can simplify functionality for the CRD server.
 
-In addition to the [base prefetch capabilities](https://cds-hooks.hl7.org/2.0/#prefetch-template) defined in the CDS Hooks specification, systems that support prefetch **SHOULD** support the [additional prefetch capabilities](deviations.html#additional-prefetch-capabilities) defined in this specification. The following table defines the standard prefetch queries for this implementation guide that **SHOULD** be supported for each type of resource. CRD clients **MAY** support only the resources needed to implement the relevant CDS Hooks and order types. Those search parameters with hyperlinks are defined as part of this implementation guide. The remainder are defined within their respective version of the FHIR core specification.
+<a name="FHIR-49128"> </a>
+<p class="modified-content">If a CRD server supports prefetch, it <p>SHALL</p> be able to parse prefetches that use the x-fhir-query syntax defined in the current CDS Hooks specification and not fail if that syntax is present.  Systems <b>SHOULD</b> be able to execute such prefetch queries, but <b>MAY</b choose to only execute queries that use the legacy CDS Hooks query syntax and ignore those using the newer x-fhir-query capabilities for now.</p>
 
 CRD client implementations **SHOULD NOT** expect standardized prefetch key names. CRD clients supporting prefetch **SHALL** inspect the CDS Hooks discovery endpoint to determine exact prefetch key names and queries.
 

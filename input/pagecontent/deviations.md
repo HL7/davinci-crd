@@ -93,9 +93,10 @@ Notes:
 ### Additional prefetch capabilities
 One of the options supported in CDS Hooks is the ability for a service to request that certain data be [prefetched](https://cds-hooks.hl7.org/2.0/#prefetch-template) for efficiency reasons and to simplify processing for the CDS service.  However, there is a limit in that, in the current CDS Hooks specification, prefetch can only use hook context information that is expressed as a simple key value.  It cannot leverage context information passed as resources.
 
-A [proposal](https://github.com/cds-hooks/docs/issues/377) has been submitted suggesting how to address this issue.  The work group responsible for the specification has proposed adopting a modified version of this proposal that does not include _include support.  This version of the implementation guide pre-adopts that proposal.
+A [proposal](https://github.com/cds-hooks/docs/issues/377) has been submitted suggesting how to address this issue.  The work group responsible for the specification has proposed adopting a modified version of this proposal that does not include _include support.  This version of the implementation guide pre-adopts that proposal.  
 
-Specifically, where a hook defines a context element that consists of a resource or collection of resources (e.g. [order-select.draftOrders](https://cds-hooks.hl7.org/hooks/order-select/2020May/order-select.html#context) or [order-sign.draftOrders](https://cds-hooks.hl7.org/hooks/order-sign/2020May/order-sign#context)), systems **SHALL** support a limited subset of [X-FHIR-Query]({{site.data.fhir.ver.sdc}}/expressions.html#x-fhir-query-enhancements).
+<a name="FHIR-49128"> </a>
+<p class="modified-content">(See the [foundation page](foundation.html#additional-data-retrieval) for language on conformance expectations.)</p>
 
 The limitations on the XPath expressions that can be used are as follows:
 * variables are limited to 'context' and the data elements reachable from it. (e.g. `_id={{context.draftOrders.entry.resource.ofType(ServiceRequest).location.id()}}`)
