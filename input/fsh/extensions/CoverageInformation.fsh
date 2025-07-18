@@ -82,7 +82,7 @@ Description: "Captures assertions from a payer about whether the service is cove
 * extension[info-needed] only Extension
   * ^short = "performer | location | timeframe | contract-window | detail-code | OTH"
   * ^definition = "Indicates whether information about the perfomer, location, and/or performance date is needed to determine coverage information"
-  * ^comment = "See additional guidance in the [notes](StructureDefinition-ext-coverage-information.html#doc-needed-vs-info-needed)"
+  * ^comment = "See additional guidance in the [notes](StructureDefinition-ext-coverage-information.html#doc-needed-vs-info-needed)\nIf this element is set to OTH, then there must be at least one detail element the explains the nature of the additional information needed to determine coverage, prior authorization, and/or documentation requirements.  There **SHOULD** also be a doc-needed element indicating that DTR can be used to gather the additional information."
   * ^condition[+] = crd-ci-q3
   * value[x] 1..1
   * value[x] only code
@@ -193,9 +193,9 @@ Severity: #error
 Expression: "extension.where(url = 'pa-needed' and value = 'satisfied').exists() = extension.where(url = 'satisfied-pa-id').exists()"
 
 Invariant: crd-ci-q6
-Description: "If 'info-needed' is Other, then reason must be specified"
+Description: "If 'info-needed' is OTH, then reason must be specified"
 Severity: #error
-Expression: "extension.where(url = 'info-needed' and value = 'Other').exists() implies extension.where(url = 'reason').exists()"
+Expression: "extension.where(url = 'info-needed' and value = 'OTH').exists() implies extension.where(url = 'reason').exists()"
 
 Invariant: crd-ci-q7
 Description: "If reason.coding is present and is not from the extensible value set, then reason.text must be present"
