@@ -183,6 +183,14 @@
                 "valueCode": "satisfied"
               },
               {
+                "url": "doc-needed",
+                "valueCode": "conditional"
+              },
+              {
+                "url": "info-needed",
+                "valueCode": "OTH"
+              },
+              {
                 "url": "billingCode",
                 "valueCoding": {
                   "system": "http://www.ama-assn.org/go/cpt",
@@ -212,6 +220,12 @@
                     "display": "Authorization needed out-of-network"
                   }],
                   "text": "In-network required unless exigent circumstances"
+                }
+              },
+              {
+                "url": "reason",
+                "valueCodeableConcept": {
+                  "text": "Diagnosis needed to determine documentation requirements"
                 }
               },
               {
