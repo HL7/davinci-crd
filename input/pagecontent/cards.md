@@ -118,14 +118,16 @@ While using portals or other non-questionnaire data capture is not recommended o
 If the CRD service is unable to resolve the patient, the Coverage Information **SHALL** indicate "not covered" with a reason code of [no-member-found](ValueSet-coverageAssertionReasons.html#x-http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp-no-member-found).
 
 If the CRD is able to resolve the patient but they do not have active coverage, the Coverage Information **SHALL** indicate "not covered" with a reason of [no-active-coverage](ValueSet-coverageAssertionReasons.html#x-http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp-no-active-coverage).
-<a name="FHIR-51413"> </a>
 <div class="new-content">
+<a name="FHIR-51413"> </a>
 <p>This specification allows returning either a single coverage-information repetition that says "conditional" or multiple coverage-information repetitions with specific assumptions that then indicate "covered", "auth-needed", etc.  The recommended criteria for deciding whether to return a single or multiple is as follows:</p>
 <ul>
 <li>If the decision is driven by different subsets of billing codes or different time-frames (i.e. discrete information that can be conveyed using coverage-information.billingCode or detail codes of allowed-period), then use multiple repetitions.</li>
 <li>If the decision is driven by other information that can't be easily listed in the coverage-information (e.g. what specific provider delivers the service, where it happens, etc.) then use 'Conditional' and indicate the specific additional information needed to make a decision.</li>
 </ul>
 <p>For example, if the payer doesn't know whether authorization is necessary (or if the service is covered at all) because it's necessary to know whether the performer will be in network or not, this SHOULD be conveyed as a single coverage-information extension that is marked as 'conditional' for authorization and/or coverage with info-needed set to at least include provider and/or location, with a 'reason' indicating the authorization rules.  This might be the standard code of auth-out-network-only.</p>
+<a name="FHIR-49950"> </a>
+<p>If a system action containing a coverage-information extension is returned, the CRD client <b>SHALL</b> retain that coverage-information extension and expose it as part of the Request resource in all subsequent communications with that payer, including communications made using DTR and PAS.  The coverage-information.coverage-assertion-id will service as a 'linking' id allowing the payer to associate any cached information they have retained relating to the processing of this Request.</p>
 </div>
 
 When using this response type, the proposed order or appointment being updated **SHALL** comply with the following profiles:
