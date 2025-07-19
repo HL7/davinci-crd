@@ -21,7 +21,7 @@
               {
                 "url": "coverage",
                 "valueReference": {
-                  "reference": "Coverage/example-coverage-id"
+                  "reference": "http://example.org/fhir/Coverage/example"
                 }
               },
               {

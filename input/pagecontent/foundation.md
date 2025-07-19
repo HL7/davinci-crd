@@ -77,7 +77,7 @@ In order to initiate this process, the payer responsible for a given CRD server 
 
 ### CRD Access Tokens
 <a name="FHIR-49742"> </a>
-<p class="modified-content">When a CRD client invokes a CRD server via CDS Hooks, it **SHALL** provide an access token that allows the CRD server to retrieve additional patient information. The base rules for this token are defined in the [CDS Hooks specification]({{site.data.fhir.ver.cdshooks}}/#passing-the-access-token-to-the-cds-service). This specification imposes some additional constraints:</p>
+<p class="modified-content">When a CRD client invokes a CRD server via CDS Hooks, it **SHALL** provide an access token that allows the CRD server to retrieve additional patient information. The base rules for this token are defined in the [CDS Hooks specification]({{site.data.fhir.ver.cdshooks}}/index.html#passing-the-access-token-to-the-cds-service). This specification imposes some additional constraints:</p>
 
 * The CRD client **SHALL** limit the scopes provided in their access token as narrowly as feasible to reflect the data requirements identified by the CRD service as necessary to perform their decision support.
 
@@ -86,7 +86,7 @@ In order to initiate this process, the payer responsible for a given CRD server 
 ### Additional Data Retrieval
 The context information provided as part of hook invocation will often not be enough for a CRD server to fully determine coverage requirements. This section of the guide describes a common set of queries that define data that most, if not all, CRD servers will need in order to perform their requirements assessment.
 
-For this release of the IG, conformant CRD clients **SHOULD** support the CDS Hooks [prefetch]({{site.data.fhir.ver.cdshooks}}/#prefetch-template) capability and be able to perform all the prefetch queries defined perform all the queries defined in the [prefetch](#prefetch) section below.  Where prefetch is not supported, CRD clients **SHOULD** implement interfaces to [_include]({{site.data.fhir.path}}search.html#include) resources not available in the system's database. That is, if some of the data is stored in a separate system, it should ideally still be retrievable via `_include` in queries executed against the client. Each payer will define the prefetch requests for their CRD server based on the information they require to provide coverage requirements. They **MAY** include more and/or less than described in this section. Prefetch requests **SHOULD** only include information that is always expected to be needed for each hook invocation. When information is only needed for certain invocations of the hook (e.g., for specific types of medications or services), that information **SHALL** only be retrieved by query using the provided token, never requested universally via prefetch. Not all CRD clients will support all prefetch requests. 
+For this release of the IG, conformant CRD clients **SHOULD** support the CDS Hooks [prefetch]({{site.data.fhir.ver.cdshooks}}/index.html#prefetch-template) capability and be able to perform all the prefetch queries defined perform all the queries defined in the [prefetch](#prefetch) section below.  Where prefetch is not supported, CRD clients **SHOULD** implement interfaces to [_include]({{site.data.fhir.path}}search.html#include) resources not available in the system's database. That is, if some of the data is stored in a separate system, it should ideally still be retrievable via `_include` in queries executed against the client. Each payer will define the prefetch requests for their CRD server based on the information they require to provide coverage requirements. They **MAY** include more and/or less than described in this section. Prefetch requests **SHOULD** only include information that is always expected to be needed for each hook invocation. When information is only needed for certain invocations of the hook (e.g., for specific types of medications or services), that information **SHALL** only be retrieved by query using the provided token, never requested universally via prefetch. Not all CRD clients will support all prefetch requests. 
 
 <blockquote class="stu-note">
 In future releases of this specification, the requirements in this section might become a **SHALL**. Implementers are encouraged to provide feedback about this possibility based on their initial implementation experience.</blockquote>
@@ -105,13 +105,13 @@ The base requirement for these queries, whether based on Encounter or one of the
 
 Not all these will be relevant for all resource types. Different resources have differently named data elements and search parameters for them. In some cases, support only exists as extensions or does not exist at all. Where necessary, this implementation guide defines additional extensions to support retrieval of these elements. The intention is for both extensions and search parameters to eventually migrate into the core FHIR specification.
 
-There are two possible mechanisms that can be used by the service to gather the information needed: prefetch and querying the CRD client to retrieve additional resources. Both mechanisms are defined as part of the [CDS Hooks specification]({{site.data.fhir.ver.cdshooks}}/#providing-fhir-resources-to-a-cds-service). In some cases, a mixture of both approaches might be necessary.
+There are two possible mechanisms that can be used by the service to gather the information needed: prefetch and querying the CRD client to retrieve additional resources. Both mechanisms are defined as part of the [CDS Hooks specification]({{site.data.fhir.ver.cdshooks}}/index.html#providing-fhir-resources-to-a-cds-service). In some cases, a mixture of both approaches might be necessary.
 
 #### Prefetch
 Prefetch is an optional capability of CDS Hooks that allows the client to perform certain query functions on behalf of the CRD server and provide the results in the initial hook invocation. This allows the client to optimize query performance and can simplify functionality for the CRD server.
 
 <a name="FHIR-49128"> </a>
-<p class="modified-content">If a CRD server supports prefetch, it <p>SHALL</p> be able to parse prefetches that use the x-fhir-query syntax defined in the current CDS Hooks specification and not fail if that syntax is present.  Systems <b>SHOULD</b> be able to execute such prefetch queries, but <b>MAY</b choose to only execute queries that use the legacy CDS Hooks query syntax and ignore those using the newer x-fhir-query capabilities for now.</p>
+<p class="modified-content">If a CRD server supports prefetch, it <b>SHALL</b> be able to parse prefetches that use the x-fhir-query syntax defined in the current CDS Hooks specification and not fail if that syntax is present.  Systems <b>SHOULD</b> be able to execute such prefetch queries, but <b>MAY</b> choose to only execute queries that use the legacy CDS Hooks query syntax and ignore those using the newer x-fhir-query capabilities for now.</p>
 
 CRD client implementations **SHOULD NOT** expect standardized prefetch key names. CRD clients supporting prefetch **SHALL** inspect the CDS Hooks discovery endpoint to determine exact prefetch key names and queries.
 
@@ -126,7 +126,7 @@ Coverage prefetch will look like this:
 A recommended set of prefetch expectations for all hook types can be found [here](Binary-CRDServices.html).
 
 Other information will need to be retrieved using queries that are more specific to the type of hook being invoked and the resources passed with it.  The table below lists the queries to retrieve common key information for each type of context resource if not using prefetch.  Note that the queries use `draftOrders` as the context, which will hold for order-select and order-sign hooks, but will need to be `dispatchedOrders` for order-dispatch hooks.
-<a name="FHIR-50009"> </a>
+<a name="FHIR-49196"> </a>
 <p class="modified-content">The queries below make use of _include to reduce the overall number of queries that need to be performed.  However, not all CRD clients will support _include at all or will support all _include search parameters leveraged in these examples.  CRD services that choose to take advantage of _include will need to adapt their queries based on the support declared in the CRD client's CapabilityStatement.</p>
 
 {% raw %}
@@ -265,9 +265,9 @@ Other information will need to be retrieved using queries that are more specific
 {% endraw %}
 
 #### FHIR Resource Access
-If information needed is not provided by prefetch, the CRD server can query the client directly using the [FHIR resource access]({{site.data.fhir.ver.cdshooks}}/#fhir-resource-access) mechanism defined in the CDS Hooks specification.
+If information needed is not provided by prefetch, the CRD server can query the client directly using the [FHIR resource access]({{site.data.fhir.ver.cdshooks}}/index.html#fhir-resource-access) mechanism defined in the CDS Hooks specification.
 
-This can be done either by using individual queries or by invoking a batch of separate queries. In either case, the HTTP call that performs the query or executes the batch must pass the `fhirAuthorization.access_token` in the authorization header as defined in the [CDS Hooks specification]({{site.data.fhir.ver.cdshooks}}/#fhir-resource-access).  (Note that if the CRD client does not support _include, it may be necessary to perform separate queries in sequence in order to retrieve related resources.)
+This can be done either by using individual queries or by invoking a batch of separate queries. In either case, the HTTP call that performs the query or executes the batch must pass the `fhirAuthorization.access_token` in the authorization header as defined in the [CDS Hooks specification]({{site.data.fhir.ver.cdshooks}}/index.html#fhir-resource-access).  (Note that if the CRD client does not support _include, it may be necessary to perform separate queries in sequence in order to retrieve related resources.)
 
 The following two examples show a batch query that could retrieve all CRD-relevant resources as well as the structure of the corresponding batch response.
 

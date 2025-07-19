@@ -99,13 +99,13 @@ dependencies:
       Defines the CDS Hooks logical models
   hl7.fhir.uv.cds-hooks:
     id: cdshooks
-    uri: http://cds-hooks.hl7.org
+    uri: http://cds-hooks.hl7.org/ImplementationGuide/hl7.fhir.uv.cds-hooks
     version: 2.0.1
     reason: |
       The CDS Hooks specification the CRD architecture is based on
   hl7.fhir.uv.cds-hooks-library:
     id: hooks
-    uri: http://cds-hooks.hl7.org/hooks
+    uri: http://cds-hooks.hl7.org/hooks/ImplementationGuide/hl7.fhir.uv.cds-hooks-library
     version: 1.0.1
     reason: |
       Provides the hook definitions for CDS Hooks
