@@ -10,7 +10,7 @@ This implementation guide extends/customizes CDS Hooks in 5 ways: additional hoo
 In the [current build](https://cds-hooks.org/hooks/order-sign/), the order-sign hook can be used for both 'draft' orders that are newly created as well as for updated orders that are active.  The balloted version of the hooks this IG release is bound to are limited to draft orders.  This IG adopts the newer wording, meaning that the order-sign hook can be triggered both on newly created orders, as well as when orders are updated (changing status, changing time-frame, etc.).  The hook can also be re-triggered if there is a key change to the context, most typically the establishment of new or renewed coverage relevant to the order.
 
 ### New hook configuration mechanism
-The CRD Servers provided by payers will support discovery of different types of coverage requirements that will return different types of information to users on [CDS Cards](https://cds-hooks.hl7.org/2.0/#cds-service-response), such as:
+The CRD Servers provided by payers will support discovery of different types of coverage requirements that will return different types of information to users on [CDS Cards]({{site.data.fhir.ver.cdshooks}}/#cds-service-response), such as:
 
 *  Whether authorization is required
 *  Recommended alternative therapies
@@ -27,8 +27,8 @@ The approach in this implementation guide is designed to allow the users or admi
 
 Extensions will be enabled in two places:
 
-1.  The [CDS Service Discovery Response](https://cds-hooks.hl7.org/2.0/#response) object that describes the service's capabilities will include an extension that describes what [configuration options](StructureDefinition-CDSHookServicesExtensionConfiguration.html) can be set by the CRD Client
-2.  The hook's [HTTP Request](https://cds-hooks.hl7.org/2.0/#http-request_1) object will include an extension to pass specific configuration settings as part of the hook invocation
+1.  The [CDS Service Discovery Response]({{site.data.fhir.ver.cdshooks}}/#response) object that describes the service's capabilities will include an extension that describes what [configuration options](StructureDefinition-CDSHookServicesExtensionConfiguration.html) can be set by the CRD Client
+2.  The hook's [HTTP Request]({{site.data.fhir.ver.cdshooks}}/#http-request_1) object will include an extension to pass specific configuration settings as part of the hook invocation
 
 
 ### Configuration options extension
@@ -43,7 +43,7 @@ An extension called `davinci-crd.configuration-options` will define a configurat
 
 CRD servers **SHALL**, at minimum, offer configuration options for each type of card they support (with a code corresponding to the <a href="ValueSet-cardType.html">CRD Card Types</a> ValueSet and a type of ‘boolean’, where setting the flag to false will result in the server not returning any cards of the specified type). This allows CRD clients to control what types of cards they wish to receive at all, or to receive in particular workflow contexts or for certain users.  This configuration mechanism also allows EHRs to minimize information overload and avoid presentation of duplicative or low-utility CRD alerts.
 
-For example, a [CDS Discovery Response](https://cds-hooks.hl7.org/2.0/#response) from a CRD Server might look like this:
+For example, a [CDS Discovery Response]({{site.data.fhir.ver.cdshooks}}/#response) from a CRD Server might look like this:
 
 {% raw %}
 {% fragment Binary/CRDServices JSON EXCEPT:services.where(hook='order-sign') EXCEPT:hook | extension BASE:services EXCEPT:`davinci-crd.configuration-options`.where(code='coverage-info' or code='max-cards') BASE:services.extension %}
@@ -63,14 +63,14 @@ Notes:
 
 *  Codes **SHALL** be valid JSON property names and **SHALL** come from the <a href="ValueSet-cardType.html">CRD Card Types</a> list if an applicable type is in that list.
 
-*  Codes, names, and descriptions **SHALL** be unique within a [CDS Service](https://cds-hooks.hl7.org/2.0/#response) definition.  They **SHOULD** be consistent across different hooks supported by the same payer when dealing with the same types of configuration options.
+*  Codes, names, and descriptions **SHALL** be unique within a [CDS Service]({{site.data.fhir.ver.cdshooks}}/#response) definition.  They **SHOULD** be consistent across different hooks supported by the same payer when dealing with the same types of configuration options.
 
 *  Payer services providing more than one type of coverage requirement information/guidance **SHOULD** expose configuration options allowing clients to dynamically control what information is returned by the service.
 
 #### Hook configuration extension
 An extension called `davinci-crd.configuration` will define a second configuration object that will contain an array of codes and values corresponding to the configuration options configured within the CRD Client.
 
-For example, the hook [HTTP Request](https://cds-hooks.hl7.org/2.0/#http-request_1) would look like this:
+For example, the hook [HTTP Request]({{site.data.fhir.ver.cdshooks}}/#http-request_1) would look like this:
 
 {% fragment Binary/CRDServiceRequest JSON EXCEPT:hook | extension %}
 
@@ -91,7 +91,7 @@ Notes:
 
 
 ### Additional prefetch capabilities
-One of the options supported in CDS Hooks is the ability for a service to request that certain data be [prefetched](https://cds-hooks.hl7.org/2.0/#prefetch-template) for efficiency reasons and to simplify processing for the CDS service.  However, there is a limit in that, in the current CDS Hooks specification, prefetch can only use hook context information that is expressed as a simple key value.  It cannot leverage context information passed as resources.
+One of the options supported in CDS Hooks is the ability for a service to request that certain data be [prefetched]({{site.data.fhir.ver.cdshooks}}/#prefetch-template) for efficiency reasons and to simplify processing for the CDS service.  However, there is a limit in that, in the current CDS Hooks specification, prefetch can only use hook context information that is expressed as a simple key value.  It cannot leverage context information passed as resources.
 
 A [proposal](https://github.com/cds-hooks/docs/issues/377) has been submitted suggesting how to address this issue.  The work group responsible for the specification has proposed adopting a modified version of this proposal that does not include _include support.  This version of the implementation guide pre-adopts that proposal.  
 
@@ -144,7 +144,7 @@ For this release of the implementation guide, these requirements will be handled
 #### if-none-exist
 The `suggestion.action` object will use an extension to carry the if-none-exist query, as per FHIR's [conditional create]({{site.data.fhir.path}}http.html#ccreate) functionality.  The extension property will be `davinci-crd.if-none-exist`.  
 
-For example, this [CDS Hook Suggestion](https://cds-hooks.hl7.org/2.0/#suggestion) contains two [Actions](https://cds-hooks.hl7.org/2.0/#action) - one referencing an HL7 [Questionnaire]({{site.data.fhir.path}}questionnaire.html) and the other the [Task]({{site.data.fhir.path}}task.html) to complete the Questionnaire.  The Questionnaire will only be created if it didn't already exist:
+For example, this [CDS Hook Suggestion]({{site.data.fhir.ver.cdshooks}}/#suggestion) contains two [Actions]({{site.data.fhir.ver.cdshooks}}/#action) - one referencing an HL7 [Questionnaire]({{site.data.fhir.path}}questionnaire.html) and the other the [Task]({{site.data.fhir.path}}task.html) to complete the Questionnaire.  The Questionnaire will only be created if it didn't already exist:
 
 {% fragment Binary/CRDServiceResponse2 JSON BASE:cards.where(source.topic.where(code='123').exists()).suggestions.actions.where(resource is Questionnaire) EXCEPT:url | version BASE:resource %}
 
@@ -152,7 +152,7 @@ For example, this [CDS Hook Suggestion](https://cds-hooks.hl7.org/2.0/#suggestio
 #### Linkage between created resources
 The linkage between resources by `id` in different Actions within a single Suggestion doesn't require any extension to CDS Hooks, but it does require additional guidance.  For the purposes of this implementation guide, the inclusion of the `id` element in 'created' resources and references in created and updated resources within multi-action suggestions **SHALL** be handled as per FHIR's [transaction processing rules]({{site.data.fhir.path}}http.html#trules). I.e. Treating each requested action as being an entry in a FHIR transaction bundle where the base URL is the base URL of the CRD Client's server.  POST corresponds to an `action.type` of 'create' and PUT corresponds to an action.type of 'update'.  Specifically, this means that if a FHIR Reference points to the resource type and `id` of a resource of another 'create' Action in the same Suggestion, then the reference to that resource **SHALL** be updated by the server to point to the `id` assigned by the client when performing the 'create'.  CRD Clients **SHALL** perform 'creates' in an order that ensures that referenced resources are created prior to referencing resources.
 
-For example, the following [CDS Hook Suggestion](https://cds-hooks.hl7.org/2.0/#suggestion) will cause the creation of a new [ServiceRequest]({{site.data.fhir.path}}servicerequest.html) that will be pointed to by a newly created ([DeviceRequest]({{site.data.fhir.path}}devicerequest.html) resource):
+For example, the following [CDS Hook Suggestion]({{site.data.fhir.ver.cdshooks}}/#suggestion) will cause the creation of a new [ServiceRequest]({{site.data.fhir.path}}servicerequest.html) that will be pointed to by a newly created ([DeviceRequest]({{site.data.fhir.path}}devicerequest.html) resource):
 
 {% fragment Binary/CRDServiceResponse JSON BASE:cards.where(source.topic.where(code='therapy-alternatives-opt').exists()).suggestions ELIDE:actions.where(type='delete') EXCEPT:id | basedOn BASE:actions.resource %}
 

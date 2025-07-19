@@ -1,5 +1,5 @@
 ### Underlying Technologies
-This guide is based on the [HL7 FHIR]({{site.data.fhir.path}}index.html) standard, as well as the [CDS Hooks](https://cds-hooks.hl7.org) and [SMART on FHIR](http://hl7.org/fhir/smart-app-launch/index.html) specifications, which build additional capabilities on top of FHIR. This architecture is intended to maximize the number of provider systems that conform to this guide, as well as to allow for easy growth and extensibility of system capabilities in the future.
+This guide is based on the [HL7 FHIR]({{site.data.fhir.path}}index.html) standard, as well as the [CDS Hooks]({{site.data.fhir.ver.cdshooks}}) and [SMART on FHIR](http://hl7.org/fhir/smart-app-launch/index.html) specifications, which build additional capabilities on top of FHIR. This architecture is intended to maximize the number of provider systems that conform to this guide, as well as to allow for easy growth and extensibility of system capabilities in the future.
 
 Implementers of this specification therefore need to understand some basic information about these referenced specifications.
 
@@ -58,7 +58,7 @@ Implementers should also familiarize themselves with the FHIR resources used wit
 </table>
 
 #### CDS Hooks
-Provider systems will use the specification and workflows defined by [CDS Hooks 2.0](https://cds-hooks.hl7.org/2.0) to initiate Coverage Requirements Discovery with the payers. Implementers must be familiar with all aspects of this specification.
+Provider systems will use the specification and workflows defined by [CDS Hooks 2.0]({{site.data.fhir.ver.cdshooks}}) to initiate Coverage Requirements Discovery with the payers. Implementers must be familiar with all aspects of this specification.
 
 #### SMART on FHIR
 SMART on FHIR is expected to be used in two principal ways:

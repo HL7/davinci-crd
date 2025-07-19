@@ -98,7 +98,7 @@
         <a href="{{site.data.fhir.ver.uscore7}}">US Core 7.0.0</a>
       </li>
       <li>
-        <a href="https://cds-hooks.hl7.org/2.0">CDS Hooks <img src="external.png" style="text-align: baseline"/></a>
+        <a href="{{site.data.fhir.ver.cdshooks}}">CDS Hooks 2.0.1</a>
       </li>
       <li>
         <a href="http://hl7.org/fhir/smart-app-launch/index.html">SMART on FHIR <img src="external.png" style="text-align: baseline"/></a>

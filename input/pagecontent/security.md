@@ -2,7 +2,7 @@ Guidance and conformance expectations around privacy and security are provided b
 
 * FHIR Core: [Security & Privacy Module]({{site.data.fhir.path}}secpriv-module.html), [Security Principles]({{site.data.fhir.path}}security.html) and [Implementer's Checklist]({{site.data.fhir.path}}safety.html)
 * HRex: [Privacy & Security]({{site.data.fhir.ver.hrex}}/security.html)
-* CDS Hooks: [Security & Safety](https://cds-hooks.hl7.org/2.0/#security-and-safety)
+* CDS Hooks: [Security & Safety]({{site.data.fhir.ver.cdshooks}}/#security-and-safety)
 * SMART on FHIR: [SMART App Launch](http://www.hl7.org/fhir/smart-app-launch)
 
 In addition to these, this implementation guide imposes the following additional rules:

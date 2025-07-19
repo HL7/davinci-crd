@@ -41,7 +41,7 @@ Note: Any hook can theoretically be used to assert a relationship from a member 
 {::options parse_block_html="true" /}
 
 ### appointment-book
-This hook is described in the CDS Hook specification [here](https://cds-hooks.hl7.org/hooks/appointment-book/2023SepSTU1Ballot/appointment-book/).  This version of the CRD implementation guide refers to version 1.0 of the hook.
+This hook is described in the CDS Hook specification [here]({{site.data.fhir.ver.hooks}}/appointment-book.html).  This version of the CRD implementation guide refers to version 1.0 of the hook.
 
 This hook would be triggered when the user of a CRD Client books a future appointment for a patient with themselves, with someone else within their organization, or with another organization.  (Note that whether the CRD Client will create an appointment - triggering the `appointment-book` hook - or a ServiceRequest - triggering an `order-select` or `order-sign` hook - can vary depending on the service being booked and the organizations involved.)
 
@@ -93,7 +93,7 @@ Notes:
 * CRD clients and servers **SHALL**, at minimum, support returning and processing the [Coverage Information](StructureDefinition-ext-coverage-information.html) system action for all invocations of this hook.
 
 ### encounter-start
-This hook is described in the CDS Hook specification [here](https://cds-hooks.hl7.org/hooks/encounter-start/2023SepSTU1Ballot/encounter-start/).  This version of the CRD implementation guide refers to version 1.0 of the hook.
+This hook is described in the CDS Hook specification [here]({{site.data.fhir.ver.hooks}}/encounter-start.html).  This version of the CRD implementation guide refers to version 1.0 of the hook.
 
 This hook would be triggered when a patient is admitted, a patient arrives for an out-patient visit, and/or when a provider first engages with a patient during an encounter.  The `encounter-start` hook serves a similar purpose to the [appointment-book](#appointment-book) hook, though it provides less lead time to react to recommendations. If the purpose of the appointment is to perform a service that requires a 2-week prior authorization process, it is more efficient to identify prior-authorization requirements proactively through the use of the appointment-book hook to prevent the patient from showing up for an appointment that will need to be canceled and rescheduled.  
 
@@ -133,7 +133,7 @@ Notes:
 * CRD Servers **MAY** use this hook as a basis for associating a patient with a particular practitioner from a payer attribution perspective.
 
 ### encounter-discharge
-This hook is described in the CDS Hook specification [here](https://cds-hooks.hl7.org/hooks/encounter-discharge/2023SepSTU1Ballot/encounter-discharge/).  This version of the CRD implementation guide refers to version 1.0 of the hook.
+This hook is described in the CDS Hook specification [here]({{site.data.fhir.ver.hooks}}/encounter-discharge.html).  This version of the CRD implementation guide refers to version 1.0 of the hook.
 
 This hook would generally be specific to an in-patient encounter and would fire when a provider is performing the discharge process within the CRD Client.
 
@@ -171,7 +171,7 @@ The profiles expected to be used for the resources resolved to by the userId, pa
 </table>
 
 ### order-dispatch
-This hook is described in the CDS Hook specification [here](https://cds-hooks.hl7.org/hooks/order-dispatch/2023SepSTU1Ballot/order-dispatch/).  This version of the CRD implementation guide refers to version 1.0 of the hook.
+This hook is described in the CDS Hook specification [here]({{site.data.fhir.ver.hooks}}/order-dispatch.html).  This version of the CRD implementation guide refers to version 1.0 of the hook.
 
 This is a new hook that allows for decision support to be provided when the intended performer of a service is not chosen when the order is written, but instead at some later time-point, quite frequently by someone other than the practitioner who wrote the order.  Because knowing 'who' will perform the service is often relevant when determining coverage and prior authorization requirements, and because it is also a useful point for providing guidance such as suggesting alternative "in-network" providers, this is a useful point in client workflow to provide decision support.
 
@@ -264,7 +264,7 @@ Notes:
 
 
 ### order-select
-This hook is described in the CDS Hook specification [here](https://cds-hooks.hl7.org/hooks/order-select/2023SepSTU1Ballot/order-select/).  This version of the CRD implementation guide refers to version 1.0 of the hook.
+This hook is described in the CDS Hook specification [here]({{site.data.fhir.ver.hooks}}order-select.html).  This version of the CRD implementation guide refers to version 1.0 of the hook.
 
 Support for this hook is optional, as not all information will necessarily be available when this hook is invoked.  Therefore, the [Order Sign](#order-sign) and [Order Dispatch](#order-dispatch) hooks are more critical to implement because they fire when information is required to be more complete and also represent the 'end' of the user engagement in their respective processes.  That said, the "Order Select" hook is still quite useful.
 
