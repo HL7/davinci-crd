@@ -17,8 +17,9 @@ Usage: #example
   * extension[detailed].valueCoding = $raceEthnicity#2148-5 "Mexican"
   * extension[text].valueString = "Hispanic or Latino"
 * extension[birthsex].valueCode = #F
-* identifier[MRIdentifier]
+* identifier[+]
   * use = #usual
+  * type = $v2-0203#MR
   * type.text = "Medical Record Number"
   * system = "http://example.org/NamingSystem/mrn"
   * value = "1032702"
