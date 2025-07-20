@@ -69,6 +69,7 @@ This page describes the primary releases of the specification and summarizes the
 * [FHIR-48553](https://jira.hl7.org/browse/FHIR-48553) - Improved language in first intro paragraph (clarification) [link](index.html#FHIR-48553)
 * [FHIR-48625](https://jira.hl7.org/browse/FHIR-48625) - Added guidance on best CRD service available practices (clarification) [link](implementation.html#FHIR-48625)
 * [FHIR-50006](https://jira.hl7.org/browse/FHIR-50006) - Added additional examples for non-provided/insufficient information that is not considered an error (clarification) [link](cards.html#FHIR-50006)
+* [FHIR-50225](https://jira.hl7.org/browse/FHIR-50225) - Added an introduction to the coverage-information extension providing a detailed overview and ensured all elements had proper descriptions (clarification) [link](StructureDefinition-ext-coverage-information.html#introduction)
 
 
 ### Release 2.1.0

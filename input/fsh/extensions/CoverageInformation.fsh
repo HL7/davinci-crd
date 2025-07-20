@@ -1,7 +1,7 @@
 Extension: CRDCoverageInformation
 Id: ext-coverage-information
 Title: "Coverage Information"
-Description: "Captures assertions from a payer about whether the service is covered and/or requires prior authorization."
+Description: "Captures assertions from a payer about the coverage rules for a service - in particular, whether it is covered and/or requires prior authorization."
 * ^version = "1.1.0-ci-build"
 * ^experimental = false
 * ^context[0].type = #element
@@ -113,22 +113,27 @@ Description: "Captures assertions from a payer about whether the service is cove
       code 1..1 and
       value 1..1 and
       qualification 0..1
-  * extension[category] ^short = "Type of detail"
+  * extension[category] only Extension
+    * ^short = "Type of detail"
     * ^definition = "Indicates the nature of the detail, which in turn provides guidance for when it should be displayed."
     * ^comment = "CRD clients **SHOULD** make both limitation and decisional details available to clinical users."
     * value[x] only code
     * value[x] from CRDCoverageDetailCategories (required)
-  * extension[code] ^short = "Name of name-value pair"
+  * extension[code] only Extension
+    * ^short = "Name of name-value pair"
     * ^definition = "The type of detail or qualification expressed."
     * value[x] only CodeableConcept
     * value[x] from CRDCoverageDetailCodes (extensible)
-  * extension[value] ^short = "Value of name-value pair"
+  * extension[value] only Extension
+    * ^short = "Value of name-value pair"
     * ^definition = "The detail or qualification that applies to this coverage assertion."
     * value[x] only boolean or string or url or SimpleQuantity or Period
-  * extension[qualification] ^short = "Additional info about detail"
+  * extension[qualification] only Extension
+    * ^short = "Additional info about detail"
     * ^definition = "Additional text that qualifies/expands on the computable detail.  E.g. 'Provided coverage is renewed' or 'Does not account for deductible'"
     * value[x] only string
-* extension[dependency] ^short = "Resources that impact this assertion"
+* extension[dependency] only Extension
+  * ^short = "Resources that impact this assertion"
   * ^definition = "If present, indicates that the determination represented here is dependent on the content, determination, and possibly execution of the referenced order(s)"
   * ^requirements = "For example, the authorization decision on a request for post-surgical physiotherapy might be dependent on the order for the surgery itself.  If coverage for the surgery is not approved or the order for the surgery is cancelled, that might impact the decision on covering the physiotherapy."
   * value[x] only Reference(CRDAppointmentWithOrder or CRDAppointmentNoOrder or CRDCommunicationRequest or CRDDeviceRequest or CRDMedicationRequest or CRDNutritionOrder or CRDServiceRequest)

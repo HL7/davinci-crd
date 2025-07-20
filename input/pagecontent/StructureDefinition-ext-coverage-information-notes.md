@@ -1,6 +1,6 @@
 <!--- Text entered into this file will appear at the top of the profiles page before the Formal Views of the profile content. -->
 
-### doc-needed vs. info-needed
+#### doc-needed vs. info-needed
 This extension has two properties with similar names which may cause some confusion.  Each has a very distinct purpose.
 
 'doc-needed' is used to indicate the need for additional information to be collected (typically via DTR questionnaires) in order for the payer to make decisions about coverage and prior authorization.  It indicates the type of user who will need to provide the answers.  Once those answers are provided, a decision about coverage and at least whether prior authorization is necessary should be possible.
