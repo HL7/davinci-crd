@@ -14,15 +14,20 @@
   }
 }}####
 e: {
+  "source" : tx.fhir.org,
   "valueSet" : {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:ba8a510b-b603-4c26-9c37-bc18a4e50fc8",
-    "timestamp" : "2024-11-13T03:51:09.814Z",
+    "identifier" : "urn:uuid:8a67f665-c04d-4cea-9bb6-7a3c2da6c256",
+    "timestamp" : "2025-07-20T14:57:39.191Z",
     "total" : 249,
     "offset" : 0,
     "parameter" : [{
+      "name" : "displayLanguage",
+      "valueCode" : "en-US"
+    },
+    {
       "name" : "excludeNested",
       "valueBoolean" : true
     },
@@ -1307,15 +1312,20 @@ e: {
   }
 }}####
 e: {
+  "source" : tx.fhir.org,
   "valueSet" : {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:0cc407dd-c4da-4baf-bd38-559035d0104e",
-    "timestamp" : "2024-11-13T03:51:10.267Z",
+    "identifier" : "urn:uuid:45ee52a6-2660-400e-ac70-ca949a38454a",
+    "timestamp" : "2025-07-20T14:57:39.756Z",
     "total" : 249,
     "offset" : 0,
     "parameter" : [{
+      "name" : "displayLanguage",
+      "valueCode" : "en-US"
+    },
+    {
       "name" : "excludeNested",
       "valueBoolean" : true
     },
@@ -2600,15 +2610,20 @@ e: {
   }
 }}####
 e: {
+  "source" : tx.fhir.org,
   "valueSet" : {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:be8ce677-f090-4159-9c90-cce971fc5df6",
-    "timestamp" : "2024-11-13T03:51:10.705Z",
+    "identifier" : "urn:uuid:da03fac4-5bb7-481a-a792-ceca9d67e950",
+    "timestamp" : "2025-07-20T14:57:40.309Z",
     "total" : 249,
     "offset" : 0,
     "parameter" : [{
+      "name" : "displayLanguage",
+      "valueCode" : "en-US"
+    },
+    {
       "name" : "excludeNested",
       "valueBoolean" : true
     },

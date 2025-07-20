@@ -1,28 +1,13 @@
 {
-  "http://goodcare.org/devices/id" : null,
-  "http://www.happysight.com/prescription" : null,
-  "https://www.usps.com/" : {
-    "server" : "http://tx.fhir.org/r4",
-    "filename" : "cs-5ff84995-5742-43ba-84fa-072b2e88a8c6.json"
-  },
-  "http://www.jurisdiction.com/insurer/123456" : null,
-  "https://www.usps.com/|null" : null,
-  "http://www.amc.nl/zorgportal/identifiers/pre-admissions" : null,
-  "http://terminology.hl7.org/CodeSystem/v3-AdministrativeGender|2023-02-01" : null,
-  "http://example.org/fhir/CodeSystem/SomeCodes|null" : null,
-  "urn:oid:2.16.840.1.113883.6.300" : null,
   "http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20230901" : null,
+  "http://terminology.hl7.org/CodeSystem/v3-NullFlavor|2023-02-01" : null,
   "urn:ietf:bcp:13|null" : null,
   "http://nucc.org/provider-taxonomy|null" : null,
-  "http://hospital.smarthealthit.org" : null,
-  "http://hl7.org/fhir/fhir-types|null" : null,
-  "http://www.nlm.nih.gov/research/umls/rxnorm|11062023" : null,
   "http://unstats.un.org/unsd/methods/m49/m49.htm|null" : null,
-  "http://www.bmc.nl/portal/prescriptions" : null,
-  "http://example.com/fhir/NampingSystem/certificate" : null,
+  "http://www.nlm.nih.gov/research/umls/rxnorm|11062023" : null,
+  "http://terminology.hl7.org/CodeSystem/v3-AdministrativeGender|2023-02-01" : null,
   "http://www.nlm.nih.gov/research/umls/rxnorm|05062024" : null,
+  "http://example.org/fhir/CodeSystem/SomeCodes|null" : null,
   "http://snomed.info/sct|http://snomed.info/sct/731000124108" : null,
-  "https://example.org/some-organization/device-codes|null" : null,
-  "http://www.amc.nl/zorgportal/identifiers/visits" : null,
-  "http://goodhealthhospital.org/nutrition-requests" : null
+  "https://example.org/some-organization/device-codes|null" : null
 }

@@ -22,7 +22,7 @@
 }}####
 e: {
   "from-server" : true,
-  "error" : "Error from http://tx.fhir.org/r4: Unable to provide support for code system http://hl7.org/fhir/us/davinci-crd/CodeSystem/coverage-information-codes"
+  "error" : "Error from https://tx.fhir.org/r4: Unable to provide support for code system http://hl7.org/fhir/us/davinci-crd/CodeSystem/coverage-information-codes"
 }
 -------------------------------------------------------------------------------------
 {"hierarchical" : false, "valueSet" :{
@@ -51,6 +51,6 @@ e: {
 }}####
 e: {
   "from-server" : true,
-  "error" : "Error from http://tx.fhir.org/r4: Unable to provide support for code system http://hl7.org/fhir/us/davinci-crd/CodeSystem/coverage-information-codes"
+  "error" : "Error from https://tx.fhir.org/r4: Unable to provide support for code system http://hl7.org/fhir/us/davinci-crd/CodeSystem/coverage-information-codes"
 }
 -------------------------------------------------------------------------------------

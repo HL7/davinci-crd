@@ -10,6 +10,6 @@
 }}####
 e: {
   "from-server" : true,
-  "error" : "Error from http://tx.fhir.org/r4: The value set '' expansion has too many codes to display (>10000)"
+  "error" : "Error from https://tx.fhir.org/r4: The value set '' expansion has too many codes to display (>10000)"
 }
 -------------------------------------------------------------------------------------
