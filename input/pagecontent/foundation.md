@@ -115,9 +115,12 @@ Prefetch is an optional capability of CDS Hooks that allows the client to perfor
 
 CRD client implementations **SHOULD NOT** expect standardized prefetch key names. CRD clients supporting prefetch **SHALL** inspect the CDS Hooks discovery endpoint to determine exact prefetch key names and queries.
 
-In most cases, payers will require information about a patient’s coverage. As mentioned in [Controlling Hook Invocation](deviations.html#controlling-hook-invocation), whether returned as part of prefetch or returned via query, Coverage **SHALL** be limited to a single instance. How this happens is up to the CRD client.  The limitation of there only being one coverage applies regardless of whether the Coverage instance is being returned as part of prefetch or if Coverage is being searched using the token provided as part of hook invocation.  Regardless of method of invocation, there **SHALL** be exactly one Coverage instance returned.
+<a name="FHIR-48797"> </a>
+<div class="modified-content">
+<p>In most cases, payers will require information about a patient’s coverage. As mentioned in [Controlling Hook Invocation](deviations.html#controlling-hook-invocation), whether returned as part of prefetch or returned via query, Coverage **SHALL** be limited to a single instance. How this happens is up to the CRD client.  The limitation of there only being one coverage applies regardless of whether the Coverage instance is being returned as part of prefetch or if Coverage is being searched using the token provided as part of hook invocation.  Regardless of method of invocation, there <b>SHALL</b> be exactly one Coverage instance returned.</p>
 
-Coverage prefetch will look like this:
+<p>Coverage prefetch will look like this:</p>
+</div>
 
 {% raw %}
 {% fragment Binary/CRDServices JSON BASE:services.where(hook='order-sign') EXCEPT: title | description | id | extension %}
