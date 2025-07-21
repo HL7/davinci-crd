@@ -1,3 +1,4 @@
 {
+  "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDAppointmentBundle" : null,
   "http://hl7.org/fhir/tools/ImplementationGuide/hl7.fhir.uv.tools.r4" : null
 }

@@ -1,0 +1,91 @@
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "CRDHooksRequest",
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/tools/StructureDefinition/json-suppress-resourcetype",
+    "valueBoolean" : true
+  }],
+  "url" : "http://hl7.org/fhir/tools/StructureDefinition/CRDHooksRequest",
+  "name" : "CRDHooksRequest",
+  "title" : "CDSHooks Request (Logical Definition)",
+  "status" : "draft",
+  "experimental" : true,
+  "description" : "Defines CRD-specific constraints on the CDS Hooks Request logical model",
+  "kind" : "logical",
+  "fhirVersion" : "4.0.1",
+  "baseDefinition" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHooksRequest",
+  "derivation" : "constraint",
+  "abstract"  : false,
+  "type" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHooksRequest",
+  "differential" : {
+    "element" : [
+      {
+        "path" : "CDSHooksRequest.hook",
+        "type" : [{ "code" : "code"}]
+      },
+      {
+        "path" : "CDSHooksRequest.context",
+        "short" : "Hook-specific contextual data that the CDS service will need",
+        "definition" : "Hook-specific contextual data that the CDS service will need",
+        "min" : 1,
+        "max" : "1",
+        "type" : [{ "code" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHookContext" }],
+        "extension" : [{
+           "url" : "http://hl7.org/fhir/tools/StructureDefinition/type-specifier",
+           "extension" : [{
+             "url" : "condition",
+             "valueString" : "%resource.hook = 'appointment-book'"
+           },{
+             "url" : "type",
+             "valueCode" : "http://hl7.org/fhir/us/davnci-crd/StructureDefinition/CRDHookAppointmentBookContext"
+           }]
+        },{
+           "url" : "http://hl7.org/fhir/tools/StructureDefinition/type-specifier",
+           "extension" : [{
+             "url" : "condition",
+             "valueString" : "%resource.hook = 'encounter-start'"
+           },{
+             "url" : "type",
+             "valueCode" : "http://hl7.org/fhir/us/davnci-crd/StructureDefinition/CDSEncounterStartContext"
+           }]
+        },{
+           "url" : "http://hl7.org/fhir/tools/StructureDefinition/type-specifier",
+           "extension" : [{
+             "url" : "condition",
+             "valueString" : "%resource.hook = 'encounter-discharge'"
+           },{
+             "url" : "type",
+             "valueCode" : "http://hl7.org/fhir/us/davnci-crd/StructureDefinition/CDSEncounterStartContext"
+           }]
+        },{
+           "url" : "http://hl7.org/fhir/tools/StructureDefinition/type-specifier",
+           "extension" : [{
+             "url" : "condition",
+             "valueString" : "%resource.hook = 'order-dispatch'"
+           },{
+             "url" : "type",
+             "valueCode" : "http://hl7.org/fhir/us/davnci-crd/StructureDefinition/CRDOrderDispatchContext"
+           }]
+        },{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/type-specifier",
+          "extension" : [{
+            "url" : "condition",
+            "valueString" : "%resource.hook = 'order-sign'"
+          },{
+            "url" : "type",
+            "valueCode" : "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHookOrderSignContext"
+          }]
+       },{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/type-specifier",
+        "extension" : [{
+          "url" : "condition",
+          "valueString" : "%resource.hook = 'order-select'"
+        },{
+          "url" : "type",
+            "valueCode" : "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHookOrderSignContext"
+        }]
+       }]
+     }
+    ]
+  }
+}

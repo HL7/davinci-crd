@@ -1,0 +1,28 @@
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "CRDHooksResponse",
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/tools/StructureDefinition/json-suppress-resourcetype",
+    "valueBoolean" : true
+  }],
+  "url" : "http://hl7.org/fhir/tools/StructureDefinition/CRDHooksResponse",
+  "name" : "CRDHooksResponse",
+  "title" : "CRD CDSHooks Response (Logical Definition)",
+  "status" : "draft",
+  "experimental" : true,
+  "description" : "This defines CRD-specific constraints on the CDS Hooks Response body",
+  "kind" : "logical",
+  "fhirVersion" : "4.0.1",
+  "baseDefinition" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHooksResponse",
+  "derivation" : "constraint",
+  "abstract"  : false,
+  "type" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHooksResponse",
+  "differential" : {
+    "element" : [
+      {
+        "path" : "CDSHooksResponse.cards",
+        "type" : [{ "code" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHooksElement"}]
+      }
+    ]
+  }
+}

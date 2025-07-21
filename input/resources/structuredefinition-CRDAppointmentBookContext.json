@@ -1,0 +1,30 @@
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "CRDAppointmentBookContext",
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/tools/StructureDefinition/json-suppress-resourcetype",
+    "valueBoolean" : true
+  }],
+  "url" : "http://hl7.org/fhir/tools/StructureDefinition/CRDAppointmentBookContext",
+  "name" : "CRDAppointmentBookContext",
+  "title" : "CRD CDS Hook Specific Context for appointment-book (Logical Definition)",
+  "status" : "draft",
+  "experimental" : true,
+  "description" : "CRD-specific constraints on the appointment-book CDS Hook context",
+  "kind" : "logical",
+  "baseDefinition" : "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CDSHookAppointmentBookContext",
+  "derivation" : "specialization",
+  "abstract"  : false,
+  "type" : "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CDSHookAppointmentBookContext",
+  "differential" : {
+    "element" : [
+      {
+        "path" : "CDSHookAppointmentBookContext.appointments",
+        "type" : [{ 
+          "code" : "Bundle",
+          "profile" : ["http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-bundle-appointment"]
+        }]
+      }
+    ]
+  }
+}

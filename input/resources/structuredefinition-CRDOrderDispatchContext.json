@@ -1,0 +1,37 @@
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "CRDOrderDispatchContext",
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/tools/StructureDefinition/json-suppress-resourcetype",
+    "valueBoolean" : true
+  }],
+  "url" : "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDOrderDispatchContext",
+  "name" : "CRDOrderDispatchContext",
+  "title" : "CRD CDS Hook Specific Context for order-dispatch (Logical Definition)",
+  "status" : "draft",
+  "experimental" : true,
+  "description" : "CRD-specific constraints on the order-dispatch CDS Hook context",
+  "kind" : "logical",
+  "baseDefinition" : "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CDSHookOrderDispatchContext",
+  "derivation" : "specialization",
+  "abstract"  : false,
+  "type" : "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CDSHookOrderDispatchContext",
+  "differential" : {
+    "element" : [
+      {
+        "path" : "CDSHookOrderDispatchContext.dispatchedOrders",
+        "type" : [{ 
+          "code" : "Bundle",
+          "profile" : ["http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-bundle-request"]
+        }]
+      },
+      {
+        "path" : "CDSHookOrderDispatchContext.fulfillmentTasks",
+        "type" : [{ 
+          "code" : "Bundle",
+          "profile" : ["http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-bundle-task"]
+        }]
+      }
+    ]
+  }
+}
