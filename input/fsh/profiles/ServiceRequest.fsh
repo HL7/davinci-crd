@@ -21,6 +21,8 @@ Description: "This profile specifies constraints on the ServiceRequest resource 
 * code from CRDServiceRequestCodes (extensible)
   * ^short = "Codes to identify requested services. (CPT, SNOMED CT or LOINC)"
   * ^binding.description = "Codes describing the type of  Service"
+  * extension contains CRDBillingOptions named BillingOptions 0..* MS
+  * extension[BillingOptions] ^short = "Expected Billing Code(s)"
 * quantity[x] MS
 * subject MS
 * subject only Reference(CRDPatient)

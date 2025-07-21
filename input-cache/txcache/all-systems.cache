@@ -22,7 +22,6 @@ v: {
   "system" : "urn:iso:std:iso:3166",
   "version" : "2018",
   "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -243,7 +242,6 @@ v: {
   "code" : "CA",
   "system" : "https://www.usps.com/",
   "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -269,7 +267,6 @@ v: {
   "code" : "CA",
   "system" : "https://www.usps.com/",
   "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -296,7 +293,6 @@ v: {
   "system" : "http://unitsofmeasure.org",
   "version" : "2.2",
   "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -327,7 +323,6 @@ v: {
   "error" : "No valid coding was found for the value set 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1010.4|20170601'; The provided code 'http://snomed.info/sct#1145423002 ('Azithromycin 250 mg oral tablet')' was not found in the value set 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1010.4|20170601'",
   "class" : "UNKNOWN",
   "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",
   "issue" : [{
@@ -398,7 +393,6 @@ v: {
   "system" : "http://snomed.info/sct",
   "version" : "http://snomed.info/sct/731000124108/version/20250301",
   "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -425,7 +419,6 @@ v: {
   "system" : "http://unitsofmeasure.org",
   "version" : "2.2",
   "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -458,7 +451,6 @@ v: {
   "code" : "OK",
   "system" : "https://www.usps.com/",
   "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -484,7 +476,6 @@ v: {
   "code" : "OK",
   "system" : "https://www.usps.com/",
   "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -516,7 +507,6 @@ v: {
   "system" : "http://snomed.info/sct",
   "version" : "http://snomed.info/sct/731000124108/version/20250301",
   "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -547,7 +537,6 @@ v: {
   "system" : "http://snomed.info/sct",
   "version" : "http://snomed.info/sct/731000124108/version/20250301",
   "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -574,7 +563,6 @@ v: {
   "system" : "http://unitsofmeasure.org",
   "version" : "2.2",
   "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -695,5 +683,132 @@ e: {
   }
 },
   "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : true, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes", "version": "2.2.0-cibuild"}####
+e: {
+  "source" : tx.fhir.org,
+  "valueSet" : {
+  "resourceType" : "ValueSet",
+  "url" : "http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes",
+  "identifier" : [{
+    "system" : "urn:ietf:rfc:3986",
+    "value" : "urn:oid:2.16.840.1.113883.4.642.40.18.48.24"
+  }],
+  "version" : "2.2.0-cibuild",
+  "name" : "CRDBillingCodes",
+  "title" : "CRD Billing Codes",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2025-07-20T16:12:52-06:00",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US"
+    }]
+  }],
+  "expansion" : {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/valueset-toocostly",
+      "valueBoolean" : true
+    }],
+    "identifier" : "urn:uuid:3f36eedf-78ec-4107-b0e4-dee730b1c737",
+    "timestamp" : "2025-07-20T22:22:03.483Z",
+    "total" : 0,
+    "offset" : 0,
+    "parameter" : [{
+      "name" : "limitedExpansion",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "displayLanguage",
+      "valueCode" : "en-US"
+    },
+    {
+      "name" : "excludeNested",
+      "valueBoolean" : false
+    },
+    {
+      "name" : "offset",
+      "valueInteger" : 0
+    },
+    {
+      "name" : "count",
+      "valueInteger" : 1000
+    }]
+  }
+},
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://snomed.info/sct",
+    "code" : "1145423002",
+    "display" : "Azithromycin 250 mg oral tablet"
+  }]
+}, "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1010.4", "version": "20240606", "langs":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "id" : "terminology-settings",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  },
+  {
+    "name" : "displayLanguage",
+    "valueCode" : "en-US"
+  }]
+}}####
+v: {
+  "version" : "http://snomed.info/sct/731000124108/version/20250301",
+  "severity" : "error",
+  "error" : "No valid coding was found for the value set 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1010.4|20240606'; The provided code 'http://snomed.info/sct#1145423002 ('Azithromycin 250 mg oral tablet')' was not found in the value set 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1010.4|20240606'",
+  "class" : "UNKNOWN",
+  "server" : "https://tx.fhir.org/r4",
+  "unknown-systems" : "",
+  "issues" : {
+  "resourceType" : "OperationOutcome",
+  "issue" : [{
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString" : "None_of_the_provided_codes_are_in_the_value_set_one"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
+      "valueUrl" : "https://tx.fhir.org/r4"
+    }],
+    "severity" : "information",
+    "code" : "code-invalid",
+    "details" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
+        "code" : "this-code-not-in-vs"
+      }],
+      "text" : "The provided code 'http://snomed.info/sct#1145423002 ('Azithromycin 250 mg oral tablet')' was not found in the value set 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1010.4|20240606'"
+    },
+    "location" : ["CodeableConcept.coding[0].code"],
+    "expression" : ["CodeableConcept.coding[0].code"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString" : "TX_GENERAL_CC_ERROR_MESSAGE"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
+      "valueUrl" : "https://tx.fhir.org/r4"
+    }],
+    "severity" : "error",
+    "code" : "code-invalid",
+    "details" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
+        "code" : "not-in-vs"
+      }],
+      "text" : "No valid coding was found for the value set 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1010.4|20240606'"
+    }
+  }]
+}
+
 }
 -------------------------------------------------------------------------------------

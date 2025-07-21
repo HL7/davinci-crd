@@ -6,7 +6,6 @@ Description: "This profile defines an initial profile on the VisionPrescription 
 * ^experimental = false
 * ^extension[$fmm].valueInteger = 1
 * extension contains CRDCoverageInformation named Coverage-Information 0..* MS
-* extension[Coverage-Information] ^short = "Coverage Info"
 * identifier MS
 //* status only code
 * status MS
@@ -25,6 +24,8 @@ Description: "This profile defines an initial profile on the VisionPrescription 
   * ^type[0].targetProfile[0].extension[$typeMS].valueBoolean = true
   * ^type[0].targetProfile[1].extension[$typeMS].valueBoolean = true
 * lensSpecification MS
+  * extension contains CRDBillingOptions named BillingOptions 0..* MS
+  * extension[BillingOptions] ^short = "Expected Billing Code(s)"
   * product MS
   * eye MS
   * sphere MS

@@ -5,6 +5,7 @@ Title: "CRD Device Request"
 Description: "This profile specifies extensions and constraints on the DeviceRequest resource to support coverage requirements discovery."
 * ^experimental = false
 * extension contains CRDCoverageInformation named Coverage-Information 0..* MS
+* extension[Coverage-Information] ^short = "Coverage Info"
 * identifier MS
 * basedOn MS
 * status 1.. MS
@@ -14,6 +15,10 @@ Description: "This profile specifies extensions and constraints on the DeviceReq
 * code[x] MS
 * code[x] only CodeableConcept or Reference(CRDDevice)
 * code[x] from CRDDeviceRequests (extensible)
+* codeCodeableConcept MS
+  * extension contains CRDBillingOptions named BillingOptions 0..* MS
+  * extension[BillingOptions] ^short = "Expected Billing Code(s)"
+* codeReference MS
 * parameter MS
 * subject MS
 * subject only Reference(CRDPatient)

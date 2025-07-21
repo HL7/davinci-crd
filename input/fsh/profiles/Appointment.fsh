@@ -56,11 +56,11 @@ Description: "An appointment where the details of what the appointment is being 
 * ^extension[$fmm].valueInteger = 1
 * ^experimental = false
 * ^abstract = false
-* extension contains CRDCoverageInformation named Coverage-Information 0..* MS
-* extension[Coverage-Information] ^short = "Coverage Info"
 * identifier MS
 * serviceCategory MS
 * serviceType MS
+  * extension contains CRDBillingOptions named BillingOptions 0..* MS
+  * extension[BillingOptions] ^short = "Expected Billing Code(s)"
 * specialty MS
 * appointmentType MS
 * reasonReference MS

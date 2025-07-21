@@ -20,7 +20,6 @@ v: {
   "system" : "http://www.ama-assn.org/go/cpt",
   "version" : "2023",
   "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -62,7 +61,6 @@ v: {
   "system" : "http://www.ama-assn.org/go/cpt",
   "version" : "2023",
   "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -90,7 +88,6 @@ v: {
   "system" : "http://www.ama-assn.org/go/cpt",
   "version" : "2023",
   "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -118,7 +115,6 @@ v: {
   "system" : "http://www.ama-assn.org/go/cpt",
   "version" : "2023",
   "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -147,7 +143,6 @@ v: {
   "system" : "http://www.ama-assn.org/go/cpt",
   "version" : "2023",
   "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -166,5 +161,117 @@ v: {
 e: {
   "from-server" : true,
   "error" : "Error from https://tx.fhir.org/r4: The code System \"http://www.ama-assn.org/go/cpt\" has a grammar, and cannot be enumerated directly"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://www.ama-assn.org/go/cpt",
+  "code" : "77061"
+}, "valueSet" :null, "langs":"en-US", "useServer":"true", "useClient":"false", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "id" : "terminology-settings",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  },
+  {
+    "name" : "displayLanguage",
+    "valueCode" : "en-US"
+  }]
+}}####
+v: {
+  "display" : "Diagnostic digital breast tomosynthesis; unilateral",
+  "code" : "77061",
+  "system" : "http://www.ama-assn.org/go/cpt",
+  "version" : "2023",
+  "server" : "https://tx.fhir.org/r4",
+  "unknown-systems" : "",
+  "issues" : {
+  "resourceType" : "OperationOutcome"
+}
+
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://www.ama-assn.org/go/cpt",
+  "code" : "77062"
+}, "valueSet" :null, "langs":"en-US", "useServer":"true", "useClient":"false", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "id" : "terminology-settings",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  },
+  {
+    "name" : "displayLanguage",
+    "valueCode" : "en-US"
+  }]
+}}####
+v: {
+  "display" : "Diagnostic digital breast tomosynthesis; bilateral",
+  "code" : "77062",
+  "system" : "http://www.ama-assn.org/go/cpt",
+  "version" : "2023",
+  "server" : "https://tx.fhir.org/r4",
+  "unknown-systems" : "",
+  "issues" : {
+  "resourceType" : "OperationOutcome"
+}
+
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://www.ama-assn.org/go/cpt",
+  "code" : "77065"
+}, "valueSet" :null, "langs":"en-US", "useServer":"true", "useClient":"false", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "id" : "terminology-settings",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  },
+  {
+    "name" : "displayLanguage",
+    "valueCode" : "en-US"
+  }]
+}}####
+v: {
+  "display" : "Diagnostic mammography, including computer-aided detection (CAD) when performed; unilateral",
+  "code" : "77065",
+  "system" : "http://www.ama-assn.org/go/cpt",
+  "version" : "2023",
+  "server" : "https://tx.fhir.org/r4",
+  "unknown-systems" : "",
+  "issues" : {
+  "resourceType" : "OperationOutcome"
+}
+
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://www.ama-assn.org/go/cpt",
+  "code" : "77066"
+}, "valueSet" :null, "langs":"en-US", "useServer":"true", "useClient":"false", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "id" : "terminology-settings",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  },
+  {
+    "name" : "displayLanguage",
+    "valueCode" : "en-US"
+  }]
+}}####
+v: {
+  "display" : "Diagnostic mammography, including computer-aided detection (CAD) when performed; bilateral",
+  "code" : "77066",
+  "system" : "http://www.ama-assn.org/go/cpt",
+  "version" : "2023",
+  "server" : "https://tx.fhir.org/r4",
+  "unknown-systems" : "",
+  "issues" : {
+  "resourceType" : "OperationOutcome"
+}
+
 }
 -------------------------------------------------------------------------------------

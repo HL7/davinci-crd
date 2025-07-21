@@ -29,6 +29,39 @@
             "status": "draft",
             "intent": "original-order",
             "code": {
+              "extension": [{
+                "url": "http:​/​/hl7​.org​/fhir​/us​/davinci-crd​/StructureDefinition​/ext-billing-options",
+                "valueCodeableConcept": {
+                  "coding": [{
+                    "system": "http://www.ama-assn.org/go/cpt",
+                    "code": "77061"
+                  }]
+                }
+              }, {
+                "url": "http:​/​/hl7​.org​/fhir​/us​/davinci-crd​/StructureDefinition​/ext-billing-options",
+                "valueCodeableConcept": {
+                  "coding": [{
+                    "system": "http://www.ama-assn.org/go/cpt",
+                    "code": "77062"
+                  }]
+                }
+              }, {
+                "url": "http:​/​/hl7​.org​/fhir​/us​/davinci-crd​/StructureDefinition​/ext-billing-options",
+                "valueCodeableConcept": {
+                  "coding": [{
+                    "system": "http://www.ama-assn.org/go/cpt",
+                    "code": "77065"
+                  }]
+                }
+              }, {
+                "url": "http:​/​/hl7​.org​/fhir​/us​/davinci-crd​/StructureDefinition​/ext-billing-options",
+                "valueCodeableConcept": {
+                  "coding": [{
+                    "system": "http://www.ama-assn.org/go/cpt",
+                    "code": "77066"
+                  }]
+                }
+              }],
               "coding": [
                 {
                   "system": "http://snomed.info/sct",

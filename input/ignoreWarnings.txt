@@ -101,3 +101,6 @@ WARNING: StructureDefinition/profile-organization: StructureDefinition.snapshot:
 
 # 20. This is an example query and isn't expected to have a definition
 WARNING: Bundle/search-response: Bundle.entry[1].resource/*Bundle/f95e9abf-1c8f-4873-ad15-f6f016334568*/.link[0].url: No definition could be found for URL value 'Encounter?_id=987&_include=Encounter:service-provider&_include=Encounter:practitioner&_include=Encounter:location'
+
+# 21. There is an example of this profile as part of another instance
+INFORMATION: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-medication'): The Implementation Guide contains no explicitly linked examples for this profile

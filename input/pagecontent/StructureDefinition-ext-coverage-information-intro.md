@@ -5,7 +5,7 @@
 <h3>Introduction</h3>
 
 <p>
-This extension is added to FHIR Reqeust and other resources as part of the CRD <a href="cards.html#coverage-information">Coverage Information Response Type</a>.
+This extension is added to FHIR Reqeust and other resources as part of the CRD <a href="cards.html#coverage-information-response-type">Coverage Information Response Type</a>.
 </p>
 
 <p>

@@ -2,7 +2,6 @@ Extension: CRDCoverageInformation
 Id: ext-coverage-information
 Title: "Coverage Information"
 Description: "Captures assertions from a payer about the coverage rules for a service - in particular, whether it is covered and/or requires prior authorization."
-* ^version = "1.1.0-ci-build"
 * ^experimental = false
 * ^context[0].type = #element
 * ^context[=].expression = "Appointment"

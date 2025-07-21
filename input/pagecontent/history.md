@@ -51,6 +51,7 @@ This page describes the primary releases of the specification and summarizes the
 * [FHIR-49742](https://jira.hl7.org/browse/FHIR-49742) - Change logical model token 0..1 to 1..1, made expectation to provide a token 'SHALL' instead of 'will' (correction) [link](foundation.html#FHIR-49742)
 * [FHIR-49128](https://jira.hl7.org/browse/FHIR-49128) - Clarified (and loosened) conformance language for prefetch syntax (clarification) [link](deviations.html#FHIR-49128) [link](foundation.html#FHIR-49128)
 * [FHIR-50051](https://jira.hl7.org/browse/FHIR-50051) - Updated specification to point to current version of CDS Hooks spec and individual hooks (correction) - throughout the spec
+* [FHIR-49983](https://jira.hl7.org/browse/FHIR-49983) - Added new 'BillingOptions' extension and allow its use on all Request resources.  (enhancement) [link](StructureDefinition-ext-billing-options.html), many profiles
 
 **Non-substantive changes**:
 * [FHIR-49153](https://jira.hl7.org/browse/FHIR-49153), [FHIR-51036](https://jira.hl7.org/browse/FHIR-51036), [FHIR-49094](https://jira.hl7.org/browse/FHIR-49094) - Corrected names and descriptions of CDS Hooks request and response examples (correction)

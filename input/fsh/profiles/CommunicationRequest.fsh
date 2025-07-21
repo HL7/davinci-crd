@@ -23,6 +23,8 @@ Description: "This profile specifies constraints on the CommunicationRequest res
   * extension contains $extension-CommunicationRequest.payload.content named codeableConcept 1..1 MS
   * extension[codeableConcept] ^comment = "If the actual communication request being authored is conveying resources or an attachment, the CRD client SHALL either determine a coded way to indicate what information sharing is being requested or shall omit sharing the CommunicationRequest - i.e. don't bother calling the hook service."
     * value[x] only CodeableConcept
+      * extension contains CRDBillingOptions named BillingOptions 0..* MS
+      * extension[BillingOptions] ^short = "Expected Billing Code(s)"
 * occurrence[x] MS
 * authoredOn 1.. MS
 * requester 1.. MS

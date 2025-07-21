@@ -5,8 +5,11 @@ Title: "CRD Nutrition Order"
 Description: "This profile specifies extensions and constraints on the NutritionOrder resource to support coverage requirements discovery."
 * ^experimental = false
 * ^extension[$fmm].valueInteger = 1
-* extension contains CRDCoverageInformation named Coverage-Information 0..* MS
+* extension contains 
+  CRDCoverageInformation named Coverage-Information 0..* MS and
+  CRDBillingOptions named BillingOptions 0..* MS
 * extension[Coverage-Information] ^short = "Coverage Info"
+* extension[BillingOptions] ^short = "Expected Billing Code(s)"
 * identifier MS
 * status MS
   * ^example.label = "General"
