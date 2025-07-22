@@ -60,6 +60,7 @@ This page describes the primary releases of the specification and summarizes the
 ** [FHIR-48773](https://jira.hl7.org/browse/FHIR-48773) - Clarified where coverage-information.coverage must exist (clarification) [link](StructureDefinition-ext-coverage-information-definitions.html#diff_Extension.extension:coverage)
 ** [FHIR-48797](https://jira.hl7.org/browse/FHIR-48797) - Clarified rules on multiple coverages (clarification) [link](foundation.html#FHIR-48797)
 ** [FHIR-49795](https://jira.hl7.org/browse/FHIR-49795) - Dropped Questionnaire Task reason value set and require inclusion of text (correction) [link](StructureDefinition-profile-taskquestionnaire-definitions.html#diff_Task.reasonCode)
+** [FHIR-49805](https://jira.hl7.org/browse/FHIR-49805) - Added CommunicationRequest and VisionPrescription to prefetch and non-prefetch queries (correction) [link](https://build.fhir.org/ig/HL7/davinci-crd/foundation.html#prefetch), [link](Binary-CRDServices.html)
 
 
 ### Release 2.1.0
