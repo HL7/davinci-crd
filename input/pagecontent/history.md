@@ -62,6 +62,9 @@ This page describes the primary releases of the specification and summarizes the
 ** [FHIR-51187](https://jira.hl7.org/browse/FHIR-51187) - Added links to examples zip files on the downloads page (clarification) [link](downloads.html)
 ** [FHIR-50206](https://jira.hl7.org/browse/FHIR-50206) - Removed patient as an allowed type of Coverage payer (correction) [link](StructureDefinition-profile-coverage-definitions.html#diff_Coverage.payor)
 ** [FHIR-49791](https://jira.hl7.org/browse/FHIR-49791) - Fixed odd content in logical model instances (correction) all logical model files and fragments
+** [FHIR-49799](https://jira.hl7.org/browse/FHIR-49799) - Corrected appointment profiles to not be abstract (correction) [link](StructureDefinition-profile-appointment-with-order.html), [link](StructureDefinition-profile-appointment-no-order.html)
+
+In addition, there have been various miscellaneous non-substantive improvements to formatting, spelling, grammar, etc.
 
 
 ### Release 2.1.0
