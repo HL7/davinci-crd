@@ -46,12 +46,12 @@ This page describes the primary releases of the specification and summarizes the
 ** [FHIR-49041](https://jira.hl7.org/browse/FHIR-49041) - Clarified the use-case for CommunicationRequest and added examples (clarification) [link](Binary-CRDServiceRequest3.html), [link](Binary-CRDServiceResponse3.html)
 * [FHIR-49894](https://jira.hl7.org/browse/FHIR-49894) - Added more language around when to use doc-needed vs. info-needed, added example of both, made clear that if info-needed of OTH, one of the reasons need to indicate what type of information is needed (clarification) [link](StructureDefinition-ext-coverage-information.html#FHIR-49894)
 * [FHIR-49835](https://jira.hl7.org/browse/FHIR-49835) - Removed the "additional hook resources" section of the deviations page (because in the referenced version of the CDS Hooks, it's no longer a deviation).  (correction)
-* [FHIR-49196](https://jira.hl7.org/browse/FHIR-49196) - Clarified that _include may not be supported when using non-prefetch queries. (clarification) [link](foundation.html#FHIR-49196)
+** [FHIR-49196](https://jira.hl7.org/browse/FHIR-49196) - Clarified that _include may not be supported when using non-prefetch queries. (clarification) [link](foundation.html#FHIR-49196)
 * [FHIR-49731](https://jira.hl7.org/browse/FHIR-49731) - Corrected prefetch syntax to be CDS Hooks-conformant (correction) [link](foundation.html#prefetch)
-* [FHIR-49753](https://jira.hl7.org/browse/FHIR-49753) - Provided recommendations for when CRD discovery should be called (clarification) [link](foundation.html#FHIR-49753)
+** [FHIR-49753](https://jira.hl7.org/browse/FHIR-49753) - Provided recommendations for when CRD discovery should be called (clarification) [link](foundation.html#FHIR-49753)
 * [FHIR-49833](https://jira.hl7.org/browse/FHIR-49833) - Reframed warnings about the _include search mechanism to reflect the fact that it is no longer used in prefetch.  (correction) [link](foundation.html#FHIR-49833)
 * [FHIR-49085](https://jira.hl7.org/browse/FHIR-49085) - In diagram, corrected "Payer CDA System" to "Payer CDS System" (correction) [link](hooks.html#hook-categories)
-* [FHIR-49762](https://jira.hl7.org/browse/FHIR-49762) - Added VisionPrescription to the list of supported 'Request' resources for order-select and order-dispatch.  (They were already in the technical list, just not the HTML.) (correction) [link](hooks.html#order-dispatch) [link](hooks.html#order-select)
+** [FHIR-49762](https://jira.hl7.org/browse/FHIR-49762) - Added VisionPrescription to the list of supported 'Request' resources for order-select and order-dispatch.  (They were already in the technical list, just not the HTML.) (correction) [link](hooks.html#order-dispatch) [link](hooks.html#order-select)
 ** [FHIR-48553](https://jira.hl7.org/browse/FHIR-48553) - Improved language in first intro paragraph (clarification) [link](index.html#FHIR-48553)
 ** [FHIR-48625](https://jira.hl7.org/browse/FHIR-48625) - Added guidance on best CRD service available practices (clarification) [link](implementation.html#FHIR-48625)
 * [FHIR-50006](https://jira.hl7.org/browse/FHIR-50006) - Added additional examples for non-provided/insufficient information that is not considered an error (clarification) [link](cards.html#FHIR-50006)
@@ -59,6 +59,7 @@ This page describes the primary releases of the specification and summarizes the
 ** [FHIR-48771](https://jira.hl7.org/browse/FHIR-48771) - Clarified prefetch references (clarification) [link](foundation.html#FHIR-48771a) [link](foundation.html#FHIR-48771b)
 ** [FHIR-48773](https://jira.hl7.org/browse/FHIR-48773) - Clarified where coverage-information.coverage must exist (clarification) [link](StructureDefinition-ext-coverage-information-definitions.html#diff_Extension.extension:coverage)
 ** [FHIR-48797](https://jira.hl7.org/browse/FHIR-48797) - Clarified rules on multiple coverages (clarification) [link](foundation.html#FHIR-48797)
+** [FHIR-49795](https://jira.hl7.org/browse/FHIR-49795) - Dropped Questionnaire Task reason value set and require inclusion of text (correction) [link](StructureDefinition-profile-taskquestionnaire-definitions.html#diff_Task.reasonCode)
 
 
 ### Release 2.1.0
