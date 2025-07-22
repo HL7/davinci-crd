@@ -765,7 +765,6 @@ v: {
   "error" : "No valid coding was found for the value set 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1010.4|20240606'; The provided code 'http://snomed.info/sct#1145423002 ('Azithromycin 250 mg oral tablet')' was not found in the value set 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1010.4|20240606'",
   "class" : "UNKNOWN",
   "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",
   "issue" : [{
@@ -808,6 +807,126 @@ v: {
       "text" : "No valid coding was found for the value set 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1010.4|20240606'"
     }
   }]
+}
+
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://www.ama-assn.org/go/cpt",
+    "code" : "77061"
+  }]
+}, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes", "version": "2.2.0-cibuild", "langs":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "id" : "terminology-settings",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  },
+  {
+    "name" : "displayLanguage",
+    "valueCode" : "en-US"
+  }]
+}}####
+v: {
+  "display" : "Diagnostic digital breast tomosynthesis; unilateral",
+  "code" : "77061",
+  "system" : "http://www.ama-assn.org/go/cpt",
+  "version" : "2023",
+  "server" : "https://tx.fhir.org/r4",
+  "unknown-systems" : "",
+  "issues" : {
+  "resourceType" : "OperationOutcome"
+}
+
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://www.ama-assn.org/go/cpt",
+    "code" : "77062"
+  }]
+}, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes", "version": "2.2.0-cibuild", "langs":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "id" : "terminology-settings",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  },
+  {
+    "name" : "displayLanguage",
+    "valueCode" : "en-US"
+  }]
+}}####
+v: {
+  "display" : "Diagnostic digital breast tomosynthesis; bilateral",
+  "code" : "77062",
+  "system" : "http://www.ama-assn.org/go/cpt",
+  "version" : "2023",
+  "server" : "https://tx.fhir.org/r4",
+  "unknown-systems" : "",
+  "issues" : {
+  "resourceType" : "OperationOutcome"
+}
+
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://www.ama-assn.org/go/cpt",
+    "code" : "77065"
+  }]
+}, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes", "version": "2.2.0-cibuild", "langs":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "id" : "terminology-settings",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  },
+  {
+    "name" : "displayLanguage",
+    "valueCode" : "en-US"
+  }]
+}}####
+v: {
+  "display" : "Diagnostic mammography, including computer-aided detection (CAD) when performed; unilateral",
+  "code" : "77065",
+  "system" : "http://www.ama-assn.org/go/cpt",
+  "version" : "2023",
+  "server" : "https://tx.fhir.org/r4",
+  "unknown-systems" : "",
+  "issues" : {
+  "resourceType" : "OperationOutcome"
+}
+
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://www.ama-assn.org/go/cpt",
+    "code" : "77066"
+  }]
+}, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes", "version": "2.2.0-cibuild", "langs":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "id" : "terminology-settings",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  },
+  {
+    "name" : "displayLanguage",
+    "valueCode" : "en-US"
+  }]
+}}####
+v: {
+  "display" : "Diagnostic mammography, including computer-aided detection (CAD) when performed; bilateral",
+  "code" : "77066",
+  "system" : "http://www.ama-assn.org/go/cpt",
+  "version" : "2023",
+  "server" : "https://tx.fhir.org/r4",
+  "unknown-systems" : "",
+  "issues" : {
+  "resourceType" : "OperationOutcome"
 }
 
 }

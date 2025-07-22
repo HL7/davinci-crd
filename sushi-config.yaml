@@ -15,7 +15,7 @@ extension:
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
     valueCode: fm
 canonical: http://hl7.org/fhir/us/davinci-crd
-version: 2.2.0-cibuild
+version: 2.2.0-ballot
 name: CoverageRequirementsDiscovery
 title: Da Vinci - Coverage Requirements Discovery
 status: active
@@ -45,7 +45,7 @@ parameters:
 #  path-binary: input/hooks-files
     
 copyrightYear: 2019+
-releaseLabel: STU 2.1
+releaseLabel: STU 2.2 Ballot
 
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮

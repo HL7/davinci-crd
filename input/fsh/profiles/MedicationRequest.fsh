@@ -17,9 +17,10 @@ Description: "This profile specifies additional constraints on the US Core Medic
 //* reported[x] only boolean or Reference(CRDPatient or USCorePractitionerProfile or CRDOrganization)
 * medication[x] only CodeableConcept or Reference(CRDMedication)
 * medication[x] from $USCoreMedicationCodes (extensible)
-* medicationCodeableConcept
+* medicationCodeableConcept MS
   * extension contains CRDBillingOptions named BillingOptions 0..* MS
   * extension[BillingOptions] ^short = "Expected Billing Code(s)"
+* medicationReference MS
 * encounter only Reference(CRDEncounter)
   * ^comment = "potentially relevant for CRD in some situations."
 * authoredOn 1..

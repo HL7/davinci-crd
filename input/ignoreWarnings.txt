@@ -6,68 +6,88 @@ WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/Str
 # 0b. This will occur in the next major release
 INFORMATION: CodeSystem/temp: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
-# 1. These versions are before we started including Jira references in the change log and there's little value in going back to document them now
+# 0c. Issue with the multi-version IG packages.  Will be fixed in the next release of the publisher
+The link 'http://hl7.org/fhir/us/core/v311/profiles.html' for "US Core 3.1.1 Artifacts" cannot be resolved
+
+# 0d. These are issues are caused by the inter-version extensions pack and should be addressed in the next release of that package
+ERROR: CommunicationRequest/example: CommunicationRequest.payload[0].extension[0]: Slicing cannot be evaluated: Unable to resolve profile CanonicalType[http://hl7.org/fhir/5.0/StructureDefinition/extension-CommunicationRequest.payload.content%5Bx%5D]
+INFORMATION: CommunicationRequest/example: CommunicationRequest.payload[0]: CommunicationRequest.payload.extension:codeableConcept: Found 0 matches, but unable to check minimum required (CommunicationRequest.payload.extension) due to lack of slicing validation (from http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-communicationrequest|2.2.0-cibuild)
+ERROR: CommunicationRequest/example: CommunicationRequest.payload[0].extension[0].url: Value is 'http://hl7.org/fhir/5.0/StructureDefinition/extension-CommunicationRequest.payload.content%5Bx%5D' but is fixed to 'http://hl7.org/fhir/5.0/StructureDefinition/extension-CommunicationRequest.payload.content[x]' in the profile http://hl7.org/fhir/5.0/StructureDefinition/extension-CommunicationRequest.payload.content[x]|4.0.1#Extension.url
+
+# 0e. This is confirmed to be a tooling
+Unrecognized property 'extension'
+
+# 0f. Not done yet
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-billing-options'): The Implementation Guide contains no examples for this extension
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-bundle-appointment'): The Implementation Guide contains no examples for this profile
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-bundle-request'): The Implementation Guide contains no examples for this profile
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-bundle-task'): The Implementation Guide contains no examples for this profile
+
+# 1. While technically invalid, US Core is evaluating approving this as a patch.  TODO: List approved patch number
+ERROR: StructureDefinition/profile-organization: StructureDefinition: This profile does not comply with claimed profile 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|3.1.1'
+
+# 2. These versions are before we started including Jira references in the change log and there's little value in going back to document them now
 WARNING: DA VINCI: The Change Log page (history.html) does not include any Jira tracker items links for the section with title Release 2.0.1
 WARNING: DA VINCI: The Change Log page (history.html) does not include any Jira tracker items links for the section with title Release 2.0.0
 WARNING: DA VINCI: The Change Log page (history.html) does not include any Jira tracker items links for the section with title Release 1.1.0
 WARNING: DA VINCI: The Change Log page (history.html) does not include any Jira tracker items links for the section with title Release 1.0.0
 
-# 2. These versions are before we started detailed tracking of changes and there's little value in going back to document them now
+# 3. These versions are before we started detailed tracking of changes and there's little value in going back to document them now
 WARNING: DA VINCI: The Change Log page (history.html) does not include an h3 section for the version 1.1.0-ballot
 WARNING: DA VINCI: The Change Log page (history.html) does not include an h3 section for the version 0.3.0
 WARNING: DA VINCI: The Change Log page (history.html) does not include an h3 section for the version 0.1.0
 
-# 3. These are inherited from US Core and SDC
+# 4. These are inherited from US Core and SDC
 INFORMATION: StructureDefinition/profile-coverage: StructureDefinition.snapshot.element[9].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: StructureDefinition/profile-coverage: StructureDefinition.snapshot.element[29].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: StructureDefinition/profile-medicationrequest: StructureDefinition.snapshot.element[15].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: StructureDefinition/profile-organization: StructureDefinition.snapshot.element[9].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: StructureDefinition/profile-servicerequest: StructureDefinition.snapshot.element[18].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 
-# 4. This link is intended to be version-independent
+# 5. This link is intended to be version-independent
 %The link 'http://hl7.org/fhir/us/davinci-crd' for "Coverage Requirements Discovery (CRD)" is a canonical link and is therefore unsafe with regard to versions
 
-# 5. Device for CRD doesn't meet the constraints of Implantable Device.  See US Core Ticket FHIR-29674
+# 6. Device for CRD doesn't meet the constraints of Implantable Device.  See US Core Ticket FHIR-29674
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-device').baseDefinition: US FHIR Usage rules require that all profiles on Device derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
 
-# 6. These are example code systems, so no resolution is expected
+# 7. These are example code systems, so no resolution is expected
 A definition for CodeSystem 'https://example.org/some-organization/device-codes' could not be found, so the code cannot be validated
 A definition for CodeSystem 'http://example.org/fhir/CodeSystem/SomeCodes' could not be found, so the code cannot be validated
 
-# 7. This is a terminology server limitation
+# 8. This is a terminology server limitation
 A definition for CodeSystem 'https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets' could not be found, so the code cannot be validated
 
-# 8. These are incorrectly declared as 'draft' in their source IGs
+# 9. These are incorrectly declared as 'draft' in their source IGs
 Reference to draft CodeSystem http://hl7.org/fhir/uv/sdc/CodeSystem/temp|3.0.0
 Reference to draft CodeSystem http://hl7.org/fhir/CodeSystem/task-code|4.0.1
 Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/dose-rate-type|1.0.0
 
-# 9. These patterns are all for slices and are merely constraining the system, so this is intentional
+# 10. These patterns are all for slices and are merely constraining the system, so this is intentional
 INFORMATION: StructureDefinition/profile-organization: StructureDefinition.snapshot.element[10].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 INFORMATION: StructureDefinition/profile-organization: StructureDefinition.snapshot.element[11].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 INFORMATION: StructureDefinition/profile-organization: StructureDefinition.snapshot.element[12].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 
-# 10. This version pinning is expected and wanted
+# 11. This version pinning is expected and wanted
 %to 20240606 from choices of 20170601 (us.nlm.vsac#0.11.0), 20240606 (us.nlm.vsac#0.19.0)
 %to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#6.2.0)
 %to 3.0.0 from choices of 2.2.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#6.2.0)
 %to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
 %to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
 
-# 11. We're inheriting the use of these extensions from the core spec
+# 12. We're inheriting the use of these extensions from the core spec
 INFORMATION: StructureDefinition/profile-appointment-base: StructureDefinition.snapshot.element[4].binding.extension[0]: The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.2.0 is deprecated
 INFORMATION: StructureDefinition/CDSHookServiceResponseExtensionIfNoneExist: StructureDefinition.snapshot.element[3].type[0].extension[1]: The extension http://hl7.org/fhir/StructureDefinition/regex|5.2.0 is deprecated with the note This was deprecated in favor of using a constraint on the element using FHIRPath, since constraints allow for the provision of a human readable message associated with the regex
 
-# 12. The intention here is to not lock down to a specific version.  The version won't matter
+# 13. The intention here is to not lock down to a specific version.  The version won't matter
 WARNING: ValueSet/CMSMappableLocationCodes: ValueSet.compose.include[1]: There are multiple different potential matches for the url 'http://terminology.hl7.org/CodeSystem/data-absent-reason'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer, or use the [IG Parameter `pin-canonicals`](https://hl7.org/fhir/tools/CodeSystem-ig-parameters.html). Using version '1.0.0', found versions: 0.1.0, 1.0.0. Suggested fix: change the canonical reference from 'http://terminology.hl7.org/CodeSystem/data-absent-reason' to 'http://terminology.hl7.org/CodeSystem/data-absent-reason|1.0.0'
 WARNING: ValueSet/DocReason: ValueSet.compose.include[1]: There are multiple different potential matches for the url 'http://terminology.hl7.org/CodeSystem/v3-NullFlavor'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer, or use the [IG Parameter `pin-canonicals`](https://hl7.org/fhir/tools/CodeSystem-ig-parameters.html). Using version '3.0.0', found versions: 2.1.0, 3.0.0. Suggested fix: change the canonical reference from 'http://terminology.hl7.org/CodeSystem/v3-NullFlavor' to 'http://terminology.hl7.org/CodeSystem/v3-NullFlavor|3.0.0'
 WARNING: ValueSet/coverageClass: ValueSet.compose.include[0]: There are multiple different potential matches for the url 'http://terminology.hl7.org/CodeSystem/coverage-class'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer, or use the [IG Parameter `pin-canonicals`](https://hl7.org/fhir/tools/CodeSystem-ig-parameters.html). Using version '1.0.1', found versions: 0.1.0, 1.0.0, 1.0.1. Suggested fix: change the canonical reference from 'http://terminology.hl7.org/CodeSystem/coverage-class' to 'http://terminology.hl7.org/CodeSystem/coverage-class|1.0.1'
 WARNING: ValueSet/informationNeeded: ValueSet.compose.include[1]: There are multiple different potential matches for the url 'http://terminology.hl7.org/CodeSystem/v3-NullFlavor'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer, or use the [IG Parameter `pin-canonicals`](https://hl7.org/fhir/tools/CodeSystem-ig-parameters.html). Using version '3.0.0', found versions: 2.1.0, 3.0.0. Suggested fix: change the canonical reference from 'http://terminology.hl7.org/CodeSystem/v3-NullFlavor' to 'http://terminology.hl7.org/CodeSystem/v3-NullFlavor|3.0.0'
 
-# 13. This is a tooling limitation and doesn't indicate an issue with the IG
+# 14. This is a tooling limitation and doesn't indicate an issue with the IG
 INFORMATION: ValueSet.where(id = 'orderDetail'): The value set expansion is too large, and only a subset has been displayed
 
-# 14. These are example values and are not expected to resolve
+# 15. These are example values and are not expected to resolve
 WARNING: Binary/CRDServiceRequest: CDSHooksRequest.context.userId: No definition could be found for URL value 'Practitioner/ABC'
 WARNING: Binary/CRDServiceRequest2: CDSHooksRequest.context.userId: No definition could be found for URL value 'Practitioner/ABC'
 WARNING: Binary/CRDServiceRequest3: CDSHooksRequest.context.userId: No definition could be found for URL value 'Practitioner/ABC'
@@ -75,29 +95,29 @@ WARNING: Binary/CRDServiceResponse: CDSHooksResponse.cards[2].suggestions[0].act
 WARNING: Binary/CRDServiceResponse2: CDSHooksResponse.cards[0].suggestions[0].actions[0].resourceId: No definition could be found for URL value 'MedicationRequest/2222'
 
 
-# 15. This is inherited from SDC
+# 16. This is inherited from SDC
 INFORMATION: StructureDefinition/profile-taskquestionnaire: StructureDefinition.snapshot.element[48].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: StructureDefinition/profile-taskquestionnaire: StructureDefinition.snapshot.element[66].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 
-# 16. These two code systems only contain codes that are bound to elements of type 'code' and therefore do not require TSMG approval to remain in the IG
+# 17. These two code systems only contain codes that are bound to elements of type 'code' and therefore do not require TSMG approval to remain in the IG
 INFORMATION: CodeSystem/coverage-information-codes: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 INFORMATION: CodeSystem/crd-metric-codes: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
-# 17. We explicitly only want the versions pointed to in current and anticipated regulation
+# 18. We explicitly only want the versions pointed to in current and anticipated regulation
 WARNING: ImplementationGuide/hl7.fhir.us.davinci-crd: ImplementationGuide.dependsOn[2]: The ImplementationGuide uses package hl7.fhir.us.core#7.0.0 released on 2024-05-08, but the most recent appropriate version is 8.0.0. This reference is getting old and the more recent version should be considered
 
-# 18. Conformance has been validated through manual review
+# 19. Conformance has been validated through manual review
 WARNING: StructureDefinition/profile-location: StructureDefinition: The validator cannot confirm that this profile complies with the claimed profile 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-location|3.1.1'
 WARNING: StructureDefinition/profile-location: StructureDefinition: The validator cannot confirm that this profile complies with the claimed profile 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-location|6.1.0'
 WARNING: StructureDefinition/profile-medicationrequest: StructureDefinition: The validator cannot confirm that this profile complies with the claimed profile 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|6.1.0'
 WARNING: StructureDefinition/profile-servicerequest: StructureDefinition: The validator cannot confirm that this profile complies with the claimed profile 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-servicerequest|6.1.0'
 
-# 19. These are inherited from US Core.  US Core marks identifier as MS, but in doing so, don't actually intend that all identifiers are supported (even though that's what marking the base element as MS means)
+# 20. These are inherited from US Core.  US Core marks identifier as MS, but in doing so, don't actually intend that all identifiers are supported (even though that's what marking the base element as MS means)
 WARNING: StructureDefinition/profile-organization: StructureDefinition.snapshot: The slice 'CLIA' on path 'Organization.identifier' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true
 WARNING: StructureDefinition/profile-organization: StructureDefinition.snapshot: The slice 'NAIC' on path 'Organization.identifier' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true
 
-# 20. This is an example query and isn't expected to have a definition
+# 21. This is an example query and isn't expected to have a definition
 WARNING: Bundle/search-response: Bundle.entry[1].resource/*Bundle/f95e9abf-1c8f-4873-ad15-f6f016334568*/.link[0].url: No definition could be found for URL value 'Encounter?_id=987&_include=Encounter:service-provider&_include=Encounter:practitioner&_include=Encounter:location'
 
-# 21. There is an example of this profile as part of another instance
+# 22. There is an example of this profile as part of another instance
 INFORMATION: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-medication'): The Implementation Guide contains no explicitly linked examples for this profile
