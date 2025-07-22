@@ -237,7 +237,7 @@ resources:
         valueCanonical: http://hl7.org/fhir/tools/StructureDefinition/CDSHooksResponse
   Binary/CRDServiceResponse3:
     groupingId: "-ex-example-hooks"
-    name: "Example CRD Response wit simple Coverage Information"
+    name: "Example CRD Response with simple Coverage Information"
     description: "An example CRD response to a CommunicationRequest with a simple Coverage Information system action"
     extension:
       - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format
