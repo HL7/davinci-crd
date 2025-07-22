@@ -190,8 +190,8 @@ The different relevant resource types are as follows (support can vary between c
 **ServiceRequest**: Used to order a referral, lab tests, diagnostic imaging, and sometimes to schedule a future appointment (also see [appointment-book](#appointment-book)).
 
 **NutritionOrder**: Used to order the preparation of specific meal types.  Generally used for in-patient care, but potentially also relevant for homecare.
-
-**Vision Prescription**: Used to order eyeglasses, contacts, and similar vision-related prosthetics.
+<a name="FHIR-49805a"> </a>
+<p class="new-content">**Vision Prescription**: Used to order eyeglasses, contacts, and similar vision-related prosthetics.</p>
 
 <sup>*</sup> - Note: in the medication space, regulations may mandate alternate standards for some of the functionality covered by CRD for certain classes of medications.  E.g. NCPDP Script
 
@@ -285,8 +285,8 @@ The different relevant resource types are as follows (support can vary between c
 **ServiceRequest**: Used to order a referral, lab tests, diagnostic imaging, and sometimes to schedule a future appointment (also see [appointment-book](#appointment-book)).
 
 **NutritionOrder**: Used to order the preparation of specific meal types.  Generally used for in-patient care, but potentially also relevant for homecare.
-
-**Vision Prescription**: Used to order eyeglasses, contacts, and similar vision-related prosthetics.
+<a name="FHIR-49805b"> </a>
+<p class="new-content">**Vision Prescription**: Used to order eyeglasses, contacts, and similar vision-related prosthetics.</p>
 
 <sup>*</sup> - Note: in the medication space, regulations may mandate alternate standards for some of the functionality covered by CRD for certain classes of medications.  E.g. NCPDP Script
 

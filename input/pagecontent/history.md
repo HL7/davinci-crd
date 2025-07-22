@@ -46,7 +46,7 @@ This page describes the primary releases of the specification and summarizes the
 * [FHIR-48771](https://jira.hl7.org/browse/FHIR-48771) - Clarified prefetch references *(clarification)* [link](foundation.html#FHIR-48771a) [link](foundation.html#FHIR-48771b)
 * [FHIR-49196](https://jira.hl7.org/browse/FHIR-49196) - Clarified that _include may not be supported when using non-prefetch queries. *(clarification)* [link](foundation.html#FHIR-49196)
 * [FHIR-48797](https://jira.hl7.org/browse/FHIR-48797) - Clarified rules on multiple coverages *(clarification)* [link](foundation.html#FHIR-48797)
-* [FHIR-49805](https://jira.hl7.org/browse/FHIR-49805) - Added CommunicationRequest and VisionPrescription to prefetch and non-prefetch queries *(correction)* [link](foundation.html#prefetch), [link](Binary-CRDServices.html)
+* [FHIR-49805](https://jira.hl7.org/browse/FHIR-49805) - Added CommunicationRequest and VisionPrescription to prefetch and non-prefetch queries *(correction)* [link](foundation.html#prefetch), [link](Binary-CRDServices.html), [link](hooks.html#FHIR-49805a), , [link](hooks.html#FHIR-49805b)
 * [FHIR-49835](https://jira.hl7.org/browse/FHIR-49835) - Removed the "additional hook resources" section of the deviations page (because in the referenced version of the CDS Hooks, it's no longer a deviation).  *(correction)* Nothing to link to anymore
 * [FHIR-49762](https://jira.hl7.org/browse/FHIR-49762) - Added VisionPrescription to the list of supported 'Request' resources for order-select and order-dispatch.  (They were already in the technical list, just not the HTML.) *(correction)* [link](hooks.html#order-dispatch) [link](hooks.html#order-select)
 * [FHIR-49085](https://jira.hl7.org/browse/FHIR-49085) - In diagram, corrected "Payer CDA System" to "Payer CDS System" *(correction)* [link](hooks.html#hook-categories)
@@ -61,7 +61,7 @@ This page describes the primary releases of the specification and summarizes the
 * [FHIR-49791](https://jira.hl7.org/browse/FHIR-49791) - Fixed odd content in logical model instances *(correction)* all logical model files and fragments
 * [FHIR-49153](https://jira.hl7.org/browse/FHIR-49153), [FHIR-51036](https://jira.hl7.org/browse/FHIR-51036), [FHIR-49094](https://jira.hl7.org/browse/FHIR-49094) - Corrected names and descriptions of CDS Hooks request and response examples *(correction)* [link](artifacts.html#example-cds-hooks-examples)
 * [FHIR-49800](https://jira.hl7.org/browse/FHIR-49800) - Fixed bad brackets in CDS Hooks Service Response *(correction)* [link](Binary-CRDServices.html)
-* [FHIR-51187](https://jira.hl7.org/browse/FHIR-51187) - Added links to examples zip files on the downloads page *(clarification)* [link](downloads.html)
+* [FHIR-51187](https://jira.hl7.org/browse/FHIR-51187) - Added links to examples zip files on the downloads page *(clarification)* [link](downloads.html#FHIR-51187)
 * [FHIR-49041](https://jira.hl7.org/browse/FHIR-49041) - Added CommunicationRequest examples *(clarification)* [link](Binary-CRDServiceRequest3.html), [link](Binary-CRDServiceResponse3.html)
 * [FHIR-50814](https://jira.hl7.org/browse/FHIR-50814) - Added formal models for CDS Hooks components and improved validation of examples *(clarification, correction)* **TODO**
 

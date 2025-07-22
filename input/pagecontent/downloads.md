@@ -4,7 +4,7 @@ This implementation guide is web-based and is intended to be browsed online. How
 
 * This [full IG](full-ig.zip)
 * The [resource definitions](definitions.json.zip) from this IG for use with the FHIR validator (see below)
-* Example files: [json](examples.json.zip), [ttl](examples.ttl.zip), and [xml](examples.xml.zip)
+* <div class="new-content"><a name="FHIR-51187"> </a>Example files: <a href="examples.json.zip">json</a>, <a href="examples.ttl.zip">ttl</a>, and <a href="examples.xml.zip">xml</a></div>
 * The full [FHIR R4 core]({{site.data.fhir.path}}fhir-spec.zip) specifications and other [FHIR core downloads]({{site.data.fhir.path}}downloads.html)
 * The [CDS Hooks](https://github.com/cds-hooks/docs/archive/master.zip) specification
 * The [SMART on FHIR](http://www.hl7.org/fhir/smart-app-launch/full-ig.zip) specification

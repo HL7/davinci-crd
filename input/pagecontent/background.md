@@ -21,7 +21,7 @@ This IG also draws on content from the [Davinci Health Record Exchange (HRex)]({
 
 Implementers should also familiarize themselves with the FHIR resources used within the guide:
 
-<table>
+<table vlass="grid">
   <thead>
     <tr>
       <th>Resource</th>

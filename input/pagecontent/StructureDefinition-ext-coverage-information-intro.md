@@ -1,6 +1,6 @@
 <!--- Text entered into this file will appear at the top of the profiles page before the Formal Views of the profile content. -->
 
-<div class="additional-content">
+<div class="new-content">
 <a name="introduction"> </a>
 <h3>Introduction</h3>
 

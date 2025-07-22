@@ -99,7 +99,7 @@ Systems **MAY** make calls related to orders even if there is already a coverage
 
 However, payers **SHALL NOT** send a system action to update the order unless something is new. Payers **SHOULD** take into account the previous decision in deciding how much processing is necessary before returning a response.
 <a name="FHIR-50102"> </a>
-<p class="additional-content">When returning a system action to update a resource with this response type, the resource content **SHALL NOT** make changes any data elements other than adding or modifying coverage-information extensions</p>
+<p class="new-content">When returning a system action to update a resource with this response type, the resource content **SHALL NOT** make changes any data elements other than adding or modifying coverage-information extensions</p>
 
 If a *coverage-information* extension indicates the need to collect additional information (via 'doc-needed'), the extension **SHOULD** include a reference to the questionnaire(s) to be completed. If the payer supports Da Vinci DTR, the indicated forms will be the ones completed within the DTR form filler.  If no Questionnaires are specified, DTR will determine the needed forms itself.  For systems that don't support DTR (e.g. because the coverage isn't subject to regulation mandating DTR), the indicated Questionnaire canonicals can be used to determine data to be gathered in some other (non-DTR) way.
 <a name="FHIR-49830"> </a>
@@ -120,7 +120,7 @@ While using portals or other non-questionnaire data capture is not recommended o
 
 <p>If the CRD is able to resolve the patient but they do not have active coverage, the Coverage Information <b>SHALL</b> indicate "not covered" with a reason of <a href="ValueSet-coverageAssertionReasons.html#x-http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp-no-active-coverage">no-active-coverage</a>.</p>
 </div>
-<div class="additional-content">
+<div class="new-content">
 <a name="FHIR-51413"> </a>
 <p>This specification allows returning either a single coverage-information repetition that says "conditional" or multiple coverage-information repetitions with specific assumptions that then indicate "covered", "auth-needed", etc.  The recommended criteria for deciding whether to return a single or multiple is as follows:</p>
 <ul>

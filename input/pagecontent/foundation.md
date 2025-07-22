@@ -51,7 +51,7 @@ Payers may have multiple back-end functions that handle different types of decis
 Initial setup of connectivity between client and payer will have a manual component to establish security credentials and a trust relationship (unless both parties are part of a shared trust network).  Dynamic endpoint discovery allows for the potential for the use of different endpoints for different coverages and/or evolution of what endpoints are used for different coverage over time without changing security credential or legal agreement expectations.
 
 <a name="FHIR-49753"> </a>
-<div class="additional-content">
+<div class="new-content">
 <p>In early stages of CRD adoption, CRD clients and services are likely to manually coordinate the rollout of new features.  However, the long-term goal is that, through QHINs or other trust networks, and/or certification, manual coordination will not be necessary.</p>
 
 <p>When the connection between a particular client and server have evolved to an automated configuration approach, CRD Clients <b>SHOULD</b> perform the discovery process on the CRD server at least once per day to detect any changes to supported hooks, prefetch requirements, and/or configuration options.  As well, if a CRD client encounters an error when invoking a hook, they <b>SHOULD</b> re-run the discovery process before failing.  NOTE: Changes to CRD server capabilities will not necessarily be taken advantage of dynamically by the CRD client - i.e. manual steps might be necessary.</p>
@@ -118,9 +118,9 @@ CRD client implementations **SHOULD NOT** expect standardized prefetch key names
 <a name="FHIR-48797"> </a>
 <div class="modified-content">
 <p>In most cases, payers will require information about a patient’s coverage. As mentioned in [Controlling Hook Invocation](deviations.html#controlling-hook-invocation), whether returned as part of prefetch or returned via query, Coverage **SHALL** be limited to a single instance. How this happens is up to the CRD client.  The limitation of there only being one coverage applies regardless of whether the Coverage instance is being returned as part of prefetch or if Coverage is being searched using the token provided as part of hook invocation.  Regardless of method of invocation, there <b>SHALL</b> be exactly one Coverage instance returned.</p>
-
-<p>Coverage prefetch will look like this:</p>
 </div>
+
+Coverage prefetch will look like this:
 
 {% raw %}
 {% fragment Binary/CRDServices JSON BASE:services.where(hook='order-sign') EXCEPT: title | description | id | extension %}
@@ -130,7 +130,8 @@ A recommended set of prefetch expectations for all hook types can be found [here
 
 Other information will need to be retrieved using queries that are more specific to the type of hook being invoked and the resources passed with it.  The table below lists the queries to retrieve common key information for each type of context resource if not using prefetch.  Note that the queries use `draftOrders` as the context, which will hold for order-select and order-sign hooks, but will need to be `dispatchedOrders` for order-dispatch hooks.
 <a name="FHIR-49196"> </a>
-<p class="modified-content">The queries below make use of _include to reduce the overall number of queries that need to be performed.  However, not all CRD clients will support _include at all or will support all _include search parameters leveraged in these examples.  CRD services that choose to take advantage of _include will need to adapt their queries based on the support declared in the CRD client's CapabilityStatement.</p>
+<div class="modified-content">
+<p>The queries below make use of _include to reduce the overall number of queries that need to be performed.  However, not all CRD clients will support _include at all or will support all _include search parameters leveraged in these examples.  CRD services that choose to take advantage of _include will need to adapt their queries based on the support declared in the CRD client's CapabilityStatement.</p>
 
 {% raw %}
 <table class="grid">
@@ -262,6 +263,7 @@ Other information will need to be retrieved using queries that are more specific
     <td>Location only through performer</td>
   </tr>
 </table>
+</div>
 <p>
 <sup>†</sup> The service-provider search type is only relevant if the CRD client supports the 'serviceProvider' element, which is not 'mustSupport'.
 </p>
@@ -295,12 +297,12 @@ The response is a batch response Bundle, with each entry containing either a sin
 The use of an HTTP 412 response to the CDS Hook invocation is for situations where the requested prefetch was not provided and the CRD service was unable to invoke the queries itself.  It **SHALL NOT** to be used in situations where the prefetch was provided or the query was successfully performed but the record in question did not have all the data the payer might have needed/desired.  Indicating additional information through DTR is the preferred approach when managing situations where the needed information isn't queryable from the EHR.  Similarly, HTTP 4xx or 5xx responses are only appropriate if there was an internal failure of the service, not if the payer business rules for "needed data" were not met.  Error codes indicate that there is a technical issue that should be fixed.
 
 <a name="FHIR-49909"> </a>
-<p class="additional-content">New versions of CDS Hooks may introduce additional data elements into any of the CRD request and response structures.  In addition, CDS Hooks allows the definition of arbitrary extension elements in several locations within its data structures.  It is possible that some parties to a CRD exchange may migrate to a newer CDS Hooks version and/or include extensions intended for use by other consumers and that there may therefore be elements present in an instance that are unexpected.  CRD clients and servers **SHALL** ignore unexpected elements when processing instances.</p>
+<p class="new-content">New versions of CDS Hooks may introduce additional data elements into any of the CRD request and response structures.  In addition, CDS Hooks allows the definition of arbitrary extension elements in several locations within its data structures.  It is possible that some parties to a CRD exchange may migrate to a newer CDS Hooks version and/or include extensions intended for use by other consumers and that there may therefore be elements present in an instance that are unexpected.  CRD clients and servers **SHALL** ignore unexpected elements when processing instances.</p>
 
 #### Query Notes
 * <div class="modified-content"><a name="FHIR-48771b"> </a>Conformant CRD clients **SHOULD** be able to perform all of the queries defined in the [prefetch](#prefetch) section above and, where needed, **SHOULD** implement interfaces to [_include]({{site.data.fhir.path}}search.html#include) resources not available in the client's database.</div>
 
-* <div class="additional-content"><a name="FHIR-49833"> </a>Executing queries using the _include mechanism will bring back some redundant information such as information that was already known to the CRD client and included in the request. Examples of this redundant information include returning the original request, returning Encounter and Appointment resources found in the hook contexts, and returning Patient, Practitioner, Organization, and Coverage resources that are common for different request types for the order-sign hook. This redundancy is the cost of using the _include mechanism. Payers seeking greater efficiency can perform direct queries that are more tuned at the cost of needing to make multiple service calls.</p>
+* <div class="modified-content"><a name="FHIR-49833"> </a>Executing queries using the _include mechanism will bring back some redundant information such as information that was already known to the CRD client and included in the request. Examples of this redundant information include returning the original request, returning Encounter and Appointment resources found in the hook contexts, and returning Patient, Practitioner, Organization, and Coverage resources that are common for different request types for the order-sign hook. This redundancy is the cost of using the _include mechanism. Payers seeking greater efficiency can perform direct queries that are more tuned at the cost of needing to make multiple service calls.</p>
 
 * Queries use the defined search parameter names from the respective FHIR specification versions. If parties processing these queries have varied from these standard search parameter names (as indicated by navigating their CapabilityStatements), the CRD server will be responsible for translating the parameters into the CRD client's local names. For example, if a particular CRD client's CapabilityStatement indicates that the parameter name (that corresponds to HL7's Encounter search criteria) is named 'visit' on the client's server, the service will have to construct its search URL accordingly.
 

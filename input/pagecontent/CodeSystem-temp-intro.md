@@ -1,5 +1,5 @@
 <!--- Text entered into this file will appear at the top of the profiles page before the Formal Views of the profile content. -->
 
-<div class="added-content" markdown="1">
+<div class="new-content" markdown="1">
 This code system contains codes that are expected to be formally proposed as codes in other 'official' code systems in the future such as LOINC, SNOMED, etc. or as part of code systems managed in [http://terminology.hl7.org](http://terminology.hl7.org).  The canonical URL (and possibly the codes themselves) for all codes appearing in this code system **ARE** expected to change in a future release.  Implementers should prepare for this transition when they write their code, allowing for the possibility of checking for both the old and new code and ensuring it is straightforward to transmit both the old and new code when the time comes.  Concept maps will likely be available to assist with this transition.
 </div>
