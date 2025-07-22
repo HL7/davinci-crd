@@ -36,6 +36,7 @@ This page describes the primary releases of the specification and summarizes the
 * [FHIR-50051](https://jira.hl7.org/browse/FHIR-50051) - Updated specification to point to current version of CDS Hooks spec and individual hooks (correction) - throughout the spec
 * [FHIR-49983](https://jira.hl7.org/browse/FHIR-49983) - Added new 'BillingOptions' extension and allow its use on all Request resources.  (enhancement) [link](StructureDefinition-ext-billing-options.html), many profiles
 * [FHIR-49894](https://jira.hl7.org/browse/FHIR-49894) - Added more language around when to use doc-needed vs. info-needed, added example of both, made clear that if info-needed of OTH, one of the reasons need to indicate what type of information is needed (clarification) [link](StructureDefinition-ext-coverage-information.html#FHIR-49894)
+** [FHIR-49794](https://jira.hl7.org/browse/FHIR-49794) - In Questionnaire task, prohibit Task.focus and require input[questionnaire] (correction) [link](file:///D:/Git/_IGs/davinci-crd2/output/StructureDefinition-profile-taskquestionnaire.html)
 
 **Non-substantive changes**:
 ** [FHIR-49153](https://jira.hl7.org/browse/FHIR-49153), [FHIR-51036](https://jira.hl7.org/browse/FHIR-51036), [FHIR-49094](https://jira.hl7.org/browse/FHIR-49094) - Corrected names and descriptions of CDS Hooks request and response examples (correction) [link](artifacts.html#example-cds-hooks-examples)
