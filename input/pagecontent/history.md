@@ -10,7 +10,7 @@ This page describes the primary releases of the specification and summarizes the
 
 * [FHIR-50318](https://jira.hl7.org/browse/FHIR-50318) - Added expectation to put coverage-expectation extension on ServiceRequest for appointments based on ServiceRequest (clarification) [link](cards.html#FHIR-50318)
 * [FHIR-49637](https://jira.hl7.org/browse/FHIR-49637) - Defined explicit codes for 'no-member-found' and 'no-active-coverage', and required their use (enhancement)
-* [FHIR-50206](https://jira.hl7.org/browse/FHIR-50206) - Removed patient as an allowed type of Coverage payer (correction)
+** [FHIR-50206](https://jira.hl7.org/browse/FHIR-50206) - Removed patient as an allowed type of Coverage payer (correction) [link](StructureDefinition-profile-coverage-definitions.html#diff_Coverage.payor)
 * [FHIR-49794](https://jira.hl7.org/browse/FHIR-49794) - In Questionnaire task, prohibit Task.focus and require input[questionnaire] (correction)
 * [FHIR-50492](https://jira.hl7.org/browse/FHIR-50492), [FHIR-50494](https://jira.hl7.org/browse/FHIR-50494), [FHIR-50495](https://jira.hl7.org/browse/FHIR-50495), [FHIR-50496](https://jira.hl7.org/browse/FHIR-50496) - Updated CommunicationRequest.reasonReference, DeviceRequest.reasonReference, ServiceRequest.reasonReference, Encounter.diagnosis to force most references (other than Observation) to refer to US Core profiles, and added guidance that US Core Observation profiles should be used when possible. (correction)
 * [FHIR-51045](https://jira.hl7.org/browse/FHIR-51045) - Relaxed Location.address to be optional, added guidance expecting propagation of address to fine-grained components (correction)
@@ -23,7 +23,7 @@ This page describes the primary releases of the specification and summarizes the
   * [FHIR-49829](https://jira.hl7.org/browse/FHIR-49829) - Enforce that if doc-purpose is present with a value other than 'conditional', doc-reason must be present (correction)
   * [FHIR-51413](https://jira.hl7.org/browse/FHIR-51413) - Remove the auth-out-network-only code from coverage-information.detail and add auth-out-network to coverage-information.reason.  Also added guidance on when to send multiple coverage information repetitions vs. a single 'conditional' repetition stating the rules.  (correction, clarification) [link](cards.html#FHIR-51413)
   * [FHIR-49792](https://jira.hl7.org/browse/FHIR-49792) - Add coverage-information.detail.category, categorize the standard detail.code values, and advise on expectation to display certain categories to clinical staff (enhancement)
-  * [FHIR-49950](https://jira.hl7.org/browse/FHIR-49950) - Set expectations about coverage-information extension being used in subsequent CRD, DTR and PAS calls to serve as a linking mechanism (clarification) [link](cards.html#FHIR-49950)
+  ** [FHIR-49950](https://jira.hl7.org/browse/FHIR-49950) - Set expectations about coverage-information extension being used in subsequent CRD, DTR and PAS calls to serve as a linking mechanism (clarification) [link](cards.html#FHIR-49950)
 
 
 **Substative changes**
@@ -45,16 +45,16 @@ This page describes the primary releases of the specification and summarizes the
 ** [FHIR-49003](https://jira.hl7.org/browse/FHIR-49003) - Removed language implying that Task could be a focal request when submitting a CRD request or have coverage-information and provided clearer information about the purpose of CommunicationRequest (correction, clarification) - section no longer exists to link to
 ** [FHIR-49041](https://jira.hl7.org/browse/FHIR-49041) - Clarified the use-case for CommunicationRequest and added examples (clarification) [link](Binary-CRDServiceRequest3.html), [link](Binary-CRDServiceResponse3.html)
 * [FHIR-49894](https://jira.hl7.org/browse/FHIR-49894) - Added more language around when to use doc-needed vs. info-needed, added example of both, made clear that if info-needed of OTH, one of the reasons need to indicate what type of information is needed (clarification) [link](StructureDefinition-ext-coverage-information.html#FHIR-49894)
-* [FHIR-49835](https://jira.hl7.org/browse/FHIR-49835) - Removed the "additional hook resources" section of the deviations page (because in the referenced version of the CDS Hooks, it's no longer a deviation).  (correction)
+** [FHIR-49835](https://jira.hl7.org/browse/FHIR-49835) - Removed the "additional hook resources" section of the deviations page (because in the referenced version of the CDS Hooks, it's no longer a deviation).  (correction) Nothing to link to anymore
 ** [FHIR-49196](https://jira.hl7.org/browse/FHIR-49196) - Clarified that _include may not be supported when using non-prefetch queries. (clarification) [link](foundation.html#FHIR-49196)
 * [FHIR-49731](https://jira.hl7.org/browse/FHIR-49731) - Corrected prefetch syntax to be CDS Hooks-conformant (correction) [link](foundation.html#prefetch)
 ** [FHIR-49753](https://jira.hl7.org/browse/FHIR-49753) - Provided recommendations for when CRD discovery should be called (clarification) [link](foundation.html#FHIR-49753)
-* [FHIR-49833](https://jira.hl7.org/browse/FHIR-49833) - Reframed warnings about the _include search mechanism to reflect the fact that it is no longer used in prefetch.  (correction) [link](foundation.html#FHIR-49833)
+** [FHIR-49833](https://jira.hl7.org/browse/FHIR-49833) - Reframed warnings about the _include search mechanism to reflect the fact that it is no longer used in prefetch.  (correction) [link](foundation.html#FHIR-49833)
 * [FHIR-49085](https://jira.hl7.org/browse/FHIR-49085) - In diagram, corrected "Payer CDA System" to "Payer CDS System" (correction) [link](hooks.html#hook-categories)
 ** [FHIR-49762](https://jira.hl7.org/browse/FHIR-49762) - Added VisionPrescription to the list of supported 'Request' resources for order-select and order-dispatch.  (They were already in the technical list, just not the HTML.) (correction) [link](hooks.html#order-dispatch) [link](hooks.html#order-select)
 ** [FHIR-48553](https://jira.hl7.org/browse/FHIR-48553) - Improved language in first intro paragraph (clarification) [link](index.html#FHIR-48553)
 ** [FHIR-48625](https://jira.hl7.org/browse/FHIR-48625) - Added guidance on best CRD service available practices (clarification) [link](implementation.html#FHIR-48625)
-* [FHIR-50006](https://jira.hl7.org/browse/FHIR-50006) - Added additional examples for non-provided/insufficient information that is not considered an error (clarification) [link](cards.html#FHIR-50006)
+** [FHIR-50006](https://jira.hl7.org/browse/FHIR-50006) - Added additional examples for non-provided/insufficient information that is not considered an error (clarification) [link](cards.html#FHIR-50006)
 * [FHIR-50225](https://jira.hl7.org/browse/FHIR-50225) - Added an introduction to the coverage-information extension providing a detailed overview and ensured all elements had proper descriptions (clarification) [link](StructureDefinition-ext-coverage-information.html#introduction)
 ** [FHIR-48771](https://jira.hl7.org/browse/FHIR-48771) - Clarified prefetch references (clarification) [link](foundation.html#FHIR-48771a) [link](foundation.html#FHIR-48771b)
 ** [FHIR-48773](https://jira.hl7.org/browse/FHIR-48773) - Clarified where coverage-information.coverage must exist (clarification) [link](StructureDefinition-ext-coverage-information-definitions.html#diff_Extension.extension:coverage)
