@@ -4,7 +4,6 @@ This page describes the primary releases of the specification and summarizes the
 
 **Breaking changes**:
 * [FHIR-50276](https://jira.hl7.org/browse/FHIR-50276) - Moved codes out of the tmporary code system to their permanent home
-* [FHIR-49754](https://jira.hl7.org/browse/FHIR-49754) - Moved info-needed code from 'reason' to 'info-needed' element
 ** [FHIR-50318](https://jira.hl7.org/browse/FHIR-50318) - Added expectation to put coverage-expectation extension on ServiceRequest for appointments based on ServiceRequest (clarification) [link](cards.html#FHIR-50318)
 * [FHIR-49794](https://jira.hl7.org/browse/FHIR-49794) - In Questionnaire task, prohibit Task.focus and require input[questionnaire] (correction)
 * [FHIR-50492](https://jira.hl7.org/browse/FHIR-50492), [FHIR-50494](https://jira.hl7.org/browse/FHIR-50494), [FHIR-50495](https://jira.hl7.org/browse/FHIR-50495), [FHIR-50496](https://jira.hl7.org/browse/FHIR-50496) - Updated CommunicationRequest.reasonReference, DeviceRequest.reasonReference, ServiceRequest.reasonReference, Encounter.diagnosis to force most references (other than Observation) to refer to US Core profiles, and added guidance that US Core Observation profiles should be used when possible. (correction)
@@ -22,6 +21,7 @@ This page describes the primary releases of the specification and summarizes the
   ** [FHIR-49792](https://jira.hl7.org/browse/FHIR-49792) - Add coverage-information.detail.category, categorize the standard detail.code values, and advise on expectation to display certain categories to clinical staff (enhancement) [link](StructureDefinition-ext-coverage-information-definitions.html#diff_Extension.extension:detail.extension:category)
   ** [FHIR-49950](https://jira.hl7.org/browse/FHIR-49950) - Set expectations about coverage-information extension being used in subsequent CRD, DTR and PAS calls to serve as a linking mechanism (clarification) [link](cards.html#FHIR-49950)
   ** [FHIR-49637](https://jira.hl7.org/browse/FHIR-49637) - Defined explicit coverage-information.reason codes for 'no-member-found' and 'no-active-coverage', and required their use (enhancement) [link](cards.html#FHIR-49637), [link](ValueSet-coverageAssertionReasons.html)
+  ** [FHIR-49754](https://jira.hl7.org/browse/FHIR-49754) - Moved detail-code code from 'reason' to 'info-needed' element (correction) [link](ValueSet-informationNeeded.html)
 
 
 **Substative changes**
