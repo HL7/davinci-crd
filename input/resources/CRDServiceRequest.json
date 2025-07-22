@@ -30,7 +30,7 @@
             "intent": "original-order",
             "code": {
               "extension": [{
-                "url": "http:​/​/hl7​.org​/fhir​/us​/davinci-crd​/StructureDefinition​/ext-billing-options",
+                "url": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-billing-options",
                 "valueCodeableConcept": {
                   "coding": [{
                     "system": "http://www.ama-assn.org/go/cpt",
@@ -38,7 +38,7 @@
                   }]
                 }
               }, {
-                "url": "http:​/​/hl7​.org​/fhir​/us​/davinci-crd​/StructureDefinition​/ext-billing-options",
+                "url": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-billing-options",
                 "valueCodeableConcept": {
                   "coding": [{
                     "system": "http://www.ama-assn.org/go/cpt",
@@ -46,7 +46,7 @@
                   }]
                 }
               }, {
-                "url": "http:​/​/hl7​.org​/fhir​/us​/davinci-crd​/StructureDefinition​/ext-billing-options",
+                "url": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-billing-options",
                 "valueCodeableConcept": {
                   "coding": [{
                     "system": "http://www.ama-assn.org/go/cpt",
@@ -54,7 +54,7 @@
                   }]
                 }
               }, {
-                "url": "http:​/​/hl7​.org​/fhir​/us​/davinci-crd​/StructureDefinition​/ext-billing-options",
+                "url": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-billing-options",
                 "valueCodeableConcept": {
                   "coding": [{
                     "system": "http://www.ama-assn.org/go/cpt",

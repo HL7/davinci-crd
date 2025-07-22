@@ -20,6 +20,10 @@
   "type": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CDSHookServicesExtensionConfiguration",
   "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Base",
   "derivation": "specialization",
+  "context" : [{
+    "type" : "element",
+    "expression" : "CDSHooksServices.services"
+  }],
   "differential": {
     "element": [
       {

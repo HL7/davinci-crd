@@ -8,7 +8,7 @@
     "url" : "http://hl7.org/fhir/tools/StructureDefinition/json-suppress-resourcetype",
     "valueBoolean" : true
   }],
-  "url" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHookEncounterStartContext",
+  "url" : "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CDSHookEncounterStartContext",
   "version" : "0.0.1",
   "name" : "CDSHookEncounterStartContext",
   "title" : "CDS Hook Specific Context for encounter-start (Logical Definition)",
@@ -20,7 +20,7 @@
   "baseDefinition" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHookContext",
   "derivation" : "specialization",
   "abstract"  : false,
-  "type" : "http://hl7.org/fhir/uv/davinci-crd/StructureDefinition/CDSHookEncounterStartContext",
+  "type" : "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CDSHookEncounterStartContext",
   "differential" : {
     "element" : [
       {

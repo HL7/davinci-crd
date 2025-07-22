@@ -1,5 +1,16 @@
 {% raw %}
 {% endraw %}
+
+<blockquote class="note-to-balloters">
+<p>Welcome to the ballot for the STU 2.2 release of CRD.</p>
+
+<p>This release contains a number of changes requested by the implementer community.  Most of them are non-signficant or backwards compatible changes, but there are a few that could at least be theoretically breaking for some implementations and there are a few that will be breaking for all implementations.  A complete list of the changes for this ballot, as well as links to the tracker items that provide justification for them can be found <a href="history.html#release-220-ballot">here</a></p>
+
+<p>Not all issues raised against the specification are resolved prior to this ballot.  There are a number of issues that call into question some of the fundamental design approaches associated with the guide.  The community has been engaged in deep discussions about these issues and feedback from the community is sought by the community about the issues raised.  It is possible that changes resulting from some of these issues could be incorporated in the publication that results from these issues.  A list of the issues, considerations around the issues, and associated Jira tickets may be found <a href="issues.html">here</a>.</p>
+
+<b>IMPORTANT:</b> The scope of this ballot is limited to the above changes and to feedback about the issues linked to above.  While feedback can always be submitted against any content in the specification at any time, votes submitted against content that is outside the official scope of the ballot may be deemed 'not related' and therefore not able to support negative votes.
+
+</blockquote>
 <blockquote class="stu-note">
 <p>
 This STU update of the specification reflects several changes based on implementer feedback about the Coverage Requirements Discovery (hereafter,CRD) specification arising from detailed review, connectathons and implementation experience.  "STU notes" call out additional key considerations where feedback is desired.

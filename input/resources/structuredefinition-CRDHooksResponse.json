@@ -5,7 +5,7 @@
     "url" : "http://hl7.org/fhir/tools/StructureDefinition/json-suppress-resourcetype",
     "valueBoolean" : true
   }],
-  "url" : "http://hl7.org/fhir/tools/StructureDefinition/CRDHooksResponse",
+  "url" : "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse",
   "name" : "CRDHooksResponse",
   "title" : "CRD CDSHooks Response (Logical Definition)",
   "status" : "draft",

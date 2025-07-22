@@ -13,6 +13,10 @@
   "type": "string",
   "baseDefinition": "http://hl7.org/fhir/StructureDefinition/string",
   "derivation": "constraint",
+  "context" : [{
+    "type" : "element",
+    "expression" : "CDSHooksResponse.cards.suggestions.actions"
+  }],
   "differential": {
     "element": [
       {

@@ -13,6 +13,10 @@
   "type": "Reference",
   "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Reference",
   "derivation": "constraint",
+  "context" : [{
+    "type" : "element",
+    "expression" : "CDSHooksResponse.cards"
+  }],
   "differential": {
     "element": [
       {

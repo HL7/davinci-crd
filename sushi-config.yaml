@@ -168,6 +168,8 @@ pages:
     title: Downloads
   history.md:
     title: Change History
+  issues.html:
+    title: Open Issues
 groups:
   -str-logicalmodel-hooks:
     name: "Structures: CDS Hooks Extensions"

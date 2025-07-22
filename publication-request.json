@@ -7,5 +7,5 @@
   "mode" : "milestone",
   "sequence" : "STU 2.2",
   "desc" : "STU 2.2.0 Ballot Release",
-  "descmd" : "STU 2.2.0 ballot.  See [list of changes](http://hl7.org/fhir/us/davinci-crd/2025Sep/history.html#2.2.0-ballot)"
+  "descmd" : "STU 2.2.0 ballot.  See [list of changes](http://hl7.org/fhir/us/davinci-crd/2025Sep/history.html#release-220-ballot)"
 }

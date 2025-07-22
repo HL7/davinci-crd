@@ -5,7 +5,7 @@
     "url" : "http://hl7.org/fhir/tools/StructureDefinition/json-suppress-resourcetype",
     "valueBoolean" : true
   }],
-  "url" : "http://hl7.org/fhir/tools/StructureDefinition/CRDAppointmentBookContext",
+  "url" : "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDAppointmentBookContext",
   "name" : "CRDAppointmentBookContext",
   "title" : "CRD CDS Hook Specific Context for appointment-book (Logical Definition)",
   "status" : "draft",
@@ -13,7 +13,7 @@
   "description" : "CRD-specific constraints on the appointment-book CDS Hook context",
   "kind" : "logical",
   "baseDefinition" : "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CDSHookAppointmentBookContext",
-  "derivation" : "specialization",
+  "derivation" : "constraint",
   "abstract"  : false,
   "type" : "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CDSHookAppointmentBookContext",
   "differential" : {
