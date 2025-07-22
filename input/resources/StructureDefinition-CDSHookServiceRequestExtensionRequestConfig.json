@@ -12,7 +12,7 @@
   "abstract": false,
   "type": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CDSHookServiceRequestExtensionRequestConfig",
   "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Base",
-  "derivation": "constraint",
+  "derivation": "specialization",
   "context" : [{
     "type" : "element",
     "expression" : "CDSHooksRequest.extension"
