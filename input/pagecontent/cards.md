@@ -35,7 +35,7 @@ In addition to the [guidance provided in the CDS Hooks specification]({{site.dat
 ### Potential CRD Response Types
 The sections below describe the different types of [responses]({{site.data.fhir.ver.cdshooks}}/index.html#cds-service-response) that CRD services can use when returning coverage requirements to CRD clients, including CRD-specific profiles on cards to describe CRD-expected behavior. It is possible that some CRD services and CRD clients will support response patterns other than those listed here, but such behavior is outside the scope of this specification. Future versions of this specification might standardize additional response types.
 <a name="FHIR-50009"> </a>
-<p class="modified-content">Conformant CRD clients and services **SHALL** support the [Coverage Information](#coverage-information-response-type) (see specific support expectations documented there) and **SHOULD** support the remaining types.</p>
+<p class="modified-content">Conformant CRD clients and services <b>SHALL</b> support the <a href="#coverage-information-response-type">Coverage Information</a> (see specific support expectations documented there) and <b>SHOULD</b> support the remaining types.</p>
 
 NOTE: Support for a response type does not mean that all orders, appointments, etc. will necessarily receive card guidance, merely that it must be able to return those response types for at least a subset of CRD invocations.
 
@@ -99,7 +99,7 @@ Systems **MAY** make calls related to orders even if there is already a coverage
 
 However, payers **SHALL NOT** send a system action to update the order unless something is new. Payers **SHOULD** take into account the previous decision in deciding how much processing is necessary before returning a response.
 <a name="FHIR-50102"> </a>
-<p class="new-content">When returning a system action to update a resource with this response type, the resource content **SHALL NOT** make changes any data elements other than adding or modifying coverage-information extensions</p>
+<p class="new-content">When returning a system action to update a resource with this response type, the resource content <b>SHALL NOT</b> make changes any data elements other than adding or modifying coverage-information extensions</p>
 
 If a *coverage-information* extension indicates the need to collect additional information (via 'doc-needed'), the extension **SHOULD** include a reference to the questionnaire(s) to be completed. If the payer supports Da Vinci DTR, the indicated forms will be the ones completed within the DTR form filler.  If no Questionnaires are specified, DTR will determine the needed forms itself.  For systems that don't support DTR (e.g. because the coverage isn't subject to regulation mandating DTR), the indicated Questionnaire canonicals can be used to determine data to be gathered in some other (non-DTR) way.
 <a name="FHIR-49830"> </a>

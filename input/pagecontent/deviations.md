@@ -96,7 +96,7 @@ One of the options supported in CDS Hooks is the ability for a service to reques
 A [proposal](https://github.com/cds-hooks/docs/issues/377) has been submitted suggesting how to address this issue.  The work group responsible for the specification has proposed adopting a modified version of this proposal that does not include _include support.  This version of the implementation guide pre-adopts that proposal.  
 
 <a name="FHIR-49128"> </a>
-<p class="modified-content">(See the [foundation page](foundation.html#additional-data-retrieval) for language on conformance expectations.)</p>
+<p class="modified-content">(See the <a href="foundation.html#additional-data-retrieval">foundation page</a> for language on conformance expectations.)</p>
 
 The limitations on the XPath expressions that can be used are as follows:
 * variables are limited to 'context' and the data elements reachable from it. (e.g. `_id={{context.draftOrders.entry.resource.ofType(ServiceRequest).location.id()}}`)
@@ -170,7 +170,7 @@ If a hook service is invoked on a collection of resources, all cards returned th
 
 ### Controlling hook invocation
 <a name="FHIR-49897"> </a>
-<p class="modified-content">Provider systems **SHALL** only invoke hooks on payer services where the patient record indicates active coverage with the payer associated with the service and where there is no recorded indication the patient intends to bypass insurance coverage (i.e. the service or product is not flagged as 'patient-pay').  Providers **MAY** limit hook invocation to only those payers that are believed to potentially have relevant information related to the current action - for example, clinical guidance, contraindication detection, etc.  This might be more payers than just those that are likely to provide coverage for the services referred to by the hook.  
+<p class="modified-content">Provider systems <b>SHALL</b> only invoke hooks on payer services where the patient record indicates active coverage with the payer associated with the service and where there is no recorded indication the patient intends to bypass insurance coverage (i.e. the service or product is not flagged as 'patient-pay').  Providers <b>MAY</b> limit hook invocation to only those payers that are believed to potentially have relevant information related to the current action - for example, clinical guidance, contraindication detection, etc.  This might be more payers than just those that are likely to provide coverage for the services referred to by the hook.</p>
 
 To avoid confusion for providers, where a patient has multiple active coverages that could be relevant to the current order/appointment/etc., CRD clients **SHALL** select from those coverages which is most likely to be primary and only solicit coverage information for that one payer.  If they invoke CRD on other payers, CRD clients **SHALL** ensure that card types that return coverage information are disabled for those 'likely secondary' payers. In situations where a CRD client determines that there are different primary coverages for different items in the same order action, they MAY choose to send separate CRD calls (each with its own access token) for the collection of services pertinent to that Coverage.  Alternatively, the client can submit all requests in a single call with the Coverage that is most broadly applicable.
 
