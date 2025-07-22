@@ -114,10 +114,12 @@ The CRD service **SHOULD** either prompt for the additional needed information u
 If the payer does not support DTR for the type of information needed, the CRD service **MAY** provide a 'link' or 'information' card pointing to the forms or portal to use to capture the additional information. The link **SHOULD NOT** require user authentication (i.e., no log-on needed) when accessing downloadable forms. For portal links, it is preferred if a separate logon is not needed (e.g., with temporary/high-entropy links). Forms downloaded from provided links can then be submitted as part of the prior authorization (e.g., PAS), claim submission, etc. based on the identified documentation purpose.
 
 While using portals or other non-questionnaire data capture is not recommended or preferred, it may be necessary as a transitional measure. Future versions of this IG are likely to mandate that questionnaires be included when additional information is required. This transitional accommodation is not intended to relax regulatory or legislative requirements that require the use of DTR.
+<a name="FHIR-49637"> </a>
+<div class="modified-content">
+<p>If the CRD service is unable to resolve the patient, the Coverage Information <b>SHALL</b> indicate "not covered" with a reason code of <a href="ValueSet-coverageAssertionReasons.html#x-http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp-no-member-found">no-member-found</a>.</p>
 
-If the CRD service is unable to resolve the patient, the Coverage Information **SHALL** indicate "not covered" with a reason code of [no-member-found](ValueSet-coverageAssertionReasons.html#x-http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp-no-member-found).
-
-If the CRD is able to resolve the patient but they do not have active coverage, the Coverage Information **SHALL** indicate "not covered" with a reason of [no-active-coverage](ValueSet-coverageAssertionReasons.html#x-http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp-no-active-coverage).
+<p>If the CRD is able to resolve the patient but they do not have active coverage, the Coverage Information <b>SHALL</b> indicate "not covered" with a reason of <a href="ValueSet-coverageAssertionReasons.html#x-http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp-no-active-coverage">no-active-coverage</a>.</p>
+</div>
 <div class="additional-content">
 <a name="FHIR-51413"> </a>
 <p>This specification allows returning either a single coverage-information repetition that says "conditional" or multiple coverage-information repetitions with specific assumptions that then indicate "covered", "auth-needed", etc.  The recommended criteria for deciding whether to return a single or multiple is as follows:</p>

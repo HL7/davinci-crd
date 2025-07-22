@@ -5,15 +5,15 @@ This page describes the primary releases of the specification and summarizes the
 **Breaking changes**:
 * [FHIR-50276](https://jira.hl7.org/browse/FHIR-50276) - Moved codes out of the tmporary code system to their permanent home
 * [FHIR-49754](https://jira.hl7.org/browse/FHIR-49754) - Moved info-needed code from 'reason' to 'info-needed' element
-
 ** [FHIR-50318](https://jira.hl7.org/browse/FHIR-50318) - Added expectation to put coverage-expectation extension on ServiceRequest for appointments based on ServiceRequest (clarification) [link](cards.html#FHIR-50318)
-* [FHIR-49637](https://jira.hl7.org/browse/FHIR-49637) - Defined explicit codes for 'no-member-found' and 'no-active-coverage', and required their use (enhancement)
 * [FHIR-49794](https://jira.hl7.org/browse/FHIR-49794) - In Questionnaire task, prohibit Task.focus and require input[questionnaire] (correction)
 * [FHIR-50492](https://jira.hl7.org/browse/FHIR-50492), [FHIR-50494](https://jira.hl7.org/browse/FHIR-50494), [FHIR-50495](https://jira.hl7.org/browse/FHIR-50495), [FHIR-50496](https://jira.hl7.org/browse/FHIR-50496) - Updated CommunicationRequest.reasonReference, DeviceRequest.reasonReference, ServiceRequest.reasonReference, Encounter.diagnosis to force most references (other than Observation) to refer to US Core profiles, and added guidance that US Core Observation profiles should be used when possible. (correction)
 ** [FHIR-51045](https://jira.hl7.org/browse/FHIR-51045) - Relaxed Location.address to be optional, added guidance expecting propagation of address to fine-grained components (correction, enhancement) [link](StructureDefinition-profile-location.html)
 * [FHIR-49897](https://jira.hl7.org/browse/FHIR-49897) - Clarify that CRD must not be called in 'patient pay' situations (if system is aware) [link](deviations.html#FHIR-49897)
 * [FHIR-49909](https://jira.hl7.org/browse/FHIR-49909) - Added expectations for handling unexpected content [link](foundation.html#FHIR-49909)
 * [FHIR-50102](https://jira.hl7.org/browse/FHIR-50102) - Make explicit that Coverage Information system actions are prohibited from making changes other than adding or updating the coverage-information extension (clarification) [link](cards.html#FHIR-50102)
+* [FHIR-49830](https://jira.hl7.org/browse/FHIR-49830) - Clarify that the requirement to provide access to DTR for clinicians is required for patient forms, not just clinical forms (correction) [link](cards.html#FHIR-49830)
+** [FHIR-49128](https://jira.hl7.org/browse/FHIR-49128) - Clarified (and loosened) conformance language for prefetch syntax (clarification) [link](deviations.html#FHIR-49128) [link](foundation.html#FHIR-49128)
 
 * *Coverage Information Extension*
   * [FHIR-49827](https://jira.hl7.org/browse/FHIR-49827) - Update crd-ci-q4 contraint on coverage-information to say 'noauth' and 'not-covered' in addition to 'satisfied' as reasons why you can't have a doc purpose of with-pa (correction)
@@ -21,16 +21,15 @@ This page describes the primary releases of the specification and summarizes the
   * [FHIR-51413](https://jira.hl7.org/browse/FHIR-51413) - Remove the auth-out-network-only code from coverage-information.detail and add auth-out-network to coverage-information.reason.  Also added guidance on when to send multiple coverage information repetitions vs. a single 'conditional' repetition stating the rules.  (correction, clarification) [link](cards.html#FHIR-51413)
   ** [FHIR-49792](https://jira.hl7.org/browse/FHIR-49792) - Add coverage-information.detail.category, categorize the standard detail.code values, and advise on expectation to display certain categories to clinical staff (enhancement) [link](StructureDefinition-ext-coverage-information-definitions.html#diff_Extension.extension:detail.extension:category)
   ** [FHIR-49950](https://jira.hl7.org/browse/FHIR-49950) - Set expectations about coverage-information extension being used in subsequent CRD, DTR and PAS calls to serve as a linking mechanism (clarification) [link](cards.html#FHIR-49950)
+  ** [FHIR-49637](https://jira.hl7.org/browse/FHIR-49637) - Defined explicit coverage-information.reason codes for 'no-member-found' and 'no-active-coverage', and required their use (enhancement) [link](cards.html#FHIR-49637), [link](ValueSet-coverageAssertionReasons.html)
 
 
 **Substative changes**
 ** [FHIR-49813](https://jira.hl7.org/browse/FHIR-49813) - Allow PractitionerRole as an Encounter.participant (enhancement) [link](StructureDefinition-profile-encounter-definitions.html#diff_Encounter.participant)
 ** [FHIR-51420](https://jira.hl7.org/browse/FHIR-51420) - Allow coverage-information ids to be unique for the same coverage within a request resource. (correction) [link](cards.html#FHIR-51420)
-* [FHIR-51470](https://jira.hl7.org/browse/FHIR-51470), [FHIR-51488](https://jira.hl7.org/browse/FHIR-51488) - Removed expectations and constraints for inclusion of medical record numbers in the Patient profile (correction) [link](StructureDefinition-profile-patient.html)
-* [FHIR-49830](https://jira.hl7.org/browse/FHIR-49830) - Clarify that the requirement to provide access to DTR for clinicians is required for patient forms, not just clinical forms (correction) [link](cards.html#FHIR-49830)
+** [FHIR-51470](https://jira.hl7.org/browse/FHIR-51470), [FHIR-51488](https://jira.hl7.org/browse/FHIR-51488) - Removed expectations and constraints for inclusion of medical record numbers in the Patient profile (correction) [link](StructureDefinition-profile-patient.html)
 ** [FHIR-50009](https://jira.hl7.org/browse/FHIR-50009) - Relaxed expectations from SHALL to SHOULD for CRD response types other than coverage-information
 ** [FHIR-49742](https://jira.hl7.org/browse/FHIR-49742) - Change logical model token 0..1 to 1..1, made expectation to provide a token 'SHALL' instead of 'will' (correction) [link](foundation.html#FHIR-49742)
-* [FHIR-49128](https://jira.hl7.org/browse/FHIR-49128) - Clarified (and loosened) conformance language for prefetch syntax (clarification) [link](deviations.html#FHIR-49128) [link](foundation.html#FHIR-49128)
 ** [FHIR-50051](https://jira.hl7.org/browse/FHIR-50051) - Updated specification to point to current version of CDS Hooks spec and individual hooks (correction) - throughout the spec
 ** [FHIR-49983](https://jira.hl7.org/browse/FHIR-49983) - Added new 'BillingOptions' extension and allow its use on all Request resources.  (enhancement) [link](StructureDefinition-ext-billing-options.html), many profiles
 ** [FHIR-49894](https://jira.hl7.org/browse/FHIR-49894) - Added more language around when to use doc-needed vs. info-needed, added example of both, made clear that if info-needed of OTH, one of the reasons need to indicate what type of information is needed (clarification) [link](StructureDefinition-ext-coverage-information.html#FHIR-49894)
