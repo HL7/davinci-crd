@@ -45,7 +45,7 @@ This page describes the primary releases of the specification and summarizes the
 * [FHIR-49894](https://jira.hl7.org/browse/FHIR-49894) - Added more language around when to use doc-needed vs. info-needed, added example of both, made clear that if info-needed of OTH, one of the reasons need to indicate what type of information is needed (clarification) [link](StructureDefinition-ext-coverage-information.html#FHIR-49894)
 ** [FHIR-49835](https://jira.hl7.org/browse/FHIR-49835) - Removed the "additional hook resources" section of the deviations page (because in the referenced version of the CDS Hooks, it's no longer a deviation).  (correction) Nothing to link to anymore
 ** [FHIR-49196](https://jira.hl7.org/browse/FHIR-49196) - Clarified that _include may not be supported when using non-prefetch queries. (clarification) [link](foundation.html#FHIR-49196)
-* [FHIR-49731](https://jira.hl7.org/browse/FHIR-49731) - Corrected prefetch syntax to be CDS Hooks-conformant (correction) [link](foundation.html#prefetch)
+** [FHIR-49731](https://jira.hl7.org/browse/FHIR-49731) - Corrected prefetch syntax to be CDS Hooks-conformant (correction) [link](foundation.html#prefetch)
 ** [FHIR-49753](https://jira.hl7.org/browse/FHIR-49753) - Provided recommendations for when CRD discovery should be called (clarification) [link](foundation.html#FHIR-49753)
 ** [FHIR-49833](https://jira.hl7.org/browse/FHIR-49833) - Reframed warnings about the _include search mechanism to reflect the fact that it is no longer used in prefetch.  (correction) [link](foundation.html#FHIR-49833)
 * [FHIR-49085](https://jira.hl7.org/browse/FHIR-49085) - In diagram, corrected "Payer CDA System" to "Payer CDS System" (correction) [link](hooks.html#hook-categories)
@@ -61,6 +61,7 @@ This page describes the primary releases of the specification and summarizes the
 ** [FHIR-49805](https://jira.hl7.org/browse/FHIR-49805) - Added CommunicationRequest and VisionPrescription to prefetch and non-prefetch queries (correction) [link](https://build.fhir.org/ig/HL7/davinci-crd/foundation.html#prefetch), [link](Binary-CRDServices.html)
 ** [FHIR-51187](https://jira.hl7.org/browse/FHIR-51187) - Added links to examples zip files on the downloads page (clarification) [link](downloads.html)
 ** [FHIR-50206](https://jira.hl7.org/browse/FHIR-50206) - Removed patient as an allowed type of Coverage payer (correction) [link](StructureDefinition-profile-coverage-definitions.html#diff_Coverage.payor)
+** [FHIR-49791](https://jira.hl7.org/browse/FHIR-49791) - Fixed odd content in logical model instances (correction) all logical model files and fragments
 
 
 ### Release 2.1.0
