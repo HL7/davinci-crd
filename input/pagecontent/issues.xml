@@ -1,3 +1,195 @@
-<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
-  
+<div class="new-content" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <p>As implementers get closer to the regulatory deadline, new voices have been joining the project calls and submitting feedback via Jira that call into question some of the foundational assumptions made in the implementation guides.  The project has been holding special calls to discuss a number of these issues, looping in a larger portion of the community to engage in the discussion.  However, at the time the content of this specification was being prepared for ballot, resolution had not yet been reached on most of the topics.  Postponing the ballot until these topics were landed would mean the updated specification that corrects a number of errors in the original specification and makes other useful clarificaitons and enhancements to the specification would be released too late to be useful to most implementers working to meet the CMS January 2027 regulatory deadline.  For this reason, the ballot will be occurring while these issues are still unresolved.</p>
+  <p>However, there remains a possibility that some of these issues could be addressed before final publication of the balloted specification.  To ensure balloters have an opportunity to evaluate the potential options and to express their opinion on the issues, they are laid out here.  If you are uncomfortable with any of the candidate resolutions to any of the issues laid out here, feel free to vote negative on the issue(s) in question.  You can consider withdrawing your negative votes when final resolutions are landed, provided you are comfortable with the resolution.</p>
+  <p>NOTE 1: It is unlikely that all of these issues will be addressed in the CRD 2.2.0 release, and it's possible that there will be no changes to the specification from any of these issues and that they will either be deferred to some future (possibly post 2026) release, or they might be closed by the submitter or otherwise resolved with no change.</p>
+  <p>NOTE 2: If there is a resolution to one or more of these issues that involves making a change to the specification that is substantively different than any of the proposed dispositions, there will be an announced public review period of the specification with the proposed change applied to give the community an opportunity to evaluate and provide feedback on the new option prior to publication.</p>
+
+<a name="synch"> </a>
+<h3>Synchronous CDS Hook vs. Asynchronous Operation</h3>
+<p>There are three tickets that either explicitly propose replacing the current CRD real-time CDS Hook-based architecture with an asynchronous architecture or that indicate that the real-time requirement establsished by the guides are untenable:</p>
+<ul>
+  <li><a href="https://jira.hl7.org/browse/FHIR-42697">FHIR-42697</a> - Requirements to only allow CDS Hooks</li>
+  <li><a href="https://jira.hl7.org/browse/FHIR-46170">FHIR-46170</a> - Allow Async OperationDefinition</li>
+  <li><a href="https://jira.hl7.org/browse/FHIR-49125">FHIR-49125</a> - Unrealistic Processing Time for Da Vinci CRD</li>
+</ul>
+
+<a name="synch-quotes"> </a>
+<h4>Relevant quotes from the CMS final rule</h4>
+<ol>
+  <li>"All payers must identify relevant prior authorization coverage criteria and rules and program these criteria and rules into the appropriate format for the API in accordance with the IG." <a href="https://www.federalregister.gov/d/2024-00895/p-1137">link</a></li>
+  <li>"Subsequent programming and testing for the questionnaires within the API must take place to ensure functionality. To accommodate these development efforts, CMS is finalizing 2027 compliance dates for the Prior Authorization API. The compliance timeframe should enable the industry to establish a strong technical framework to support the development and scalability of the API-based solution. We anticipate that this timeframe will provide more time for development and testing to enable the integration of the Prior Authorization API between payers, providers, and EHR developers." <a href="https://www.federalregister.gov/d/2024-00895/p-1137">link</a></li>
+  <li>"Use of the Prior Authorization API will enable automation for the prior authorization request and response within the clinical workflow of the provider." <a href="https://www.federalregister.gov/d/2024-00895/p-1141">link</a></li>
+  <li>"Use of this IG improves the transparency of specific coverage rules specific to the patient and the provider based on the payer's prior authorization policies, and, when implemented, provides decision support to providers when they are ordering services." <a href="https://www.federalregister.gov/d/2024-00895/p-1153">link</a> </li>
+</ol>
+
+<a name="synch-assess"> </a>
+<h4>Assessment and discussion</h4>
+<ol>
+  <li>The language from the regulation implies, and a CMS representative has explicitly stated that the expectation of the regulation is that information about coverage rules be provided to the clinician and patient at the time of decision-making.</li>
+  <li>The Da Vinci Clinical Interoperability Council has reaffirmed that they believe it is essential to get coverage information and data collection requirements in front of providers and patients at the time decisions are being made, and that if a provider decides they don't care about the coverage rules in a particular circumstance, especially if they're complex, clinicians are free to ignore the information.</li>
+  <li>The regulation recognizes that pre-existing payer systems may not be able to provide coverage information and data-collection requirements in realtime and the implementation timeline for the regulation was extended specifically to ensure sufficient time for payers to extract their rules and represent them in computable form that would allow them to be surfaced in APIs that meet the requirements.  I.e. Where existing systems can't meet the need, the expectation is that systems will be adjusted or built to meet the need.</li>
+  <li>CMS recommended CRD based on its current design and other states have mandated implementation of CRD based on its current design.  Several implementers have also rolled out production solutions based on the existing IG requirements.  Changing design would not remove existing regulatory requirements and would break interoperability with existing implementations.</li>
+  <li>A significant refactoring of the implementation guide at this point could not be done without a great deal of group discussion as well as returning to ballot.  Even if it was appropriate to redesign the specification, it would not be possible to do so in a timeframe that would allow for implementation by the regulatory deadline.</li>
+</ol>
+<p>Based on the above points, there is no reasonable possibility of changing the architectural approach from a 'real-time CDS Hook response as part of clinical workflow' in this next ballot release.  Given the regulatory requirement and direction from CMS, it's difficult to envision even a longer-term architecture that would be asynchronous as once implementers have modified their systems to meet the real-time requirement, there'd be little incentive to switch to an asynchronous solution.</p>
+
+<a name="synch-options"> </a>
+<h4>Options</h4>
+<ol>
+  <li>Find these tickets 'not persuasive' - i.e. the requirement will remain real-time CDS hook responses to clinical users</li>
+  <li>Mark some or all of these tickets as 'considered for future use' </li>
+</ol>
+
+
+<a name="additional"> </a>
+<h3>Support for additional data</h3>
+<p>
+  There are a number of tickets noting that information needed by payers' existing prior authorization processes are not provided as part of the CRD inputs and/or that the inconsistency of how information is represented in clinical resources (in CRD and DTR) and how it's represented in financial resources (PAS) is problematic:
+</p>
+<ul>
+  <li><a href="https://jira.hl7.org/browse/FHIR-45673">FHIR-45673</a> - Need to express Prior Authorization "Case" concept</li>
+  <li><a href="https://jira.hl7.org/browse/FHIR-50791">FHIR-50791</a> - Prior-Authorization Groupings</li>
+  <li><a href="https://jira.hl7.org/browse/FHIR-46171">FHIR-46171</a> - Define common model that is shared across CRD/DTR/PAS IGs</li>
+  <li><a href="https://jira.hl7.org/browse/FHIR-48946">FHIR-48946</a> - ServiceRequest.ReasonCode and ReasonReference, requirement to use ICD-10 CM</li>
+  <li><a href="https://jira.hl7.org/browse/FHIR-49129">FHIR-49129</a> - Support sending Inpatient/Outpatient flag for requested service</li>
+  <li><a href="https://jira.hl7.org/browse/FHIR-49982">FHIR-49982</a> - Communicate service specialty</li>
+  <li><a href="https://jira.hl7.org/browse/FHIR-50669">FHIR-50669</a> - UM System Required Attributes</li>
+  <li><a href="https://jira.hl7.org/browse/FHIR-50892">FHIR-50892</a> - Add dedicated element/slice to capture location taxonomy code</li>
+</ul>
+
+<a name="additional-assess"> </a>
+<h4>Assessment and Discussion</h4>
+<ul>
+  <li>The objective of the CRD interface is <b>NOT</b> to return a realtime authorization.  Doing so is permitted, but is not required to be supported at all.  Even when supported, it will not necessarily be common.  The requirement of CRD is to document the coverage 'rules' for a particular product or service.  It should <b>always</b> be possible to return rules for a given item, irrespective of how much additional information is known.  Knowing more information simply allows filtering which rules are relevant meaning the expression of the rules will be simpler (e.g. 'covered' as opposed to four paragraphs describing the situations where the product is or is not covered).</li>
+  <li>As discussed in the <a href="#synch-assess">previous issue</a>, there is no expectation that CRD responses will be provided without either modifying existing systems or building new ones.</li>
+  <li>Also as discussed in the previous issue, responses must be provided at the time of ordering to clinicians and patients and therefore must function based on the information that is known at this time.</li>
+  <li>The CDS Hook workflow presumes that clinicians and other users are performing their workflow "as normal" without capturing additional data elements beyond what they've historically captured.  Clinicians have reiterated the importance of not imposing requirements to collect additional data.</li>
+  <li>In some cases, EHRs <b>MAY</b> be able to infer data elements they will later include on a claim or prior authorization.  It is more realistic for this to occur in situations where the ordering system and performing system are the same.</li>
+  <li>There is already support to convey billing codes if they are known (either as translations, or if there are multiple conflicting codes, via extensions)</li>
+</ul>
+
+<a name="additional-options"> </a>
+<h4>Options</h4>
+<p>Potential resolution of these issues can include some mixture of the following:</p>
+<ol>
+  <li>Add additional optional data elements for the requested concepts with must support rules indicating that they must be populated when an EHR is able to determine a value, but it is acceptable if an EHR isn't able to ever determine a value.</li>
+  <li>For some elements make their inclusion mandatory (provided EHRs are confident values can always be known at time of ordering)</li>
+  <li>Mark some or all of these tickets as 'considered for future use'</li>
+</ol>
+
+<a name="interop"> </a>
+<h3>Expectations for interoperability</h3>
+<p>
+  There has been discussion about the use of 'supplemental' guides and general interoperability expectations for both CRD client and server implementations.  This has manifested in a couple of tickets:
+</p>
+<ul>
+  <li><a href="https://jira.hl7.org/browse/FHIR-49974">FHIR-49974</a> - Need to be tighter about client and server hook support expectations</li>
+  <li><a href="https://jira.hl7.org/browse/FHIR-50216">FHIR-50216</a> - Need guidance on supplemental guides</li>
+</ul>
+
+<a name="interop-assess"> </a>
+<h4>Assessment and Discussion</h4>
+<ol>
+  <li>If requirements can vary between communication partners in a manner that requires software to be written differently based on which system is being connected to, it will be impossible to scale interoperability to ensure that all clinical systems can talk to all payers</li>
+  <li>Some implementers have expressed an intention to only support interoperability with a limited set of 'large volume' partners based on this scaling issue.  This will result in an inbalance in the marketplace where large volume partners will have interoperability capabilities not available to smaller organizations and may impede the ability of smaller payers to meet metrics, as well as disadvantaging patients with such coverage</li>
+  <li>There is concern that strict interoperability requirements may mean that requirements discovered late in the process will not be able to be met without breaking conformance, which could create a no-win situation where either metrics can't be met because compliance prohibits successful interoperability, or successful interoperability results in non-compliance.</li>
+</ol>
+
+<a name="interop-options"> </a>
+<h4>Options</h4>
+<p>Potential resolutions of these issues</p>
+<ol>
+  <li>Leave the specifications loose like they are, meaning that implementations can impose additional requirements necessitating code changes for interoperability with that partner.</li>
+  <li>Tighten the specifications to prohibit requiring data elements beyond the specification or other otherwise not properly handling conformant instances, while still allowing exceptions where interoperability requirements have been approved through a change request and continuous-integration build update process.</li>
+</ol>
+
+<a name="multicov"> </a>
+<h3>Handling of multiple coverages</h3>
+<p>
+  This issue relates to the fact that the specification currently requires EHRs to limit CRD invocation to passing a single (presumed primary) Coverage instance.
+</p>
+<ul>
+  <li><a href="https://jira.hl7.org/browse/FHIR-49738">FHIR-49738</a> - CRD lacks support for coordination of benefits</li>
+  <li><a href="https://jira.hl7.org/browse/FHIR-49825">FHIR-49825</a> - Create or update coverage should be limited to 'update'</li>
+  <li><a href="https://jira.hl7.org/browse/FHIR-49826">FHIR-49826</a> - How do coverage-informations with different Coverages work?</li>
+</ul>
+
+<a name="multicov-assess"> </a>
+<h4>Assessment and Discussion</h4>
+<ol>
+  <li>The rationale for restricting to a single Coverage includes:
+    <ul>
+      <li>In situations where multiple coverages are in-play, the determination of coverage by payers is often influenced by whether they're primary or secondary, as well as the decision of the primary payer</li>
+      <li>Coverage determinations are invoked in parallel, meaning secondary payers can't take into account decisions of prior payers in their assessments</li>
+      <li>Providing coverage expectations for secondary coverage adds additional complexity to the work for payers as well as the information returned to providers, as there's now a need to convey assessments from multiple payers.  Given that payers are concerned about meeting response timelines, simplifying things, at least for now, is reasonable</li>
+      <li>It's less common for their to be authorization decisions or additional data requirementsassociated secondary coverage</li>
+      <li>Multi-coverage situations are best addressed through a formal prior authorization process where payers can be communicated with in order and results from previous payers are visible to subsequent payers.</li>
+    </ul>
+  </li>
+  <li>The challenges involved with restricting what coverages are exposed include:
+    <ul>
+      <li>If only the primary payer can respond, secondary payers don't have an opportunity to return other useful information, such as contraindications</li>
+      <li>Because only one coverage is exposed, payers can't confirm that they *are* the primary payer because they can't see what other coverages might exist</li>
+      <li>There's no ability for a payer to add missing coverages (because they can't tell if a coverage is missing because they aren't allowed to see all coverages the EHR is aware of.  Similarly, there's only an ability to update a single coverage</li>
+      <li>The specification allows for the possibility that a payer could return information about multiple coverages if they're aware of more than one, but they wouldn't know how to link to any coverage other than the primary</li>
+    </ul>
+  </li>
+</ol>
+
+<a name="multicov-options"> </a>
+<h4>Options</h4>
+<p>Potential resolutions of these issues</p>
+<ol>
+  <li>Update the specification in all places where there's conflicting language to make clear that only one coverage is exposed, only that coverage can be updated, no coverages can be added, and responses are limited to a single coverage.  Mark the request to support multiple coverages as 'Considered for Future Use' as something that can be explored in a future version of the specification once everyone is handling primary coverages well.</li>
+  <li>Add explicit support for multiple coverages, including mechanisms to flag which coverage is presumed to be primary, and extend standard response codes to support dealing with multi-coverage scenarios.</li>
+</ol>
+
+
+<a name="misc"> </a>
+<h3>Miscellaneous issues</h3>
+<p>
+  These issues don't stem from any particular theme and the fact they're not yet resolved is generally based on issues other than disagreements around the basic premises of the implementation guide architecture.  They're listed here only to call attention to the fact that they're outstanding and they might be resolved as part of the balloting and publicaiton process.  Each of the remaining issues is discussed individually
+</p>
+
+<a name="FHIR-45672"> </a>
+<h4><a href="https://jira.hl7.org/browse/FHIR-45672">FHIR-45672</a> - Creation of Bundle Profile(s)</h4>
+<p>
+  While this is a good idea in principle, there have historically been tooling challenges with adding this level osf sophisticated profiling as part of logical models.  However, there's a possibility these tooling issues will soon be addressed making this possible.  Doing this doesn't change what the IG rules are, it merely makes validation more effective.
+</p>
+
+<a name="FHIR-49757"> </a>
+<h4><a href="https://jira.hl7.org/browse/FHIR-49757">FHIR-49757</a> - No guidance for CRD intermediaries wrt. access tokens</h4>
+<p>
+Da Vinci requires that there be a single endpoint per payer (or if HRex Endpoint Discovery is supported, a single endpoint per Coverage).  However, in practice, there may be multiple systems that manage coverage rules for different types of services and or different types of decision support behind that endpoint.  Some of these delegated systems may have a need to access the EHR's FHIR endpoint.
+</p>
+<p>
+At present, CDS Hooks does not define a standard mechanism for managing authorization in this delegation situation, and sharing tokens is not considered good practice (and may be technically prohibited if tokens are certificate-bound or IP-range constrained).
+</p>
+<p>
+Industry has not yet settled on best practices here.  If balloters can recommend an approach the implementer community can agree with, we could include at least 'draft' guidance in the published IG.
+</p>
+
+<a name="FHIR-49871"> </a>
+<h4><a href="https://jira.hl7.org/browse/FHIR-49871">FHIR-49871</a> - NutritionOrder MS backbone type elements are all optional</h4>
+<p>
+  Some types of nutrition orders have associated coverage requirements, including prior authorization.  However, NutritionOrder is not defined by US Core and there is no agreement on what data elements must be supported or which terminologies should be used for those data elements in the U.S. space.  As a result, the CRD data model for NutritionOrder is under-constrained and is unlikely to be interoperable.
+</p>
+<p>
+  Implementation experience is required to identify which data elements systems are actually capable of populating, and what terminologies they will use.  Possible alternatives for the next release include:
+</p>
+<ol>
+  <li>Removing the NutritionOrder profile from the current specification and adding an STU note seeking feedback and indicating it may be reintroduced in the future.  Implementers are free to experiment with the NutritionOrder outside the interoperability constraints of the specification.</li>
+  <li>Keeping the NutritionOrder profile in place, but add a 'Dragon' warning noting that the profile is underspecified and that implementations who wish to interoperate with the resource will need to reach site-specific agreement on which data elements to exchange.  (And that such site-specific agreements are acceptable from an interoperability expectations perspective.</li>
+  <li>Update the profile to add additional must support data element and terminology constraints to support reasonable interoperability, provided that the community can agree on what those elements and constraints should be.</li>
+</ol>
+
+<a name="FHIR-51465"> </a>
+<h4><a href="https://jira.hl7.org/browse/FHIR-51465">FHIR-51465</a> - Structure of inpatient orders without procedure code</h4>
+<p>
+  It is not uncommon for providers to solicit prior authorization for an inpatient stay without necessarily identifying a specific procedure that will be performed.  Only a diagnosis code would be needed.  However, it's not clear how such orders typically manifest in real-world systems.
+</p>
+<p>
+  If EHRs can give guidance on how such situations are typically represented using clinical order structures, guidance can be included in the specification so that providers can adjust.
+</p>
+
 </div>

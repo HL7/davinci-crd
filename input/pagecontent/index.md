@@ -8,6 +8,17 @@
 
 <p>Not all issues raised against the specification are resolved prior to this ballot.  There are a number of issues that call into question some of the fundamental design approaches associated with the guide.  The community has been engaged in deep discussions about these issues and feedback from the community is sought by the community about the issues raised.  It is possible that changes resulting from some of these issues could be incorporated in the publication that results from these issues.  A list of the issues, considerations around the issues, and associated Jira tickets may be found <a href="issues.html">here</a>.</p>
 
+<p>This ballot also includes notes related to two Jira issues that are not fully reflected in this release:</p>
+<ul>
+  <li><a name="termnote"> </a>
+<a href="https://jira.hl7.org/browse/FHIR-50276">FHIR-50276</a> updates the guide to adhere to an HL7 policy requiring a transition of code systems from 'temporary' codes to official codes maintained outside of the implementation guide now that the requirements are more stable.  The proposals to add the official codes are not yet available, but will be before the publication of the guide.  Once they are available, the guide will be updated to have <b>two</b> bindings for the relevant data elements, requiring both the old and new codes to be present.  This will provide a transition path for those using older versions of the specification.  Support for the temporary codes will be phased out in a future release.  The specific value sets impacted are: <a href="ValueSet-coverageAssertionReasons.html">Coverage Assertion Reasons</a> and <a href="ValueSet-coverageDetail.html">CRD Coverage Detail Codes</a> (used in the <a href="StructureDefinition-ext-coverage-information.html">Coverage Information extension</a> <a href="ValueSet-cardType.html">CRD Card Types</a> (used in the <a href="deviations.html#new-hook-configuration-mechanism">CRD configuration</a> mechanism), and <a href="ValueSet-cmslocationcodes.html">CMS Location Codes</a> (used in the <a href="StructureDefinition-profile-location.html">CRD Location profile</a>), 
+    <ul>
+      <li><a href="https://jira.hl7.org/browse/FHIR-50814">FHIR-50814</a> - as part of improving the validation process to catch the identified issues (and others), there is work to define a set of computable representations for the CRD-specific CDS Hooks request and response models.  Tooling issues are current preventing this set of representations from being complete (and thus actually performing validation).  If these tooling issues are addressed prior to publication, then computable representations of CRD-specific constraints will be included in the IG.
+      </li>
+    </ul>
+  </li>
+</ul>
+
 <b>IMPORTANT:</b> The scope of this ballot is limited to the above changes and to feedback about the issues linked to above.  While feedback can always be submitted against any content in the specification at any time, votes submitted against content that is outside the official scope of the ballot may be deemed 'not related' and therefore not able to support negative votes.
 
 </blockquote>

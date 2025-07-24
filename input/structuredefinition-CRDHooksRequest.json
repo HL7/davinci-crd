@@ -5,7 +5,7 @@
     "url" : "http://hl7.org/fhir/tools/StructureDefinition/json-suppress-resourcetype",
     "valueBoolean" : true
   }],
-  "url" : "http://hl7.org/fhir/tools/StructureDefinition/CRDHooksRequest",
+  "url" : "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksRequest",
   "name" : "CRDHooksRequest",
   "title" : "CDSHooks Request (Logical Definition)",
   "status" : "draft",
