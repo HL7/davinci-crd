@@ -11,7 +11,7 @@
   "url" : "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CDSHookEncounterStartContext",
   "version" : "0.0.1",
   "name" : "CDSHookEncounterStartContext",
-  "title" : "CDS Hook Specific Context for encounter-start (Logical Definition)",
+  "title" : "CDS Hooks Specific Context for encounter-start (Logical Definition)",
   "status" : "draft",
   "experimental" : true,
   "description" : "This structure is defined to allow the FHIR Validator to validate a CDSHooks encounter-start context. TODO: This content will be moved to the CDS Hooks specification in the future",

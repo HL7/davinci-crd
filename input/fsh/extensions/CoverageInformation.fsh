@@ -50,7 +50,7 @@ Description: "Captures assertions from a payer about the coverage rules for a se
   * value[x] only Reference(CRDCoverage)
 * extension[covered] only Extension
   * ^short = "covered | not-covered | conditional"
-  * ^definition = "Indicates whether the ordered/requested service is covered under patient's plan.  This includes checking of whether the proposed service is a benefit under the patient's plan.  It **MAY** also involve checking whether the patient has reached their limits under the current plan period, but is not required to."
+  * ^definition = "Indicates whether the ordered/requested service is covered under patient's plan.  This includes checking whether the proposed service is a benefit under the patient's plan.  It **MAY** also involve checking whether the patient has reached their limits under the current plan period but is not required to."
   * ^comment = "Details on why coverage does not exist would be conveyed in the 'reason' element."
   * value[x] 1..1
   * value[x] only code
@@ -80,8 +80,8 @@ Description: "Captures assertions from a payer about the coverage rules for a se
   * value[x] from CRDDocReason (required)
 * extension[info-needed] only Extension
   * ^short = "performer | location | timeframe | contract-window | detail-code | OTH"
-  * ^definition = "Indicates whether information about the perfomer, location, and/or performance date is needed to determine coverage information"
-  * ^comment = "See additional guidance in the [notes](StructureDefinition-ext-coverage-information.html#doc-needed-vs-info-needed)\nIf this element is set to OTH, then there must be at least one detail element the explains the nature of the additional information needed to determine coverage, prior authorization, and/or documentation requirements.  There **SHOULD** also be a doc-needed element indicating that DTR can be used to gather the additional information."
+  * ^definition = "Indicates whether information about the performer, location, and/or performance date is needed to determine coverage information"
+  * ^comment = "See additional guidance in the [notes](StructureDefinition-ext-coverage-information.html#doc-needed-vs-info-needed)\nIf this element is set to OTH, then there must be at least one detail element the explains the nature of the additional information needed to determine coverage, prior authorization, and/or documentation requirements.  There **SHOULD** also be a doc-needed element indicating that DTR can be used to gather additional information."
   * ^condition[+] = crd-ci-q3
   * value[x] 1..1
   * value[x] only code
@@ -96,7 +96,7 @@ Description: "Captures assertions from a payer about the coverage rules for a se
 * extension[reason] only Extension
   * ^short = "Reason for assertion"
   * ^definition = "Indicates the 'reason' for the coverage assertion"
-  * ^comment = "This can be used whenever the reason may not be obvious to the practitioner.  E.g. prior authorization waived because the provider is gold-carded; patient is no longer a minor and hasn't been registered as an adult dependent; patient has reached their limit for this type of service this year; etc.  Additional standard reason codes may be introduced in the future.  If no standard code applies, use text."
+  * ^comment = "This can be used whenever the reason may not be obvious to the practitioner.  E.g. prior authorization is waived because the provider is gold-carded; patient is no longer a minor and hasn't been registered as an adult dependent; patient has reached their limit for this type of service this year; etc.  Additional standard reason codes may be introduced in the future.  If no standard code applies, use text."
   * ^condition[+] = crd-ci-q7
   * ^condition[+] = crd-ci-q8
   * value[x] 1..1
@@ -150,7 +150,7 @@ Description: "Captures assertions from a payer about the coverage rules for a se
   * value[x] only date
 * extension[coverage-assertion-id] only Extension
   * ^short = "Coverage assertion trace number"
-  * ^definition = "Trace identifier to allow tracking the guidance in source system.  This identifier can also be used used to re-establish cached context information when subsequently launching DTR."
+  * ^definition = "Trace identifier to allow tracking the guidance in source system.  This identifier can also be used to re-establish cached context information when subsequently launching DTR."
   * value[x] only string
 * extension[satisfied-pa-id] only Extension
   * ^short = "Satisfied prior auth number"

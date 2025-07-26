@@ -11,7 +11,7 @@
   "url" : "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CDSHookAppointmentBookContext",
   "version" : "0.0.1",
   "name" : "CDSHookAppointmentBookContext",
-  "title" : "CDS Hook Specific Context for appointment-book (Logical Definition)",
+  "title" : "CDS Hooks Specific Context for appointment-book (Logical Definition)",
   "status" : "draft",
   "experimental" : true,
   "description" : "This structure is defined to allow the FHIR Validator to validate a CDSHooks Appointment-Book context. TODO: This content will be moved to the CDS Hooks specification in the future",

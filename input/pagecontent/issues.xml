@@ -5,7 +5,7 @@
   <p>NOTE 2: If there is a resolution to one or more of these issues that involves making a change to the specification that is substantively different than any of the proposed dispositions, there will be an announced public review period of the specification with the proposed change applied to give the community an opportunity to evaluate and provide feedback on the new option prior to publication.</p>
 
 <a name="synch"> </a>
-<h3>Synchronous CDS Hook vs. Asynchronous Operation</h3>
+<h3>Synchronous CDS Hooks vs. Asynchronous Operation</h3>
 <p>There are three tickets that either explicitly propose replacing the current CRD real-time CDS Hook-based architecture with an asynchronous architecture or that indicate that the real-time requirement established by the guides are untenable:</p>
 <ul>
   <li><a href="https://jira.hl7.org/browse/FHIR-42697">FHIR-42697</a> - Requirements to only allow CDS Hooks</li>
@@ -31,12 +31,12 @@
   <li>CMS recommended CRD based on its current design and other states have mandated implementation of CRD based on its current design.  Several implementers have also rolled out production solutions based on the existing IG requirements.  Changing design would not remove existing regulatory requirements and would break interoperability with existing implementations.</li>
   <li>A significant refactoring of the implementation guide at this point could not be done without a great deal of group discussion as well as returning to ballot.  Even if it was appropriate to redesign the specification, it would not be possible to do so in a timeframe that would allow for implementation by the regulatory deadline.</li>
 </ol>
-<p>Based on the above points, there is no reasonable possibility of changing the architectural approach from a 'real-time CDS Hook response as part of clinical workflow' in this next ballot release.  Given the regulatory requirement and direction from CMS, it's difficult to envision even a longer-term architecture that would be asynchronous as once implementers have modified their systems to meet the real-time requirement, there'd be little incentive to switch to an asynchronous solution.</p>
+<p>Based on the above points, there is no reasonable possibility of changing the architectural approach from a 'real-time CDS Hooks response as part of clinical workflow' in this next ballot release.  Given the regulatory requirement and direction from CMS, it's difficult to envision even a longer-term architecture that would be asynchronous as once implementers have modified their systems to meet the real-time requirement, there'd be little incentive to switch to an asynchronous solution.</p>
 
 <a name="synch-options"> </a>
 <h4>Options</h4>
 <ol>
-  <li>Find these tickets 'not persuasive' - i.e. the requirement will remain real-time CDS hook responses to clinical users</li>
+  <li>Find these tickets 'not persuasive' - i.e. the requirement will remain real-time CDS Hooks responses to clinical users</li>
   <li>Mark some or all these tickets as 'considered for future use'</li>
 </ol>
 
@@ -63,7 +63,7 @@
   <li>The objective of the CRD interface is <b>NOT</b> to return real-time authorizations.  Doing so is permitted but is not required to be supported at all.  Even when supported, it will not necessarily be common.  The requirement of CRD is to document the coverage 'rules' for a particular product or service.  It should <b>always</b> be possible to return rules for a given item, irrespective of how much additional information is known.  Knowing more information simply allows filtering which rules are relevant meaning the expression of the rules will be simpler (e.g. 'covered' as opposed to four paragraphs describing the situations where the product is or is not covered).</li>
   <li>As discussed in the <a href="#synch-assess">previous issue</a>, there is no expectation that CRD responses will be provided without either modifying existing systems or building new ones.</li>
   <li>Also as discussed in the previous issue, responses must be provided at the time of ordering to clinicians and patients and therefore must function based on the information that is known at this time.</li>
-  <li>The CDS Hook workflow presumes that clinicians and other users are performing their workflow "as normal" without capturing additional data elements beyond what they've historically captured.  Clinicians have reiterated the importance of not imposing requirements to collect additional data.</li>
+  <li>The CDS Hooks workflow presumes that clinicians and other users are performing their workflow "as normal" without capturing additional data elements beyond what they've historically captured.  Clinicians have reiterated the importance of not imposing requirements to collect additional data.</li>
   <li>In some cases, EHRs <b>MAY</b> be able to infer data elements they will later include on a claim or prior authorization.  It is more realistic for this to occur in situations where the ordering system and performing system are the same.</li>
   <li>There is already support for conveying billing codes if they are known (either as translations, or if there are multiple conflicting codes, via extensions).</li>
 </ul>

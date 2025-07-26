@@ -7,9 +7,9 @@ This Implementation Guide (IG) is one of 4 HL7 Da Vinci IGs that are designed to
 
 Each guide supports a specific set of functions and exchanges required to determine payer coverage for specific services, items, and referrals.
 
-To maximize the value of these IGs, it is imperative that each IG is integrated into clinical workflow at the appropriate point and all of the exchanges required by each IG are fully supported by all of the participants (providers, intermediaries, and payers).
+To maximize the value of these IGs, it is imperative that each IG is integrated into clinical workflow at the appropriate point and all the exchanges required by each IG are fully supported by all the participants (providers, intermediaries, and payers).
 
-Each of these IGs recommends a set of metrics that **SHOULD** or **MAY** be collected by their respective implementations to facilitate the evaluation of adoption, functionality, processes, and improved outcomes. While there are current and proposed state requirements for prior authorization metric reporting, at the time of publication there is no requirement to report on the metrics defined here.  However, it is reasonable to believe that in the future interested entities (providers, payers, regulators, quality organizations, certification agencies, states, etc.) will ask for these metrics to evaluate the ongoing automation of the supported processes / exchanges. While this guide will not require these metrics to be captured in this release, the authors strongly suggest each implementation should do so with the expectation that collection and dissemination of these metrics may become a requirement (SHALL) in future version of these IGs.
+Each of these IGs recommends a set of metrics that **SHOULD** or **MAY** be collected by their respective implementations to facilitate the evaluation of adoption, functionality, processes, and improved outcomes. While there are current and proposed state requirements for prior authorization metric reporting, at the time of publication there is no requirement to report on the metrics defined here.  However, it is reasonable to believe that in the future interested entities (providers, payers, regulators, quality organizations, certification agencies, states, etc.) will ask for these metrics to evaluate the ongoing automation of the supported processes / exchanges. While this guide will not require these metrics to be captured in this release, the authors strongly recommend that each implementation do so with the expectation that collection and dissemination of these metrics may become a requirement (**SHALL**) in future version of these IGs.
 
 The table below defines a set of measures with a short name, purpose, conformance, stakeholder, and collection/calculation instructions that represent what the project group designing this IG felt would be both reasonably collectable and useful in evaluating implementations of this IG.  These measures are based on the [metric data model logical model](StructureDefinition-CRDMetricData.html) also published in this IG.
 
@@ -106,14 +106,14 @@ The table below defines a set of measures with a short name, purpose, conformanc
     </tr>
     <tr>
       <td>8</td>
-      <td>All of the above by payer for provider metrics and for provider for payer metrics</td>
+      <td>All the above by payer for provider metrics and for provider for payer metrics</td>
       <td>Segmentation</td>
       <td>Both</td>
       <td>Segmentation based on CRDMetricData.source and (CRDMetricData.payerID or CRDMetricData.groupID)</td>
     </tr>
     <tr>
       <td>9</td>
-      <td>All of the above by hook type</td>
+      <td>All the above by hook type</td>
       <td>Segmentation</td>
       <td>Both</td>
       <td>Segmentation based on CRDMetricData.hookType</td>

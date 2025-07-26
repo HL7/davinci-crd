@@ -1,6 +1,6 @@
 ValueSet: CRDBillingCodes
 Id: billingCodes
-Title: "CRD Billing Codes"
+Title: "CRD Billing Codes Value Set"
 Description: "Codes appropriate for inclusion in a claim or prior authorization"
 * ^status = #active
 * ^experimental = false

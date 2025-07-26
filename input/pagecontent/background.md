@@ -30,8 +30,8 @@ Implementers should also familiarize themselves with the FHIR resources used wit
   </thead>
   <tbody>
     <tr><td><a href="{{site.data.fhir.path}}appointment.html">Appointment</a></td><td>One of the resources that can trigger payer decision support</td></tr>
-    <tr><td><a href="{{site.data.fhir.path}}binary.html">Binary</a></td><td>Used to represent example instances of CDS Hook JSON structions</td></tr>
-    <tr><td><a href="{{site.data.fhir.path}}bundle.html">Bundle</a></td><td>Used when delivering collections of resources in a CDS Hook call, also used for queries</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}binary.html">Binary</a></td><td>Used to represent example instances of CDS Hooks JSON structures</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}bundle.html">Bundle</a></td><td>Used when delivering collections of resources in a CDS Hooks call, also used for queries</td></tr>
     <tr><td><a href="{{site.data.fhir.path}}capabilitystatement.html">CapabilityStatement</a></td><td>Used to define conformance expectations for this guide</td></tr>
     <tr><td><a href="{{site.data.fhir.path}}codesystem.html">CodeSystem</a></td><td>Used to define custom codes specific to this guide</td></tr>
     <tr><td><a href="{{site.data.fhir.path}}conceptmap.html">ConceptMap</a></td><td>Used to map location codes between terminologies</td></tr>
@@ -48,10 +48,10 @@ Implementers should also familiarize themselves with the FHIR resources used wit
     <tr><td><a href="{{site.data.fhir.path}}patient.html">Patient</a></td><td>Demographic information relevant to all requests</td></tr>
     <tr><td><a href="{{site.data.fhir.path}}practitioner.html">Practitioner</a></td><td>Used when identifying providers in Encounters, Tasks, and all requests</td></tr>
     <tr><td><a href="{{site.data.fhir.path}}practitionerrole.html">PractitionerRole</a></td><td>Used when identifying providers in Encounters, Tasks, and all requests</td></tr>
-    <tr><td><a href="{{site.data.fhir.path}}questionnaire.html">Questionnaire</a></td><td>Used to support capture of additional information when not using DTR</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}questionnaire.html">Questionnaire</a></td><td>Used to support the capture of additional information not covered by DTR</td></tr>
     <tr><td><a href="{{site.data.fhir.path}}servicerequest.html">ServiceRequest</a></td><td>One of the resources that can trigger payer decision support</td></tr>
-    <tr><td><a href="{{site.data.fhir.path}}structuredefinition.html">StructureDefinition</a></td><td>Used when profiling resource, defining extensions, and defining profiles and extensions on CDS Hook models</td></tr>
-    <tr><td><a href="{{site.data.fhir.path}}task.html">Task</a></td><td>Used to manage dispatching of orders to performing providers or locations</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}structuredefinition.html">StructureDefinition</a></td><td>Used when profiling resources, defining extensions, and defining profiles and extensions on CDS Hooks models</td></tr>
+    <tr><td><a href="{{site.data.fhir.path}}task.html">Task</a></td><td>Used to manage dispatching orders to performing providers or locations</td></tr>
     <tr><td><a href="{{site.data.fhir.path}}valueset.html">ValueSet</a></td><td>Used to define collections of codes used by CRD profiles</td></tr>
     <tr><td><a href="{{site.data.fhir.path}}visionprescription.html">VisionPrescription</a></td><td>One of the resources that can trigger payer decision support</td></tr>
   </tbody>
@@ -71,7 +71,7 @@ Such recommendations might be from decision support (such as ImmunizationRecomme
 Discussion of how a SMART on FHIR app can be used to trigger CDS Hooks from within an CRD client to perform such what-if scenarios can be found [here](foundation.html#smart-on-fhir-hook-invocation).
 
 ##### Apps for Decision Support
-Payers may recommend the launch of SMART apps that are relevant to the activity the user is performing. For example, an app might help guide order creation for specialized patient needs, help evaluate alternative therapies, determine whether complementary therapy is necessary/appropriate, etc. These might have clinical or administrative purposes. Recommendations for such apps would be returned by the [SMART app response ype](cards.html#launch-smart-application-response-type).
+Payers may recommend the launch of SMART apps that are relevant to the activity the user is performing. For example, an app might help guide order creation for specialized patient needs, help evaluate alternative therapies, determine whether complementary therapy is necessary/appropriate, etc. These might have clinical or administrative purposes. Recommendations for such apps would be returned by the [SMART app response type](cards.html#launch-smart-application-response-type).
 
 ### Architectural Approach
 The approach taken to meet the requirements of the CRD use-case was selected after evaluating the various interoperability choices provided by FHIR. Specifically, the project team evaluated the possible architectural approaches as described in the HRex specification's [Approaches to Exchanging FHIR Data]({{site.data.fhir.ver.hrex}}/exchanging.html) guide. The following bullets describe the path choices driven by use-case requirements:

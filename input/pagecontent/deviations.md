@@ -1,20 +1,20 @@
-CDS Hooks is a relatively new technology.  It is considered a "Standard for Trial Use" (STU), meaning that it will continue to evolve based on implementer feedback and could change in ways that are not compatible with the current draft.  As well, the initial version of the CDS Hooks specification has focused on the core architecture and a relatively simple set of capabilities.  Additional capabilities will be introduced in future versions.
+CDS Hooks is relatively new technology.  It is considered a "Standard for Trial Use" (STU), meaning that it will continue to evolve based on implementer feedback and could change in ways that are not compatible with the current draft.  Also, the initial version of the CDS Hooks specification focuses on the core architecture and a relatively simple set of capabilities.  Additional capabilities will be introduced in future versions.
 
 To meet requirements identified by Da Vinci project participants, it is necessary to introduce additional capabilities above and beyond what is currently found in the CDS Hooks specification.  This section of the CRD implementation guide describes those additional capabilities and the mechanism the implementation guide proposes to implement them.  The purpose of these customizations is to enable testing at connectathons and to support feedback into the CDS Hooks design process.
 
-Each capability listed here has been proposed to the CDS Hooks community and could become part of the official specification in a future release.  However, there is a significant likelihood that the way the requirements are met will vary from the syntax or even the architectural approach proposed in this guide.  Future versions of this implementation guide will be updated to align with how these requirements are addressed in future versions of the CDS Hook specification.  Until both the CDS Hooks content and the FHIR and US Core content underlying this specification are *Normative* (locked into backward compatibility mode), the CRD implementation guide will remain as STU.
+Each capability listed here has been proposed to the CDS Hooks community and could become part of the official specification in a future release.  However, there is a significant likelihood that the way the requirements are met will vary from the syntax or even the architectural approach proposed in this guide.  Future versions of this implementation guide will be updated to align with how these requirements are addressed in future versions of the CDS Hooks specification.  Until both the CDS Hooks content and the FHIR and US Core content underlying this specification are *Normative* (locked into backward compatibility mode), the CRD implementation guide will remain as STU.
 
 This implementation guide extends/customizes CDS Hooks in 5 ways: additional hook resources, a hook configuration mechanism, additional prefetch capabilities, additional response capabilities, and the ability to link hooks to their corresponding request.  Each are described below:
 
 ### Additional Hook scope
-In the [current build](https://cds-hooks.org/hooks/order-sign/), the order-sign hook can be used for both 'draft' orders that are newly created as well as for updated orders that are active.  The balloted version of the hooks this IG release is bound to are limited to draft orders.  This IG adopts the newer wording, meaning that the order-sign hook can be triggered both on newly created orders, as well as when orders are updated (changing status, changing time-frame, etc.).  The hook can also be re-triggered if there is a key change to the context, most typically the establishment of new or renewed coverage relevant to the order.
+In the [current build](https://cds-hooks.org/hooks/order-sign/), the order-sign hook can be used for both 'draft' orders that are newly created as well as for updated orders that are active.  The balloted version of the hooks this IG release is bound to are limited to draft orders.  This IG adopts the newer wording, meaning that the order-sign hook can be triggered both on newly created orders, as well as when orders are updated (changing status, changing timeframe, etc.).  The hook can also be re-triggered if there is a key change to the context, most typically the establishment of new or renewed coverage relevant to the order.
 
 ### New hook configuration mechanism
 The CRD Servers provided by payers will support discovery of different types of coverage requirements that will return different types of information to users on [CDS Cards]({{site.data.fhir.ver.cdshooks}}/index.html#cds-service-response), such as:
 
 *  Whether authorization is required
 *  Recommended alternative therapies
-*  Best practices associated with the planned therapy that are expected to be adhered to
+*  Best practices associated with the planned therapy which payers expect adherence to
 *  Forms and documentation for retention within the CRD client
 *  Forms and documentation that must be provided with a prior authorization request
 *  Forms and documentation that must be included with a claim submission
@@ -23,7 +23,7 @@ Not all the coverage information returned by a CRD Server will be relevant to al
 
 Managing preferences within a CRD Server would require processes to support communication and management of customization requests, as well as additional complexity within the CRD Server software.  Managing preferences within the CRD Client would require it to either request specific information by invoking multiple calls to different services or by invoking a single call to the service indicating the response types desired.
 
-The approach in this implementation guide is designed to allow the users or administrators of CRD Clients to manage and dynamically communicate desired response types to the CRD Server at the time a service is invoked.  At this time, it is not clear whether this capability will be of interest to vendors, users, or other types of CDS Services.  Therefore, rather than proposing a change to the base CDS Hook specification, this IG leverages the CDS Hook extension mechanism to provide an experimental approach to specify and control the types of information returned to users. Connectathon and implementation experience could support requesting that these changes, or some variant of them, be included in a future version of the CDS Hook specification.
+The approach in this implementation guide is designed to allow the users or administrators of CRD Clients to manage and dynamically communicate desired response types to the CRD Server at the time a service is invoked.  At this time, it is not clear whether this capability will be of interest to vendors, users, or other types of CDS Services.  Therefore, rather than proposing a change to the base CDS Hooks specification, this IG leverages the CDS Hooks extension mechanism to provide an experimental approach to specify and control the types of information returned to users. Connectathon and implementation experience could support requesting that these changes, or some variant of them, be included in a future version of the CDS Hooks specification.
 
 Extensions will be enabled in two places:
 
@@ -99,25 +99,25 @@ A [proposal](https://github.com/cds-hooks/docs/issues/377) has been submitted su
 <p class="modified-content">(See the <a href="foundation.html#additional-data-retrieval">foundation page</a> for language on conformance expectations.)</p>
 
 The limitations on the XPath expressions that can be used are as follows:
-* variables are limited to 'context' and the data elements reachable from it. (e.g. `_id={{context.draftOrders.entry.resource.ofType(ServiceRequest).location.id()}}`)
+* variables are limited to 'context' and the data elements reachable from it. (e.g. `_id={% raw %}{{context.draftOrders.entry.resource.ofType(ServiceRequest).location.id()}}{% endraw %}`)
 * functions are limited to today(), ofType(), resolve(), and a new function read() (discussed below)
-* addition or subtraction of 'days' (e.g. `lt{{today() - 7 days}}`)
+* addition or subtraction of 'days' (e.g. `lt{% raw %}{{today() - 7 days}}{% endraw %}`)
 
 Additional restrictions on prefetch in general are that only the following are expected to be supported:
 * instance level read interactions (for resources with known ids such as Patient, Practitioner, or Encounter)
-* type level search interactions; e.g. patient={{context.patientId}}
-* Resource references (e.g. patient={{context.patientId}})
+* type level search interactions; e.g. patient={% raw %}{{context.patientId}}{% endraw %}
+* Resource references (e.g. patient={% raw %}{{context.patientId}}){% endraw %}
 * token search parameters using equality (e.g. code=4548-4) and optionally the :in modifier (no other modifiers for token parameters)
 * date search parameters on date, dateTime, instant, or Period types only, and using only the prefixes eq, lt, gt, ge, le
 * the _count parameter to limit the number of results returned
 * the _sort parameter to allow for most recent and first queries
 
 Prefetches can depend on the results of prior prefeches.  In this case, the result of the prior prefetch can be expressed as a variable using the name specified in the prefetch.  For example, if one prefetch value was defined as:
-  `"encounter": "Encounter?_id={{%context.encounterId}}"`
+  `"encounter": "Encounter?_id={% raw %}{{%context.encounterId}}{% endraw %}"`
 then a subsequent prefetch could be defined as:
   `"practitioners" : "Practitioner?_id=%encounter.participant.individual.resolve().ofType(Practitioner).id"`
   
-NOTE: Dependencies on other prefetches should be minimized as it limits what queries can be perfomred in parallel.  Prefetches with dependencies **SHALL** be listed after the prefetches they depend on.
+NOTE: Dependencies on other prefetches should be minimized as it limits what queries can be performed in parallel.  Prefetches with dependencies **SHALL** be listed after the prefetches they depend on.
 
 Recognizing these tokens doesn't mean the client must support prefetch or the requested prefetch query, only that it recognizes the token, doesn't treat it as an error and - if it supports the query - substitutes the token correctly.
 
@@ -132,19 +132,17 @@ This might result in an executed query that looks like this: `Practitioner?_id=2
 
 
 ### Additional response capabilities
-CDS Hooks supports suggestions that involve multiple actions.  Coverage Requirements Discovery uses this in one situation where additional capabilities will be needed:
-
-*  Creating a Task to complete a Questionnaire
+CDS Hooks supports suggestions that involve multiple actions.  CRD uses this in one situation where additional capabilities will be needed: creating a Task to complete a Questionnaire.
 
 In this case, the creation of the Questionnaire needs to be conditional - it **SHOULD** only occur if that specific Questionnaire version doesn't already exist, and the payer service **SHALL** query to determine if the client has a copy of the Questionnaire before sending the request.  This capability is supported in FHIR's [transaction]({{site.data.fhir.path}}http.html#transaction)  
-functionality.  However, not all the capabilities/guidance included there has been incorporated into CDS Hooks 'suggestions', in part to keep the specification simpler.
+functionality.  However, not all the capabilities and guidance included there have been incorporated into CDS Hooks 'suggestions', in part to keep the specification simpler.
 
 For this release of the implementation guide, these requirements will be handled as follows:
 
 #### if-none-exist
 The `suggestion.action` object will use an extension to carry the if-none-exist query, as per FHIR's [conditional create]({{site.data.fhir.path}}http.html#ccreate) functionality.  The extension property will be `davinci-crd.if-none-exist`.  
 
-For example, this [CDS Hook Suggestion]({{site.data.fhir.ver.cdshooks}}/index.html#suggestion) contains two [Actions]({{site.data.fhir.ver.cdshooks}}/index.html#action) - one referencing an HL7 [Questionnaire]({{site.data.fhir.path}}questionnaire.html) and the other the [Task]({{site.data.fhir.path}}task.html) to complete the Questionnaire.  The Questionnaire will only be created if it didn't already exist:
+For example, this [CDS Hooks Suggestion]({{site.data.fhir.ver.cdshooks}}/index.html#suggestion) contains two [Actions]({{site.data.fhir.ver.cdshooks}}/index.html#action) - one referencing an HL7 [Questionnaire]({{site.data.fhir.path}}questionnaire.html) and the other the [Task]({{site.data.fhir.path}}task.html) to complete the Questionnaire.  The Questionnaire will only be created if it didn't already exist:
 
 {% fragment Binary/CRDServiceResponse2 JSON BASE:cards.where(source.topic.where(code='123').exists()).suggestions.actions.where(resource is Questionnaire) EXCEPT:url | version BASE:resource %}
 
@@ -152,7 +150,7 @@ For example, this [CDS Hook Suggestion]({{site.data.fhir.ver.cdshooks}}/index.ht
 #### Linkage between created resources
 The linkage between resources by `id` in different Actions within a single Suggestion doesn't require any extension to CDS Hooks, but it does require additional guidance.  For the purposes of this implementation guide, the inclusion of the `id` element in 'created' resources and references in created and updated resources within multi-action suggestions **SHALL** be handled as per FHIR's [transaction processing rules]({{site.data.fhir.path}}http.html#trules). I.e. Treating each requested action as being an entry in a FHIR transaction bundle where the base URL is the base URL of the CRD Client's server.  POST corresponds to an `action.type` of 'create' and PUT corresponds to an action.type of 'update'.  Specifically, this means that if a FHIR Reference points to the resource type and `id` of a resource of another 'create' Action in the same Suggestion, then the reference to that resource **SHALL** be updated by the server to point to the `id` assigned by the client when performing the 'create'.  CRD Clients **SHALL** perform 'creates' in an order that ensures that referenced resources are created prior to referencing resources.
 
-For example, the following [CDS Hook Suggestion]({{site.data.fhir.ver.cdshooks}}/index.html#suggestion) will cause the creation of a new [ServiceRequest]({{site.data.fhir.path}}servicerequest.html) that will be pointed to by a newly created ([DeviceRequest]({{site.data.fhir.path}}devicerequest.html) resource):
+For example, the following [CDS Hooks Suggestion]({{site.data.fhir.ver.cdshooks}}/index.html#suggestion) will cause the creation of a new [ServiceRequest]({{site.data.fhir.path}}servicerequest.html) that will be pointed to by a newly created ([DeviceRequest]({{site.data.fhir.path}}devicerequest.html) resource):
 
 {% fragment Binary/CRDServiceResponse JSON BASE:cards.where(source.topic.where(code='therapy-alternatives-opt').exists()).suggestions ELIDE:actions.where(type='delete') EXCEPT:id | basedOn BASE:actions.resource %}
 
@@ -174,6 +172,6 @@ If a hook service is invoked on a collection of resources, all cards returned th
 
 To avoid confusion for providers, where a patient has multiple active coverages that could be relevant to the current order/appointment/etc., CRD clients **SHALL** select from those coverages which is most likely to be primary and only solicit coverage information for that one payer.  If they invoke CRD on other payers, CRD clients **SHALL** ensure that card types that return coverage information are disabled for those 'likely secondary' payers. In situations where a CRD client determines that there are different primary coverages for different items in the same order action, they MAY choose to send separate CRD calls (each with its own access token) for the collection of services pertinent to that Coverage.  Alternatively, the client can submit all requests in a single call with the Coverage that is most broadly applicable.
 
-NOTE: There is no expectation that CRD clients will only make calls to payer services that are 'known' to provide coverage for the proposed service.  In some cases, the EHR will not know at time of order entry which payer(s) will have claims submitted to them.  Also, a payer with active coverage might have information relevant to the order even if a claim will never be submitted to them (e.g. contraindications) or require a formal declaration of non-coverage, even though that declaration is a given.
+NOTE: There is no expectation that CRD clients will only make calls to payer services that are 'known' to provide coverage for the proposed service.  In some cases, the EHR will not know at the time of order entry which payer(s) will have claims submitted to them.  Also, a payer with active coverage might have information relevant to the order even if a claim will never be submitted to them (e.g. contraindications) or require a formal declaration of non-coverage, even though that declaration is a given.
 
 Where the patient has multiple active coverages that the CRD client deems appropriate to call the respective CRD servers for, the CRD client **SHALL** invoke all CRD server calls in parallel and display results simultaneously to ensure timely response to user action.

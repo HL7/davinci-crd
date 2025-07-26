@@ -51,7 +51,7 @@ Description: "List of reasons for additional documentation"
 ValueSet: CRDInformationNeeded
 Id: informationNeeded
 Title: "CRD Information Needed Value Set"
-Description: "Codes defining whether information about the perfomer, location, and/or performance date is needed to determine coverage information"
+Description: "Codes defining whether information about the performer, location, and/or performance date is needed to determine coverage information"
 * ^status = #active
 * ^experimental = false
 * ^extension[$fmm].valueInteger = 1
@@ -64,7 +64,7 @@ Description: "Codes defining whether information about the perfomer, location, a
 
 ValueSet: CRDCoverageAssertionReasons
 Id: coverageAssertionReasons
-Title: "CRD Coverage Assertion Reasons"
+Title: "CRD Coverage Assertion Reasons Value Set"
 Description: "Reasons for a coverage assertion in the coverage-information extension"
 * ^status = #active
 * ^experimental = false
@@ -76,7 +76,7 @@ Description: "Reasons for a coverage assertion in the coverage-information exten
 
 ValueSet: CRDCoverageDetailCategories
 Id: coverageDetailCategories
-Title: "CRD Coverage Detail Categories"
+Title: "CRD Coverage Detail Categories Value Set"
 Description: "Codes that define the type of coverage information detail being provided"
 * ^status = #active
 * ^experimental = false

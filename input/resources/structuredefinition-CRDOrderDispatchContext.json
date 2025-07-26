@@ -7,7 +7,7 @@
   }],
   "url" : "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDOrderDispatchContext",
   "name" : "CRDOrderDispatchContext",
-  "title" : "CRD CDS Hook Specific Context for order-dispatch (Logical Definition)",
+  "title" : "CRD CDS Hooks Specific Context for order-dispatch (Logical Definition)",
   "status" : "draft",
   "experimental" : true,
   "description" : "CRD-specific constraints on the order-dispatch CDS Hook context",

@@ -1,7 +1,7 @@
 Instance: example-of-DeviceRequest
 InstanceOf: CRDDeviceRequest
 Title: "DeviceRequest example"
-Description: "Example devicerequest populated based on CRD profile"
+Description: "Example DeviceRequest populated based on CRD profile"
 Usage: #example
 * id = "example"
 * basedOn = Reference(http://example.org/fhir/ServiceRequest/someReferral)

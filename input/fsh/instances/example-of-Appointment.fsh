@@ -1,7 +1,7 @@
 Instance: example-of-Appointment1
 InstanceOf: CRDAppointmentWithOrder
 Title: "Appointment ServiceRequest example"
-Description: "Example appointment tied to a SeriveRequest based on CRD profile"
+Description: "Example appointment tied to a ServiceRequest based on CRD profile"
 Usage: #example
 * id = "example1"
 * status = #proposed

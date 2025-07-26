@@ -7,7 +7,7 @@
   }],
   "url" : "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDAppointmentBookContext",
   "name" : "CRDAppointmentBookContext",
-  "title" : "CRD CDS Hook Specific Context for appointment-book (Logical Definition)",
+  "title" : "CRD CDS Hooks Specific Context for appointment-book (Logical Definition)",
   "status" : "draft",
   "experimental" : true,
   "description" : "CRD-specific constraints on the appointment-book CDS Hook context",

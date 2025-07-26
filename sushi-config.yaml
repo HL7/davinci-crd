@@ -74,7 +74,7 @@ dependencies:
     id: sdc
     version: 3.0.0
     reason: |
-      Defines expectations for Questionnaires prompted for by cards
+      Defines expectations for Questionnaires prompted by cards
   hl7.fhir.us.davinci-hrex:
     id: hrex
     version: 1.1.0
@@ -139,7 +139,7 @@ pages:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
         valueCode: trial-use
   deviations.md:
-    title: CDS Hook Deviations and Enhancements
+    title: CDS Hooks Deviations and Enhancements
     extension:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
         valueCode: trial-use
@@ -149,7 +149,7 @@ pages:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
         valueCode: trial-use
   cards.md:
-    title: CDS Hook Response Profiles
+    title: CDS Hooks Response Profiles
     extension:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
         valueCode: trial-use
@@ -222,7 +222,7 @@ resources:
   Binary/CRDServiceResponse:
     groupingId: "-ex-example-hooks"
     name: "Example CRD Response with: Links, Information, Coverage Information, and Order Replacement example"
-    description: "An example of a CRD response all 'mustSupport' response types, plus 'change order' response type"
+    description: "An example of a CRD response of all 'mustSupport' response types, plus 'change order' response type"
     extension:
       - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format
         valueCode: application/json
@@ -248,7 +248,7 @@ resources:
         valueCanonical: http://hl7.org/fhir/tools/StructureDefinition/CDSHooksResponse
   Bundle/search-request:
     name: "Example EHR search"
-    description: "Sample of an CRD service searching an EHR that does not support prefetch"
+    description: "Sample of a CRD service searching an EHR that does not support prefetch"
   Bundle/search-response:
     name: "Example EHR response"
     description: "The response to a CRD service query for information not returned in prefetch"

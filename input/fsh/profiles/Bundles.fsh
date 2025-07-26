@@ -2,7 +2,7 @@ Profile: CRDBaseBundle
 Parent: Bundle
 Id: profile-bundle-base
 Title: "CRD Base Bundle"
-Description: "This profile defines the common requirements for all CRD Bundles used as input to CDS Hook calls."
+Description: "This profile defines the common requirements for all CRD Bundles used as input to CDS Hooks calls."
 * ^experimental = false
 * ^abstract = true
 * type = #collection

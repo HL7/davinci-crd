@@ -1,6 +1,6 @@
 ValueSet: CMSMappableLocationCodes
 Id: CMSMappableLocationCodes
-Title: "CMS Mappable Location Codes"
+Title: "CMS Mappable Location Codes Value Set"
 Description: "Extends the base HL7-defined value set codes with supplementary codes needed to provide full coverage to the CMS location code set"
 * ^status = #active
 * ^experimental = false
