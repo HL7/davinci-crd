@@ -3,7 +3,7 @@
   "version" : "2.2.0-ballot",
   "milestone" : true,
 	"path": "http://hl7.org/fhir/us/davinci-crd/2025Sep",
-  "status" : "trial-use",
+  "status" : "ballot",
   "mode" : "working",
   "sequence" : "STU 2.2",
   "desc" : "STU 2.2.0 Ballot Release",
