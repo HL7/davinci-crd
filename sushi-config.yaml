@@ -221,6 +221,15 @@ resources:
         valueCode: application/json
       - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-logical
         valueCanonical: http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksRequest
+  Binary/CRDServiceRequest4:
+    groupingId: "-ex-example-hooks"
+    name: "Example CRD Service Request with appointment-book"
+    description: "An example of a CRD request for appointment-book"
+    extension:
+      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format
+        valueCode: application/json
+      - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-logical
+        valueCanonical: http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksRequest
   Binary/CRDServiceResponse:
     groupingId: "-ex-example-hooks"
     name: "Example CRD Response with: Links, Information, Coverage Information, and Order Replacement example"

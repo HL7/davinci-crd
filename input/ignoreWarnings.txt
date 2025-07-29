@@ -1,6 +1,6 @@
 == Suppressed Messages ==
 
-# 0a. These profiles *are* referenced.  Tooling is incorrectly reporting this warning.  Raised on Zulip - lloyd add link
+# 0a. These profiles *are* referenced.  Tooling is incorrectly reporting this warning.  https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/Logical.20model.20profile.20usage.20isn't.20fully.20checked/with/531678625
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CDSHookServiceResponseExtensionAssociatedResource'): The Implementation Guide contains no examples for this data type profile
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-billing-options'): The Implementation Guide contains no examples for this extension
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-bundle-appointment'): The Implementation Guide contains no examples for this profile
@@ -15,7 +15,7 @@ ERROR: CommunicationRequest/example: CommunicationRequest.payload[0].extension[0
 INFORMATION: CommunicationRequest/example: CommunicationRequest.payload[0]: CommunicationRequest.payload.extension:codeableConcept: Found 0 matches, but unable to check minimum required (CommunicationRequest.payload.extension) due to lack of slicing validation (from http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-communicationrequest|2.2.0-ballot)
 ERROR: CommunicationRequest/example: CommunicationRequest.payload[0].extension[0].url: Value is 'http://hl7.org/fhir/5.0/StructureDefinition/extension-CommunicationRequest.payload.content%5Bx%5D' but is fixed to 'http://hl7.org/fhir/5.0/StructureDefinition/extension-CommunicationRequest.payload.content[x]' in the profile http://hl7.org/fhir/5.0/StructureDefinition/extension-CommunicationRequest.payload.content[x]|4.0.1#Extension.url
 
-# 0d. These CDS Hooke extensions *do* define contexts of use.  This is a tooling issue
+# 0d. These CDS Hook extensions *do* define contexts of use.  This is a tooling issue.  https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/CDS.20Hook.20extension.20.22does.20not.20define.20any.20context.20of.20use.22/with/531679288
 The extension definition http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CDSHookServiceRequestExtensionRequestConfig|2.2.0-ballot does not define any contexts of use, so the context cannot be validated
 The extension definition http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CDSHookServiceResponseExtensionAssociatedResource|2.2.0-ballot does not define any contexts of use, so the context cannot be validated
 The extension definition http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CDSHookServiceResponseExtensionIfNoneExist|2.2.0-ballot does not define any contexts of use, so the context cannot be validated
@@ -25,7 +25,7 @@ The extension definition http://hl7.org/fhir/us/davinci-crd/StructureDefinition/
 ERROR: ImplementationGuide/davinci-crd: This IG is version 4.0.1, while the IG 'hl7.fhir.uv.tools' is from version 5.0.0
 ERROR: ImplementationGuide/hl7.fhir.us.davinci-crd: ImplementationGuide.dependsOn[8]: The ImplementationGuide is based on FHIR version 4.0.1 but package hl7.fhir.uv.tools#current is based on FHIR version 5.0.0. Use the package hl7.fhir.uv.tools.r4 instead
 
-# 0f - There's a tooling error with how hyperlinks to logical model content are resolved when rendered as fragments
+# 0f - There's a tooling error with how hyperlinks to logical model content are resolved when rendered as fragments - https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/Hyperlinks.20in.20HTML.20examples.20for.20logical.20instances/with/531681896
 The link 'StructureDefinition-CDSHookServiceResponseExtensionAssociatedResource.html#Reference.reference' for "reference" cannot be resolved (valid targets: 110 targets)
 The link 'StructureDefinition-CRDHooksResponse.html#CDSHooksResponse.cards.detail' for "detail" cannot be resolved (valid targets: 1498 targets)
 The link 'StructureDefinition-CRDHooksResponse.html#CDSHooksResponse.cards.extension' for "extension" cannot be resolved (valid targets: 1498 targets)
@@ -58,7 +58,7 @@ ERROR: StructureDefinition/profile-medicationrequest: StructureDefinition: This 
 ERROR: StructureDefinition.differential.element[12]: No match found for CDSHooksResponse.cards.suggestions.uuid in the generated snapshot: check that the path and definitions are legal in the differential (including order)
 ERROR: http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponseBase: The profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponseBase has 1 element in the differential (id: CDSHooksResponse.cards.suggestions.uuid) that don't have a matching element in the snapshot: check that the path and definitions are legal in the differential (including order)
 
-# 0i. The profile references all have an extension pointing to a sub-element, but the validation is occurring against the root profile element, not the referenced sub-element
+# 0i. The profile references all have an extension pointing to a sub-element, but the validation is occurring against the root profile element, not the referenced sub-element.  https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/Profiles.20referencing.20sub-elements.20not.20working.20for.20LMs/with/531685344
 INFORMATION: Binary/CRDServiceResponse: CDSHooksResponse.cards[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse|2.2.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: Binary/CRDServiceResponse: CDSHooksResponse.cards[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse|2.2.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: Binary/CRDServiceResponse: CDSHooksResponse.cards[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse|2.2.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)

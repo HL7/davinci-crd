@@ -23,6 +23,6 @@ Description: "Codes used within 'code' elements in the CRD Metric logical model.
   * #appointment-book    "Appointment Book"     "CDS Hooks Appointment Book Hook"
   * #encounter-start     "Encounter Start"      "CDS Hooks Encounter Start Hook"
   * #encounter-discharge "Encounter Discharge"  "CDS Hooks Encounter Discharge Hook"
-  * #order-dispatch"     "Order Dispatch"       "CDS Hooks Order Dispatch Hook"
+  * #order-dispatch      "Order Dispatch"       "CDS Hooks Order Dispatch Hook"
   * #order-select        "Order Select"         "CDS Hooks Order Select Hook"
   * #order-sign          "Order Sign"           "CDS Hooks Order Sign Hook"

@@ -254,6 +254,9 @@
                 "for": {
                   "reference": "http://example.org/fhir/Patient/123"
                 },
+                "requester": {
+                  "reference": "http://example.org/fhir/Practitioner/987"
+                },
                 "authoredOn": "2018-08-09",
                 "input": [
                   {
@@ -313,6 +316,12 @@
                 "subscriberId": "192837",
                 "beneficiary": {
                   "reference": "http://example.org/fhir/Patient/123" 
+                },
+                "relationship": {
+                  "coding": [{
+                    "system": "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
+                    "code": "self"
+                  }]
                 },
                 "period": {
                   "start": "2023-01-01",
