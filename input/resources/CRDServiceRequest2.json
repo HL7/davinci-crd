@@ -1,19 +1,20 @@
 {
   "hookInstance": "1372e258-5ae2-4dd3-b716-dd0b1e7a8728",
   "fhirServer": "http://example.org/some-payer/fhir/crd",
-  "hook": "order-sign",
+  "hook": "order-dispatch",
   "fhirAuthorization": {
     "access_token": "some-opaque-fhir-access-token",
     "token_type": "Bearer",
     "expires_in": 300,
     "scope": "user/Patient.read user/Observation.read",
-    "subject": "cds-service4"
+    "subject": "cds-service4",
+    "patient": "123"
   },
   "context": {
     "userId": "Practitioner/ABC",
     "patientId": "123",
     "encounterId": "987",
-    "draftOrders": {
+    "dispatchedOrders": {
       "resourceType": "Bundle",
       "type": "collection",
       "entry": [
@@ -26,7 +27,7 @@
               "status": "generated",
               "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Diclofenac potassium 50 MG Oral Tablet prescription for Amy V. Baxter by Dr. Jones, Feb 15, 2019<br/>1 50mg tablet, 3 times per day<br/>Dispense 90 tablets, 5 refills</div>"
             },
-            "status": "draft",
+            "status": "active",
             "intent": "order",
             "medicationReference": {
               "reference": "http://example.org/someEHR/fhir/Patient/MED1"
@@ -87,7 +88,7 @@
               "status": "generated",
               "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Abuse-Deterrent 12 HR oxycodone hydrochloride 10 MG Extended Release Oral Tablet [Oxycontin] prescription for Amy V. Baxter by Dr. Jones, Feb 15, 2019<br/>1 10mg tablet, every 12 hours<br/>Dispense 28 tablets, 0 refills</div>"
             },
-            "status": "draft",
+            "status": "active",
             "intent": "order",
             "medicationReference": {
               "reference": "http://example.org/someEHR/fhir/Patient/MED2"
@@ -136,6 +137,39 @@
                 "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
                 "code": "TAB"
               }
+            }
+          }
+        }
+      ]
+    },
+    "fulfillmentTasks": {
+      "resourceType": "Bundle",
+      "type": "collection",
+      "entry": [
+        {
+          "fullUrl": "http://example.org/someEHR/fhir/Task/A",
+          "resource": {
+            "resourceType": "Task",
+            "id": "A",
+            "status": "requested",
+            "intent": "order",
+            "code": {
+              "coding": [{
+                "system": "htp://hl7.org/fhir/CodeSystem/task-code",
+                "code": "fulfill"
+              }]
+            },
+            "focus": {
+              "reference": "MedicationRequest/1111"
+            },
+            "for": {
+              "reference": "http://example.org/someEHR/fhir/Patient/123"
+            },
+            "owner": {
+              "reference": "http://example.org/someEHR/fhir/Practitioner/987"
+            },
+            "restriction": {
+              "repetitions": 1
             }
           }
         }

@@ -1,6 +1,15 @@
 {
   "hookInstance": "fa1c9c0a-a56d-11ec-a3bb-460231621f93",
+  "fhirServer": "http://example.org/some-payer/fhir/crd",
   "hook": "order-sign",
+  "fhirAuthorization": {
+    "access_token": "some-opaque-fhir-access-token",
+    "token_type": "Bearer",
+    "expires_in": 300,
+    "scope": "user/Patient.read user/Observation.read",
+    "subject": "cds-service4",
+    "patient": "123"
+  },
   "context": {
     "userId": "Practitioner/ABC",
     "patientId": "123",

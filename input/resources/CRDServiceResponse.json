@@ -1,6 +1,7 @@
 {
   "cards": [
     {
+      "uuid": "fbc9e223-4ba8-4bb9-a31c-4720c14f00d2",
       "summary": "Patient is overdue for a PAP smear",
       "indicator": "info",
       "detail": "Last date on record for a PAP test for this patient was May, 2014.  Tests should ideally be performed every 1-3 years",

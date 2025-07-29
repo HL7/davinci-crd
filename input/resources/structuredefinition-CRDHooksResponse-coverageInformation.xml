@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+	<id value="CRDHooksResponse-coverageInformation"/>
+	<extension url="http://hl7.org/fhir/tools/StructureDefinition/json-suppress-resourcetype">
+    <valueBoolean value="true"/>
+	</extension>
+	<url value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse-coverageInformation"/>
+	<name value="CRDHooksResponseCoverageInformation"/>
+	<title value="CRD CDSHooks Coverage Information Response (Logical Definition)"/>
+	<status value="active"/>
+	<description value="Defines CRD-specific constraints for the Coverage Information response type"/>
+	<fhirVersion value="4.0.1"/>
+	<kind value="logical"/>
+	<abstract value="true"/>
+	<type value="http://hl7.org/fhir/tools/StructureDefinition/CDSHooksResponse"/>
+	<baseDefinition value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponseBase"/>
+	<derivation value="constraint"/>
+	<differential>
+		<element id="CDSHooksResponse.systemActions">
+			<path value="CDSHooksResponse.systemActions"/>
+			<min value="1"/>
+			<mustSupport value="true"/>
+    </element>
+		<element id="CDSHooksResponse.systemActions.type">
+			<path value="CDSHooksResponse.systemActions.type"/>
+			<patternCode value="update"/>
+		</element>
+		<element id="CDSHooksResponse.systemActions.resource">
+			<path value="CDSHooksResponse.systemActions.resource"/>
+			<type>
+        <code value="Resource"/>
+        <profile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-appointment-no-order"/>
+        <profile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-communicationrequest"/>
+        <profile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-devicerequest"/>
+        <profile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-encounter"/>
+        <profile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-medicationrequest"/>
+        <profile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-nutritionorder"/>
+        <profile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-servicerequest"/>
+        <profile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-visionprescription"/>
+      </type>
+      <constraint>
+        <key value="crd-respci1"/>
+        <severity value="error"/>
+        <human value="Updated resource must have at least one coverage-information extension"/>
+        <expression value="extension('http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-coverage-information').exists()"/>
+      </constraint>
+			<mustSupport value="true"/>
+		</element>
+		<element id="CDSHooksResponse.systemActions.resourceId">
+			<path value="CDSHooksResponse.systemActions.resourceId"/>
+			<max value="0"/>
+		</element>
+	</differential>
+</StructureDefinition>

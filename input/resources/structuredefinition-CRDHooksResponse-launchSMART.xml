@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+	<id value="CRDHooksResponse-launchSMART"/>
+	<extension url="http://hl7.org/fhir/tools/StructureDefinition/json-suppress-resourcetype">
+    <valueBoolean value="true"/>
+	</extension>
+	<url value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse-launchSMART"/>
+	<name value="CRDHooksResponseLaunchSMART"/>
+	<title value="CRD CDSHooks SMART App Response (Logical Definition)"/>
+	<status value="active"/>
+	<description value="Defines CRD-specific constraints for the SMART App Launch response type"/>
+	<fhirVersion value="4.0.1"/>
+	<kind value="logical"/>
+	<abstract value="true"/>
+	<type value="http://hl7.org/fhir/tools/StructureDefinition/CDSHooksResponse"/>
+	<baseDefinition value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponseBase"/>
+	<derivation value="constraint"/>
+	<differential>
+		<element id="CDSHooksResponse.cards">
+			<path value="CDSHooksResponse.cards"/>
+			<min value="1"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="CDSHooksResponse.cards.suggestions">
+			<path value="CDSHooksResponse.cards.suggestions"/>
+			<min value="1"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="CDSHooksResponse.cards.suggestions.label">
+			<path value="CDSHooksResponse.cards.suggestions.label"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="CDSHooksResponse.cards.suggestions.actions">
+			<path value="CDSHooksResponse.cards.suggestions.actions"/>
+			<max value="0"/>
+		</element>
+		<element id="CDSHooksResponse.cards.links">
+			<path value="CDSHooksResponse.cards.links"/>
+			<min value="1"/>
+		</element>
+		<element id="CDSHooksResponse.cards.links.type">
+			<path value="CDSHooksResponse.cards.links.type"/>
+			<patternCode value="smart"/>
+		</element>
+		<element id="CDSHooksResponse.cards.links.appContext">
+			<path value="CDSHooksResponse.cards.links.appContext"/>
+			<mustSupport value="true"/>
+		</element>
+	</differential>
+</StructureDefinition>

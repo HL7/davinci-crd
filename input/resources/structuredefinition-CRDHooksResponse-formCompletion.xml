@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+	<id value="CRDHooksResponse-formCompletion"/>
+	<extension url="http://hl7.org/fhir/tools/StructureDefinition/json-suppress-resourcetype">
+    <valueBoolean value="true"/>
+	</extension>
+	<url value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse-formCompletion"/>
+	<name value="CRDHooksResponseFormCompletion"/>
+	<title value="CRD CDSHooks Form Completion Response (Logical Definition)"/>
+	<status value="active"/>
+	<description value="Defines CRD-specific constraints for the Form Completion response type"/>
+	<fhirVersion value="4.0.1"/>
+	<kind value="logical"/>
+	<abstract value="true"/>
+	<type value="http://hl7.org/fhir/tools/StructureDefinition/CDSHooksResponse"/>
+	<baseDefinition value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponseBase"/>
+	<derivation value="constraint"/>
+	<differential>
+		<element id="CDSHooksResponse.cards">
+			<path value="CDSHooksResponse.cards"/>
+			<min value="1"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="CDSHooksResponse.cards.suggestions">
+			<path value="CDSHooksResponse.cards.suggestions"/>
+			<min value="1"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="CDSHooksResponse.cards.suggestions.actions">
+			<path value="CDSHooksResponse.cards.suggestions.actions"/>
+			<min value="1"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="CDSHooksResponse.cards.suggestions.actions.type">
+			<path value="CDSHooksResponse.cards.suggestions.actions.type"/>
+			<patternCode value="create"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="CDSHooksResponse.cards.suggestions.actions.resource">
+			<path value="CDSHooksResponse.cards.suggestions.actions.resource"/>
+			<type>
+        <code value="Resource"/>
+        <profile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-taskquestionnaire"/>
+      </type>
+      <mustSupport value="true"/>
+		</element>
+		<element id="CDSHooksResponse.cards.suggestions.actions.resourceId">
+			<path value="CDSHooksResponse.cards.suggestions.actions.resourceId"/>
+			<max value="0"/>
+		</element>
+		<element id="CDSHooksResponse.cards.links">
+			<path value="CDSHooksResponse.cards.links"/>
+			<max value="0"/>
+		</element>
+	</differential>
+</StructureDefinition>

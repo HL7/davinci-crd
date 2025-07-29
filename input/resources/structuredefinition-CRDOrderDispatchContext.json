@@ -12,10 +12,10 @@
   "experimental" : true,
   "description" : "CRD-specific constraints on the order-dispatch CDS Hook context",
   "kind" : "logical",
-  "baseDefinition" : "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CDSHookOrderDispatchContext",
+  "baseDefinition" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHookOrderDispatchContext",
   "derivation" : "constraint",
   "abstract"  : false,
-  "type" : "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CDSHookOrderDispatchContext",
+  "type" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHookOrderDispatchContext",
   "differential" : {
     "element" : [
       {

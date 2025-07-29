@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+	<id value="CRDHooksRequest"/>
+	<extension url="http://hl7.org/fhir/tools/StructureDefinition/json-suppress-resourcetype">
+    <valueBoolean value="true"/>
+	</extension>
+	<url value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksRequest"/>
+	<name value="CRDHooksRequest"/>
+	<title value="CRD CDSHooks Request (Logical Definition)"/>
+	<status value="active"/>
+	<description value="Defines CRD-specific constraints on the CDS Hooks Request logical model"/>
+	<fhirVersion value="4.0.1"/>
+	<kind value="logical"/>
+	<abstract value="false"/>
+	<type value="http://hl7.org/fhir/tools/StructureDefinition/CDSHooksRequest"/>
+	<baseDefinition value="http://hl7.org/fhir/tools/StructureDefinition/CDSHooksRequest"/>
+	<derivation value="constraint"/>
+	<differential>
+		<element id="CDSHooksRequest">
+			<path value="CDSHooksRequest"/>
+			<short value="Request for decision support"/>
+		</element>
+		<element id="CDSHooksRequest.extension">
+      <path value="CDSHooksRequest.extension"/>
+    </element>
+<!--		<element id="CDSHooksRequest.extension.CDSHookServiceRequestExtensionRequestConfig">
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/json-name">
+        <valueString value="davinci-crd.configuration"/>
+      </extension>
+      <path value="CDSHooksRequest.extension.CDSHookServiceRequestExtensionRequestConfig"/>
+      <min value="1"/>
+      <type>
+        <code value="CDSHookServiceRequestExtensionRequestConfig"/>
+      </type>
+    </element>-->
+		<element id="CDSHooksRequest.hook">
+			<path value="CDSHooksRequest.hook"/>
+			<short value="Hook event triggering call"/>
+			<type>
+        <code value="code"/>
+      </type>
+			<mustSupport value="true"/>
+      <binding>
+        <strength value="required"/>
+        <valueSet value="http://hl7.org/fhir/us/davinci-crd/ValueSet/cdsHookType"/>
+      </binding>
+		</element>
+		<element id="CDSHooksRequest.hookInstance">
+      <path value="CDSHooksRequest.hookInstance"/>
+			<short value="Unique id for hook invocation"/>
+			<mustSupport value="true"/>
+    </element>
+		<element id="CDSHooksRequest.fhirServer">
+      <path value="CDSHooksRequest.fhirServer"/>
+			<short value="Location to query for data"/>
+      <min value="1"/>
+			<mustSupport value="true"/>
+    </element>
+		<element id="CDSHooksRequest.fhirAuthorization">
+      <path value="CDSHooksRequest.fhirAuthorization"/>
+			<short value="Auth to use in queries"/>
+      <min value="1"/>
+			<mustSupport value="true"/>
+    </element>
+		<element id="CDSHooksRequest.fhirAuthorization.accessToken">
+      <path value="CDSHooksRequest.fhirAuthorization.accessToken"/>
+			<short value="Auth token for query header"/>
+			<mustSupport value="true"/>
+    </element>
+		<element id="CDSHooksRequest.fhirAuthorization.tokenType">
+      <path value="CDSHooksRequest.fhirAuthorization.tokenType"/>
+			<mustSupport value="true"/>
+    </element>
+		<element id="CDSHooksRequest.fhirAuthorization.expiresIn">
+      <path value="CDSHooksRequest.fhirAuthorization.expiresIn"/>
+			<short value="Seconds token is valid"/>
+			<mustSupport value="true"/>
+    </element>
+		<element id="CDSHooksRequest.fhirAuthorization.scope">
+      <path value="CDSHooksRequest.fhirAuthorization.scope"/>
+			<short value="Granted access scopes"/>
+			<mustSupport value="true"/>
+    </element>
+		<element id="CDSHooksRequest.fhirAuthorization.subject">
+      <path value="CDSHooksRequest.fhirAuthorization.subject"/>
+			<short value="Patient id for access"/>
+			<definition value="If the granted SMART scopes include patient scopes (i.e. 'patient/'), the access token is restricted to a specific patient. This field SHOULD be populated to identify the FHIR id of that patient."/>
+			<mustSupport value="true"/>
+    </element>
+		<element id="CDSHooksRequest.context">
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/type-specifier">
+        <extension url="condition">
+          <valueString value="%resource.hook = 'appointment-book'"/>
+        </extension>
+        <extension url="type">
+          <valueCode value="http://hl7.org/fhir/us/davnci-crd/StructureDefinition/CRDHookAppointmentBookContext"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/type-specifier">
+        <extension url="condition">
+          <valueString value="%resource.hook = 'encounter-start'"/>
+        </extension>
+        <extension url="type">
+          <valueCode value="http://hl7.org/fhir/tools/StructureDefinition/CDSEncounterStartContext"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/type-specifier">
+        <extension url="condition">
+          <valueString value="%resource.hook = 'encounter-discharge'"/>
+        </extension>
+        <extension url="type">
+          <valueCode value="http://hl7.org/fhir/tools/StructureDefinition/CDSEncounterDischargeContext"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/type-specifier">
+        <extension url="condition">
+          <valueString value="%resource.hook = 'order-dispatch'"/>
+        </extension>
+        <extension url="type">
+          <valueCode value="http://hl7.org/fhir/us/davnci-crd/StructureDefinition/CRDOrderDispatchContext"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/type-specifier">
+        <extension url="condition">
+          <valueString value="%resource.hook = 'order-select'"/>
+        </extension>
+        <extension url="type">
+          <valueCode value="http://hl7.org/fhir/us/davnci-crd/StructureDefinition/CRDHookOrderSignContext"/>
+        </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/type-specifier">
+        <extension url="condition">
+          <valueString value="%resource.hook = 'order-sign'"/>
+        </extension>
+        <extension url="type">
+          <valueCode value="http://hl7.org/fhir/us/davnci-crd/StructureDefinition/CRDHookOrderSignContext"/>
+        </extension>
+      </extension>
+      <path value="CDSHooksRequest.context"/>
+			<short value="Context for decision support"/>
+			<mustSupport value="true"/>
+    </element>
+		<element id="CDSHooksRequest.prefetch">
+      <path value="CDSHooksRequest.prefetch"/>
+			<short value="Prefetch info requested by server"/>
+			<comment value="While this is mustSupport, CRD clients are not required to pass any or all prefetch data requested by the CRD service."/>
+			<mustSupport value="true"/>
+    </element>
+		<element id="CDSHooksRequest.prefetch.key">
+      <path value="CDSHooksRequest.prefetch.key"/>
+			<short value="Key as specfied in server prefetch config"/>
+			<mustSupport value="true"/>
+    </element>
+		<element id="CDSHooksRequest.prefetch.value">
+      <path value="CDSHooksRequest.prefetch.value"/>
+			<short value="Resource(s) matching prefetch criteria"/>
+			<mustSupport value="true"/>
+    </element>
+	</differential>
+</StructureDefinition>

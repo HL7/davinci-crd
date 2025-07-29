@@ -22,7 +22,7 @@
   "derivation": "specialization",
   "context" : [{
     "type" : "element",
-    "expression" : "CDSHooksServices.services"
+    "expression" : "CDSHooksServices.services.extension"
   }],
   "differential": {
     "element": [

@@ -7,7 +7,8 @@
     "token_type": "Bearer",
     "expires_in": 300,
     "scope": "user/Patient.read user/Observation.read",
-    "subject": "cds-service4"
+    "subject": "cds-service4",
+    "patient": "123"
   },
   "context": {
     "userId": "Practitioner/ABC",

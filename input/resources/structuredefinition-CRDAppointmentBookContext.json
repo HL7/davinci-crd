@@ -12,10 +12,10 @@
   "experimental" : true,
   "description" : "CRD-specific constraints on the appointment-book CDS Hook context",
   "kind" : "logical",
-  "baseDefinition" : "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CDSHookAppointmentBookContext",
+  "baseDefinition" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHookAppointmentBookContext",
   "derivation" : "constraint",
   "abstract"  : false,
-  "type" : "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CDSHookAppointmentBookContext",
+  "type" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHookAppointmentBookContext",
   "differential" : {
     "element" : [
       {

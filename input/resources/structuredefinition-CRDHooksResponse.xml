@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+	<id value="CRDHooksResponse"/>
+	<extension url="http://hl7.org/fhir/tools/StructureDefinition/json-suppress-resourcetype">
+    <valueBoolean value="true"/>
+	</extension>
+	<url value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse"/>
+	<name value="CRDHooksResponse"/>
+	<title value="CRD CDSHooks Response (Logical Definition)"/>
+	<status value="active"/>
+	<description value="Defines CRD-specific constraints on the CDS Hooks Response body"/>
+	<fhirVersion value="4.0.1"/>
+	<kind value="logical"/>
+	<abstract value="false"/>
+	<type value="http://hl7.org/fhir/tools/StructureDefinition/CDSHooksResponse"/>
+	<baseDefinition value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponseBase"/>
+	<derivation value="constraint"/>
+	<differential>
+		<element id="CDSHooksResponse.cards">
+			<path value="CDSHooksResponse.cards"/>
+			<slicing>
+        <discriminator>
+          <type value="profile"/>
+          <path value="$this"/>
+        </discriminator>
+        <rules value="open"/>
+      </slicing>
+		</element>
+		<element id="CDSHooksResponse.cards:externalReference">
+      <path value="CDSHooksResponse.cards"/>
+      <sliceName value="externalReference"/>
+      <type>
+        <code value="http://hl7.org/fhir/tools/StructureDefinition/CDSHooksElement"/>
+        <profile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse-externalReference">
+          <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-profile-element">
+            <valueString value="CDSHooksResponse.cards"/>
+          </extension>
+        </profile>
+      </type>
+    </element>
+		<element id="CDSHooksResponse.cards:instructions">
+      <path value="CDSHooksResponse.cards"/>
+      <sliceName value="instructions"/>
+      <type>
+        <code value="http://hl7.org/fhir/tools/StructureDefinition/CDSHooksElement"/>
+        <profile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse-instructions">
+          <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-profile-element">
+            <valueString value="CDSHooksResponse.cards"/>
+          </extension>
+        </profile>
+      </type>
+    </element>
+		<element id="CDSHooksResponse.cards:alternateRequest">
+      <path value="CDSHooksResponse.cards"/>
+      <sliceName value="alternateRequest"/>
+      <type>
+        <code value="http://hl7.org/fhir/tools/StructureDefinition/CDSHooksElement"/>
+        <profile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse-alternateRequest">
+          <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-profile-element">
+            <valueString value="CDSHooksResponse.cards"/>
+          </extension>
+        </profile>
+      </type>
+    </element>
+		<element id="CDSHooksResponse.cards:additionalOrders">
+      <path value="CDSHooksResponse.cards"/>
+      <sliceName value="additionalOrders"/>
+      <type>
+        <code value="http://hl7.org/fhir/tools/StructureDefinition/CDSHooksElement"/>
+        <profile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse-additionalOrders">
+          <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-profile-element">
+            <valueString value="CDSHooksResponse.cards"/>
+          </extension>
+        </profile>
+      </type>
+    </element>
+		<element id="CDSHooksResponse.cards:formCompletion">
+      <path value="CDSHooksResponse.cards"/>
+      <sliceName value="formCompletion"/>
+      <type>
+        <code value="http://hl7.org/fhir/tools/StructureDefinition/CDSHooksElement"/>
+        <profile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse-formCompletion">
+          <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-profile-element">
+            <valueString value="CDSHooksResponse.cards"/>
+          </extension>
+        </profile>
+      </type>
+    </element>
+		<element id="CDSHooksResponse.cards:adjustCoverage">
+      <path value="CDSHooksResponse.cards"/>
+      <sliceName value="adjustCoverage"/>
+      <type>
+        <code value="http://hl7.org/fhir/tools/StructureDefinition/CDSHooksElement"/>
+        <profile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse-adjustCoverage">
+          <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-profile-element">
+            <valueString value="CDSHooksResponse.cards"/>
+          </extension>
+        </profile>
+      </type>
+    </element>
+		<element id="CDSHooksResponse.cards:launchSMART">
+      <path value="CDSHooksResponse.cards"/>
+      <sliceName value="launchSMART"/>
+      <type>
+        <code value="http://hl7.org/fhir/tools/StructureDefinition/CDSHooksElement"/>
+        <profile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse-launchSMART">
+          <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-profile-element">
+            <valueString value="CDSHooksResponse.cards"/>
+          </extension>
+        </profile>
+      </type>
+    </element>
+		<element id="CDSHooksResponse.systemActions">
+			<path value="CDSHooksResponse.systemActions"/>
+			<slicing>
+        <discriminator>
+          <type value="profile"/>
+          <path value="$this"/>
+        </discriminator>
+        <rules value="open"/>
+      </slicing>
+		</element>
+		<element id="CDSHooksResponse.systemActions:coverageInformation">
+			<path value="CDSHooksResponse.systemActions"/>
+			<sliceName value="coverageInformation"/>
+			<type>
+        <code value="http://hl7.org/fhir/tools/StructureDefinition/CDSHooksElement"/>
+        <profile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse-coverageInformation">
+          <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-profile-element">
+            <valueString value="CDSHooksResponse.systemActions"/>
+          </extension>
+        </profile>
+      </type>
+		</element>
+		<element id="CDSHooksResponse.systemActions:formCompletion">
+			<path value="CDSHooksResponse.systemActions"/>
+			<sliceName value="formCompletion"/>
+			<type>
+        <code value="http://hl7.org/fhir/tools/StructureDefinition/CDSHooksElement"/>
+        <profile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse-formCompletion">
+          <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-profile-element">
+            <valueString value="CDSHooksResponse.cards.suggestions.actions"/>
+          </extension>
+        </profile>
+      </type>
+		</element>
+		<element id="CDSHooksResponse.systemActions:adjustCoverage">
+			<path value="CDSHooksResponse.systemActions"/>
+			<sliceName value="adjustCoverage"/>
+			<type>
+        <code value="http://hl7.org/fhir/tools/StructureDefinition/CDSHooksElement"/>
+        <profile value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse-adjustCoverage">
+          <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-profile-element">
+            <valueString value="CDSHooksResponse.cards.suggestions.actions"/>
+          </extension>
+        </profile>
+      </type>
+		</element>
+	</differential>
+</StructureDefinition>

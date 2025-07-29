@@ -14,7 +14,6 @@ Description: "This profile specifies additional constraints on the US Core Medic
   * ^comment = "This will be 'draft' when using order-select or an initial order-sign, but may be 'active' or other values for order-sign representing edits to the order or for order-dispatch."
 * doNotPerform ..0
 * reported[x] only boolean or Reference(CRDPatient or USCorePractitionerProfile or CRDOrganization)
-//* reported[x] only boolean or Reference(CRDPatient or USCorePractitionerProfile or CRDOrganization)
 * medication[x] only CodeableConcept or Reference(CRDMedication)
 * medication[x] from $USCoreMedicationCodes (extensible)
 * medicationCodeableConcept MS

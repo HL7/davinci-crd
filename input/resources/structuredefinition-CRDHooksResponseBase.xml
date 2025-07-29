@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+	<id value="CRDHooksResponseBase"/>
+	<extension url="http://hl7.org/fhir/tools/StructureDefinition/json-suppress-resourcetype">
+    <valueBoolean value="true"/>
+	</extension>
+	<url value="http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponseBase"/>
+	<name value="CRDHooksResponseBase"/>
+	<title value="CRD CDSHooks Base for Response (Logical Definition)"/>
+	<status value="active"/>
+	<description value="Defines common rules for all CRD-specific constraints on the CDS Hooks Response body"/>
+	<fhirVersion value="4.0.1"/>
+	<kind value="logical"/>
+	<abstract value="true"/>
+	<type value="http://hl7.org/fhir/tools/StructureDefinition/CDSHooksResponse"/>
+	<baseDefinition value="http://hl7.org/fhir/tools/StructureDefinition/CDSHooksResponse"/>
+	<derivation value="constraint"/>
+	<differential>
+		<element id="CDSHooksResponse.cards">
+			<path value="CDSHooksResponse.cards"/>
+		</element>
+<!--		<element id="CDSHooksResponse.cards.extension">
+			<path value="CDSHooksResponse.cards.extension"/>
+		</element>-->
+		<element id="CDSHooksResponse.cards.uuid">
+			<path value="CDSHooksResponse.cards.uuid"/>
+			<min value="1"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="CDSHooksResponse.cards.summary">
+			<path value="CDSHooksResponse.cards.summary"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="CDSHooksResponse.cards.detail">
+			<path value="CDSHooksResponse.cards.detail"/>
+		</element>
+		<element id="CDSHooksResponse.cards.indicator">
+			<path value="CDSHooksResponse.cards.indicator"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="CDSHooksResponse.cards.source">
+			<path value="CDSHooksResponse.cards.source"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="CDSHooksResponse.cards.source.label">
+			<path value="CDSHooksResponse.cards.source.label"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="CDSHooksResponse.cards.source.url">
+			<path value="CDSHooksResponse.cards.source.url"/>
+		</element>
+		<element id="CDSHooksResponse.cards.source.icon">
+			<path value="CDSHooksResponse.cards.source.icon"/>
+		</element>
+		<element id="CDSHooksResponse.cards.source.topic">
+			<path value="CDSHooksResponse.cards.source.topic"/>
+			<min value="1"/>
+			<mustSupport value="true"/>
+			<binding>
+        <strength value="extensible"/>
+        <valueSet value="http://hl7.org/fhir/us/davinci-crd/ValueSet/cardType"/>
+      </binding>
+		</element>
+		<element id="CDSHooksResponse.cards.suggestions">
+			<path value="CDSHooksResponse.cards.suggestions"/>
+		</element>
+		<element id="CDSHooksResponse.cards.suggestions.uuid">
+			<path value="CDSHooksResponse.cards.suggestions.uuid"/>
+		</element>
+		<element id="CDSHooksResponse.cards.suggestions.label">
+			<path value="CDSHooksResponse.cards.suggestions.label"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="CDSHooksResponse.cards.suggestions.actions">
+			<path value="CDSHooksResponse.cards.suggestions.actions"/>
+		</element>
+		<element id="CDSHooksResponse.cards.suggestions.actions.extension">
+			<path value="CDSHooksResponse.cards.suggestions.actions.extension"/>
+		</element>
+		<element id="CDSHooksResponse.cards.suggestions.actions.type">
+			<path value="CDSHooksResponse.cards.suggestions.actions.type"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="CDSHooksResponse.cards.suggestions.actions.description">
+			<path value="CDSHooksResponse.cards.suggestions.actions.description"/>
+			<min value="1"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="CDSHooksResponse.cards.suggestions.actions.resource">
+			<path value="CDSHooksResponse.cards.suggestions.actions.resource"/>
+		</element>
+		<element id="CDSHooksResponse.cards.suggestions.actions.resourceId">
+			<path value="CDSHooksResponse.cards.suggestions.actions.resourceId"/>
+		</element>
+		<element id="CDSHooksResponse.cards.links">
+			<path value="CDSHooksResponse.cards.links"/>
+		</element>
+		<element id="CDSHooksResponse.cards.links.label">
+			<path value="CDSHooksResponse.cards.links.label"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="CDSHooksResponse.cards.links.url">
+			<path value="CDSHooksResponse.cards.links.url"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="CDSHooksResponse.cards.links.type">
+			<path value="CDSHooksResponse.cards.links.type"/>
+			<min value="1"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="CDSHooksResponse.cards.links.appContext">
+			<path value="CDSHooksResponse.cards.links.appContext"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="CDSHooksResponse.systemActions.type">
+			<path value="CDSHooksResponse.systemActions.type"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="CDSHooksResponse.systemActions.description">
+			<path value="CDSHooksResponse.systemActions.description"/>
+		</element>
+		<element id="CDSHooksResponse.systemActions.resource">
+			<path value="CDSHooksResponse.systemActions.resource"/>
+		</element>
+		<element id="CDSHooksResponse.systemActions.resourceId">
+			<path value="CDSHooksResponse.systemActions.resourceId"/>
+		</element>
+	</differential>
+</StructureDefinition>

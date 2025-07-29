@@ -15,7 +15,7 @@
   "derivation": "constraint",
   "context" : [{
     "type" : "element",
-    "expression" : "CDSHooksResponse.cards.suggestions.actions"
+    "expression" : "CDSHooksResponse.cards.suggestions.actions.extension"
   }],
   "differential": {
     "element": [
