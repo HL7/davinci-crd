@@ -11,9 +11,8 @@
     "patient": "123"
   },
   "context": {
-    "userId": "Practitioner/ABC",
     "patientId": "123",
-    "encounterId": "987",
+    "performer": "Organization/pharm1",
     "dispatchedOrders": {
       "resourceType": "Bundle",
       "type": "collection",
@@ -151,16 +150,20 @@
           "resource": {
             "resourceType": "Task",
             "id": "A",
+            "text": {
+              "status": "empty",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No narrative provided</div>"
+            },
             "status": "requested",
             "intent": "order",
             "code": {
               "coding": [{
-                "system": "htp://hl7.org/fhir/CodeSystem/task-code",
+                "system": "http://hl7.org/fhir/CodeSystem/task-code",
                 "code": "fulfill"
               }]
             },
             "focus": {
-              "reference": "MedicationRequest/1111"
+              "reference": "http://example.org/someEHR/fhir/MedicationRequest/1111"
             },
             "for": {
               "reference": "http://example.org/someEHR/fhir/Patient/123"

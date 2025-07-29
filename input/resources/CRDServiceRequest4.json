@@ -14,7 +14,7 @@
     "userId": "Practitioner/ABC",
     "patientId": "123",
     "encounterId": "987",
-    "draftOrders": {
+    "appointments": {
       "resourceType": "Bundle",
       "type": "collection",
       "entry": [
@@ -28,12 +28,12 @@
               "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Request for transfer of Liver Pathology biopsy report for Amy V. Baxter from Dr. Smith to Good Health Clinic<br/>Requested by Dr. Jones, June 10, 2016</div>"
             },
             "status": "proposed",
-            "serviceType": {
+            "serviceType": [{
               "coding": [{
                 "system": "http://terminology.hl7.org/CodeSystem/service-type",
                 "code": "24"
               }]
-            },
+            }],
             "participant": [{
               "actor": {
                 "reference": "http://example.org/fhir/Patient/123"

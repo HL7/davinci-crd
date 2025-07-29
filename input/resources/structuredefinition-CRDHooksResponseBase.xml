@@ -64,12 +64,12 @@
 		<element id="CDSHooksResponse.cards.suggestions">
 			<path value="CDSHooksResponse.cards.suggestions"/>
 		</element>
-		<element id="CDSHooksResponse.cards.suggestions.uuid">
-			<path value="CDSHooksResponse.cards.suggestions.uuid"/>
-		</element>
 		<element id="CDSHooksResponse.cards.suggestions.label">
 			<path value="CDSHooksResponse.cards.suggestions.label"/>
 			<mustSupport value="true"/>
+		</element>
+		<element id="CDSHooksResponse.cards.suggestions.uuid">
+			<path value="CDSHooksResponse.cards.suggestions.uuid"/>
 		</element>
 		<element id="CDSHooksResponse.cards.suggestions.actions">
 			<path value="CDSHooksResponse.cards.suggestions.actions"/>
