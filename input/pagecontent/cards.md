@@ -32,7 +32,7 @@ In addition to the [guidance provided in the CDS Hooks specification]({{site.dat
 
 * Where <a href="{{site.data.fhir.ver.cdshooks}}/index.html#system-action">systemActions</a> are used, CRD services **SHOULD NOT** return equivalent information in a card for user display. It is the responsibility of the CRD client to determine how best to present the results of the newly created or revised records.
 
-<p class="added-content">A profile defining the generic constraints that apply to all CRD responses can be found <a href="StructureDefinition-CRDHooksResponseBase.html">here</a>.</p>
+<p class="new-content">A profile defining the generic constraints that apply to all CRD responses can be found <a href="StructureDefinition-CRDHooksResponseBase.html">here</a>.</p>
 
 ### Potential CRD Response Types
 The sections below describe the different types of [responses]({{site.data.fhir.ver.cdshooks}}/index.html#cds-service-response) that CRD services can use when returning coverage requirements to CRD clients, including CRD-specific profiles on cards to describe CRD-expected behavior. It is possible that some CRD services and CRD clients will support response patterns other than those listed here, but such behavior is outside the scope of this specification. Future versions of this specification might standardize additional response types.
@@ -65,7 +65,7 @@ For example, this CDS Hooks [Card]({{site.data.fhir.ver.cdshooks}}/index.html#cd
 
 <p>As much as technically possible, links provided <strong>SHOULD</strong> be 'deep' links that take the user to the specific place in the documentation relevant to the current hook context to minimize provider reading and navigation time.</p>
 
-<p class="added-content">A profile defining the expectations of an External Reference response can be found <a href="StructureDefinition-CRDHooksResponse-externalReference.html">here</a>.</p>
+<p class="new-content">A profile defining the expectations of an External Reference response can be found <a href="StructureDefinition-CRDHooksResponse-externalReference.html">here</a>.</p>
 
 
 ### Instructions Response Type
@@ -75,7 +75,7 @@ This example CDS Hooks [card]({{site.data.fhir.ver.cdshooks}}/index.html#cds-ser
 
 {% fragment Binary/CRDServiceResponse JSON BASE:cards.where(source.topic.where(code='clinical-reminder').exists()) %}
 
-<p class="added-content">A profile defining the expectations of an Instructions response can be found <a href="StructureDefinition-CRDHooksResponse-instructions.html">here</a>.</p>
+<p class="new-content">A profile defining the expectations of an Instructions response can be found <a href="StructureDefinition-CRDHooksResponse-instructions.html">here</a>.</p>
 
 
 ### Coverage Information Response Type
@@ -188,7 +188,7 @@ The information added to the order here is often going to be relevant/important 
 
 Payers with existing tools that process prior authorization requests may have dependencies on data elements that are not found in the clinical orders being submitted as part of CRD such as service type or modifier codes. In these cases, payers **SHOULD** attempt to infer values for these elements based on elements that are present. For example, 'service type' can often be inferred based on the nature of the service, the location, the performer, etc. In situations where the inferred element has an impact on the results, payers should document that as part of their 'coverage-information' extension. In situations where inference is not possible and an element must be known; the payer may indicate that formal prior authorization is necessary. This situation should be minimized as much as possible.
 
-<p class="added-content">A profile defining the expectations of an Coverage Information response can be found <a href="StructureDefinition-CRDHooksResponse-coverageInformation.html">here</a>.</p>
+<p class="new-content">A profile defining the expectations of an Coverage Information response can be found <a href="StructureDefinition-CRDHooksResponse-coverageInformation.html">here</a>.</p>
 
 
 ### Propose Alternate Request Response Type
@@ -246,7 +246,7 @@ For example, this card proposes replacing the draft prescription for a brand-nam
 
 {% fragment Binary/CRDServiceResponse2 JSON BASE:cards.where(source.topic.where(code='therapy-alternatives-req').exists()).suggestions EXCEPT:id | medication BASE:actions.resource %}
 
-<p class="added-content">A profile defining the expectations of an Alternate Request response can be found <a href="StructureDefinition-CRDHooksResponse-alternateRequest.html">here</a>.</p>
+<p class="new-content">A profile defining the expectations of an Alternate Request response can be found <a href="StructureDefinition-CRDHooksResponse-alternateRequest.html">here</a>.</p>
 
 
 ### Identify Additional Orders Response Type
@@ -299,7 +299,7 @@ This example proposes adding a monthly test to check liver function:
 
 {% fragment Binary/CRDServiceResponse2 JSON BASE:cards.where(source.topic.where(code='clinical-reminder').exists()).suggestions %}
 
-<p class="added-content">A profile defining the expectations of an Additional Orders response can be found <a href="StructureDefinition-CRDHooksResponse-additionalOrders.html">here</a>.</p>
+<p class="new-content">A profile defining the expectations of an Additional Orders response can be found <a href="StructureDefinition-CRDHooksResponse-additionalOrders.html">here</a>.</p>
 
 
 ### Request Form Completion Response Type
@@ -336,7 +336,7 @@ The following is an example CDS Hooks [Suggestion]({{site.data.fhir.ver.cdshooks
 
 {% fragment Binary/CRDServiceResponse2 JSON BASE:cards.where(source.topic.where(code='123').exists()).suggestions EXCEPT:url BASE:actions.where(resource is Questionnaire).resource %}
 
-<p class="added-content">A profile defining the expectations of an Form Completion response can be found <a href="StructureDefinition-CRDHooksResponse-formCompletion.html">here</a>.</p>
+<p class="new-content">A profile defining the expectations of an Form Completion response can be found <a href="StructureDefinition-CRDHooksResponse-formCompletion.html">here</a>.</p>
 
 
 ### Create or Update Coverage Records Response Type
@@ -355,7 +355,7 @@ For example, this CDS Hooks [card]({{site.data.fhir.ver.cdshooks}}/index.html#cd
 
 If returning a card rather than a system action, this card type **SHOULD NOT** be returned for hook types that are likely to be triggered by clinical users rather than administrative staff. Cards of this type would be appropriate for hooks such as encounter-start or appointment-book but would not be appropriate for order-select or order-sign.
 
-<p class="added-content">A profile defining the expectations of an Adjust Coverage response can be found <a href="StructureDefinition-CRDHooksResponse-adjustCoverage.html">here</a>.</p>
+<p class="new-content">A profile defining the expectations of an Adjust Coverage response can be found <a href="StructureDefinition-CRDHooksResponse-adjustCoverage.html">here</a>.</p>
 
 
 ### Launch SMART Application Response Type
@@ -371,4 +371,4 @@ For example, this [card]({{site.data.fhir.ver.cdshooks}}/index.html#cds-service-
 
 {% fragment Binary/CRDServiceResponse2 JSON BASE:cards.where(source.topic.where(code='guideline').exists()) %}
 
-<p class="added-content">A profile defining the expectations of an Launch SMART response can be found <a href="StructureDefinition-CRDHooksResponse-launchSMART.html">here</a>.</p>
+<p class="new-content">A profile defining the expectations of an Launch SMART response can be found <a href="StructureDefinition-CRDHooksResponse-launchSMART.html">here</a>.</p>

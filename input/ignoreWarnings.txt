@@ -132,7 +132,6 @@ INFORMATION: ValueSet.where(id = 'orderDetail'): The value set expansion is too 
 
 # 15. These are example values and are not expected to resolve
 WARNING: Binary/CRDServiceRequest: CDSHooksRequest.context.userId: No definition could be found for URL value 'Practitioner/ABC'
-WARNING: Binary/CRDServiceRequest2: CDSHooksRequest.context.userId: No definition could be found for URL value 'Practitioner/ABC'
 WARNING: Binary/CRDServiceRequest2: CDSHooksRequest.context.performer: No definition could be found for URL value 'Organization/pharm1'
 WARNING: Binary/CRDServiceRequest3: CDSHooksRequest.context.userId: No definition could be found for URL value 'Practitioner/ABC'
 WARNING: Binary/CRDServiceRequest4: CDSHooksRequest.context.userId: No definition could be found for URL value 'Practitioner/ABC'

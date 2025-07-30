@@ -17,7 +17,7 @@ In the absence of guidance from the CDS Hooks specification, CRD Servers are exp
     * 400 - Bad Request - The request is not parsable as JSON or is not valid against the CRD specification.  Also used if a CRD service receives a call where the primary Coverage (either provided by prefetch or queried by the payer) does not have a payer.identifier that identifies a payer that is handled by that CRD service endpoint, the server SHALL return a 400 error and SHOULD provide an OperationOutcome.  This includes situations where no Coverage is accessible, multiple Coverages are accessible, or the provided Coverage does not have a payer.identifier at all.
     * 422 - Unprocessable Entity - The request is valid JSON, but is not conformant to CDS Hooks, FHIR resources, or required profiles
     
-<p class="added-content">A profile defining the general expectations of a CRD CDS Hooks request can be found <a href="StructureDefinition-CRDHooksRequest.html">here</a>.</p>
+<p class="new-content">A profile defining the general expectations of a CRD CDS Hooks request can be found <a href="StructureDefinition-CRDHooksRequest.html">here</a>.</p>
 
 
 ### Hook Categories
