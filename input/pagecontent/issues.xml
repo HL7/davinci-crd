@@ -151,12 +151,6 @@
   These issues don't stem from any specific theme and the fact they're not yet resolved is generally based on issues other than disagreements around the basic premises of the implementation guide architecture.  They're listed here only to call attention to the fact that they're outstanding and they might be resolved as part of the balloting and publication process.  Each of the remaining issues is discussed individually.
 </p>
 
-<a name="FHIR-45672"> </a>
-<h4><a href="https://jira.hl7.org/browse/FHIR-45672">FHIR-45672</a> - Creation of Bundle Profile(s)</h4>
-<p>
-  While this is a good idea in principle, there have historically been tooling challenges with adding this level of sophisticated profiling as part of logical models.  However, there's a possibility these tooling issues will soon be addressed, making this possible.  Doing this doesn't change what the IG rules are, it merely makes validation more effective.
-</p>
-
 <a name="FHIR-49757"> </a>
 <h4><a href="https://jira.hl7.org/browse/FHIR-49757">FHIR-49757</a> - No guidance for CRD intermediaries wrt. access tokens</h4>
 <p>
@@ -182,14 +176,5 @@ Industry has not yet settled on best practices here.  If balloters can recommend
   <li>Keeping the NutritionOrder profile in place but add a 'Dragon' warning noting that the profile is underspecified and that implementations who wish to interoperate with the resource will need to reach site-specific agreement on which data elements to exchange.  (And that such site-specific agreements are acceptable from an interoperability expectations perspective.</li>
   <li>Update the profile to add additional must support data element and terminology constraints to support reasonable interoperability, provided that the community can agree on what those elements and constraints should be.</li>
 </ol>
-
-<a name="FHIR-51465"> </a>
-<h4><a href="https://jira.hl7.org/browse/FHIR-51465">FHIR-51465</a> - Structure of inpatient orders without procedure code</h4>
-<p>
-  It is not uncommon for providers to solicit prior authorization for an inpatient stay without necessarily identifying a specific procedure that will be performed.  Only a diagnosis code would be needed.  However, it's not clear how such orders typically manifest in real-world systems.
-</p>
-<p>
-  If EHRs can give guidance on how such situations are typically represented using clinical order structures, guidance can be included in the specification so that providers can adjust.
-</p>
 
 </div>

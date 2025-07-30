@@ -32,6 +32,8 @@ In addition to the [guidance provided in the CDS Hooks specification]({{site.dat
 
 * Where <a href="{{site.data.fhir.ver.cdshooks}}/index.html#system-action">systemActions</a> are used, CRD services **SHOULD NOT** return equivalent information in a card for user display. It is the responsibility of the CRD client to determine how best to present the results of the newly created or revised records.
 
+<p class="added-content">A profile defining the generic constraints that apply to all CRD responses can be found <a href="StructureDefinition-CRDHooksResponseBase.html">here</a>.</p>
+
 ### Potential CRD Response Types
 The sections below describe the different types of [responses]({{site.data.fhir.ver.cdshooks}}/index.html#cds-service-response) that CRD services can use when returning coverage requirements to CRD clients, including CRD-specific profiles on cards to describe CRD-expected behavior. It is possible that some CRD services and CRD clients will support response patterns other than those listed here, but such behavior is outside the scope of this specification. Future versions of this specification might standardize additional response types.
 <a name="FHIR-50009"> </a>
@@ -63,6 +65,8 @@ For example, this CDS Hooks [Card]({{site.data.fhir.ver.cdshooks}}/index.html#cd
 
 <p>As much as technically possible, links provided <strong>SHOULD</strong> be 'deep' links that take the user to the specific place in the documentation relevant to the current hook context to minimize provider reading and navigation time.</p>
 
+<p class="added-content">A profile defining the expectations of an External Reference response can be found <a href="StructureDefinition-CRDHooksResponse-externalReference.html">here</a>.</p>
+
 
 ### Instructions Response Type
 This response type presents a card with textual guidance to display to the user making the decisions. The text might provide clinical guidelines, suggested changes, or rules around prior authorization. It can be generated in a more sophisticated context for the payer, while remaining easy to consume for the provider because it allows returned information to be tuned to the specific context of the order/encounter that triggered the hook. In some cases, the text returned might be generated uniquely each time a hook is fired. CRD services **SHALL NOT** use these cards to direct users to a portal for the purpose of initiating prior authorization or determining coverage. Use the [Coverage Information](#coverage-information-response-type) response instead.
@@ -70,6 +74,9 @@ This response type presents a card with textual guidance to display to the user 
 This example CDS Hooks [card]({{site.data.fhir.ver.cdshooks}}/index.html#cds-service-response) just contains a message:
 
 {% fragment Binary/CRDServiceResponse JSON BASE:cards.where(source.topic.where(code='clinical-reminder').exists()) %}
+
+<p class="added-content">A profile defining the expectations of an Instructions response can be found <a href="StructureDefinition-CRDHooksResponse-instructions.html">here</a>.</p>
+
 
 ### Coverage Information Response Type
 This response type uses a <a href="{{site.data.fhir.ver.cdshooks}}/index.html#system-action">systemAction</a> to automatically update the order or other resource in the CRD client with an extension that conveys information related to the coverage of the order. As discussed on the [home page](index.html#cmsdiscretion), the functionality of this response type has been enhanced to allow directly returning a prior authorization number as part of a CRD response.  Regardless of the content, this response type **SHALL NOT** use a card.
@@ -171,7 +178,7 @@ When using this response type, the proposed order or appointment being updated *
   </tr>
 </table>
 
-For example, this card indicates that a prior authorization has been satisfied for a planned procedure:
+For example, this response indicates that a prior authorization has been satisfied for a planned procedure:
 
 {% fragment Binary/CRDServiceResponse JSON BASE:systemActions ELIDE:resource.children().where(is(Extension).not()) %}
 
@@ -180,6 +187,9 @@ CRD clients and services **SHALL** support the new CDS Hooks system action funct
 The information added to the order here is often going to be relevant/important not only to the creator of the order, but also to its eventual performer. This guide does not define how information around coverage is conveyed from the ordering system to the performing system. However, the [Post-acute Orders implementation guide](http://hl7.org/fhir/us/dme-orders) does provide a mechanism for electronic sharing of orders and could be used to convey the additional notes or extensions envisioned here as well.
 
 Payers with existing tools that process prior authorization requests may have dependencies on data elements that are not found in the clinical orders being submitted as part of CRD such as service type or modifier codes. In these cases, payers **SHOULD** attempt to infer values for these elements based on elements that are present. For example, 'service type' can often be inferred based on the nature of the service, the location, the performer, etc. In situations where the inferred element has an impact on the results, payers should document that as part of their 'coverage-information' extension. In situations where inference is not possible and an element must be known; the payer may indicate that formal prior authorization is necessary. This situation should be minimized as much as possible.
+
+<p class="added-content">A profile defining the expectations of an Coverage Information response can be found <a href="StructureDefinition-CRDHooksResponse-coverageInformation.html">here</a>.</p>
+
 
 ### Propose Alternate Request Response Type
 This response type can be used by payers to present a card with suggested alternatives to the current proposed therapy. This might be updating the order to change certain information or proposing replacing the order completely with one or more alternatives. This might be used to propose a change to a first-line treatment, to alter therapy frequency or drug dosage to be consistent with coverage guidelines, to propose covered products or services as substitutes for a non-covered service, or to propose therapeutically equivalent treatments that will have a lower cost to the patient.
@@ -236,6 +246,9 @@ For example, this card proposes replacing the draft prescription for a brand-nam
 
 {% fragment Binary/CRDServiceResponse2 JSON BASE:cards.where(source.topic.where(code='therapy-alternatives-req').exists()).suggestions EXCEPT:id | medication BASE:actions.resource %}
 
+<p class="added-content">A profile defining the expectations of an Alternate Request response can be found <a href="StructureDefinition-CRDHooksResponse-alternateRequest.html">here</a>.</p>
+
+
 ### Identify Additional Orders Response Type
 This response type can be used to present a card that recommends the introduction of additional orders as companions or prerequisites for the current order. For example, the payer might recommend that certain lab tests be ordered along with a medication that is known to affect liver function. This will normally involve additional 'create' actions. The fact that there is no 'delete' for the original order conveys that these are supplemental actions rather than replacement actions. As with the [Propose Alternate Request](#propose-alternate-request-response-type) response type, in some cases multiple resources will need to be created to convey the full suggestion such as 'medication', 'device', etc.
 
@@ -286,6 +299,9 @@ This example proposes adding a monthly test to check liver function:
 
 {% fragment Binary/CRDServiceResponse2 JSON BASE:cards.where(source.topic.where(code='clinical-reminder').exists()).suggestions %}
 
+<p class="added-content">A profile defining the expectations of an Additional Orders response can be found <a href="StructureDefinition-CRDHooksResponse-additionalOrders.html">here</a>.</p>
+
+
 ### Request Form Completion Response Type
 NOTE: DTR is the preferred solution where forms are needed for capturing information for payer purposes including, but not limited to, prior authorization, claims submission, or audit because of its ability to minimize data entry burden. This response type **SHOULD** only be used when DTR is not available or applicable.
 
@@ -320,6 +336,9 @@ The following is an example CDS Hooks [Suggestion]({{site.data.fhir.ver.cdshooks
 
 {% fragment Binary/CRDServiceResponse2 JSON BASE:cards.where(source.topic.where(code='123').exists()).suggestions EXCEPT:url BASE:actions.where(resource is Questionnaire).resource %}
 
+<p class="added-content">A profile defining the expectations of an Form Completion response can be found <a href="StructureDefinition-CRDHooksResponse-formCompletion.html">here</a>.</p>
+
+
 ### Create or Update Coverage Records Response Type
 This response type is used when the CRD service is aware of additional coverage that is relevant to the current/proposed activity or has updates or corrections to make to the information held by the CRD client. For example, the CRD client might be aware that a patient has coverage with a provider, but not know the plan number, member identifier, or other relevant information. This response allows the CRD service to convey that information to the CRD client and link it to the current/proposed action. In theory, this type of response could also be used to convey corrected/additional prior authorization information the payer was aware of, however that functionality is out of scope for this release of the implementation guide.
 
@@ -336,6 +355,9 @@ For example, this CDS Hooks [card]({{site.data.fhir.ver.cdshooks}}/index.html#cd
 
 If returning a card rather than a system action, this card type **SHOULD NOT** be returned for hook types that are likely to be triggered by clinical users rather than administrative staff. Cards of this type would be appropriate for hooks such as encounter-start or appointment-book but would not be appropriate for order-select or order-sign.
 
+<p class="added-content">A profile defining the expectations of an Adjust Coverage response can be found <a href="StructureDefinition-CRDHooksResponse-adjustCoverage.html">here</a>.</p>
+
+
 ### Launch SMART Application Response Type
 SMART apps allow more sophisticated interaction between payers and providers. They provide full control over user interface, workflow, etc. With permission, they can also access patient clinical data to help guide the interactive experience and minimize data entry. Apps can provide a wide variety of functions, including eligibility checking, guiding users through form entry, providing education, etc.
 
@@ -348,3 +370,5 @@ NOTE: This mechanism is no longer to be used for launching [DTR applications](ht
 For example, this [card]({{site.data.fhir.ver.cdshooks}}/index.html#cds-service-response) contains a SMART app [link]({{site.data.fhir.ver.cdshooks}}/index.html#link) to perform an opioid assessment:
 
 {% fragment Binary/CRDServiceResponse2 JSON BASE:cards.where(source.topic.where(code='guideline').exists()) %}
+
+<p class="added-content">A profile defining the expectations of an Launch SMART response can be found <a href="StructureDefinition-CRDHooksResponse-launchSMART.html">here</a>.</p>

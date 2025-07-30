@@ -32,7 +32,7 @@ Extensions will be enabled in two places:
 
 
 ### Configuration options extension
-An extension called `davinci-crd.configuration-options` will define a configuration object with an array of available configurable options within the CDS Service, where:  
+<p class="modified-content">An extension called <a href="StructureDefinition-CDSHookServicesExtensionConfiguration.html">davinci-crd.configuration-options</a> will define a configuration object with an array of available configurable options within the CDS Service, where:</p>
 
 *  Each option **SHALL** include four mandatory elements:
     *  A `code` that will be used when setting configuration during hook invocation, and has an ([extensible](http://www.hl7.org/fhir/terminologies.html#extensible)) binding to the <a href="ValueSet-cardType.html">CRD Card Types</a> ValueSet.
@@ -68,7 +68,7 @@ Notes:
 *  Payer services providing more than one type of coverage requirement information/guidance **SHOULD** expose configuration options allowing clients to dynamically control what information is returned by the service.
 
 #### Hook configuration extension
-An extension called `davinci-crd.configuration` will define a second configuration object that will contain an array of codes and values corresponding to the configuration options configured within the CRD Client.
+<p class="modified-content">An extension called <a href="StructureDefinition-CDSHookServiceRequestExtensionRequestConfig.html">davinci-crd.configuration</a> will define a second configuration object that will contain an array of codes and values corresponding to the configuration options configured within the CRD Client.</p>
 
 For example, the hook [HTTP Request]({{site.data.fhir.ver.cdshooks}}/index.html#http-request_1) would look like this:
 
@@ -140,7 +140,7 @@ functionality.  However, not all the capabilities and guidance included there ha
 For this release of the implementation guide, these requirements will be handled as follows:
 
 #### if-none-exist
-The `suggestion.action` object will use an extension to carry the if-none-exist query, as per FHIR's [conditional create]({{site.data.fhir.path}}http.html#ccreate) functionality.  The extension property will be `davinci-crd.if-none-exist`.  
+<p class="modified-content">The <code>suggestion.action</code> object will use an extension to carry the if-none-exist query, as per FHIR's <a href="{{site.data.fhir.path}}http.html#ccreate">conditional create</a> functionality.  The extension property will be <a href="StructureDefinition-CDSHookServiceResponseExtensionIfNoneExist.html">davinci-crd.if-none-exist</a>.</p>
 
 For example, this [CDS Hooks Suggestion]({{site.data.fhir.ver.cdshooks}}/index.html#suggestion) contains two [Actions]({{site.data.fhir.ver.cdshooks}}/index.html#action) - one referencing an HL7 [Questionnaire]({{site.data.fhir.path}}questionnaire.html) and the other the [Task]({{site.data.fhir.path}}task.html) to complete the Questionnaire.  The Questionnaire will only be created if it didn't already exist:
 
@@ -159,7 +159,7 @@ Note: Sending existing prior authorizations is not in scope for this version of 
 ### Linking cards to requests
 Some CDS hooks have a single context.  [encounter-start](hooks.html#encounter-start) and [encounter-discharge](hooks.html#encounter-discharge) are tied to their respective encounter and there is no question as to which encounter a returned card is associated with.  However, the [appointment-book](hooks.html#appointment-book), [order-select](hooks.html#order-select), and [order-sign](hooks.html#order-sign) hooks all allow passing in multiple resources as part of the hook invocation.  Each card returned in the hook response might be associated with only one of the referenced appointment or order resources, or a subset of them.  A CRD client might wish to be able to track *what* resource(s) a card was associated with.  This might be for audit, to control how or where the card is rendered on the screen, to allow the card to be directly associated with the triggering resource, or to enable various other workflow considerations.
 
-This implementation guide defines a standard extension - `davinci-associated-resource` -  that can appear on any card that provides a local reference to the appointment, order, or other context resource to which the card is 'pertinent'.  It is optional and has a value consisting of 1..* local references referring to the resource type and resource id of the resource being linked.
+<p class="modified-content">This implementation guide defines a standard extension - <a href="StructureDefinition-CDSHookServiceResponseExtensionAssociatedResource.html">davinci-crd.associated-resource</a> -  that can appear on any card that provides a local reference to the appointment, order, or other context resource to which the card is 'pertinent'.  It is optional and has a value consisting of 1..* local references referring to the resource type and resource id of the resource being linked.
 
 If a hook service is invoked on a collection of resources, all cards returned that are specific to only a subset of the resources passed as context **SHALL** disambiguate in the `detail` element which resources they're associated with in a human-friendly way.  Typically, this means using test name, drug name, or some other mechanism rather than a bare identifier as identifiers might not be visible to the end user for resources that are not yet fully 'created'.  As well, cards **SHOULD** include this new extension to allow computable linkage.
 

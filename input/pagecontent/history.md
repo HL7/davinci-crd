@@ -62,7 +62,7 @@ This page describes the primary releases of the specification and summarizes the
 * [FHIR-49800](https://jira.hl7.org/browse/FHIR-49800) - Fixed bad brackets in CDS Hooks Service Response *(correction)* [link](Binary-CRDServices.html)
 * [FHIR-51187](https://jira.hl7.org/browse/FHIR-51187) - Added links to examples zip files on the downloads page *(clarification)* [link](downloads.html#FHIR-51187)
 * [FHIR-49041](https://jira.hl7.org/browse/FHIR-49041) - Added CommunicationRequest examples *(clarification)* [link](Binary-CRDServiceRequest3.html), [link](Binary-CRDServiceResponse3.html)
-* [FHIR-50814](https://jira.hl7.org/browse/FHIR-50814) - Added formal models for CDS Hooks components and improved validation of examples *(clarification, correction)* **TODO**
+* [FHIR-50814](https://jira.hl7.org/browse/FHIR-50814), [FHIR-45672](https://jira.hl7.org/browse/FHIR-45672) - Added formal models for CDS Hooks components and improved validation of examples *(clarification, correction)* - many new models and links from various pages
 
 In addition, there have been various miscellaneous non-substantive improvements to formatting, spelling, grammar, etc.
 
