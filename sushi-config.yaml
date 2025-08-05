@@ -91,12 +91,12 @@ dependencies:
     version: 0.19.0
     reason: |
       Uses the latest version of the VSAC codes
-#  hl7.fhir.uv.tools.r4:
-  hl7.fhir.uv.tools:
+  hl7.fhir.uv.tools.r4:
+#  hl7.fhir.uv.tools:
     id: tools
     uri: http://hl7.org/fhir/tools/ImplementationGuide/hl7.fhir.uv.tools
-    version: current
-#    version: 0.7.1
+#    version: current
+    version: 0.8.0
     reason: |
       Defines the CDS Hooks logical models
   hl7.fhir.uv.cds-hooks:
