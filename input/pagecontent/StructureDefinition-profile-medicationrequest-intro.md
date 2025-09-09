@@ -8,6 +8,4 @@ CRD Clients **SHALL** use this profile to [resolve references](foundation.html#a
 * [order-dispatch](hooks.html#order-dispatch)
 
 Information provided in [Must Support]({{site.data.fhir.path}}profiling.html#mustsupport) elements will commonly be required for CRD Servers to perform coverage requirements discovery.
-
-NOTE: This profile is not currently based on US Core because US Core accidentally constrained out PractitionerRole.  When a future version of US-Core adds support back in, this profile will be revised to extend the US Core profile
 <br/>
