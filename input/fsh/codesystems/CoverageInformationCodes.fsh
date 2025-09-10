@@ -14,7 +14,7 @@ Description: "Codes used by 'code' elements within the Coverage-Information exte
 * #conditional             "Conditional"                       "There is the potential for information requirements from a participant type not listed.  However, a decision on whether there in fact are additional information requirements cannot be made without more information (more detailed code, service rendering information, etc.)"
 // Coverage guidance - covered
 * #covered                 "Covered"                           "Regular coverage applies"
-* #not-covered             "Not covered"                       "No coverage or possibility of coverage for this service)"
+* #not-covered             "Not covered"                       "No coverage or possibility of coverage for this service"
 // Coverage guidance - auth
 * #no-auth                 "No Prior Authorization"            "The ordered service does not require prior authorization"
 * #auth-needed             "Prior Authorization Needed"        "The ordered service will require prior authorization" 
