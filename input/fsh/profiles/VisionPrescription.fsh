@@ -6,6 +6,8 @@ Description: "This profile defines an initial profile on the VisionPrescription 
 * ^experimental = false
 * ^extension[$fmm].valueInteger = 1
 * extension contains CRDCoverageInformation named Coverage-Information 0..* MS
+* contained MS
+  * ^comment = "Any references found in this resource, with the exception of 'Patient' could potentially be resource-specific and thus transmitted as contained resources."
 * identifier MS
 //* status only code
 * status MS

@@ -6,6 +6,8 @@ Description: "This profile specifies extensions and constraints on the DeviceReq
 * ^experimental = false
 * extension contains CRDCoverageInformation named Coverage-Information 0..* MS
 * extension[Coverage-Information] ^short = "Coverage Info"
+* contained MS
+  * ^comment = "Any references found in this resource, with the exception of 'Patient' could potentially be resource-specific and thus transmitted as contained resources."
 * identifier MS
 * basedOn MS
 * status 1.. MS

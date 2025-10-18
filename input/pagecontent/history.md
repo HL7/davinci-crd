@@ -1,5 +1,15 @@
 This page describes the primary releases of the specification and summarizes the content for each:
 
+### Release 2.2.0
+**Breaking changes**:
+
+**Substative changes**
+* [FHIR-52452](https://jira.hl7.org/browse/FHIR-52452) - Added 'contained' as mustSupport to request resources and encounters
+
+**Non-substantive changes**:
+* [FHIR-52002](https://jira.hl7.org/browse/FHIR-52002) - Updated ONC to ASTP/ONC (correction)
+* [FHIR-52004](https://jira.hl7.org/browse/FHIR-52004), [FHIR-52069](https://jira.hl7.org/browse/FHIR-52069), [FHIR-52480](https://jira.hl7.org/browse/FHIR-52480), [FHIR-52441](https://jira.hl7.org/browse/FHIR-52441) - Fixed various minor typos (correction)
+
 ### Release 2.2.0-ballot
 
 **Breaking changes**:

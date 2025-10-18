@@ -7,6 +7,8 @@ Description: "This profile specifies additional extensions and constraints on th
 * ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|6.1.0"
 * ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|3.1.1"
 * extension contains CRDCoverageInformation named Coverage-Information 0..* MS
+* contained MS
+  * ^comment = "Any references found in this resource, with the exception of 'Patient' could potentially be resource-specific and thus transmitted as contained resources."
 * serviceType MS
   * extension contains CRDBillingOptions named BillingOptions 0..* MS
   * extension[BillingOptions] ^short = "Expected Billing Code(s)"

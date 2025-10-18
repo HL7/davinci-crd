@@ -6,6 +6,8 @@ Description: "This profile specifies constraints on the CommunicationRequest res
 * ^experimental = false
 * ^extension[$fmm].valueInteger = 1
 * extension contains CRDCoverageInformation named Coverage-Information 0..* MS
+* contained MS
+  * ^comment = "Any references found in this resource, with the exception of 'Patient' could potentially be resource-specific and thus transmitted as contained resources."
 * identifier MS
 * basedOn 1..1 MS
 * replaces only Reference(CRDCommunicationRequest)

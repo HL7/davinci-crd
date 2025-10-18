@@ -10,6 +10,8 @@ Description: "This profile specifies extensions and constraints on the Nutrition
   CRDBillingOptions named BillingOptions 0..* MS
 * extension[Coverage-Information] ^short = "Coverage Info"
 * extension[BillingOptions] ^short = "Expected Billing Code(s)"
+* contained MS
+  * ^comment = "Any references found in this resource, with the exception of 'Patient' could potentially be resource-specific and thus transmitted as contained resources."
 * identifier MS
 * status MS
   * ^example.label = "General"
