@@ -4,11 +4,12 @@ This page describes the primary releases of the specification and summarizes the
 **Breaking changes**:
 
 **Substative changes**
-* [FHIR-52452](https://jira.hl7.org/browse/FHIR-52452) - Added 'contained' as mustSupport to request resources and encounters
+* [FHIR-52452](https://jira.hl7.org/browse/FHIR-52452) - Added 'contained' as mustSupport to request resources and encounters *(enhancement)*
 
 **Non-substantive changes**:
-* [FHIR-52002](https://jira.hl7.org/browse/FHIR-52002) - Updated ONC to ASTP/ONC (correction)
-* [FHIR-52004](https://jira.hl7.org/browse/FHIR-52004), [FHIR-52069](https://jira.hl7.org/browse/FHIR-52069), [FHIR-52480](https://jira.hl7.org/browse/FHIR-52480), [FHIR-52441](https://jira.hl7.org/browse/FHIR-52441) - Fixed various minor typos (correction)
+* [FHIR-52002](https://jira.hl7.org/browse/FHIR-52002) - Updated ONC to ASTP/ONC *(correction)*
+* [FHIR-52004](https://jira.hl7.org/browse/FHIR-52004), [FHIR-52069](https://jira.hl7.org/browse/FHIR-52069), [FHIR-52480](https://jira.hl7.org/browse/FHIR-52480), [FHIR-52441](https://jira.hl7.org/browse/FHIR-52441) - Fixed various minor typos *(correction)*
+* [FHIR-53177](https://jira.hl7.org/browse/FHIR-53177) - Put coverage-information back on Appointment w/ No Order, as it had accidentally been dropped *(correction)* [link](StructureDefinition-profile-appointment-no-order.html)
 
 ### Release 2.2.0-ballot
 

@@ -58,6 +58,7 @@ Description: "An appointment where the details of what the appointment is being 
 * ^extension[$fmm].valueInteger = 1
 * ^experimental = false
 * ^abstract = false
+* extension contains CRDCoverageInformation named Coverage-Information 0..* MS
 * identifier MS
 * serviceCategory MS
 * serviceType MS
