@@ -47,8 +47,8 @@ Description: "An appointment where the details of what the appointment is being 
 * ^experimental = false
 * ^abstract = false
 * basedOn 1.. MS
-* basedOn only Reference(CRDServiceRequest)
-  * ^comment = "potentially relevant for CRD in some situations."
+* basedOn only Reference(CRDServiceRequest or CRDMedicationRequest or CRDDeviceRequest)
+  * ^comment = "Potentially relevant for CRD in some situations.  Must Support only applies if the client supports the given type of order and also ties their appointments directly to that type of order."
 
 Profile: CRDAppointmentNoOrder
 Parent: CRDAppointmentBase
@@ -68,4 +68,4 @@ Description: "An appointment where the details of what the appointment is being 
 * appointmentType MS
 * reasonReference MS
 //* reasonReference only Reference(USCoreConditionProblemsHealthConcernsProfile or USCoreConditionUSCoreConditionEncounterDiagnosisProfile or USCoreProcedureProfile)
-  * ^comment = "potentially relevant for CRD in some situations."
+  * ^comment = "Potentially relevant for CRD in some situations."

@@ -5,6 +5,7 @@ This page describes the primary releases of the specification and summarizes the
 
 **Substative changes**
 * [FHIR-52452](https://jira.hl7.org/browse/FHIR-52452) - Added 'contained' as mustSupport to request resources and encounters *(enhancement)*
+* [FHIR-52060](https://jira.hl7.org/browse/FHIR-52060)- Allow MedicationRequest and DeviceRequest as supporting structures for Appointment
 
 **Non-substantive changes**:
 * [FHIR-52002](https://jira.hl7.org/browse/FHIR-52002) - Updated ONC to ASTP/ONC *(correction)*
