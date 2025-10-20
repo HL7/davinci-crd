@@ -10,12 +10,15 @@ CRD Clients and CRD Servers **MAY** choose to support additional hooks available
 
 In the absence of guidance from the CDS Hooks specification, CRD Servers are expected to conform to the following rules when responding to requests from a CRD Client:
 
+<div class="modified-content" markdown="1"><a name="FHIR-52062"> </a>
 * If the CRD Server encounters an error when processing the request, the system **SHALL** return an appropriate error HTTP Response Code, starting with the digit "4" or "5", indicating that there was an error.
 * <span class="modified-content" markdown="1"><a name="FHIR-52535"> </a>If an issue is identified at a layer of the CRD Server that is FHIR aware (e.g. not a "wrong endpoint" or "not authorized" issue), the server **SHALL** provide an OperationOutcome for internal issue tracking by the client system.</span>
 * The CRD Client **MAY** display to the user that the Coverage Requirements Discovery Service is unavailable.  If additional information (e.g. number to call) is available, it **MAY** also be included in the message to the user.
 * While any 4xx or 5xx response code could be raised, the CRD Server **SHALL** use the 400 and 422 codes in a manner consistent with the FHIR RESTful Create Action, specifically:
-    * 400 - Bad Request - The request is not parsable as JSON or is not valid against the CRD specification.  Also used if a CRD service receives a call where the primary Coverage (either provided by prefetch or queried by the payer) does not have a payer.identifier that identifies a payer that is handled by that CRD service endpoint, the server SHALL return a 400 error and SHOULD provide an OperationOutcome.  This includes situations where no Coverage is accessible, multiple Coverages are accessible, or the provided Coverage does not have a payer.identifier at all.
-    * 422 - Unprocessable Entity - The request is valid JSON, but is not conformant to CDS Hooks, FHIR resources, or required profiles
+    * 400 - Bad Request - The request is not parsable as JSON or the content fails validation against FHIR core or CDS Hooks specification rules.  Also used if a CRD service receives a call where the primary Coverage (either provided by prefetch or queried by the payer) does not have a payer.identifier that identifies a payer that is handled by that CRD service endpoint, the server SHALL return a 400 error and SHOULD provide an OperationOutcome.  This includes situations where no Coverage is accessible, multiple Coverages are accessible, or the provided Coverage does not have a payer.identifier at all.
+    * 422 - Unprocessable Entity - The request is valid JSON and meets FHIR and CDS Hook validation rules, but fails to adhere to constraints imposed by this specification.
+* If a system's validation process does not differentiate between validation issues stemming from the JSON syntax validation, FHIR core validation, CDS Hooks validation, and CRD-specific validation, it **MAY** treat all validation rules as 400 errors.
+</div>
     
 <p class="new-content">A profile defining the general expectations of a CRD CDS Hooks request can be found <a href="StructureDefinition-CRDHooksRequest.html">here</a>.</p>
 
