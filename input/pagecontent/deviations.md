@@ -13,7 +13,7 @@ In the [current build](https://cds-hooks.org/hooks/order-sign/), the order-sign 
 The CRD Servers provided by payers will support discovery of different types of coverage requirements that will return different types of information to users on [CDS Cards]({{site.data.fhir.ver.cdshooks}}/index.html#cds-service-response), such as:
 
 *  Whether authorization is required
-*  Recommended alternative therapies
+*  <span class="modified-content" markdown="1"><a name="FHIR-52531"> </a>Payer-preferred alternative therapies</span>
 *  Best practices associated with the planned therapy which payers expect adherence to
 *  Forms and documentation for retention within the CRD client
 *  Forms and documentation that must be provided with a prior authorization request
