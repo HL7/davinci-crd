@@ -8,7 +8,7 @@ In addition to the [guidance provided in the CDS Hooks specification]({{site.dat
 
 *  All `Card.suggestion` elements **SHALL** populate the Suggestion.uuid element.
 
-*  The `Card.source.label` **SHOULD** be populated with an insurer name that the user and patient would recognize (i.e., the responsible insurer on the patient's insurance card), including in situations where coverage recommendations are being returned by a benefits manager or intermediary operating the CRD Service on behalf of the payer. If an insurer provides recommendations from another authority (e.g., a clinical society), the society's name and logo might be displayed, though usually only with the permission of that organization.
+*  <a name="FHIR-52583"> </a><span class="modified-content" markdown="1">The `Card.source.label` **SHALL** be populated with an insurer name that the user and patient are likely to recognize</span> (i.e., the responsible insurer on the patient's insurance card), including in situations where coverage recommendations are being returned by a benefits manager or intermediary operating the CRD Service on behalf of the payer. If an insurer provides recommendations from another authority (e.g., a clinical society), the society's name and logo might be displayed, though usually only with the permission of that organization.
 
 *  `Card.source.topic` **SHALL** be populated, and has an [extensible](http://www.hl7.org/fhir/terminologies.html#extensible) binding to the ValueSet <a href="ValueSet-cardType.html">CRD Response Types.</a> The rationale is to allow CRD clients to filter or track the usage of different types of cards.
 

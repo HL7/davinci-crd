@@ -15,6 +15,12 @@
         "organizations" : "Organization?_id={{%practitionerRoles.practitioner.resolve().id}}",
         "locations" : "Practitioner?_id={{%practitionerRoles.location.resolve().id|%encounter.location.location.resolve().ofType(Location).id|context.appointments.entry.resource.participant.actor.resolve().ofType(Location).id|%encounter.serviceProvider.resolve().ofType(PractitionerRole).location.resolve().id}}"
       },
+      "prefetchDependencies" : {
+        "practitionerRoles" : ["encounter"],
+        "practitioners" : ["encounter", "practitionerRoles"],
+        "organizations" : ["practitionerRoles"],
+        "locations" : ["encounter", "practitionerRoles"]
+      },
       "extension": {
         "davinci-crd.configuration-options": [
           {
@@ -111,6 +117,12 @@
         "organizations" : "Organization?_id={{%practitionerRoles.organization.resolve().id}}",
         "locations" : "Practitioner?_id={{%practitionerRoles.location.resolve().id|%encounter.location.location.resolve().ofType(Location).id}}"
       },
+      "prefetchDependencies" : {
+        "practitionerRoles" : ["encounter"],
+        "practitioners" : ["encounter", "practitionerRoles"],
+        "organizations" : ["practitionerRoles"],
+        "locations" : ["encounter", "practitionerRoles"]
+      },
       "extension": {
         "davinci-crd.configuration-options": [
           {
@@ -193,6 +205,12 @@
         "organizations" : "Organization?_id={{%practitionerRoles.organization.resolve().id}}",
         "locations" : "Practitioner?_id={{%practitionerRoles.location.resolve().id|%encounter.location.location.resolve().ofType(Location).id}}"
       },
+      "prefetchDependencies" : {
+        "practitionerRoles" : ["encounter"],
+        "practitioners" : ["encounter", "practitionerRoles"],
+        "organizations" : ["practitionerRoles"],
+        "locations" : ["encounter", "practitionerRoles"]
+      },
       "extension": {
         "davinci-crd.configuration-options": [
           {
@@ -235,6 +253,12 @@
         "organizations" : "Organization?_id={{%practitionerRoles.organization.resolve().id|context.draftOrders.entry.resource.dispenseRequest.performer.ofType(Organization).id}}",
         "locations" : "Location?_id={{%practitionerRoles.location.resolve().id|%encounter.location.location.resolve().ofType(Location).id|context.draftOrders.entry.locationReference.resolve().ofType(Location).id}}"
       },
+      "prefetchDependencies" : {
+        "practitionerRoles" : ["encounter"],
+        "practitioners" : ["encounter", "practitionerRoles"],
+        "organizations" : ["practitionerRoles"],
+        "locations" : ["encounter", "practitionerRoles"]
+      },
       "extension": {
         "davinci-crd.configuration-options": [
           {
@@ -269,6 +293,12 @@
         "practitioners" : "Practitioner?_id={{%practitionerRoles.practitioner.resolve().id|%encounter.participant.individual.resolve().ofType(Practitioner).id|%encounter.serviceProvider.resolve().ofType(Practitioner).id|context.draftOrders.entry.resource.sender.resolve().ofType(Practitioner).id|context.draftOrders.entry.resource.recipient.resolve().ofType(Practitioner).id|context.draftOrders.entry.resource.requester.resolve().ofType(Practitioner).id|context.draftOrders.entry.resource.performer.resolve().ofType(Practitioner).id|context.draftOrders.entry.resource.orderer.resolve().ofType(Practitioner).id|context.draftOrders.entry.resource.prescriber.resolve().ofType(Practitioner).id}}",
         "organizations" : "Organization?_id={{%practitionerRoles.organization.resolve().id|context.draftOrders.entry.resource.dispenseRequest.performer.id}}",
         "locations" : "Location?_id={{%practitionerRoles.location.resolve().id|%encounter.location.location.resolve().ofType(Location).id|context.draftOrders.entry.locationReference.resolve().ofType(Location).id}}"
+      },
+      "prefetchDependencies" : {
+        "practitionerRoles" : ["encounter"],
+        "practitioners" : ["encounter", "practitionerRoles"],
+        "organizations" : ["practitionerRoles"],
+        "locations" : ["encounter", "practitionerRoles"]
       },
       "extension": {
         "davinci-crd.configuration-options": [
@@ -388,6 +418,12 @@
         "practitioners" : "Practitioner?_id={{%practitionerRoles.practitioner.resolve().id|%encounter.participant.individual.resolve().ofType(Practitioner).id|%encounter.serviceProvider.resolve().ofType(Practitioner).id|%encounter.serviceProvider.resolve().ofType(PractitionerRole).practitioner.resolve().id|context.draftOrders.entry.resource.sender.resolve().ofType(Practitioner).id|context.draftOrders.entry.resource.recipient.resolve().ofType(Practitioner).id|context.draftOrders.entry.resource.requester.resolve().ofType(Practitioner).id|context.draftOrders.entry.resource.performer.resolve().ofType(Practitioner).id|context.draftOrders.entry.resource.orderer.resolve().ofType(Practitioner).id|context.draftOrders.entry.resource.prescriber.resolve().ofType(Practitioner).id}}",
         "organizations" : "Organization?_id={{%practitionerRoles.organization.resolve().id|context.draftOrders.entry.resource.dispenseRequest.performer.id}}",
         "locations" : "Location?_id={{%practitionerRoles.location.resolve().id|%encounter.location.location.resolve().ofType(Location).id|context.draftOrders.entry.locationReference.resolve().ofType(Location).id}}"
+      },
+      "prefetchDependencies" : {
+        "practitionerRoles" : ["encounter"],
+        "practitioners" : ["encounter", "practitionerRoles"],
+        "organizations" : ["practitionerRoles"],
+        "locations" : ["encounter", "practitionerRoles"]
       },
       "extension": {
         "davinci-crd.configuration-options": [
