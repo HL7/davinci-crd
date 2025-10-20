@@ -9,6 +9,7 @@ This page describes the primary releases of the specification and summarizes the
 * [FHIR-52060](https://jira.hl7.org/browse/FHIR-52060) - Allow MedicationRequest and DeviceRequest as supporting structures for Appointment *(enhancement)* [link](StructureDefinition-profile-appointment-with-order.html)
 * [FHIR-49982](https://jira.hl7.org/browse/FHIR-49982) - Added support to capture speciality using performerType on ServiceRequest *(enhancement)* [link](StructureDefinition-profile-servicerequest.html)
 * [FHIR-52059](https://jira.hl7.org/browse/FHIR-52059) - Add missing location code 66, add rule requiring sending CMS location codes if available, not just the required HL7 code *(correction, enhancement)* [link](StructureDefinition-profile-location.html), [link](CodeSystem-temp.html)
+* [FHIR-50216](https://jira.hl7.org/browse/FHIR-50216) - Added explicit guidance about the use of supplemental guides and clarified conformance expectations for interoperability *(clarification)* [link](conformance.html#FHIR-50216)
 
 **Non-substantive changes**:
 * [FHIR-52002](https://jira.hl7.org/browse/FHIR-52002) - Updated ONC to ASTP/ONC *(correction)*
