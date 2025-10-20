@@ -2,6 +2,7 @@ This page describes the primary releases of the specification and summarizes the
 
 ### Release 2.2.0
 **Breaking changes**:
+* [FHIR-52057](https://jira.hl7.org/browse/FHIR-52057) - Corrected single-digit CMS location codes to have a leading 0 *(correction)* [link](CodeSystem-temp.html), [link](ConceptMap-HL7Location-CRDTemp.html)
 
 **Substative changes**
 * [FHIR-52452](https://jira.hl7.org/browse/FHIR-52452) - Added 'contained' as mustSupport to request resources and encounters *(enhancement)*

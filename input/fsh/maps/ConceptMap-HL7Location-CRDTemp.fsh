@@ -12,8 +12,8 @@ Usage: #definition
 * group[+]
   * source = $v3-RoleCode
   * target = $temp
-  * insert mapeq(#PHARM, [[Pharmacy]], #1, [[Pharmacy **]])
-  * insert mapeq(#SCHOOL, [[school]], #3, [[School]])
+  * insert mapeq(#PHARM, [[Pharmacy]], #01, [[Pharmacy **]])
+  * insert mapeq(#SCHOOL, [[school]], #03, [[School]])
   * insert mapeq(#PROFF, [[Provider's Office]], #11, [[Office]])
   * insert mapeq(#MOBL, [[Mobile Unit]], #15, [[Mobile Unit]])
   * insert mapeq(#WORK, [[work site]], #18, [[Place of Employment-]])
