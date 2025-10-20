@@ -10,6 +10,7 @@ Description: "This profile specifies constraints on the US Core Location profile
 * type MS
 * type from CMSSupplementedLocationCodes (extensible)
   * ^condition[+] = crd-loc1
+  * ^comment = "Where a CRD client has a CMS code and the value set requires an HL7 code, they **SHALL** send both the CMS code and the required value set code."
 * address
   * type MS
   * type from CRDLocationAddressTypes (required)
