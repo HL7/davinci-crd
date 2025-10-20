@@ -4,6 +4,7 @@ This page describes the primary releases of the specification and summarizes the
 **Breaking changes**:
 * [FHIR-52057](https://jira.hl7.org/browse/FHIR-52057) - Corrected single-digit CMS location codes to have a leading 0 *(correction)* [link](CodeSystem-temp.html), [link](ConceptMap-HL7Location-CRDTemp.html)
 * [FHIR-49825](https://jira.hl7.org/browse/FHIR-49825) - Stripped language allowing coverage records to be added via a card or system action *(correction)* [link](cards.html#FHIR-49825)
+* [FHIR-52535](https://jira.hl7.org/browse/FHIR-52535) - Tighened expectations around providing OperationOutcomes *(clarification)* [link](hooks.html#FHIR-52535)
 
 **Substative changes**
 * [FHIR-52452](https://jira.hl7.org/browse/FHIR-52452) - Added 'contained' as mustSupport to request resources and encounters *(enhancement)*
