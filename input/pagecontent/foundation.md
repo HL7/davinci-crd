@@ -312,23 +312,12 @@ The use of an HTTP 412 response to the CDS Hooks invocation is for situations wh
 
 * When processing data from query responses, always check the 'self' link to ensure that the server executed what was requested and processed the data as necessary - or try querying by a different mechanism (e.g. multiple queries rather than relying on `_include`).
 
-### SMART on FHIR Hook Invocation
+<div class="modified-content" markdown="1"><a name="FHIR-52739"> </a>
+### What-if Hook Invocation
 In addition to the real-time decision support provided by CDS Hooks, providers will sometimes need to seek coverage requirements information without invoking the workflow of their provider system to actively create an order, appointment, encounter, etc. A few real-world examples where hooks may be invoked this way include exploring a "what if" scenario, answering a patient question related to whether a service would be covered, and retrieving a guidance document they had seen in a previous card.
 
-The solution to this need to perform coverage discovery at any time is the use of a SMART on FHIR app. Many CRD clients already support SMART on FHIR. That standard allows independently developed applications to be launched from within the CRD client (possibly within the user interface) and to interact with its data. Clients may choose to use SMART on FHIR apps to invoke coverage requirements discovery from CRD servers for "what if" scenarios, using a CRD client's existing SMART on FHIR interface. Alternatively, they can develop such functionality internally.
-
-CRD clients conforming with this specification **SHALL** support the SMART on FHIR interface, **SHALL** allow launching of SMART apps from within their application, and **SHALL** be capable of providing the SMART app access to information it exposes to CRD servers using the CDS Hooks interface.
-
-NOTES:
-
-* The use of SMART to explore "what if" scenarios is distinct from the use of SMART envisioned in CDS Hooks:
-    * Rather than launching a SMART app based on a returned card, a SMART app is used here to invoke a CDS hook to artificially simulate a workflow in the CRD client that would normally trigger a hook.
-    * When a SMART app is launched, draft orders within a CRD client will not typically be available to the app to submit to the CRD server. Information for consideration in the "what if" scenario will need to be entered into the app directly.
-    * When a CRD server returns cards, any instructions associated with the cards will be displayed in the app, but it may not be able to execute the instructions within the cards.
-* Exploration of "what if" scenarios using the app is intended to work for all the hooks. This might be accomplished using separate SMART apps for different types of orders or processes (e.g., distinct what if apps for ordering drugs, ordering labs, doing referrals, scheduling appointments) or a single SMART app that prompts the user to identify the scenario they are interested in exploring prior to invoking the hook.
-* The app/CRD client **MAY** choose to use configuration options to control what types of calls are available.
-
-In the specific case of order-based hooks, "what if" **SHOULD** use the Order Sign hook but **SHALL** use the configuration option that prevents the return of an unsolicited determination and **MAY** use configuration options to prevent the return of other irrelevant types of cards (e.g., duplicate therapy).
+The only difference between a 'regular' hook invocation and a 'what if' hook invocation is the limitations on the types of responses the client wants back.  For example, it would typically be inappropriate to receive an authorization number.  In the specific case of order-based hooks, "what if" **SHOULD** use the Order Sign hook but **SHALL** use the configuration option that prevents the return of an unsolicited determination and **MAY** use configuration options to prevent the return of other irrelevant types of cards (e.g., duplicate therapy).
+</div>
 
 ### Additional Considerations
 1. When CRD clients pass resources to a CRD server as part of context, the resources **SHALL** have an ID and that ID **SHALL** be usable as a target for references in resources manipulated by CDS Hooks actions and/or by SMART apps. This does not mean that the IDs passed to CRD server must persist, but rather that the CRD client must handle adjustments to any references made to them (or provide necessary redirects) ensuring that any references made to the in-memory resource will remain valid. This also means that CRD clients will need to support the creation or updating of resources that include references to resources that might, at the time, only exist in memory and not yet be available as persistent entities.
