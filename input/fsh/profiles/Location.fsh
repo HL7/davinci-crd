@@ -8,7 +8,7 @@ Description: "This profile specifies constraints on the US Core Location profile
 * ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location|6.1.0"
 * ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location|3.1.1"
 * type MS
-* type from CMSMappableLocationCodes (extensible)
+* type from CMSSupplementedLocationCodes (extensible)
   * ^condition[+] = crd-loc1
 * address
   * type MS

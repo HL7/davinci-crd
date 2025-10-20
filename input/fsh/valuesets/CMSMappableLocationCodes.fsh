@@ -1,19 +1,19 @@
-ValueSet: CMSMappableLocationCodes
-Id: CMSMappableLocationCodes
-Title: "CMS Mappable Location Codes Value Set"
+ValueSet: CMSSupplementedLocationCodes
+Id: CMSSupplementedLocationCodes
+Title: "CMS Supplemented US Core Location Codes Value Set"
 Description: "Extends the base HL7-defined value set codes with supplementary codes needed to provide full coverage to the CMS location code set"
 * ^status = #active
 * ^experimental = false
 * ^extension[$fmm].valueInteger = 1
 * include codes from valueset http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType
 * include http://terminology.hl7.org/CodeSystem/data-absent-reason#unknown
-* include $temp#2
-* include $temp#4
-* include $temp#5
-* include $temp#6
-* include $temp#7
-* include $temp#8
-* include $temp#9
+* include $temp#02
+* include $temp#04
+* include $temp#05
+* include $temp#06
+* include $temp#07
+* include $temp#08
+* include $temp#09
 * include $temp#10
 * include $temp#12
 * include $temp#13
