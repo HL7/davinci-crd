@@ -36,6 +36,11 @@ Description: "This profile specifies constraints on the ServiceRequest resource 
 * requester only Reference(USCorePractitionerProfile or HRexPractitionerRole)
   * ^type[0].targetProfile[0].extension[$typeMS].valueBoolean = true
   * ^type[0].targetProfile[1].extension[$typeMS].valueBoolean = true
+* performerType MS
+* performerType from HealthcareProviderTaxonomy (extensible)
+  * ^comment = "If there are multiple possible codes that could apply, send them using codeOptions and omit the coding elements"
+  * extension contains CodeOptions named codeOptions 0..* MS
+// TODO: Put the correct extension name here
 * performer only Reference(USCorePractitionerProfile or HRexPractitionerRole)
   * ^type[0].targetProfile[0].extension[$typeMS].valueBoolean = true
   * ^type[0].targetProfile[1].extension[$typeMS].valueBoolean = true

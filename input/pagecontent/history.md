@@ -5,7 +5,8 @@ This page describes the primary releases of the specification and summarizes the
 
 **Substative changes**
 * [FHIR-52452](https://jira.hl7.org/browse/FHIR-52452) - Added 'contained' as mustSupport to request resources and encounters *(enhancement)*
-* [FHIR-52060](https://jira.hl7.org/browse/FHIR-52060)- Allow MedicationRequest and DeviceRequest as supporting structures for Appointment
+* [FHIR-52060](https://jira.hl7.org/browse/FHIR-52060) - Allow MedicationRequest and DeviceRequest as supporting structures for Appointment *(enhancement)* [link](StructureDefinition-profile-appointment-with-order.html)
+* [FHIR-49982](https://jira.hl7.org/browse/FHIR-49982) - Added support to capture speciality using performerType on ServiceRequest *(enhancement)* [link](StructureDefinition-profile-servicerequest.html)
 
 **Non-substantive changes**:
 * [FHIR-52002](https://jira.hl7.org/browse/FHIR-52002) - Updated ONC to ASTP/ONC *(correction)*
