@@ -22,6 +22,7 @@ This page describes the primary releases of the specification and summarizes the
 * [FHIR-52585](https://jira.hl7.org/browse/FHIR-52585) - Clarified expectations for when cards can be used in place of DTR *(clarification)* [link](cards.html#FHIR-52585)
 * [FHIR-52531](https://jira.hl7.org/browse/FHIR-52531) - Changed example "recommended alternative therapies" to "payer-preferred alternative therapies” *(clarification)* [link](deviations.html#FHIR-52531)
 * [FHIR-52533](https://jira.hl7.org/browse/FHIR-52533) - Indicated the profile the form completion example was of *(clarification)* [link](deviations.html#FHIR-52533)
+* [FHIR-52314](https://jira.hl7.org/browse/FHIR-52314) - Clarified how systems are allowed to handle overly slow responses *(clarification)* [link](foundation.html#FHIR-52314)
 
 ### Release 2.2.0-ballot
 
