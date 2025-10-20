@@ -18,6 +18,7 @@ This page describes the primary releases of the specification and summarizes the
 * [FHIR-52004](https://jira.hl7.org/browse/FHIR-52004), [FHIR-52069](https://jira.hl7.org/browse/FHIR-52069), [FHIR-52480](https://jira.hl7.org/browse/FHIR-52480), [FHIR-52441](https://jira.hl7.org/browse/FHIR-52441) - Fixed various minor typos *(correction)*
 * [FHIR-53177](https://jira.hl7.org/browse/FHIR-53177) - Put coverage-information back on Appointment w/ No Order, as it had accidentally been dropped *(correction)* [link](StructureDefinition-profile-appointment-no-order.html)
 * [FHIR-52058](https://jira.hl7.org/browse/FHIR-52058) - Renamed "CMS Mappable Location Codes" to "CMS Supplemented US Core Location Codes" *(clarification)* [link](ValueSet-CMSSupplementedLocationCodes.html)
+* [FHIR-52585](https://jira.hl7.org/browse/FHIR-52585) - Clarified expectations for when cards can be used in place of DTR *(clarification)* [link](cards.html#FHIR-52585)
 
 ### Release 2.2.0-ballot
 
