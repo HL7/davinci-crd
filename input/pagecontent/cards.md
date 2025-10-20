@@ -339,14 +339,17 @@ The following is an example CDS Hooks [Suggestion]({{site.data.fhir.ver.cdshooks
 <p class="new-content">A profile defining the expectations of an Form Completion response can be found <a href="StructureDefinition-CRDHooksResponse-formCompletion.html">here</a>.</p>
 
 
-### Create or Update Coverage Records Response Type
-This response type is used when the CRD service is aware of additional coverage that is relevant to the current/proposed activity or has updates or corrections to make to the information held by the CRD client. For example, the CRD client might be aware that a patient has coverage with a provider, but not know the plan number, member identifier, or other relevant information. This response allows the CRD service to convey that information to the CRD client and link it to the current/proposed action. In theory, this type of response could also be used to convey corrected/additional prior authorization information the payer was aware of, however that functionality is out of scope for this release of the implementation guide.
+<div class="modified-content" markdown="1">
+<a name="FHIR-49825"> </a>
+### Update Coverage Records Response Type
+This response type is used when the CRD service has updates or corrections to make to the primary insurance coverage record held by the CRD client eing used for the CRD call. For example, the CRD client might be aware that a patient has coverage with a provider, but have incorrect details such as expiry date, coverage types, etc. This response allows the CRD service to convey that information to the CRD client and link it to the current/proposed action. In theory, this type of response could also be used to convey corrected/additional prior authorization information the payer was aware of, however that functionality is out of scope for this release of the implementation guide.
 
-Instead of using a card, CRD services **MAY** opt to use a <a href="{{site.data.fhir.ver.cdshooks}}/index.html#system-action">systemAction</a> instead. CRD clients supporting this response type **SHALL** support either approach. If receiving a system action, a CRD client **MAY** opt to place the new or updated record in a holding area for human review rather than directly modifying their source of truth.
+Instead of using a card, CRD services **MAY** opt to use a <a href="{{site.data.fhir.ver.cdshooks}}/index.html#system-action">systemAction</a> instead. CRD clients supporting this response type **SHALL** support either approach. If receiving a system action, a CRD client **MAY** opt to place the updated record in a holding area for human review rather than directly modifying their source of truth.
 
 NOTE: This functionality is somewhat redundant with the capabilities of the X12 270/271 transactions. This CRD capability **SHALL NOT** be used in situations where regulation dictates the use of the X12 functionality.
 
-This response will contain a single suggestion. The primary action will either be a suggestion to update an existing coverage instance (if the CRD client already has one) or to create a new coverage instance if the CRD service is aware of coverage that the CRD client is not. In addition, the suggestion could include updates on all relevant request resources to add or remove links to coverage instances, reflecting which coverages are relevant to which types of requests.
+This response will contain a single suggestion. The primary action will be a suggestion to update an existing coverage instance.
+</div>
 
 For example, this CDS Hooks [card]({{site.data.fhir.ver.cdshooks}}/index.html#cds-service-response) includes a single [suggestion]({{site.data.fhir.ver.cdshooks}}/index.html#suggestion) with an [action]({{site.data.fhir.ver.cdshooks}}/index.html#action) to update the [Coverage]({{site.data.fhir.path}}coverage.html).
 
