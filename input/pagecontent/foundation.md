@@ -37,6 +37,10 @@ CRD clients **SHALL** provide a mechanism for providers to bypass a CRD proces
 ### Accuracy
 CDS services **SHALL** ensure that the guidance returned with respect to coverage and prior authorizations (e.g., assertions that a service is covered, or prior authorization is not necessary) is as accurate as guidance that would be provided by other means (e.g., portals, phone calls). Also, such guidance should allow for possible variances in coding and submission. (See [Impact on payer processes](implementation.html#impact-on-payer-processes) on the Implementation Considerations page.)
 
+<div class="new-content" markdown="1"><a name="FHIR-52326"> </a>
+CRD services **SHALL** retain all coverage guidance provided and take into account answers provided via CRD (and DTR) when subsequently adjudicating claims.  Contractual rules and/or regulations may require payers to adhere to (non-expired) assertions made in CRD unless the change is outside of payer control (e.g. change to patient coverage).  Also see the [CRD operational recommendations](operational.html) section.
+</div>
+
 ### Terminology
 When invoking CDS Hooks, resources reflecting the clinical/business representation of the order, appointment, encounter, etc. will be transmitted to the CRD server. These data representations will generally make use of codes to describe the type of service or product being ordered, booked, or performed. These codes will draw from the code systems used at this stage of the business process and will typically be clinical codes rather than billing codes. That said, it is always possible to send multiple codings within a CodeableConcept. Where the selected code is not already a billing code and CRD clients are able to automatically determine what the corresponding billing code is, they **SHOULD** send a Coding with the billing code alongside the clinical code to reduce the risk of the receiving payer making a different translation.
 
@@ -74,6 +78,10 @@ To initiate this process, the payer responsible for a given CRD server must comm
 * The URL of their server
 * Which hook types it supports
 * What scopes it needs to perform its full function (and why)
+
+<div class="new-content" markdown="1"><a name="FHIR-52326"> </a>
+Also, see the [Operational Recommendations](operational.html) section.
+</div>
 
 ### CRD Access Tokens
 <a name="FHIR-49742"> </a>

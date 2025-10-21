@@ -106,6 +106,7 @@ This implementation guide (and the menu for it) is organized into the following 
   * [Project and Participants](credits.html) gives a high-level overview of Da Vinci and identifies the individuals and organizations involved in developing this implementation guide
   * [Burden Reduction](burden.html) identifies related specifications this implementation guide builds upon that developers should read and understand prior to implementing this specification
   * [ePA Coordinators](epa.html) acknowledges that neither the payer nor provider systems involved in CRD are monolithic and shows how the various components of provider and payer systems might interact with "ePA Coordinator" systems to satisfy the requirements of this IG
+  * [Operational Recommendations](operational.html) highlights topics that organizations should take into account when implementing the specification that fall outside the boundaries of conformance validation.
 * *Specification* - Pages that set conformance expectations
   * [Conformance Expectations](conformance.html) defines base language and expectations for declaring conformance with the guide
   * [Privacy, Safety, and Security](security.html) covers considerations around data access, protection, and similar concepts that apply to all implementations
