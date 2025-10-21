@@ -187,17 +187,13 @@ This hook allows multiple resource types to be present. Resources provided could
 
 The different relevant resource types are as follows (support can vary between clients):
 
-**CommunicationRequest**: Used when a provider requests that another provider transfer patient records or other supporting information to another organization or agency.
-
-**DeviceRequest**: Used for durable medical equipment orders, such as wheelchairs, prosthetics, diabetic supplies, etc.  It can also be used to order glasses and other vision-correction devices.
-
-**MedicationRequest**: Used to order inpatient and outpatient medications.<sup>*</sup>  Can also be used to order vaccinations.
-
-**ServiceRequest**: Used to order a referral, lab tests, diagnostic imaging, and sometimes to schedule a future appointment (also see [appointment-book](#appointment-book)).
-
-**NutritionOrder**: Used to order the preparation of specific meal types.  Generally used for in-patient care, but potentially also relevant for homecare.
-<a name="FHIR-49805a"> </a>
-<p class="new-content"><b>Vision Prescription</b>: Used to order eyeglasses, contacts, and similar vision-related prosthetics.</p>
+<a name="FHIR-52582"> </a>
+* **CommunicationRequest**: Used when a provider requests that another provider transfer patient records or other supporting information to another organization or agency.
+* **DeviceRequest**: Used for durable medical equipment orders, such as wheelchairs, prosthetics, diabetic supplies, etc.  It can also be used to order glasses and other vision-correction devices.
+* **MedicationRequest**: Used to order inpatient and outpatient medications.<sup>*</sup>  Can also be used to order vaccinations.
+* **ServiceRequest**: Used to order a referral, lab tests, diagnostic imaging, and sometimes to schedule a future appointment (also see [appointment-book](#appointment-book)).
+* **NutritionOrder**: Used to order the preparation of specific meal types.  Generally used for in-patient care, but potentially also relevant for homecare.
+* **<span class="new-content"><a name="FHIR-49805a"> </a>**Vision Prescription**: Used to order eyeglasses, contacts, and similar vision-related prosthetics.</span>
 
 <sup>*</sup> - Note: in the medication space, regulations may mandate alternate standards for some of the functionality covered by CRD for certain classes of medications.  E.g. NCPDP Script
 
