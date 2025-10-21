@@ -30,6 +30,7 @@ This page describes the primary releases of the specification and summarizes the
 * [FHIR-52062](https://jira.hl7.org/browse/FHIR-52062) - Clarified language around 400 vs. 422 errors *(clarification)* [link](hooks.html#FHIR-52062)
 * [FHIR-52537](https://jira.hl7.org/browse/FHIR-52537) - Clarified language around CRD for member attribution *(clarification)* [link](hooks.html#FHIR-52537)
 * [FHIR-52582](https://jira.hl7.org/browse/FHIR-52582) - Made list of resources into a bulleted list *(correction)* [link](hooks.html#FHIR-52582)
+* [FHIR-52463](https://jira.hl7.org/browse/FHIR-52463) - Corrected language about launching DTR *(correction)* [link](usecases.html#FHIR-52463)
 
 ### Release 2.2.0-ballot
 
