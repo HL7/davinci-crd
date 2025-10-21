@@ -47,8 +47,12 @@ Description: "An appointment where the details of what the appointment is being 
 * ^experimental = false
 * ^abstract = false
 * basedOn 1.. MS
-* basedOn only Reference(CRDServiceRequest or CRDMedicationRequest or CRDDeviceRequest)
+* basedOn only Reference(CRDServiceRequest)
   * ^comment = "Potentially relevant for CRD in some situations.  Must Support only applies if the client supports the given type of order and also ties their appointments directly to that type of order."
+  * extension contains $alternate-reference named AlternateReference 0..1 MS
+  * extension[AlternateReference]
+    * ^comment = "Allows supporting referencing resources enabled in R5 but not officially supported in R4"
+    * valueReference only Reference(CRDMedicationRequest or CRDDeviceRequest)
 
 Profile: CRDAppointmentNoOrder
 Parent: CRDAppointmentBase
