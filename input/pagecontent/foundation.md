@@ -93,13 +93,13 @@ Also, see the [Operational Recommendations](operational.html) section.
 
 ### Additional Data Retrieval
 The context information provided as part of hook invocation will often not be enough for a CRD server to fully determine coverage requirements. This section of the guide describes a common set of queries that define data that most, if not all, CRD servers will need to perform their requirements assessment.
-<a name="FHIR-48771a"> </a>
-<p class="modified-content">For this release of the IG, conformant CRD clients <b>SHOULD</b> support the CDS Hooks <a href="{{site.data.fhir.ver.cdshooks}}/index.html#prefetch-template">prefetch</a> capability and be able to perform all the prefetch queries defined perform all the queries defined in the <a href="#prefetch">prefetch</a> section below.  Where prefetch is not supported, CRD clients <b>SHOULD</b> implement interfaces to <a href="{{site.data.fhir.path}}search.html#include">_include</a> resources not available in the system's database. That is, if some of the data is stored in a separate system, it should ideally still be retrievable via <code>_include</code> in queries executed against the client. Each payer will define the prefetch requests for their CRD server based on the information they require to provide coverage requirements. They <b>MAY</b> include more and/or less than described in this section. Prefetch requests <b>SHOULD</b> only include information that is always expected to be needed for each hook invocation. When information is only needed for certain invocations of the hook (e.g., for specific types of medications or services), that information <b>SHALL</b> only be retrieved by query using the provided token, never requested universally via prefetch. Not all CRD clients will support all prefetch requests.</p>
+<a name="FHIR-48771a"> </a><a name="FHIR-52444"> </a>
+<div class="modified-content" markdown="1">For this release of the IG, conformant CRD clients and servers **SHALL** support the CDS Hooks [prefetch]({{site.data.fhir.ver.cdshooks}}/index.html#prefetch-template) capability.  Clients **SHALL** be able to perform at least the prefetch queries defined perform all the queries defined in the [prefetch](#prefetch) section below and servers **SHALL** use prefetch expressions in the manner described if those data elements are relevant to their coverage determination or other decision support.  
 
-<blockquote class="stu-note">
-<p>In future releases of this specification, the requirements in this section might become a <b>SHALL</b>. Implementers are encouraged to provide feedback about this possibility based on their initial implementation experience.</p></blockquote>
+Each payer will define the prefetch requests for their CRD server based on the information they require to provide coverage requirements. They **MAY** include more and/or less than described in this section. Prefetch requests **SHOULD** only include information that is always expected to be needed for each hook invocation. When information is only needed for certain invocations of the hook (e.g., for specific types of medications or services), that information **SHALL** only be retrieved by query using the provided token, never requested universally via prefetch. Not all CRD clients will support prefetch requests that go beyond the standard set of prefetches listed below.
 
-The base requirement for these queries, whether based on Encounter or one of the request resources, is to bring back the following associated resources:
+The base requirement for these prefetches, whether based on Encounter or one of the request resources, is to bring back the following associated resources:
+</div>
 
 *  Patient
 *  Relevant Coverage
@@ -126,7 +126,6 @@ CRD client implementations **SHOULD NOT** expect standardized prefetch key names
 <a name="FHIR-48797"> </a>
 <div class="modified-content">
 <p>In most cases, payers will require information about a patient's coverage. As mentioned in <a href="deviations.html#controlling-hook-invocation">Controlling Hook Invocation</a>, whether returned as part of prefetch or returned via query, Coverage <b>SHALL</b> be limited to a single instance. How this happens is up to the CRD client.  The limitation of there only being one coverage applies regardless of whether the Coverage instance is being returned as part of prefetch or if Coverage is being searched using the token provided as part of hook invocation.  Regardless of method of invocation, there <b>SHALL</b> be exactly one Coverage instance returned.</p>
-</div>
 
 Coverage prefetch will look like this:
 
@@ -134,148 +133,10 @@ Coverage prefetch will look like this:
 {% fragment Binary/CRDServices JSON BASE:services.where(hook='order-sign') EXCEPT: title | description | id | extension %}
 {% endraw %}
 
-A recommended set of prefetch expectations for all hook types can be found [here](Binary-CRDServices.html).
+The minimum set of prefetch expectations for all hook types that must be supported by all CRD clients and solicited (when relevant) by all CRD servers can be found [here](Binary-CRDServices.html).
 
-Other information will need to be retrieved using queries that are more specific to the type of hook being invoked and the resources passed with it.  The table below lists the queries to retrieve common key information for each type of context resource if not using prefetch.  Note that the queries use `draftOrders` as the context, which will hold for order-select and order-sign hooks, but will need to be `dispatchedOrders` for order-dispatch hooks.
-<a name="FHIR-49196"> </a>
-<div class="modified-content">
-<p>The queries below make use of _include to reduce the overall number of queries that need to be performed.  However, not all CRD clients will support _include at all or will support all _include search parameters leveraged in these examples.  CRD services that choose to take advantage of _include will need to adapt their queries based on the support declared in the CRD client's CapabilityStatement.</p>
-
-{% raw %}
-<table class="grid">
-  <thead>
-    <tr>
-      <th>Resource</th>
-      <th>Query</th>
-      <th>Notes</th>
-    </tr>
-  </thead>
-  <tr>
-    <td>Appointment</td>
-    <td>
-      <code>Appointment?_id={{context.appointments.entry.resource.id}}<br/>
-      &_include=Appointment:patient<br/>
-      &_include=Appointment:practitioner<br/>
-      &_include=Appointment:location<br/>
-      &_include=Appointment:based-on:ServiceRequest<br/>
-      &_include:iterate=PractitionerRole:organization<br/>
-      &_include:iterate=PractitionerRole:practitioner<br/>
-      &_include:iterate=PractitionerRole:location<br/>
-      &_include:iterate=ServiceRequest:performer<br/>
-      &_include:iterate=ServiceRequest:requester<br/><br/>
-      Coverage?patient={{context.patient}}</code>
-    </td>
-    <td>Location only through performer</td>
-  </tr>
-  <tr>
-    <td>CommunicationRequest</td>
-    <td>
-      <code>CommunicationRequest?_id={{context.draftOrders.entry.resource.ofType(CommunicationRequest).id}}<br/>
-      &_include=CommunicationRequest:patient<br/>
-      &_include=CommunicationRequest:recipient<br/>
-      &_include=CommunicationRequest:requester<br/>
-      &_include=CommunicationRequest:sender<br/>
-      &_include:iterate=PractitionerRole:organization<br/>
-      &_include:iterate=PractitionerRole:practitioner<br/>
-      &_include:iterate=PractitionerRole:location<br/><br/>
-      Coverage?patient={{context.patient}}</code>
-    </td>
-    <td>Location only through performer</td>
-  </tr>
-  <tr>
-    <td>DeviceRequest</td>
-    <td>
-      <code>DeviceRequest?_id={{context.draftOrders.entry.resource.ofType(DeviceRequest).id}}<br/>
-      &_include=DeviceRequest:patient<br/>
-      &_include=DeviceRequest:performer<br/>
-      &_include=DeviceRequest:requester<br/>
-      &_include=DeviceRequest:device<br/>
-      &_include:iterate=PractitionerRole:organization<br/>
-      &_include:iterate=PractitionerRole:practitioner<br/>
-      &_include:iterate=PractitionerRole:location<br/><br/>
-      Coverage?patient={{context.patient}}</code>
-    </td>
-    <td>Location only through performer</td>
-  </tr>
-  <tr>
-    <td>Encounter</td>
-    <td>
-      <code>Encounter?_id={{context.encounterId}}<br/>
-      &_include=Encounter:patient<br/>
-      &_include=Encounter:service-provider<sup>†</sup><br/>
-      &_include=Encounter:practitioner<br/>
-      &_include=Encounter:location<br/>
-      &_include:iterate=PractitionerRole:organization<br/>
-      &_include:iterate=PractitionerRole:practitioner<br/>
-      &_include:iterate=PractitionerRole:location<br/><br/>
-      Coverage?patient={{context.patient}}</code>
-    </td>
-    <td>No requester</td>
-  </tr>
-  <tr>
-    <td>MedicationRequest</td>
-    <td>
-      <code>MedicationRequest?_id={{context.draftOrders.entry.resource.ofType(MedicationRequest).id}}<br/>
-      &_include=MedicationRequest:patient<br/>
-      &_include=MedicationRequest:intended-dispenser<br/>
-      &_include=MedicationRequest:requester:PractitionerRole<br/>
-      &_include=MedicationRequest:medication<br/>
-      &_include:iterate=PractitionerRole:organization<br/>
-      &_include:iterate=PractitionerRole:practitioner<br/>
-      &_include:iterate=PractitionerRole:location<br/><br/>
-      Coverage?patient={{context.patient}}</code>
-    </td>
-    <td>Location only through performer</td>
-  </tr>
-  <tr>
-    <td>NutritionOrder</td>
-    <td>
-      <code>NutritionOrder?_id={{context.draftOrders.entry.resource.ofType(NutritionOrder).id}}<br/>
-      &_include=NutritionOrder:patient<br/>
-      &_include=NutritionOrder:provider<br/>
-      &_include=NutritionOrder:requester<br/>
-      &_include=NutritionOrder:encounter<br/>
-      &_include:iterate=PractitionerRole:organization<br/>
-      &_include:iterate=PractitionerRole:practitioner<br/>
-      &_include:iterate=PractitionerRole:location<br/>
-      &_include:iterate=Encounter:location<br/><br/>
-      Coverage?patient={{context.patient}}</code>
-    </td>
-    <td>Location only through request encounter</td>
-  </tr>
-  <tr>
-    <td>ServiceRequest</td>
-    <td>
-      <code>ServiceRequest?_id={{context.draftOrders.entry.resource.ofType(ServiceRequest).id}}<br/>
-      &_include=ServiceRequest:patient<br/>
-      &_include=ServiceRequest:performer<br/>
-      &_include=ServiceRequest:requester<br/>
-      &_include:iterate=PractitionerRole:organization<br/>
-      &_include:iterate=PractitionerRole:practitioner<br/>
-      &_include:iterate=PractitionerRole:location<br/><br/>
-      Coverage?patient={{context.patient}}</code>
-    </td>
-    <td>Location only through performer</td>
-  </tr>
-  <tr>
-    <td>VisionPrescription</td>
-    <td>
-      <code>VisionPrescription?_id={{context.draftOrders.entry.resource.ofType(VisionPrescription).id}}<br/>
-      &_include=VisionPrescription:patient<br/>
-      &_include=VisionPrescription:prescriber<br/>
-      &_include:iterate=PractitionerRole:organization<br/>
-      &_include:iterate=PractitionerRole:practitioner<br/>
-      &_include:iterate=PractitionerRole:location<br/><br/>
-      Coverage?patient={{context.patient}}</code>
-    </td>
-    <td>Location only through performer</td>
-  </tr>
-</table>
+Other information will need to be retrieved using queries that are more specific to the type of hook being invoked and the resources passed with it.
 </div>
-<p>
-<sup>†</sup> The service-provider search type is only relevant if the CRD client supports the 'serviceProvider' element, which is not 'mustSupport'.
-</p>
-{% endraw %}
 
 #### FHIR Resource Access
 If information needed is not provided by prefetch, the CRD server can query the client directly using the [FHIR resource access]({{site.data.fhir.ver.cdshooks}}/index.html#fhir-resource-access) mechanism defined in the CDS Hooks specification.
