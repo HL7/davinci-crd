@@ -79,7 +79,7 @@ To initiate this process, the payer responsible for a given CRD server must comm
 * Which hook types it supports
 * What scopes it needs to perform its full function (and why)
 
-<div class="new-content" markdown="1"><a name="FHIR-52326"> </a>
+<div class="new-content" markdown="1"><a name="FHIR-52326b"> </a>
 Also, see the [Operational Recommendations](operational.html) section.
 </div>
 

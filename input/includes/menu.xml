@@ -3,7 +3,7 @@
     <a href="{{site.data.info.assets}}index.html">IG Home</a>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Background<b class="caret">
+    <a data-toggle="dropdown" href="{{site.data.info.assets}}index.html" class="dropdown-toggle">Background<b class="caret">
       </b>
     </a>
     <ul class="dropdown-menu">
@@ -28,7 +28,7 @@
     </ul>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Specification<b class="caret">
+    <a data-toggle="dropdown" href="{{site.data.info.assets}}index.html" class="dropdown-toggle">Specification<b class="caret">
       </b>
     </a>
     <ul class="dropdown-menu">
@@ -59,7 +59,7 @@
     </ul>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artifacts<b class="caret">
+    <a data-toggle="dropdown" href="{{site.data.info.assets}}index.html" class="dropdown-toggle">FHIR Artifacts<b class="caret">
       </b>
     </a>
     <ul class="dropdown-menu">
@@ -81,7 +81,7 @@
     </ul>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Base Specs<b class="caret">
+    <a data-toggle="dropdown" href="{{site.data.info.assets}}index.html" class="dropdown-toggle">Base Specs<b class="caret">
       </b>
     </a>
     <ul class="dropdown-menu">
@@ -109,7 +109,7 @@
     </ul>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support<b class="caret">
+    <a data-toggle="dropdown" href="{{site.data.info.assets}}index.html" class="dropdown-toggle">Support<b class="caret">
       </b>
     </a>
     <ul class="dropdown-menu">

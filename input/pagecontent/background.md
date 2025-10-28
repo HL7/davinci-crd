@@ -68,7 +68,7 @@ CDS Hooks provides a mechanism for payers to advise clinicians on coverage requi
 
 Such recommendations might be from decision support (such as ImmunizationRecommendation or a CarePlan with an intent of 'proposed') or from standard protocols (e.g. "this patient is due for a pap smear").  In such cases, the EHR can support automated generation of 'draft' requests (such as MedicationRequest or ServiceRequest) based on the decision support or protocol resources and use them when invoking CRD.  Alternatively, the EHR might support launching a SMART on FHIR app that would capture the key information needed to drive a CRD response.
 
-Discussion of how a SMART on FHIR app can be used to trigger CDS Hooks from within an CRD client to perform such what-if scenarios can be found [here](foundation.html#smart-on-fhir-hook-invocation).
+Discussion of how a SMART on FHIR app can be used to trigger CDS Hooks from within an CRD client to perform such what-if scenarios can be found [here](foundation.html#what-if-hook-invocation).
 
 ##### Apps for Decision Support
 Payers may recommend the launch of SMART apps that are relevant to the activity the user is performing. For example, an app might help guide order creation for specialized patient needs, help evaluate alternative therapies, determine whether complementary therapy is necessary/appropriate, etc. These might have clinical or administrative purposes. Recommendations for such apps would be returned by the [SMART app response type](cards.html#launch-smart-application-response-type).

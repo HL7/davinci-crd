@@ -16,7 +16,7 @@ This page describes the primary releases of the specification and summarizes the
 * [FHIR-50216](https://jira.hl7.org/browse/FHIR-50216) - Added explicit guidance about the use of supplemental guides and clarified conformance expectations for interoperability *(clarification)* [link](conformance.html#FHIR-50216)
 * [FHIR-52583](https://jira.hl7.org/browse/FHIR-52583) - Tightened expectations about recognizability of card source label *(correction)* [link](cards.html#FHIR-52583)
 * [FHIR-51715](https://jira.hl7.org/browse/FHIR-51715) - Cleaned up language on SMART on FHIR security expectations *(correction)* [link](security.html#FHIR-51715)
-* [FHIR-52326](https://jira.hl7.org/browse/FHIR-52326) - Added section on operational recommendations *(enhancement)* [link](foundations.html#FHIR-52326), (foundations.html#FHIR-52326), [link](operational.html)
+* [FHIR-52326](https://jira.hl7.org/browse/FHIR-52326) - Added section on operational recommendations *(enhancement)* [link](foundations.html#FHIR-52326), (foundations.html#FHIR-52326b), [link](operational.html)
 
 **Non-substantive changes**:
 * [FHIR-52002](https://jira.hl7.org/browse/FHIR-52002) - Updated ONC to ASTP/ONC *(correction)*
@@ -77,7 +77,7 @@ This page describes the primary releases of the specification and summarizes the
 * [FHIR-49003](https://jira.hl7.org/browse/FHIR-49003) - Removed language implying that Task could be a focal request when submitting a CRD request or have coverage-information and provided clearer information about the purpose of CommunicationRequest *(correction, clarification)* - section no longer exists to link to
 * [FHIR-49731](https://jira.hl7.org/browse/FHIR-49731) - Corrected prefetch syntax to be CDS Hooks-conformant *(correction)* [link](foundation.html#prefetch)
 * [FHIR-48771](https://jira.hl7.org/browse/FHIR-48771) - Clarified prefetch references *(clarification)* [link](foundation.html#FHIR-48771a), [link](foundation.html#FHIR-48771b)
-* [FHIR-49196](https://jira.hl7.org/browse/FHIR-49196) - Clarified that _include may not be supported when using non-prefetch queries. *(clarification)* [link](foundation.html#FHIR-49196)
+* [FHIR-49196](https://jira.hl7.org/browse/FHIR-49196) - Clarified that _include may not be supported when using non-prefetch queries. *(clarification)* NOTE: This is no longer relevant given FHIR-52444 in the 2.2.0 final release
 * [FHIR-48797](https://jira.hl7.org/browse/FHIR-48797) - Clarified rules on multiple coverages *(clarification)* [link](foundation.html#FHIR-48797)
 * [FHIR-49805](https://jira.hl7.org/browse/FHIR-49805) - Added CommunicationRequest and VisionPrescription to prefetch and non-prefetch queries *(correction)* [link](foundation.html#prefetch), [link](Binary-CRDServices.html), [link](hooks.html#FHIR-49805a), , [link](hooks.html#FHIR-49805b)
 * [FHIR-49835](https://jira.hl7.org/browse/FHIR-49835) - Removed the "additional hook resources" section of the deviations page (because in the referenced version of the CDS Hooks, it's no longer a deviation).  *(correction)* Nothing to link to anymore
@@ -143,7 +143,7 @@ Corrected the embedded JSON examples to be technically correct and in line with 
 A number of additional changes and enhancements.  Key differences are:
 * Renamed the 'Annotate' card to [Coverage Information](cards.html#coverage-information-response-type) and made it a system action rather than a card
 * Removed the Unsolicited determination card type
-* Added system action as an optional feature of the [form completion](cards.html#request-form-completion-response-type) and [update coverage information](cards.html#create-or-update-coverage-records-response-type) cards
+* Added system action as an optional feature of the [form completion](cards.html#request-form-completion-response-type) and [update coverage information](cards.html#update-coverage-records-response-type) cards
 * Removed guidance on deferring card actions (as it's no longer terribly relevant for CRD and SMART now defines a mechanism)
 * Added additional properties to the [coverage-information](StructureDefinition-ext-coverage-information.html) extension including the ability to specify questionnaires and draft responses for DTR, authorized billing codes, dependencies on other orders, and other details.
 * Removed support for 'de-identified' invocation of CRD

@@ -1953,7 +1953,6 @@ v: {
   "system" : "urn:iso:std:iso:3166",
   "version" : "2018",
   "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -1978,7 +1977,6 @@ v: {
   "code" : "en",
   "system" : "urn:ietf:bcp:47",
   "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -2008,7 +2006,6 @@ v: {
   "system" : "http://snomed.info/sct",
   "version" : "http://snomed.info/sct/731000124108/version/20250301",
   "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -2038,7 +2035,6 @@ v: {
   "error" : "No valid coding was found for the value set 'http://hl7.org/fhir/ValueSet/encounter-admit-source|4.0.1'; The provided code 'http://snomed.info/sct#305956004 ('Referral by physician')' was not found in the value set 'http://hl7.org/fhir/ValueSet/encounter-admit-source|4.0.1'",
   "class" : "UNKNOWN",
   "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",
   "issue" : [{
@@ -2108,7 +2104,6 @@ v: {
   "error" : "No valid coding was found for the value set 'http://hl7.org/fhir/us/core/ValueSet/us-core-discharge-disposition|7.0.0'; The provided code 'http://snomed.info/sct#306689006 ('Discharge to home')' was not found in the value set 'http://hl7.org/fhir/us/core/ValueSet/us-core-discharge-disposition|7.0.0'",
   "class" : "UNKNOWN",
   "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",
   "issue" : [{
@@ -2180,7 +2175,6 @@ v: {
   "code" : "CA",
   "system" : "https://www.usps.com/",
   "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -2205,7 +2199,6 @@ v: {
   "code" : "CA",
   "system" : "https://www.usps.com/",
   "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -2231,7 +2224,6 @@ v: {
   "system" : "http://unitsofmeasure.org",
   "version" : "2.2",
   "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -2261,7 +2253,6 @@ v: {
   "error" : "No valid coding was found for the value set 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1010.4|20240606'; The provided code 'http://snomed.info/sct#1145423002 ('Azithromycin 250 mg oral tablet')' was not found in the value set 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1010.4|20240606'",
   "class" : "UNKNOWN",
   "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",
   "issue" : [{
@@ -2331,7 +2322,6 @@ v: {
   "system" : "http://snomed.info/sct",
   "version" : "http://snomed.info/sct/731000124108/version/20250301",
   "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -2357,7 +2347,6 @@ v: {
   "system" : "http://unitsofmeasure.org",
   "version" : "2.2",
   "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -2389,7 +2378,6 @@ v: {
   "code" : "OK",
   "system" : "https://www.usps.com/",
   "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -2414,7 +2402,6 @@ v: {
   "code" : "OK",
   "system" : "https://www.usps.com/",
   "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -2445,7 +2432,6 @@ v: {
   "system" : "http://snomed.info/sct",
   "version" : "http://snomed.info/sct/731000124108/version/20250301",
   "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -2475,7 +2461,6 @@ v: {
   "system" : "http://snomed.info/sct",
   "version" : "http://snomed.info/sct/731000124108/version/20250301",
   "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -2501,7 +2486,6 @@ v: {
   "system" : "http://snomed.info/sct",
   "version" : "http://snomed.info/sct/731000124108/version/20250301",
   "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -2536,7 +2520,6 @@ v: {
   "system" : "http://nucc.org/provider-taxonomy",
   "version" : "22.1",
   "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -2562,7 +2545,6 @@ v: {
   "system" : "http://unitsofmeasure.org",
   "version" : "2.2",
   "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -2662,7 +2644,6 @@ v: {
   "system" : "http://www.ama-assn.org/go/cpt",
   "version" : "2023",
   "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -2691,7 +2672,6 @@ v: {
   "system" : "http://www.ama-assn.org/go/cpt",
   "version" : "2023",
   "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -2720,7 +2700,6 @@ v: {
   "system" : "http://www.ama-assn.org/go/cpt",
   "version" : "2023",
   "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -2749,7 +2728,6 @@ v: {
   "system" : "http://www.ama-assn.org/go/cpt",
   "version" : "2023",
   "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -2958,9 +2936,650 @@ v: {
   "system" : "urn:iso:std:iso:3166",
   "version" : "2018",
   "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
+}
+
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://www.ama-assn.org/go/cpt",
+    "code" : "0795T"
+  }]
+}, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes", "version": "2.2.0-ballot", "langs":"en", "useServer":"true", "useClient":"false", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  },
+  {
+    "name" : "defaultDisplayLanguage",
+    "valueCode" : "en"
+  }]
+}}####
+v: {
+  "severity" : "error",
+  "error" : "Code '0795T' not found in CPT; No valid coding was found for the value set 'http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot'; The provided code 'http://www.ama-assn.org/go/cpt#0795T' was not found in the value set 'http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot'; Unknown code '0795T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'",
+  "class" : "UNKNOWN",
+  "server" : "https://tx.fhir.org/r4",
+  "diagnostics" : "0 0 : start\r\n16 16: tx-op\r\n16 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: Analysing\r\n16 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: Parameters: disp-lang=en, default-to-latest\r\n16 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: Version Rules: http://snomed.info/sct#http://snomed.info/sct/731000124108/0\r\n16 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: CodeSystem found: \"http://www.ama-assn.org/go/cpt|2023\"\r\n16 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: CodeSystem not found: \"https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets\"\r\n16 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: CodeSystem found: \"http://www.nlm.nih.gov/research/umls/rxnorm|??\"\r\n16 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: Validate \"[http://www.ama-assn.org/go/cpt#0795T (\"\")]\"\r\n16 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: Check \"http://www.ama-assn.org/go/cpt#0795T\"\r\n16 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt\r\n16 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: Code \"0795T\" not found in http://www.ama-assn.org/go/cpt|2023\r\n",
+  "unknown-systems" : "",
+  "issues" : {
+  "resourceType" : "OperationOutcome",
+  "issue" : [{
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString" : "Unknown_Code_in_Version"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
+      "valueUrl" : "https://tx.fhir.org/r4"
+    }],
+    "severity" : "error",
+    "code" : "code-invalid",
+    "details" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
+        "code" : "invalid-code"
+      }],
+      "text" : "Unknown code '0795T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'"
+    },
+    "location" : ["CodeableConcept.coding[0].code"],
+    "expression" : ["CodeableConcept.coding[0].code"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString" : "None_of_the_provided_codes_are_in_the_value_set_one"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
+      "valueUrl" : "https://tx.fhir.org/r4"
+    }],
+    "severity" : "information",
+    "code" : "code-invalid",
+    "details" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
+        "code" : "this-code-not-in-vs"
+      }],
+      "text" : "The provided code 'http://www.ama-assn.org/go/cpt#0795T' was not found in the value set 'http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot'"
+    },
+    "location" : ["CodeableConcept.coding[0].code"],
+    "expression" : ["CodeableConcept.coding[0].code"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
+      "valueUrl" : "https://tx.fhir.org/r4"
+    }],
+    "severity" : "information",
+    "code" : "code-invalid",
+    "details" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
+        "code" : "invalid-code"
+      }],
+      "text" : "Code '0795T' not found in CPT"
+    },
+    "location" : ["CodeableConcept.coding[0].code"],
+    "expression" : ["CodeableConcept.coding[0].code"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString" : "TX_GENERAL_CC_ERROR_MESSAGE"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
+      "valueUrl" : "https://tx.fhir.org/r4"
+    }],
+    "severity" : "error",
+    "code" : "code-invalid",
+    "details" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
+        "code" : "not-in-vs"
+      }],
+      "text" : "No valid coding was found for the value set 'http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot'"
+    }
+  }]
+}
+
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://www.ama-assn.org/go/cpt",
+    "code" : "0796T"
+  }]
+}, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes", "version": "2.2.0-ballot", "langs":"en", "useServer":"true", "useClient":"false", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  },
+  {
+    "name" : "defaultDisplayLanguage",
+    "valueCode" : "en"
+  }]
+}}####
+v: {
+  "severity" : "error",
+  "error" : "Code '0796T' not found in CPT; No valid coding was found for the value set 'http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot'; The provided code 'http://www.ama-assn.org/go/cpt#0796T' was not found in the value set 'http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot'; Unknown code '0796T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'",
+  "class" : "UNKNOWN",
+  "server" : "https://tx.fhir.org/r4",
+  "diagnostics" : "0 0 : start\r\n15 15: tx-op\r\n15 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: Analysing\r\n15 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: Parameters: disp-lang=en, default-to-latest\r\n15 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: Version Rules: http://snomed.info/sct#http://snomed.info/sct/731000124108/0\r\n15 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: CodeSystem found: \"http://www.ama-assn.org/go/cpt|2023\"\r\n15 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: CodeSystem not found: \"https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets\"\r\n15 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: CodeSystem found: \"http://www.nlm.nih.gov/research/umls/rxnorm|??\"\r\n15 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: Validate \"[http://www.ama-assn.org/go/cpt#0796T (\"\")]\"\r\n15 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: Check \"http://www.ama-assn.org/go/cpt#0796T\"\r\n15 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt\r\n15 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: Code \"0796T\" not found in http://www.ama-assn.org/go/cpt|2023\r\n",
+  "unknown-systems" : "",
+  "issues" : {
+  "resourceType" : "OperationOutcome",
+  "issue" : [{
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString" : "Unknown_Code_in_Version"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
+      "valueUrl" : "https://tx.fhir.org/r4"
+    }],
+    "severity" : "error",
+    "code" : "code-invalid",
+    "details" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
+        "code" : "invalid-code"
+      }],
+      "text" : "Unknown code '0796T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'"
+    },
+    "location" : ["CodeableConcept.coding[0].code"],
+    "expression" : ["CodeableConcept.coding[0].code"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString" : "None_of_the_provided_codes_are_in_the_value_set_one"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
+      "valueUrl" : "https://tx.fhir.org/r4"
+    }],
+    "severity" : "information",
+    "code" : "code-invalid",
+    "details" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
+        "code" : "this-code-not-in-vs"
+      }],
+      "text" : "The provided code 'http://www.ama-assn.org/go/cpt#0796T' was not found in the value set 'http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot'"
+    },
+    "location" : ["CodeableConcept.coding[0].code"],
+    "expression" : ["CodeableConcept.coding[0].code"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
+      "valueUrl" : "https://tx.fhir.org/r4"
+    }],
+    "severity" : "information",
+    "code" : "code-invalid",
+    "details" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
+        "code" : "invalid-code"
+      }],
+      "text" : "Code '0796T' not found in CPT"
+    },
+    "location" : ["CodeableConcept.coding[0].code"],
+    "expression" : ["CodeableConcept.coding[0].code"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString" : "TX_GENERAL_CC_ERROR_MESSAGE"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
+      "valueUrl" : "https://tx.fhir.org/r4"
+    }],
+    "severity" : "error",
+    "code" : "code-invalid",
+    "details" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
+        "code" : "not-in-vs"
+      }],
+      "text" : "No valid coding was found for the value set 'http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot'"
+    }
+  }]
+}
+
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://www.ama-assn.org/go/cpt",
+    "code" : "0797T"
+  }]
+}, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes", "version": "2.2.0-ballot", "langs":"en", "useServer":"true", "useClient":"false", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  },
+  {
+    "name" : "defaultDisplayLanguage",
+    "valueCode" : "en"
+  }]
+}}####
+v: {
+  "severity" : "error",
+  "error" : "Code '0797T' not found in CPT; No valid coding was found for the value set 'http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot'; The provided code 'http://www.ama-assn.org/go/cpt#0797T' was not found in the value set 'http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot'; Unknown code '0797T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'",
+  "class" : "UNKNOWN",
+  "server" : "https://tx.fhir.org/r4",
+  "diagnostics" : "0 0 : start\r\n16 16: tx-op\r\n16 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: Analysing\r\n16 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: Parameters: disp-lang=en, default-to-latest\r\n16 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: Version Rules: http://snomed.info/sct#http://snomed.info/sct/731000124108/0\r\n16 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: CodeSystem found: \"http://www.ama-assn.org/go/cpt|2023\"\r\n16 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: CodeSystem not found: \"https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets\"\r\n16 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: CodeSystem found: \"http://www.nlm.nih.gov/research/umls/rxnorm|??\"\r\n16 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: Validate \"[http://www.ama-assn.org/go/cpt#0797T (\"\")]\"\r\n16 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: Check \"http://www.ama-assn.org/go/cpt#0797T\"\r\n16 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt\r\n16 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: Code \"0797T\" not found in http://www.ama-assn.org/go/cpt|2023\r\n",
+  "unknown-systems" : "",
+  "issues" : {
+  "resourceType" : "OperationOutcome",
+  "issue" : [{
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString" : "Unknown_Code_in_Version"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
+      "valueUrl" : "https://tx.fhir.org/r4"
+    }],
+    "severity" : "error",
+    "code" : "code-invalid",
+    "details" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
+        "code" : "invalid-code"
+      }],
+      "text" : "Unknown code '0797T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'"
+    },
+    "location" : ["CodeableConcept.coding[0].code"],
+    "expression" : ["CodeableConcept.coding[0].code"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString" : "None_of_the_provided_codes_are_in_the_value_set_one"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
+      "valueUrl" : "https://tx.fhir.org/r4"
+    }],
+    "severity" : "information",
+    "code" : "code-invalid",
+    "details" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
+        "code" : "this-code-not-in-vs"
+      }],
+      "text" : "The provided code 'http://www.ama-assn.org/go/cpt#0797T' was not found in the value set 'http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot'"
+    },
+    "location" : ["CodeableConcept.coding[0].code"],
+    "expression" : ["CodeableConcept.coding[0].code"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
+      "valueUrl" : "https://tx.fhir.org/r4"
+    }],
+    "severity" : "information",
+    "code" : "code-invalid",
+    "details" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
+        "code" : "invalid-code"
+      }],
+      "text" : "Code '0797T' not found in CPT"
+    },
+    "location" : ["CodeableConcept.coding[0].code"],
+    "expression" : ["CodeableConcept.coding[0].code"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString" : "TX_GENERAL_CC_ERROR_MESSAGE"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
+      "valueUrl" : "https://tx.fhir.org/r4"
+    }],
+    "severity" : "error",
+    "code" : "code-invalid",
+    "details" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
+        "code" : "not-in-vs"
+      }],
+      "text" : "No valid coding was found for the value set 'http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot'"
+    }
+  }]
+}
+
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://www.ama-assn.org/go/cpt",
+    "code" : "0804T"
+  }]
+}, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes", "version": "2.2.0-ballot", "langs":"en", "useServer":"true", "useClient":"false", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  },
+  {
+    "name" : "defaultDisplayLanguage",
+    "valueCode" : "en"
+  }]
+}}####
+v: {
+  "severity" : "error",
+  "error" : "Code '0804T' not found in CPT; No valid coding was found for the value set 'http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot'; The provided code 'http://www.ama-assn.org/go/cpt#0804T' was not found in the value set 'http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot'; Unknown code '0804T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'",
+  "class" : "UNKNOWN",
+  "server" : "https://tx.fhir.org/r4",
+  "diagnostics" : "0 0 : start\r\n16 16: tx-op\r\n16 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: Analysing\r\n16 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: Parameters: disp-lang=en, default-to-latest\r\n16 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: Version Rules: http://snomed.info/sct#http://snomed.info/sct/731000124108/0\r\n16 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: CodeSystem found: \"http://www.ama-assn.org/go/cpt|2023\"\r\n16 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: CodeSystem not found: \"https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets\"\r\n16 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: CodeSystem found: \"http://www.nlm.nih.gov/research/umls/rxnorm|??\"\r\n16 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: Validate \"[http://www.ama-assn.org/go/cpt#0804T (\"\")]\"\r\n16 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: Check \"http://www.ama-assn.org/go/cpt#0804T\"\r\n16 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt\r\n16 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: Code \"0804T\" not found in http://www.ama-assn.org/go/cpt|2023\r\n",
+  "unknown-systems" : "",
+  "issues" : {
+  "resourceType" : "OperationOutcome",
+  "issue" : [{
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString" : "Unknown_Code_in_Version"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
+      "valueUrl" : "https://tx.fhir.org/r4"
+    }],
+    "severity" : "error",
+    "code" : "code-invalid",
+    "details" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
+        "code" : "invalid-code"
+      }],
+      "text" : "Unknown code '0804T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'"
+    },
+    "location" : ["CodeableConcept.coding[0].code"],
+    "expression" : ["CodeableConcept.coding[0].code"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString" : "None_of_the_provided_codes_are_in_the_value_set_one"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
+      "valueUrl" : "https://tx.fhir.org/r4"
+    }],
+    "severity" : "information",
+    "code" : "code-invalid",
+    "details" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
+        "code" : "this-code-not-in-vs"
+      }],
+      "text" : "The provided code 'http://www.ama-assn.org/go/cpt#0804T' was not found in the value set 'http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot'"
+    },
+    "location" : ["CodeableConcept.coding[0].code"],
+    "expression" : ["CodeableConcept.coding[0].code"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
+      "valueUrl" : "https://tx.fhir.org/r4"
+    }],
+    "severity" : "information",
+    "code" : "code-invalid",
+    "details" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
+        "code" : "invalid-code"
+      }],
+      "text" : "Code '0804T' not found in CPT"
+    },
+    "location" : ["CodeableConcept.coding[0].code"],
+    "expression" : ["CodeableConcept.coding[0].code"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString" : "TX_GENERAL_CC_ERROR_MESSAGE"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
+      "valueUrl" : "https://tx.fhir.org/r4"
+    }],
+    "severity" : "error",
+    "code" : "code-invalid",
+    "details" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
+        "code" : "not-in-vs"
+      }],
+      "text" : "No valid coding was found for the value set 'http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot'"
+    }
+  }]
+}
+
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://www.ama-assn.org/go/cpt",
+    "code" : "0823T"
+  }]
+}, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes", "version": "2.2.0-ballot", "langs":"en", "useServer":"true", "useClient":"false", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  },
+  {
+    "name" : "defaultDisplayLanguage",
+    "valueCode" : "en"
+  }]
+}}####
+v: {
+  "severity" : "error",
+  "error" : "Code '0823T' not found in CPT; No valid coding was found for the value set 'http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot'; The provided code 'http://www.ama-assn.org/go/cpt#0823T' was not found in the value set 'http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot'; Unknown code '0823T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'",
+  "class" : "UNKNOWN",
+  "server" : "https://tx.fhir.org/r4",
+  "diagnostics" : "0 0 : start\r\n15 15: tx-op\r\n15 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: Analysing\r\n15 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: Parameters: disp-lang=en, default-to-latest\r\n15 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: Version Rules: http://snomed.info/sct#http://snomed.info/sct/731000124108/0\r\n15 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: CodeSystem found: \"http://www.ama-assn.org/go/cpt|2023\"\r\n15 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: CodeSystem not found: \"https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets\"\r\n15 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: CodeSystem found: \"http://www.nlm.nih.gov/research/umls/rxnorm|??\"\r\n15 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: Validate \"[http://www.ama-assn.org/go/cpt#0823T (\"\")]\"\r\n15 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: Check \"http://www.ama-assn.org/go/cpt#0823T\"\r\n15 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt\r\n15 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: Code \"0823T\" not found in http://www.ama-assn.org/go/cpt|2023\r\n",
+  "unknown-systems" : "",
+  "issues" : {
+  "resourceType" : "OperationOutcome",
+  "issue" : [{
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString" : "Unknown_Code_in_Version"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
+      "valueUrl" : "https://tx.fhir.org/r4"
+    }],
+    "severity" : "error",
+    "code" : "code-invalid",
+    "details" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
+        "code" : "invalid-code"
+      }],
+      "text" : "Unknown code '0823T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'"
+    },
+    "location" : ["CodeableConcept.coding[0].code"],
+    "expression" : ["CodeableConcept.coding[0].code"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString" : "None_of_the_provided_codes_are_in_the_value_set_one"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
+      "valueUrl" : "https://tx.fhir.org/r4"
+    }],
+    "severity" : "information",
+    "code" : "code-invalid",
+    "details" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
+        "code" : "this-code-not-in-vs"
+      }],
+      "text" : "The provided code 'http://www.ama-assn.org/go/cpt#0823T' was not found in the value set 'http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot'"
+    },
+    "location" : ["CodeableConcept.coding[0].code"],
+    "expression" : ["CodeableConcept.coding[0].code"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
+      "valueUrl" : "https://tx.fhir.org/r4"
+    }],
+    "severity" : "information",
+    "code" : "code-invalid",
+    "details" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
+        "code" : "invalid-code"
+      }],
+      "text" : "Code '0823T' not found in CPT"
+    },
+    "location" : ["CodeableConcept.coding[0].code"],
+    "expression" : ["CodeableConcept.coding[0].code"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString" : "TX_GENERAL_CC_ERROR_MESSAGE"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
+      "valueUrl" : "https://tx.fhir.org/r4"
+    }],
+    "severity" : "error",
+    "code" : "code-invalid",
+    "details" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
+        "code" : "not-in-vs"
+      }],
+      "text" : "No valid coding was found for the value set 'http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot'"
+    }
+  }]
+}
+
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://www.ama-assn.org/go/cpt",
+    "code" : "0915T"
+  }]
+}, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes", "version": "2.2.0-ballot", "langs":"en", "useServer":"true", "useClient":"false", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  },
+  {
+    "name" : "defaultDisplayLanguage",
+    "valueCode" : "en"
+  }]
+}}####
+v: {
+  "severity" : "error",
+  "error" : "Code '0915T' not found in CPT; No valid coding was found for the value set 'http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot'; The provided code 'http://www.ama-assn.org/go/cpt#0915T' was not found in the value set 'http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot'; Unknown code '0915T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'",
+  "class" : "UNKNOWN",
+  "server" : "https://tx.fhir.org/r4",
+  "diagnostics" : "0 0 : start\r\n16 16: tx-op\r\n16 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: Analysing\r\n16 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: Parameters: disp-lang=en, default-to-latest\r\n16 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: Version Rules: http://snomed.info/sct#http://snomed.info/sct/731000124108/0\r\n16 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: CodeSystem found: \"http://www.ama-assn.org/go/cpt|2023\"\r\n16 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: CodeSystem not found: \"https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets\"\r\n16 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: CodeSystem found: \"http://www.nlm.nih.gov/research/umls/rxnorm|??\"\r\n16 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: Validate \"[http://www.ama-assn.org/go/cpt#0915T (\"\")]\"\r\n16 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: Check \"http://www.ama-assn.org/go/cpt#0915T\"\r\n16 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt\r\n16 0: 0ms http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot: Code \"0915T\" not found in http://www.ama-assn.org/go/cpt|2023\r\n",
+  "unknown-systems" : "",
+  "issues" : {
+  "resourceType" : "OperationOutcome",
+  "issue" : [{
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString" : "Unknown_Code_in_Version"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
+      "valueUrl" : "https://tx.fhir.org/r4"
+    }],
+    "severity" : "error",
+    "code" : "code-invalid",
+    "details" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
+        "code" : "invalid-code"
+      }],
+      "text" : "Unknown code '0915T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'"
+    },
+    "location" : ["CodeableConcept.coding[0].code"],
+    "expression" : ["CodeableConcept.coding[0].code"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString" : "None_of_the_provided_codes_are_in_the_value_set_one"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
+      "valueUrl" : "https://tx.fhir.org/r4"
+    }],
+    "severity" : "information",
+    "code" : "code-invalid",
+    "details" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
+        "code" : "this-code-not-in-vs"
+      }],
+      "text" : "The provided code 'http://www.ama-assn.org/go/cpt#0915T' was not found in the value set 'http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot'"
+    },
+    "location" : ["CodeableConcept.coding[0].code"],
+    "expression" : ["CodeableConcept.coding[0].code"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
+      "valueUrl" : "https://tx.fhir.org/r4"
+    }],
+    "severity" : "information",
+    "code" : "code-invalid",
+    "details" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
+        "code" : "invalid-code"
+      }],
+      "text" : "Code '0915T' not found in CPT"
+    },
+    "location" : ["CodeableConcept.coding[0].code"],
+    "expression" : ["CodeableConcept.coding[0].code"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString" : "TX_GENERAL_CC_ERROR_MESSAGE"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
+      "valueUrl" : "https://tx.fhir.org/r4"
+    }],
+    "severity" : "error",
+    "code" : "code-invalid",
+    "details" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
+        "code" : "not-in-vs"
+      }],
+      "text" : "No valid coding was found for the value set 'http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-ballot'"
+    }
+  }]
 }
 
 }
