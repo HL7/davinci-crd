@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Tue, Oct 28, 2025 19:11+0000 for FHIR v6.0.0-ballot3 
+  Generated on Wed, Oct 29, 2025 16:40+0000 for FHIR v6.0.0-ballot3 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="6.0.0-ballot3">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -22879,8 +22879,9 @@ of the resource representation.</xs:documentation>
             <xs:annotation>
               <xs:documentation xml:lang="en">The date when or period to which this information refers.</xs:documentation>
             </xs:annotation>
-            <xs:element name="timingDate" type="date"/>
+            <xs:element name="timingDateTime" type="dateTime"/>
             <xs:element name="timingPeriod" type="Period"/>
+            <xs:element name="timingTiming" type="Timing"/>
           </xs:choice>
           <xs:choice minOccurs="0" maxOccurs="1" >
             <xs:annotation>
@@ -23112,7 +23113,7 @@ of the resource representation.</xs:documentation>
               <xs:documentation xml:lang="en">Trace number for tracking purposes. May be defined at the jurisdiction level or between trading partners.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="patient" minOccurs="0" maxOccurs="1" type="Reference">
+          <xs:element name="subject" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">The party to whom the professional services and/or products have been supplied or are being considered and for whom actual for facast reimbursement is sought.</xs:documentation>
            </xs:annotation>
@@ -23740,8 +23741,9 @@ of the resource representation.</xs:documentation>
             <xs:annotation>
               <xs:documentation xml:lang="en">The date when or period to which this information refers.</xs:documentation>
             </xs:annotation>
-            <xs:element name="timingDate" type="date"/>
+            <xs:element name="timingDateTime" type="dateTime"/>
             <xs:element name="timingPeriod" type="Period"/>
+            <xs:element name="timingTiming" type="Timing"/>
           </xs:choice>
           <xs:choice minOccurs="0" maxOccurs="1" >
             <xs:annotation>
@@ -24028,7 +24030,7 @@ of the resource representation.</xs:documentation>
               <xs:documentation xml:lang="en">Trace number for tracking purposes. May be defined at the jurisdiction level or between trading partners.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="patient" minOccurs="0" maxOccurs="1" type="Reference">
+          <xs:element name="subject" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">The party to whom the professional services and/or products have been supplied or are being considered and for whom actual for facast reimbursement is sought.</xs:documentation>
            </xs:annotation>
@@ -30374,7 +30376,7 @@ The actual author of the section when it is not the author of the composition. I
         <xs:sequence>
           <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Instance identifiers assigned to a device, by the device or gateway software, manufacturers, other organizations or owners. For example, handle ID.</xs:documentation>
+              <xs:documentation xml:lang="en">Business identifiers assigned to this alert, by the source device, gateway software, manufacturers, or other systems or organizations. These identifiers remain constant as the resource is updated and propagates from server to server.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="procedure" minOccurs="0" maxOccurs="unbounded" type="Reference">
@@ -30384,12 +30386,12 @@ The actual author of the section when it is not the author of the composition. I
           </xs:element>
           <xs:element name="status" minOccurs="1" maxOccurs="1" type="DeviceAlertStatusCodes">
             <xs:annotation>
-              <xs:documentation xml:lang="en">in-progress | completed | entered-in-error.</xs:documentation>
+              <xs:documentation xml:lang="en">The current state of the device alert.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="category" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Partitions the DeviceAlert into one or more categories that can be used to filter searching, to govern access control, or guide system behavior.</xs:documentation>
+              <xs:documentation xml:lang="en">Partitions the device alert into one or more categories that can be used to filter searching, to govern access control and/or to guide system behavior.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="type" minOccurs="0" maxOccurs="1" type="CodeableConcept">
@@ -30404,7 +30406,7 @@ The actual author of the section when it is not the author of the composition. I
           </xs:element>
           <xs:element name="code" minOccurs="1" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The DeviceAlert.code indicates the specific condition that triggered the alert. It may correspond to a DeviceMetric.alert.code or Device.alert.code.</xs:documentation>
+              <xs:documentation xml:lang="en">A code that indicates the specific condition that triggered the alert.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="subject" minOccurs="1" maxOccurs="1" type="Reference">
@@ -30414,7 +30416,7 @@ The actual author of the section when it is not the author of the composition. I
           </xs:element>
           <xs:element name="encounter" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The encounter during which the alert condition was raised.</xs:documentation>
+              <xs:documentation xml:lang="en">The Encounter during which the alert condition was raised.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="presence" minOccurs="1" maxOccurs="1" type="boolean">
@@ -30424,27 +30426,32 @@ The actual author of the section when it is not the author of the composition. I
           </xs:element>
           <xs:element name="presencePeriod" minOccurs="0" maxOccurs="1" type="Period">
             <xs:annotation>
-              <xs:documentation xml:lang="en">An instantaneous condition is reported with the same start and end value. The end value is omitted if the condition is ongoing.</xs:documentation>
+              <xs:documentation xml:lang="en">The period when the alert condition occurred or is occurring.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="device" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A top-level or component Device (such as a MDS, VMD, or Channel) that detected the alert condition; or, within such a Device, the specific DeviceMetric (e.g. a heart rate reading) that was in an alert condition.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="location" minOccurs="0" maxOccurs="1" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The location of the subject of the alert at the time that the alert was raised.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="derivedFrom" type="DeviceAlert.DerivedFrom" minOccurs="0" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The value causing the alert condition.</xs:documentation>
+              <xs:documentation xml:lang="en">Indicates the device that detected the alert condition. The device may be a top-level Device or component Device (such as an MDS, VMD, or Channel); or may identify the specific DeviceMetric of a Device (e.g., a heart rate reading) that was in an alert condition.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="acknowledged" minOccurs="0" maxOccurs="1" type="boolean">
             <xs:annotation>
               <xs:documentation xml:lang="en">An indication of whether (true) or not (false) the alert condition has been acknowledged.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="acknowledgedBy" minOccurs="0" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">An indication of who or what acknowledged the alert condition.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="location" minOccurs="0" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The principal physical location of the subject at the time the alert condition occurred. This may be different from the location of the alerting device at that time, and from the current location of either the subject or the alert condition detecting device.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="derivedFrom" type="DeviceAlert.DerivedFrom" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The value causing the alert condition.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="label" minOccurs="0" maxOccurs="1" type="string">
@@ -30470,7 +30477,7 @@ The actual author of the section when it is not the author of the composition. I
         <xs:sequence>
           <xs:element name="observation" minOccurs="1" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The Observation whose value is causing the alert condition; or, if `component` is present, the Observation with a component causing the alert condition.</xs:documentation>
+              <xs:documentation xml:lang="en">Indicates the Observation whose value is causing the alert condition; or, if `component` is present, the Observation with a component causing the alert condition.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="component" minOccurs="0" maxOccurs="1" type="Coding">
@@ -30543,6 +30550,11 @@ The actual author of the section when it is not the author of the composition. I
       <xs:enumeration value="entered-in-error">
         <xs:annotation>
           <xs:documentation xml:lang="en">Entered in Error</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="unknown">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Unknown</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
@@ -31630,14 +31642,19 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
               <xs:documentation xml:lang="en">Instance identifiers assigned to a device, by the device or gateway software, manufacturers, other organizations or owners. For example, handle ID.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="operationalStatus" minOccurs="0" maxOccurs="1" type="DeviceMetricOperationalStatus">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Indicates current operational state of the device. For example: On, Off, Standby, etc.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="category" minOccurs="1" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Indicates the category of the observation generation process. A DeviceMetric can be, for example, a setting, measurement, or calculation.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="type" minOccurs="1" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">Describes the type of the metric. For example: Heart Rate, PEEP Setting, etc.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="unit" minOccurs="0" maxOccurs="1" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Describes the unit that an observed value determined for this metric will have. For example: Percent, Seconds, etc.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="device" minOccurs="1" maxOccurs="1" type="Reference">
@@ -31645,19 +31662,14 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
               <xs:documentation xml:lang="en">The device to which this DeviceMetric applies. The referenced device may be a top-level device or a component of a device.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="operationalStatus" minOccurs="0" maxOccurs="1" type="DeviceMetricOperationalStatus">
+          <xs:element name="unit" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Indicates current operational state of the device. For example: On, Off, Standby, etc.</xs:documentation>
+              <xs:documentation xml:lang="en">Describes the unit that an observed value determined for this metric will have. For example: Percent, Seconds, etc.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="color" minOccurs="0" maxOccurs="1" type="ColorCodesOrRGB">
             <xs:annotation>
               <xs:documentation xml:lang="en">The preferred color associated with the metric (e.g., display color). This is often used to aid clinicians to track and identify parameter types by color. In practice, consider a Patient Monitor that has ECG/HR and Pleth; the metrics are displayed in different characteristic colors, such as HR in blue, BP in green, and PR and SpO2 in magenta.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="category" minOccurs="1" maxOccurs="1" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Indicates the category of the observation generation process. A DeviceMetric can be, for example, a setting, measurement, or calculation.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="measurementFrequency" minOccurs="0" maxOccurs="1" type="Quantity">
@@ -35588,8 +35600,9 @@ See guidance around (not) making local changes to elements [here](canonicalresou
             <xs:annotation>
               <xs:documentation xml:lang="en">The date when or period to which this information refers.</xs:documentation>
             </xs:annotation>
-            <xs:element name="timingDate" type="date"/>
+            <xs:element name="timingDateTime" type="dateTime"/>
             <xs:element name="timingPeriod" type="Period"/>
+            <xs:element name="timingTiming" type="Timing"/>
           </xs:choice>
           <xs:choice minOccurs="0" maxOccurs="1" >
             <xs:annotation>
@@ -35821,7 +35834,7 @@ See guidance around (not) making local changes to elements [here](canonicalresou
               <xs:documentation xml:lang="en">Trace number for tracking purposes. May be defined at the jurisdiction level or between trading partners.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="patient" minOccurs="0" maxOccurs="1" type="Reference">
+          <xs:element name="subject" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">The party to whom the professional services and/or products have been supplied or are being considered and for whom actual for facast reimbursement is sought.</xs:documentation>
            </xs:annotation>
@@ -36267,7 +36280,7 @@ See guidance around (not) making local changes to elements [here](canonicalresou
               <xs:documentation xml:lang="en">Trace number for tracking purposes. May be defined at the jurisdiction level or between trading partners.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="patient" minOccurs="0" maxOccurs="1" type="Reference">
+          <xs:element name="subject" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">The party to whom the professional services and/or products have been supplied or are being considered and for whom actual for facast reimbursement is sought.</xs:documentation>
            </xs:annotation>
@@ -45356,7 +45369,7 @@ The origin at the TLHC of the TLHC pixel is 0.0\0.0, the BRHC of the TLHC pixel 
           </xs:element>
           <xs:element name="type" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Indicates the type of function performed at the location.</xs:documentation>
+              <xs:documentation xml:lang="en">Indicates the type of services that are available at this location.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="contact" minOccurs="0" maxOccurs="unbounded" type="ExtendedContactDetail">
@@ -58180,14 +58193,9 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">A significant event in the progress of a ResearchSubject.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="assignedComparisonGroup" minOccurs="0" maxOccurs="1" type="id">
+          <xs:element name="comparisonGroup" minOccurs="0" maxOccurs="unbounded" type="CodeableReference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The name of the arm in the study the subject is expected to follow as part of this study.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="actualComparisonGroup" minOccurs="0" maxOccurs="1" type="id">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The name of the arm in the study the subject actually followed as part of this study.</xs:documentation>
+              <xs:documentation xml:lang="en">A group to which the subject is assigned. This group assignment is used for administration or analysis.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="consent" minOccurs="0" maxOccurs="unbounded" type="Reference">

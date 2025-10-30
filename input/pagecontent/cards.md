@@ -8,7 +8,11 @@ In addition to the [guidance provided in the CDS Hooks specification]({{site.dat
 
 *  All `Card.suggestion` elements **SHALL** populate the Suggestion.uuid element.
 
-*  <a name="FHIR-52583"> </a><span class="modified-content" markdown="1">The `Card.source.label` **SHALL** be populated with an insurer name that the user and patient are likely to recognize</span> (i.e., the responsible insurer on the patient's insurance card), including in situations where coverage recommendations are being returned by a benefits manager or intermediary operating the CRD Service on behalf of the payer. If an insurer provides recommendations from another authority (e.g., a clinical society), the society's name and logo might be displayed, though usually only with the permission of that organization.
+<div class="modified-content" markdown="1"><a name="FHIR-52583"> </a>
+
+* The `Card.source.label` **SHALL** be populated with an insurer name that the user and patient are likely to recognize (i.e., the responsible insurer on the patient's insurance card), including in situations where coverage recommendations are being returned by a benefits manager or intermediary operating the CRD Service on behalf of the payer. If an insurer provides recommendations from another authority (e.g., a clinical society), the society's name and logo might be displayed, though usually only with the permission of that organization.
+
+</div>
 
 *  `Card.source.topic` **SHALL** be populated, and has an [extensible](http://www.hl7.org/fhir/terminologies.html#extensible) binding to the ValueSet <a href="ValueSet-cardType.html">CRD Response Types.</a> The rationale is to allow CRD clients to filter or track the usage of different types of cards.
 
@@ -31,11 +35,15 @@ In addition to the [guidance provided in the CDS Hooks specification]({{site.dat
 * CRD client systems might not support all card capabilities, therefore card options **SHOULD** provide sufficient information for a user to perform record changes manually if automated support isn't available.
 
 * Where <a href="{{site.data.fhir.ver.cdshooks}}/index.html#system-action">systemActions</a> are used, CRD services **SHOULD NOT** return equivalent information in a card for user display. It is the responsibility of the CRD client to determine how best to present the results of the newly created or revised records.
+</ul>
 
 <p class="new-content">A profile defining the generic constraints that apply to all CRD responses can be found <a href="StructureDefinition-CRDHooksResponseBase.html">here</a>.</p>
 
 ### Potential CRD Response Types
-The sections below describe the different types of [responses]({{site.data.fhir.ver.cdshooks}}/index.html#cds-service-response) that CRD services can use when returning coverage requirements to CRD clients, including CRD-specific profiles on cards to describe CRD-expected behavior. <span class="modified-content" markdown="1">It is possible that some CRD services and CRD clients will support response types other than those listed here (i.e. other allowed sets of constraints on Card and/or SystemAction).  Such behavior is outside the scope of this specification. Future versions of this specification might standardize additional response types.</span>
+<p class="modified-content" markdown="1">
+The sections below describe the different types of [responses]({{site.data.fhir.ver.cdshooks}}/index.html#cds-service-response) that CRD services can use when returning coverage requirements to CRD clients, including CRD-specific profiles on cards to describe CRD-expected behavior. It is possible that some CRD services and CRD clients will support response types other than those listed here (i.e. other allowed sets of constraints on Card and/or SystemAction).  Such behavior is outside the scope of this specification. Future versions of this specification might standardize additional response types.
+</p>
+
 <a name="FHIR-50009"> </a>
 <p class="modified-content">Conformant CRD clients and services <b>SHALL</b> support the <a href="#coverage-information-response-type">Coverage Information</a> (see specific support expectations documented there) and <b>SHOULD</b> support the remaining types.</p>
 
@@ -118,7 +126,7 @@ NOTE: Launching DTR does not necessarily mean launching a SMART on FHIR applicat
 
 The CRD service **SHOULD** either prompt for the additional needed information using DTR or return a coverage-information extension indicating that the patient is not covered with a reason indicating the issue (e.g. the member could not be found/resolved).
 
-<span class="modified-content" markdown="1"><a name="FHIR-52585"> </a>If the payer is not covered by regulation requiring DTR and does not support DTR for the type of information needed, the CRD service **MAY** provide a 'link' or 'information' card pointing to the forms or portal to use to capture the additional information.</span> The link **SHOULD NOT** require user authentication (i.e., no log-on needed) when accessing downloadable forms. For portal links, it is preferred if a separate logon is not needed (e.g., with temporary/high-entropy links). Forms downloaded from provided links can then be submitted as part of the prior authorization (e.g., PAS), claim submission, etc. based on the identified documentation purpose.
+<p class="modified-content" markdown="1"><a name="FHIR-52585"> </a>If the payer is not covered by regulation requiring DTR and does not support DTR for the type of information needed, the CRD service **MAY** provide a 'link' or 'information' card pointing to the forms or portal to use to capture the additional information. The link **SHOULD NOT** require user authentication (i.e., no log-on needed) when accessing downloadable forms. For portal links, it is preferred if a separate logon is not needed (e.g., with temporary/high-entropy links). Forms downloaded from provided links can then be submitted as part of the prior authorization (e.g., PAS), claim submission, etc. based on the identified documentation purpose.</p>
 
 While using portals or other non-questionnaire data capture is not recommended or preferred, it may be necessary as a transitional measure. Future versions of this IG are likely to mandate that questionnaires be included when additional information is required. This transitional accommodation is not intended to relax regulatory or legislative requirements that require the use of DTR.
 <a name="FHIR-49637"> </a>

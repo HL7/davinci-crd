@@ -2,7 +2,8 @@ Each CDS Hook corresponds to a point in the workflow/business process within a C
 
 Within this implementation guide, CDS Hooks are used by CRD Clients to perform coverage requirements discovery from CRD Servers used by patients' payers.  Six hooks are identified that cover the main situations where coverage requirements discovery is likely to be needed: [appointment-book](#appointment-book), [encounter-start](#encounter-start), [encounter-discharge](#encounter-discharge), [order-dispatch](#order-dispatch), [order-select](#order-select), and [order-sign](#order-sign).  Payers and respective CRD Servers will vary between patients.  CRD Clients conforming to this implementation guide **SHALL** be able to determine the correct payer CRD Service to use for each request.
 
-Not all CRD Clients will support all hook types or order resource types.  For example, community CRD client systems will not likely support `encounter-discharge`.  Community pharmacy systems would not likely support `appointment-book`.  Some EHRs might not support VisionPrescription when using order-sign.  CRD Clients conforming to this implementation guide **SHALL** support at least one of the hooks and (for order-centric hooks), at least one of the order resource types listed below, and **SHOULD** support all that apply to the context of their system.  Future releases of this specification may increase expectations to support additional hooks.  <span class="modifed-content" markdown="1"><a name="FHIR-49974"> </a>For systems that support ordering products or services covered by one of the CRD-supported request types, such clients **SHALL** support the order-sign hook for the order types they support.</span>
+<p class="modifed-content" markdown="1"><a name="FHIR-49974"> </a>
+Not all CRD Clients will support all hook types or order resource types.  For example, community CRD client systems will not likely support `encounter-discharge`.  Community pharmacy systems would not likely support `appointment-book`.  Some EHRs might not support VisionPrescription when using order-sign.  CRD Clients conforming to this implementation guide **SHALL** support at least one of the hooks and (for order-centric hooks), at least one of the order resource types listed below, and **SHOULD** support all that apply to the context of their system.  Future releases of this specification may increase expectations to support additional hooks.  For systems that support ordering products or services covered by one of the CRD-supported request types, such clients **SHALL** support the order-sign hook for the order types they support.</p>
 
 Similarly, not all payers will necessarily provide coverage that is relevant to all hook types or order resource types.  For example, a payer that only provides drug coverage would be unlikely to have coverage information to return for an `encounter-discharge` event or a VisionPrescription order.  CRD Servers conforming to this implementation guide **SHALL** provide a service for all hooks and order resource types required of CRD clients by this implementation guide unless the server has determined that the hook will not be reasonably useful in determining coverage or documentation expectations for the types of coverage provided.
 
@@ -12,7 +13,11 @@ In the absence of guidance from the CDS Hooks specification, CRD Servers are exp
 
 <div class="modified-content" markdown="1"><a name="FHIR-52062"> </a>
 * If the CRD Server encounters an error when processing the request, the system **SHALL** return an appropriate error HTTP Response Code, starting with the digit "4" or "5", indicating that there was an error.
-* <span class="modified-content" markdown="1"><a name="FHIR-52535"> </a>If an issue is identified at a layer of the CRD Server that is FHIR aware (e.g. not a "wrong endpoint" or "not authorized" issue), the server **SHALL** provide an OperationOutcome for internal issue tracking by the client system.</span>
+
+<div class="modified-content" markdown="1"><span ><a name="FHIR-52535"> </a>
+* If an issue is identified at a layer of the CRD Server that is FHIR aware (e.g. not a "wrong endpoint" or "not authorized" issue), the server **SHALL** provide an OperationOutcome for internal issue tracking by the client system.
+</div>
+
 * The CRD Client **MAY** display to the user that the Coverage Requirements Discovery Service is unavailable.  If additional information (e.g. number to call) is available, it **MAY** also be included in the message to the user.
 * While any 4xx or 5xx response code could be raised, the CRD Server **SHALL** use the 400 and 422 codes in a manner consistent with the FHIR RESTful Create Action, specifically:
     * 400 - Bad Request - The request is not parsable as JSON or the content fails validation against FHIR core or CDS Hooks specification rules.  Also used if a CRD service receives a call where the primary Coverage (either provided by prefetch or queried by the payer) does not have a payer.identifier that identifies a payer that is handled by that CRD service endpoint, the server SHALL return a 400 error and SHOULD provide an OperationOutcome.  This includes situations where no Coverage is accessible, multiple Coverages are accessible, or the provided Coverage does not have a payer.identifier at all.
@@ -36,7 +41,7 @@ The hooks listed on the CDS hooks website are subject to update by the community
 
 Below is a summary diagram that outlines all the hooks, indicating when responses are mandatory or optional, and provides insights into what contributes to caching and attribution.
 
-Note: <span class="modified-content" markdown="1"><a name="FHIR-52537"> </a>As a side effect, CRD calls can be used by a payer to 'attribute' a patient to an organization, which may allow the clinical organization to query patient clinical data via [Payer Data Exchange (PDex)] or other mechanisms to be considered as part of patient care delivery.  The diagram below identifies two hooks as particularly appropriate to this use.</span>  Any hook can theoretically be used to assert a relationship from a member attribution perspective.   The two hooks highlighted are the most appropriate ones as they could theoretically allow information to flow from the payer as part of the 'current' care delivery.  Hooks later in the workflow would typically be too late to allow data to flow in a way that would allow that information to be taken into account in the current care event.
+<p class="modified-content" markdown="1"><a name="FHIR-52537"> </a>Note: As a side effect, CRD calls can be used by a payer to 'attribute' a patient to an organization, which may allow the clinical organization to query patient clinical data via [Payer Data Exchange (PDex)] or other mechanisms to be considered as part of patient care delivery.  The diagram below identifies two hooks as particularly appropriate to this use.  Any hook can theoretically be used to assert a relationship from a member attribution perspective.   The two hooks highlighted are the most appropriate ones as they could theoretically allow information to flow from the payer as part of the 'current' care delivery.  Hooks later in the workflow would typically be too late to allow data to flow in a way that would allow that information to be taken into account in the current care event.</p>
 
 {::options parse_block_html="false" /}
 <figure>
@@ -193,7 +198,10 @@ The different relevant resource types are as follows (support can vary between c
 * **MedicationRequest**: Used to order inpatient and outpatient medications.<sup>*</sup>  Can also be used to order vaccinations.
 * **ServiceRequest**: Used to order a referral, lab tests, diagnostic imaging, and sometimes to schedule a future appointment (also see [appointment-book](#appointment-book)).
 * **NutritionOrder**: Used to order the preparation of specific meal types.  Generally used for in-patient care, but potentially also relevant for homecare.
-* **<span class="new-content"><a name="FHIR-49805a"> </a>**Vision Prescription**: Used to order eyeglasses, contacts, and similar vision-related prosthetics.</span>
+
+<div class="new-content"><a name="FHIR-49805a"> </a>
+* ** **Vision Prescription**: Used to order eyeglasses, contacts, and similar vision-related prosthetics.
+</div>
 
 <sup>*</sup> - Note: in the medication space, regulations may mandate alternate standards for some of the functionality covered by CRD for certain classes of medications.  E.g. NCPDP Script
 

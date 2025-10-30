@@ -105,7 +105,11 @@ Based on the information provided and/or retrieved, the payer system returns gui
 * A simple message indicating that service is covered without additional requirements
 * A message describing what coverage requirements exist
 * A link to external documentation that supports provided assertions that coverage does or doesn't exist, or whether prior authorization is needed.
-* <span class="modified-content" markdown="1"><a name="FHIR-52463"> </a>Links to specific forms or templates that need to be completed with instructions to launch DTR to gather additional information..</span>
+
+<div class="modified-content" markdown="1"><a name="FHIR-52463"> </a>
+* Links to specific forms or templates that need to be completed with instructions to launch DTR to gather additional information.
+</div>
+
 * An indication that prior authorization is necessary and has been approved, including information such as the prior authorization number and assumed billing codes.
 * Links with recommendations to substitute the planned action with a different action and/or to add additional actions (e.g., proposals to replace a requested drug with a required first-line treatment or another drug covered by the patient's plan, to add a concurrent medication, additional diagnostic tests, etc.)
 
