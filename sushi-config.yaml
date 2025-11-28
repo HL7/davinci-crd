@@ -41,6 +41,7 @@ parameters:
   version-comparison: 
    - 2.1.0
   shownav: true
+  toggle-changes: true
 
 #  path-binary: input/hooks-files
     
