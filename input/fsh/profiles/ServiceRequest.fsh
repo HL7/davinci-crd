@@ -41,9 +41,10 @@ Description: "This profile specifies constraints on the ServiceRequest resource 
   * ^comment = "If there are multiple possible codes that could apply, send them using codeOptions and omit the coding elements"
   * extension contains CodeOptions named codeOptions 0..* MS
 // TODO: Put the correct extension name here
-* performer only Reference(USCorePractitionerProfile or HRexPractitionerRole)
+* performer only Reference(USCorePractitionerProfile or HRexPractitionerRole or HRexOrganization)
   * ^type[0].targetProfile[0].extension[$typeMS].valueBoolean = true
   * ^type[0].targetProfile[1].extension[$typeMS].valueBoolean = true
+  * ^type[0].targetProfile[2].extension[$typeMS].valueBoolean = true
 * performer MS
 * locationReference 0..1 MS
 * locationReference only Reference(CRDLocation)

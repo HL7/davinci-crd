@@ -17,6 +17,7 @@ This page describes the primary releases of the specification and summarizes the
 * [FHIR-52583](https://jira.hl7.org/browse/FHIR-52583) - Tightened expectations about recognizability of card source label *(correction)* [link](cards.html#FHIR-52583)
 * [FHIR-51715](https://jira.hl7.org/browse/FHIR-51715) - Cleaned up language on SMART on FHIR security expectations *(correction)* [link](security.html#FHIR-51715)
 * [FHIR-52326](https://jira.hl7.org/browse/FHIR-52326) - Added section on operational recommendations *(enhancement)* [link](foundations.html#FHIR-52326), (foundations.html#FHIR-52326b), [link](operational.html)
+* [FHIR-52357](https://jira.hl7.org/browse/FHIR-52357) - Allow Organization as a target for ServiceRequest.performer *(enhancement)* [link](StructureDefinition-profile-servicerequest.html)
 
 **Non-substantive changes**:
 * [FHIR-52002](https://jira.hl7.org/browse/FHIR-52002) - Updated ONC to ASTP/ONC *(correction)*
