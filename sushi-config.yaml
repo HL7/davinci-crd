@@ -190,8 +190,8 @@ groups:
 resources:
   Binary/CRDServices:
     groupingId: "-ex-example-hooks"
-    name: "Example CRD Services Response"
-    description: "An example of a CRD services response"
+    name: "Example CRD Discovery Response"
+    description: "An example of a CRD discovery response"
     extension:
       - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format
         valueCode: application/json
@@ -199,7 +199,7 @@ resources:
         valueCanonical: http://hl7.org/fhir/tools/StructureDefinition/CDSHooksServices
   Binary/CRDServiceRequest:
     groupingId: "-ex-example-hooks"
-    name: "Example CRD Service Requestion with ServiceRequests"
+    name: "Example CRD Request with ServiceRequests"
     description: "An example of a CRD request for order-sign with ServiceRequests"
     extension:
       - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format
@@ -208,8 +208,8 @@ resources:
         valueCanonical: http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksRequest
   Binary/CRDServiceRequest2:
     groupingId: "-ex-example-hooks"
-    name: "Example CRD Service Request with MedicationRequests"
-    description: "An example of a CRD request for order-sign with MedicationRequests"
+    name: "Example CRD Request with MedicationRequests"
+    description: "An example of a CRD request for order-dispatch with MedicationRequests"
     extension:
       - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format
         valueCode: application/json
@@ -217,7 +217,7 @@ resources:
         valueCanonical: http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksRequest
   Binary/CRDServiceRequest3:
     groupingId: "-ex-example-hooks"
-    name: "Example CRD Service Request with CommunicationRequest"
+    name: "Example CRD Request with CommunicationRequest"
     description: "An example of a CRD request for order-sign with CommunicationRequest"
     extension:
       - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format
@@ -226,7 +226,7 @@ resources:
         valueCanonical: http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksRequest
   Binary/CRDServiceRequest4:
     groupingId: "-ex-example-hooks"
-    name: "Example CRD Service Request with appointment-book"
+    name: "Example CRD Request with appointment-book"
     description: "An example of a CRD request for appointment-book"
     extension:
       - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format
