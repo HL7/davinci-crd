@@ -2,108 +2,6 @@
 {"code" : {
   "system" : "https://www.usps.com/",
   "code" : "MA"
-}, "valueSet" :null, "langs":"en-US", "useServer":"true", "useClient":"false", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "id" : "terminology-settings",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "displayLanguage",
-    "valueCode" : "en-US"
-  }]
-}}####
-v: {
-  "display" : "Massachusetts",
-  "code" : "MA",
-  "system" : "https://www.usps.com/",
-  "server" : "https://tx.fhir.org/r4",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "https://www.usps.com/",
-  "code" : "MA"
-}, "url": "http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state--0", "version": "7.0.0", "langs":"en-US", "useServer":"true", "useClient":"false", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "id" : "terminology-settings",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "displayLanguage",
-    "valueCode" : "en-US"
-  }]
-}}####
-v: {
-  "display" : "Massachusetts",
-  "code" : "MA",
-  "system" : "https://www.usps.com/",
-  "server" : "https://tx.fhir.org/r4",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "https://www.usps.com/",
-  "code" : "MA"
-}, "valueSet" :null, "langs":"en-US", "useServer":"true", "useClient":"false", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en-US"
-  }]
-}}####
-v: {
-  "display" : "Massachusetts",
-  "code" : "MA",
-  "system" : "https://www.usps.com/",
-  "server" : "https://tx.fhir.org/r4",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "https://www.usps.com/",
-  "code" : "MA"
-}, "url": "http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state--0", "version": "7.0.0", "langs":"en-US", "useServer":"true", "useClient":"false", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en-US"
-  }]
-}}####
-v: {
-  "display" : "Massachusetts",
-  "code" : "MA",
-  "system" : "https://www.usps.com/",
-  "server" : "https://tx.fhir.org/r4",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "https://www.usps.com/",
-  "code" : "MA"
 }, "valueSet" :null, "langs":"en", "useServer":"true", "useClient":"false", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
   "resourceType" : "Parameters",
   "parameter" : [{
@@ -120,6 +18,7 @@ v: {
   "code" : "MA",
   "system" : "https://www.usps.com/",
   "server" : "https://tx.fhir.org/r4",
+  "diagnostics" : "0 0 : start\r\n0 0     : 0ms  : Analysing http://hl7.org/fhir/ValueSet/@all for validation purposes\r\n0 0     : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n0 0     : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n0 0     : 0ms  : Prepare include: \"()\"\r\n0 0     : 0ms  : Validate \"[https://www.usps.com/#MA (\"\")]\"\r\n0 0     : 0ms  : Check \"https://www.usps.com/#MA\"\r\n0 0     : 0ms  : Using CodeSystem \"https://www.usps.com/|\" (content = complete)\r\n",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -146,6 +45,7 @@ v: {
   "code" : "MA",
   "system" : "https://www.usps.com/",
   "server" : "https://tx.fhir.org/r4",
+  "diagnostics" : "0 0 : start\r\n15 15   : 0ms  : Analysing http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state--0|7.0.0 for validation purposes\r\n15 0    : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n15 0    : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n15 0    : 0ms  : Prepare include: \"(https://www.usps.com/)\"\r\n15 0    : 0ms  : CodeSystem found: \"https://www.usps.com/|\"\r\n15 0    : 0ms  : Validate \"[https://www.usps.com/#MA (\"\")]\"\r\n15 0    : 0ms  : Check \"https://www.usps.com/#MA\"\r\n15 0    : 0ms  : CodeSystem found: https://www.usps.com/| for https://www.usps.com/\r\n15 0    : 0ms  : check code in (https://www.usps.com/) at Coding\r\n15 0    : 0ms  : Code \"MA\" found in https://www.usps.com/|\r\n",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"

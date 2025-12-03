@@ -624,6 +624,7 @@
     }
   },
   "extension": {
+    "davinci-crd.requestedVersion": "2.2",
     "davinci-crd.configuration": {
       "cost": false,
       "claim": false,

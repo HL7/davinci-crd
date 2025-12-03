@@ -7,6 +7,7 @@ This page describes the primary releases of the specification and summarizes the
 * [FHIR-52535](https://jira.hl7.org/browse/FHIR-52535) - Tighened expectations around providing OperationOutcomes *(clarification)* [link](hooks.html#FHIR-52535)
 * [FHIR-49974](https://jira.hl7.org/browse/FHIR-49974) - Made order-select support mandatory *(clarification)* [link](hooks.html#FHIR-49974)
 * [FHIR-52444](https://jira.hl7.org/browse/FHIR-52444) - Made support for prefetch mandatory *(enhancement)* [link](foundation.html#FHIR-52444)
+* [FHIR-53048](https://jira.hl7.org/browse/FHIR-53048) - Added CRD version extensions to service discovery and service invocation *(enhancement)* [link](deviations.html#crd-version-declaration)
 
 **Substative changes**
 * [FHIR-52452](https://jira.hl7.org/browse/FHIR-52452) - Added 'contained' as mustSupport to request resources and encounters *(enhancement)*

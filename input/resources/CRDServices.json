@@ -22,6 +22,7 @@
         "locations" : ["encounter", "practitionerRoles"]
       },
       "extension": {
+        "davinci-crd.version": ["2.1","2.2"],
         "davinci-crd.configuration-options": [
           {
             "code": "coverage-info",
@@ -124,6 +125,7 @@
         "locations" : ["encounter", "practitionerRoles"]
       },
       "extension": {
+        "davinci-crd.version": ["2.2"],
         "davinci-crd.configuration-options": [
           {
             "code": "coverage-info",
@@ -212,6 +214,7 @@
         "locations" : ["encounter", "practitionerRoles"]
       },
       "extension": {
+        "davinci-crd.version": ["2.2"],
         "davinci-crd.configuration-options": [
           {
             "code": "clinical-reminder",
@@ -260,6 +263,7 @@
         "locations" : ["encounter", "practitionerRoles"]
       },
       "extension": {
+        "davinci-crd.version": ["2.2"],
         "davinci-crd.configuration-options": [
           {
             "code": "coverage-info",
@@ -301,6 +305,7 @@
         "locations" : ["encounter", "practitionerRoles"]
       },
       "extension": {
+        "davinci-crd.version": ["2.2"],
         "davinci-crd.configuration-options": [
           {
             "code": "coverage-info",
@@ -426,6 +431,7 @@
         "locations" : ["encounter", "practitionerRoles"]
       },
       "extension": {
+        "davinci-crd.version": ["2.2"],
         "davinci-crd.configuration-options": [
           {
             "code": "coverage-info",

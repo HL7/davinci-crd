@@ -1,0 +1,37 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "CDSHookServiceRequestExtensionRequestCRDVersion",
+  "url": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CDSHookServiceRequestExtensionRequestCRDVersion",
+  "name": "CDSHookServiceRequestExtensionRequestCRDVersion",
+  "title": "CDS Hooks Service Request Requested CRD Version Extension",
+  "status": "active",
+  "experimental": false,
+  "description": "Allows indicating the desired CRD version when invoking CRD on a service that supports multiple versions",
+  "fhirVersion": "4.0.1",
+  "kind": "primitive-type",
+  "abstract": false,
+  "type": "string",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/string",
+  "derivation": "constraint",
+  "context" : [{
+    "type" : "element",
+    "expression" : "CDSHooksRequest.extension"
+  }],
+  "differential": {
+    "element": [
+      {
+        "id": "string",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/json-name",
+            "valueString": "davinci-crd.requestedVersion"
+          }
+        ],
+        "path": "string",
+        "short": "CRD version requested by the client",
+        "definition": "Indicates the CRD version the service response needs to comply with.  (If this is not a version supported by the service, it **SHALL** return an error.)",
+        "max": "1"
+      }
+    ]
+  }
+}

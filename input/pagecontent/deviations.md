@@ -9,6 +9,29 @@ This implementation guide extends/customizes CDS Hooks in 5 ways: additional hoo
 ### Additional Hook scope
 In the [current build](https://cds-hooks.org/hooks/order-sign/), the order-sign hook can be used for both 'draft' orders that are newly created as well as for updated orders that are active.  The balloted version of the hooks this IG release is bound to are limited to draft orders.  This IG adopts the newer wording, meaning that the order-sign hook can be triggered both on newly created orders, as well as when orders are updated (changing status, changing timeframe, etc.).  The hook can also be re-triggered if there is a key change to the context, most typically the establishment of new or renewed coverage relevant to the order.
 
+<div class="new-content" markdown="1">
+### CRD Version declaration
+There have been multiple versions of this specification and there are likely to be new ones in the future.  Not all versions are fully compatible.  Some clients and/or services may be able to handle multiple versions, but to interoperate, it is necessary for a client to know what version(s) a CRD service supports and for CRD services to know which version a given client wants.
+
+This guide defines two extensions:
+* The first, [davinci-crd.version](StructureDefinition-CDSHookServicesExtensionCRDVersion.html) appears inside each services.hook declaration in the CDS Hook services discovery response.  CRD services **SHALL** declare at least one supported CRD version for each supported hook.  If the services endpoint can handle multiple CRD versions, it **SHALL** declare all versions it supports.
+* The second, [davinci-crd.requestedVersion](CDSHookServiceRequestExtensionRequestCRDVersion.html) appears in the extensions object at the root of a CRD CDS Hooks request.  It **SHALL** be present if the service indicates it supports multiple versions for that hook, but **MAY** be present always.
+
+In both extensions, the version declaration is limited to the first two nodes of the CRD IG's semantic version (i.e. 2.0, not 2.0.0 or 2.0.1).  The third 'patch' portion of the version number should never impact interoperability.
+
+An example of the declaration of supported versions is:
+{% raw %}
+{% fragment Binary/CRDServices JSON EXCEPT:services.where(hook='appointment-book') EXCEPT:services.where(hook='appointment-book').extension EXCEPT:services.where(hook='appointment-book').extension.string %}
+{% endraw %}
+
+An example of the declaration of requested version is:
+{% raw %}
+{% fragment Binary/CRDServiceRequest4 JSON EXCEPT:extension %}
+{% endraw %}
+
+We are exploring with CDS Hooks whether there can be a more generic mechanism to indicated supported implementation guides and versions.  If one is introduced, it will likely supercede this custom mechanism in a future release.
+</div>
+
 ### New hook configuration mechanism
 The CRD Servers provided by payers will support discovery of different types of coverage requirements that will return different types of information to users on [CDS Cards]({{site.data.fhir.ver.cdshooks}}/index.html#cds-service-response), such as:
 

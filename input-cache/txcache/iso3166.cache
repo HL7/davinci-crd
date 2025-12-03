@@ -19,15 +19,11 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:8a67f665-c04d-4cea-9bb6-7a3c2da6c256",
-    "timestamp" : "2025-07-20T14:57:39.191Z",
+    "identifier" : "urn:uuid:a47c766a-fcac-4b11-a91c-96470c7290e1",
+    "timestamp" : "2025-12-02T04:17:20.102Z",
     "total" : 249,
     "offset" : 0,
     "parameter" : [{
-      "name" : "displayLanguage",
-      "valueCode" : "en-US"
-    },
-    {
       "name" : "excludeNested",
       "valueBoolean" : true
     },
@@ -41,10 +37,6 @@ e: {
     },
     {
       "name" : "used-codesystem",
-      "valueUri" : "urn:iso:std:iso:3166|2018"
-    },
-    {
-      "name" : "version",
       "valueUri" : "urn:iso:std:iso:3166|2018"
     }],
     "contains" : [{
@@ -1317,15 +1309,11 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:45ee52a6-2660-400e-ac70-ca949a38454a",
-    "timestamp" : "2025-07-20T14:57:39.756Z",
+    "identifier" : "urn:uuid:5ede74af-96d4-4059-bc4e-dc48c81c3004",
+    "timestamp" : "2025-12-02T04:17:21.024Z",
     "total" : 249,
     "offset" : 0,
     "parameter" : [{
-      "name" : "displayLanguage",
-      "valueCode" : "en-US"
-    },
-    {
       "name" : "excludeNested",
       "valueBoolean" : true
     },
@@ -1339,10 +1327,6 @@ e: {
     },
     {
       "name" : "used-codesystem",
-      "valueUri" : "urn:iso:std:iso:3166|2018"
-    },
-    {
-      "name" : "version",
       "valueUri" : "urn:iso:std:iso:3166|2018"
     }],
     "contains" : [{
@@ -2615,15 +2599,11 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:da03fac4-5bb7-481a-a792-ceca9d67e950",
-    "timestamp" : "2025-07-20T14:57:40.309Z",
+    "identifier" : "urn:uuid:173f8d53-6476-44a4-bf4d-3a1ecb0b0691",
+    "timestamp" : "2025-12-02T04:17:22.414Z",
     "total" : 249,
     "offset" : 0,
     "parameter" : [{
-      "name" : "displayLanguage",
-      "valueCode" : "en-US"
-    },
-    {
       "name" : "excludeNested",
       "valueBoolean" : true
     },
@@ -2637,10 +2617,6 @@ e: {
     },
     {
       "name" : "used-codesystem",
-      "valueUri" : "urn:iso:std:iso:3166|2018"
-    },
-    {
-      "name" : "version",
       "valueUri" : "urn:iso:std:iso:3166|2018"
     }],
     "contains" : [{

@@ -1,111 +1,5 @@
 -------------------------------------------------------------------------------------
 {"code" : {
-  "system" : "http://hl7.org/fhir/sid/ndc",
-  "code" : "0093-0948",
-  "display" : "Diclofenac Potassium  (product)"
-}, "valueSet" :null, "langs":"en-US", "useServer":"true", "useClient":"false", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "id" : "terminology-settings",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "displayLanguage",
-    "valueCode" : "en-US"
-  }]
-}}####
-v: {
-  "display" : "Diclofenac Potassium  (product)",
-  "code" : "0093-0948",
-  "system" : "http://hl7.org/fhir/sid/ndc",
-  "server" : "https://tx.fhir.org/r4",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://hl7.org/fhir/sid/ndc",
-  "code" : "59011-410",
-  "display" : "OxyContin  (product)"
-}, "valueSet" :null, "langs":"en-US", "useServer":"true", "useClient":"false", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "id" : "terminology-settings",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "displayLanguage",
-    "valueCode" : "en-US"
-  }]
-}}####
-v: {
-  "display" : "OxyContin  (product)",
-  "code" : "59011-410",
-  "system" : "http://hl7.org/fhir/sid/ndc",
-  "server" : "https://tx.fhir.org/r4",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://hl7.org/fhir/sid/ndc",
-  "code" : "0093-0948",
-  "display" : "Diclofenac Potassium  (product)"
-}, "valueSet" :null, "langs":"en-US", "useServer":"true", "useClient":"false", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en-US"
-  }]
-}}####
-v: {
-  "display" : "Diclofenac Potassium  (product)",
-  "code" : "0093-0948",
-  "system" : "http://hl7.org/fhir/sid/ndc",
-  "server" : "https://tx.fhir.org/r4",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://hl7.org/fhir/sid/ndc",
-  "code" : "59011-410",
-  "display" : "OxyContin  (product)"
-}, "valueSet" :null, "langs":"en-US", "useServer":"true", "useClient":"false", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en-US"
-  }]
-}}####
-v: {
-  "display" : "OxyContin  (product)",
-  "code" : "59011-410",
-  "system" : "http://hl7.org/fhir/sid/ndc",
-  "server" : "https://tx.fhir.org/r4",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
   "coding" : [{
     "system" : "http://hl7.org/fhir/sid/ndc",
     "code" : "0093-0948",
@@ -127,6 +21,7 @@ v: {
   "code" : "0093-0948",
   "system" : "http://hl7.org/fhir/sid/ndc",
   "server" : "https://tx.fhir.org/r4",
+  "diagnostics" : "0 0 : start\r\n0 0     : 0ms  : Analysing http://hl7.org/fhir/ValueSet/@all for validation purposes\r\n0 0     : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n0 0     : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n0 0     : 0ms  : Prepare include: \"()\"\r\n0 0     : 0ms  : Validate \"[http://hl7.org/fhir/sid/ndc#0093-0948 (\"Diclofenac Potassium  (product)\")]\"\r\n0 0     : 0ms  : Check \"http://hl7.org/fhir/sid/ndc#0093-0948\"\r\n16 16   : 16ms : Using CodeSystem \"http://hl7.org/fhir/sid/ndc|\" (content = complete)\r\n",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -156,6 +51,7 @@ v: {
   "code" : "59011-410",
   "system" : "http://hl7.org/fhir/sid/ndc",
   "server" : "https://tx.fhir.org/r4",
+  "diagnostics" : "0 0 : start\r\n0 0     : 0ms  : Analysing http://hl7.org/fhir/ValueSet/@all for validation purposes\r\n0 0     : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n0 0     : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n0 0     : 0ms  : Prepare include: \"()\"\r\n0 0     : 0ms  : Validate \"[http://hl7.org/fhir/sid/ndc#59011-410 (\"OxyContin  (product)\")]\"\r\n0 0     : 0ms  : Check \"http://hl7.org/fhir/sid/ndc#59011-410\"\r\n0 0     : 0ms  : Using CodeSystem \"http://hl7.org/fhir/sid/ndc|\" (content = complete)\r\n",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"

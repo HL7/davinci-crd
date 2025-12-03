@@ -1,0 +1,37 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "CDSHookServicesExtensionCRDVersion",
+  "url": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CDSHookServicesExtensionCRDVersion",
+  "name": "CDSHookServicesExtensionCRDVersion",
+  "title": "CDS Hooks Services Discovery CRD Version Extension",
+  "status": "active",
+  "experimental": false,
+  "description": "Indicates the version(s) of CRD supported by the service for a given type of hook",
+  "fhirVersion": "4.0.1",
+  "kind": "primitive-type",
+  "abstract": false,
+  "type": "string",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/string",
+  "derivation": "constraint",
+  "context" : [{
+    "type" : "element",
+    "expression" : "CDSHooksServices.services.extension"
+  }],
+  "differential": {
+    "element": [
+      {
+        "id": "string",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/json-name",
+            "valueString": "davinci-crd.version"
+          }
+        ],
+        "path": "string",
+        "short": "CRD version(s) supported by the hook",
+        "definition": "Indicates a CRD version the service supports for the specified hook type",
+        "max": "*"
+      }
+    ]
+  }
+}

@@ -1,26 +1,14 @@
 {
   "http://unstats.un.org/unsd/methods/m49/m49.htm" : null,
-  "https://example.org/some-organization/device-codes" : null,
-  "htp://hl7.org/fhir/CodeSystem/task-code|null" : null,
-  "http://terminology.hl7.org/CodeSystem/v3-AdministrativeGender|2023-02-01" : null,
-  "http://example.org/fhir/CodeSystem/SomeCodes|null" : null,
-  "http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20230901" : null,
-  "http://terminology.hl7.org/CodeSystem/v3-NullFlavor|2023-02-01" : null,
-  "urn:ietf:bcp:13|null" : null,
-  "http://nucc.org/provider-taxonomy|null" : null,
   "urn:ietf:bcp:13" : null,
-  "http://unstats.un.org/unsd/methods/m49/m49.htm|null" : null,
-  "http://www.nlm.nih.gov/research/umls/rxnorm|11062023" : null,
   "http://nucc.org/provider-taxonomy" : {
     "server" : "http://tx.fhir.org/r4",
-    "filename" : "cs-e6ab4c20-5e8d-4134-b89a-3e66ff31d486.json"
+    "filename" : "cs-6f3627ea-0a91-46f3-8bdf-4de123b5bbd5.json"
   },
+  "https://example.org/some-organization/device-codes" : null,
   "http://example.org/fhir/CodeSystem/SomeCodes" : null,
-  "http://www.nlm.nih.gov/research/umls/rxnorm|05062024" : null,
-  "http://snomed.info/sct|http://snomed.info/sct/731000124108" : null,
-  "https://example.org/some-organization/device-codes|null" : null,
   "http://snomed.info/sct" : {
     "server" : "http://tx.fhir.org/r4",
-    "filename" : "cs-047c4379-4310-4683-896c-78b3952a9e94.json"
+    "filename" : "cs-193d76d9-5ba2-490a-8b75-7c3dee9789fa.json"
   }
 }

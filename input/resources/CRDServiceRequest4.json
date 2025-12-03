@@ -49,5 +49,8 @@
         }
       ]
     }
+  },
+  "extension": {
+    "davinci-crd.requestedVersion": "2.2"    
   }
 }
