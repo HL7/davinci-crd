@@ -37,6 +37,7 @@ This page describes the primary releases of the specification and summarizes the
 * [FHIR-52707](https://jira.hl7.org/browse/FHIR-52707) - Corrected language about if-none-exist example *(correction)* [link](deviations.html#FHIR-52707)
 * [FHIR-53498](https://jira.hl7.org/browse/FHIR-53498) - Corrected titles and descriptions of several example artifacts *(correction)* [link](artifacts.html)
 * [FHIR-53285](https://jira.hl7.org/browse/FHIR-53285) - Corrected logical model to refer to not say 'card' when it should say systemAction or both *(correction)* [link](StructureDefinition-CRDMetricData-definitions.html)
+* [FHIR-52324](https://jira.hl7.org/browse/FHIR-52324) - Manually added reference to CPT IP rules in IP section *(correction)* [link](index.html#intellectual-property-considerations)
 
 ### Release 2.2.0-ballot
 
