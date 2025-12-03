@@ -19,7 +19,7 @@ This guide defines two extensions:
 
 In both extensions, the version declaration is limited to the first two nodes of the CRD IG's semantic version (i.e. 2.0, not 2.0.0 or 2.0.1).  The third 'patch' portion of the version number should never impact interoperability.
 
-An example of the declaration of supported versions is:
+An example of the declaration of supported versions is:<a href="todo">Fix fragment ref</a>
 {% raw %}
 {% fragment Binary/CRDServices JSON EXCEPT:services.where(hook='appointment-book') EXCEPT:services.where(hook='appointment-book').extension EXCEPT:services.where(hook='appointment-book').extension.string %}
 {% endraw %}
