@@ -151,6 +151,7 @@ Description: "Captures assertions from a payer about the coverage rules for a se
 * extension[coverage-assertion-id] only Extension
   * ^short = "Coverage assertion trace number"
   * ^definition = "Trace identifier to allow tracking the guidance in source system.  This identifier can also be used to re-establish cached context information when subsequently launching DTR."
+  * value[x] 1..1
   * value[x] only string
 * extension[satisfied-pa-id] only Extension
   * ^short = "Satisfied prior auth number"
