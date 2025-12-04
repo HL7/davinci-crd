@@ -136,6 +136,9 @@ Significant other changes:
 * [FHIR-44388](https://jira.hl7.org/browse/FHIR-44388) - Split Appointment profile into two - one pointing to 
 * [FHIR-45230](https://jira.hl7.org/browse/FHIR-45230) - Relaxed 'reason' constraints in profiles to align with US Core
 * [FHIR-46793](https://jira.hl7.org/browse/FHIR-46793) - Set expectations for CRD clients to query data when possible
+* [FHIR-53067](https://jira.hl7.org/browse/FHIR-53067) - Handling CRD edge cases
+* [FHIR-52586](https://jira.hl7.org/browse/FHIR-52586) - Deleting language about portals 
+* [FHIR-53544](https://jira.hl7.org/browse/FHIR-53544) - Requiring value on the coverage-assertion-id extension 
 
 A variety of minor corrections and clarifications to wording and examples.
 
