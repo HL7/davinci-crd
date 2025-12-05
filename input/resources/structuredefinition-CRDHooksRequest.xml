@@ -143,7 +143,7 @@
 		<element id="CDSHooksRequest.prefetch">
       <path value="CDSHooksRequest.prefetch"/>
 			<short value="Prefetch info requested by server"/>
-			<comment value="While this is mustSupport, CRD clients are not required to pass any or all prefetch data requested by the CRD service."/>
+			<comment value="While this is mustSupport, CRD clients are not required to pass any or all prefetch data requested by the CRD server."/>
 			<mustSupport value="true"/>
     </element>
 		<element id="CDSHooksRequest.prefetch.key">

@@ -8,6 +8,7 @@ This page describes the primary releases of the specification and summarizes the
 * [FHIR-49974](https://jira.hl7.org/browse/FHIR-49974) - Made order-select support mandatory *(clarification)* [link](hooks.html#FHIR-49974)
 * [FHIR-52444](https://jira.hl7.org/browse/FHIR-52444) - Made support for prefetch mandatory *(enhancement)* [link](foundation.html#FHIR-52444)
 * [FHIR-53048](https://jira.hl7.org/browse/FHIR-53048) - Added CRD version extensions to service discovery and service invocation *(enhancement)* [link](deviations.html#crd-version-declaration)
+* [FHIR-52784](https://jira.hl7.org/browse/FHIR-52784) - Made support for prefetch mandatory (and removed example queries showing how to retrieve the 'required' data by query instead).  Also corrected "CRD Service" to "CRD server" *(correction)* [link](foundation.html#FHIR-52784a), [link](foundation.html#FHIR-52784b), [link](foundation.html#FHIR-52784c), [link](foundation.html#FHIR-52784d)
 
 **Substative changes**
 * [FHIR-52452](https://jira.hl7.org/browse/FHIR-52452) - Added 'contained' as mustSupport to request resources and encounters *(enhancement)*
@@ -89,7 +90,7 @@ This page describes the primary releases of the specification and summarizes the
 * [FHIR-49762](https://jira.hl7.org/browse/FHIR-49762) - Added VisionPrescription to the list of supported 'Request' resources for order-select and order-dispatch.  (They were already in the technical list, just not the HTML.) *(correction)* [link](hooks.html#order-dispatch) [link](hooks.html#order-select)
 * [FHIR-49085](https://jira.hl7.org/browse/FHIR-49085) - In diagram, corrected "Payer CDA System" to "Payer CDS System" *(correction)* [link](hooks.html#hook-categories)
 * [FHIR-50006](https://jira.hl7.org/browse/FHIR-50006) - Added additional examples for non-provided/insufficient information that is not considered an error *(clarification)* [link](cards.html#FHIR-50006)
-* [FHIR-48625](https://jira.hl7.org/browse/FHIR-48625) - Added guidance on best CRD service available practices *(clarification)* [link](implementation.html#FHIR-48625)
+* [FHIR-48625](https://jira.hl7.org/browse/FHIR-48625) - Added guidance on best CRD server available practices *(clarification)* [link](implementation.html#FHIR-48625)
 * [FHIR-49799](https://jira.hl7.org/browse/FHIR-49799) - Corrected appointment profiles to not be abstract *(correction)* [link](StructureDefinition-profile-appointment-with-order.html), [link](StructureDefinition-profile-appointment-no-order.html)
 * [FHIR-50206](https://jira.hl7.org/browse/FHIR-50206) - Removed patient as an allowed type of Coverage payer *(correction)* [link](StructureDefinition-profile-coverage-definitions.html#diff_Coverage.payor)
 * [FHIR-49795](https://jira.hl7.org/browse/FHIR-49795) - Dropped Questionnaire Task reason value set and require inclusion of text *(correction)* [link](StructureDefinition-profile-taskquestionnaire-definitions.html#diff_Task.reasonCode)
@@ -110,7 +111,7 @@ In addition, there have been various miscellaneous non-substantive improvements 
 * [FHIR-47329](https://jira.hl7.org/browse/FHIR-47329), [FHIR-48622](https://jira.hl7.org/browse/FHIR-48622) - Added support for USCDI v4 (US Core 7.0.0) and clarify language about what multi-US-Core release implementation means
 * [FHIR-48352](https://jira.hl7.org/browse/FHIR-48352) - Set mustSupport expectations for practitioner, practitionerRole and organization for multi-target relationships
 * [FHIR-48430](https://jira.hl7.org/browse/FHIR-48430) - Set clearer expectations for handling failure states
-* [FHIR-48559](https://jira.hl7.org/browse/FHIR-48559) - Make ability to bypass CRD services that are running too long a 'SHALL'
+* [FHIR-48559](https://jira.hl7.org/browse/FHIR-48559) - Make ability to bypass CRD servers that are running too long a 'SHALL'
 * [FHIR-48560](https://jira.hl7.org/browse/FHIR-48560) - Make clear that clients need to constrain scopes provided to what's needed
 * [FHIR-48722](https://jira.hl7.org/browse/FHIR-48722) - Collapse the 2 Encounter profiles (USCDI 1, USCDI 3+4) into one
 

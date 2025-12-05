@@ -12,7 +12,7 @@ Description: "Codes temporarily defined as part of the CRD implementation guide.
 * ^property[0].type = #boolean
 // Coverage assertion reasons - https://jira.hl7.org/browse/UP-668
 * #gold-card               "Gold card"                           "Ordering Practitioner has been granted 'gold card' status with this payer/coverage type."
-* #no-member-found         "Member not found"                    "The CRD service was unable to find a matching member, so no coverage information can be provided"
+* #no-member-found         "Member not found"                    "The CRD server was unable to find a matching member, so no coverage information can be provided"
 * #no-active-coverage      "Coverage not active"                 "The referenced insurance coverage for the member is not active, so no coverage information can be provided"
 * #auth-out-network        "Authorization needed out-of-network" "Authorization is necessary if out-of-network."
 

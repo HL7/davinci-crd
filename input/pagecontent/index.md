@@ -82,7 +82,7 @@ The CRD client may actually involve multiple systems. For example, the systems t
 
 * Calls are triggered from within the system the user is interacting with at the time when the 'hook event' (entering an order, booking an appointment, etc.) occurs.
 * Cards returned are displayed to the user, or in the event of system actions, user-notifications associated with the system actions are presented to the user within the same application.
-* The 'access token' and FHIR endpoint exposed to the CRD service has access to all relevant data, independent of which physical data store it resides.
+* The 'access token' and FHIR endpoint exposed to the CRD server has access to all relevant data, independent of which physical data store it resides.
 * The intermediary could take responsibility for the FHIR interface, such as determining which payer should receive a coverage request.
 
 There are three distinct sets of capabilities for CRD clients, one for [USCDI v1 (US-Core 3.1.1)](CapabilityStatement-crd-client3.1.html), one for [USCDI v3 (US-Core 6.1.0)](CapabilityStatement-crd-client6.1.html), and one for [USCDI v4 (US-Core 7.0.0)](CapabilityStatement-crd-client7.0.html).  Typically, a client would support only one of these, based on which US Core release the client supports internally.  There is a single CRD server set of capabilities which must be able to handle data from any of the three supported USCDI versions.
