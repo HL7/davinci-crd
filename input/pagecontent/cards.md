@@ -8,36 +8,32 @@ In addition to the [guidance provided in the CDS Hooks specification]({{site.dat
 
 *  All `Card.suggestion` elements **SHALL** populate the Suggestion.uuid element.
 
-<div class="modified-content" markdown="1"><a name="FHIR-52583"> </a>
+* <span class="modified-content" markdown="1"><a name="FHIR-52583"> </a>The `Card.source.label` **SHALL** be populated with an insurer name that the user and patient are likely to recognize (i.e., the responsible insurer on the patient's insurance card), including in situations where coverage recommendations are being returned by a benefits manager or intermediary operating the CRD server on behalf of the payer. If an insurer provides recommendations from another authority (e.g., a clinical society), the society's name and logo might be displayed, though usually only with the permission of that organization.</span>
 
-* The `Card.source.label` **SHALL** be populated with an insurer name that the user and patient are likely to recognize (i.e., the responsible insurer on the patient's insurance card), including in situations where coverage recommendations are being returned by a benefits manager or intermediary operating the CRD server on behalf of the payer. If an insurer provides recommendations from another authority (e.g., a clinical society), the society's name and logo might be displayed, though usually only with the permission of that organization.
-
-</div>
-
-*  `Card.source.topic` **SHALL** be populated, and has an [extensible](http://www.hl7.org/fhir/terminologies.html#extensible) binding to the ValueSet <a href="ValueSet-cardType.html">CRD Response Types.</a> The rationale is to allow CRD clients to filter or track the usage of different types of cards.
+*  `Card.source.topic` **SHALL** be populated, and has an [extensible](http://www.hl7.org/fhir/terminologies.html#extensible) binding to the ValueSet [CRD Response Types](ValueSet-cardType.html). The rationale is to allow CRD clients to filter or track the usage of different types of cards.
 
 *  Users are busy. Time spent reading a payer-returned card is time taken from reviewing other information or interacting with the patient. If not useful or relevant, users will quickly learn to ignore - or even demand the disabling of - payer-provided alerts. Therefore, information must be delivered efficiently and be tuned to provide maximum relevance. Specifically:
 
     *  `Card.summary` **SHOULD** provide actionable information. "Coverage alert" would not be very helpful. "Drug not covered. Covered alternatives available" or "Prior authorization required" would be better.
 
-    *  `Card.detail` and/or external links **SHOULD** only be provided when coverage recommendations can't be clearly provided in the 140-character limit of `Card.summary`.
+    *  `Card.detail` and/or external links **SHOULD** only be provided when coverage recommendations cannot be clearly provided in the 140-character limit of `Card.summary`.
 
     *  `Card.detail` **SHOULD** provide graduated information, with critical information being provided in the first paragraph and less critical information towards the end of the page.
 
-    *  `Card.detail` **SHOULD** provide enough context that a user can determine whether it is worth their time to launch an app or follow an external link, ideally providing a sense of where to look for and how to use whatever link or app they launch in the specific context of the order they're making.
+    *  `Card.detail` **SHOULD** provide enough context that a user can determine whether it is worth their time to launch an app or follow an external link, ideally providing a sense of where to look for and how to use whatever link or app they launch in the specific context of the order they are making.
 
     *  Keep the number of cards manageable. Consider whether user workflow will be faster with separate cards for each link or a single card having multiple links. Typically, it is best to use the smallest number of cards that still support descriptive and actionable summaries.
 
-    *  When providing links, don't send the user to the first page of a large document. Keep document size short and/or link directly to the section that is relevant for the context.
+    *  When providing links, do not send the user to the first page of a large document. Keep document size short and/or link directly to the section that is relevant for the context.
 
     *  While links are permitted in the markdown content of `Card.detail`, support for this is not universal, so links **SHOULD** also be provided in `Card.link`. This also provides a consistent place for users to access all relevant links.
 
-* CRD client systems might not support all card capabilities, therefore card options **SHOULD** provide sufficient information for a user to perform record changes manually if automated support isn't available.
+* CRD client systems might not support all card capabilities, therefore card options **SHOULD** provide sufficient information for a user to perform record changes manually if automated support is not available.
 
-* Where <a href="{{site.data.fhir.ver.cdshooks}}/index.html#system-action">systemActions</a> are used, CRD servers **SHOULD NOT** return equivalent information in a card for user display. It is the responsibility of the CRD client to determine how best to present the results of the newly created or revised records.
-</ul>
+* Where [systemActions]({{site.data.fhir.ver.cdshooks}}/index.html#system-action) are used, CRD servers **SHOULD NOT** return equivalent information in a card for user display. It is the responsibility of the CRD client to determine how best to present the results of the newly created or revised records.
 
-<p class="new-content">A profile defining the generic constraints that apply to all CRD responses can be found <a href="StructureDefinition-CRDHooksResponseBase.html">here</a>.</p>
+
+<p class="new-content" markdown="1">A profile defining the generic constraints that apply to all CRD responses can be found [here](StructureDefinition-CRDHooksResponseBase.html).</p>
 
 ### Potential CRD Response Types
 <p class="modified-content" markdown="1">
@@ -45,7 +41,7 @@ The sections below describe the different types of [responses]({{site.data.fhir.
 </p>
 
 <a name="FHIR-50009"> </a>
-<p class="modified-content">Conformant CRD clients and services <b>SHALL</b> support the <a href="#coverage-information-response-type">Coverage Information</a> (see specific support expectations documented there) and <b>SHOULD</b> support the remaining types.</p>
+<p class="modified-content" markdown="1">Conformant CRD clients and services **SHALL** support the [Coverage Information](#coverage-information-response-type) (see specific support expectations documented there) and **SHOULD** support the remaining types.</p>
 
 NOTE: Support for a response type does not mean that all orders, appointments, etc. will necessarily receive card guidance, merely that it must be able to return those response types for at least a subset of CRD invocations.
 
@@ -71,9 +67,9 @@ For example, this CDS Hooks [Card]({{site.data.fhir.ver.cdshooks}}/index.html#cd
 
 {% fragment Binary/CRDServiceResponse JSON BASE:cards.where(links.exists()) %}
 
-<p>As much as technically possible, links provided <strong>SHOULD</strong> be 'deep' links that take the user to the specific place in the documentation relevant to the current hook context to minimize provider reading and navigation time.</p>
+As much as technically possible, links provided **SHOULD** be 'deep' links that take the user to the specific place in the documentation relevant to the current hook context to minimize provider reading and navigation time.
 
-<p class="new-content">A profile defining the expectations of an External Reference response can be found <a href="StructureDefinition-CRDHooksResponse-externalReference.html">here</a>.</p>
+<p class="new-content" markdown="1">A profile defining the expectations of an External Reference response can be found [here](StructureDefinition-CRDHooksResponse-externalReference.html).</p>
 
 
 ### Instructions Response Type
@@ -83,11 +79,11 @@ This example CDS Hooks [card]({{site.data.fhir.ver.cdshooks}}/index.html#cds-ser
 
 {% fragment Binary/CRDServiceResponse JSON BASE:cards.where(source.topic.where(code='clinical-reminder').exists()) %}
 
-<p class="new-content">A profile defining the expectations of an Instructions response can be found <a href="StructureDefinition-CRDHooksResponse-instructions.html">here</a>.</p>
+<p class="new-content" markdown="1">A profile defining the expectations of an Instructions response can be found [here](StructureDefinition-CRDHooksResponse-instructions.html).</p>
 
 
 ### Coverage Information Response Type
-This response type uses a <a href="{{site.data.fhir.ver.cdshooks}}/index.html#system-action">systemAction</a> to automatically update the order or other resource in the CRD client with an extension that conveys information related to the coverage of the order. As discussed on the [home page](index.html#cmsdiscretion), the functionality of this response type has been enhanced to allow directly returning a prior authorization number as part of a CRD response.  Regardless of the content, this response type **SHALL NOT** use a card.
+This response type uses a [systemAction]({{site.data.fhir.ver.cdshooks}}/index.html#system-action) to automatically update the order or other resource in the CRD client with an extension that conveys information related to the coverage of the order. As discussed on the [home page](index.html#cmsdiscretion), the functionality of this response type has been enhanced to allow directly returning a prior authorization number as part of a CRD response.  Regardless of the content, this response type **SHALL NOT** use a card.
 
 Support expectations for this hook by CDS services are as follows:
 
@@ -98,7 +94,7 @@ Support expectations for this hook by CDS services are as follows:
 
 A new FHIR [coverage-information](StructureDefinition-ext-coverage-information.html) extension is defined that allows assertions around coverage and prior authorization to also be captured computably, including what assertion is made, what coverage the assertion is made with respect to, when the assertion was made, and - optionally - a trace ID that can be used for audit purposes.
 <a name="FHIR-50318"> </a>
-<p class="new-content">
+<p class="new-content" markdown="1">
 The extension generally gets added to the request resource that was passed to the CDS server (the Appointment, Encounter, ServiceRequest, etc.).  There is one exception, which is if an Appointment is 'basedOn' a ServiceRequest, the system action requesting a resource update to add or change the coverage-information extension(s) will be against the ServiceRequest, not the appointment.
 </p>
 
@@ -108,21 +104,21 @@ If a CRD server has provided limitations about when a coverage assertion applies
 
 If a CRD client submits a claim related to an order for which it has received a coverage-information extension for the coverage type associated with the claim, that claim **SHALL** include the `coverage-assertion-id` and, if applicable, the `satisfied-pa-id` in the X12 837 K3 segment. Further details about the specific location of each element will be available in the X12 specifications. These identifiers will provide the necessary context to allow the payer to respect any commitments made as part of the CRD call and also to link together CRD results and eventual claims for analytics purposes.
 <a name="FHIR-51420"> </a>
-<p class="modified-content">In some cases, multiple *coverage-information* extension repetitions may be added by the CRD server. This might represent different guidance for different coverages the service supports for the same patient or different expectations (related to coverage, prior auth, or additional information) for different billing codes, different qualifiers (e.g., in-network vs out-of-network), etc. If multiple extension repetitions are present, all repetitions referencing differing insurance (coverage-information.coverage) <b>SHALL</b> have distinct coverage-assertion-ids and satisfied-pa-ids, if present. Where multiple repetitions apply to the same coverage, they <b>MAY</b> have the same coverage-assertion-ids and satisfied-pa-ids (if present).  It is possible that some repetitions for a coverage might have satisfied prior authorization with an ID, while others will not.</p>
+<p class="modified-content" markdown="1">In some cases, multiple *coverage-information* extension repetitions may be added by the CRD server. This might represent different guidance for different coverages the service supports for the same patient or different expectations (related to coverage, prior auth, or additional information) for different billing codes, different qualifiers (e.g., in-network vs out-of-network), etc. If multiple extension repetitions are present, all repetitions referencing differing insurance (coverage-information.coverage) **SHALL** have distinct coverage-assertion-ids and satisfied-pa-ids, if present. Where multiple repetitions apply to the same coverage, they **MAY** have the same coverage-assertion-ids and satisfied-pa-ids (if present).  It is possible that some repetitions for a coverage might have satisfied prior authorization with an ID, while others will not.</p>
 
 Systems **MAY** make calls related to orders even if there is already a coverage assertion recorded on the order. There is always the possibility that context has changed or new information available in the order will result in a new decision or additional guidance. The payer might also have other useful information not related to coverage or authorization. Information about the order or context might change between an initial `order-select` or `order-sign` and a subsequent `order-dispatch` or other hook invocation.
 
 However, payers **SHALL NOT** send a `systemAction` to update the order unless something is new. Payers **SHOULD** take into account the previous decision in deciding how much processing is necessary before returning a response.
 <a name="FHIR-50102"> </a>
-<p class="new-content">When returning a `systemAction` to update a resource with this response type, the resource content <b>SHALL NOT</b> make changes to any data elements other than adding or modifying coverage-information extensions</p>
+<p class="new-content" markdown="1">When returning a `systemAction` to update a resource with this response type, the resource content **SHALL NOT** make changes to any data elements other than adding or modifying coverage-information extensions</p>
 
-If a *coverage-information* extension indicates the need to collect additional information (via 'doc-needed'), the extension **SHOULD** include a reference to the questionnaire(s) to be completed. If the payer supports Da Vinci DTR, the indicated forms will be the ones completed within the DTR form filler.  If no Questionnaires are specified, DTR will determine the needed forms itself.  For systems that don't support DTR (e.g. because the coverage isn't subject to regulation mandating DTR), the indicated Questionnaire canonicals can be used to determine data to be gathered in some other (non-DTR) way.
+If a *coverage-information* extension indicates the need to collect additional information (via 'doc-needed'), the extension **SHOULD** include a reference to the questionnaire(s) to be completed. If the payer supports Da Vinci DTR, the indicated forms will be the ones completed within the DTR form filler.  If no Questionnaires are specified, DTR will determine the needed forms itself.  For systems that do not support DTR (e.g. because the coverage is not subject to regulation mandating DTR), the indicated Questionnaire canonicals can be used to determine data to be gathered in some other (non-DTR) way.
 <a name="FHIR-49830"> </a>
-<p class="modified-content">When a <i>coverage-information</i> response type indicates that additional clinical or patient documentation is needed and the CRD client supports DTR, CRD clients <b>SHALL</b> ensure that clinical users have an opportunity to launch their DTR solution as part of the current workflow. Where a <i>coverage-information</i> response indicates that additional administrative documentation is needed, CRD clients <b>SHOULD</b> allow clinical users to have an opportunity to launch their DTR solution but <b>SHOULD</b> make it clear that the information to be captured is non-clinical.</p>
+<p class="modified-content" markdown="1">When a _coverage-information_ response type indicates that additional clinical or patient documentation is needed and the CRD client supports DTR, CRD clients **SHALL** ensure that clinical users have an opportunity to launch their DTR solution as part of the current workflow. Where a _coverage-information_ response indicates that additional administrative documentation is needed, CRD clients **SHOULD** allow clinical users to have an opportunity to launch their DTR solution but **SHOULD** make it clear that the information to be captured is non-clinical.</p>
 
 NOTE: Launching DTR does not necessarily mean launching a SMART on FHIR application. Some CRD clients might incorporate DTR client functionality natively rather than using an app.
 <a name="FHIR-50006"> </a>
-<p class="modified-content">When invoking CRD, there may be situations where 'needed' information is not available.  For example, the date of birth might be 'unknown' and there might only be a subscriber id but not a member id.  Alternatively, the payer may not be able to find a member with the specified identifier, the payer might want a location and none is provided, or the payer needs a diagnosis code, but the provided code is free text.  In such situations, this is NOT considered an error with the CDS Hooks invocation.  A successful response with a coverage-information system action is still necessary.</p>
+<p class="modified-content" markdown="1">When invoking CRD, there may be situations where 'needed' information is not available.  For example, the date of birth might be 'unknown' and there might only be a subscriber id but not a member id.  Alternatively, the payer may not be able to find a member with the specified identifier, the payer might want a location and none is provided, or the payer needs a diagnosis code, but the provided code is free text.  In such situations, this is NOT considered an error with the CDS Hooks invocation.  A successful response with a coverage-information system action is still necessary.</p>
 
 The CRD server **SHOULD** either prompt for the additional needed information using DTR or return a coverage-information extension indicating that the patient is not covered with a reason indicating the issue (e.g. the member could not be found/resolved).
 
@@ -130,21 +126,20 @@ The CRD server **SHOULD** either prompt for the additional needed information us
 
 While using portals or other non-questionnaire data capture is not recommended or preferred, it may be necessary as a transitional measure. Future versions of this IG are likely to mandate that questionnaires be included when additional information is required. This transitional accommodation is not intended to relax regulatory or legislative requirements that require the use of DTR.
 <a name="FHIR-49637"> </a>
-<div class="modified-content">
-<p>If the CRD server is unable to resolve the patient, the Coverage Information <b>SHALL</b> indicate "not covered" with a reason code of <a href="ValueSet-coverageAssertionReasons.html#x-http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp-no-member-found">no-member-found</a>.</p>
+<div class="modified-content" markdown="1">
+If the CRD server is unable to resolve the patient, the Coverage Information **SHALL** indicate "not covered" with a reason code of [no-member-found](ValueSet-coverageAssertionReasons.html#x-http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp-no-member-found).
 
-<p>If the CRD is able to resolve the patient but they do not have active coverage, the Coverage Information <b>SHALL</b> indicate "not covered" with a reason of <a href="ValueSet-coverageAssertionReasons.html#x-http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp-no-active-coverage">no-active-coverage</a>.</p>
+If the CRD is able to resolve the patient but they do not have active coverage, the Coverage Information **SHALL** indicate "not covered" with a reason of [no-active-coverage](ValueSet-coverageAssertionReasons.html#x-http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp-no-active-coverage).
 </div>
-<div class="new-content">
-<a name="FHIR-51413"> </a>
-<p>This specification allows returning either a single coverage-information repetition that says "conditional" or multiple coverage-information repetitions with specific assumptions that then indicate "covered", "auth-needed", etc.  The recommended criteria for deciding whether to return a single or multiple are as follows:</p>
-<ul>
-<li>If the decision is driven by different subsets of billing codes or different timeframes (i.e. discrete information that can be conveyed using coverage-information.billingCode or detail codes of allowed-period), then use multiple repetitions.</li>
-<li>If the decision is driven by other information that can't be easily listed in the coverage-information (e.g. what specific provider delivers the service, where it happens, etc.) then use 'Conditional' and indicate the specific additional information needed to make a decision.</li>
-</ul>
-<p>For example, if the payer doesn't know whether authorization is necessary (or if the service is covered at all) because it's necessary to know whether the performer will be in network or not, this SHOULD be conveyed as a single coverage-information extension that is marked as 'conditional' for authorization and/or coverage with info-needed set to at least include provider and/or location, with a 'reason' indicating the authorization rules.  This might be the standard code of auth-out-network-only.</p>
-<a name="FHIR-49950"> </a>
-<p>If a system action containing a coverage-information extension is returned, the CRD client <b>SHALL</b> retain that coverage-information extension and expose it as part of the Request resource in all subsequent communications with that payer, including communications made using DTR and PAS.  The coverage-information.coverage-assertion-id will service as a 'linking' id allowing the payer to associate any cached information they have retained relating to the processing of this Request.</p>
+<div class="new-content" markdown="1"><a name="FHIR-51413"> </a>
+This specification allows returning either a single coverage-information repetition that says "conditional" or multiple coverage-information repetitions with specific assumptions that then indicate "covered", "auth-needed", etc.  The recommended criteria for deciding whether to return a single or multiple are as follows:
+
+* If the decision is driven by different subsets of billing codes or different timeframes (i.e. discrete information that can be conveyed using coverage-information.billingCode or detail codes of allowed-period), then use multiple repetitions.
+* If the decision is driven by other information that cannot be easily listed in the coverage-information (e.g. what specific provider delivers the service, where it happens, etc.) then use 'Conditional' and indicate the specific additional information needed to make a decision.
+
+For example, if the payer does not know whether authorization is necessary (or if the service is covered at all) because it is necessary to know whether the performer will be in network or not, this **SHOULD** be conveyed as a single coverage-information extension that is marked as 'conditional' for authorization and/or coverage with info-needed set to at least include provider and/or location, with a 'reason' indicating the authorization rules.  This might be the standard code of auth-out-network-only.
+
+<a name="FHIR-49950"> </a>If a system action containing a coverage-information extension is returned, the CRD client **SHALL** retain that coverage-information extension and expose it as part of the Request resource in all subsequent communications with that payer, including communications made using DTR and PAS.  The coverage-information.coverage-assertion-id will service as a 'linking' id allowing the payer to associate any cached information they have retained relating to the processing of this Request.
 </div>
 
 When using this response type, the proposed order or appointment being updated **SHALL** comply with the following profiles:
@@ -196,7 +191,7 @@ The information added to the order here is often going to be relevant/important 
 
 Payers with existing tools that process prior authorization requests may have dependencies on data elements that are not found in the clinical orders being submitted as part of CRD such as service type or modifier codes. In these cases, payers **SHOULD** attempt to infer values for these elements based on elements that are present. For example, 'service type' can often be inferred based on the nature of the service, the location, the performer, etc. In situations where the inferred element has an impact on the results, payers should document that as part of their 'coverage-information' extension. In situations where inference is not possible and an element must be known; the payer may indicate that formal prior authorization is necessary. This situation should be minimized as much as possible.
 
-<p class="new-content">A profile defining the expectations of an Coverage Information response can be found <a href="StructureDefinition-CRDHooksResponse-coverageInformation.html">here</a>.</p>
+<p class="new-content" markdown="1">A profile defining the expectations of an Coverage Information response can be found [here](StructureDefinition-CRDHooksResponse-coverageInformation.html).</p>
 
 
 ### Propose Alternate Request Response Type
@@ -254,7 +249,7 @@ For example, this card proposes replacing the draft prescription for a brand-nam
 
 {% fragment Binary/CRDServiceResponse2 JSON BASE:cards.where(source.topic.where(code='therapy-alternatives-req').exists()).suggestions EXCEPT:id | medication BASE:actions.resource %}
 
-<p class="new-content">A profile defining the expectations of an Alternate Request response can be found <a href="StructureDefinition-CRDHooksResponse-alternateRequest.html">here</a>.</p>
+<p class="new-content" markdown="1">A profile defining the expectations of an Alternate Request response can be found [here](StructureDefinition-CRDHooksResponse-alternateRequest.html).</p>
 
 
 ### Identify Additional Orders Response Type
@@ -307,7 +302,7 @@ This example proposes adding a monthly test to check liver function:
 
 {% fragment Binary/CRDServiceResponse2 JSON BASE:cards.where(source.topic.where(code='clinical-reminder').exists()).suggestions %}
 
-<p class="new-content">A profile defining the expectations of an Additional Orders response can be found <a href="StructureDefinition-CRDHooksResponse-additionalOrders.html">here</a>.</p>
+<p class="new-content" markdown="1">A profile defining the expectations of an Additional Orders response can be found [here](StructureDefinition-CRDHooksResponse-additionalOrders.html).</p>
 
 
 ### Request Form Completion Response Type
@@ -317,7 +312,7 @@ This response type can be used to present a card that indicates that there are f
 
 This suggestion will always include a create action for the Task. The Task will point to the Questionnaire to be completed using a `Task.input` element with a `Task.input.type` of "questionnaire" and the canonical URL for the questionnaire in `Task.input.valueCanonical`. Additional `Task.input` elements will provide information about how the completed questionnaire response is to be submitted to the payer with a service endpoint if required. The `Task.code` will always include the CRD-specific `complete-questionnaire` code. The reason for completion will be conveyed in `Task.reasonCode`. The Questionnaire might also be included with a separate conditional create action or it might be excluded with the presumption it will already be available or retrievable by the client via its canonical URL, either from the original source or from a local registry.
 
-Instead of using a card, CRD servers **MAY** opt to use a <a href="{{site.data.fhir.ver.cdshooks}}/index.html#system-action">systemAction</a> instead. CRD clients supporting this response type **SHALL** support either approach.
+Instead of using a card, CRD servers **MAY** opt to use a [systemAction]({{site.data.fhir.ver.cdshooks}}/index.html#system-action) instead. CRD clients supporting this response type **SHALL** support either approach.
 
 When using this response type, the proposed orders (and any associated resources) **SHALL** comply with the following profiles:
 
@@ -344,7 +339,7 @@ The following is an example CDS Hooks [Suggestion]({{site.data.fhir.ver.cdshooks
 
 {% fragment Binary/CRDServiceResponse2 JSON BASE:cards.where(source.topic.where(code='123').exists()).suggestions EXCEPT:url BASE:actions.where(resource is Questionnaire).resource %}
 
-<p class="new-content">A profile defining the expectations of an Form Completion response can be found <a href="StructureDefinition-CRDHooksResponse-formCompletion.html">here</a>.</p>
+<p class="new-content" markdown="1">A profile defining the expectations of an Form Completion response can be found [here](StructureDefinition-CRDHooksResponse-formCompletion.html).</p>
 
 
 <div class="modified-content" markdown="1">
@@ -352,7 +347,7 @@ The following is an example CDS Hooks [Suggestion]({{site.data.fhir.ver.cdshooks
 ### Update Coverage Records Response Type
 This response type is used when the CRD server has updates or corrections to make to the primary insurance coverage record held by the CRD client eing used for the CRD call. For example, the CRD client might be aware that a patient has coverage with a provider, but have incorrect details such as expiry date, coverage types, etc. This response allows the CRD server to convey that information to the CRD client and link it to the current/proposed action. In theory, this type of response could also be used to convey corrected/additional prior authorization information the payer was aware of, however that functionality is out of scope for this release of the implementation guide.
 
-Instead of using a card, CRD servers **MAY** opt to use a <a href="{{site.data.fhir.ver.cdshooks}}/index.html#system-action">systemAction</a> instead. CRD clients supporting this response type **SHALL** support either approach. If receiving a system action, a CRD client **MAY** opt to place the updated record in a holding area for human review rather than directly modifying their source of truth.
+Instead of using a card, CRD servers **MAY** opt to use a [systemAction]({{site.data.fhir.ver.cdshooks}}/index.html#system-action) instead. CRD clients supporting this response type **SHALL** support either approach. If receiving a system action, a CRD client **MAY** opt to place the updated record in a holding area for human review rather than directly modifying their source of truth.
 
 NOTE: This functionality is somewhat redundant with the capabilities of the X12 270/271 transactions. This CRD capability **SHALL NOT** be used in situations where regulation dictates the use of the X12 functionality.
 
@@ -366,7 +361,7 @@ For example, this CDS Hooks [card]({{site.data.fhir.ver.cdshooks}}/index.html#cd
 
 If returning a card rather than a system action, this card type **SHOULD NOT** be returned for hook types that are likely to be triggered by clinical users rather than administrative staff. Cards of this type would be appropriate for hooks such as encounter-start or appointment-book but would not be appropriate for order-select or order-sign.
 
-<p class="new-content">A profile defining the expectations of an Adjust Coverage response can be found <a href="StructureDefinition-CRDHooksResponse-adjustCoverage.html">here</a>.</p>
+<p class="new-content" markdown="1">A profile defining the expectations of an Adjust Coverage response can be found [here](StructureDefinition-CRDHooksResponse-adjustCoverage.html).</p>
 
 
 ### Launch SMART Application Response Type
@@ -382,4 +377,4 @@ For example, this [card]({{site.data.fhir.ver.cdshooks}}/index.html#cds-service-
 
 {% fragment Binary/CRDServiceResponse2 JSON BASE:cards.where(source.topic.where(code='guideline').exists()) %}
 
-<p class="new-content">A profile defining the expectations of an Launch SMART response can be found <a href="StructureDefinition-CRDHooksResponse-launchSMART.html">here</a>.</p>
+<p class="new-content" markdown="1">A profile defining the expectations of an Launch SMART response can be found [here](StructureDefinition-CRDHooksResponse-launchSMART.html).</p>

@@ -2,7 +2,7 @@ Extension: CRDBillingOptions
 Id: ext-billing-options
 Title: "Billing Options"
 Description: "Identifies billing codes that could potentially be used for this clinical code"
-* ^purpose = "Used to allow conveying multiple (possibly conflicting) billing codes that can't be provided as translations because they don't necessarily all represent the same ordering concept."
+* ^purpose = "Used to allow conveying multiple (possibly conflicting) billing codes that cannot be provided as translations because they do not necessarily all represent the same ordering concept."
 * ^experimental = false
 * ^context[0].type = #element
 * ^context[=].expression = "Appointment.serviceType"

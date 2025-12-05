@@ -6,7 +6,7 @@
       "indicator": "info",
       "detail": "Last date on record for a PAP test for this patient was May, 2014.  Tests should ideally be performed every 1-3 years",
       "source": {
-        "label": "You're Covered Insurance",
+        "label": "You are Covered Insurance",
         "url": "https://example.org",
         "icon": "https://example.org/img/icon-100px.png",
         "topic": {

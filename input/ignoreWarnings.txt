@@ -66,7 +66,7 @@ INFORMATION: Binary/CRDServiceResponse3: CDSHooksResponse.systemActions[0]: This
 The definition builds on 'http://hl7.org/fhir/tools/StructureDefinition/CDSHooksRequest' which is experimental, but this definition is not labeled as experimental
 The definition builds on 'http://hl7.org/fhir/tools/StructureDefinition/CDSHooksResponse' which is experimental, but this definition is not labeled as experimental
 
-# 01. While technically invalid, US Core is evaluating approving this as a patch.  TODO: List approved patch number
+# 01. While technically invalid, US Core is evaluating approving this as a patch.  Patch request submitted as https://jira.hl7.org/browse/FHIR-51489 (waiting on approval)
 ERROR: StructureDefinition/profile-organization: StructureDefinition: This profile does not comply with claimed profile 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|3.1.1'
 
 # 02. These versions are before we started including Jira references in the change log and there's little value in going back to document them now

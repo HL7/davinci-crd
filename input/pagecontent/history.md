@@ -18,7 +18,7 @@ This page describes the primary releases of the specification and summarizes the
 * [FHIR-50216](https://jira.hl7.org/browse/FHIR-50216) - Added explicit guidance about the use of supplemental guides and clarified conformance expectations for interoperability *(clarification)* [link](conformance.html#FHIR-50216)
 * [FHIR-52583](https://jira.hl7.org/browse/FHIR-52583) - Tightened expectations about recognizability of card source label *(correction)* [link](cards.html#FHIR-52583)
 * [FHIR-51715](https://jira.hl7.org/browse/FHIR-51715) - Cleaned up language on SMART on FHIR security expectations *(correction)* [link](security.html#FHIR-51715)
-* [FHIR-52326](https://jira.hl7.org/browse/FHIR-52326) - Added section on operational recommendations *(enhancement)* [link](foundations.html#FHIR-52326), (foundations.html#FHIR-52326b), [link](operational.html)
+* [FHIR-52326](https://jira.hl7.org/browse/FHIR-52326) - Added section on operational recommendations *(enhancement)* [link](foundation.html#FHIR-52326), (foundation.html#FHIR-52326b), [link](operational.html)
 * [FHIR-52357](https://jira.hl7.org/browse/FHIR-52357) - Allow Organization as a target for ServiceRequest.performer *(enhancement)* [link](StructureDefinition-profile-servicerequest.html)
 
 **Non-substantive changes**:
@@ -30,7 +30,7 @@ This page describes the primary releases of the specification and summarizes the
 * [FHIR-52531](https://jira.hl7.org/browse/FHIR-52531) - Changed example "recommended alternative therapies" to "payer-preferred alternative therapies” *(clarification)* [link](deviations.html#FHIR-52531)
 * [FHIR-52533](https://jira.hl7.org/browse/FHIR-52533) - Indicated the profile the form completion example was of *(clarification)* [link](deviations.html#FHIR-52533)
 * [FHIR-52314](https://jira.hl7.org/browse/FHIR-52314) - Clarified how systems are allowed to handle overly slow responses *(clarification)* [link](foundation.html#FHIR-52314)
-* [FHIR-52739](https://jira.hl7.org/browse/FHIR-52739) - Made clear that what-if scenarios don't need to use SMART on FHIR *(clarification)* [link](foundation.html#FHIR-52739)
+* [FHIR-52739](https://jira.hl7.org/browse/FHIR-52739) - Made clear that what-if scenarios do not need to use SMART on FHIR *(clarification)* [link](foundation.html#FHIR-52739)
 * [FHIR-52062](https://jira.hl7.org/browse/FHIR-52062) - Clarified language around 400 vs. 422 errors *(clarification)* [link](hooks.html#FHIR-52062)
 * [FHIR-52537](https://jira.hl7.org/browse/FHIR-52537) - Clarified language around CRD for member attribution *(clarification)* [link](hooks.html#FHIR-52537)
 * [FHIR-52582](https://jira.hl7.org/browse/FHIR-52582) - Made list of resources into a bulleted list *(correction)* [link](hooks.html#FHIR-52582)
@@ -59,7 +59,7 @@ This page describes the primary releases of the specification and summarizes the
   * [FHIR-49754](https://jira.hl7.org/browse/FHIR-49754) - Moved detail-code code from 'reason' to 'info-needed' element *(correction)* [link](ValueSet-informationNeeded.html)
   * [FHIR-49792](https://jira.hl7.org/browse/FHIR-49792) - Add coverage-information.detail.category, categorize the standard detail.code values, and advise on expectation to display certain categories to clinical staff *(enhancement)* [link](StructureDefinition-ext-coverage-information-definitions.html#diff_Extension.extension:detail.extension:category)
   * [FHIR-51413](https://jira.hl7.org/browse/FHIR-51413) - Remove the auth-out-network-only code from coverage-information.detail and add auth-out-network to coverage-information.reason.  Also added guidance on when to send multiple coverage information repetitions vs. a single 'conditional' repetition stating the rules.  *(correction, clarification)* [link](cards.html#FHIR-51413)
-  * [FHIR-49827](https://jira.hl7.org/browse/FHIR-49827) - Update crd-ci-q4 contraint on coverage-information to say 'noauth' and 'not-covered' in addition to 'satisfied' as reasons why you can't have a doc purpose of with-pa *(correction)* [link](StructureDefinition-ext-coverage-information.html#constraints)
+  * [FHIR-49827](https://jira.hl7.org/browse/FHIR-49827) - Update crd-ci-q4 contraint on coverage-information to say 'noauth' and 'not-covered' in addition to 'satisfied' as reasons why you cannot have a doc purpose of with-pa *(correction)* [link](StructureDefinition-ext-coverage-information.html#constraints)
   * [FHIR-49829](https://jira.hl7.org/browse/FHIR-49829) - Added crd-ci-q8 to enforce that if doc-purpose is present with a value other than 'conditional', doc-reason must be present *(correction)* [link](StructureDefinition-ext-coverage-information.html#constraints)
 
 **Substative changes**
@@ -86,7 +86,7 @@ This page describes the primary releases of the specification and summarizes the
 * [FHIR-49196](https://jira.hl7.org/browse/FHIR-49196) - Clarified that _include may not be supported when using non-prefetch queries. *(clarification)* NOTE: This is no longer relevant given FHIR-52444 in the 2.2.0 final release
 * [FHIR-48797](https://jira.hl7.org/browse/FHIR-48797) - Clarified rules on multiple coverages *(clarification)* [link](foundation.html#FHIR-48797)
 * [FHIR-49805](https://jira.hl7.org/browse/FHIR-49805) - Added CommunicationRequest and VisionPrescription to prefetch and non-prefetch queries *(correction)* [link](foundation.html#prefetch), [link](Binary-CRDServices.html), [link](hooks.html#FHIR-49805a), , [link](hooks.html#FHIR-49805b)
-* [FHIR-49835](https://jira.hl7.org/browse/FHIR-49835) - Removed the "additional hook resources" section of the deviations page (because in the referenced version of the CDS Hooks, it's no longer a deviation).  *(correction)* Nothing to link to anymore
+* [FHIR-49835](https://jira.hl7.org/browse/FHIR-49835) - Removed the "additional hook resources" section of the deviations page (because in the referenced version of the CDS Hooks, it is no longer a deviation).  *(correction)* Nothing to link to anymore
 * [FHIR-49762](https://jira.hl7.org/browse/FHIR-49762) - Added VisionPrescription to the list of supported 'Request' resources for order-select and order-dispatch.  (They were already in the technical list, just not the HTML.) *(correction)* [link](hooks.html#order-dispatch) [link](hooks.html#order-select)
 * [FHIR-49085](https://jira.hl7.org/browse/FHIR-49085) - In diagram, corrected "Payer CDA System" to "Payer CDS System" *(correction)* [link](hooks.html#hook-categories)
 * [FHIR-50006](https://jira.hl7.org/browse/FHIR-50006) - Added additional examples for non-provided/insufficient information that is not considered an error *(clarification)* [link](cards.html#FHIR-50006)
@@ -150,7 +150,7 @@ A number of additional changes and enhancements.  Key differences are:
 * Renamed the 'Annotate' card to [Coverage Information](cards.html#coverage-information-response-type) and made it a system action rather than a card
 * Removed the Unsolicited determination card type
 * Added system action as an optional feature of the [form completion](cards.html#request-form-completion-response-type) and [update coverage information](cards.html#update-coverage-records-response-type) cards
-* Removed guidance on deferring card actions (as it's no longer terribly relevant for CRD and SMART now defines a mechanism)
+* Removed guidance on deferring card actions (as it is no longer terribly relevant for CRD and SMART now defines a mechanism)
 * Added additional properties to the [coverage-information](StructureDefinition-ext-coverage-information.html) extension including the ability to specify questionnaires and draft responses for DTR, authorized billing codes, dependencies on other orders, and other details.
 * Removed support for 'de-identified' invocation of CRD
 * Corrected ServiceRequest.location to be 0..1 instead of 1..1
@@ -183,7 +183,7 @@ Added a number of enhancements and some changes to approach.  Key differences ar
 * Added guidance on [CRD access tokens](foundation.html#crd-access-tokens)
 * Clarified expectations about [controlling hook invocation](deviations.html#controlling-hook-invocation)
 * Provided guidance on [external references](cards.html#external-reference-response-type)
-* Corrected cardType codes to use the IG temporary code system, as it is likely that long-term these codes won't all live as part of the IG
+* Corrected cardType codes to use the IG temporary code system, as it is likely that long-term these codes will not all live as part of the IG
 * Added CapabilityStatements describing CRD client and CRD Server responsibilities
 
 

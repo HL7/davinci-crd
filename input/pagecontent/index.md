@@ -1,55 +1,44 @@
 {% raw %}
 {% endraw %}
 
-<blockquote class="note-to-balloters">
-<p>Welcome to the ballot for the STU 2.2 release of CRD.</p>
+<blockquote class="note-to-balloters" markdown="1">
+Welcome to the ballot for the STU 2.2 release of CRD.
 
-<p>This release contains many changes requested by the implementer community.  Most of them are non-significant or backwards compatible changes, but there are a few that could at least be theoretically breaking for some implementations and there are a few that will be breaking for all implementations.  A complete list of the changes for this ballot, as well as links to the tracker items that provide justification for them can be found <a href="history.html#release-220-ballot">here</a></p>
+This release contains many changes requested by the implementer community.  Most of them are non-significant or backwards compatible changes, but there are a few that could at least be theoretically breaking for some implementations and there are a few that will be breaking for all implementations.  A complete list of the changes for this ballot, as well as links to the tracker items that provide justification for them can be found [here](history.html#release-220-ballot).
 
-<p>Not all issues raised against the specification are resolved prior to this ballot.  There are a few issues that call into question some of the fundamental design approaches associated with the guide.  The community has been engaged in deep discussions about these issues and feedback from the community is sought by the community about the issues raised.  It is possible that changes resulting from some of these issues could be incorporated in the publication that results from these issues.  A list of the issues, considerations around the issues, and associated Jira tickets may be found <a href="issues.html">here</a>.</p>
+Not all issues raised against the specification are resolved prior to this ballot.  There are a few issues that call into question some of the fundamental design approaches associated with the guide.  The community has been engaged in deep discussions about these issues and feedback from the community is sought by the community about the issues raised.  It is possible that changes resulting from some of these issues could be incorporated in the publication that results from these issues.  A list of the issues, considerations around the issues, and associated Jira tickets may be found [here](issues.html).
 
-<p>This ballot also includes notes related to two Jira issues that are not fully reflected in this release:</p>
-<ul>
-  <li><a name="termnote"> </a>
-<a href="https://jira.hl7.org/browse/FHIR-50276">FHIR-50276</a> updates the guide to adhere to an HL7 policy requiring a transition of code systems from 'temporary' codes to official codes maintained outside of the implementation guide now that the requirements are more stable.  The proposals to add the official codes are not yet available but will be before the publication of the guide.  Once they are available, the guide will be updated to have <b>two</b> bindings for the relevant data elements, requiring both the old and new codes to be present.  This will provide a transition path for those using older versions of the specification.  Support for the temporary codes will be phased out in a future release.  The specific value sets impacted are: <a href="ValueSet-coverageAssertionReasons.html">Coverage Assertion Reasons</a> and <a href="ValueSet-coverageDetail.html">CRD Coverage Detail Codes</a> (used in the <a href="StructureDefinition-ext-coverage-information.html">Coverage Information extension</a> <a href="ValueSet-cardType.html">CRD Card Types</a> (used in the <a href="deviations.html#new-hook-configuration-mechanism">CRD configuration</a> mechanism), and <a href="ValueSet-cmslocationcodes.html">CMS Location Codes</a> (used in the <a href="StructureDefinition-profile-location.html">CRD Location profile</a>), 
-  </li>
-  <li><a href="https://jira.hl7.org/browse/FHIR-50814">FHIR-50814</a> - as part of improving the validation process to catch the identified issues (and others), there is work to define a set of computable representations for the CRD-specific CDS Hooks request and response models.  Tooling issues are currently preventing this set of representations from being complete (and thus actually performing validation).  If these tooling issues are addressed prior to publication, then computable representations of CRD-specific constraints will be included in the IG.
-  </li>
-</ul>
+This ballot also includes notes related to two Jira issues that are not fully reflected in this release:
 
-<b>IMPORTANT:</b> The scope of this ballot is limited to the above changes and to feedback about the issues linked to above.  While feedback can always be submitted against any content in the specification at any time, votes submitted against content that is outside the official scope of the ballot may be deemed 'not related' and therefore not able to support negative votes.
 
+* <a name="termnote"> </a>[FHIR-50276](https://jira.hl7.org/browse/FHIR-50276) updates the guide to adhere to an HL7 policy requiring a transition of code systems from 'temporary' codes to official codes maintained outside of the implementation guide now that the requirements are more stable.  The proposals to add the official codes are not yet available but will be before the publication of the guide.  Once they are available, the guide will be updated to have **two** bindings for the relevant data elements, requiring both the old and new codes to be present.  This will provide a transition path for those using older versions of the specification.  Support for the temporary codes will be phased out in a future release.  The specific value sets impacted are: [Coverage Assertion Reasons](ValueSet-coverageAssertionReasons.html) and [CRD Coverage Detail Codes](ValueSet-coverageDetail.html) (used in the [Coverage Information extension](StructureDefinition-ext-coverage-information.html) [CRD Card Types](ValueSet-cardType.html) (used in the [CRD configuration](deviations.html#new-hook-configuration-mechanism) mechanism), and [CMS Location Codes](ValueSet-cmslocationcodes.html) (used in the [CRD Location profile](StructureDefinition-profile-location.html)), 
+* [FHIR-50814](https://jira.hl7.org/browse/FHIR-50814) - as part of improving the validation process to catch the identified issues (and others), there is work to define a set of computable representations for the CRD-specific CDS Hooks request and response models.  Tooling issues are currently preventing this set of representations from being complete (and thus actually performing validation).  If these tooling issues are addressed prior to publication, then computable representations of CRD-specific constraints will be included in the IG.
+
+**IMPORTANT:** The scope of this ballot is limited to the above changes and to feedback about the issues linked to above.  While feedback can always be submitted against any content in the specification at any time, votes submitted against content that is outside the official scope of the ballot may be deemed 'not related' and therefore not able to support negative votes.
 </blockquote>
-<blockquote class="stu-note">
-<p>
+
+<blockquote class="stu-note" markdown="1">
 This STU update of the specification reflects several changes based on implementer feedback about the Coverage Requirements Discovery (hereafter, CRD) specification arising from detailed review, connectathons and implementation experience.  "STU notes" call out additional key considerations where feedback is desired.
-</p>
-<p>
+
 This specification is a Standard for Trial Use.  It is expected to continue to evolve and improve through connectathon testing and feedback from early adopters.
-</p>
-<p>
-Feedback is welcome and may be submitted through the <a href="http://hl7.org/fhir-issues">FHIR change tracker</a> indicating "US Da Vinci CRD" as the specification.
-</p>
-<p>
+
+Feedback is welcome and may be submitted through the [FHIR change tracker](http://hl7.org/fhir-issues) indicating "US Da Vinci CRD" as the specification.
+
 This implementation guide is dependent on other specifications.  Please submit any comments you have on these base specifications as follows:
-</p>
-<ul>
-  <li>Feedback on CDS Hooks should be posted to the <a href="http://hl7.org/fhir-issues">FHIR change tracker</a> with "CDS Hooks" as the specification.</li>
-  <li>Feedback on the FHIR Core specification should be submitted to the <a href="http://hl7.org/fhir-issues">FHIR change tracker</a> with "FHIR Core" as the specification.</li>
-  <li>Feedback on the US Core profiles should be submitted to the <a href="http://hl7.org/fhir-issues">FHIR change tracker</a> with "US Core" as the specification.</li>
-</ul>
-<p>
+
+* Feedback on CDS Hooks should be posted to the [FHIR change tracker](http://hl7.org/fhir-issues) with "CDS Hooks" as the specification.
+* Feedback on the FHIR Core specification should be submitted to the [FHIR change tracker](http://hl7.org/fhir-issues) with "FHIR Core" as the specification.
+* Feedback on the US Core profiles should be submitted to the [FHIR change tracker](http://hl7.org/fhir-issues) with "US Core" as the specification.
+
 Individuals interested in participating in the Coverage Requirements Discovery implementation guide project or other HL7 Da Vinci projects can find information about Da Vinci [here](http://www.hl7.org/about/davinci).
-</p>
-<p>
-A summary of the major changes from the previous release can be found <a href="history.html">here</a>.
-</p>
+
+A summary of the major changes from the previous release can be found [here](history.html).
 </blockquote>
 
 
 ### Overview
 <a name="FHIR-48553"> </a>
-<p class="modified-content">The process of billing a patient's insurance provider is complex and costly, particularly in the United States. Healthcare providers work with a range of payers who provide coverage for the products and clinical services provided to patients. Each payer offers distinct insurance plans for healthcare products and services, and each has its own unique process to determine whether each service is necessary and appropriate. These processes have many different requirements for documentation, prior authorization, or other approval steps. Claims submitted for payment that do not meet payer requirements will typically be denied, which may result in service delay, resubmission, or appeal. These delays and additional processes may result in negative health outcomes or financial costs for patients, as well as financial and productivity losses for providers.</p>
+<p class="modified-content" markdown="1">The process of billing a patient's insurance provider is complex and costly, particularly in the United States. Healthcare providers work with a range of payers who provide coverage for the products and clinical services provided to patients. Each payer offers distinct insurance plans for healthcare products and services, and each has its own unique process to determine whether each service is necessary and appropriate. These processes have many different requirements for documentation, prior authorization, or other approval steps. Claims submitted for payment that do not meet payer requirements will typically be denied, which may result in service delay, resubmission, or appeal. These delays and additional processes may result in negative health outcomes or financial costs for patients, as well as financial and productivity losses for providers.</p>
 
 This Coverage Requirements Discovery (CRD) implementation guide defines a workflow in which a payer makes coverage requirement information available to a healthcare provider within the provider's software system at the point of care where treatment decisions are made. This will help clinicians and administrative staff make informed recommendations to their patients and meet payer submission requirements. 
 
@@ -65,10 +54,9 @@ This implementation guide is designed to allow for initial support of basic capa
 
 <a name="cmsdiscretion"> </a>
 <blockquote class="stu-note" markdown="1">
-<p>
-The scope of this specification has increased to also support prior authorization process earlier in the workflow by allowing prior authorization to be returned during the CRD interaction.  Specifically:</p>
+The scope of this specification has increased to also support prior authorization process earlier in the workflow by allowing prior authorization to be returned during the CRD interaction.  Specifically:
 
-<p>On Feb 28, 2024, the Office of Burden Reduction and Health Informatics (OBRHI) National Standards Group (NSG) announced an <a href="https://www.cms.gov/files/document/discretion-x12-278-enforcement-guidance-letter-remediated-2024-02-28.pdf">enforcement discretion</a> that they would not enforce the requirement to use the X12 278 for prior authorization if the covered entities were using the FHIR-based Prior Authorization API as described in the CMS Interoperability and Prior Authorization final rule (CMS-0057-F). This allows payers to return a prior authorization number for use in the X12 837 in coverage extension of the CRD and DTR IGs or as part of the all-FHIR exchange of the Prior Authorization Response Bundle in the PAS IG.  For CRD, this specifically means that the satisfied-pa-id in the <a href="StructureDefinition-ext-coverage-information.html">Coverage Information extension</a> can be used as an X12 prior authorization number.</p>
+On Feb 28, 2024, the Office of Burden Reduction and Health Informatics (OBRHI) National Standards Group (NSG) announced an [enforcement discretion](https://www.cms.gov/files/document/discretion-x12-278-enforcement-guidance-letter-remediated-2024-02-28.pdf) that they would not enforce the requirement to use the X12 278 for prior authorization if the covered entities were using the FHIR-based Prior Authorization API as described in the CMS Interoperability and Prior Authorization final rule (CMS-0057-F). This allows payers to return a prior authorization number for use in the X12 837 in coverage extension of the CRD and DTR IGs or as part of the all-FHIR exchange of the Prior Authorization Response Bundle in the PAS IG.  For CRD, this specifically means that the satisfied-pa-id in the [Coverage Information extension](StructureDefinition-ext-coverage-information.html) can be used as an X12 prior authorization number.
 </blockquote>
 
 ### Systems
@@ -87,10 +75,8 @@ The CRD client may actually involve multiple systems. For example, the systems t
 
 There are three distinct sets of capabilities for CRD clients, one for [USCDI v1 (US-Core 3.1.1)](CapabilityStatement-crd-client3.1.html), one for [USCDI v3 (US-Core 6.1.0)](CapabilityStatement-crd-client6.1.html), and one for [USCDI v4 (US-Core 7.0.0)](CapabilityStatement-crd-client7.0.html).  Typically, a client would support only one of these, based on which US Core release the client supports internally.  There is a single CRD server set of capabilities which must be able to handle data from any of the three supported USCDI versions.
 
-<blockquote class="stu-note">
-<p>
-When CRD clients are made up of multiple systems, there will be orchestration requirements to allow each system to interact in a way that together they appear as a single monolithic system from the perspective of the CRD server. This IG provides some discussion of this on the <a href="epa.html">electronic prior authorization (ePA) Coordinators page</a>, though it does not yet provide any standardization about how components should interoperate to achieve the intended monolithic behavior. If there is industry interest, future releases of this IG may work to standardize some of these "intra-client" interactions.
-</p>
+<blockquote class="stu-note" markdown="1">
+When CRD clients are made up of multiple systems, there will be orchestration requirements to allow each system to interact in a way that together they appear as a single monolithic system from the perspective of the CRD server. This IG provides some discussion of this on the [electronic prior authorization (ePA) Coordinators page](epa.html), though it does not yet provide any standardization about how components should interoperate to achieve the intended monolithic behavior. If there is industry interest, future releases of this IG may work to standardize some of these "intra-client" interactions.
 </blockquote>
 
 CRD servers (or servers) are systems that act on behalf of payer organizations to share information with healthcare providers about rules and requirements related to healthcare products and services covered by a patient's health plan. A CRD server will provide coverage information related to one or more insurance plans. CRD servers are a type of CDS service as defined in the CDS Hooks Specification.
