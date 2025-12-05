@@ -21,7 +21,7 @@ In both extensions, the version declaration is limited to the first two nodes of
 
 An example of the declaration of supported versions is:<a href="todo">Fix fragment ref</a>
 {% raw %}
-{% fragment Binary/CRDServices JSON EXCEPT:services.where(hook='appointment-book') EXCEPT:services.where(hook='appointment-book').extension EXCEPT:services.where(hook='appointment-book').extension.string %}
+{% fragment Binary/CRDServices JSON EXCEPT:services.where(hook='appointment-book') EXCEPT:extension BASE:services EXCEPT:`davinci-crd.version` BASE:services.extension %}
 {% endraw %}
 
 An example of the declaration of requested version is:
