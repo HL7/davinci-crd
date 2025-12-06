@@ -1,6 +1,6 @@
 This page describes the primary releases of the specification and summarizes the content for each:
 
-### Release 2.2.0
+### Release 2.2.0-snapshot
 **Breaking changes**:
 * [FHIR-52057](https://jira.hl7.org/browse/FHIR-52057) - Corrected single-digit CMS location codes to have a leading 0 *(correction)* [link](CodeSystem-temp.html), [link](ConceptMap-HL7Location-CRDTemp.html)
 * [FHIR-49825](https://jira.hl7.org/browse/FHIR-49825) - Stripped language allowing coverage records to be added via a card or system action *(correction)* [link](cards.html#FHIR-49825)
@@ -39,6 +39,7 @@ This page describes the primary releases of the specification and summarizes the
 * [FHIR-53498](https://jira.hl7.org/browse/FHIR-53498) - Corrected titles and descriptions of several example artifacts *(correction)* [link](artifacts.html)
 * [FHIR-53285](https://jira.hl7.org/browse/FHIR-53285) - Corrected logical model to refer to not say 'card' when it should say systemAction or both *(correction)* [link](StructureDefinition-CRDMetricData-definitions.html)
 * [FHIR-52324](https://jira.hl7.org/browse/FHIR-52324) - Manually added reference to CPT IP rules in IP section *(correction)* [link](index.html#intellectual-property-considerations)
+* [FHIR-49826](https://jira.hl7.org/browse/FHIR-49826) - Made clear that only the primary coverage can be included in prefetch, but multiple coverages are permitted over the FHIR API *(clarification)* [link](deviations.html#FHIR-49826)
 
 ### Release 2.2.0-ballot
 

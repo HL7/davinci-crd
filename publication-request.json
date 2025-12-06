@@ -7,5 +7,5 @@
   "mode" : "working",
   "sequence" : "STU 2.2",
   "desc" : "STU 2.2.0 Peer Review",
-  "descmd" : "STU 2.2.0 Peer Review snapshot.  See [list of changes](http://hl7.org/fhir/us/davinci-crd/2025Sep/history.html#release-220)"
+  "descmd" : "STU 2.2.0 Peer Review snapshot.  See [list of changes](http://hl7.org/fhir/us/davinci-crd/2025Sep/history.html#release-220-snapshot)"
 }
