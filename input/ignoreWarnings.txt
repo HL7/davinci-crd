@@ -2,7 +2,6 @@
 
 # 0a. These profiles *are* referenced.  Tooling is incorrectly reporting this warning.  https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/Logical.20model.20profile.20usage.20isn't.20fully.20checked/with/531678625
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CDSHookServiceResponseExtensionAssociatedResource'): The Implementation Guide contains no examples for this data type profile
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-billing-options'): The Implementation Guide contains no examples for this extension
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-bundle-appointment'): The Implementation Guide contains no examples for this profile
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-bundle-request'): The Implementation Guide contains no examples for this profile
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-bundle-task'): The Implementation Guide contains no examples for this profile
@@ -12,57 +11,9 @@ INFORMATION: CodeSystem/temp: CodeSystem: Most code systems defined in HL7 IGs w
 
 # 0c. These are issues are caused by the inter-version extensions pack and should be addressed in the next release of that package
 ERROR: CommunicationRequest/example: CommunicationRequest.payload[0].extension[0]: Slicing cannot be evaluated: Unable to resolve profile CanonicalType[http://hl7.org/fhir/5.0/StructureDefinition/extension-CommunicationRequest.payload.content%5Bx%5D]
-INFORMATION: CommunicationRequest/example: CommunicationRequest.payload[0]: CommunicationRequest.payload.extension:codeableConcept: Found 0 matches, but unable to check minimum required (CommunicationRequest.payload.extension) due to lack of slicing validation (from http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-communicationrequest|2.2.0-ballot)
 ERROR: CommunicationRequest/example: CommunicationRequest.payload[0].extension[0].url: Value is 'http://hl7.org/fhir/5.0/StructureDefinition/extension-CommunicationRequest.payload.content%5Bx%5D' but is fixed to 'http://hl7.org/fhir/5.0/StructureDefinition/extension-CommunicationRequest.payload.content[x]' in the profile http://hl7.org/fhir/5.0/StructureDefinition/extension-CommunicationRequest.payload.content[x]|4.0.1#Extension.url
 
-# 0d. These CDS Hook extensions *do* define contexts of use.  This is a tooling issue.  https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/CDS.20Hook.20extension.20.22does.20not.20define.20any.20context.20of.20use.22/with/531679288
-The extension definition http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CDSHookServiceRequestExtensionRequestConfig|2.2.0-ballot does not define any contexts of use, so the context cannot be validated
-The extension definition http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CDSHookServiceResponseExtensionAssociatedResource|2.2.0-ballot does not define any contexts of use, so the context cannot be validated
-The extension definition http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CDSHookServiceResponseExtensionIfNoneExist|2.2.0-ballot does not define any contexts of use, so the context cannot be validated
-The extension definition http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CDSHookServicesExtensionConfiguration|2.2.0-ballot does not define any contexts of use, so the context cannot be validated
-
-# 0e - There's a tooling error with how hyperlinks to logical model content are resolved when rendered as fragments - https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/Hyperlinks.20in.20HTML.20examples.20for.20logical.20instances/with/531681896
-The link 'StructureDefinition-CDSHookServiceResponseExtensionAssociatedResource.html#Reference.reference' for "reference" cannot be resolved (valid targets: 110 targets)
-The link 'StructureDefinition-CRDHooksResponse.html#CDSHooksResponse.cards.detail' for "detail" cannot be resolved (valid targets: 1498 targets)
-The link 'StructureDefinition-CRDHooksResponse.html#CDSHooksResponse.cards.extension' for "extension" cannot be resolved (valid targets: 1498 targets)
-The link 'StructureDefinition-CRDHooksResponse.html#CDSHooksResponse.cards.indicator' for "indicator" cannot be resolved (valid targets: 1498 targets)
-The link 'StructureDefinition-CRDHooksResponse.html#CDSHooksResponse.cards.links' for "links" cannot be resolved (valid targets: 1498 targets)
-The link 'StructureDefinition-CRDHooksResponse.html#CDSHooksResponse.cards.links.appContext' for "appContext" cannot be resolved (valid targets: 1498 targets)
-The link 'StructureDefinition-CRDHooksResponse.html#CDSHooksResponse.cards.links.label' for "label" cannot be resolved (valid targets: 1498 targets)
-The link 'StructureDefinition-CRDHooksResponse.html#CDSHooksResponse.cards.links.type' for "type" cannot be resolved (valid targets: 1498 targets)
-The link 'StructureDefinition-CRDHooksResponse.html#CDSHooksResponse.cards.links.url' for "url" cannot be resolved (valid targets: 1498 targets)
-The link 'StructureDefinition-CRDHooksResponse.html#CDSHooksResponse.cards.source' for "source" cannot be resolved (valid targets: 1498 targets)
-The link 'StructureDefinition-CRDHooksResponse.html#CDSHooksResponse.cards.source.icon' for "icon" cannot be resolved (valid targets: 1498 targets)
-The link 'StructureDefinition-CRDHooksResponse.html#CDSHooksResponse.cards.source.label' for "label" cannot be resolved (valid targets: 1498 targets)
-The link 'StructureDefinition-CRDHooksResponse.html#CDSHooksResponse.cards.source.topic' for "topic" cannot be resolved (valid targets: 1498 targets)
-The link 'StructureDefinition-CRDHooksResponse.html#CDSHooksResponse.cards.source.url' for "url" cannot be resolved (valid targets: 1498 targets)
-The link 'StructureDefinition-CRDHooksResponse.html#CDSHooksResponse.cards.suggestions.actions' for "actions" cannot be resolved (valid targets: 1498 targets)
-The link 'StructureDefinition-CRDHooksResponse.html#CDSHooksResponse.cards.suggestions.actions.description' for "description" cannot be resolved (valid targets: 1498 targets)
-The link 'StructureDefinition-CRDHooksResponse.html#CDSHooksResponse.cards.suggestions.actions.extension' for "extension" cannot be resolved (valid targets: 1498 targets)
-The link 'StructureDefinition-CRDHooksResponse.html#CDSHooksResponse.cards.suggestions.actions.resourceId' for "resourceId" cannot be resolved (valid targets: 1498 targets)
-The link 'StructureDefinition-CRDHooksResponse.html#CDSHooksResponse.cards.suggestions.actions.type' for "type" cannot be resolved (valid targets: 1498 targets)
-The link 'StructureDefinition-CRDHooksResponse.html#CDSHooksResponse.cards.suggestions.label' for "label" cannot be resolved (valid targets: 1498 targets)
-The link 'StructureDefinition-CRDHooksResponse.html#CDSHooksResponse.cards.suggestions.uuid' for "uuid" cannot be resolved (valid targets: 1498 targets)
-The link 'StructureDefinition-CRDHooksResponse.html#CDSHooksResponse.cards.summary' for "summary" cannot be resolved (valid targets: 1498 targets)
-The link 'StructureDefinition-CRDHooksResponse.html#CDSHooksResponse.cards.uuid' for "uuid" cannot be resolved (valid targets: 1498 targets)
-The link 'StructureDefinition-CRDHooksResponse.html#CDSHooksResponse.systemActions.type' for "type" cannot be resolved (valid targets: 1498 targets)
-
-# 0f. Confirmed to be a tooling issue. https://chat.fhir.org/#narrow/channel/180803-Da-Vinci-CRD/topic/New.20CRD.20vocabulary.20error.20message/with/530163436
-ERROR: StructureDefinition/profile-medicationrequest: StructureDefinition: This profile does not comply with claimed profile 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|6.1.0'
-
-# 0g. The profile references all have an extension pointing to a sub-element, but the validation is occurring against the root profile element, not the referenced sub-element.  https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/Profiles.20referencing.20sub-elements.20not.20working.20for.20LMs/with/531685344
-INFORMATION: Binary/CRDServiceResponse: CDSHooksResponse.cards[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse|2.2.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Binary/CRDServiceResponse: CDSHooksResponse.cards[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse|2.2.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Binary/CRDServiceResponse: CDSHooksResponse.cards[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse|2.2.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Binary/CRDServiceResponse: CDSHooksResponse.systemActions[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse|2.2.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Binary/CRDServiceResponse2: CDSHooksResponse.cards[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse|2.2.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Binary/CRDServiceResponse2: CDSHooksResponse.cards[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse|2.2.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Binary/CRDServiceResponse2: CDSHooksResponse.cards[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse|2.2.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Binary/CRDServiceResponse2: CDSHooksResponse.cards[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse|2.2.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Binary/CRDServiceResponse2: CDSHooksResponse.cards[4]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse|2.2.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Binary/CRDServiceResponse3: CDSHooksResponse.systemActions[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse|2.2.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
-
-# 0h. This is an error in the publication of the tools IG.  The model is not experimental
+# 0d. This is an error in the publication of the tools IG.  The model is not experimental
 The definition builds on 'http://hl7.org/fhir/tools/StructureDefinition/CDSHooksRequest' which is experimental, but this definition is not labeled as experimental
 The definition builds on 'http://hl7.org/fhir/tools/StructureDefinition/CDSHooksResponse' which is experimental, but this definition is not labeled as experimental
 
@@ -122,7 +73,6 @@ The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValue
 The extension http://hl7.org/fhir/StructureDefinition/regex|5.3.0-ballot-tc1 is deprecated with the note: 'This was deprecated in favor of using a constraint on the element using FHIRPath, since constraints allow for the provision of a human readable message associated with the regex'
 
 # 13. The intention here is to not lock down to a specific version.  The version won't matter
-WARNING: ValueSet/CMSMappableLocationCodes: ValueSet.compose.include[1]: There are multiple different potential matches for the url 'http://terminology.hl7.org/CodeSystem/data-absent-reason'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer, or use the [IG Parameter `pin-canonicals`](https://hl7.org/fhir/tools/CodeSystem-ig-parameters.html). Using version '1.0.0', found versions: 0.1.0, 1.0.0. Suggested fix: change the canonical reference from 'http://terminology.hl7.org/CodeSystem/data-absent-reason' to 'http://terminology.hl7.org/CodeSystem/data-absent-reason|1.0.0'
 WARNING: ValueSet/CMSSupplementedLocationCodes: ValueSet.compose.include[1]: There are multiple different potential matches for the url 'http://terminology.hl7.org/CodeSystem/data-absent-reason'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer, or use the [IG Parameter `pin-canonicals`](https://hl7.org/fhir/tools/CodeSystem-ig-parameters.html). Using version '1.0.0', found versions: 0.1.0, 1.0.0. Suggested fix: change the canonical reference from 'http://terminology.hl7.org/CodeSystem/data-absent-reason' to 'http://terminology.hl7.org/CodeSystem/data-absent-reason|1.0.0'
 WARNING: ValueSet/DocReason: ValueSet.compose.include[1]: There are multiple different potential matches for the url 'http://terminology.hl7.org/CodeSystem/v3-NullFlavor'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer, or use the [IG Parameter `pin-canonicals`](https://hl7.org/fhir/tools/CodeSystem-ig-parameters.html). Using version '3.0.0', found versions: 2.1.0, 3.0.0. Suggested fix: change the canonical reference from 'http://terminology.hl7.org/CodeSystem/v3-NullFlavor' to 'http://terminology.hl7.org/CodeSystem/v3-NullFlavor|3.0.0'
 WARNING: ValueSet/coverageClass: ValueSet.compose.include[0]: There are multiple different potential matches for the url 'http://terminology.hl7.org/CodeSystem/coverage-class'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer, or use the [IG Parameter `pin-canonicals`](https://hl7.org/fhir/tools/CodeSystem-ig-parameters.html). Using version '1.0.1', found versions: 0.1.0, 1.0.0, 1.0.1. Suggested fix: change the canonical reference from 'http://terminology.hl7.org/CodeSystem/coverage-class' to 'http://terminology.hl7.org/CodeSystem/coverage-class|1.0.1'
@@ -159,13 +109,10 @@ WARNING: StructureDefinition/profile-servicerequest: StructureDefinition: The va
 WARNING: StructureDefinition/profile-organization: StructureDefinition.snapshot: The slice 'CLIA' on path 'Organization.identifier' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true
 WARNING: StructureDefinition/profile-organization: StructureDefinition.snapshot: The slice 'NAIC' on path 'Organization.identifier' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true
 
-# 21. This is an example query and isn't expected to have a definition
-WARNING: Bundle/search-response: Bundle.entry[1].resource/*Bundle/f95e9abf-1c8f-4873-ad15-f6f016334568*/.link[0].url: No definition could be found for URL value 'Encounter?_id=987&_include=Encounter:service-provider&_include=Encounter:practitioner&_include=Encounter:location'
-
-# 22. There is an example of this profile as part of another instance
+# 21. There is an example of this profile as part of another instance
 INFORMATION: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-medication'): The Implementation Guide contains no explicitly linked examples for this profile
 
-# 23. This is intentional.  Only portions of these profiles are used, as part of the CDSHooksResponse profile.  There's no intention they be used directly, so abstract is appropriate.
+# 22. This is intentional.  Only portions of these profiles are used, as part of the CDSHooksResponse profile.  There's no intention they be used directly, so abstract is appropriate.
 WARNING: StructureDefinition/CRDHooksResponse-additionalOrders: StructureDefinition: CDSHooksResponse is labeled as an abstract type, but no concrete descendants were found (check definitions - this is usually an error unless concrete definitions are in some other package)
 WARNING: StructureDefinition/CRDHooksResponse-adjustCoverage: StructureDefinition: CDSHooksResponse is labeled as an abstract type, but no concrete descendants were found (check definitions - this is usually an error unless concrete definitions are in some other package)
 WARNING: StructureDefinition/CRDHooksResponse-alternateRequest: StructureDefinition: CDSHooksResponse is labeled as an abstract type, but no concrete descendants were found (check definitions - this is usually an error unless concrete definitions are in some other package)
@@ -175,7 +122,7 @@ WARNING: StructureDefinition/CRDHooksResponse-formCompletion: StructureDefinitio
 WARNING: StructureDefinition/CRDHooksResponse-instructions: StructureDefinition: CDSHooksResponse is labeled as an abstract type, but no concrete descendants were found (check definitions - this is usually an error unless concrete definitions are in some other package)
 WARNING: StructureDefinition/CRDHooksResponse-launchSMART: StructureDefinition: CDSHooksResponse is labeled as an abstract type, but no concrete descendants were found (check definitions - this is usually an error unless concrete definitions are in some other package)
 
-# 24. This pinning is correct
+# 23. This pinning is correct
 Pinned the version of http://hl7.org/fhir/StructureDefinition/alternate-reference to 5.3.0-ballot-tc1 from choices of 1.0.0 (hl7.fhir.uv.extensions.r4#1.0.0), 5.1.0 (hl7.fhir.uv.extensions.r4#5.1.0), 5.2.0 (hl7.fhir.uv.extensions.r4#5.2.0), 5.3.0-ballot-tc1 (hl7.fhir.uv.extensions.r4#5.3.0-ballot-tc1)
 Pinned the version of http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.1066 to 20240606 from choices of 20190521 (us.nlm.vsac#0.11.0), 20240606 (us.nlm.vsac#0.19.0)
 Pinned the version of http://hl7.org/fhir/StructureDefinition/codeOptions to 5.3.0-ballot-tc1 from choices of 5.2.0 (hl7.fhir.uv.extensions.r4#5.2.0), 5.3.0-ballot-tc1 (hl7.fhir.uv.extensions.r4#5.3.0-ballot-tc1)
