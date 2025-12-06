@@ -3,9 +3,11 @@ This implementation guide uses specific terminology such as **SHALL**, **SHOULD*
 Additional conformance expectations specific to this guide are as follows:
 
 ### Conformance to this IG
-In order to conform to this implementation guide, in addition to adhering to any relevant 'SHALL' statements, a system **SHALL** conform to at least one of the CapabilityStatements listed here:
+In order to conform to this implementation guide, in addition to adhering to any relevant 'SHALL' statements:
 * CRD clients - at least one of [CRD Client USCDI 1](CapabilityStatement-crd-client3.1.html), [CRD Client USCDI 3](CapabilityStatement-crd-client6.1.html), or [CRD Client USCDI 4](CapabilityStatement-crd-client7.0.html)
 * CRD servers - [CRD Server USCDI 1, 3, 4](CapabilityStatement-crd-server.html)
+
+<p class="modified-content" markdown="1">This means that CRD clients **SHALL** support at least one of the three specified versions of US Core. CRD servers **SHALL** be able to handle all three.</p>
 
 ### MustSupport
 Profiles in this implementation guide make use of the [mustSupport]({{site.data.fhir.path}}profiling.html#mustsupport) element.

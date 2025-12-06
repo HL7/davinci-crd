@@ -40,6 +40,7 @@ This page describes the primary releases of the specification and summarizes the
 * [FHIR-53285](https://jira.hl7.org/browse/FHIR-53285) - Corrected logical model to refer to not say 'card' when it should say systemAction or both *(correction)* [link](StructureDefinition-CRDMetricData-definitions.html)
 * [FHIR-52324](https://jira.hl7.org/browse/FHIR-52324) - Manually added reference to CPT IP rules in IP section *(correction)* [link](index.html#intellectual-property-considerations)
 * [FHIR-49826](https://jira.hl7.org/browse/FHIR-49826) - Made clear that only the primary coverage can be included in prefetch, but multiple coverages are permitted over the FHIR API *(clarification)* [link](deviations.html#FHIR-49826)
+* [FHIR-50276](https://jira.hl7.org/browse/FHIR-50276) - Changed CDSHooks-CardType value set to point to terminology.hl7.org code system and added binding for CoverageDetail type that also points to THO  *(corection)* [link](ValueSet-cardType.html), [link](StructureDefinition-ext-coverage-information.html)
 
 ### Release 2.2.0-ballot
 

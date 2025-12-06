@@ -13,7 +13,19 @@ INFORMATION: CodeSystem/temp: CodeSystem: Most code systems defined in HL7 IGs w
 ERROR: CommunicationRequest/example: CommunicationRequest.payload[0].extension[0]: Slicing cannot be evaluated: Unable to resolve profile CanonicalType[http://hl7.org/fhir/5.0/StructureDefinition/extension-CommunicationRequest.payload.content%5Bx%5D]
 ERROR: CommunicationRequest/example: CommunicationRequest.payload[0].extension[0].url: Value is 'http://hl7.org/fhir/5.0/StructureDefinition/extension-CommunicationRequest.payload.content%5Bx%5D' but is fixed to 'http://hl7.org/fhir/5.0/StructureDefinition/extension-CommunicationRequest.payload.content[x]' in the profile http://hl7.org/fhir/5.0/StructureDefinition/extension-CommunicationRequest.payload.content[x]|4.0.1#Extension.url
 
-# 0d. This is an error in the publication of the tools IG.  The model is not experimental
+# 0d. The profile references all have an extension pointing to a sub-element, but the validation is occurring against the root profile element, not the referenced sub-element.  https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/Profiles.20referencing.20sub-elements.20not.20working.20for.20LMs/with/531685344
+INFORMATION: Binary/CRDServiceResponse: CDSHooksResponse.cards[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse|2.2.0-snapshot (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Binary/CRDServiceResponse: CDSHooksResponse.cards[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse|2.2.0-snapshot (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Binary/CRDServiceResponse: CDSHooksResponse.cards[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse|2.2.0-snapshot (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Binary/CRDServiceResponse: CDSHooksResponse.systemActions[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse|2.2.0-snapshot (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Binary/CRDServiceResponse2: CDSHooksResponse.cards[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse|2.2.0-snapshot (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Binary/CRDServiceResponse2: CDSHooksResponse.cards[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse|2.2.0-snapshot (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Binary/CRDServiceResponse2: CDSHooksResponse.cards[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse|2.2.0-snapshot (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Binary/CRDServiceResponse2: CDSHooksResponse.cards[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse|2.2.0-snapshot (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Binary/CRDServiceResponse2: CDSHooksResponse.cards[4]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse|2.2.0-snapshot (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Binary/CRDServiceResponse3: CDSHooksResponse.systemActions[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse|2.2.0-snapshot (this may not be a problem, but you should check that it's not intended to match a slice)
+
+# 0e. This is an error in the publication of the tools IG.  The model is not experimental
 The definition builds on 'http://hl7.org/fhir/tools/StructureDefinition/CDSHooksRequest' which is experimental, but this definition is not labeled as experimental
 The definition builds on 'http://hl7.org/fhir/tools/StructureDefinition/CDSHooksResponse' which is experimental, but this definition is not labeled as experimental
 
@@ -126,3 +138,9 @@ WARNING: StructureDefinition/CRDHooksResponse-launchSMART: StructureDefinition: 
 Pinned the version of http://hl7.org/fhir/StructureDefinition/alternate-reference to 5.3.0-ballot-tc1 from choices of 1.0.0 (hl7.fhir.uv.extensions.r4#1.0.0), 5.1.0 (hl7.fhir.uv.extensions.r4#5.1.0), 5.2.0 (hl7.fhir.uv.extensions.r4#5.2.0), 5.3.0-ballot-tc1 (hl7.fhir.uv.extensions.r4#5.3.0-ballot-tc1)
 Pinned the version of http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.1066 to 20240606 from choices of 20190521 (us.nlm.vsac#0.11.0), 20240606 (us.nlm.vsac#0.19.0)
 Pinned the version of http://hl7.org/fhir/StructureDefinition/codeOptions to 5.3.0-ballot-tc1 from choices of 5.2.0 (hl7.fhir.uv.extensions.r4#5.2.0), 5.3.0-ballot-tc1 (hl7.fhir.uv.extensions.r4#5.3.0-ballot-tc1)
+
+# 24. The deprecated value set is included as an additional binding for backwards compatibility purposes
+Reference to deprecated ValueSet http://hl7.org/fhir/us/davinci-crd/ValueSet/coverageDetail|2.2.0-snapshot
+
+# 25. The use of conformance verbs on these pages isn't actually as conformance statements
+INFORMATION: en/history.html: The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause

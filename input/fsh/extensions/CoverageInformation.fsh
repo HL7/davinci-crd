@@ -121,8 +121,17 @@ Description: "Captures assertions from a payer about the coverage rules for a se
   * extension[code] only Extension
     * ^short = "Name of name-value pair"
     * ^definition = "The type of detail or qualification expressed."
+    * ^comment = "The binding to the old temporary code system is retained for now for backward compatibility"
     * value[x] only CodeableConcept
-    * value[x] from CRDCoverageDetailCodes (extensible)
+    * valueCodeableConcept from CRDCoverageDetailCodesNew (extensible)
+    * valueCodeableConcept
+      * ^binding.extension.url = $additional-binding
+      * ^binding.extension.extension[0].url = "key"
+      * ^binding.extension.extension[=].valueId = "ci-detailold"
+      * ^binding.extension.extension[+].url = "purpose"
+      * ^binding.extension.extension[=].valueCode = #extensible
+      * ^binding.extension.extension[+].url = "valueSet"
+      * ^binding.extension.extension[=].valueCanonical = Canonical(CRDCoverageDetailCodes)
   * extension[value] only Extension
     * ^short = "Value of name-value pair"
     * ^definition = "The detail or qualification that applies to this coverage assertion."
