@@ -37,7 +37,7 @@ The CRD Servers provided by payers will support discovery of different types of 
 
 *  Whether authorization is required
 *  <span class="modified-content" markdown="1"><a name="FHIR-52531"> </a>Payer-preferred alternative therapies</span>
-*  Best practices associated with the planned therapy which payers expect adherence to
+*  Planned therapy guidance, as provided by payers, to which adherence is expected.
 *  Forms and documentation for retention within the CRD client
 *  Forms and documentation that must be provided with a prior authorization request
 *  Forms and documentation that must be included with a claim submission
