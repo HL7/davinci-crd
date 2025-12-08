@@ -40,7 +40,8 @@ This page describes the primary releases of the specification and summarizes the
 * [FHIR-53067](https://jira.hl7.org/browse/FHIR-53067) - Added information on handling CRD edge cases [link](hooks.html#FHIR-53067)
 * [FHIR-52586](https://jira.hl7.org/browse/FHIR-52586) - Deleted language about portals [link](cards.html#FHIR-52585)
 * [FHIR-53544](https://jira.hl7.org/browse/FHIR-53544) - Added a requirement for value on the coverage-assertion-id extension [link](StructureDefinition-ext-coverage-information.html)
-* [FHIR-52806](https://jira.hl7.org/browse/FHIR-52806) - Clarified CRD concepts and requirements  [link](hooks.html#FHIR-52806)
+* [FHIR-52806](https://jira.hl7.org/browse/FHIR-52806) - Clarified CRD concepts and requirements [link](hooks.html#FHIR-52806)
+* [FHIR-52806](https://jira.hl7.org/browse/FHIR-51776) - Require support for order-select by payers [link](operational.html#FHIR-51776)
 
 ### Release 2.2.0-ballot
 
