@@ -44,6 +44,7 @@ This page describes the primary releases of the specification and summarizes the
 * [FHIR-52806](https://jira.hl7.org/browse/FHIR-51776) - Require support for order-select by payers *(clarification)* [link](operational.html#FHIR-51776)
 * [FHIR-52588](https://jira.hl7.org/browse/FHIR-52585) - Added "not required under regulation or legislation" to sentence *(correction)* [link](cards.html#FHIR-52588)
 * [FHIR-52532](https://jira.hl7.org/browse/FHIR-52532) - Revised sentence to accurately reflect payer involvement *(correction)* [link](deviations.html#FHIR-52531)
+* [FHIR-52447](https://jira.hl7.org/browse/FHIR-52447) - Caching language should be for same patient/ordering organization *(clarification)* [link](foundation.html#FHIR-52447)
 
 ### Release 2.2.0-ballot
 
