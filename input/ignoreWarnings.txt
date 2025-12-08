@@ -29,6 +29,23 @@ INFORMATION: Binary/CRDServiceResponse3: CDSHooksResponse.systemActions[0]: This
 The definition builds on 'http://hl7.org/fhir/tools/StructureDefinition/CDSHooksRequest' which is experimental, but this definition is not labeled as experimental
 The definition builds on 'http://hl7.org/fhir/tools/StructureDefinition/CDSHooksResponse' which is experimental, but this definition is not labeled as experimental
 
+# 0f. These codes are valid, however we need the version of CPT supported by tx.fhir.org to be updated to a more recent version.  See https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/CPT.20codes.20complaining.20about.20non-validity/with/562484006
+ERROR: ServiceRequest/example: ServiceRequest.code.extension[0].value.ofType(CodeableConcept).coding[0].code: Unknown code '0795T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'
+INFORMATION: ServiceRequest/example: ServiceRequest.code.extension[0].value.ofType(CodeableConcept).coding[0].code: Code '0795T' not found in CPT
+ERROR: ServiceRequest/example: ServiceRequest.code.extension[1].value.ofType(CodeableConcept).coding[0].code: Unknown code '0796T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'
+INFORMATION: ServiceRequest/example: ServiceRequest.code.extension[1].value.ofType(CodeableConcept).coding[0].code: Code '0796T' not found in CPT
+ERROR: ServiceRequest/example: ServiceRequest.code.extension[2].value.ofType(CodeableConcept).coding[0].code: Unknown code '0797T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'
+INFORMATION: ServiceRequest/example: ServiceRequest.code.extension[2].value.ofType(CodeableConcept).coding[0].code: Code '0797T' not found in CPT
+ERROR: ServiceRequest/example: ServiceRequest.code.extension[3].value.ofType(CodeableConcept).coding[0].code: Unknown code '0804T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'
+INFORMATION: ServiceRequest/example: ServiceRequest.code.extension[3].value.ofType(CodeableConcept).coding[0].code: Code '0804T' not found in CPT
+ERROR: ServiceRequest/example: ServiceRequest.code.extension[4].value.ofType(CodeableConcept).coding[0].code: Unknown code '0823T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'
+INFORMATION: ServiceRequest/example: ServiceRequest.code.extension[4].value.ofType(CodeableConcept).coding[0].code: Code '0823T' not found in CPT
+ERROR: ServiceRequest/example: ServiceRequest.code.extension[5].value.ofType(CodeableConcept).coding[0].code: Unknown code '0915T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'
+INFORMATION: ServiceRequest/example: ServiceRequest.code.extension[5].value.ofType(CodeableConcept).coding[0].code: Code '0915T' not found in CPT
+
+# 0g. This is an issue with verifying value set equivalence.  See https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/Validating.20ICD10.20codes/with/562452532
+WARNING: StructureDefinition/profile-medicationrequest: StructureDefinition: The validator cannot confirm that this profile complies with the claimed profile 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|6.1.0'
+
 # 01. While technically invalid, US Core is evaluating approving this as a patch.  Patch request submitted as https://jira.hl7.org/browse/FHIR-51489 (waiting on approval)
 ERROR: StructureDefinition/profile-organization: StructureDefinition: This profile does not comply with claimed profile 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|3.1.1'
 
