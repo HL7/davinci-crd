@@ -37,11 +37,12 @@ This page describes the primary releases of the specification and summarizes the
 * [FHIR-52707](https://jira.hl7.org/browse/FHIR-52707) - Corrected language about if-none-exist example *(correction)* [link](deviations.html#FHIR-52707)
 * [FHIR-53498](https://jira.hl7.org/browse/FHIR-53498) - Corrected titles and descriptions of several example artifacts *(correction)* [link](artifacts.html)
 * [FHIR-53285](https://jira.hl7.org/browse/FHIR-53285) - Corrected logical model to refer to not say 'card' when it should say systemAction or both *(correction)* [link](StructureDefinition-CRDMetricData-definitions.html)
-* [FHIR-53067](https://jira.hl7.org/browse/FHIR-53067) - Added information on handling CRD edge cases [link](hooks.html#FHIR-53067)
-* [FHIR-52586](https://jira.hl7.org/browse/FHIR-52586) - Deleted language about portals [link](cards.html#FHIR-52585)
-* [FHIR-53544](https://jira.hl7.org/browse/FHIR-53544) - Added a requirement for value on the coverage-assertion-id extension [link](StructureDefinition-ext-coverage-information.html)
-* [FHIR-52806](https://jira.hl7.org/browse/FHIR-52806) - Clarified CRD concepts and requirements [link](hooks.html#FHIR-52806)
-* [FHIR-52806](https://jira.hl7.org/browse/FHIR-51776) - Require support for order-select by payers [link](operational.html#FHIR-51776)
+* [FHIR-53067](https://jira.hl7.org/browse/FHIR-53067) - Added information on handling CRD edge cases *(clarification)* [link](hooks.html#FHIR-53067)
+* [FHIR-52586](https://jira.hl7.org/browse/FHIR-52586) - Deleted language about portals *(correction)* [link](cards.html#FHIR-52585)
+* [FHIR-53544](https://jira.hl7.org/browse/FHIR-53544) - Added a requirement for value on the coverage-assertion-id extension *(clarification)* [link](StructureDefinition-ext-coverage-information.html)
+* [FHIR-52806](https://jira.hl7.org/browse/FHIR-52806) - Clarified CRD concepts and requirements *(clarification)* [link](hooks.html#FHIR-52806)
+* [FHIR-52806](https://jira.hl7.org/browse/FHIR-51776) - Require support for order-select by payers *(clarification)* [link](operational.html#FHIR-51776)
+* [FHIR-52588](https://jira.hl7.org/browse/FHIR-52585) - Added "not required under regulation or legislation" to sentence *(correction)* [link](cards.html#FHIR-52588)
 
 ### Release 2.2.0-ballot
 

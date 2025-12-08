@@ -310,7 +310,10 @@ This example proposes adding a monthly test to check liver function:
 
 
 ### Request Form Completion Response Type
-NOTE: DTR is the preferred solution where forms are needed for capturing information for payer purposes including, but not limited to, prior authorization, claims submission, or audit because of its ability to minimize data entry burden. This response type **SHOULD** only be used when DTR is not available or applicable.
+NOTE: DTR is the preferred solution where forms are needed for capturing information for payer purposes including, but not limited to, prior authorization, claims submission, or audit because of its ability to minimize data entry burden.<div class="modified-content" markdown="1"><a name="FHIR-52588"> </a>This response type **SHALL NOT** be used if:
+1. DTR is applicable to the use case (i.e. the form relates to prior auth, claim submission, appropriate use, or order fulfillment),
+2. DTR is supported by the CRD client (whether voluntarily or as required by regulation), and
+3. DTR is available from the server (e.g. not temporarily unavailable or not supported by a payer not subject to regulation).</div>
 
 This response type can be used to present a card that indicates that there are forms that need to be completed. The indicated forms might indicate additional documentation that must be submitted for prior authorization, attachments for claims submission, documentation that must be completed and retained as proof that clinical need protocols have been followed, or that must otherwise be retained and available for future audits. While forms can also be expressed as static or active PDFs referenced by [External References](#external-reference-response-type), or within a [SMART Application](#launch-smart-application-response-type), this response type provides the form definition as a FHIR Questionnaire and creates a Task within the CRD client allowing the completion of the form to be appropriately scheduled and/or delegated. Alternatively, the provider could choose to execute the task and fill out the form immediately if that makes more sense from a clinical workflow perspective.
 
