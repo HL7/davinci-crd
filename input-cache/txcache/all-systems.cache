@@ -1921,7 +1921,6 @@ v: {
   "version" : "http://snomed.info/sct/731000124108/version/20250901",
   "server" : "https://tx.fhir.org/r4",
   "diagnostics" : "0 0 : start\r\n15 15   : 0ms  : Analysing http://hl7.org/fhir/us/davinci-crd/ValueSet/serviceRequestCodes|2.2.0-snapshot for validation purposes\r\n15 0    : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n15 0    : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n15 0    : 0ms  : Prepare include: \"(http://www.ama-assn.org/go/cpt)\"\r\n15 0    : 0ms  : CodeSystem found: \"http://www.ama-assn.org/go/cpt|2023\"\r\n15 0    : 0ms  : Prepare include: \"(http://snomed.info/sct)(concept<<71388002)\"\r\n15 0    : 0ms  : CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\r\n15 0    : 0ms  : Prepare include: \"(https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets)\"\r\n15 0    : 0ms  : CodeSystem version  not found: \"https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets\"\r\n15 0    : 0ms  : Prepare include: \"(http://loinc.org)\"\r\n15 0    : 0ms  : CodeSystem found: \"http://loinc.org|2.81\"\r\n15 0    : 0ms  : Validate \"[http://snomed.info/sct#25267002 (\"Insertion of intracardiac pacemaker (procedure)\")]\"\r\n15 0    : 0ms  : Check \"http://snomed.info/sct#25267002\"\r\n15 0    : 0ms  : CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108\r\n15 0    : 0ms  : check code in (http://snomed.info/sct)(concept<<71388002) at CodeableConcept.coding[0]\r\n15 0    : 0ms  : Filter \"concept<<71388002\": Code \"25267002\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\r\n",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -1950,7 +1949,6 @@ v: {
   "class" : "UNKNOWN",
   "server" : "https://tx.fhir.org/r4",
   "diagnostics" : "0 0 : start\r\n15 15   : 0ms  : Analysing http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-snapshot for validation purposes\r\n15 0    : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n15 0    : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n15 0    : 0ms  : Prepare include: \"(http://www.ama-assn.org/go/cpt)\"\r\n15 0    : 0ms  : CodeSystem found: \"http://www.ama-assn.org/go/cpt|2023\"\r\n15 0    : 0ms  : Prepare include: \"(https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets)\"\r\n15 0    : 0ms  : CodeSystem version  not found: \"https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets\"\r\n15 0    : 0ms  : Prepare include: \"(http://www.nlm.nih.gov/research/umls/rxnorm)\"\r\n15 0    : 0ms  : CodeSystem found: \"http://www.nlm.nih.gov/research/umls/rxnorm|??\"\r\n15 0    : 0ms  : Validate \"[http://www.ama-assn.org/go/cpt#0795T (\"\")]\"\r\n15 0    : 0ms  : Check \"http://www.ama-assn.org/go/cpt#0795T\"\r\n15 0    : 0ms  : CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt\r\n15 0    : 0ms  : check code in (http://www.ama-assn.org/go/cpt) at CodeableConcept.coding[0]\r\n15 0    : 0ms  : Code \"0795T\" not found in http://www.ama-assn.org/go/cpt|2023\r\n",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",
   "issue" : [{
@@ -2057,7 +2055,6 @@ v: {
   "class" : "UNKNOWN",
   "server" : "https://tx.fhir.org/r4",
   "diagnostics" : "0 0 : start\r\n15 15   : 0ms  : Analysing http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-snapshot for validation purposes\r\n15 0    : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n15 0    : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n15 0    : 0ms  : Prepare include: \"(http://www.ama-assn.org/go/cpt)\"\r\n15 0    : 0ms  : CodeSystem found: \"http://www.ama-assn.org/go/cpt|2023\"\r\n15 0    : 0ms  : Prepare include: \"(https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets)\"\r\n15 0    : 0ms  : CodeSystem version  not found: \"https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets\"\r\n15 0    : 0ms  : Prepare include: \"(http://www.nlm.nih.gov/research/umls/rxnorm)\"\r\n15 0    : 0ms  : CodeSystem found: \"http://www.nlm.nih.gov/research/umls/rxnorm|??\"\r\n15 0    : 0ms  : Validate \"[http://www.ama-assn.org/go/cpt#0796T (\"\")]\"\r\n15 0    : 0ms  : Check \"http://www.ama-assn.org/go/cpt#0796T\"\r\n15 0    : 0ms  : CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt\r\n15 0    : 0ms  : check code in (http://www.ama-assn.org/go/cpt) at CodeableConcept.coding[0]\r\n15 0    : 0ms  : Code \"0796T\" not found in http://www.ama-assn.org/go/cpt|2023\r\n",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",
   "issue" : [{
@@ -2164,7 +2161,6 @@ v: {
   "class" : "UNKNOWN",
   "server" : "https://tx.fhir.org/r4",
   "diagnostics" : "0 0 : start\r\n16 16   : 0ms  : Analysing http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-snapshot for validation purposes\r\n16 0    : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n16 0    : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n16 0    : 0ms  : Prepare include: \"(http://www.ama-assn.org/go/cpt)\"\r\n16 0    : 0ms  : CodeSystem found: \"http://www.ama-assn.org/go/cpt|2023\"\r\n16 0    : 0ms  : Prepare include: \"(https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets)\"\r\n16 0    : 0ms  : CodeSystem version  not found: \"https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets\"\r\n16 0    : 0ms  : Prepare include: \"(http://www.nlm.nih.gov/research/umls/rxnorm)\"\r\n16 0    : 0ms  : CodeSystem found: \"http://www.nlm.nih.gov/research/umls/rxnorm|??\"\r\n16 0    : 0ms  : Validate \"[http://www.ama-assn.org/go/cpt#0797T (\"\")]\"\r\n16 0    : 0ms  : Check \"http://www.ama-assn.org/go/cpt#0797T\"\r\n16 0    : 0ms  : CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt\r\n16 0    : 0ms  : check code in (http://www.ama-assn.org/go/cpt) at CodeableConcept.coding[0]\r\n16 0    : 0ms  : Code \"0797T\" not found in http://www.ama-assn.org/go/cpt|2023\r\n",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",
   "issue" : [{
@@ -2271,7 +2267,6 @@ v: {
   "class" : "UNKNOWN",
   "server" : "https://tx.fhir.org/r4",
   "diagnostics" : "0 0 : start\r\n16 16   : 0ms  : Analysing http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-snapshot for validation purposes\r\n16 0    : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n16 0    : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n16 0    : 0ms  : Prepare include: \"(http://www.ama-assn.org/go/cpt)\"\r\n16 0    : 0ms  : CodeSystem found: \"http://www.ama-assn.org/go/cpt|2023\"\r\n16 0    : 0ms  : Prepare include: \"(https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets)\"\r\n16 0    : 0ms  : CodeSystem version  not found: \"https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets\"\r\n16 0    : 0ms  : Prepare include: \"(http://www.nlm.nih.gov/research/umls/rxnorm)\"\r\n16 0    : 0ms  : CodeSystem found: \"http://www.nlm.nih.gov/research/umls/rxnorm|??\"\r\n16 0    : 0ms  : Validate \"[http://www.ama-assn.org/go/cpt#0804T (\"\")]\"\r\n16 0    : 0ms  : Check \"http://www.ama-assn.org/go/cpt#0804T\"\r\n16 0    : 0ms  : CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt\r\n16 0    : 0ms  : check code in (http://www.ama-assn.org/go/cpt) at CodeableConcept.coding[0]\r\n16 0    : 0ms  : Code \"0804T\" not found in http://www.ama-assn.org/go/cpt|2023\r\n",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",
   "issue" : [{
@@ -2378,7 +2373,6 @@ v: {
   "class" : "UNKNOWN",
   "server" : "https://tx.fhir.org/r4",
   "diagnostics" : "0 0 : start\r\n16 16   : 0ms  : Analysing http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-snapshot for validation purposes\r\n16 0    : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n16 0    : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n16 0    : 0ms  : Prepare include: \"(http://www.ama-assn.org/go/cpt)\"\r\n16 0    : 0ms  : CodeSystem found: \"http://www.ama-assn.org/go/cpt|2023\"\r\n16 0    : 0ms  : Prepare include: \"(https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets)\"\r\n16 0    : 0ms  : CodeSystem version  not found: \"https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets\"\r\n16 0    : 0ms  : Prepare include: \"(http://www.nlm.nih.gov/research/umls/rxnorm)\"\r\n16 0    : 0ms  : CodeSystem found: \"http://www.nlm.nih.gov/research/umls/rxnorm|??\"\r\n16 0    : 0ms  : Validate \"[http://www.ama-assn.org/go/cpt#0823T (\"\")]\"\r\n16 0    : 0ms  : Check \"http://www.ama-assn.org/go/cpt#0823T\"\r\n16 0    : 0ms  : CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt\r\n16 0    : 0ms  : check code in (http://www.ama-assn.org/go/cpt) at CodeableConcept.coding[0]\r\n16 0    : 0ms  : Code \"0823T\" not found in http://www.ama-assn.org/go/cpt|2023\r\n",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",
   "issue" : [{
@@ -2485,7 +2479,6 @@ v: {
   "class" : "UNKNOWN",
   "server" : "https://tx.fhir.org/r4",
   "diagnostics" : "0 0 : start\r\n15 15   : 0ms  : Analysing http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-snapshot for validation purposes\r\n15 0    : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n15 0    : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n15 0    : 0ms  : Prepare include: \"(http://www.ama-assn.org/go/cpt)\"\r\n15 0    : 0ms  : CodeSystem found: \"http://www.ama-assn.org/go/cpt|2023\"\r\n15 0    : 0ms  : Prepare include: \"(https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets)\"\r\n15 0    : 0ms  : CodeSystem version  not found: \"https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets\"\r\n15 0    : 0ms  : Prepare include: \"(http://www.nlm.nih.gov/research/umls/rxnorm)\"\r\n15 0    : 0ms  : CodeSystem found: \"http://www.nlm.nih.gov/research/umls/rxnorm|??\"\r\n15 0    : 0ms  : Validate \"[http://www.ama-assn.org/go/cpt#0915T (\"\")]\"\r\n15 0    : 0ms  : Check \"http://www.ama-assn.org/go/cpt#0915T\"\r\n15 0    : 0ms  : CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt\r\n15 0    : 0ms  : check code in (http://www.ama-assn.org/go/cpt) at CodeableConcept.coding[0]\r\n15 0    : 0ms  : Code \"0915T\" not found in http://www.ama-assn.org/go/cpt|2023\r\n",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",
   "issue" : [{
@@ -2593,7 +2586,6 @@ v: {
   "version" : "2023",
   "server" : "https://tx.fhir.org/r4",
   "diagnostics" : "0 0 : start\r\n16 16   : 0ms  : Analysing http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-snapshot for validation purposes\r\n16 0    : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n16 0    : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n16 0    : 0ms  : Prepare include: \"(http://www.ama-assn.org/go/cpt)\"\r\n16 0    : 0ms  : CodeSystem found: \"http://www.ama-assn.org/go/cpt|2023\"\r\n16 0    : 0ms  : Prepare include: \"(https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets)\"\r\n16 0    : 0ms  : CodeSystem version  not found: \"https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets\"\r\n16 0    : 0ms  : Prepare include: \"(http://www.nlm.nih.gov/research/umls/rxnorm)\"\r\n16 0    : 0ms  : CodeSystem found: \"http://www.nlm.nih.gov/research/umls/rxnorm|??\"\r\n16 0    : 0ms  : Validate \"[http://www.ama-assn.org/go/cpt#77061 (\"\")]\"\r\n16 0    : 0ms  : Check \"http://www.ama-assn.org/go/cpt#77061\"\r\n16 0    : 0ms  : CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt\r\n16 0    : 0ms  : check code in (http://www.ama-assn.org/go/cpt) at CodeableConcept.coding[0]\r\n16 0    : 0ms  : Code \"77061\" found in http://www.ama-assn.org/go/cpt|2023\r\n",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -2623,7 +2615,6 @@ v: {
   "version" : "2023",
   "server" : "https://tx.fhir.org/r4",
   "diagnostics" : "0 0 : start\r\n16 16   : 0ms  : Analysing http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-snapshot for validation purposes\r\n16 0    : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n16 0    : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n16 0    : 0ms  : Prepare include: \"(http://www.ama-assn.org/go/cpt)\"\r\n16 0    : 0ms  : CodeSystem found: \"http://www.ama-assn.org/go/cpt|2023\"\r\n16 0    : 0ms  : Prepare include: \"(https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets)\"\r\n16 0    : 0ms  : CodeSystem version  not found: \"https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets\"\r\n16 0    : 0ms  : Prepare include: \"(http://www.nlm.nih.gov/research/umls/rxnorm)\"\r\n16 0    : 0ms  : CodeSystem found: \"http://www.nlm.nih.gov/research/umls/rxnorm|??\"\r\n16 0    : 0ms  : Validate \"[http://www.ama-assn.org/go/cpt#77062 (\"\")]\"\r\n16 0    : 0ms  : Check \"http://www.ama-assn.org/go/cpt#77062\"\r\n16 0    : 0ms  : CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt\r\n16 0    : 0ms  : check code in (http://www.ama-assn.org/go/cpt) at CodeableConcept.coding[0]\r\n16 0    : 0ms  : Code \"77062\" found in http://www.ama-assn.org/go/cpt|2023\r\n",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -2653,7 +2644,6 @@ v: {
   "version" : "2023",
   "server" : "https://tx.fhir.org/r4",
   "diagnostics" : "0 0 : start\r\n15 15   : 0ms  : Analysing http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-snapshot for validation purposes\r\n15 0    : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n15 0    : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n15 0    : 0ms  : Prepare include: \"(http://www.ama-assn.org/go/cpt)\"\r\n15 0    : 0ms  : CodeSystem found: \"http://www.ama-assn.org/go/cpt|2023\"\r\n15 0    : 0ms  : Prepare include: \"(https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets)\"\r\n15 0    : 0ms  : CodeSystem version  not found: \"https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets\"\r\n15 0    : 0ms  : Prepare include: \"(http://www.nlm.nih.gov/research/umls/rxnorm)\"\r\n15 0    : 0ms  : CodeSystem found: \"http://www.nlm.nih.gov/research/umls/rxnorm|??\"\r\n15 0    : 0ms  : Validate \"[http://www.ama-assn.org/go/cpt#77065 (\"\")]\"\r\n15 0    : 0ms  : Check \"http://www.ama-assn.org/go/cpt#77065\"\r\n15 0    : 0ms  : CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt\r\n15 0    : 0ms  : check code in (http://www.ama-assn.org/go/cpt) at CodeableConcept.coding[0]\r\n15 0    : 0ms  : Code \"77065\" found in http://www.ama-assn.org/go/cpt|2023\r\n",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -2683,7 +2673,6 @@ v: {
   "version" : "2023",
   "server" : "https://tx.fhir.org/r4",
   "diagnostics" : "0 0 : start\r\n16 16   : 0ms  : Analysing http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes|2.2.0-snapshot for validation purposes\r\n16 0    : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n16 0    : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n16 0    : 0ms  : Prepare include: \"(http://www.ama-assn.org/go/cpt)\"\r\n16 0    : 0ms  : CodeSystem found: \"http://www.ama-assn.org/go/cpt|2023\"\r\n16 0    : 0ms  : Prepare include: \"(https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets)\"\r\n16 0    : 0ms  : CodeSystem version  not found: \"https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets\"\r\n16 0    : 0ms  : Prepare include: \"(http://www.nlm.nih.gov/research/umls/rxnorm)\"\r\n16 0    : 0ms  : CodeSystem found: \"http://www.nlm.nih.gov/research/umls/rxnorm|??\"\r\n16 0    : 0ms  : Validate \"[http://www.ama-assn.org/go/cpt#77066 (\"\")]\"\r\n16 0    : 0ms  : Check \"http://www.ama-assn.org/go/cpt#77066\"\r\n16 0    : 0ms  : CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt\r\n16 0    : 0ms  : check code in (http://www.ama-assn.org/go/cpt) at CodeableConcept.coding[0]\r\n16 0    : 0ms  : Code \"77066\" found in http://www.ama-assn.org/go/cpt|2023\r\n",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -2936,5 +2925,54 @@ e: {
   }
 },
   "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "urn:iso:std:iso:3166",
+    "code" : "US"
+  }]
+}, "url": "http://hl7.org/fhir/5.0/ValueSet/jurisdiction", "version": "5.0.0", "langs":"en", "useServer":"true", "useClient":"true", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  },
+  {
+    "name" : "defaultDisplayLanguage",
+    "valueCode" : "en"
+  }]
+}}####
+v: {
+  "display" : "United States of America",
+  "code" : "US",
+  "system" : "urn:iso:std:iso:3166",
+  "version" : "2018",
+  "server" : "https://tx.fhir.org/r4",
+  "diagnostics" : "0 0 : start\r\n0 0     : 0ms  : Analysing http://hl7.org/fhir/5.0/ValueSet/jurisdiction|5.0.0 for validation purposes\r\n0 0     : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n0 0     : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n0 0     : 0ms  : Prepare include: \"(urn:iso:std:iso:3166)\"\r\n0 0     : 0ms  : CodeSystem found: \"urn:iso:std:iso:3166|2018\"\r\n0 0     : 0ms  : Prepare include: \"(urn:iso:std:iso:3166:-2)\"\r\n0 0     : 0ms  : CodeSystem found: \"urn:iso:std:iso:3166:-2|2021 (from fhir.tx.support.r4#0.32.0)\"\r\n0 0     : 0ms  : Prepare include: \"(http://unstats.un.org/unsd/methods/m49/m49.htm)(class=region)\"\r\n0 0     : 0ms  : CodeSystem found: \"http://unstats.un.org/unsd/methods/m49/m49.htm|\"\r\n0 0     : 0ms  : Validate \"[urn:iso:std:iso:3166#US (\"\")]\"\r\n0 0     : 0ms  : Check \"urn:iso:std:iso:3166#US\"\r\n0 0     : 0ms  : CodeSystem found: urn:iso:std:iso:3166|2018 for urn:iso:std:iso:3166\r\n0 0     : 0ms  : check code in (urn:iso:std:iso:3166) at CodeableConcept.coding[0]\r\n0 0     : 0ms  : Code \"US\" found in urn:iso:std:iso:3166|2018\r\n",
+  "unknown-systems" : "",
+  "issues" : {
+  "resourceType" : "OperationOutcome",
+  "issue" : [{
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString" : "MSG_DEPRECATED"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
+      "valueUrl" : "https://tx.fhir.org/r4"
+    }],
+    "severity" : "information",
+    "code" : "business-rule",
+    "details" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
+        "code" : "status-check"
+      }],
+      "text" : "Reference to deprecated ValueSet http://hl7.org/fhir/5.0/ValueSet/jurisdiction|5.0.0"
+    }
+  }]
+}
+
 }
 -------------------------------------------------------------------------------------
