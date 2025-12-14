@@ -41,6 +41,14 @@ This page describes the primary releases of the specification and summarizes the
 * [FHIR-52324](https://jira.hl7.org/browse/FHIR-52324) - Manually added reference to CPT IP rules in IP section *(correction)* [link](index.html#intellectual-property-considerations)
 * [FHIR-49826](https://jira.hl7.org/browse/FHIR-49826) - Made clear that only the primary coverage can be included in prefetch, but multiple coverages are permitted over the FHIR API *(clarification)* [link](deviations.html#FHIR-49826)
 * [FHIR-50276](https://jira.hl7.org/browse/FHIR-50276) - Changed CDSHooks-CardType value set to point to terminology.hl7.org code system and added binding for CoverageDetail type that also points to THO  *(corection)* [link](ValueSet-cardType.html), [link](StructureDefinition-ext-coverage-information.html)
+* [FHIR-53067](https://jira.hl7.org/browse/FHIR-53067) - Added information on handling CRD edge cases *(clarification)* [link](hooks.html#FHIR-53067)
+* [FHIR-52586](https://jira.hl7.org/browse/FHIR-52586) - Deleted language about portals *(correction)* [link](cards.html#FHIR-52585)
+* [FHIR-53544](https://jira.hl7.org/browse/FHIR-53544) - Added a requirement for value on the coverage-assertion-id extension *(clarification)* [link](StructureDefinition-ext-coverage-information.html)
+* [FHIR-52806](https://jira.hl7.org/browse/FHIR-52806) - Clarified CRD concepts and requirements *(clarification)* [link](hooks.html#FHIR-52806)
+* [FHIR-52806](https://jira.hl7.org/browse/FHIR-51776) - Require support for order-select by payers *(clarification)* [link](operational.html#FHIR-51776)
+* [FHIR-52588](https://jira.hl7.org/browse/FHIR-52585) - Added "not required under regulation or legislation" to sentence *(correction)* [link](cards.html#FHIR-52588)
+* [FHIR-52532](https://jira.hl7.org/browse/FHIR-52532) - Revised sentence to accurately reflect payer involvement *(correction)* [link](deviations.html#FHIR-52531)
+* [FHIR-52447](https://jira.hl7.org/browse/FHIR-52447) - Caching language should be for same patient/ordering organization *(clarification)* [link](foundation.html#FHIR-52447)
 
 ### Release 2.2.0-ballot
 
@@ -140,9 +148,6 @@ Significant other changes:
 * [FHIR-44388](https://jira.hl7.org/browse/FHIR-44388) - Split Appointment profile into two - one pointing to 
 * [FHIR-45230](https://jira.hl7.org/browse/FHIR-45230) - Relaxed 'reason' constraints in profiles to align with US Core
 * [FHIR-46793](https://jira.hl7.org/browse/FHIR-46793) - Set expectations for CRD clients to query data when possible
-* [FHIR-53067](https://jira.hl7.org/browse/FHIR-53067) - Handling CRD edge cases
-* [FHIR-52586](https://jira.hl7.org/browse/FHIR-52586) - Deleting language about portals 
-* [FHIR-53544](https://jira.hl7.org/browse/FHIR-53544) - Requiring value on the coverage-assertion-id extension 
 
 A variety of minor corrections and clarifications to wording and examples.
 
