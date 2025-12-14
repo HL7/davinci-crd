@@ -15,7 +15,7 @@ extension:
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
     valueCode: fm
 canonical: http://hl7.org/fhir/us/davinci-crd
-version: 2.2.0-ballot
+version: 2.2.0-snapshot
 name: CoverageRequirementsDiscovery
 title: Da Vinci - Coverage Requirements Discovery
 status: active
@@ -46,7 +46,7 @@ parameters:
 #  path-binary: input/hooks-files
     
 copyrightYear: 2019+
-releaseLabel: STU 2.2 Ballot
+releaseLabel: STU 2.2 Peer Review
 
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
@@ -180,10 +180,12 @@ groups:
     name: "Structures: CDS Hooks Extensions"
     description: "Models that define extensions on CDS Hooks JSON structures"
     resources:
-      - CDSHookServicesExtensionConfiguration
       - CDSHookServiceResponseExtensionIfNoneExist
       - CDSHookServiceResponseExtensionAssociatedResource
       - CDSHookServiceRequestExtensionRequestConfig
+      - CDSHookServiceRequestExtensionRequestCRDVersion
+      - CDSHookServicesExtensionConfiguration
+      - CDSHookServicesExtensionCRDVersion
   -ex-example-hooks:
     name: "Example: CDS Hooks Examples"
     description: "Examples of CDS Hooks JSON instances"
@@ -260,10 +262,3 @@ resources:
         valueCode: application/json
       - url: http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-logical
         valueCanonical: http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse
-  Bundle/search-request:
-    name: "Example EHR search"
-    description: "Sample of a CRD service searching an EHR that does not support prefetch"
-  Bundle/search-response:
-    name: "Example EHR response"
-    description: "The response to a CRD service query for information not returned in prefetch"
-

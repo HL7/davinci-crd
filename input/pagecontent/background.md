@@ -5,7 +5,7 @@ Implementers of this specification therefore need to understand some basic infor
 
 #### FHIR
 
-This implementation guide uses terminology, notations and design principles that are specific to FHIR. Before reading this implementation guide, it's important to be familiar with some of the basic principles of FHIR as well as general guidance on how to read FHIR specifications. Readers who are unfamiliar with FHIR are encouraged to read (or at least skim) the following prior to reading the rest of this implementation guide.
+This implementation guide uses terminology, notations and design principles that are specific to FHIR. Before reading this implementation guide, it is important to be familiar with some of the basic principles of FHIR as well as general guidance on how to read FHIR specifications. Readers who are unfamiliar with FHIR are encouraged to read (or at least skim) the following prior to reading the rest of this implementation guide.
 
 * [FHIR Overview]({{site.data.fhir.path}}overview.html)
 * [Developer's Introduction]({{site.data.fhir.path}}overview-dev.html) (or [Clinical Introduction]({{site.data.fhir.path}}overview-clinical.html))
@@ -15,7 +15,7 @@ This implementation guide uses terminology, notations and design principles that
 * [How to Read Resource & Profile Definitions]({{site.data.fhir.path}}formats.html) and additional [IG reading guidance](https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html)
 * [Base Resource]({{site.data.fhir.path}}resource.html)
 
-This implementation guide supports the [R4]({{site.data.fhir.path}}index.html) version of the FHIR standard and builds on the US Core [3.1 (USCDI v1)]({{site.data.fhir.ver.uscore3}}), [6.1 (USCDI v3)]({{site.data.fhir.ver.uscore6}}) and [7.0 (USCDI v4)]({{site.data.fhir.ver.uscore7}}) implementation guides and implementers need to familiarize themselves with the profiles in those guides. The profiles in this IG conform with all three releases of US Core. CRD clients **SHALL** support at least one of the three profiles (and versions of US Core). CRD servers **SHALL** be able to handle all three.
+This implementation guide supports the [R4]({{site.data.fhir.path}}index.html) version of the FHIR standard and builds on the US Core [3.1 (USCDI v1)]({{site.data.fhir.ver.uscore3}}), [6.1 (USCDI v3)]({{site.data.fhir.ver.uscore6}}) and [7.0 (USCDI v4)]({{site.data.fhir.ver.uscore7}}) implementation guides and implementers need to familiarize themselves with the profiles in those guides. The profiles in this IG conform with all three releases of US Core.
 
 This IG also draws on content from the [Davinci Health Record Exchange (HRex)]({{site.data.fhir.ver.hrex}}) and [Structured Data Capture (SDC)]({{site.data.fhir.ver.sdc}}) implementation guides.
 
@@ -64,7 +64,7 @@ Provider systems will use the specification and workflows defined by [CDS Hooks 
 SMART on FHIR is expected to be used in two principal ways:
 
 ##### *Ad Hoc* Coverage Requirements Discovery
-CDS Hooks provides a mechanism for payers to advise clinicians on coverage requirements as part of their regular workflow: when ordering medications, making referrals, scheduling appointments, discharging patients, etc. However, sometimes clinicians may be interested in learning about coverage requirements without going through the workflow steps within their CRD client. In this case, they don't want to actually create a referral, they just want to ask the question "what would the requirements or recommendations be if I *wanted* to create a referral?
+CDS Hooks provides a mechanism for payers to advise clinicians on coverage requirements as part of their regular workflow: when ordering medications, making referrals, scheduling appointments, discharging patients, etc. However, sometimes clinicians may be interested in learning about coverage requirements without going through the workflow steps within their CRD client. In this case, they do not want to actually create a referral, they just want to ask the question "what would the requirements or recommendations be if I *wanted* to create a referral?
 
 Such recommendations might be from decision support (such as ImmunizationRecommendation or a CarePlan with an intent of 'proposed') or from standard protocols (e.g. "this patient is due for a pap smear").  In such cases, the EHR can support automated generation of 'draft' requests (such as MedicationRequest or ServiceRequest) based on the decision support or protocol resources and use them when invoking CRD.  Alternatively, the EHR might support launching a SMART on FHIR app that would capture the key information needed to drive a CRD response.
 
@@ -79,7 +79,7 @@ The approach taken to meet the requirements of the CRD use-case was selected aft
 * *Direct connection?* - Yes - it was presumed that CRD client systems could connect directly either with the payer or with a payer-provided service.
 * *Consumer initiates?* - Yes - the provider system needing decision support would trigger the support, because only the provider system would know when support was needed.
 * *Human intervention?* - No - there was no expectation that a human would need to be involved on the data source (payer) side to determine what guidance should be provided. The requirement was for real-time guidance, which meant any guidance provided had to be automatic.
-* *Is data pre-existing?* - No - in decision support, we're generating context-specific guidance that didn't previously exist, even if some of the resources pointed to might have been pre-existing.
+* *Is data pre-existing?* - No - in decision support, we are generating context-specific guidance that did not previously exist, even if some of the resources pointed to might have been pre-existing.
 * *CDS Hooks?* - Yes - CDS Hooks were a good fit for the workflow we needed. There was no need to define custom operations or messages to meet our use cases.
 
-NOTE: Because of the sensitivity around disclosure of clinical information to payer-controlled systems during the clinical workflow process, this IG imposes a number of safeguards around the use of the selected CDS Hooks technology to help ensure that providers and their systems have an appropriate degree of control over disclosure and that information can't be used in inappropriate ways.
+NOTE: Because of the sensitivity around disclosure of clinical information to payer-controlled systems during the clinical workflow process, this IG imposes a number of safeguards around the use of the selected CDS Hooks technology to help ensure that providers and their systems have an appropriate degree of control over disclosure and that information cannot be used in inappropriate ways.

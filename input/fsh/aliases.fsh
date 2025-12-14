@@ -10,8 +10,10 @@ Alias: $sct = http://snomed.info/sct
 Alias: $fhir-types                   = http://hl7.org/fhir/data-types
 Alias: $restful-interaction          = http://hl7.org/fhir/restful-interaction
 Alias: $task-code                    = http://hl7.org/fhir/CodeSystem/task-code
+Alias: $cdshooks-card-type           = http://terminology.hl7.org/CodeSystem/cdshooks-card-type
 Alias: $communication-category       = http://terminology.hl7.org/CodeSystem/communication-category
 Alias: $coverage-class               = http://terminology.hl7.org/CodeSystem/coverage-class
+Alias: $crd-coverage-detail          = http://terminology.hl7.org/CodeSystem/crd-coverage-detail
 Alias: $diet                         = http://terminology.hl7.org/CodeSystem/diet
 Alias: $dose-rate-type               = http://terminology.hl7.org/CodeSystem/dose-rate-type
 Alias: $ex-visionprescriptionproduct = http://terminology.hl7.org/CodeSystem/ex-visionprescriptionproduct
@@ -50,5 +52,6 @@ Alias: $fmm                                            = http://hl7.org/fhir/Str
 Alias: $standards-status                               = http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
 Alias: $compliesWithProfile                            = http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile
 Alias: $typeMS                                         = http://hl7.org/fhir/StructureDefinition/elementdefinition-type-must-support
+Alias: $additional-binding                             = http://hl7.org/fhir/tools/StructureDefinition/additional-binding
 // ValueSets
 Alias: $USCoreMedicationCodes = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1010.4

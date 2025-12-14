@@ -12,7 +12,7 @@ Description: "Codes temporarily defined as part of the CRD implementation guide.
 * ^property[0].type = #boolean
 // Coverage assertion reasons - https://jira.hl7.org/browse/UP-668
 * #gold-card               "Gold card"                           "Ordering Practitioner has been granted 'gold card' status with this payer/coverage type."
-* #no-member-found         "Member not found"                    "The CRD service was unable to find a matching member, so no coverage information can be provided"
+* #no-member-found         "Member not found"                    "The CRD server was unable to find a matching member, so no coverage information can be provided"
 * #no-active-coverage      "Coverage not active"                 "The referenced insurance coverage for the member is not active, so no coverage information can be provided"
 * #auth-out-network        "Authorization needed out-of-network" "Authorization is necessary if out-of-network."
 
@@ -50,8 +50,8 @@ Description: "Codes temporarily defined as part of the CRD implementation guide.
   * #therapy-alternatives-opt "Optional Therapy Alternatives"  "Are there alternative therapies that have better coverage and/or are lower-cost for the patient"
   * #therapy-alternatives-req "Required Therapy Alternatives"  "Are there alternative therapies that must be tried first prior to coverage being available for the proposed therapy"
   * #clinical-reminder        "Clinical Reminder"              "Reminders that a patient is due for certain screening or other therapy (based on payer recorded date of last intervention)"
-  * #duplicate-therapy        "Duplicate Therapy"              "Notice that the proposed intervention has already recently occurred with a different provider when that information isn't already available in the provider system"
-  * #contraindication         "Contraindication"               "Notice that the proposed intervention may be contraindicated based on information the payer has in their record that the provider doesn't have in theirs"
+  * #duplicate-therapy        "Duplicate Therapy"              "Notice that the proposed intervention has already recently occurred with a different provider when that information is not already available in the provider system"
+  * #contraindication         "Contraindication"               "Notice that the proposed intervention may be contraindicated based on information the payer has in their record that the provider does not have in theirs"
   * #guideline                "Guideline"                      "Indication that there is a guideline available for the proposed therapy (with an option to view)"
   * #off-guideline            "Off Guideline"                  "Notice that the proposed therapy may be contrary to best-practice guidelines, typically with an option to view the relevant guideline"
 

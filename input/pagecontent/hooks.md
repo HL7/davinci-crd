@@ -1,6 +1,6 @@
 Each CDS Hook corresponds to a point in the workflow/business process within a CRD Client system where a specific type of decision support is relevant.  For example, the `order-select` hook **SHOULD** be fired whenever a user of a CRD Client creates a new order or referral.  In many CRD Clients, the same hook might fire in multiple different workflows.  (For example, a CRD client might have different screens for ordering regular medications vs. vaccinations vs. chemotherapy, not to mention distinct screens for lab orders, imaging orders and referrals.  An order-select hook might be initiated from any or all of these screens/workflows.)
 
-Within this implementation guide, CDS Hooks are used by CRD Clients to perform coverage requirements discovery from CRD Servers used by patients' payers.  Six hooks are identified that cover the main situations where coverage requirements discovery is likely to be needed: [appointment-book](#appointment-book), [encounter-start](#encounter-start), [encounter-discharge](#encounter-discharge), [order-dispatch](#order-dispatch), [order-select](#order-select), and [order-sign](#order-sign).  Payers and respective CRD Servers will vary between patients.  CRD Clients conforming to this implementation guide **SHALL** be able to determine the correct payer CRD Service to use for each request.
+Within this implementation guide, CDS Hooks are used by CRD Clients to perform coverage requirements discovery from CRD Servers used by patients' payers.  Six hooks are identified that cover the main situations where coverage requirements discovery is likely to be needed: [appointment-book](#appointment-book), [encounter-start](#encounter-start), [encounter-discharge](#encounter-discharge), [order-dispatch](#order-dispatch), [order-select](#order-select), and [order-sign](#order-sign).  Payers and respective CRD Servers will vary between patients.  CRD Clients conforming to this implementation guide **SHALL** be able to determine the correct payer CRD server to use for each request.
 
 <p class="modified-content" markdown="1"><a name="FHIR-49974"> </a>
 Not all CRD Clients will support all hook types or order resource types.  For example, community CRD client systems will not likely support `encounter-discharge`.  Community pharmacy systems would not likely support `appointment-book`.  Some EHRs might not support VisionPrescription when using order-sign.  CRD Clients conforming to this implementation guide **SHALL** support at least one of the hooks and (for order-centric hooks), at least one of the order resource types listed below, and **SHOULD** support all that apply to the context of their system.  Future releases of this specification may increase expectations to support additional hooks.  For systems that support ordering products or services covered by one of the CRD-supported request types, such clients **SHALL** support the order-sign hook for the order types they support.</p>
@@ -13,16 +13,16 @@ In the absence of guidance from the CDS Hooks specification, CRD Servers are exp
 
 <div class="modified-content" markdown="1"><a name="FHIR-52062"> </a>
 * If the CRD Server encounters an error when processing the request, the system **SHALL** return an appropriate error HTTP Response Code, starting with the digit "4" or "5", indicating that there was an error.
-* <span ><a name="FHIR-52535"> </a>If an issue is identified at a layer of the CRD Server that is FHIR aware (e.g. not a "wrong endpoint" or "not authorized" issue), the server **SHALL** provide an OperationOutcome for internal issue tracking by the client system.
+* <span><a name="FHIR-52535"> </a>If an issue is identified at a layer of the CRD Server that is FHIR aware (e.g. not a "wrong endpoint" or "not authorized" issue), the server **SHALL** provide an OperationOutcome for internal issue tracking by the client system.</span>
 * The CRD Client **MAY** display to the user that the Coverage Requirements Discovery Service is unavailable.  If additional information (e.g. number to call) is available, it **MAY** also be included in the message to the user.
 * While any 4xx or 5xx response code could be raised, the CRD Server **SHALL** use the 400 and 422 codes in a manner consistent with the FHIR RESTful Create Action, specifically:
-    * 400 - Bad Request - The request is not parsable as JSON or the content fails validation against FHIR core or CDS Hooks specification rules.  Also used if a CRD service receives a call where the primary Coverage (either provided by prefetch or queried by the payer) does not have a payer.identifier that identifies a payer that is handled by that CRD service endpoint, the server SHALL return a 400 error and SHOULD provide an OperationOutcome.  This includes situations where no Coverage is accessible, multiple Coverages are accessible, or the provided Coverage does not have a payer.identifier at all.
+    * 400 - Bad Request - The request is not parsable as JSON or the content fails validation against FHIR core or CDS Hooks specification rules.  Also used if a CRD server receives a call where the primary Coverage (either provided by prefetch or queried by the payer) does not have a payer.identifier that identifies a payer that is handled by that CRD server endpoint, the server SHALL return a 400 error and SHOULD provide an OperationOutcome.  This includes situations where no Coverage is accessible, multiple Coverages are accessible, or the provided Coverage does not have a payer.identifier at all.
     * 422 - Unprocessable Entity - The request is valid JSON and meets FHIR and CDS Hook validation rules, but fails to adhere to constraints imposed by this specification.
 * If a system's validation process does not differentiate between validation issues stemming from the JSON syntax validation, FHIR core validation, CDS Hooks validation, and CRD-specific validation, it **MAY** treat all validation rules as 400 errors.
 * A CRD client MAY opt to re-invoke a CRD hook either due to manual user intervention or automatically in the background if there is a reason to believe that a substantive change in the patient's record and/or coverage might produce a different CRD response.  If such workflows are invoked without first calling an X12 271, there should be business processes in place to ensure that CRD is invoked with the correct/current patient coverage.
 </div>
     
-<p class="new-content">A profile defining the general expectations of a CRD CDS Hooks request can be found <a href="StructureDefinition-CRDHooksRequest.html">here</a>.</p>
+<p class="new-content" markdown="1">A profile defining the general expectations of a CRD CDS Hooks request can be found [here](StructureDefinition-CRDHooksRequest.html).</p>
 
 
 ### Hook Categories
@@ -185,7 +185,7 @@ This is a new hook that allows for decision support to be provided when the inte
 
 This hook will fire at some point after (possibly well after) the [order-sign](#order-sign) hook fires.  It only passes the patient id, order id, performer, and (optionally) the Task that describes the fulfillment request as part of the context.  This specification does not require use of the Task resource.
 
-This hook allows multiple resource types to be present. Resources provided could all be the same type or be a mixture of types.  Coverage requirements **SHOULD** be limited only to those resources that are included in the `dispatchedOrders` context, though the content of other resources **SHOULD** also be considered before making recommendations about what additional actions are necessary.  (I.e. don't recommend an action if there's already an order to perform that action.)  
+This hook allows multiple resource types to be present. Resources provided could all be the same type or be a mixture of types.  Coverage requirements **SHOULD** be limited only to those resources that are included in the `dispatchedOrders` context, though the content of other resources **SHOULD** also be considered before making recommendations about what additional actions are necessary.  (I.e. do not recommend an action if there's already an order to perform that action.)  
 
 The different relevant resource types are as follows (support can vary between clients):
 
@@ -195,10 +195,7 @@ The different relevant resource types are as follows (support can vary between c
 * **MedicationRequest**: Used to order inpatient and outpatient medications.<sup>*</sup>  Can also be used to order vaccinations.
 * **ServiceRequest**: Used to order a referral, lab tests, diagnostic imaging, and sometimes to schedule a future appointment (also see [appointment-book](#appointment-book)).
 * **NutritionOrder**: Used to order the preparation of specific meal types.  Generally used for in-patient care, but potentially also relevant for homecare.
-
-<div class="new-content"><a name="FHIR-49805a"> </a>
-* ** **Vision Prescription**: Used to order eyeglasses, contacts, and similar vision-related prosthetics.
-</div>
+* <span class="new-content" markdown="1"><a name="FHIR-49805a"> </a>**Vision Prescription**: Used to order eyeglasses, contacts, and similar vision-related prosthetics.</span>
 
 <sup>*</sup> - Note: in the medication space, regulations may mandate alternate standards for some of the functionality covered by CRD for certain classes of medications.  E.g. NCPDP Script
 
@@ -206,9 +203,7 @@ The different relevant resource types are as follows (support can vary between c
 CRD responses might include:
 
 * Information about preauthorization and clinical documentation requirements, including forms to be completed
-
 * Alternative performers (e.g. in-network providers)
-
 
 There are no constraints or special rules related to this hook beyond the profiles expected to be used for the resources resolved to by the `patientId` or `encounterId` or in the `dispatchedOrders` context element:
 
@@ -275,25 +270,20 @@ This hook is described in the CDS Hooks specification [here]({{site.data.fhir.ve
 
 Support for this hook is optional, as not all information will necessarily be available when this hook is invoked.  Therefore, the [Order Sign](#order-sign) and [Order Dispatch](#order-dispatch) hooks are more critical to implement because they fire when information is required to be more complete and also represent the 'end' of the user engagement in their respective processes.  That said, the "Order Select" hook is still quite useful.
 
-First, because it fires earlier in the user's system interactions, it provides an opportunity for CRD services to initiate back-end queries that might take time to complete so that relevant information is already retrieved and cached before Order Sign is reached.  This increases performance and makes it easier for CRD services to respond in the required timeframe.
+First, because it fires earlier in the user's system interactions, it provides an opportunity for CRD servers to initiate back-end queries that might take time to complete so that relevant information is already retrieved and cached before Order Sign is reached.  This increases performance and makes it easier for CRD servers to respond in the required timeframe.
 
-Second, when a CRD service can provide guidance to providers earlier in the process (e.g. upon selection of a service but before entering detailed instructions), it can help to make the provider's experience more efficient.  (If a provider knows up-front that a service won't be paid for, but an alternative would be, they might be happier if they can save the time on entering full details before finding this out.)  Not all providers or EHRs will necessarily want to receive 'proactive' decision support during the order entry process.  EHRs can be configured as to what types of cards they're interested in receiving back for this hook, including no cards at all if the hook is invoked solely for performance or caching reasons.
+Second, when a CRD server can provide guidance to providers earlier in the process (e.g. upon selection of a service but before entering detailed instructions), it can help to make the provider's experience more efficient.  (If a provider knows up-front that a service will not be paid for, but an alternative would be, they might be happier if they can save the time on entering full details before finding this out.)  Not all providers or EHRs will necessarily want to receive 'proactive' decision support during the order entry process.  EHRs can be configured as to what types of cards they are interested in receiving back for this hook, including no cards at all if the hook is invoked solely for performance or caching reasons.
 
-This hook allows multiple resource types to be present. Resources provided could all be the same type or be a mixture of types.  Coverage requirements **SHOULD** be limited only to those resources that are included in the `selections` context, though the content of other resources **SHOULD** also be considered before making recommendations about what additional actions are necessary.  (I.e. don't recommend an action if there's already a draft order to perform that action.)  
+This hook allows multiple resource types to be present. Resources provided could all be the same type or be a mixture of types.  Coverage requirements **SHOULD** be limited only to those resources that are included in the `selections` context, though the content of other resources **SHOULD** also be considered before making recommendations about what additional actions are necessary.  (I.e. do not recommend an action if there's already a draft order to perform that action.)  
 
 The different relevant resource types are as follows (support can vary between clients):
 
-**CommunicationRequest**: Used when a provider requests that another provider transfer patient records or other supporting information to another organization or agency.
-
-**DeviceRequest**: Used for durable medical equipment orders, such as wheelchairs, prosthetics, diabetic supplies, etc.  It can also be used to order glasses and other vision-correction devices.
-
-**MedicationRequest**: Used to order inpatient and outpatient medications.<sup>*</sup>  Can also be used to order vaccinations.
-
-**ServiceRequest**: Used to order a referral, lab tests, diagnostic imaging, and sometimes to schedule a future appointment (also see [appointment-book](#appointment-book)).
-
-**NutritionOrder**: Used to order the preparation of specific meal types.  Generally used for in-patient care, but potentially also relevant for homecare.
-<a name="FHIR-49805b"> </a>
-<p class="new-content"><b>Vision Prescription</b>: Used to order eyeglasses, contacts, and similar vision-related prosthetics.</p>
+* **CommunicationRequest**: Used when a provider requests that another provider transfer patient records or other supporting information to another organization or agency.
+* **DeviceRequest**: Used for durable medical equipment orders, such as wheelchairs, prosthetics, diabetic supplies, etc.  It can also be used to order glasses and other vision-correction devices.
+* **MedicationRequest**: Used to order inpatient and outpatient medications.<sup>*</sup>  Can also be used to order vaccinations.
+* **ServiceRequest**: Used to order a referral, lab tests, diagnostic imaging, and sometimes to schedule a future appointment (also see [appointment-book](#appointment-book)).
+* **NutritionOrder**: Used to order the preparation of specific meal types.  Generally used for in-patient care, but potentially also relevant for homecare.
+* <span class="new-content" span="1"><a name="FHIR-49805b"> </a>**Vision Prescription**: Used to order eyeglasses, contacts, and similar vision-related prosthetics.</span>
 
 <sup>*</sup> - Note: in the medication space, regulations may mandate alternate standards for some of the functionality covered by CRD for certain classes of medications.  E.g. NCPDP Script
 
@@ -301,11 +291,8 @@ The different relevant resource types are as follows (support can vary between c
 CRD responses might include:
 
 * Information about preauthorization and clinical documentation requirements, including forms to be completed
-
 * Alternative therapies that are covered or required first-line therapies
-
 * Potential drug-drug interactions based on existing payer knowledge
-
 * Recommendations about in-network vs. out-of-network providers for referrals
 
 
@@ -359,13 +346,13 @@ There are no constraints or special rules related to this hook beyond the profil
 <sup>†</sup> While this hook does not explicitly list PractitionerRole as an expected resource type for userId, it is not prohibited and is included to allow linking the user to a Practitioner in a specific role acting on behalf of a specific Organization.
 
 Notes: 
-* While this hook is defined for use when ordering, it is still relevant when proposing (e.g. as part of a consult note) or planning (e.g. as part of a care plan) the use of an intervention.  All the 'Request' resources support differentiation between plans, proposals, and orders.  Where CRD Clients have an appropriate workflow and data capture mechanism, this hook **MAY** be used in scenarios that don't involve creating a true order.
+* While this hook is defined for use when ordering, it is still relevant when proposing (e.g. as part of a consult note) or planning (e.g. as part of a care plan) the use of an intervention.  All the 'Request' resources support differentiation between plans, proposals, and orders.  Where CRD Clients have an appropriate workflow and data capture mechanism, this hook **MAY** be used in scenarios that do not involve creating a true order.
 
 
 ### order-sign
 This hook is described in the CDS Hooks specification [here](https://cds-hooks.org/hooks/order-sign/).  This version of the CRD implementation guide refers to version 1.1 of the hook which, at the time of publication, was not available as a snapshot.  Therefore, the preceding link refers to the CDS hooks current build.
 
-This hook serves a very similar purpose to [order-select](#order-select).  The main difference is that all the listed draft orders are considered 'complete'.  That means that it's appropriate to provide warnings if there is insufficient information to determine coverage requirements.  Also, all `draftOrders` are appropriate to comment on when using order-sign as the `selections` field found in in order-select is not used in order-sign.
+This hook serves a very similar purpose to [order-select](#order-select).  The main difference is that all the listed draft orders are considered 'complete'.  That means that it is appropriate to provide warnings if there is insufficient information to determine coverage requirements.  Also, all `draftOrders` are appropriate to comment on when using order-sign as the `selections` field found in in order-select is not used in order-sign.
 
 Use and profiles for [order-select](#order-select) also apply to `order-sign`.
 

@@ -3,9 +3,11 @@ This implementation guide uses specific terminology such as **SHALL**, **SHOULD*
 Additional conformance expectations specific to this guide are as follows:
 
 ### Conformance to this IG
-In order to conform to this implementation guide, in addition to adhering to any relevant 'SHALL' statements, a system **SHALL** conform to at least one of the CapabilityStatements listed here:
+In order to conform to this implementation guide, in addition to adhering to any relevant 'SHALL' statements:
 * CRD clients - at least one of [CRD Client USCDI 1](CapabilityStatement-crd-client3.1.html), [CRD Client USCDI 3](CapabilityStatement-crd-client6.1.html), or [CRD Client USCDI 4](CapabilityStatement-crd-client7.0.html)
 * CRD servers - [CRD Server USCDI 1, 3, 4](CapabilityStatement-crd-server.html)
+
+<p class="modified-content" markdown="1">This means that CRD clients **SHALL** support at least one of the three specified versions of US Core. CRD servers **SHALL** be able to handle all three.</p>
 
 ### MustSupport
 Profiles in this implementation guide make use of the [mustSupport]({{site.data.fhir.path}}profiling.html#mustsupport) element.
@@ -45,11 +47,11 @@ Conformance expectations with respect to US Core in this IG are the same as [tho
 ### Interoperability Expectations
 For the CRD specification to work successfully at scale, it is essential that CRD clients and servers be able to interoperate with each other without custom expectations or deviations driven by EHR-specific or payer-specific requirements.  The following rules are intended to help drive such consistency:
 
-1. When preparing [Coverage Information]() responses, CRD services SHALL NOT depend on or set expectations for the inclusion of resource instances not compliant with profiles defined in this guide, HRex, or US Core.  Similarly, they **SHALL NOT** depend on or set expectations for the inclusion of any data elements not marked as mandatory (min cardinality >= 1) or mustSupport in those profiles.
-2. When preparing [response types] other than Coverage Information, CRD services **SHOULD** limit themselves to the same resource instances and data elements as permitted above for Coverage Information responses.
-3. CRD clients **SHALL NOT** depend on or set expectations for CRD services to communicate data elements not marked as mandatory or mustSupport in the CRD specification.
+1. When preparing [Coverage Information]() responses, CRD servers SHALL NOT depend on or set expectations for the inclusion of resource instances not compliant with profiles defined in this guide, HRex, or US Core.  Similarly, they **SHALL NOT** depend on or set expectations for the inclusion of any data elements not marked as mandatory (min cardinality >= 1) or mustSupport in those profiles.
+2. When preparing [response types] other than Coverage Information, CRD servers **SHOULD** limit themselves to the same resource instances and data elements as permitted above for Coverage Information responses.
+3. CRD clients **SHALL NOT** depend on or set expectations for CRD servers to communicate data elements not marked as mandatory or mustSupport in the CRD specification.
 4. In the event a need to communicate data structures or elements not covered as required or mustSupport in the specification, the organization identifying the requirement are expected to submit change requests proposing adding the relevant profiles and/or mustSupport elements to a future version of the CRD specification.  If the proposed change is adopted and published in the CRD continuous integration build or the CI build of one of its dependencies (e.g. US Core), implementations **MAY**, by mutual agreement, pre-adopt the use of those additional profiles and/or mustSupport data elements and not be considered in violation of #1 or #3 above.
-5. Where cardinality and other constraints present in profiles allow data elements to be omitted, CRD compliant systems **SHALL NOT** treat the omission of those elements as an error.  I.e. CRD services are expected to return appropriate Coverage Information responses, not 4xx errors, and CRD clients are expected to execute system actions and/or display cards as normal.
+5. Where cardinality and other constraints present in profiles allow data elements to be omitted, CRD compliant systems **SHALL NOT** treat the omission of those elements as an error.  I.e. CRD servers are expected to return appropriate Coverage Information responses, not 4xx errors, and CRD clients are expected to execute system actions and/or display cards as normal.
 NOTE: It is acceptable for a Coverage Information response to indicate that [additional information is needed], [questionnaires need to be completed], or a [formal prior authorization be submitted] in situations where optional mustSupport elements are missing.
 6. CRD clients and services and **SHALL** use standard CRD data elements (i.e. elements found within CRD-defined or inherited profiles and marked as mandatory or mustSupport) to communicate needed data if such elements are intended to convey such information.  (If an organization believes they have a requirement for a data element not marked as mustSupport in the CRD or inherited profiles, they should raise the requirement for discussion on the [CRD stream] on chat.fhir.org.)
 7. CRD implementing organizations **SHALL NOT** publish guidance setting expectations for where certain data elements are conveyed within CRD and inherited data structures, but **MAY** submit change requests to CRD, HRex, or US Core requesting that additional guidance be provided to implementers on data structure usage to increase consistency across implementations.

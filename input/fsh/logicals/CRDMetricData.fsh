@@ -67,4 +67,4 @@ Description: "A logical model describing the information that should be captured
       * ^requirements = "Used to link the results of CRD to metric information captured for DTR and/or PAS."
     * satisfiedId   0..1 string          "Id if PA is satisfied"               "Corresponds to the satisfied-pa-id from the coverage-information extension."
     * businessLine  0..1 CodeableConcept "E.g. Medicare Advantage"             "A code that indicates which type of insurance this assertion applies to."
-// TODO need a binding here, but don't yet have one
+// TODO need a binding here, but do not yet have one

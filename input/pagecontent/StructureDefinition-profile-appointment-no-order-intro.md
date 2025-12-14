@@ -4,7 +4,7 @@
 <br/>
 CRD Clients **SHALL** use either this profile and/or the [with-order](StructureDefinition-profile-appointment-with-order.html) to provide `appointments` context objects to CRD Servers when invoking the [appointment-book](hooks.html#appointment-book) hook as well as to [resolve other references](foundation.html#additional-data-retrieval) to Appointment resources.
 
-This profile conveys the details of the appointment within the resource itself and doesn't make reference to a ServiceRequest.
+This profile conveys the details of the appointment within the resource itself and does not make reference to a ServiceRequest.
 
 Information provided in [Must Support]({{site.data.fhir.path}}profiling.html#mustsupport) elements will commonly be required for CRD Servers to perform coverage requirements discovery.
 <br/>

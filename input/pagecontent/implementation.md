@@ -1,12 +1,12 @@
-This page lists considerations and recommendations for implementation that fall outside the conformance expectations established by the specification. This covers content that the specification authors and project team consider to be essential business practices, good ideas, as well as concepts worthy of consideration and awareness. However, the content here doesn't define specific testable behavior.
+This page lists considerations and recommendations for implementation that fall outside the conformance expectations established by the specification. This covers content that the specification authors and project team consider to be essential business practices, good ideas, as well as concepts worthy of consideration and awareness. However, the content here does not define specific testable behavior.
 
 ### Suppressing Guidance
 
-Some CRD clients might suppress certain types of payer guidance as being the 'default' presumption. For example, "Covered, no prior authorization required". In cases where CRD systems do this, there might be an issue if the CRD service becomes unable to respond and the CRD client does not clearly flag to the user that the service is not available. In that case, providers might incorrectly presume that authorization is not needed. Clients that perform such suppression of messages **SHALL** mitigate this potential for misinterpretation.
+Some CRD clients might suppress certain types of payer guidance as being the 'default' presumption. For example, "Covered, no prior authorization required". In cases where CRD systems do this, there might be an issue if the CRD server becomes unable to respond and the CRD client does not clearly flag to the user that the service is not available. In that case, providers might incorrectly presume that authorization is not needed. Clients that perform such suppression of messages **SHALL** mitigate this potential for misinterpretation.
 
 ### Availability
 <a name="FHIR-48625"> </a>
-<p class="modified-content">While CRD availability isn't mission critical, outages will negatively impact both provider and payer healthcare experiences.  CRD servers <b>SHOULD</b> strive to achieve a minimum of 3-9s availability for their services and strive to provide at least some level of useful response to CRD clients even if some of their back-end systems are unavailable.</p>
+<p class="modified-content" markdown="1">While CRD availability is not mission critical, outages will negatively impact both provider and payer healthcare experiences.  CRD servers **SHOULD** strive to achieve a minimum of 3-9s availability for their services and strive to provide at least some level of useful response to CRD clients even if some of their back-end systems are unavailable.</p>
 
 ### Limitations on Accuracy
 
@@ -24,7 +24,7 @@ CRD functionality will typically not be able to be fully implemented using payer
 
 * With CRD, the only information available is what the clinical user specifically enters when creating a clinical order, appointment, etc. Back-office or financially oriented users will generally not be involved at all. The user's objective is to drive the clinical process, not the billing process. The codes provided will be clinical ones and the information entered will focus on what the performer needs to execute the request, not on what a payer might want to support prior authorization. Information such as who will perform, where they will perform, when they will perform, etc. may not be known. With CRD there can be multiple contingent responses. For example "Not covered if billed as A or B, covered with prior authorization needed if billed as C or D, and no authorization required if billed as E".
 
-* CRD isn't only seeking information about approval of a prior authorization. It also includes determining whether coverage exists, whether additional information is needed (such as DTR), etc. Legacy engines will not necessarily be set up to do this.
+* CRD is not only seeking information about approval of a prior authorization. It also includes determining whether coverage exists, whether additional information is needed (such as DTR), etc. Legacy engines will not necessarily be set up to do this.
 
 * The timeframes for evaluation will also differ. Many payers have an asynchronous prior authorization process where processing may take several minutes or even longer. CRD timelines are much shorter: 5 to 10 seconds, depending on circumstances.
 
@@ -34,21 +34,21 @@ Specific strategies that may be helpful for payers include:
 
 #### General strategies
 
-It will be common that the amount of information provided may be inadequate for a CRD service to confidently assert whether the requested service is covered or whether prior authorization is needed. Often the answer will be something like "if it's in network, then...", "if it's done on an out-patient basis, then...", or "if it's billed under one of these 3 codes, then..." The base results will fit into one of four buckets: "not covered", "covered with prior authorization required", "covered, with prior authorization granted", or "covered with no authorization needed". Typically, the "covered, with prior authorization granted" will not occur if there are multiple possible answers, as payers will not want to grant authorization if it's not clear what service will actually be billed. This means that, even in the worst case, a payer could theoretically provide a response with three coverage-information extensions, each documenting the circumstances in which that coverage circumstance will apply.
+It will be common that the amount of information provided may be inadequate for a CRD server to confidently assert whether the requested service is covered or whether prior authorization is needed. Often the answer will be something like "if it is in network, then...", "if it is done on an out-patient basis, then...", or "if it is billed under one of these 3 codes, then..." The base results will fit into one of four buckets: "not covered", "covered with prior authorization required", "covered, with prior authorization granted", or "covered with no authorization needed". Typically, the "covered, with prior authorization granted" will not occur if there are multiple possible answers, as payers will not want to grant authorization if it is not clear what service will actually be billed. This means that, even in the worst case, a payer could theoretically provide a response with three coverage-information extensions, each documenting the circumstances in which that coverage circumstance will apply.
 
 As much as possible, payers should endeavor to do exactly this. The specification allows payers to indicate the list of billing codes under which a given option will hold, as well as qualifiers such as "in network", "out of network", "performer type", etc. that apply to a specific coverage assertion.
 
 However, in some cases the rules for determining what the coverage expectations are too complex to reasonably express or even to evaluate without more information. In these cases, a payer has a few options:
 
-* If the request in the CDS Hook does not indicate the performer, the timeframe and/or the location and the payer's logic dictates that this information must be known before a reasonable response can be provided, the CRD service can use the 'info-needed' element to indicate what additional information (to be provided during order-dispatch or some other later business stage) is necessary to allow the payer to provide a useful response.
+* If the request in the CDS Hook does not indicate the performer, the timeframe and/or the location and the payer's logic dictates that this information must be known before a reasonable response can be provided, the CRD server can use the 'info-needed' element to indicate what additional information (to be provided during order-dispatch or some other later business stage) is necessary to allow the payer to provide a useful response.
 
-* Otherwise, the 'doc-needed' element can be sent indicating that additional (DTR) questions will need to be answered to provide the CRD service with enough information to evaluate coverage. 
+* Otherwise, the 'doc-needed' element can be sent indicating that additional (DTR) questions will need to be answered to provide the CRD server with enough information to evaluate coverage. 
 
 #### Terminology
 
 Information passed to the CRD server will typically contain clinical terminologies, might not contain billing terminologies, and will generally not include billing modifier codes or similar information often included in prior authorization requests. 
 
-CRD servers will need to support these clinical terminologies or map them to internally used billing terminologies when determining decision support results. Even when the code on an order *is* a billing code such as CPT, the interpretation is different. Having a CPT code on an order does not guarantee that the same CPT code will appear on the eventual claim. CRD services will need to map "order billing codes" to "potential claim billing codes" in the same manner as they map clinical codes.
+CRD servers will need to support these clinical terminologies or map them to internally used billing terminologies when determining decision support results. Even when the code on an order *is* a billing code such as CPT, the interpretation is different. Having a CPT code on an order does not guarantee that the same CPT code will appear on the eventual claim. CRD servers will need to map "order billing codes" to "potential claim billing codes" in the same manner as they map clinical codes.
 
 In situations where CRD clients are aware of the likely billing codes at the time of ordering, they **MAY** send these codes as additional CodeableConcept.coding repetitions to assist in server processing. If using CPT, note the ability to convey CPT modifier codes via post-coordination as described in the [Using CPT](https://terminology.hl7.org/CPT.html) page on terminology.hl7.org. However, payers cannot depend on such additional codings being present. Mappings will be required.
 
@@ -58,13 +58,13 @@ It is more efficient if mappings can be shared across payers and providers. This
 
 #### Service Types, Billing Diagnoses and Other Modifiers
 
-Often when submitting a claim or prior authorization request, the billing code does not stand alone. Instead, additional codes might be present that indicate information such as the level of complexity of the patient's condition, the reason for the service, exceptional circumstances such as "off hours", etc. This information often won't be present in the clinical resource transmitted in the CDS Hooks call.
+Often when submitting a claim or prior authorization request, the billing code does not stand alone. Instead, additional codes might be present that indicate information such as the level of complexity of the patient's condition, the reason for the service, exceptional circumstances such as "off hours", etc. This information often will not be present in the clinical resource transmitted in the CDS Hooks call.
 
-CRD services have a few options here:
+CRD servers have a few options here:
 
-1. Could potential modifiers impact the answer provided?  Often the answer will be "no". If a person doesn't have coverage for liposuction, it may not matter if it's in or out of network or delivered 'off hours'. If coverage determination can be made without knowing the modifiers, payers are expected to provide the information.
+1. Could potential modifiers impact the answer provided?  Often the answer will be "no". If a person does not have coverage for liposuction, it may not matter if it is in or out of network or delivered 'off hours'. If coverage determination can be made without knowing the modifiers, payers are expected to provide the information.
 
-2. Some modifiers might be inferred from other information about the order. For example, the service types such as "sleep study" or "hearing aid" might be determined from the location or the provider the request is dispatched to if they can't be readily inferred from the code.
+2. Some modifiers might be inferred from other information about the order. For example, the service types such as "sleep study" or "hearing aid" might be determined from the location or the provider the request is dispatched to if they cannot be readily inferred from the code.
 
 3. In some cases, the modifiers can be inferred from existing data about the patient. For example, if a treatment is sometimes given for diabetes treatment, and other times given for weight control, the payer could examine the record to see if there is a current condition indicating diabetes or obesity. If only one of the conditions exists, the payer can reasonably infer that as the reason for treatment (and can record their assumption as part of the coverage-information returned).
 

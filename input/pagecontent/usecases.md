@@ -25,7 +25,7 @@ The payer response to a CRD request might include:
 #### Scenario 1
 Mrs. Jones is a 35-year-old, previously healthy female who is seen by Dr. Good for a new onset headache that began abruptly 2 weeks prior to her visit. Her headaches are severe at times, last several hours, have been occurring with increasing frequency, and are now occurring daily. Her physical, including neurologic exam, is normal. Dr. Good is concerned about an intracranial process.
 
-Dr. Good wants to order a head CT to check for any masses. Dr. Good begins filling out the order for the CT in their EHR. In the background, the EHR initiates a call to the CRD server used by Mrs. Jones' payer providing information about the patient, her coverage and the CT order. The CRD service returns information within a few seconds identifying that a prior authorization request must be completed and submitted, as well as a list of the additional clinical documentation required (e.g., Progress Note or prior studies). It also provides a link to the required form. Dr. Good launches an app to complete the necessary paperwork to initiate a prior authorization and sends the relevant supporting information to the imaging center as part of the referral.
+Dr. Good wants to order a head CT to check for any masses. Dr. Good begins filling out the order for the CT in their EHR. In the background, the EHR initiates a call to the CRD server used by Mrs. Jones' payer providing information about the patient, her coverage and the CT order. The CRD server returns information within a few seconds identifying that a prior authorization request must be completed and submitted, as well as a list of the additional clinical documentation required (e.g., Progress Note or prior studies). It also provides a link to the required form. Dr. Good launches an app to complete the necessary paperwork to initiate a prior authorization and sends the relevant supporting information to the imaging center as part of the referral.
 
 Note: An app may also provide Dr. Good with additional useful information, such as a list of nearby imaging centers that are on Mrs. Jones' plan.
 
@@ -44,7 +44,7 @@ Mr. Light is a 45-year-old generally healthy male who presents for an annual exa
 As Dr. Good is completing the referral, their EHR contacts a CRD server used by Mr. Light's health plan. The service notifies them that for the referral to be covered under Mr. Light's coverage, the physician must request prior authorization and provide specific medical documentation as part of the request. The EHR provides a link to an insurer-provided app that displays the form partly populated with information from their EHR and guides them through the process of completing the information needed for prior authorization.
 
 #### Scenario 4
-Mrs. Abdallah is a 30-year-old female who is struggling with weight issues. Dr. Good feels that she'd be a good candidate for a dietary consult, however Mrs. Abdallah isn't sure whether her plan will cover the service and doesn't think she can afford it with her current salary. Before going through the work of writing up a formal referral, Dr. Good opts to check whether a referral would be covered. They launch an app within their EHR which auto-populates with information from the current patient. They choose "MNT/nutrition counseling" from the list of possible referral services and the app contacts Mrs. Abdallah's payer's CRD server. The server indicates that while Mrs. Abdallah does have coverage, MNT/nutrition counseling is not a benefit of her plan. Dr. Good informs Mrs. Abdallah of this, and they come up with an alternate plan. Dr. Good recommends a useful series of online videos and a couple of books Mrs. Abdallah can get from the library. Dr. Good also suggests Mrs. Abdallah shop around a bit for health plans when it comes time to renew her coverage for the following year.
+Mrs. Abdallah is a 30-year-old female who is struggling with weight issues. Dr. Good feels that she would be a good candidate for a dietary consult, however Mrs. Abdallah is not sure whether her plan will cover the service and does not think she can afford it with her current salary. Before going through the work of writing up a formal referral, Dr. Good opts to check whether a referral would be covered. They launch an app within their EHR which auto-populates with information from the current patient. They choose "MNT/nutrition counseling" from the list of possible referral services and the app contacts Mrs. Abdallah's payer's CRD server. The server indicates that while Mrs. Abdallah does have coverage, MNT/nutrition counseling is not a benefit of her plan. Dr. Good informs Mrs. Abdallah of this, and they come up with an alternate plan. Dr. Good recommends a useful series of online videos and a couple of books Mrs. Abdallah can get from the library. Dr. Good also suggests Mrs. Abdallah shop around a bit for health plans when it comes time to renew her coverage for the following year.
 
 ### CRD Workflow
 The high-level workflow for CRD is envisioned to work as follows:
@@ -72,10 +72,10 @@ Based on whether the provider has decided to perform the action or just wishes t
 The provider uses an EHR to initiate the clinical action from step #1, entering required information (e.g., a drug, a type of referral, or appointment) into forms provided by the EHR.
 
 **2b. Provider starts 'CRD what-if'**<br/>
-The provider uses an EHR to launch a 'what if?' CRD SMART app to explore payer coverage requirements. The provider indicates the type of action they're considering into the CRD SMART app which prompts for additional information relevant to coverage determination, such as the proposed drug, type of referral or appointment, etc.
+The provider uses an EHR to launch a 'what if?' CRD SMART app to explore payer coverage requirements. The provider indicates the type of action they are considering into the CRD SMART app which prompts for additional information relevant to coverage determination, such as the proposed drug, type of referral or appointment, etc.
 
 **3. Provider checks Payer CRD needs**<br/>
-The EHR or CRD SMART app contacts a CRD server used by their patient's payer to find out what information is required to perform Coverage Requirements Discovery (CRD) - particularly whether the CRD server requires protected health information (PHI) to evaluate the patient's coverage requirements, or whether the patient's coverage type and the proposed clinical action is enough. Optionally, the CRD service might provide the EHR with information about configuration options, such as the option to control the types of coverage requirements returned to the user or the number of requirements returned.
+The EHR or CRD SMART app contacts a CRD server used by their patient's payer to find out what information is required to perform Coverage Requirements Discovery (CRD) - particularly whether the CRD server requires protected health information (PHI) to evaluate the patient's coverage requirements, or whether the patient's coverage type and the proposed clinical action is enough. Optionally, the CRD server might provide the EHR with information about configuration options, such as the option to control the types of coverage requirements returned to the user or the number of requirements returned.
 
 Note:
 * Each patient will have coverage from their own specific payer and each payer may use their own unique CRD server.
@@ -104,12 +104,8 @@ Note:
 Based on the information provided and/or retrieved, the payer system returns guidance to the provider. The guidance can be in several forms:
 * A simple message indicating that service is covered without additional requirements
 * A message describing what coverage requirements exist
-* A link to external documentation that supports provided assertions that coverage does or doesn't exist, or whether prior authorization is needed.
-
-<div class="modified-content" markdown="1"><a name="FHIR-52463"> </a>
-* Links to specific forms or templates that need to be completed with instructions to launch DTR to gather additional information.
-</div>
-
+* A link to external documentation that supports provided assertions that coverage does or does not exist, or whether prior authorization is needed.
+* <span class="modified-content" markdown="1"><a name="FHIR-52463"> </a>Links to specific forms or templates that need to be completed with instructions to launch DTR to gather additional information.</span>
 * An indication that prior authorization is necessary and has been approved, including information such as the prior authorization number and assumed billing codes.
 * Links with recommendations to substitute the planned action with a different action and/or to add additional actions (e.g., proposals to replace a requested drug with a required first-line treatment or another drug covered by the patient's plan, to add a concurrent medication, additional diagnostic tests, etc.)
 

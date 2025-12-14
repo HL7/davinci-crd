@@ -96,7 +96,7 @@ Description: "Captures assertions from a payer about the coverage rules for a se
 * extension[reason] only Extension
   * ^short = "Reason for assertion"
   * ^definition = "Indicates the 'reason' for the coverage assertion"
-  * ^comment = "This can be used whenever the reason may not be obvious to the practitioner.  E.g. prior authorization is waived because the provider is gold-carded; patient is no longer a minor and hasn't been registered as an adult dependent; patient has reached their limit for this type of service this year; etc.  Additional standard reason codes may be introduced in the future.  If no standard code applies, use text."
+  * ^comment = "This can be used whenever the reason may not be obvious to the practitioner.  E.g. prior authorization is waived because the provider is gold-carded; patient is no longer a minor and has not been registered as an adult dependent; patient has reached their limit for this type of service this year; etc.  Additional standard reason codes may be introduced in the future.  If no standard code applies, use text."
   * ^condition[+] = crd-ci-q7
   * ^condition[+] = crd-ci-q8
   * value[x] 1..1
@@ -121,8 +121,17 @@ Description: "Captures assertions from a payer about the coverage rules for a se
   * extension[code] only Extension
     * ^short = "Name of name-value pair"
     * ^definition = "The type of detail or qualification expressed."
+    * ^comment = "The binding to the old temporary code system is retained for now for backward compatibility"
     * value[x] only CodeableConcept
-    * value[x] from CRDCoverageDetailCodes (extensible)
+    * valueCodeableConcept from CRDCoverageDetailCodesNew (extensible)
+    * valueCodeableConcept
+      * ^binding.extension.url = $additional-binding
+      * ^binding.extension.extension[0].url = "key"
+      * ^binding.extension.extension[=].valueId = "ci-detailold"
+      * ^binding.extension.extension[+].url = "purpose"
+      * ^binding.extension.extension[=].valueCode = #extensible
+      * ^binding.extension.extension[+].url = "valueSet"
+      * ^binding.extension.extension[=].valueCanonical = Canonical(CRDCoverageDetailCodes)
   * extension[value] only Extension
     * ^short = "Value of name-value pair"
     * ^definition = "The detail or qualification that applies to this coverage assertion."
@@ -188,7 +197,7 @@ Severity: #error
 Expression: "extension.where((url = 'covered' or url = 'pa-needed' or url = 'doc-needed') and value = 'conditional').count() >= 1 implies extension.where(url = 'info-needed').exists()"
 
 Invariant: crd-ci-q4
-Description: "If 'pa-needed' is 'satisfied', 'noauth', or 'not-covered', then 'Doc-purpose' can't be 'withpa'."
+Description: "If 'pa-needed' is 'satisfied', 'noauth', or 'not-covered', then 'Doc-purpose' cannot be 'withpa'."
 Severity: #error
 Expression: "extension.where(url = 'pa-needed' and (value = 'satisfied' or value = 'noauth' or value = 'not-covered')) and extension.where(url = 'doc-purpose').exists() implies extension.where(url = 'doc-purpose').all(value != 'withpa')"
 
