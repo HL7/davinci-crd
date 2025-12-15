@@ -9,6 +9,7 @@ This page describes the primary releases of the specification and summarizes the
 * [FHIR-52444](https://jira.hl7.org/browse/FHIR-52444) - Made support for prefetch mandatory *(enhancement)* [link](foundation.html#FHIR-52444)
 * [FHIR-53048](https://jira.hl7.org/browse/FHIR-53048) - Added CRD version extensions to service discovery and service invocation *(enhancement)* [link](deviations.html#crd-version-declaration)
 * [FHIR-52784](https://jira.hl7.org/browse/FHIR-52784) - Made support for prefetch mandatory (and removed example queries showing how to retrieve the 'required' data by query instead).  Also corrected "CRD Service" to "CRD server" *(correction)* [link](foundation.html#FHIR-52784a), [link](foundation.html#FHIR-52784b), [link](foundation.html#FHIR-52784c), [link](foundation.html#FHIR-52784d)
+* [FHIR-52588](https://jira.hl7.org/browse/FHIR-52585) - Added clearer rules about the use of the Form Completion Response Type *(clarification)* [link](cards.html#FHIR-52588)
 
 **Substative changes**
 * [FHIR-52452](https://jira.hl7.org/browse/FHIR-52452) - Added 'contained' as mustSupport to request resources and encounters *(enhancement)*
@@ -20,6 +21,8 @@ This page describes the primary releases of the specification and summarizes the
 * [FHIR-51715](https://jira.hl7.org/browse/FHIR-51715) - Cleaned up language on SMART on FHIR security expectations *(correction)* [link](security.html#FHIR-51715)
 * [FHIR-52326](https://jira.hl7.org/browse/FHIR-52326) - Added section on operational recommendations *(enhancement)* [link](foundation.html#FHIR-52326), (foundation.html#FHIR-52326b), [link](operational.html)
 * [FHIR-52357](https://jira.hl7.org/browse/FHIR-52357) - Allow Organization as a target for ServiceRequest.performer *(enhancement)* [link](StructureDefinition-profile-servicerequest.html)
+* [FHIR-52806](https://jira.hl7.org/browse/FHIR-52806) - Made clear that CRD invocation must not require transcription *(clarification)* [link](hooks.html#FHIR-52806)
+* [FHIR-52447](https://jira.hl7.org/browse/FHIR-52447) - Caching language should be for same patient/ordering organization *(correction)* [link](foundation.html#FHIR-52447)
 
 **Non-substantive changes**:
 * [FHIR-52002](https://jira.hl7.org/browse/FHIR-52002) - Updated ONC to ASTP/ONC *(correction)*
@@ -41,14 +44,13 @@ This page describes the primary releases of the specification and summarizes the
 * [FHIR-52324](https://jira.hl7.org/browse/FHIR-52324) - Manually added reference to CPT IP rules in IP section *(correction)* [link](index.html#intellectual-property-considerations)
 * [FHIR-49826](https://jira.hl7.org/browse/FHIR-49826) - Made clear that only the primary coverage can be included in prefetch, but multiple coverages are permitted over the FHIR API *(clarification)* [link](deviations.html#FHIR-49826)
 * [FHIR-50276](https://jira.hl7.org/browse/FHIR-50276) - Changed CDSHooks-CardType value set to point to terminology.hl7.org code system and added binding for CoverageDetail type that also points to THO  *(corection)* [link](ValueSet-cardType.html), [link](StructureDefinition-ext-coverage-information.html)
-* [FHIR-53067](https://jira.hl7.org/browse/FHIR-53067) - Added information on handling CRD edge cases *(clarification)* [link](hooks.html#FHIR-53067)
-* [FHIR-52586](https://jira.hl7.org/browse/FHIR-52586) - Deleted language about portals *(correction)* [link](cards.html#FHIR-52585)
-* [FHIR-53544](https://jira.hl7.org/browse/FHIR-53544) - Added a requirement for value on the coverage-assertion-id extension *(clarification)* [link](StructureDefinition-ext-coverage-information.html)
-* [FHIR-52806](https://jira.hl7.org/browse/FHIR-52806) - Clarified CRD concepts and requirements *(clarification)* [link](hooks.html#FHIR-52806)
-* [FHIR-52806](https://jira.hl7.org/browse/FHIR-51776) - Require support for order-select by payers *(clarification)* [link](operational.html#FHIR-51776)
-* [FHIR-52588](https://jira.hl7.org/browse/FHIR-52585) - Added "not required under regulation or legislation" to sentence *(correction)* [link](cards.html#FHIR-52588)
-* [FHIR-52532](https://jira.hl7.org/browse/FHIR-52532) - Revised sentence to accurately reflect payer involvement *(correction)* [link](deviations.html#FHIR-52531)
-* [FHIR-52447](https://jira.hl7.org/browse/FHIR-52447) - Caching language should be for same patient/ordering organization *(clarification)* [link](foundation.html#FHIR-52447)
+* [FHIR-53067](https://jira.hl7.org/browse/FHIR-53067) - Clarify that CRD can be invoked by client as needed *(clarification)* [link](hooks.html#FHIR-53067)
+* [FHIR-52586](https://jira.hl7.org/browse/FHIR-52586) - Deleted language about portals *(correction)*
+* [FHIR-53544](https://jira.hl7.org/browse/FHIR-53544) - Explicitly marked coverage-assertion-id value mandatory within extension *(correction)* [link](StructureDefinition-ext-coverage-information.html)
+* [FHIR-51776](https://jira.hl7.org/browse/FHIR-51776), [FHIR-50897](https://jira.hl7.org/browse/FHIR-50897) - Encourage support for order-select and encounter-start hooks *(clarification)* [link](operational.html#FHIR-51776)
+* [FHIR-52532](https://jira.hl7.org/browse/FHIR-52532) - Changed 'Best practices' to 'Planned therapy guidance' *(clarification)* [link](deviations.html#FHIR-52532)
+* [FHIR-53607](https://jira.hl7.org/browse/FHIR-53607) - Corrected 'time shorter' to be 'time longer' *(correction)* [link](foundation.html#FHIR-53607)
+
 
 ### Release 2.2.0-ballot
 

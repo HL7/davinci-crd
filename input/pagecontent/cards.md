@@ -305,7 +305,9 @@ This example proposes adding a monthly test to check liver function:
 
 
 ### Request Form Completion Response Type
-NOTE: DTR is the preferred solution where forms are needed for capturing information for payer purposes including, but not limited to, prior authorization, claims submission, or audit because of its ability to minimize data entry burden.<div class="modified-content" markdown="1"><a name="FHIR-52588"> </a>This response type **SHALL NOT** be used if:
+NOTE: DTR is the preferred solution where forms are needed for capturing information for payer purposes including, but not limited to, prior authorization, claims submission, or audit because of its ability to minimize data entry burden.
+
+<div class="modified-content" markdown="1"><a name="FHIR-52588"> </a>This response type **SHALL NOT** be used if:
 1. DTR is applicable to the use case (i.e. the form relates to prior auth, claim submission, appropriate use, or order fulfillment),
 2. DTR is supported by the CRD client (whether voluntarily or as required by regulation), and
 3. DTR is available from the server (e.g. not temporarily unavailable or not supported by a payer not subject to regulation).</div>
