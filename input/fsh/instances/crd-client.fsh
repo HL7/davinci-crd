@@ -53,10 +53,6 @@ RuleSet: CommonClient
     * insert CSinteraction(#SHOULD, #update, [[Allows annotating the encounter in response to a card.  (Support is mandatory if the system supports Encounters)]])
     * insert CSinteraction(#SHOULD, #search-type, [[Allows retrieval of the encounter for a nutrition order (including referenced location) if not retrieved as part of pre-fetch.  (Support is mandatory if not supported as part of pre-fetch.)]])
     * resource[=].versioning = #versioned-update
-    * resource[=].searchInclude = "Encounter:location"
-    * insert CSsearch(#SHALL, "patient", "http://hl7.org/fhir/SearchParameter/Coverage-patient", #reference, [[Allows filtering encounters based on the patient focus of the encounter]])
-    * insert CSsearch(#SHALL, "_id", "http://hl7.org/fhir/SearchParameter/Resource-id", #token, [[Allows searching for a Encounter by id]])
-    * insert CSsearch(#SHALL, "organization", "http://hl7.org/fhir/SearchParameter/Encounter-location", #reference, [[Allows performing an _include on Location when retrieving an Encounter]])
   * insert CSresourceCRD(#MedicationRequest, profile-medicationrequest)
     * resource[=].versioning = #versioned-update
     * insert CSinteraction(#SHOULD, #update, [[Allows annotating the medication request in response to a card.  (Support is mandatory if the system supports MedicationRequests)]])
@@ -71,8 +67,6 @@ RuleSet: CommonClient
     * insert CSinteraction(#SHOULD, #update, [[Allows annotating the vision prescription in response to a card.  (Support is mandatory if the system supports VisionPrescriptions)]])
   * insert CSresourceCRD(#Coverage, profile-coverage)
     * insert CSinteraction(#SHOULD, #search-type, [[Allows retrieval of the patient's coverage information if it is not retrieved as part of pre-fetch.  (Support is mandatory if not supported as part of pre-fetch.)  Note that only coverages relevant to the payer(s) associated with the requesting CRD Server are allowed to be returned.]])
-    * insert CSsearch(#SHALL, "patient", "http://hl7.org/fhir/SearchParameter/Coverage-patient", #reference, [[Allows retrieving coverages for the patient]])
-    * insert CSsearch(#SHALL, "status", "http://hl7.org/fhir/SearchParameter/Coverage-status", #token, [[Allows filtering to only active coverages]])
   * insert CSresourceCRD(#Device, profile-device)
     * insert CSinteraction(#SHOULD, #read, [[Allows retrieval of the device requested in a DeviceRequest if it is not retrieved as part of pre-fetch.  (Support is mandatory if not supported as part of pre-fetch.)]])
   * insert CSresourceCRD(#Location, profile-location)
@@ -85,8 +79,3 @@ RuleSet: CommonClient
     * insert CSinteraction(#SHOULD, #read, [[Allows retrieval of ordering and/or performing provider's information if not retrieved as part of pre-fetch.  (Support is mandatory if not supported as part of pre-fetch.)]])
   * insert CSresource(#PractitionerRole, "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-practitionerrole")
     * insert CSinteraction(#SHOULD, #search-type, [[Allows retrieval of ordering and/or performing provider's (including associated Practitioners and Organizations) if not retrieved as part of pre-fetch.  (Support is mandatory if not supported as part of pre-fetch.)]])
-    * resource[=].searchInclude[+] = "PractitionerRole:organization"
-    * resource[=].searchInclude[+] = "PractitionerRole:practitioner"
-    * insert CSsearch(#SHALL, "_id", "http://hl7.org/fhir/SearchParameter/Resource-id", #token, [[Allows searching for a PractitionerRole by id]])
-    * insert CSsearch(#SHALL, "organization", "http://hl7.org/fhir/SearchParameter/PractitionerRole-organization", #reference, [[Allows performing an _include on Organization when retrieving a PractitionerRole]])
-    * insert CSsearch(#SHALL, "practitioner", "http://hl7.org/fhir/SearchParameter/PractitionerRole-practitioner", #reference, [[Allows performing an _include on Practitioner when retrieving a PractitionerRole]])
