@@ -52,6 +52,7 @@ This page describes the primary releases of the specification and summarizes the
 * [FHIR-52532](https://jira.hl7.org/browse/FHIR-52532) - Changed 'Best practices' to 'Planned therapy guidance' *(clarification)* [link](deviations.html#FHIR-52532)
 * [FHIR-53607](https://jira.hl7.org/browse/FHIR-53607) - Corrected 'time shorter' to be 'time longer' *(correction)* [link](foundation.html#FHIR-53607)
 * [FHIR-53605](https://jira.hl7.org/browse/FHIR-53605), [FHIR-53606](https://jira.hl7.org/browse/FHIR-53606) - Clarified expectations around 'update' for resources in client CapabilityStatements *(clarification)* [link](CapabilityStatement-crd-client3.1.html), [link](CapabilityStatement-crd-client6.1.html), [link](CapabilityStatement-crd-client7.0.html)
+* [FHIR-45673](https://jira.hl7.org/browse/FHIR-45673) - Added guidance on how prior authorization cases are handled in CRD *(clarification)* [link][operational.html#FHIR-45673]
 
 
 ### Release 2.2.0-ballot
