@@ -33,6 +33,7 @@ license: CC0-1.0
 fhirVersion: 4.0.1
 parameters:
   path-expansion-params: "../../input/terminology-settings.json"
+  requirements-category-vs: "http://hl7.org/fhir/us/davinci-crd/ValueSet/cs-categories"
   auto-oid-root: 2.16.840.1.113883.4.642.40.18
   apply-publisher: true
   apply-contact: true
@@ -97,7 +98,7 @@ dependencies:
     id: tools
     uri: http://hl7.org/fhir/tools/ImplementationGuide/hl7.fhir.uv.tools
 #    version: current
-    version: 0.8.0
+    version: current
     reason: |
       Defines the CDS Hooks logical models
   hl7.fhir.uv.cds-hooks:
@@ -133,6 +134,11 @@ pages:
     extension:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
         valueCode: trial-use
+    conformancedetails.md:
+      title: Conformance Details
+      extension:
+        - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+          valueCode: trial-use
   security.md:
     title: Privacy, Safety, and Security
     extension:

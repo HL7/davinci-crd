@@ -18,6 +18,6 @@ When enabling CRD between payers and providers, agreements will need to be in pl
 If a payer makes a coverage determination that is specifically related to the existence (and expected fulfillment) of other orders, that can be conveyed using the 'dependency' element within the coverage-information extension."
 
 ### Additional Recommendations
-* <a name="FHIR-51776"></a>CRD clients and servers **SHOULD** support encounter-start and order-select, both to allow payer caching and to allow payers to return useful responses when possible (e.g. coverage expired, service not covered) with the limited information available in those hooks.  Requirements for either or both hook might be tightened to **SHALL** in a future release of this specification.
+* <a name="FHIR-51776"></a>§ops-1^crd-client,crd-server^exchange:CRD clients and servers **SHOULD** support encounter-start and order-select, both to allow payer caching and to allow payers to return useful responses when possible (e.g. coverage expired, service not covered) with the limited information available in those hooks.§  Requirements for either or both hook might be tightened to 'SHALL' in a future release of this specification.
 
 </div>

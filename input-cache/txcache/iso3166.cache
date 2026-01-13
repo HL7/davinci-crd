@@ -19,8 +19,8 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:a47c766a-fcac-4b11-a91c-96470c7290e1",
-    "timestamp" : "2025-12-02T04:17:20.102Z",
+    "identifier" : "urn:uuid:284cc75b-d6e6-476c-9f88-040129b182a4",
+    "timestamp" : "2026-01-02T22:25:50.361Z",
     "total" : 249,
     "offset" : 0,
     "parameter" : [{
@@ -1309,9 +1309,9 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:5ede74af-96d4-4059-bc4e-dc48c81c3004",
-    "timestamp" : "2025-12-02T04:17:21.024Z",
-    "total" : 249,
+    "identifier" : "urn:uuid:15b7ce88-6f4e-4534-bccf-b48901e3d2b5",
+    "timestamp" : "2026-01-02T22:25:51.345Z",
+    "total" : 291,
     "offset" : 0,
     "parameter" : [{
       "name" : "excludeNested",
@@ -2573,6 +2573,216 @@ e: {
       "system" : "urn:iso:std:iso:3166",
       "code" : "ZW",
       "display" : "Zimbabwe"
+    },
+    {
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "AA",
+      "display" : "User-assigned"
+    },
+    {
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "QM",
+      "display" : "User-assigned"
+    },
+    {
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "QN",
+      "display" : "User-assigned"
+    },
+    {
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "QO",
+      "display" : "User-assigned"
+    },
+    {
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "QP",
+      "display" : "User-assigned"
+    },
+    {
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "QQ",
+      "display" : "User-assigned"
+    },
+    {
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "QR",
+      "display" : "User-assigned"
+    },
+    {
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "QS",
+      "display" : "User-assigned"
+    },
+    {
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "QT",
+      "display" : "User-assigned"
+    },
+    {
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "QU",
+      "display" : "User-assigned"
+    },
+    {
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "QV",
+      "display" : "User-assigned"
+    },
+    {
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "QW",
+      "display" : "User-assigned"
+    },
+    {
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "QX",
+      "display" : "User-assigned"
+    },
+    {
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "QY",
+      "display" : "User-assigned"
+    },
+    {
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "QZ",
+      "display" : "User-assigned"
+    },
+    {
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "XA",
+      "display" : "User-assigned"
+    },
+    {
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "XB",
+      "display" : "User-assigned"
+    },
+    {
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "XC",
+      "display" : "User-assigned"
+    },
+    {
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "XD",
+      "display" : "User-assigned"
+    },
+    {
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "XE",
+      "display" : "User-assigned"
+    },
+    {
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "XF",
+      "display" : "User-assigned"
+    },
+    {
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "XG",
+      "display" : "User-assigned"
+    },
+    {
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "XH",
+      "display" : "User-assigned"
+    },
+    {
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "XI",
+      "display" : "User-assigned"
+    },
+    {
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "XJ",
+      "display" : "User-assigned"
+    },
+    {
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "XK",
+      "display" : "Kosovo"
+    },
+    {
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "XL",
+      "display" : "User-assigned"
+    },
+    {
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "XM",
+      "display" : "User-assigned"
+    },
+    {
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "XN",
+      "display" : "User-assigned"
+    },
+    {
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "XO",
+      "display" : "User-assigned"
+    },
+    {
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "XP",
+      "display" : "User-assigned"
+    },
+    {
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "XQ",
+      "display" : "User-assigned"
+    },
+    {
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "XR",
+      "display" : "User-assigned"
+    },
+    {
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "XS",
+      "display" : "User-assigned"
+    },
+    {
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "XT",
+      "display" : "User-assigned"
+    },
+    {
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "XU",
+      "display" : "User-assigned"
+    },
+    {
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "XV",
+      "display" : "User-assigned"
+    },
+    {
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "XW",
+      "display" : "User-assigned"
+    },
+    {
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "XX",
+      "display" : "Unknown"
+    },
+    {
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "XY",
+      "display" : "User-assigned"
+    },
+    {
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "XZ",
+      "display" : "International Waters"
+    },
+    {
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "ZZ",
+      "display" : "Unknown or Invalid Territory"
     }]
   }
 },
@@ -2599,8 +2809,8 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:173f8d53-6476-44a4-bf4d-3a1ecb0b0691",
-    "timestamp" : "2025-12-02T04:17:22.414Z",
+    "identifier" : "urn:uuid:7e934ff7-a143-4dcf-8e9b-e7686b6364ec",
+    "timestamp" : "2026-01-02T22:25:52.314Z",
     "total" : 249,
     "offset" : 0,
     "parameter" : [{

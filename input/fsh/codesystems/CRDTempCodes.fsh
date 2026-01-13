@@ -109,3 +109,12 @@ Description: "Codes temporarily defined as part of the CRD implementation guide.
   * #72 "Rural Health Clinic" "A certified facility which is located in a rural medically underserved area that provides ambulatory primary medical care under the general direction of a physician."
   * #81 "Independent Laboratory" "A laboratory certified to perform diagnostic and/or clinical tests independent of an institution or a physician's office."
   * #99 "Other Place of Service" "Other place of service not identified above."
+
+* #_reqcat      "Requirements Categories"  "Codes that help to categorize requirements statements"
+  * ^property.code = #abstract
+  * ^property.valueBoolean = true
+  * #business   "business"            "Requirements relating to the business operations of the entities responsible for a system"
+  * #exchange   "exchange"            "Requirements relating to when or how data is exchanged with other systems"
+  * #processing "processing"          "Requirements related to how data is dealt with internally to a system"
+  * #storage    "storage"             "Requirements relating to when or how data is or is not persisted within a system"
+  * #ui         "ui"                  "Requirements relating to the appearance of information on a user interface"

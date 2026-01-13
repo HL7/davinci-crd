@@ -2,5 +2,5 @@
 
 <a name="FHIR-51045"> </a>
 <p class="new-content" markdown="1">
-If a Location is a fine-grained location such as a bed or room, the address **SHALL** be propagated from the higher-level location it is part of.  I.e. If there's an address on a building or campus level, that address must appear on the Location instance for a room or bed within that building/campus.
+§prof-13?^crd-client^exchange:If a Location is a fine-grained location such as a bed or room, the address **SHALL** be propagated from the higher-level location it is part of.§  I.e. If there's an address on a building or campus level, that address must appear on the Location instance for a room or bed within that building/campus.
 </p>

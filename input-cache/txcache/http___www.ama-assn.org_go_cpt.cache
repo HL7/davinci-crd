@@ -129,7 +129,7 @@ v: {
   "error" : "Unknown code '0796T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'",
   "class" : "UNKNOWN",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0 0 : start\r\n16 16   : 0ms  : Analysing http://hl7.org/fhir/ValueSet/@all for validation purposes\r\n16 0    : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n16 0    : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n16 0    : 0ms  : Prepare include: \"()\"\r\n16 0    : 0ms  : Validate \"[http://www.ama-assn.org/go/cpt#0796T (\"\")]\"\r\n16 0    : 0ms  : Check \"http://www.ama-assn.org/go/cpt#0796T\"\r\n16 0    : 0ms  : Using CodeSystem \"http://www.ama-assn.org/go/cpt|2023\" (content = complete)\r\n",
+  "diagnostics" : "0 0 : start\r\n0 0     : 0ms  : Analysing http://hl7.org/fhir/ValueSet/@all for validation purposes\r\n0 0     : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n0 0     : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n0 0     : 0ms  : Prepare include: \"()\"\r\n0 0     : 0ms  : Validate \"[http://www.ama-assn.org/go/cpt#0796T (\"\")]\"\r\n0 0     : 0ms  : Check \"http://www.ama-assn.org/go/cpt#0796T\"\r\n0 0     : 0ms  : Using CodeSystem \"http://www.ama-assn.org/go/cpt|2023\" (content = complete)\r\n",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",
@@ -196,7 +196,7 @@ v: {
   "error" : "Unknown code '0797T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'",
   "class" : "UNKNOWN",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0 0 : start\r\n16 16   : 0ms  : Analysing http://hl7.org/fhir/ValueSet/@all for validation purposes\r\n16 0    : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n16 0    : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n16 0    : 0ms  : Prepare include: \"()\"\r\n16 0    : 0ms  : Validate \"[http://www.ama-assn.org/go/cpt#0797T (\"\")]\"\r\n16 0    : 0ms  : Check \"http://www.ama-assn.org/go/cpt#0797T\"\r\n16 0    : 0ms  : Using CodeSystem \"http://www.ama-assn.org/go/cpt|2023\" (content = complete)\r\n",
+  "diagnostics" : "0 0 : start\r\n0 0     : 0ms  : Analysing http://hl7.org/fhir/ValueSet/@all for validation purposes\r\n0 0     : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n0 0     : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n0 0     : 0ms  : Prepare include: \"()\"\r\n0 0     : 0ms  : Validate \"[http://www.ama-assn.org/go/cpt#0797T (\"\")]\"\r\n0 0     : 0ms  : Check \"http://www.ama-assn.org/go/cpt#0797T\"\r\n0 0     : 0ms  : Using CodeSystem \"http://www.ama-assn.org/go/cpt|2023\" (content = complete)\r\n",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",
@@ -263,7 +263,7 @@ v: {
   "error" : "Unknown code '0804T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'",
   "class" : "UNKNOWN",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0 0 : start\r\n15 15   : 0ms  : Analysing http://hl7.org/fhir/ValueSet/@all for validation purposes\r\n15 0    : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n15 0    : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n15 0    : 0ms  : Prepare include: \"()\"\r\n15 0    : 0ms  : Validate \"[http://www.ama-assn.org/go/cpt#0804T (\"\")]\"\r\n15 0    : 0ms  : Check \"http://www.ama-assn.org/go/cpt#0804T\"\r\n15 0    : 0ms  : Using CodeSystem \"http://www.ama-assn.org/go/cpt|2023\" (content = complete)\r\n",
+  "diagnostics" : "0 0 : start\r\n0 0     : 0ms  : Analysing http://hl7.org/fhir/ValueSet/@all for validation purposes\r\n0 0     : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n0 0     : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n0 0     : 0ms  : Prepare include: \"()\"\r\n0 0     : 0ms  : Validate \"[http://www.ama-assn.org/go/cpt#0804T (\"\")]\"\r\n0 0     : 0ms  : Check \"http://www.ama-assn.org/go/cpt#0804T\"\r\n0 0     : 0ms  : Using CodeSystem \"http://www.ama-assn.org/go/cpt|2023\" (content = complete)\r\n",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",
@@ -330,7 +330,7 @@ v: {
   "error" : "Unknown code '0823T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'",
   "class" : "UNKNOWN",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0 0 : start\r\n0 0     : 0ms  : Analysing http://hl7.org/fhir/ValueSet/@all for validation purposes\r\n0 0     : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n0 0     : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n0 0     : 0ms  : Prepare include: \"()\"\r\n0 0     : 0ms  : Validate \"[http://www.ama-assn.org/go/cpt#0823T (\"\")]\"\r\n0 0     : 0ms  : Check \"http://www.ama-assn.org/go/cpt#0823T\"\r\n0 0     : 0ms  : Using CodeSystem \"http://www.ama-assn.org/go/cpt|2023\" (content = complete)\r\n",
+  "diagnostics" : "0 0 : start\r\n16 16   : 0ms  : Analysing http://hl7.org/fhir/ValueSet/@all for validation purposes\r\n16 0    : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n16 0    : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n16 0    : 0ms  : Prepare include: \"()\"\r\n16 0    : 0ms  : Validate \"[http://www.ama-assn.org/go/cpt#0823T (\"\")]\"\r\n16 0    : 0ms  : Check \"http://www.ama-assn.org/go/cpt#0823T\"\r\n16 0    : 0ms  : Using CodeSystem \"http://www.ama-assn.org/go/cpt|2023\" (content = complete)\r\n",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",
@@ -397,7 +397,7 @@ v: {
   "error" : "Unknown code '0915T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'",
   "class" : "UNKNOWN",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0 0 : start\r\n15 15   : 0ms  : Analysing http://hl7.org/fhir/ValueSet/@all for validation purposes\r\n15 0    : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n15 0    : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n15 0    : 0ms  : Prepare include: \"()\"\r\n15 0    : 0ms  : Validate \"[http://www.ama-assn.org/go/cpt#0915T (\"\")]\"\r\n15 0    : 0ms  : Check \"http://www.ama-assn.org/go/cpt#0915T\"\r\n15 0    : 0ms  : Using CodeSystem \"http://www.ama-assn.org/go/cpt|2023\" (content = complete)\r\n",
+  "diagnostics" : "0 0 : start\r\n0 0     : 0ms  : Analysing http://hl7.org/fhir/ValueSet/@all for validation purposes\r\n0 0     : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n0 0     : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n0 0     : 0ms  : Prepare include: \"()\"\r\n0 0     : 0ms  : Validate \"[http://www.ama-assn.org/go/cpt#0915T (\"\")]\"\r\n0 0     : 0ms  : Check \"http://www.ama-assn.org/go/cpt#0915T\"\r\n0 0     : 0ms  : Using CodeSystem \"http://www.ama-assn.org/go/cpt|2023\" (content = complete)\r\n",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",
@@ -526,7 +526,7 @@ v: {
   "system" : "http://www.ama-assn.org/go/cpt",
   "version" : "2023",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0 0 : start\r\n15 15   : 0ms  : Analysing http://hl7.org/fhir/ValueSet/@all for validation purposes\r\n15 0    : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n15 0    : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n15 0    : 0ms  : Prepare include: \"()\"\r\n15 0    : 0ms  : Validate \"[http://www.ama-assn.org/go/cpt#77062 (\"\")]\"\r\n15 0    : 0ms  : Check \"http://www.ama-assn.org/go/cpt#77062\"\r\n15 0    : 0ms  : Using CodeSystem \"http://www.ama-assn.org/go/cpt|2023\" (content = complete)\r\n",
+  "diagnostics" : "0 0 : start\r\n16 16   : 0ms  : Analysing http://hl7.org/fhir/ValueSet/@all for validation purposes\r\n16 0    : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n16 0    : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n16 0    : 0ms  : Prepare include: \"()\"\r\n16 0    : 0ms  : Validate \"[http://www.ama-assn.org/go/cpt#77062 (\"\")]\"\r\n16 0    : 0ms  : Check \"http://www.ama-assn.org/go/cpt#77062\"\r\n16 0    : 0ms  : Using CodeSystem \"http://www.ama-assn.org/go/cpt|2023\" (content = complete)\r\n",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -586,7 +586,7 @@ v: {
   "system" : "http://www.ama-assn.org/go/cpt",
   "version" : "2023",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0 0 : start\r\n297 297 : 0ms  : Analysing http://hl7.org/fhir/ValueSet/@all for validation purposes\r\n297 0   : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n297 0   : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n297 0   : 0ms  : Prepare include: \"()\"\r\n297 0   : 0ms  : Validate \"[http://www.ama-assn.org/go/cpt#77066 (\"\")]\"\r\n297 0   : 0ms  : Check \"http://www.ama-assn.org/go/cpt#77066\"\r\n297 0   : 0ms  : Using CodeSystem \"http://www.ama-assn.org/go/cpt|2023\" (content = complete)\r\n",
+  "diagnostics" : "0 0 : start\r\n0 0     : 0ms  : Analysing http://hl7.org/fhir/ValueSet/@all for validation purposes\r\n0 0     : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n0 0     : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n0 0     : 0ms  : Prepare include: \"()\"\r\n0 0     : 0ms  : Validate \"[http://www.ama-assn.org/go/cpt#77066 (\"\")]\"\r\n0 0     : 0ms  : Check \"http://www.ama-assn.org/go/cpt#77066\"\r\n0 0     : 0ms  : Using CodeSystem \"http://www.ama-assn.org/go/cpt|2023\" (content = complete)\r\n",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -614,7 +614,7 @@ v: {
   "system" : "http://www.ama-assn.org/go/cpt",
   "version" : "2023",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0 0 : start\r\n16 16   : 0ms  : Analysing http://hl7.org/fhir/ValueSet/@all for validation purposes\r\n16 0    : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n16 0    : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n16 0    : 0ms  : Prepare include: \"()\"\r\n16 0    : 0ms  : Validate \"[http://www.ama-assn.org/go/cpt#77065 (\"\")]\"\r\n16 0    : 0ms  : Check \"http://www.ama-assn.org/go/cpt#77065\"\r\n16 0    : 0ms  : Using CodeSystem \"http://www.ama-assn.org/go/cpt|2023\" (content = complete)\r\n",
+  "diagnostics" : "0 0 : start\r\n0 0     : 0ms  : Analysing http://hl7.org/fhir/ValueSet/@all for validation purposes\r\n0 0     : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n0 0     : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n0 0     : 0ms  : Prepare include: \"()\"\r\n0 0     : 0ms  : Validate \"[http://www.ama-assn.org/go/cpt#77065 (\"\")]\"\r\n0 0     : 0ms  : Check \"http://www.ama-assn.org/go/cpt#77065\"\r\n0 0     : 0ms  : Using CodeSystem \"http://www.ama-assn.org/go/cpt|2023\" (content = complete)\r\n",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"

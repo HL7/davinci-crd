@@ -29,6 +29,7 @@ Implementers should also familiarize themselves with the FHIR resources used wit
     </tr>
   </thead>
   <tbody>
+    <tr><td><a href="http://hl7.org/fhir/r5/actordefinion.html">ActorDefinition</a></td><td>Used to help identify the entities that are subject to conformance expectations (pre-adopted from R5)</td></tr>
     <tr><td><a href="{{site.data.fhir.path}}appointment.html">Appointment</a></td><td>One of the resources that can trigger payer decision support</td></tr>
     <tr><td><a href="{{site.data.fhir.path}}binary.html">Binary</a></td><td>Used to represent example instances of CDS Hooks JSON structures</td></tr>
     <tr><td><a href="{{site.data.fhir.path}}bundle.html">Bundle</a></td><td>Used when delivering collections of resources in a CDS Hooks call, also used for queries</td></tr>
@@ -49,6 +50,7 @@ Implementers should also familiarize themselves with the FHIR resources used wit
     <tr><td><a href="{{site.data.fhir.path}}practitioner.html">Practitioner</a></td><td>Used when identifying providers in Encounters, Tasks, and all requests</td></tr>
     <tr><td><a href="{{site.data.fhir.path}}practitionerrole.html">PractitionerRole</a></td><td>Used when identifying providers in Encounters, Tasks, and all requests</td></tr>
     <tr><td><a href="{{site.data.fhir.path}}questionnaire.html">Questionnaire</a></td><td>Used to support the capture of additional information not covered by DTR</td></tr>
+    <tr><td><a href="http://hl7.org/fhir/r5/requirements.html">Requirements</a></td><td>Provides a computable listing of the text-based conformance expectations of the guide (pre-adopted from R5)</td></tr>
     <tr><td><a href="{{site.data.fhir.path}}servicerequest.html">ServiceRequest</a></td><td>One of the resources that can trigger payer decision support</td></tr>
     <tr><td><a href="{{site.data.fhir.path}}structuredefinition.html">StructureDefinition</a></td><td>Used when profiling resources, defining extensions, and defining profiles and extensions on CDS Hooks models</td></tr>
     <tr><td><a href="{{site.data.fhir.path}}task.html">Task</a></td><td>Used to manage dispatching orders to performing providers or locations</td></tr>

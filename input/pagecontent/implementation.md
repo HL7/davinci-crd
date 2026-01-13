@@ -2,11 +2,11 @@ This page lists considerations and recommendations for implementation that fall 
 
 ### Suppressing Guidance
 
-Some CRD clients might suppress certain types of payer guidance as being the 'default' presumption. For example, "Covered, no prior authorization required". In cases where CRD systems do this, there might be an issue if the CRD server becomes unable to respond and the CRD client does not clearly flag to the user that the service is not available. In that case, providers might incorrectly presume that authorization is not needed. Clients that perform such suppression of messages **SHALL** mitigate this potential for misinterpretation.
+Some CRD clients might suppress certain types of payer guidance as being the 'default' presumption. For example, "Covered, no prior authorization required". In cases where CRD systems do this, there might be an issue if the CRD server becomes unable to respond and the CRD client does not clearly flag to the user that the service is not available. In that case, providers might incorrectly presume that authorization is not needed. §impl-1^crd-client^ui:Clients that suppress 'default presumption' coverage-information of messages **SHALL** mitigate the potential for misinterpretation in the event CRD is unavailable.§
 
 ### Availability
 <a name="FHIR-48625"> </a>
-<p class="modified-content" markdown="1">While CRD availability is not mission critical, outages will negatively impact both provider and payer healthcare experiences.  CRD servers **SHOULD** strive to achieve a minimum of 3-9s availability for their services and strive to provide at least some level of useful response to CRD clients even if some of their back-end systems are unavailable.</p>
+<p class="modified-content" markdown="1">While CRD availability is not mission critical, outages will negatively impact both provider and payer healthcare experiences.  §impl-2^crd-server^processing:CRD servers **SHOULD** strive to achieve a minimum of 3-9s availability for their services and strive to provide at least some level of useful response to CRD clients even if some of their back-end systems are unavailable.§</p>
 
 ### Limitations on Accuracy
 
@@ -50,7 +50,7 @@ Information passed to the CRD server will typically contain clinical terminologi
 
 CRD servers will need to support these clinical terminologies or map them to internally used billing terminologies when determining decision support results. Even when the code on an order *is* a billing code such as CPT, the interpretation is different. Having a CPT code on an order does not guarantee that the same CPT code will appear on the eventual claim. CRD servers will need to map "order billing codes" to "potential claim billing codes" in the same manner as they map clinical codes.
 
-In situations where CRD clients are aware of the likely billing codes at the time of ordering, they **MAY** send these codes as additional CodeableConcept.coding repetitions to assist in server processing. If using CPT, note the ability to convey CPT modifier codes via post-coordination as described in the [Using CPT](https://terminology.hl7.org/CPT.html) page on terminology.hl7.org. However, payers cannot depend on such additional codings being present. Mappings will be required.
+§impl-3?^crd-client^exchange:In situations where CRD clients are aware of the likely billing codes at the time of ordering, they **MAY** send these codes as additional CodeableConcept.coding repetitions to assist in server processing.§ If using CPT, note the ability to convey CPT modifier codes via post-coordination as described in the [Using CPT](https://terminology.hl7.org/CPT.html) page on terminology.hl7.org. However, payers cannot depend on such additional codings being present. Mappings will be required.
 
 This guide does not define how mappings between "ordered" codes and "potential resulting billing codes" are produced. Ideally, such mappings would be informed by payer knowledge of what sorts of claims typically result from orders of a particular type. In some cases, the mappings could vary based on performing organization or practitioner. Mappings will need to evolve as clinical and billing practices evolve and as the clinical and billing terminologies change.
 
@@ -70,7 +70,7 @@ CRD servers have a few options here:
 
 4. If modifiers are relevant to the coverage determination, there's no ability to infer their values from other information in the order or the patient's record, and the determination of potential coverage outcomes is too complex to simply return two or three alternative contingent coverage-information instances that reflect the level of coverage in different circumstances, the payer can use DTR to solicit the additional needed information.
 
-Where a payer has made inferences beyond what's explicit in the CRD request, the response SHOULD make clear what assumptions around billing codes, in/out-of-network, delivery location were made in providing the response.  For example:
+§impl-4^crd-server^exchange:Where a CRD server has made inferences beyond what is explicit in the CRD request, the response **SHOULD** make clear what assumptions around billing codes, in/out-of-network, delivery location were made in providing the response.§  For example:
 
 * presumed billing codes can be conveyed in the [billingCode element](StructureDefinition-ext-coverage-information-definitions.html#diff_Extension.extension:billingCode).
 * limitations on quantity, period, or expectations about in-network/out-of-network can be conveyed in the [detail element](StructureDefinition-ext-coverage-information-definitions.html#diff_Extension.extension:detail).
