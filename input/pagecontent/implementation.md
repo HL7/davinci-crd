@@ -12,6 +12,10 @@ Some CRD clients might suppress certain types of payer guidance as being the 'de
 
 In rare situations, circumstances might change in a way that invalidates information provided by a CRD server prior to execution of an ordered service. For example, coverage is terminated or changed by the employer, or data in the record is subsequently found to be erroneous. Providers (and where provided information is shared with them, patients) will need to be aware that, irrespective of this guide's expectations for [accuracy](foundation.html#accuracy), assertions made by a CRD server are always "point-in-time" and do not constitute an irrevocable promise any more than equivalent assertions made via telephone, fax, or mail.
 
+### Multiple Components
+
+As discussed in the section on [ePA coordinators](epa.html), CRD clients and/or CRD servers might not be monolithing, but instead constructed of various components (referred to on the page as provider HIT and payer HIT), respectively.  §impl-3^crd-client,crd-server^exchange:Even if implemented using multiple components, there is still a requirement that the exchanges between the provider HIT (including any ePA coordinators) and the payer HIT (including any ePA coordinators) **SHALL** replicate all of the defined exchanges between provider and payer.  I.e. A system implemented as components should appear no different to its communication partner than a monolithic system.
+
 ### Managing 
 
 Key aspects of interoperability for this specification include agreement on how to identify payers, identify different types of coverage, etc. As yet, there is no industry-wide solution to this issue. However, HL7 is working with industry partners on viable solutions to these issues. Guidance and recommendations on how to manage consistent identity of payer concepts as well as other topics can be found in the [CRD Implementer Support](https://confluence.hl7.org/pages/viewpage.action?pageId=91991946) confluence page. Some of the guidance there may migrate to this specification and become 'SHALL' in future releases, so implementers are strongly encouraged to align with the guidance on the page in their early development.
@@ -50,7 +54,7 @@ Information passed to the CRD server will typically contain clinical terminologi
 
 CRD servers will need to support these clinical terminologies or map them to internally used billing terminologies when determining decision support results. Even when the code on an order *is* a billing code such as CPT, the interpretation is different. Having a CPT code on an order does not guarantee that the same CPT code will appear on the eventual claim. CRD servers will need to map "order billing codes" to "potential claim billing codes" in the same manner as they map clinical codes.
 
-§impl-3?^crd-client^exchange:In situations where CRD clients are aware of the likely billing codes at the time of ordering, they **MAY** send these codes as additional CodeableConcept.coding repetitions to assist in server processing.§ If using CPT, note the ability to convey CPT modifier codes via post-coordination as described in the [Using CPT](https://terminology.hl7.org/CPT.html) page on terminology.hl7.org. However, payers cannot depend on such additional codings being present. Mappings will be required.
+§impl-4?^crd-client^exchange:In situations where CRD clients are aware of the likely billing codes at the time of ordering, they **MAY** send these codes as additional CodeableConcept.coding repetitions to assist in server processing.§ If using CPT, note the ability to convey CPT modifier codes via post-coordination as described in the [Using CPT](https://terminology.hl7.org/CPT.html) page on terminology.hl7.org. However, payers cannot depend on such additional codings being present. Mappings will be required.
 
 This guide does not define how mappings between "ordered" codes and "potential resulting billing codes" are produced. Ideally, such mappings would be informed by payer knowledge of what sorts of claims typically result from orders of a particular type. In some cases, the mappings could vary based on performing organization or practitioner. Mappings will need to evolve as clinical and billing practices evolve and as the clinical and billing terminologies change.
 
@@ -70,7 +74,7 @@ CRD servers have a few options here:
 
 4. If modifiers are relevant to the coverage determination, there's no ability to infer their values from other information in the order or the patient's record, and the determination of potential coverage outcomes is too complex to simply return two or three alternative contingent coverage-information instances that reflect the level of coverage in different circumstances, the payer can use DTR to solicit the additional needed information.
 
-§impl-4^crd-server^exchange:Where a CRD server has made inferences beyond what is explicit in the CRD request, the response **SHOULD** make clear what assumptions around billing codes, in/out-of-network, delivery location were made in providing the response.§  For example:
+§impl-5^crd-server^exchange:Where a CRD server has made inferences beyond what is explicit in the CRD request, the response **SHOULD** make clear what assumptions around billing codes, in/out-of-network, delivery location were made in providing the response.§  For example:
 
 * presumed billing codes can be conveyed in the [billingCode element](StructureDefinition-ext-coverage-information-definitions.html#diff_Extension.extension:billingCode).
 * limitations on quantity, period, or expectations about in-network/out-of-network can be conveyed in the [detail element](StructureDefinition-ext-coverage-information-definitions.html#diff_Extension.extension:detail).
