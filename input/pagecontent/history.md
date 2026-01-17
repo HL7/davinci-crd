@@ -25,6 +25,7 @@ This page describes the primary releases of the specification and summarizes the
 * [FHIR-52806](https://jira.hl7.org/browse/FHIR-52806) - Made clear that CRD invocation must not require transcription *(clarification)* [link](hooks.html#FHIR-52806)
 * [FHIR-52447](https://jira.hl7.org/browse/FHIR-52447) - Caching language should be for same patient/ordering organization *(correction)* [link](foundation.html#FHIR-52447)
 * [FHIR-53603](https://jira.hl7.org/browse/FHIR-53603), [FHIR-53604](https://jira.hl7.org/browse/FHIR-53604) - Removed references to CRD-specific search parameter expectations in capability statements *(correction)* [link](CapabilityStatement-crd-client3.1.html), [link](CapabilityStatement-crd-client6.1.html), [link](CapabilityStatement-crd-client7.0.html)
+* [FHIR-50216](https://jira.hl7.org/browse/FHIR-50216) - Added expectations on interoperability *(clarification)* [link](conformance.html#interoperability-expectations)
 
 **Non-substantive changes**:
 * [FHIR-52002](https://jira.hl7.org/browse/FHIR-52002) - Updated ONC to ASTP/ONC *(correction)*
