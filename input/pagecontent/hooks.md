@@ -40,9 +40,15 @@ The 'primary' hooks are [Appointment Book](#appointment-book), [Orders Sign](#or
 
 The 'secondary' hooks are [Orders Select](#order-select), [Encounter Start](#encounter-start), and [Encounter Discharge](#encounter-discharge).  §hook-17^crd-client^exchange:These hooks **MAY** return cards or system actions, but are not expected to, and CRD clients are free to ignore any cards or actions returned.§  (§hook-18?^crd-client^exchange:CRD clients **SHOULD** use the [configuration options](deviations.html#new-hook-configuration-mechanism) to instruct CRD servers to not even try to return responses if the client does not intend to display/process them.§)  §hook-19?^crd-server^exchange:If Coverage Information is returned for these hooks, it **SHALL NOT** include messages indicating a need for [clinical](ValueSet-AdditionalDocumentation.html) or [administrative](ValueSet-AdditionalDocumentation.html) information, as such information is expected to be made available later in the process and therefore such guidance is not useful.§
 
-The following sections describe the hooks covered by this implementation guide as well as any constraints, profiles, and resources expected to be supported by conformant implementations.
+<div class="modified-content" markdown="1"><a name="FHIR-53579-a"> </a>
 
-The hooks listed on the CDS hooks website are subject to update by the community at any time until they go through the ballot process.  However, all substantive changes are noted in the *Change Log* section at the bottom of the page describing each hook.  For each hook listed below, this specification identifies a specific version.  For the sake of interoperability, implementers are expected to adhere to the interface defined in the specified version of each hook, though compatible changes from future versions can also be supported.  §hook-20^crd-server^processing:CRD Servers **SHALL** handle unrecognized context elements by ignoring them.§
+The following sections describe the hooks covered by this implementation guide as well as setting conformance expectations related to those hooks. 
+
+§hook-20^crd-client^exchange:Where profiles are provided in a table for the hook sections below, CRD clients SHALL ensure that data included in the hook invocation complies with the listed profiles.§  §hook-21^crd-server^processing:CRD servers SHALL NOT depend on data not covered by the identified profiles in order to return valid coverage-information responses.§
+
+</div>
+
+The hooks listed on the CDS hooks website are subject to update by the community at any time until they go through the ballot process.  However, all substantive changes are noted in the *Change Log* section at the bottom of the page describing each hook.  For each hook listed below, this specification identifies a specific version.  For the sake of interoperability, implementers are expected to adhere to the interface defined in the specified version of each hook, though compatible changes from future versions can also be supported.  §hook-22^crd-server^processing:CRD Servers **SHALL** handle unrecognized context elements by ignoring them.§
 
 Below is a summary diagram that outlines all the hooks, indicating when responses are mandatory or optional, and provides insights into what contributes to caching and attribution.
 
@@ -73,7 +79,7 @@ Potentially relevant CRD advice related to this hook might include:
 
 While this hook supports userIds of Patient and RelatedPerson, for CRD purposes it is enough to support Practitioner and PractitionerRole.  Support for Patient and RelatedPerson as users is optional.  (Note that Practitioner and PractitionerRole include both licensed healthcare professionals as well as administrative staff.)
 
-The profiles expected to be used for the resources resolved to by the userId, patientId and encounterId and in the `appointments` context elements are as follows:
+<p class="modified-content" markdown="1"><a name="FHIR-53579-b"> </a>The following table contains the essential profiles relevant to the invocation of the hook, including the resources passed in the the appointments context element, as well as those retrieved via mandatory prefetch.  The conformance rules stated in [Hook Categories](#ci-c-hook-20) above apply to the use of these profiles.</p>
 
 <table class="grid">
   <thead>
@@ -105,8 +111,8 @@ The profiles expected to be used for the resources resolved to by the userId, pa
 </table>
 
 Notes: 
-* §hook-21^crd-server^processing:CRD Servers **MAY** use the appointment-book hook as a basis for associating a patient with a particular practitioner from a payer attribution perspective.§
-* §hook-22^crd-client,crd-server^exchange,processing:CRD clients and servers **SHALL**, at minimum, support returning and processing the [Coverage Information](StructureDefinition-ext-coverage-information.html) system action for all invocations of the appointment-book hook.§
+* §hook-23^crd-server^processing:CRD Servers **MAY** use the appointment-book hook as a basis for associating a patient with a particular practitioner from a payer attribution perspective.§
+* §hook-24^crd-client,crd-server^exchange,processing:CRD clients and servers **SHALL**, at minimum, support returning and processing the [Coverage Information](StructureDefinition-ext-coverage-information.html) system action for all invocations of the appointment-book hook.§
 
 ### encounter-start
 This hook is described in the CDS Hooks specification [here]({{site.data.fhir.ver.hooks}}/encounter-start.html).  This version of the CRD implementation guide refers to version 1.0 of the hook.
@@ -117,8 +123,7 @@ The advice returned for this hook would include the same sorts of advice as prov
 
 Note that Practitioner and PractitionerRole include both licensed healthcare professionals, as well as administrative staff.
 
-The profiles expected to be used for the resources resolved to by the userId, patientId, and encounterId context references are as follows:
-
+<p class="modified-content" markdown="1"><a name="FHIR-53579-c"> </a>The following table contains the essential profiles relevant to the invocation of the hook, including the resources passed in the the appointments context element, as well as those retrieved via mandatory prefetch.  The conformance rules stated in [Hook Categories](#ci-c-hook-20) above apply to the use of these profiles.</p>
 
 <table class="grid">
   <thead>
@@ -146,7 +151,7 @@ The profiles expected to be used for the resources resolved to by the userId, pa
 </table>
 
 Notes: 
-* §hook-23^crd-server^processing:CRD Servers **MAY** use the appointment-book hook as a basis for associating a patient with a particular practitioner from a payer attribution perspective.§
+* §hook-25^crd-server^processing:CRD Servers **MAY** use the appointment-book hook as a basis for associating a patient with a particular practitioner from a payer attribution perspective.§
 
 ### encounter-discharge
 This hook is described in the CDS Hooks specification [here]({{site.data.fhir.ver.hooks}}/encounter-discharge.html).  This version of the CRD implementation guide refers to version 1.0 of the hook.
@@ -159,7 +164,7 @@ Potentially relevant CRD advice related to this hook might include:
 
 * Ensuring that required follow-up planning is complete and appropriate transfer of care has been arranged, particularly for accountable care models
 
-The profiles expected to be used for the resources resolved to by the userId, patientId, and encounterId context references are as follows:
+<p class="modified-content" markdown="1"><a name="FHIR-53579-d"> </a>The following table contains the essential profiles relevant to the invocation of the hook, including the resources passed in the the appointments context element, as well as those retrieved via mandatory prefetch.  The conformance rules stated in [Hook Categories](#ci-c-hook-20) above apply to the use of these profiles.</p>
 
 <table class="grid">
   <thead>
@@ -193,7 +198,7 @@ This is a new hook that allows for decision support to be provided when the inte
 
 This hook will fire at some point after (possibly well after) the [order-sign](#order-sign) hook fires.  It only passes the patient id, order id, performer, and (optionally) the Task that describes the fulfillment request as part of the context.  This specification does not require use of the Task resource.
 
-This hook allows multiple resource types to be present. Resources provided could all be the same type or be a mixture of types.  §hook-24^crd-server^processing:Coverage requirements **SHOULD** be limited only to those resources that are included in the `dispatchedOrders` context, though the content of other resources **SHOULD** also be considered before making recommendations about what additional actions are necessary.§  (I.e. do not recommend an action if there's already an order to perform that action.)  
+This hook allows multiple resource types to be present. Resources provided could all be the same type or be a mixture of types.  §hook-26^crd-server^processing:Coverage requirements **SHOULD** be limited only to those resources that are included in the `dispatchedOrders` context, though the content of other resources **SHOULD** also be considered before making recommendations about what additional actions are necessary.§  (I.e. do not recommend an action if there's already an order to perform that action.)  
 
 The different relevant resource types are as follows (support can vary between clients):
 
@@ -213,7 +218,7 @@ CRD responses might include:
 * Information about preauthorization and clinical documentation requirements, including forms to be completed
 * Alternative performers (e.g. in-network providers)
 
-There are no constraints or special rules related to this hook beyond the profiles expected to be used for the resources resolved to by the `patientId` or `encounterId` or in the `dispatchedOrders` context element:
+<p class="modified-content" markdown="1"><a name="FHIR-53579-e"> </a>The following table contains the essential profiles relevant to the invocation of the hook, including the resources passed in the the appointments context element, as well as those retrieved via mandatory prefetch.  The conformance rules stated in [Hook Categories](#ci-c-hook-20) above apply to the use of these profiles.</p>
 
 <table class="grid">
   <thead>
@@ -269,8 +274,8 @@ There are no constraints or special rules related to this hook beyond the profil
 
 
 Notes: 
-* §hook-25^crd-server^processing:CRD Servers **MAY** use the order-dispatch hook as a basis for associating a patient with a particular practitioner from a payer attribution perspective.§
-* §hook-26^crd-client,crd-server^exchange,processing:CRD clients and servers **SHALL**, at minimum, support returning and processing the [Coverage Information](StructureDefinition-ext-coverage-information.html) system action for all invocations of the order-dispatch hook.§
+* §hook-27^crd-server^processing:CRD Servers **MAY** use the order-dispatch hook as a basis for associating a patient with a particular practitioner from a payer attribution perspective.§
+* §hook-28^crd-client,crd-server^exchange,processing:CRD clients and servers **SHALL**, at minimum, support returning and processing the [Coverage Information](StructureDefinition-ext-coverage-information.html) system action for all invocations of the order-dispatch hook.§
 
 
 ### order-select
@@ -282,7 +287,7 @@ First, because it fires earlier in the user's system interactions, it provides a
 
 Second, when a CRD server can provide guidance to providers earlier in the process (e.g. upon selection of a service but before entering detailed instructions), it can help to make the provider's experience more efficient.  (If a provider knows up-front that a service will not be paid for, but an alternative would be, they might be happier if they can save the time on entering full details before finding this out.)  Not all providers or EHRs will necessarily want to receive 'proactive' decision support during the order entry process.  EHRs can be configured as to what types of cards they are interested in receiving back for this hook, including no cards at all if the hook is invoked solely for performance or caching reasons.
 
-This hook allows multiple resource types to be present. Resources provided could all be the same type or be a mixture of types.  §hook-27^crd-server^processing:Coverage requirements **SHOULD** be limited only to those resources that are included in the `selections` context, though the content of other resources **SHOULD** also be considered before making recommendations about what additional actions are necessary.§  (I.e. do not recommend an action if there's already a draft order to perform that action.)  
+This hook allows multiple resource types to be present. Resources provided could all be the same type or be a mixture of types.  §hook-29^crd-server^processing:Coverage requirements **SHOULD** be limited only to those resources that are included in the `selections` context, though the content of other resources **SHOULD** also be considered before making recommendations about what additional actions are necessary.§  (I.e. do not recommend an action if there's already a draft order to perform that action.)  
 
 The different relevant resource types are as follows (support can vary between clients):
 
@@ -304,7 +309,7 @@ CRD responses might include:
 * Recommendations about in-network vs. out-of-network providers for referrals
 
 
-There are no constraints or special rules related to this hook beyond the profiles expected to be used for the resources resolved to by the `patientId` or `encounterId` or in the `draftOrders` context element:
+<p class="modified-content" markdown="1"><a name="FHIR-53579-f"> </a>The following table contains the essential profiles relevant to the invocation of the hook, including the resources passed in the the appointments context element, as well as those retrieved via mandatory prefetch.  The conformance rules stated in [Hook Categories](#ci-c-hook-20) above apply to the use of these profiles.</p>
 
 <table class="grid">
   <thead>
@@ -354,7 +359,7 @@ There are no constraints or special rules related to this hook beyond the profil
 <sup>†</sup> While this hook does not explicitly list PractitionerRole as an expected resource type for userId, it is not prohibited and is included to allow linking the user to a Practitioner in a specific role acting on behalf of a specific Organization.
 
 Notes: 
-* While this hook is defined for use when ordering, it is still relevant when proposing (e.g. as part of a consult note) or planning (e.g. as part of a care plan) the use of an intervention.  All the 'Request' resources support differentiation between plans, proposals, and orders.  §hook-28?^crd-client^processing:Where CRD Clients have an appropriate workflow and data capture mechanism, the order-select hook **MAY** be used in scenarios that do not involve creating a true order.§
+* While this hook is defined for use when ordering, it is still relevant when proposing (e.g. as part of a consult note) or planning (e.g. as part of a care plan) the use of an intervention.  All the 'Request' resources support differentiation between plans, proposals, and orders.  §hook-30?^crd-client^processing:Where CRD Clients have an appropriate workflow and data capture mechanism, the order-select hook **MAY** be used in scenarios that do not involve creating a true order.§
 
 
 ### order-sign
@@ -365,5 +370,5 @@ This hook serves a very similar purpose to [order-select](#order-select).  The m
 Use and profiles for [order-select](#order-select) also apply to `order-sign`.
 
 Notes: 
-* §hook-29^crd-server^processing:CRD Servers **MAY** use the order-select hook as a basis for associating a patient with a particular practitioner from a payer attribution perspective.§
-* §hook-30^crd-client,crd-server^exchange,processing:CRD clients and servers **SHALL**, at minimum, support returning and processing the [Coverage Information](StructureDefinition-ext-coverage-information.html) system action for all invocations of the order-select hook.§
+* §hook-31^crd-server^processing:CRD Servers **MAY** use the order-select hook as a basis for associating a patient with a particular practitioner from a payer attribution perspective.§
+* §hook-32^crd-client,crd-server^exchange,processing:CRD clients and servers **SHALL**, at minimum, support returning and processing the [Coverage Information](StructureDefinition-ext-coverage-information.html) system action for all invocations of the order-select hook.§

@@ -11,6 +11,7 @@ This page describes the primary releases of the specification and summarizes the
 * [FHIR-52784](https://jira.hl7.org/browse/FHIR-52784) - Made support for prefetch mandatory (and removed example queries showing how to retrieve the 'required' data by query instead).  Also corrected "CRD Service" to "CRD server" *(correction)* [link](foundation.html#FHIR-52784a), [link](foundation.html#FHIR-52784b), [link](foundation.html#FHIR-52784c), [link](foundation.html#FHIR-52784d)
 * [FHIR-52588](https://jira.hl7.org/browse/FHIR-52588) - Added clearer rules about the use of the Form Completion Response Type *(clarification)*  [link](cards.html#FHIR-52588)
 * [FHIR-54639](https://jira.hl7.org/browse/FHIR-54639) - Added bindings to Appointment without Order for serviceCategory and serviceType *(correction)* [link](StructureDefinition-profile-appointment-no-order.html)
+* [FHIR-53579](https://jira.hl7.org/browse/FHIR-53579) - Clarified rules around profiles for hook invocation *(clarification)* [link](FHIR-53579-a), [link](FHIR-53579-b), [link](FHIR-53579-c), [link](FHIR-53579-d), [link](FHIR-53579-e), [link](FHIR-53579-f)
 
 **Substative changes**
 * [FHIR-52452](https://jira.hl7.org/browse/FHIR-52452) - Added 'contained' as mustSupport to request resources and encounters *(enhancement)*
