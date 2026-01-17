@@ -9,7 +9,8 @@ This page describes the primary releases of the specification and summarizes the
 * [FHIR-52444](https://jira.hl7.org/browse/FHIR-52444) - Made support for prefetch mandatory *(enhancement)* [link](foundation.html#FHIR-52444)
 * [FHIR-53048](https://jira.hl7.org/browse/FHIR-53048) - Added CRD version extensions to service discovery and service invocation *(enhancement)* [link](deviations.html#crd-version-declaration)
 * [FHIR-52784](https://jira.hl7.org/browse/FHIR-52784) - Made support for prefetch mandatory (and removed example queries showing how to retrieve the 'required' data by query instead).  Also corrected "CRD Service" to "CRD server" *(correction)* [link](foundation.html#FHIR-52784a), [link](foundation.html#FHIR-52784b), [link](foundation.html#FHIR-52784c), [link](foundation.html#FHIR-52784d)
-* [FHIR-52588](https://jira.hl7.org/browse/FHIR-52585) - Added clearer rules about the use of the Form Completion Response Type *(clarification)* [link](cards.html#FHIR-52588)
+* [FHIR-52588](https://jira.hl7.org/browse/FHIR-52588) - Added clearer rules about the use of the Form Completion Response Type *(clarification)*  [link](cards.html#FHIR-52588)
+* [FHIR-54639](https://jira.hl7.org/browse/FHIR-54639) - Added bindings to Appointment without Order for serviceCategory and serviceType
 
 **Substative changes**
 * [FHIR-52452](https://jira.hl7.org/browse/FHIR-52452) - Added 'contained' as mustSupport to request resources and encounters *(enhancement)*
@@ -30,7 +31,7 @@ This page describes the primary releases of the specification and summarizes the
 * [FHIR-52004](https://jira.hl7.org/browse/FHIR-52004), [FHIR-52069](https://jira.hl7.org/browse/FHIR-52069), [FHIR-52480](https://jira.hl7.org/browse/FHIR-52480), [FHIR-52441](https://jira.hl7.org/browse/FHIR-52441) - Fixed various minor typos *(correction)*
 * [FHIR-53177](https://jira.hl7.org/browse/FHIR-53177) - Put coverage-information back on Appointment w/ No Order, as it had accidentally been dropped *(correction)* [link](StructureDefinition-profile-appointment-no-order.html)
 * [FHIR-52058](https://jira.hl7.org/browse/FHIR-52058) - Renamed "CMS Mappable Location Codes" to "CMS Supplemented US Core Location Codes" *(clarification)* [link](ValueSet-CMSSupplementedLocationCodes.html)
-* [FHIR-52585](https://jira.hl7.org/browse/FHIR-52585) - Clarified expectations for when cards can be used in place of DTR *(clarification)* [link](cards.html#FHIR-52585)
+* [FHIR-52585](https://jira.hl7.org/browse/FHIR-52585) - Clarified expectations for when cards can be used in place of DTR *(clarification)* NOTE: Subsequently removed in FHIR-52586, below
 * [FHIR-52531](https://jira.hl7.org/browse/FHIR-52531) - Changed example "recommended alternative therapies" to "payer-preferred alternative therapies” *(clarification)* [link](deviations.html#FHIR-52531)
 * [FHIR-52533](https://jira.hl7.org/browse/FHIR-52533) - Indicated the profile the form completion example was of *(clarification)* [link](deviations.html#FHIR-52533)
 * [FHIR-52314](https://jira.hl7.org/browse/FHIR-52314) - Clarified how systems are allowed to handle overly slow responses *(clarification)* [link](foundation.html#FHIR-52314)
@@ -97,7 +98,7 @@ This page describes the primary releases of the specification and summarizes the
 * [FHIR-49833](https://jira.hl7.org/browse/FHIR-49833) - Reframed warnings about the _include search mechanism to reflect the fact that it is no longer used in prefetch.  *(correction)* [link](foundation.html#FHIR-49833)
 * [FHIR-49003](https://jira.hl7.org/browse/FHIR-49003) - Removed language implying that Task could be a focal request when submitting a CRD request or have coverage-information and provided clearer information about the purpose of CommunicationRequest *(correction, clarification)* - section no longer exists to link to
 * [FHIR-49731](https://jira.hl7.org/browse/FHIR-49731) - Corrected prefetch syntax to be CDS Hooks-conformant *(correction)* [link](foundation.html#prefetch)
-* [FHIR-48771](https://jira.hl7.org/browse/FHIR-48771) - Clarified prefetch references *(clarification)* [link](foundation.html#FHIR-48771a), [link](foundation.html#FHIR-48771b)
+* [FHIR-48771](https://jira.hl7.org/browse/FHIR-48771) - Clarified prefetch references *(clarification)* [link](foundation.html#FHIR-48771a)
 * [FHIR-49196](https://jira.hl7.org/browse/FHIR-49196) - Clarified that _include may not be supported when using non-prefetch queries. *(clarification)* NOTE: This is no longer relevant given FHIR-52444 in the 2.2.0 final release
 * [FHIR-48797](https://jira.hl7.org/browse/FHIR-48797) - Clarified rules on multiple coverages *(clarification)* [link](foundation.html#FHIR-48797)
 * [FHIR-49805](https://jira.hl7.org/browse/FHIR-49805) - Added CommunicationRequest and VisionPrescription to prefetch and non-prefetch queries *(correction)* [link](foundation.html#prefetch), [link](Binary-CRDServices.html), [link](hooks.html#FHIR-49805a), , [link](hooks.html#FHIR-49805b)

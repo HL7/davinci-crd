@@ -65,7 +65,15 @@ Description: "An appointment where the details of what the appointment is being 
 * extension contains CRDCoverageInformation named Coverage-Information 0..* MS
 * identifier MS
 * serviceCategory MS
+* serviceCategory ^slicing.discriminator[+].type = #pattern
+* serviceCategory ^slicing.discriminator[=].path = "$this"
+* serviceCategory ^slicing.rules = #open
+* serviceCategory contains us-core 0..* MS
+* serviceCategory[us-core] from USCoreServiceRequestCategoryCodes (required)
 * serviceType MS
+* serviceType from CRDServiceRequestCodes (extensible)
+  * ^short = "Codes to identify requested services. (CPT, SNOMED CT or LOINC)"
+  * ^binding.description = "Codes describing the type of  Service"
   * extension contains CRDBillingOptions named BillingOptions 0..* MS
   * extension[BillingOptions] ^short = "Expected Billing Code(s)"
 * specialty MS
