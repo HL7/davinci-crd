@@ -38,6 +38,7 @@ parameters:
   apply-publisher: true
   apply-contact: true
   globals-in-artifacts: true
+  term-params-in-artifacts: true
   pin-canonicals: pin-multiples
   version-comparison: 
    - 2.1.0
@@ -179,8 +180,6 @@ pages:
     title: Downloads
   history.md:
     title: Change History
-  issues.html:
-    title: Open Issues
 groups:
   -str-logicalmodel-hooks:
     name: "Structures: CDS Hooks Extensions"

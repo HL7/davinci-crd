@@ -14,6 +14,13 @@ Description: "This profile specifies additional constraints on the US Core Medic
   * ^example.label = "General"
   * ^example.valueCode = #draft
   * ^comment = "This will be 'draft' when using order-select or an initial order-sign, but may be 'active' or other values for order-sign representing edits to the order or for order-dispatch."
+* category contains encounterType 0..1 MS and serviceType 0..1 MS
+* category[encounterType] from ActEncounterCode (required)
+* category[encounterType]
+  * ^short = "inpatient, outpatient, etc."
+* category[serviceType] from X12ServiceType (required)
+* category[serviceType]
+  * ^short = "X-ray, Lab, consulation, surgical, etc."
 * doNotPerform ..0
 * reported[x] only boolean or Reference(CRDPatient or USCorePractitionerProfile or CRDOrganization)
 * medication[x] only CodeableConcept or Reference(CRDMedication)

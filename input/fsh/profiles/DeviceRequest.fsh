@@ -4,8 +4,19 @@ Id: profile-devicerequest
 Title: "CRD Device Request"
 Description: "This profile specifies extensions and constraints on the DeviceRequest resource to support coverage requirements discovery."
 * ^experimental = false
-* extension contains CRDCoverageInformation named Coverage-Information 0..* MS
+* extension ^slicing.discriminator[+].type = #value
+* extension ^slicing.discriminator[=].path = "url"
+* extension ^slicing.discriminator[+].type = #value
+* extension ^slicing.discriminator[=].path = "value"
+* extension ^slicing.rules = #open
+* extension contains CRDCoverageInformation named Coverage-Information 0..* MS and RequestCategory named EncounterCategory 0..1 MS and RequestCategory named ServiceCategory 0..1 MS
 * extension[Coverage-Information] ^short = "Coverage Info"
+* extension[EncounterCategory]
+  * ^short = "Encounter Category"
+  * valueCodeableConcept from ActEncounterCode
+* extension[ServiceCategory]
+  * ^short = "Service Category"
+  * valueCodeableConcept from X12ServiceType
 * contained MS
   * ^comment = "Any references found in this resource, with the exception of 'Patient' could potentially be resource-specific and thus transmitted as contained resources."
 * identifier MS

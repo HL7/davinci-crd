@@ -10,7 +10,7 @@ This page describes the primary releases of the specification and summarizes the
 * [FHIR-53048](https://jira.hl7.org/browse/FHIR-53048) - Added CRD version extensions to service discovery and service invocation *(enhancement)* [link](deviations.html#crd-version-declaration)
 * [FHIR-52784](https://jira.hl7.org/browse/FHIR-52784) - Made support for prefetch mandatory (and removed example queries showing how to retrieve the 'required' data by query instead).  Also corrected "CRD Service" to "CRD server" *(correction)* [link](foundation.html#FHIR-52784a), [link](foundation.html#FHIR-52784b), [link](foundation.html#FHIR-52784c), [link](foundation.html#FHIR-52784d)
 * [FHIR-52588](https://jira.hl7.org/browse/FHIR-52588) - Added clearer rules about the use of the Form Completion Response Type *(clarification)*  [link](cards.html#FHIR-52588)
-* [FHIR-54639](https://jira.hl7.org/browse/FHIR-54639) - Added bindings to Appointment without Order for serviceCategory and serviceType
+* [FHIR-54639](https://jira.hl7.org/browse/FHIR-54639) - Added bindings to Appointment without Order for serviceCategory and serviceType *(correction)* [link](StructureDefinition-profile-appointment-no-order.html)
 
 **Substative changes**
 * [FHIR-52452](https://jira.hl7.org/browse/FHIR-52452) - Added 'contained' as mustSupport to request resources and encounters *(enhancement)*
@@ -54,6 +54,7 @@ This page describes the primary releases of the specification and summarizes the
 * [FHIR-53607](https://jira.hl7.org/browse/FHIR-53607) - Corrected 'time shorter' to be 'time longer' *(correction)* [link](foundation.html#FHIR-53607)
 * [FHIR-53605](https://jira.hl7.org/browse/FHIR-53605), [FHIR-53606](https://jira.hl7.org/browse/FHIR-53606) - Clarified expectations around 'update' for resources in client CapabilityStatements *(clarification)* [link](CapabilityStatement-crd-client3.1.html), [link](CapabilityStatement-crd-client6.1.html), [link](CapabilityStatement-crd-client7.0.html)
 * [FHIR-45673](https://jira.hl7.org/browse/FHIR-45673) - Added guidance on how prior authorization cases are handled in CRD *(clarification)* [link][operational.html#FHIR-45673]
+* [FHIR-49129](https://jira.hl7.org/browse/FHIR-49129), [FHIR-50669](https://jira.hl7.org/browse/FHIR-50669), [FHIR-50892](https://jira.hl7.org/browse/FHIR-50892) - Added additional categories to request profiles other than CommunicationRequest to capture inpatient/outpatient and service type *(enhancement)* [link](StructureDefinition-profile-appointment-no-order.html), [link](StructureDefinition-profile-devicerequest.html), [link](StructureDefinition-profile-medicationrequest.html), [link](StructureDefinition-profile-nutritionorder.html), [link](StructureDefinition-profile-servicerequest.html), [link](StructureDefinition-profile-visionprescription.html)
 
 
 ### Release 2.2.0-ballot
