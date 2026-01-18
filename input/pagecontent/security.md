@@ -20,3 +20,13 @@ In addition to these, this implementation guide imposes the following additional
 * CRD clients are the final arbiters of what data can or cannot be shared with CRD servers.  It is up to clients to ensure they support their obligations as health data custodians, including legal, policy, and patient consent-based restrictions. Withholding information might limit the completeness or accuracy of coverage requirements discovery advice retrieved using the interfaces within this guide. The inability of a CRD server to provide full advice does not relieve providers of their responsibility to ensure that payer coverage requirements are met.
 * §sec-7^crd-client^processing:CRD clients **SHALL** ensure that the resource identifiers exposed over the CRD interface are distinct from and have no determinable relationship with any business identifiers associated with those records.§ For example, the Patient.id element cannot be the same as or contain in some fashion a patient's social security number or medical record number.
 * Access to patient information to meet decision support requirements is subject to regulations such as HIPAA "minimum necessary" and §sec-8^crd-client-org^business:CRD client organizations **SHOULD** audit access to check for reasonableness and appropriateness.§
+
+<div class="fhir-conformance new-content" id="sec-9^crd-client-org^processing">
+* <a name="FHIR-49757"> </a>Access tokens provided as part of CRD calls **SHOULD NOT** be forwarded to systems that are not managed by the same organization or have business associate agreements that allow centralized audit of access.  Possible alternatives to token-sharing include:
+  * Routing all requests for information through the initial endpoint system
+  * Making use of RFC 8693 to allow the creation of 'delegate' tokens for downstream systems"
+
+<blockquote class="dragon" markdown="1">
+Additional testing and standardization work needs to happen around making delegated access function well, particularly in a time-constrained environment.
+</blockquote>
+</div>
