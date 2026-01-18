@@ -63,6 +63,7 @@ This page describes the primary releases of the specification and summarizes the
 * [FHIR-53634](https://jira.hl7.org/browse/FHIR-53634) - Corrected typo where sentences said 'DTR' instead of 'CRD' *(correction)* [link](foundation.html#FHIR-52784b)
 * [FHIR-53650](https://jira.hl7.org/browse/FHIR-53650) - Improved description of 'covered' code *(clarification)* [link](CodeSystem-coverage-information-codes.html)
 * [FHIR-49757](https://jira.hl7.org/browse/FHIR-49757) - Added security guidance around sharing tokens *(clarification)* [link](security.html#FHIR-49757)
+* [FHIR-53653](https://jira.hl7.org/browse/FHIR-53653) - Corrected appointment to use HRex PractitionerRole rather than US Core *(correction) [link](StructureDefinition-profile-appointment-with-order.html), [link](StructureDefinition-profile-appointment-no-order.html)
 
 
 ### Release 2.2.0-ballot
