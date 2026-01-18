@@ -170,9 +170,9 @@ Description: "Captures assertions from a payer about the coverage rules for a se
   * value[x] only string
 * extension[contact] only Extension
   * ^short = "Contact information"
-  * ^definition = "Phone number, fax number, email address, website, or other ContactPoint that can be used to ask questions/escalate issues related to a coverage assertion."
+  * ^definition = "Name, phone number, fax number, email address, website, or other contact information that can be used to ask questions/escalate issues related to a coverage assertion."
   * ^comment = "This **SHOULD** only be populated if the contact information is context-specific rather than a generic contact for the payer as a whole."
-  * value[x] only ContactPoint
+  * value[x] only ContactDetail
 * extension[expiry-date] only Extension
   * ^short = "Expiration date"
   * ^definition = "Date after which the coverage assertion would no longer be valid."

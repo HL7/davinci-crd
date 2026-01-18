@@ -24,9 +24,11 @@ Usage: #example
   * extension[date].valueDate = "2019-02-15"
   * extension[coverage-assertion-id].valueString = "12345ABC"
   * extension[satisfied-pa-id].valueString = "XXYYZ"
-  * extension[contact].valueContactPoint
-    * system = #url
-    * value = "http://some-payer.org/xyz-sub-org/get-help-here.html"
+  * extension[contact].valueContactDetail
+    * name = "Help Desk"
+    * telecom
+      * system = #url
+      * value = "http://some-payer.org/xyz-sub-org/get-help-here.html"
   * extension[expiry-date].valueDate = "2019-08-01"
 * status = #draft
 * intent = #original-order
