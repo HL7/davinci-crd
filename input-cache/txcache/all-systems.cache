@@ -1881,7 +1881,6 @@ v: {
   "class" : "UNKNOWN",
   "server" : "https://tx.fhir.org/r4",
   "diagnostics" : "0 0 : start\r\n78 78   : 0ms  : Analysing http://hl7.org/fhir/us/davinci-crd/ValueSet/serviceRequestCodes|2.2.0-snapshot for validation purposes\r\n78 0    : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n78 0    : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n78 0    : 0ms  : Prepare include: \"(http://www.ama-assn.org/go/cpt)\"\r\n78 0    : 0ms  : CodeSystem found: \"http://www.ama-assn.org/go/cpt|2023\"\r\n78 0    : 0ms  : Prepare include: \"(http://snomed.info/sct)(concept<<71388002)\"\r\n78 0    : 0ms  : CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\r\n78 0    : 0ms  : Prepare include: \"(https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets)\"\r\n78 0    : 0ms  : CodeSystem version  not found: \"https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets\"\r\n78 0    : 0ms  : Prepare include: \"(http://loinc.org)\"\r\n78 0    : 0ms  : CodeSystem found: \"http://loinc.org|2.81\"\r\n78 0    : 0ms  : Validate \"[http://terminology.hl7.org/CodeSystem/service-type#124 (\"General Practice\")]\"\r\n78 0    : 0ms  : Check \"http://terminology.hl7.org/CodeSystem/service-type#124\"\r\n",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",
   "issue" : [{
@@ -1924,6 +1923,37 @@ v: {
       "text" : "No valid coding was found for the value set 'http://hl7.org/fhir/us/davinci-crd/ValueSet/serviceRequestCodes|2.2.0-snapshot'"
     }
   }]
+}
+
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://snomed.info/sct",
+    "code" : "386053000",
+    "display" : "Evaluation procedure (procedure)"
+  }]
+}, "url": "http://hl7.org/fhir/us/core/ValueSet/us-core-servicerequest-category", "version": "7.0.0", "langs":"en", "useServer":"true", "useClient":"false", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  },
+  {
+    "name" : "defaultDisplayLanguage",
+    "valueCode" : "en"
+  }]
+}}####
+v: {
+  "display" : "Investigations",
+  "code" : "386053000",
+  "system" : "http://snomed.info/sct",
+  "version" : "http://snomed.info/sct/731000124108/version/20250901",
+  "server" : "https://tx.fhir.org/r4",
+  "diagnostics" : "0 0 : start\r\n32 32   : 0ms  : Analysing http://hl7.org/fhir/us/core/ValueSet/us-core-servicerequest-category|7.0.0 for validation purposes\r\n32 0    : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n32 0    : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n32 0    : 0ms  : Prepare include: \"(http://hl7.org/fhir/us/core/CodeSystem/us-core-category)\"\r\n32 0    : 0ms  : CodeSystem found: \"http://hl7.org/fhir/us/core/CodeSystem/us-core-category|7.0.0\"\r\n32 0    : 0ms  : Prepare include: \"(http://snomed.info/sct)(386053000,410606002)\"\r\n32 0    : 0ms  : CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\r\n32 0    : 0ms  : Prepare include: \"(^http://hl7.org/fhir/ValueSet/servicerequest-category)\"\r\n32 0    : 0ms    : Analysing http://hl7.org/fhir/ValueSet/servicerequest-category|4.0.1 for validation purposes\r\n32 0    : 0ms    : Prepare include: \"(http://snomed.info/sct)(108252007,363679005,409063005,409073007,387713003)\"\r\n32 0    : 0ms    : CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\r\n32 0    : 0ms  : Validate \"[http://snomed.info/sct#386053000 (\"Evaluation procedure (procedure)\")]\"\r\n32 0    : 0ms  : Check \"http://snomed.info/sct#386053000\"\r\n32 0    : 0ms  : CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108\r\n32 0    : 0ms  : check code in (http://snomed.info/sct)(386053000,410606002) at CodeableConcept.coding[0]\r\n32 0    : 0ms  : Code \"386053000\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\r\n",
+  "unknown-systems" : "",
+  "issues" : {
+  "resourceType" : "OperationOutcome"
 }
 
 }

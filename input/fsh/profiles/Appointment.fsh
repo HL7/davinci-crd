@@ -65,11 +65,17 @@ Description: "An appointment where the details of what the appointment is being 
 * extension contains CRDCoverageInformation named Coverage-Information 0..* MS
 * identifier MS
 * serviceCategory MS
-* serviceCategory ^slicing.discriminator[+].type = #pattern
+* serviceCategory ^slicing.discriminator[+].type = #value
 * serviceCategory ^slicing.discriminator[=].path = "$this"
 * serviceCategory ^slicing.rules = #open
-* serviceCategory contains us-core 0..* MS
+* serviceCategory contains us-core 0..* MS and encounterType 0..1 MS and serviceType 0..1 MS
 * serviceCategory[us-core] from USCoreServiceRequestCategoryCodes (required)
+* serviceCategory[encounterType] from ActEncounterCode (required)
+* serviceCategory[encounterType]
+  * ^short = "inpatient, outpatient, etc."
+* serviceCategory[serviceType] from X12ServiceType (required)
+* serviceCategory[serviceType]
+  * ^short = "X-ray, Lab, consulation, surgical, etc."
 * serviceType MS
 * serviceType from CRDServiceRequestCodes (extensible)
   * ^short = "Codes to identify requested services. (CPT, SNOMED CT or LOINC)"

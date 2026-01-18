@@ -44,7 +44,7 @@ The 'secondary' hooks are [Orders Select](#order-select), [Encounter Start](#enc
 
 The following sections describe the hooks covered by this implementation guide as well as setting conformance expectations related to those hooks. 
 
-§hook-20^crd-client^exchange:Where profiles are provided in a table for the hook sections below, CRD clients SHALL ensure that data included in the hook invocation complies with the listed profiles.§  §hook-21^crd-server^processing:CRD servers SHALL NOT depend on data not covered by the identified profiles in order to return valid coverage-information responses.§
+§hook-20^crd-client^exchange:Where profiles are provided in a table for the hook sections below, CRD clients **SHALL** ensure that data included in the hook invocation complies with the listed profiles.§  §hook-21^crd-server^processing:CRD servers **SHALL NOT** depend on data not covered by the identified profiles in order to return valid coverage-information responses.§
 
 </div>
 
@@ -79,7 +79,7 @@ Potentially relevant CRD advice related to this hook might include:
 
 While this hook supports userIds of Patient and RelatedPerson, for CRD purposes it is enough to support Practitioner and PractitionerRole.  Support for Patient and RelatedPerson as users is optional.  (Note that Practitioner and PractitionerRole include both licensed healthcare professionals as well as administrative staff.)
 
-<p class="modified-content" markdown="1"><a name="FHIR-53579-b"> </a>The following table contains the essential profiles relevant to the invocation of the hook, including the resources passed in the the appointments context element, as well as those retrieved via mandatory prefetch.  The conformance rules stated in [Hook Categories](#ci-c-hook-20) above apply to the use of these profiles.</p>
+<p class="modified-content" markdown="1"><a name="FHIR-53579-b"> </a>The following table contains the essential profiles relevant to the invocation of the hook, including the resources passed in the the appointments context element, as well as those retrieved via mandatory prefetch.  The conformance rules stated in [Hook Categories](#FHIR-53579-a) above apply to the use of these profiles.</p>
 
 <table class="grid">
   <thead>
@@ -123,7 +123,7 @@ The advice returned for this hook would include the same sorts of advice as prov
 
 Note that Practitioner and PractitionerRole include both licensed healthcare professionals, as well as administrative staff.
 
-<p class="modified-content" markdown="1"><a name="FHIR-53579-c"> </a>The following table contains the essential profiles relevant to the invocation of the hook, including the resources passed in the the appointments context element, as well as those retrieved via mandatory prefetch.  The conformance rules stated in [Hook Categories](#ci-c-hook-20) above apply to the use of these profiles.</p>
+<p class="modified-content" markdown="1"><a name="FHIR-53579-c"> </a>The following table contains the essential profiles relevant to the invocation of the hook, including the resources passed in the the appointments context element, as well as those retrieved via mandatory prefetch.  The conformance rules stated in [Hook Categories](#FHIR-53579-a) above apply to the use of these profiles.</p>
 
 <table class="grid">
   <thead>
@@ -164,7 +164,7 @@ Potentially relevant CRD advice related to this hook might include:
 
 * Ensuring that required follow-up planning is complete and appropriate transfer of care has been arranged, particularly for accountable care models
 
-<p class="modified-content" markdown="1"><a name="FHIR-53579-d"> </a>The following table contains the essential profiles relevant to the invocation of the hook, including the resources passed in the the appointments context element, as well as those retrieved via mandatory prefetch.  The conformance rules stated in [Hook Categories](#ci-c-hook-20) above apply to the use of these profiles.</p>
+<p class="modified-content" markdown="1"><a name="FHIR-53579-d"> </a>The following table contains the essential profiles relevant to the invocation of the hook, including the resources passed in the the appointments context element, as well as those retrieved via mandatory prefetch.  The conformance rules stated in [Hook Categories](#FHIR-53579-a) above apply to the use of these profiles.</p>
 
 <table class="grid">
   <thead>
@@ -218,7 +218,7 @@ CRD responses might include:
 * Information about preauthorization and clinical documentation requirements, including forms to be completed
 * Alternative performers (e.g. in-network providers)
 
-<p class="modified-content" markdown="1"><a name="FHIR-53579-e"> </a>The following table contains the essential profiles relevant to the invocation of the hook, including the resources passed in the the appointments context element, as well as those retrieved via mandatory prefetch.  The conformance rules stated in [Hook Categories](#ci-c-hook-20) above apply to the use of these profiles.</p>
+<p class="modified-content" markdown="1"><a name="FHIR-53579-e"> </a>The following table contains the essential profiles relevant to the invocation of the hook, including the resources passed in the the appointments context element, as well as those retrieved via mandatory prefetch.  The conformance rules stated in [Hook Categories](#FHIR-53579-a) above apply to the use of these profiles.</p>
 
 <table class="grid">
   <thead>
@@ -309,7 +309,7 @@ CRD responses might include:
 * Recommendations about in-network vs. out-of-network providers for referrals
 
 
-<p class="modified-content" markdown="1"><a name="FHIR-53579-f"> </a>The following table contains the essential profiles relevant to the invocation of the hook, including the resources passed in the the appointments context element, as well as those retrieved via mandatory prefetch.  The conformance rules stated in [Hook Categories](#ci-c-hook-20) above apply to the use of these profiles.</p>
+<p class="modified-content" markdown="1"><a name="FHIR-53579-f"> </a>The following table contains the essential profiles relevant to the invocation of the hook, including the resources passed in the the appointments context element, as well as those retrieved via mandatory prefetch.  The conformance rules stated in [Hook Categories](#FHIR-53579-a) above apply to the use of these profiles.</p>
 
 <table class="grid">
   <thead>

@@ -6,7 +6,7 @@ Description: "Extends the base HL7-defined value set codes with supplementary co
 * ^experimental = false
 * ^extension[$fmm].valueInteger = 1
 * include codes from valueset http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType
-* include http://terminology.hl7.org/CodeSystem/data-absent-reason#unknown
+* include $data-absent-reason#unknown
 * include $temp#02
 * include $temp#04
 * include $temp#05

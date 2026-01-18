@@ -38,7 +38,9 @@ Description: "Example stand-alone appointment populated based on CRD profile"
 Usage: #example
 * id = "example2"
 * status = #proposed
-* serviceCategory = $service-category#17 "General Practice"
+* serviceCategory[+] = $sct#386053000 "Evaluation procedure (procedure)"
+* serviceCategory[+] = $v3-ActCode#AMB "ambulatory"
+* serviceCategory[+] = $x12-1365#3 "Consultation"
 * serviceType = $service-type#124 "General Practice"
 * specialty = $sct#394814009 "General practice (specialty)"
 * appointmentType = $v2-0276#FOLLOWUP "A follow up visit from a previous appointment"

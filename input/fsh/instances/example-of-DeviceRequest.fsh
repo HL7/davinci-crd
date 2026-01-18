@@ -4,6 +4,8 @@ Title: "DeviceRequest example"
 Description: "Example DeviceRequest populated based on CRD profile"
 Usage: #example
 * id = "example"
+* extension[EncounterCategory].valueCodeableConcept = $v3-ActCode#HH "home health"
+* extension[ServiceCategory].valueCodeableConcept = $x12-1365#18 "Durable Medical Equipment Rental"
 * basedOn = Reference(http://example.org/fhir/ServiceRequest/someReferral)
 * status = #draft
 * intent = #original-order
