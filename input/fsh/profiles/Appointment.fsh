@@ -17,12 +17,19 @@ Description: "This profile specifies extensions and constraints on the Appointme
   * ^condition[+] = crd-apt1
 * end MS
   * ^condition[+] = crd-apt2
-* participant MS
+* participant
   * actor MS
-    * ^short = "Patient, Practitioner  or Location"
+  * status MS
+* participant ^slicing.discriminator[+].type = #value
+* participant ^slicing.discriminator[=].path = "url"
+* participant ^slicing.rules = #open
+* participant contains Patient 1..1 MS and PrimaryPerformer 1..* MS
+* participant[Patient].actor only Reference(CRDPatient)
+* participant[PrimaryPerformer]
+  * type 1..1
+  * type = $v3-ParticipationType#PPRF
   * actor only Reference(CRDPatient or USCorePractitionerProfile or USCorePractitionerRoleProfile or CRDLocation)
 // TODO: Add RelatedPerson?
-  * status MS
 * requestedPeriod 0..1 MS
   * ^condition[+] = crd-apt1
   * ^condition[+] = crd-apt2

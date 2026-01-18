@@ -14,18 +14,11 @@ Usage: #example
 * created = "2013-10-10"
 * comment = "Further expand on the results of the MRI and determine the next actions that may be appropriate."
 * basedOn = Reference(ServiceRequest/example)
-* participant[+]
+* participant[Patient]
   * actor = Reference(Patient/example) "Amy Baxter"
-  * required = #required
   * status = #accepted
-* participant[+]
-  * type = $v3-ParticipationType#ATND
+* participant[PrimaryPerformer]
   * actor = Reference(Practitioner/full) "Dr Adam Careful"
-  * required = #required
-  * status = #accepted
-* participant[+]
-  * actor = Reference(Location/example) "South Wing, second floor"
-  * required = #required
   * status = #accepted
 * requestedPeriod
   * start = "2020-11-01"
@@ -51,18 +44,11 @@ Usage: #example
 * end = "2013-12-10T11:00:00Z"
 * created = "2013-10-10"
 * comment = "Further expand on the results of the MRI and determine the next actions that may be appropriate."
-* participant[+]
+* participant[Patient]
   * actor = Reference(Patient/example) "Amy Baxter"
-  * required = #required
   * status = #accepted
-* participant[+]
-  * type = $v3-ParticipationType#ATND
+* participant[PrimaryPerformer]
   * actor = Reference(Practitioner/full) "Dr Adam Careful"
-  * required = #required
-  * status = #accepted
-* participant[+]
-  * actor = Reference(Location/example) "South Wing, second floor"
-  * required = #required
   * status = #accepted
 * requestedPeriod
   * start = "2020-11-01"
