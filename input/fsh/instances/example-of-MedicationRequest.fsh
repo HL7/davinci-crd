@@ -51,6 +51,7 @@ Usage: #example
   * numberOfRepeatsAllowed = 1
   * quantity = 6 http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm#TAB "TAB"
   * expectedSupplyDuration = 5 'd' "days"
+  * performer = Reference(http://example.org/fhir/Organization/somePharmacy)
 * substitution
   * allowedBoolean = true
   * reason = $v3-ActReason#FP "formulary policy"
