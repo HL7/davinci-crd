@@ -281,9 +281,11 @@
               },
               {
                 "url": "contact",
-                "valueContactPoint": {
-                  "system": "url",
-                  "value": "http://some-payer/xyz-sub-org/get-help-here.html"
+                "valueContactDetail": {
+                  "telecom": [{
+                    "system": "url",
+                    "value": "http://some-payer/xyz-sub-org/get-help-here.html"
+                  }]
                 }
               }
             ]

@@ -21,14 +21,16 @@ Description: "This profile specifies extensions and constraints on the Appointme
   * actor MS
   * status MS
 * participant ^slicing.discriminator[+].type = #value
-* participant ^slicing.discriminator[=].path = "url"
+* participant ^slicing.discriminator[=].path = "type"
+* participant ^slicing.discriminator[+].type = #profile
+* participant ^slicing.discriminator[=].path = "actor.resolve()"
 * participant ^slicing.rules = #open
 * participant contains Patient 1..1 MS and PrimaryPerformer 1..* MS
 * participant[Patient].actor only Reference(CRDPatient)
 * participant[PrimaryPerformer]
   * type 1..1
   * type = $v3-ParticipationType#PPRF
-  * actor only Reference(CRDPatient or USCorePractitionerProfile or HRexPractitionerRoleProfile or CRDLocation)
+  * actor only Reference(USCorePractitionerProfile or HRexPractitionerRole or CRDLocation)
 // TODO: Add RelatedPerson?
 * requestedPeriod 0..1 MS
   * ^condition[+] = crd-apt1
