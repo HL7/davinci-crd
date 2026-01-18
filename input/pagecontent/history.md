@@ -30,6 +30,7 @@ This page describes the primary releases of the specification and summarizes the
 * [FHIR-53603](https://jira.hl7.org/browse/FHIR-53603), [FHIR-53604](https://jira.hl7.org/browse/FHIR-53604) - Removed references to CRD-specific search parameter expectations in capability statements *(correction)* [link](CapabilityStatement-crd-client3.1.html), [link](CapabilityStatement-crd-client6.1.html), [link](CapabilityStatement-crd-client7.0.html)
 * [FHIR-50216](https://jira.hl7.org/browse/FHIR-50216) - Added expectations on interoperability *(clarification)* [link](conformance.html#interoperability-expectations)
 * [FHIR-53651](https://jira.hl7.org/browse/FHIR-53651) - Made MedicationRequest.dispenseRequest and dispenseRequest.dispenser mustSupport *(enhancement)* [link](StructureDefinition-profile-medicationrequest.html)
+* [FHIR-52454](https://jira.hl7.org/browse/FHIR-52454) - Added conformance expectations for the Timing data type and clarified US core conformance expectations *(enhancement, clarification)* [link](conformance.html#FHIR-52454), [link](StructureDefinition-profile-timing.html), [link](StructureDefinition-profile-medicationrequest), [link](StructureDefinition-profile-servicerequest)
 
 **Non-substantive changes**:
 * [FHIR-52002](https://jira.hl7.org/browse/FHIR-52002) - Updated ONC to ASTP/ONC *(correction)*

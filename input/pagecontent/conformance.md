@@ -24,7 +24,9 @@ For responses provided by CRD servers:
 
 * §conf-6^crd-client^processing,ui:CRD clients **SHALL** make the mustSupport data available to the appropriate user (clinical or administrative) or leverage the data within their workflow as necessary to follow the intention of the provided decision support.§
 
-NOTE: These requirements are somewhat different from US Core and HRex because the implementation needs are different. In US Core, there is generally an expectation for clients to modify code and persistence layers to add support for 'mustSupport' elements in profiles. This expectation does not hold for CRD. However, CRD does require surfacing elements in the FHIR interface if the system maintains the element.
+<blockquote class="stu-note" markdown="1">
+These requirements are somewhat different from US Core and HRex because the implementation needs are different. In US Core, there is generally an expectation for clients to modify code and persistence layers to add support for 'mustSupport' elements in profiles. This expectation does not hold for CRD. However, CRD does require surfacing elements in the FHIR interface if the system maintains the element.  <span class="new-content"><a name="FHIR-52454"> </a>U.S. Core mustSupport rules continue to apply for data elements that are marked as mustSupport in US Core.</span>
+</blockquote>
 
 Also see the mustSupport rules for the [HRex]({{site.data.fhir.ver.hrex}}/conformance.html#mustsupport) and [US Core]({{site.data.fhir.ver.uscore7}}/must-support.html) implementation guides, which apply to content adhering to data elements profiled in those guides.
 

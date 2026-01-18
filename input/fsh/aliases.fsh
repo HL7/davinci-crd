@@ -47,6 +47,8 @@ Alias: $MedicationRequest    = http://hl7.org/fhir/StructureDefinition/Medicatio
 Alias: $NutritionOrder       = http://hl7.org/fhir/StructureDefinition/NutritionOrder
 Alias: $ServiceRequest       = http://hl7.org/fhir/StructureDefinition/ServiceRequest
 Alias: $VisionPrescription   = http://hl7.org/fhir/StructureDefinition/VisionPrescription
+// Data types
+Alias: $Timing               = http://hl7.org/fhir/StructureDefinition/Timing
 // Extensions
 Alias: $alternate-reference                            = http://hl7.org/fhir/StructureDefinition/alternate-reference
 Alias: $extension-CommunicationRequest.payload.content = http://hl7.org/fhir/5.0/StructureDefinition/extension-CommunicationRequest.payload.content%5Bx%5D

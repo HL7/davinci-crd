@@ -46,6 +46,7 @@ Description: "This profile specifies additional constraints on the US Core Medic
 //* reasonReference only Reference(USCoreConditionProblemsHealthConcernsProfile or USCoreConditionUSCoreConditionEncounterDiagnosisProfile or USCoreLaboratoryResultObservationProfile)
 * basedOn only Reference(CRDMedicationRequest or CRDServiceRequest)
   * ^comment = "potentially relevant for CRD in some situations."
+* dosageInstruction.timing only CRDTiming
 * dispenseRequest MS
   * performer MS
   * performer only Reference(CRDOrganization)

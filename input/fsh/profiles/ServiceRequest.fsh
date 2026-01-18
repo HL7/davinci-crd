@@ -38,6 +38,8 @@ Description: "This profile specifies constraints on the ServiceRequest resource 
 * encounter only Reference(CRDEncounter)
   * ^comment = "potentially relevant for CRD in some situations."
 * occurrence[x] MS
+* occurrence[x] only Period or dateTime or CRDTiming
+  * ^type[3].targetProfile[0].extension[$typeMS].valueBoolean = true
 * authoredOn 1.. MS
 * requester 1.. MS
 * requester only Reference(USCorePractitionerProfile or HRexPractitionerRole)
