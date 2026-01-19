@@ -14,6 +14,7 @@ This page describes the primary releases of the specification and summarizes the
 * [FHIR-53579](https://jira.hl7.org/browse/FHIR-53579) - Clarified rules around profiles for hook invocation *(clarification)* [link](hooks.html#FHIR-53579-a), [link](hooks.html#FHIR-53579-b), [link](hooks.html#FHIR-53579-c), [link](hooks.html#FHIR-53579-d), [link](hooks.html#FHIR-53579-e), [link](hooks.html#FHIR-53579-f)
 * [FHIR-53646](https://jira.hl7.org/browse/FHIR-53646) - Changed coverage-information 'contact' extension to ContactDetail instead of ContactPoint *(enhancement)* [link](StructureDefinition-ext-coverage-information.html)
 * [FHIR-53647](https://jira.hl7.org/browse/FHIR-53647) - Tightened expectations on appointment participant to limit must support to primary performer and patient *(correction)* [link](StructureDefinition-profile-appointment-with-order.html), [link](StructureDefinition-profile-appointment-no-order.html)
+* [FHIR-52908](https://jira.hl7.org/browse/FHIR-52908) - Updated the spec to refer to the most recent version of the CDS Hooks specification (with new prefetch rules) *(correction)* [link](index.html#dependencies)
 
 **Substative changes**
 * [FHIR-52452](https://jira.hl7.org/browse/FHIR-52452) - Added 'contained' as mustSupport to request resources and encounters *(enhancement)*

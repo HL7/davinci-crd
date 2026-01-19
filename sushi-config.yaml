@@ -105,7 +105,7 @@ dependencies:
   hl7.fhir.uv.cds-hooks:
     id: cdshooks
     uri: http://cds-hooks.hl7.org/ImplementationGuide/hl7.fhir.uv.cds-hooks
-    version: 2.0.1
+    version: 3.0.0-ballot
     reason: |
       The CDS Hooks specification the CRD architecture is based on
   hl7.fhir.uv.cds-hooks-library:
