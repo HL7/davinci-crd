@@ -55,6 +55,14 @@ Description: "This profile specifies constraints on the ServiceRequest resource 
   * ^type[0].targetProfile[1].extension[$typeMS].valueBoolean = true
   * ^type[0].targetProfile[2].extension[$typeMS].valueBoolean = true
 * performer MS
+* locationCode MS
+  * coding
+    * ^slicing.discriminator[+].type = #value
+    * ^slicing.discriminator[=].path = "$this"
+    * ^slicing.rules = #open
+  * coding contains cms 0..1 MS and nubc 0..1 MS
+  * coding[cms] from CMSLocationCodes
+  * coding[nubc] from NUBCTypeOfBill
 * locationReference 0..1 MS
 * locationReference only Reference(CRDLocation)
 * reasonCode MS

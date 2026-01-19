@@ -1,0 +1,45 @@
+-------------------------------------------------------------------------------------
+{"hierarchical" : true, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "inactive" : true,
+    "include" : [{
+      "system" : "https://www.nubc.org/CodeSystem/TypeOfBill"
+    }]
+  }
+}}####
+e: {
+  "source" : tx-nordics.fhir.org,
+  "valueSet" : {
+  "resourceType" : "ValueSet",
+  "status" : "active",
+  "expansion" : {
+    "identifier" : "urn:uuid:8169a201-9573-41cc-805c-04e65b4a58cc",
+    "timestamp" : "2026-01-19T17:41:47+01:00",
+    "total" : 0,
+    "offset" : 0,
+    "parameter" : [{
+      "name" : "used-codesystem",
+      "valueUri" : "https://www.nubc.org/CodeSystem/TypeOfBill|1.0.0"
+    },
+    {
+      "name" : "version",
+      "valueUri" : "https://www.nubc.org/CodeSystem/TypeOfBill|1.0.0"
+    },
+    {
+      "name" : "excludeNested",
+      "valueBoolean" : false
+    },
+    {
+      "name" : "offset",
+      "valueInteger" : 0
+    },
+    {
+      "name" : "count",
+      "valueInteger" : 1000
+    }]
+  }
+},
+  "error" : ""
+}
+-------------------------------------------------------------------------------------

@@ -1,12 +1,83 @@
 {
   "resourceType" : "Requirements",
   "id" : "fromNarrative",
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+    "valueCode" : "fm"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+    "valueInteger" : 4,
+    "_valueInteger" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
+        "valueCanonical" : "http://hl7.org/fhir/us/davinci-crd/ImplementationGuide/davinci-crd"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+    "valueCode" : "trial-use",
+    "_valueCode" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
+        "valueCanonical" : "http://hl7.org/fhir/us/davinci-crd/ImplementationGuide/davinci-crd"
+      }]
+    }
+  }],
   "url" : "http://hl7.org/fhir/us/davinci-crd/Requirements/fromNarrative",
+  "identifier" : [{
+    "system" : "urn:ietf:rfc:3986",
+    "value" : "urn:oid:2.16.840.1.113883.4.642.40.18.36.1"
+  }],
+  "version" : "2.2.0-snapshot",
   "name" : "FromNarrative",
   "title" : "Narrative Conformance Statements",
   "status" : "active",
   "experimental" : false,
+  "date" : "2026-01-18T21:48:04-07:00",
+  "publisher" : "HL7 International / Financial Management",
+  "contact" : [{
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://www.hl7.org/Special/committees/fm"
+    }]
+  }],
   "description" : "Conformance statements found throughout the narrative of the IG consolidated into this computable resource for traceability purposes",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US"
+    }]
+  }],
+  "actor" : ["http://hl7.org/fhir/us/davinci-crd/ActorDefinition/crd-server",
+  "http://hl7.org/fhir/us/davinci-crd/ActorDefinition/crd-server-org",
+  "http://hl7.org/fhir/us/davinci-crd/ActorDefinition/crd-client-org",
+  "http://hl7.org/fhir/us/davinci-crd/ActorDefinition/crd-client"],
+  "_actor" : [{
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-actorkey",
+      "valueString" : "crd-server"
+    }]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-actorkey",
+      "valueString" : "crd-server-org"
+    }]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-actorkey",
+      "valueString" : "crd-client-org"
+    }]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-actorkey",
+      "valueString" : "crd-client"
+    }]
+  }],
   "statement" : [{
     "extension" : [{
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementcategory",
@@ -320,7 +391,7 @@
     }],
     "key" : "conf-13",
     "conformance" : ["SHALL"],
-    "requirement" : "CRD clients and services and **SHALL** use standard CRD data elements (i.e. elements found within CRD-defined or inherited profiles and marked as mandatory or mustSupport) to communicate needed data."
+    "requirement" : "CRD clients and services and **SHALL** use standard CRD data elements (i.e. elements found within CRD-defined or inherited profiles and marked as mandatory or mustSupport) to communicate needed data where the elements are intended to convey such information."
   },
   {
     "extension" : [{
@@ -345,27 +416,6 @@
     }],
     "key" : "conf-14",
     "requirement" : "CRD implementing organizations **SHALL NOT** publish guidance setting expectations for where certain data elements are conveyed within CRD and inherited data structures"
-  },
-  {
-    "extension" : [{
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementcategory",
-      "valueCoding" : {
-        "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
-        "code" : "business",
-        "display" : "business"
-      }
-    },
-    {
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
-      "valueString" : "crd-client-org"
-    },
-    {
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
-      "valueString" : "crd-server-org"
-    }],
-    "key" : "conf-15",
-    "conformance" : ["MAY"],
-    "requirement" : "CRD implementing organizations **MAY** submit change requests to CRD, HRex, or US Core requesting that additional guidance be provided to implementers on data structure usage to increase consistency across implementations."
   },
   {
     "extension" : [{
@@ -541,7 +591,7 @@
     }],
     "key" : "dev-8",
     "conformance" : ["SHALL"],
-    "requirement" : "Configuration codes, names, and descriptions **SHALL** be unique within a [CDS Service](http://cds-hooks.hl7.org/STU2/index.html#response) definition."
+    "requirement" : "Configuration codes, names, and descriptions **SHALL** be unique within a [CDS Service](http://cds-hooks.hl7.org/2026Jan/index.html#response) definition."
   },
   {
     "extension" : [{
@@ -1361,7 +1411,7 @@
     }],
     "key" : "found-22",
     "conformance" : ["SHALL"],
-    "requirement" : "For this release of the IG, conformant CRD clients and servers **SHALL** support the CDS Hooks [prefetch](http://cds-hooks.hl7.org/STU2/index.html#prefetch-template) capability."
+    "requirement" : "For this release of the IG, conformant CRD clients and servers **SHALL** support the CDS Hooks [prefetch](http://cds-hooks.hl7.org/2026Jan/index.html#prefetch-template) capability."
   },
   {
     "extension" : [{
@@ -1782,7 +1832,7 @@
     }],
     "key" : "hook-5",
     "conformance" : ["MAY"],
-    "requirement" : "CRD Clients and CRD Servers **MAY** choose to support additional hooks available in the registry on the [CDS Hooks continuous integration build](https://cds-hooks.org) or custom hooks defined elsewhere."
+    "requirement" : "CRD Clients and CRD Servers **MAY** choose to support additional hooks available in the registry on the [CDS Hooks continuous integration build](https://build.fhir.org/ig/HL7/cds-hooks-library) or custom hooks defined elsewhere."
   },
   {
     "extension" : [{
@@ -2048,6 +2098,43 @@
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementcategory",
       "valueCoding" : {
         "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+        "code" : "exchange",
+        "display" : "exchange"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
+      "valueString" : "crd-client"
+    }],
+    "key" : "hook-20",
+    "conformance" : ["SHALL"],
+    "requirement" : "Where profiles are provided in a table for the hook sections below, CRD clients **SHALL** ensure that data included in the hook invocation complies with the listed profiles."
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementcategory",
+      "valueCoding" : {
+        "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+        "code" : "processing",
+        "display" : "processing"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
+      "valueString" : "crd-server"
+    },
+    {
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementshallnot",
+      "valueBoolean" : true
+    }],
+    "key" : "hook-21",
+    "requirement" : "CRD servers **SHALL NOT** depend on data not covered by the identified profiles in order to return valid coverage-information responses."
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementcategory",
+      "valueCoding" : {
+        "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
         "code" : "processing",
         "display" : "processing"
       }
@@ -2056,7 +2143,7 @@
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
       "valueString" : "crd-server"
     }],
-    "key" : "hook-20",
+    "key" : "hook-22",
     "conformance" : ["SHALL"],
     "requirement" : "CRD Servers **SHALL** handle unrecognized context elements by ignoring them."
   },
@@ -2073,7 +2160,7 @@
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
       "valueString" : "crd-server"
     }],
-    "key" : "hook-21",
+    "key" : "hook-23",
     "conformance" : ["MAY"],
     "requirement" : "CRD Servers **MAY** use the appointment-book hook as a basis for associating a patient with a particular practitioner from a payer attribution perspective."
   },
@@ -2102,7 +2189,7 @@
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
       "valueString" : "crd-server"
     }],
-    "key" : "hook-22",
+    "key" : "hook-24",
     "conformance" : ["SHALL"],
     "requirement" : "CRD clients and servers **SHALL**, at minimum, support returning and processing the [Coverage Information](StructureDefinition-ext-coverage-information.html) system action for all invocations of the appointment-book hook."
   },
@@ -2119,7 +2206,7 @@
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
       "valueString" : "crd-server"
     }],
-    "key" : "hook-23",
+    "key" : "hook-25",
     "conformance" : ["MAY"],
     "requirement" : "CRD Servers **MAY** use the appointment-book hook as a basis for associating a patient with a particular practitioner from a payer attribution perspective."
   },
@@ -2136,7 +2223,7 @@
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
       "valueString" : "crd-server"
     }],
-    "key" : "hook-24",
+    "key" : "hook-26",
     "conformance" : ["SHOULD"],
     "requirement" : "Coverage requirements **SHOULD** be limited only to those resources that are included in the `dispatchedOrders` context, though the content of other resources **SHOULD** also be considered before making recommendations about what additional actions are necessary."
   },
@@ -2153,7 +2240,7 @@
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
       "valueString" : "crd-server"
     }],
-    "key" : "hook-25",
+    "key" : "hook-27",
     "conformance" : ["MAY"],
     "requirement" : "CRD Servers **MAY** use the order-dispatch hook as a basis for associating a patient with a particular practitioner from a payer attribution perspective."
   },
@@ -2182,8 +2269,9 @@
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
       "valueString" : "crd-server"
     }],
-    "key" : "hook-26",
+    "key" : "hook-28",
     "conformance" : ["SHALL"],
+    "conditionality" : false,
     "requirement" : "CRD clients and servers **SHALL**, at minimum, support returning and processing the [Coverage Information](StructureDefinition-ext-coverage-information.html) system action for all invocations of the order-dispatch hook."
   },
   {
@@ -2199,7 +2287,7 @@
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
       "valueString" : "crd-server"
     }],
-    "key" : "hook-27",
+    "key" : "hook-29",
     "conformance" : ["SHOULD"],
     "requirement" : "Coverage requirements **SHOULD** be limited only to those resources that are included in the `selections` context, though the content of other resources **SHOULD** also be considered before making recommendations about what additional actions are necessary."
   },
@@ -2216,7 +2304,7 @@
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
       "valueString" : "crd-client"
     }],
-    "key" : "hook-28",
+    "key" : "hook-30",
     "conformance" : ["MAY"],
     "conditionality" : true,
     "requirement" : "Where CRD Clients have an appropriate workflow and data capture mechanism, the order-select hook **MAY** be used in scenarios that do not involve creating a true order."
@@ -2234,7 +2322,7 @@
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
       "valueString" : "crd-server"
     }],
-    "key" : "hook-29",
+    "key" : "hook-31",
     "conformance" : ["MAY"],
     "requirement" : "CRD Servers **MAY** use the order-select hook as a basis for associating a patient with a particular practitioner from a payer attribution perspective."
   },
@@ -2263,7 +2351,7 @@
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
       "valueString" : "crd-server"
     }],
-    "key" : "hook-30",
+    "key" : "hook-32",
     "conformance" : ["SHALL"],
     "requirement" : "CRD clients and servers **SHALL**, at minimum, support returning and processing the [Coverage Information](StructureDefinition-ext-coverage-information.html) system action for all invocations of the order-select hook."
   },
@@ -2313,8 +2401,30 @@
     {
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
       "valueString" : "crd-client"
+    },
+    {
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
+      "valueString" : "crd-server"
     }],
     "key" : "impl-3",
+    "conformance" : ["SHALL"],
+    "conditionality" : false,
+    "requirement" : "Even if implemented using multiple components, there is still a requirement that the exchanges between the provider HIT (including any ePA coordinators) and the payer HIT (including any ePA coordinators) **SHALL** replicate all of the defined exchanges between provider and payer."
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementcategory",
+      "valueCoding" : {
+        "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+        "code" : "exchange",
+        "display" : "exchange"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
+      "valueString" : "crd-client"
+    }],
+    "key" : "impl-4",
     "conformance" : ["MAY"],
     "conditionality" : true,
     "requirement" : "In situations where CRD clients are aware of the likely billing codes at the time of ordering, they **MAY** send these codes as additional CodeableConcept.coding repetitions to assist in server processing."
@@ -2332,7 +2442,7 @@
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
       "valueString" : "crd-server"
     }],
-    "key" : "impl-4",
+    "key" : "impl-5",
     "conformance" : ["SHOULD"],
     "requirement" : "Where a CRD server has made inferences beyond what is explicit in the CRD request, the response **SHOULD** make clear what assumptions around billing codes, in/out-of-network, delivery location were made in providing the response."
   },
@@ -2828,7 +2938,7 @@
     "key" : "resp-12",
     "conformance" : ["SHOULD-NOT"],
     "conditionality" : true,
-    "requirement" : "Where [systemActions](http://cds-hooks.hl7.org/STU2/index.html#system-action) are used, CRD servers **SHOULD NOT** return equivalent information in a card for user display."
+    "requirement" : "Where [systemActions](http://cds-hooks.hl7.org/2026Jan/index.html#system-action) are used, CRD servers **SHOULD NOT** return equivalent information in a card for user display."
   },
   {
     "extension" : [{
@@ -3572,7 +3682,7 @@
     }],
     "key" : "resp-52",
     "conformance" : ["MAY"],
-    "requirement" : "Instead of using a card for \"Request Form Completion\", CRD servers **MAY** opt to use a [systemAction](http://cds-hooks.hl7.org/STU2/index.html#system-action)."
+    "requirement" : "Instead of using a card for \"Request Form Completion\", CRD servers **MAY** opt to use a [systemAction](http://cds-hooks.hl7.org/2026Jan/index.html#system-action)."
   },
   {
     "extension" : [{
@@ -3659,7 +3769,7 @@
     }],
     "key" : "resp-57",
     "conformance" : ["MAY"],
-    "requirement" : "Instead of using a card for \"Update Coverage Records\", CRD servers **MAY** opt to use a [systemAction](http://cds-hooks.hl7.org/STU2/index.html#system-action) instead."
+    "requirement" : "Instead of using a card for \"Update Coverage Records\", CRD servers **MAY** opt to use a [systemAction](http://cds-hooks.hl7.org/2026Jan/index.html#system-action) instead."
   },
   {
     "extension" : [{
@@ -3754,7 +3864,7 @@
     "key" : "sec-1",
     "label" : "Implementers SHALL adhere to inherited security and privacy rules",
     "conformance" : ["SHALL"],
-    "requirement" : "Implementers **SHALL** adhere to any security and privacy rules defined by:\r\n\r\n* FHIR Core: [Security & Privacy Module](http://hl7.org/fhir/R4/secpriv-module.html), [Security Principles](http://hl7.org/fhir/R4/security.html) and [Implementer's Checklist](http://hl7.org/fhir/R4/safety.html)\r\n* HRex: [Privacy & Security](http://hl7.org/fhir/us/davinci-hrex/STU1.1/security.html)\r\n* CDS Hooks: [Security & Safety](http://cds-hooks.hl7.org/STU2/index.html#security-and-safety)\r\n* SMART on FHIR: [SMART App Launch](http://www.hl7.org/fhir/smart-app-launch)"
+    "requirement" : "Implementers **SHALL** adhere to any security and privacy rules defined by:\r\n\r\n* FHIR Core: [Security & Privacy Module](http://hl7.org/fhir/R4/secpriv-module.html), [Security Principles](http://hl7.org/fhir/R4/security.html) and [Implementer's Checklist](http://hl7.org/fhir/R4/safety.html)\r\n* HRex: [Privacy & Security](http://hl7.org/fhir/us/davinci-hrex/STU1.1/security.html)\r\n* CDS Hooks: [Security & Safety](http://cds-hooks.hl7.org/2026Jan/index.html#security-and-safety)\r\n* SMART on FHIR: [SMART App Launch](http://www.hl7.org/fhir/smart-app-launch)"
   },
   {
     "extension" : [{
@@ -3886,5 +3996,23 @@
     "key" : "sec-8",
     "conformance" : ["SHOULD"],
     "requirement" : "CRD client organizations **SHOULD** audit access to check for reasonableness and appropriateness."
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementcategory",
+      "valueCoding" : {
+        "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+        "code" : "processing",
+        "display" : "processing"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor",
+      "valueString" : "crd-client-org"
+    }],
+    "key" : "sec-9",
+    "label" : "Access tokens provided as part of CRD calls **SHOULD NOT** be forwarded to systems that are not managed by the same organization or have business associate agreements that allow centralized audit of access.",
+    "conformance" : ["SHOULD-NOT"],
+    "requirement" : "*\r\n Access tokens provided as part of CRD calls **SHOULD NOT** be forwarded to systems that are not managed by the same organization or have business associate agreements that allow centralized audit of access. Possible alternatives to token-sharing include: * Routing all requests for information through the initial endpoint system * Making use of RFC 8693 to allow the creation of 'delegate' tokens for downstream systems\"\r\n> Additional testing and standardization work needs to happen around making delegated access function well, particularly in a time-constrained environment."
   }]
 }

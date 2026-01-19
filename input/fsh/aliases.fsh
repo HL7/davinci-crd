@@ -1,11 +1,13 @@
 // Code Systems
 // Code Systems - external
-Alias: $cpt = http://www.ama-assn.org/go/cpt
+Alias: $cpt                  = http://www.ama-assn.org/go/cpt
+Alias: $cmsLocation          = https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set
 Alias: $HCPCSReleaseCodeSets = https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets
-Alias: $loinc = http://loinc.org
-Alias: $rxnorm = http://www.nlm.nih.gov/research/umls/rxnorm
-Alias: $raceEthnicity = urn:oid:2.16.840.1.113883.6.238
-Alias: $sct = http://snomed.info/sct
+Alias: $loinc                = http://loinc.org
+Alias: $nubcTypeOfBill       = https://www.nubc.org/CodeSystem/TypeOfBill
+Alias: $rxnorm               = http://www.nlm.nih.gov/research/umls/rxnorm
+Alias: $raceEthnicity        = urn:oid:2.16.840.1.113883.6.238
+Alias: $sct                  = http://snomed.info/sct
 // Code Systems - HL7
 Alias: $fhir-types                   = http://hl7.org/fhir/data-types
 Alias: $restful-interaction          = http://hl7.org/fhir/restful-interaction

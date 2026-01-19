@@ -2,7 +2,7 @@ This page describes the primary releases of the specification and summarizes the
 
 ### Release 2.2.0-snapshot
 **Breaking changes**:
-* [FHIR-52057](https://jira.hl7.org/browse/FHIR-52057) - Corrected single-digit CMS location codes to have a leading 0 *(correction)* [link](CodeSystem-temp.html), [link](ConceptMap-HL7Location-CRDTemp.html)
+* [FHIR-52057](https://jira.hl7.org/browse/FHIR-52057) - Corrected single-digit CMS location codes to have a leading 0 *(correction)* [link](CodeSystem-temp.html), - Superceded by FHIR-53648
 * [FHIR-49825](https://jira.hl7.org/browse/FHIR-49825) - Stripped language allowing coverage records to be added via a card or system action *(correction)* [link](cards.html#FHIR-49825)
 * [FHIR-52535](https://jira.hl7.org/browse/FHIR-52535) - Tighened expectations around providing OperationOutcomes *(clarification)* [link](hooks.html#FHIR-52535)
 * [FHIR-49974](https://jira.hl7.org/browse/FHIR-49974) - Made order-select support mandatory *(clarification)* [link](hooks.html#FHIR-49974)
@@ -15,6 +15,7 @@ This page describes the primary releases of the specification and summarizes the
 * [FHIR-53646](https://jira.hl7.org/browse/FHIR-53646) - Changed coverage-information 'contact' extension to ContactDetail instead of ContactPoint *(enhancement)* [link](StructureDefinition-ext-coverage-information.html)
 * [FHIR-53647](https://jira.hl7.org/browse/FHIR-53647) - Tightened expectations on appointment participant to limit must support to primary performer and patient *(correction)* [link](StructureDefinition-profile-appointment-with-order.html), [link](StructureDefinition-profile-appointment-no-order.html)
 * [FHIR-52908](https://jira.hl7.org/browse/FHIR-52908) - Updated the spec to refer to the most recent version of the CDS Hooks specification (with new prefetch rules) *(correction)* [link](index.html#dependencies)
+* [FHIR-53648](https://jira.hl7.org/browse/FHIR-53648), [FHIR-50276](https://jira.hl7.org/browse/FHIR-50276) - Dropped expectations for use of Location.typeCode (and associated value sets and concept map) and added support for ServiceRequest.locationCode with two mustSupport code bindings, including moving CMS location codes to use official URL *(correction)* [link](StructureDefinition-profile-servicerequest.html), [link](StructureDefinition-profile-location.html)
 
 **Substative changes**
 * [FHIR-52452](https://jira.hl7.org/browse/FHIR-52452) - Added 'contained' as mustSupport to request resources and encounters *(enhancement)*
@@ -37,7 +38,7 @@ This page describes the primary releases of the specification and summarizes the
 * [FHIR-52002](https://jira.hl7.org/browse/FHIR-52002) - Updated ONC to ASTP/ONC *(correction)*
 * [FHIR-52004](https://jira.hl7.org/browse/FHIR-52004), [FHIR-52069](https://jira.hl7.org/browse/FHIR-52069), [FHIR-52480](https://jira.hl7.org/browse/FHIR-52480), [FHIR-52441](https://jira.hl7.org/browse/FHIR-52441) - Fixed various minor typos *(correction)*
 * [FHIR-53177](https://jira.hl7.org/browse/FHIR-53177) - Put coverage-information back on Appointment w/ No Order, as it had accidentally been dropped *(correction)* [link](StructureDefinition-profile-appointment-no-order.html)
-* [FHIR-52058](https://jira.hl7.org/browse/FHIR-52058) - Renamed "CMS Mappable Location Codes" to "CMS Supplemented US Core Location Codes" *(clarification)* [link](ValueSet-CMSSupplementedLocationCodes.html)
+* [FHIR-52058](https://jira.hl7.org/browse/FHIR-52058) - Renamed "CMS Mappable Location Codes" to "CMS Supplemented US Core Location Codes" *(clarification)* Superceded by FHIR-53648
 * [FHIR-52585](https://jira.hl7.org/browse/FHIR-52585) - Clarified expectations for when cards can be used in place of DTR *(clarification)* NOTE: Subsequently removed in FHIR-52586, below
 * [FHIR-52531](https://jira.hl7.org/browse/FHIR-52531) - Changed example "recommended alternative therapies" to "payer-preferred alternative therapies” *(clarification)* [link](deviations.html#FHIR-52531)
 * [FHIR-52533](https://jira.hl7.org/browse/FHIR-52533) - Indicated the profile the form completion example was of *(clarification)* [link](deviations.html#FHIR-52533)
