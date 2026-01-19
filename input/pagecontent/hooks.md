@@ -7,7 +7,7 @@ Not all CRD Clients will support all hook types or order resource types.  For ex
 
 Similarly, not all payers will necessarily provide coverage that is relevant to all hook types or order resource types.  For example, a payer that only provides drug coverage would be unlikely to have coverage information to return for an `encounter-discharge` event or a VisionPrescription order.  §hook-4?^crd-server^exchange:CRD Servers conforming to this implementation guide **SHALL** provide a service for all hooks and order resource types required of CRD clients by this implementation guide unless the server has determined that the hook will not be reasonably useful in determining coverage or documentation expectations for the types of coverage provided.§
 
-§hook-5^crd-client,crd-server^exchange:CRD Clients and CRD Servers **MAY** choose to support additional hooks available in the registry on the [CDS Hooks continuous integration build](https://cds-hooks.org) or custom hooks defined elsewhere.§  §hook-6?^crd-client,crd-server^exchange:When supporting hooks not covered by this guide, systems **SHOULD** adhere to the general conformance expectations defined in this specification for those additional hooks.§ 
+§hook-5^crd-client,crd-server^exchange:CRD Clients and CRD Servers **MAY** choose to support additional hooks available in the registry on the [CDS Hooks continuous integration build](https://build.fhir.org/ig/HL7/cds-hooks-library) or custom hooks defined elsewhere.§  §hook-6?^crd-client,crd-server^exchange:When supporting hooks not covered by this guide, systems **SHOULD** adhere to the general conformance expectations defined in this specification for those additional hooks.§ 
 
 <p class="new-content" markdown="1"><a name="FHIR-52806"> </a>§hook-7^crd-client^ui:CRD clients **SHALL** allow hook invocation to occur transparently as part of user workflow.§  §hook-8?^crd-client^ui:CRD clients **SHALL NOT** require transcription of order, appointment, or other data into a separate interface distinct from regular provider workflow unless performing "what if" situations.§</p>
 
@@ -363,7 +363,7 @@ Notes:
 
 
 ### order-sign
-This hook is described in the CDS Hooks specification [here](https://cds-hooks.org/hooks/order-sign/).  This version of the CRD implementation guide refers to version 1.1 of the hook which, at the time of publication, was not available as a snapshot.  Therefore, the preceding link refers to the CDS hooks current build.
+This hook is described in the CDS Hooks specification [here]({{site.data.fhir.ver.hooks}}/order-sign.html).  This version of the CRD implementation guide refers to version 1.1 of the hook which, at the time of publication, was not available as a snapshot.  Therefore, the preceding link refers to the CDS hooks current build.
 
 This hook serves a very similar purpose to [order-select](#order-select).  The main difference is that all the listed draft orders are considered 'complete'.  That means that it is appropriate to provide warnings if there is insufficient information to determine coverage requirements.  Also, all `draftOrders` are appropriate to comment on when using order-sign as the `selections` field found in in order-select is not used in order-sign.
 

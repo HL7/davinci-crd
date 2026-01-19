@@ -109,7 +109,7 @@ This implementation guide (and the menu for it) is organized into the following 
   * [Downloads](downloads.html) allows downloading this and other specifications, as well as other useful files
 
 ### Dependencies
-This guide is based on the [FHIR R4]({{site.data.fhir.path}}) specification that is mandated for use in the U.S. as well as the [CDS Hooks 2.0]({{site.data.fhir.ver.cdshooks}}) and [CDS Hooks CI Build](https://cds-hooks.org/specification/current/) releases of the CDS Hooks specification.  It also leverages the [SMART on FHIR](http://hl7.org/fhir/smart-app-launch) specification for CRD clients that opt to use that approach for "what-if" scenarios.
+This guide is based on the [FHIR R4]({{site.data.fhir.path}}) specification that is mandated for use in the U.S.  It also leverages the [SMART on FHIR](http://hl7.org/fhir/smart-app-launch) specification for CRD clients that opt to use that approach for "what-if" scenarios.
 
 In addition, this guide also relies on several ancestor implementation guides:
 

@@ -6,9 +6,6 @@ Each capability listed here has been proposed to the CDS Hooks community and cou
 
 This implementation guide extends/customizes CDS Hooks in 5 ways: additional hook resources, a hook configuration mechanism, additional prefetch capabilities, additional response capabilities, and the ability to link hooks to their corresponding request.  Each are described below:
 
-### Additional Hook scope
-In the [current build](https://cds-hooks.org/hooks/order-sign/), the order-sign hook can be used for both 'draft' orders that are newly created as well as for updated orders that are active.  The balloted version of the hooks this IG release is bound to are limited to draft orders.  This IG adopts the newer wording, meaning that the order-sign hook can be triggered both on newly created orders, as well as when orders are updated (changing status, changing timeframe, etc.).  The hook can also be re-triggered if there is a key change to the context, most typically the establishment of new or renewed coverage relevant to the order.
-
 <div class="new-content" markdown="1">
 ### CRD Version declaration
 There have been multiple versions of this specification and there are likely to be new ones in the future.  Not all versions are fully compatible.  Some clients and/or services may be able to handle multiple versions, but to interoperate, it is necessary for a client to know what version(s) a CRD server supports and for CRD servers to know which version a given client wants.
