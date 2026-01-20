@@ -39,6 +39,8 @@ Alias: $x12-1365                     = https://codesystem.x12.org/005010/1365
 Alias: $temp           = http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp
 Alias: $temp_1         = http://hl7.org/fhir/uv/sdc/CodeSystem/temp
 Alias: $OriginValueSet = http://hl7.org/fhir/us/davinci-dtr/ValueSet/Origin-vs
+// Value Sets
+Alias: $eventOrRequest       = http://hl7.org/fhir/ValueSet/event-or-request-resource-types
 // Resources
 Alias: $Appointment          = http://hl7.org/fhir/StructureDefinition/Appointment
 Alias: $CommunicationRequest = http://hl7.org/fhir/StructureDefinition/CommunicationRequest

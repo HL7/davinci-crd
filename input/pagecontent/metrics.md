@@ -28,68 +28,68 @@ The table below defines a set of measures with a short name, purpose, conformanc
   <tbody>
     <tr>
       <td>1</td>
-      <td>Volume/% of Orders with results (coverage info) returned</td>
+      <td>Volume/% of orders/appointments with results (coverage info) returned</td>
       <td>Adoption Process</td>
       <td>Both</td>
       <td>
         <i>For volume:</i><br/>
-          <code>CRDMetricData.exists(response.coverageInfo).count()</code><br/>
+          <code>CRDMetricData.request.exists(response.coverageInfo).count()</code><br/>
         <i>For percent:</i><br/>
-          Divide volume above by <code>CRDMetricData.where(httpResponse=200).count()</code> and express as percentage
+          Divide volume above by <code>CRDMetricData.where(httpResponse=200).request.count()</code> and express as percentage
       </td>
     </tr>
     <tr>
       <td>2</td>
-      <td>% by coverage response type (covered, not covered,  conditional)</td>
+      <td>% of orders/appointments by coverage response type (covered, not covered,  conditional)</td>
       <td>Segmentation</td>
       <td>Both</td>
       <td>
         <i>For volume:</i><br/>
           Iterate where $ResponseType is one of covered, not-covered, conditional
-          <code>CRDMetricData.exists(response.coverageInfo.where(covered=$ResponseType)).count()</code><br/>
+          <code>CRDMetricData.request.exists(response.coverageInfo.where(covered=$ResponseType)).count()</code><br/>
         <i>For percent:</i><br/>
-          Divide volume above by <code>CRDMetricData.where(httpResponse=200).count()</code> and express as percentage
+          Divide volume above by <code>CRDMetricData.where(httpResponse=200).request.count()</code> and express as percentage
       </td>
     </tr>
     <tr>
       <td>3</td>
-      <td>Volume/% of PA required with DTR launch context</td>
+      <td>Volume/% of orders/appointments with PA required with DTR launch context</td>
       <td>Process Compliance</td>
       <td>Both</td>
       <td>
         <i>For volume:</i><br/>
-          <code>CRDMetricData.exists(response.coverageInfo.where(paNeeded = "auth-needed" and questionnaire.exists())).count()</code><br/>
+          <code>CRDMetricData.request.exists(response.coverageInfo.where(paNeeded = "auth-needed" and questionnaire.exists())).count()</code><br/>
         <i>For percent:</i><br/>
-          divide volume above by <code>CRDMetricData.exists(response.coverageInfo.where(paNeeded = 'auth-needed')).count()</code> and express as percentage
+          divide volume above by <code>CRDMetricData.request.exists(response.coverageInfo.where(paNeeded = 'auth-needed')).count()</code> and express as percentage
       </td>
     </tr>
     <tr>
       <td>4</td>
-      <td>Volume/% of Documentation required with DTR launch context</td>
+      <td>Volume/% of orders/appointments with Documentation required with DTR launch context</td>
       <td>Adoption</td>
       <td>Both</td>
       <td>
         <i>For volume:</i><br/>
-          <code>CRDMetricData.where(response.coverageInfo.where((docNeeded='clinical' or docNeeded='admin' or docNeeded='both') and questionnaire.exists())).count()</code><br/>
+          <code>CRDMetricData.request.where(response.coverageInfo.where((docNeeded='clinical' or docNeeded='admin' or docNeeded='both') and questionnaire.exists())).count()</code><br/>
         <i>For percent:</i><br/>
-          divide volume above by <code>CRDMetricData.exists(response.coverageInfo.where(docNeeded='clinical' or docNeeded='admin' or docNeeded='both')).count()</code> and express as percentage
+          divide volume above by <code>CRDMetricData.request.exists(response.coverageInfo.where(docNeeded='clinical' or docNeeded='admin' or docNeeded='both')).count()</code> and express as percentage
       </td>
     </tr>
     <tr>
       <td>5</td>
-      <td>Volume/% with service determination</td>
+      <td>Volume/% orders/appointments with (potentially conditional) service determination</td>
       <td>Adoption Process</td>
       <td>Both</td>
       <td>
         <i>For volume:</i><br/>
-          <code>CRDMetricData.where(response.coverageInfo.exists(paNeeded = 'satisfied')).count()</code><br/>
+          <code>CRDMetricData.request.where(response.coverageInfo.exists(paNeeded = 'satisfied')).count()</code><br/>
         <i>For percent:</i><br/>
-          divide volume above by <code>CRDMetricData.where(httpResponse=200).count()</code> and express as percentage
+          divide volume above by <code>CRDMetricData.where(httpResponse=200).request.count()</code> and express as percentage
       </td>
     </tr>
     <tr>
       <td>6</td>
-      <td>% in under 5 seconds</td>
+      <td>% requests with resposnes in under 5 seconds</td>
       <td>Process Compliance</td>
       <td>Both</td>
       <td>
