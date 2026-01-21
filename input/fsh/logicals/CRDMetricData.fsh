@@ -40,10 +40,10 @@ Description: "A logical model describing the information that should be captured
     * ^type.targetProfile = "http://hl7.org/fhir/StructureDefinition/StructureDefinition"
   * count             1..1 positiveInt     "Number retrieved"                    "How many resources of that type were accessed."
   * prefetch          0..1 boolean         "Retrieved by prefetch?"              "Was the data retrieved by prefetch or direct query.  (If some resources of the same type were accessed both with and without prefetch, include two repetitions.)"
-* request             0..* BackboneElement "Request resource passed"             "Details about what request resources were passed in (and what resposnes came back)"
-  * type              0..1 code            "Resource type"                       "The request resource that was passed as part of the request for an order-select, order-sign, or order-dispatch hook."
+* request             1..* BackboneElement "Request resource passed"             "Details about what request resources were passed in (and what resposnes came back)"
+  * type              1..1 code            "Resource type"                       "The request resource that was passed as part of the request for an order-select, order-sign, or order-dispatch hook."
   * type              from $eventOrRequest             (required)
-  * orderDetail       0..* CodeableConcept "Service or product code(s)"          "The code or codes defining the type of product or service from the focal Request or "
+  * orderDetail       1..1 CodeableConcept "Service or product code(s)"          "The code defining the type of product or service from the focal Request, the Encounter code, etc."
   * orderDetail       from MetricOrderDetail           (extensible)
     * ^comment = "Specifically, this corresponds to: Appointment.serviceType, CommunicationRequest.payload.valueCodeableConcept, DeviceRequest.codeCodeableConcept, DeviceRequest.codeReference.resolve().udiCarrier.deviceIdentifier (expressed as a CodeableConcept), Encounter.serviceType, MedicationRequest.medicationCodeableConcept, MedicationRequest.medicationReference.resolve().code, ServiceRequest.code, VisionPrescription.lensSpecification.productType"
   * response          0..* BackboneElement "Returned card/system action"         "Summary information about each card or systemAction returned related to a given request resource.  (If a card pertains to multiple orders, list the response for each)."
