@@ -1,5 +1,5 @@
 Instance: Practitioner-full
-InstanceOf: USCorePractitionerProfile
+InstanceOf: CRDPractitioner
 Title: "Practitioner full example"
 Description: "An example showing a fully populated US Core Practitioner instance (used in CRD examples)"
 Usage: #example
@@ -11,8 +11,8 @@ Usage: #example
   * system = "http://hl7.org/fhir/sid/us-npi"
   * value = "1234567893"
 * identifier[+]
-  * system = "http://terminology.hl7.org/NamingSystem/CMSCertificationNumber"
-  * value = "25456"
+  * system = "urn:oid:2.16.840.1.113883.4.4"
+  * value = "123456789"
 * name.family = "Bone"
 * telecom[+]
   * system = #phone

@@ -6,7 +6,7 @@ WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/Str
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-bundle-request'): The Implementation Guide contains no examples for this profile
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-bundle-task'): The Implementation Guide contains no examples for this profile
 
-# 0b. This is telegraphed in this ballot, but the THO changes have not yet been approved.  The change will happen prior to publication
+# 0b. Much of the terminology has been moved, but one code wasn't approved in the most recent release (it's on track to being approved next round).  Also one new set of codes has been defined for internal use within the IG.  It'll be proposed to THO soon.  Finally, we need to maintain the old temporary codes for a while as a transition pathway.
 INFORMATION: CodeSystem/temp: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
 # 0c. These are issues are caused by the inter-version extensions pack and should be addressed in the next release of that package
@@ -60,6 +60,10 @@ ERROR: ImplementationGuide/hl7.fhir.us.davinci-crd: ImplementationGuide.definiti
 ERROR: ImplementationGuide/hl7.fhir.us.davinci-crd: ImplementationGuide.definition.extension[44].extension[0].value.ofType(code): The System URI could not be determined for the code 'term-params-in-artifacts' in the ValueSet 'http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.8.0'
 ERROR: ImplementationGuide/hl7.fhir.us.davinci-crd: ImplementationGuide.definition.extension[44].extension[0].value.ofType(code): The value provided ('term-params-in-artifacts') was not found in the value set 'ig-parameters Codes ValueSet' (http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.8.0), and a code is required from this value set  (error message = The System URI could not be determined for the code 'term-params-in-artifacts' in the ValueSet 'http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.8.0'; The provided code '#term-params-in-artifacts' was not found in the value set 'http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.8.0')
 
+# 0h. The IG publisher is incorrectly validating CRD slices against US core slices that they're not intended to derive from.  https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/Checking.20terminology.20isn't.20working.20across.20slices/with/569134880
+ERROR: StructureDefinition/profile-medicationrequest: StructureDefinition: This profile does not comply with claimed profile 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|6.1.0'
+ERROR: StructureDefinition/profile-servicerequest: StructureDefinition: This profile does not comply with claimed profile 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-servicerequest|6.1.0'
+
 
 # 01. While technically invalid, US Core is evaluating approving this as a patch.  Patch request submitted as https://jira.hl7.org/browse/FHIR-51489 (waiting on approval)
 ERROR: StructureDefinition/profile-organization: StructureDefinition: This profile does not comply with claimed profile 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|3.1.1'
@@ -80,6 +84,7 @@ INFORMATION: StructureDefinition/profile-coverage: StructureDefinition.snapshot.
 INFORMATION: StructureDefinition/profile-coverage: StructureDefinition.snapshot.element[29].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: StructureDefinition/profile-medicationrequest: StructureDefinition.snapshot.element[15].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: StructureDefinition/profile-organization: StructureDefinition.snapshot.element[9].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
+INFORMATION: StructureDefinition/profile-practitioner: StructureDefinition.snapshot.element[9].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: StructureDefinition/profile-servicerequest: StructureDefinition.snapshot.element[18].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 
 # 05. This link is intended to be version-independent
@@ -104,6 +109,7 @@ Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/dose-rate-ty
 INFORMATION: StructureDefinition/profile-organization: StructureDefinition.snapshot.element[10].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 INFORMATION: StructureDefinition/profile-organization: StructureDefinition.snapshot.element[11].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 INFORMATION: StructureDefinition/profile-organization: StructureDefinition.snapshot.element[12].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
+INFORMATION: StructureDefinition/profile-practitioner: StructureDefinition.snapshot.element[10].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 
 # 11. This version pinning is expected and wanted
 %to 20240606 from choices of 20170601 (us.nlm.vsac#0.11.0), 20240606 (us.nlm.vsac#0.19.0)
@@ -185,3 +191,6 @@ WARNING: DA VINCI: The How to Read page (background.html) needs to include a ref
 A definition for CodeSystem 'https://codesystem.x12.org/005010/1365' could not be found, so the code cannot be validated
 Error from https://tx.fhir.org/r4: A definition for CodeSystem 'https://codesystem.x12.org/005010/1365' could not be found, so the value set cannot be expanded
 No definition could be found for URL value 'https://codesystem.x12.org/005010/1365'
+
+# 27. This repetition is not expected to match any slices
+INFORMATION: Practitioner/full: Practitioner.identifier[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-practitioner|2.2.0-snapshot (this may not be a problem, but you should check that it's not intended to match a slice)

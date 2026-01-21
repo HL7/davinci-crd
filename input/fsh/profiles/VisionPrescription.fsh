@@ -34,7 +34,7 @@ Description: "This profile defines an initial profile on the VisionPrescription 
   * ^comment = "potentially relevant for CRD in some situations."
 * dateWritten MS
 * prescriber 1.. MS
-* prescriber only Reference(USCorePractitionerProfile or HRexPractitionerRole)
+* prescriber only Reference(CRDPractitioner or HRexPractitionerRole)
   * ^type[0].targetProfile[0].extension[$typeMS].valueBoolean = true
   * ^type[0].targetProfile[1].extension[$typeMS].valueBoolean = true
 * lensSpecification MS

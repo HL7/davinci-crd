@@ -22,7 +22,7 @@ Description: "This profile specifies additional constraints on the US Core Medic
 * category[serviceType]
   * ^short = "X-ray, Lab, consulation, surgical, etc."
 * doNotPerform ..0
-* reported[x] only boolean or Reference(CRDPatient or USCorePractitionerProfile or CRDOrganization)
+* reported[x] only boolean or Reference(CRDPatient or CRDPractitioner or CRDOrganization)
 * medication[x] only CodeableConcept or Reference(CRDMedication)
 * medication[x] from $USCoreMedicationCodes (extensible)
 * medicationCodeableConcept MS
@@ -33,10 +33,10 @@ Description: "This profile specifies additional constraints on the US Core Medic
   * ^comment = "potentially relevant for CRD in some situations."
 * authoredOn 1..
 * requester 1.. MS
-//* requester only Reference(USCorePractitionerProfile or HRexPractitionerRole)
-* requester only Reference(USCorePractitionerProfile)
+//* requester only Reference(CRDPractitioner or HRexPractitionerRole)
+* requester only Reference(CRDPractitioner)
 * performer MS
-* performer only Reference(USCorePractitionerProfile or HRexPractitionerRole)
+* performer only Reference(CRDPractitioner or HRexPractitionerRole)
   * ^type[0].targetProfile[0].extension[$typeMS].valueBoolean = true
   * ^type[0].targetProfile[1].extension[$typeMS].valueBoolean = true
 * reasonCode MS

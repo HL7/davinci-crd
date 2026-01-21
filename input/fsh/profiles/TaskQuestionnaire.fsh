@@ -25,7 +25,7 @@ Description: "This profile specifies constraints on the Task resource to support
 * requester only Reference(CRDOrganization)
   * ^short = "Payer requesting form completion"
 * owner 0..1 MS
-* owner only Reference(USCorePractitionerProfile)
+* owner only Reference(CRDPractitioner)
   * ^comment = "This can be populated within the CRD client to delegate responsibility for filling out the form to someone else."
 * reasonCode MS
   * text MS

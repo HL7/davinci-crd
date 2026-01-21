@@ -40,11 +40,11 @@ Description: "This profile specifies extensions and constraints on the DeviceReq
 * occurrence[x] MS
 * authoredOn 1.. MS
 * requester 1.. MS
-* requester only Reference(USCorePractitionerProfile or HRexPractitionerRole)
+* requester only Reference(CRDPractitioner or HRexPractitionerRole)
   * ^type[0].targetProfile[0].extension[$typeMS].valueBoolean = true
   * ^type[0].targetProfile[1].extension[$typeMS].valueBoolean = true
 * performer MS
-* performer only Reference(USCorePractitionerProfile or HRexPractitionerRole)
+* performer only Reference(CRDPractitioner or HRexPractitionerRole)
   * ^type[0].targetProfile[0].extension[$typeMS].valueBoolean = true
   * ^type[0].targetProfile[1].extension[$typeMS].valueBoolean = true
 * reasonCode MS

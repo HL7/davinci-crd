@@ -30,7 +30,7 @@ Description: "This profile specifies extensions and constraints on the Appointme
 * participant[PrimaryPerformer]
   * type 1..1
   * type = $v3-ParticipationType#PPRF
-  * actor only Reference(USCorePractitionerProfile or HRexPractitionerRole or CRDLocation)
+  * actor only Reference(CRDPractitioner or HRexPractitionerRole or CRDLocation)
 // TODO: Add RelatedPerson?
 * requestedPeriod 0..1 MS
   * ^condition[+] = crd-apt1
