@@ -192,5 +192,6 @@ A definition for CodeSystem 'https://codesystem.x12.org/005010/1365' could not b
 Error from https://tx.fhir.org/r4: A definition for CodeSystem 'https://codesystem.x12.org/005010/1365' could not be found, so the value set cannot be expanded
 No definition could be found for URL value 'https://codesystem.x12.org/005010/1365'
 
-# 27. This repetition is not expected to match any slices
+# 27. These repetitions are not expected to match any slices
 INFORMATION: Practitioner/full: Practitioner.identifier[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-practitioner|2.2.0-snapshot (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: ServiceRequest/example: ServiceRequest.reasonCode[0].coding[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-servicerequest|2.2.0-snapshot (this may not be a problem, but you should check that it's not intended to match a slice)

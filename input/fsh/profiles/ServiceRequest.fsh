@@ -68,6 +68,13 @@ Description: "This profile specifies constraints on the ServiceRequest resource 
 * locationReference 0..1 MS
 * locationReference only Reference(CRDLocation)
 * reasonCode MS
+  * ^comment = "... If an ICD10-CM code or translation is known, it **SHALL** be sent."
+  * coding
+    * ^slicing.discriminator[+].type = #value
+    * ^slicing.discriminator[=].path = "$this"
+    * ^slicing.rules = #open
+  * coding contains ICD10 0..1 MS
+  * coding[ICD10] from ICD10CM
 * reasonReference only Reference(USCoreConditionProblemsHealthConcernsProfile or USCoreConditionEncounterDiagnosisProfile or USCoreDiagnosticReportProfileLaboratoryReporting or USCoreDiagnosticReportProfileNoteExchange or USCoreDocumentReferenceProfile or Observation)
 * reasonReference MS
   * ^comment = "Observations **SHOULD** use US Core profiles when applicable, but not all relevant observations have appropriate US Core profiles (and there are too many to practically list all US Core profiles)."

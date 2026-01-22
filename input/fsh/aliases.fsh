@@ -36,6 +36,7 @@ Alias: $v3-ParticipationType         = http://terminology.hl7.org/CodeSystem/v3-
 Alias: $v3-RoleCode                  = http://terminology.hl7.org/CodeSystem/v3-RoleCode
 Alias: $x12-1365                     = https://codesystem.x12.org/005010/1365
 Alias: $nucc-provider-taxonomy       = http://nucc.org/provider-taxonomy
+Alias: $icd10-cm                     = http://hl7.org/fhir/sid/icd-10-cm
 // Code Systems - IG
 Alias: $temp           = http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp
 Alias: $temp_1         = http://hl7.org/fhir/uv/sdc/CodeSystem/temp

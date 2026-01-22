@@ -1980,7 +1980,6 @@ v: {
   "class" : "UNKNOWN",
   "server" : "https://tx.fhir.org/r4",
   "diagnostics" : "0 0 : start\r\n31 31   : 0ms  : Analysing http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0-snapshot for validation purposes\r\n31 0    : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n31 0    : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n31 0    : 0ms  : Prepare include: \"(http://snomed.info/sct)(concept<<762766007)\"\r\n31 0    : 0ms  : CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\r\n31 0    : 0ms  : Prepare include: \"(http://snomed.info/sct)(concept<<412413001)\"\r\n31 0    : 0ms  : CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\r\n31 0    : 0ms  : Prepare include: \"(http://snomed.info/sct)(concept<<346415002)\"\r\n31 0    : 0ms  : CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\r\n31 0    : 0ms  : Prepare include: \"(http://snomed.info/sct)(concept<<890302005)\"\r\n31 0    : 0ms  : CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\r\n31 0    : 0ms  : Prepare include: \"(http://snomed.info/sct)(11713004,444923006)\"\r\n31 0    : 0ms  : CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\r\n31 0    : 0ms  : Validate \"[http://terminology.hl7.org/CodeSystem/diet#dairy-free (\"\")]\"\r\n31 0    : 0ms  : Check \"http://terminology.hl7.org/CodeSystem/diet#dairy-free\"\r\n",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",
   "issue" : [{
@@ -2022,6 +2021,59 @@ v: {
       }],
       "text" : "No valid coding was found for the value set 'http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0-snapshot'"
     }
+  }]
+}
+
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://snomed.info/sct",
+  "code" : "48867003",
+  "display" : "Bradycardia"
+}, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/ICD10CM", "version": "2.2.0-snapshot", "langs":"en", "useServer":"true", "useClient":"true", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  },
+  {
+    "name" : "defaultDisplayLanguage",
+    "valueCode" : "en"
+  }]
+}}####
+v: {
+  "display" : "Bradycardia",
+  "code" : "48867003",
+  "system" : "http://snomed.info/sct",
+  "version" : "http://snomed.info/sct/731000124108/version/20250901",
+  "severity" : "error",
+  "error" : "The provided code 'http://snomed.info/sct#48867003 ('Bradycardia')' was not found in the value set 'http://hl7.org/fhir/us/davinci-crd/ValueSet/ICD10CM|2.2.0-snapshot'",
+  "class" : "UNKNOWN",
+  "server" : "https://tx.fhir.org/r4",
+  "diagnostics" : "0 0 : start\r\n15 15   : 0ms  : Analysing http://hl7.org/fhir/us/davinci-crd/ValueSet/ICD10CM|2.2.0-snapshot for validation purposes\r\n15 0    : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n15 0    : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n15 0    : 0ms  : Prepare include: \"(http://hl7.org/fhir/sid/icd-10-cm)\"\r\n15 0    : 0ms  : CodeSystem found: \"http://hl7.org/fhir/sid/icd-10-cm|2024 (from fhir.tx.support.r4#0.32.0)\"\r\n15 0    : 0ms  : Validate \"[http://snomed.info/sct#48867003 (\"Bradycardia\")]\"\r\n15 0    : 0ms  : Check \"http://snomed.info/sct#48867003\"\r\n",
+  "unknown-systems" : "",
+  "issues" : {
+  "resourceType" : "OperationOutcome",
+  "issue" : [{
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString" : "None_of_the_provided_codes_are_in_the_value_set_one"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
+      "valueUrl" : "https://tx.fhir.org/r4"
+    }],
+    "severity" : "error",
+    "code" : "code-invalid",
+    "details" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
+        "code" : "not-in-vs"
+      }],
+      "text" : "The provided code 'http://snomed.info/sct#48867003 ('Bradycardia')' was not found in the value set 'http://hl7.org/fhir/us/davinci-crd/ValueSet/ICD10CM|2.2.0-snapshot'"
+    },
+    "location" : ["Coding.code"],
+    "expression" : ["Coding.code"]
   }]
 }
 
