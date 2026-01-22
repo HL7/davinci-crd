@@ -12,4 +12,9 @@ CRD Clients **SHALL** use CRD NutritionOrder profile to [resolve references](fou
 §§
 
 Information provided in [Must Support]({{site.data.fhir.path}}profiling.html#mustsupport) elements will commonly be required for CRD Servers to perform coverage requirements discovery.
+
+<blockquote class="dragon" markdown="1">
+This resource is not covered by US Core and there has been no testing or other experience exercising this profile.  Implementers should be aware that the constraints in the profile and the provided value sets may not be a good fit for EHR and/or payer requirements.  Feedback is welcome.
+</blockquote>
+
 <br/>

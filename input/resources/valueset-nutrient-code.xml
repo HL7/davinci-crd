@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="nutrient-code"/>
+  <url value="http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code"/>
+  <name value="NutrientCodes"/>
+  <title value="Nutrient Codes"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <description value="Copied from FHIR Core R6 draft.  NutrientModifier :  Codes for types of nutrients that are being modified such as carbohydrate or sodium.  This value set includes codes from [SNOMED CT](http://snomed.info/sct) where concept is-a 226355009 (Nutrients(substance)), and the concepts for Sodium, Potassium and Fluid. This is provided as a suggestive example."/>
+  <copyright value="This resource includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyright of the International Health Terminology Standards Development Organisation (IHTSDO). Implementers of these specifications must have the appropriate SNOMED CT Affiliate license - for more information contact http://www.snomed.org/snomed-ct/get-snomed-ct or info@snomed.org"/>
+  <compose>
+    <include>
+      <system value="http://snomed.info/sct"/>
+      <concept>
+        <code value="31212001"/>
+      </concept>
+      <concept>
+        <code value="68356001"/>
+      </concept>
+      <concept>
+        <code value="71482002"/>
+      </concept>
+      <concept>
+        <code value="31539008"/>
+      </concept>
+      <concept>
+        <code value="19751002"/>
+      </concept>
+      <concept>
+        <code value="63793008"/>
+      </concept>
+      <concept>
+        <code value="60471000"/>
+      </concept>
+      <concept>
+        <code value="41503000"/>
+      </concept>
+      <concept>
+        <code value="111064005"/>
+      </concept>
+      <concept>
+        <code value="29183001"/>
+      </concept>
+      <concept>
+        <code value="43268001"/>
+      </concept>
+      <concept>
+        <code value="57272005"/>
+      </concept>
+      <concept>
+        <code value="70726008"/>
+      </concept>
+      <concept>
+        <code value="73196006"/>
+      </concept>
+      <concept>
+        <code value="34865002"/>
+      </concept>
+      <concept>
+        <code value="2832002"/>
+      </concept>
+      <concept>
+        <code value="11555005"/>
+      </concept>
+      <concept>
+        <code value="25958007"/>
+      </concept>
+    </include>
+    <include>
+      <system value="http://snomed.info/sct"/>
+      <filter>
+        <property value="concept"/>
+        <op value="is-a"/>
+        <value value="226355009"/>
+      </filter>
+    </include>
+  </compose>
+</ValueSet>
