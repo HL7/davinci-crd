@@ -125,10 +125,13 @@ In most cases, payers will require information about a patient's coverage. §fou
 Coverage prefetch will look like this:
 
 {% raw %}
-{% fragment Binary/CRDServices JSON BASE:services.where(hook='order-sign') EXCEPT: title | description | id | extension %}
+{% fragment Binary/CRDServiceRequest JSON EXCEPT: prefetch.where(key='coverage')  %}
 {% endraw %}
 
-The minimum set of prefetch expectations for all hook types that must be supported by all CRD clients and solicited (when relevant) by all CRD servers can be found [here](Binary-CRDServices.html).
+The minimum set of prefetch expectations for all hook types that must be supported by all CRD clients and solicited (when relevant) by all CRD servers is as follows:
+{% raw %}
+{% fragment Binary/CRDServices JSON EXCEPT: services EXCEPT: hook | prefetch BASE: services %}
+{% endraw %}
 
 Other information will need to be retrieved using queries that are more specific to the type of hook being invoked and the resources passed with it.
 </div>
