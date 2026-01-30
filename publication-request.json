@@ -2,7 +2,7 @@
   "package-id" : "hl7.fhir.us.davinci-crd",
   "version" : "2.2.0-snapshot",
   "milestone" : true,
-	"path": "http://hl7.org/fhir/us/davinci-crd/2026Jan",
+	"path": "http://hl7.org/fhir/us/davinci-crd/STU2.2.0-snapshot",
   "status" : "ballot",
   "mode" : "working",
   "sequence" : "STU 2.2",

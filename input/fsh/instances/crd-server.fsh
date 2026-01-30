@@ -14,4 +14,4 @@ Usage: #definition
 * rest
   * mode = #client
   * documentation = "A CRD server acts as a client, soliciting patient information from the FHIR endpoint of the CRD client, retrieving additional information needed to provide decision support."
-  * security.description = "Implementations **SHALL** meet the general security requirements documented in the [HRex implementation guide](http://hl7.org/fhir/us/davinci-hrex/STU1.1/security.html)."
+  * security.description = "Implementations **SHALL** meet the general security requirements documented in the [HRex implementation guide](http://hl7.org/fhir/us/davinci-hrex/STU1.2.0-snapshot/security.html)."

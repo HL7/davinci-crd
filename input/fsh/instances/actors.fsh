@@ -7,6 +7,9 @@ Usage: #definition
 * name = "CRDClientActor"
 * description = "A system (or collection of systems) responsible for invoking CRD calls and responding to queries from a CRD Server."
 * type = #system
+* derivedFrom[+] = "http://hl7.org/fhir/us/davinci-hrex/ActorDefinition/consumer"
+* derivedFrom[+] = "http://hl7.org/fhir/us/davinci-hrex/ActorDefinition/source"
+* derivedFrom[+] = "http://hl7.org/fhir/us/davinci-hrex/ActorDefinition/disc-client"
 * insert CommonActor
 
 Instance: crd-client-org-actor
@@ -29,6 +32,9 @@ Usage: #definition
 * name = "CRDServerActor"
 * description = "A system (or collection of systems) responsible for responding to CRD calls."
 * type = #system
+* derivedFrom[+] = "http://hl7.org/fhir/us/davinci-hrex/ActorDefinition/consumer"
+* derivedFrom[+] = "http://hl7.org/fhir/us/davinci-hrex/ActorDefinition/source"
+* derivedFrom[+] = "http://hl7.org/fhir/us/davinci-hrex/ActorDefinition/disc-server"
 * insert CommonActor
 
 Instance: crd-server-org-actor

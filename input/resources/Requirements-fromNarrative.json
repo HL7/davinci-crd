@@ -12,6 +12,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
         "valueCanonical" : "http://hl7.org/fhir/us/davinci-crd/ImplementationGuide/davinci-crd"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
+        "valueCanonical" : "http://hl7.org/fhir/us/davinci-crd/ImplementationGuide/davinci-crd"
       }]
     }
   },
@@ -1247,7 +1251,7 @@
     "key" : "found-13",
     "conformance" : ["SHALL"],
     "conditionality" : true,
-    "requirement" : "If a CRD server supports [endpoint discovery](http://hl7.org/fhir/us/davinci-hrex/STU1.1/endpoint-discovery.html), they **SHALL** have at most a single endpoint for each coverage (e.g., Medicare, Medicaid, or commercial) they provide coverage under."
+    "requirement" : "If a CRD server supports [endpoint discovery](https://build.fhir.org/ig/HL7/davinci-ehrx//endpoint-discovery.html), they **SHALL** have at most a single endpoint for each coverage (e.g., Medicare, Medicaid, or commercial) they provide coverage under."
   },
   {
     "extension" : [{
@@ -3864,7 +3868,7 @@
     "key" : "sec-1",
     "label" : "Implementers SHALL adhere to inherited security and privacy rules",
     "conformance" : ["SHALL"],
-    "requirement" : "Implementers **SHALL** adhere to any security and privacy rules defined by:\r\n\r\n* FHIR Core: [Security & Privacy Module](http://hl7.org/fhir/R4/secpriv-module.html), [Security Principles](http://hl7.org/fhir/R4/security.html) and [Implementer's Checklist](http://hl7.org/fhir/R4/safety.html)\r\n* HRex: [Privacy & Security](http://hl7.org/fhir/us/davinci-hrex/STU1.1/security.html)\r\n* CDS Hooks: [Security & Safety](http://cds-hooks.hl7.org/2026Jan/index.html#security-and-safety)\r\n* SMART on FHIR: [SMART App Launch](http://www.hl7.org/fhir/smart-app-launch)"
+    "requirement" : "Implementers **SHALL** adhere to any security and privacy rules defined by:\r\n\r\n* FHIR Core: [Security & Privacy Module](http://hl7.org/fhir/R4/secpriv-module.html), [Security Principles](http://hl7.org/fhir/R4/security.html) and [Implementer's Checklist](http://hl7.org/fhir/R4/safety.html)\r\n* HRex: [Privacy & Security](https://build.fhir.org/ig/HL7/davinci-ehrx//security.html)\r\n* CDS Hooks: [Security & Safety](http://cds-hooks.hl7.org/2026Jan/index.html#security-and-safety)\r\n* SMART on FHIR: [SMART App Launch](http://www.hl7.org/fhir/smart-app-launch)"
   },
   {
     "extension" : [{

@@ -80,7 +80,7 @@ dependencies:
       Defines expectations for Questionnaires prompted by cards
   hl7.fhir.us.davinci-hrex:
     id: hrex
-    version: 1.1.0
+    version: current
     reason: |
       Defines common conformance rules across all Da Vinci IGs, as well as additional constraints and profiles beyond U.S. Core
   hl7.fhir.extensions.r5:
