@@ -64,9 +64,9 @@ ERROR: ImplementationGuide/hl7.fhir.us.davinci-crd: ImplementationGuide.definiti
 ERROR: StructureDefinition/profile-medicationrequest: StructureDefinition: This profile does not comply with claimed profile 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|6.1.0'
 ERROR: StructureDefinition/profile-servicerequest: StructureDefinition: This profile does not comply with claimed profile 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-servicerequest|6.1.0'
 
-
 # 01. While technically invalid, US Core is evaluating approving this as a patch.  Patch request submitted as https://jira.hl7.org/browse/FHIR-51489 (waiting on approval)
 ERROR: StructureDefinition/profile-organization: StructureDefinition: This profile does not comply with claimed profile 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|3.1.1'
+ERROR: StructureDefinition/profile-practitioner: StructureDefinition: This profile does not comply with claimed profile 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|3.1.1'
 
 # 02. These versions are before we started including Jira references in the change log and there's little value in going back to document them now
 WARNING: DA VINCI: The Change Log page (history.html) does not include any Jira tracker items links for the section with title Release 2.0.1

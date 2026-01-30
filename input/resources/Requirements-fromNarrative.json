@@ -16,6 +16,10 @@
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
         "valueCanonical" : "http://hl7.org/fhir/us/davinci-crd/ImplementationGuide/davinci-crd"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
+        "valueCanonical" : "http://hl7.org/fhir/us/davinci-crd/ImplementationGuide/davinci-crd"
       }]
     }
   },
@@ -4017,6 +4021,6 @@
     "key" : "sec-9",
     "label" : "Access tokens provided as part of CRD calls **SHOULD NOT** be forwarded to systems that are not managed by the same organization or have business associate agreements that allow centralized audit of access.",
     "conformance" : ["SHOULD-NOT"],
-    "requirement" : "*\r\n Access tokens provided as part of CRD calls **SHOULD NOT** be forwarded to systems that are not managed by the same organization or have business associate agreements that allow centralized audit of access. Possible alternatives to token-sharing include: * Routing all requests for information through the initial endpoint system * Making use of RFC 8693 to allow the creation of 'delegate' tokens for downstream systems\"\r\n> Additional testing and standardization work needs to happen around making delegated access function well, particularly in a time-constrained environment."
+    "requirement" : "*  Access tokens provided as part of CRD calls **SHOULD NOT** be forwarded to systems that are not managed by the same organization or have business associate agreements that allow centralized audit of access. Possible alternatives to token-sharing include: \r\n* Routing all requests for information through the initial endpoint system\r\n* Making use of RFC 8693 to allow the creation of 'delegate' tokens for downstream systems\"\r\n \r\n\r\n> Additional testing and standardization work needs to happen around making delegated access function well, particularly in a time-constrained environment."
   }]
 }

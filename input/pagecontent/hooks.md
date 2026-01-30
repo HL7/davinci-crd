@@ -15,7 +15,7 @@ In the absence of guidance from the CDS Hooks specification, CRD Servers are exp
 
 <div class="modified-content" markdown="1"><a name="FHIR-52062"> </a>
 * §hook-9?^crd-server^exchange:If the CRD Server encounters an error when processing the request, the system **SHALL** return an appropriate error HTTP Response Code, starting with the digit "4" or "5", indicating that there was an error.§
-* <span><a name="FHIR-52535"> </a>§hook-10?^crd-server^exchange:If an issue is identified at a layer of the CRD Server that is FHIR aware (e.g. not a "wrong endpoint" or "not authorized" issue), the server **SHALL** provide an OperationOutcome for internal issue tracking by the client system.§</span>
+* <span class="modified-content"><a name="FHIR-52535"> </a>§hook-10?^crd-server^exchange:If an issue is identified at a layer of the CRD Server that is FHIR aware (e.g. not a "wrong endpoint" or "not authorized" issue), the server **SHALL** provide an OperationOutcome for internal issue tracking by the client system.§</span>
 * §hook-11^crd-client^ui:The CRD Client **MAY** display to the user that the Coverage Requirements Discovery Service is unavailable.§  §hook-12?^crd-client^ui:If additional information (e.g. number to call) is available, it **MAY** also be included in the message to the user.§
 
 §§hook-13^crd-server^exchange:CRD Servers **SHALL** use the 400 and 422 codes in a manner consistent with the FHIR RESTful [Create Action]({{site.data.fhir.path}}http.html#create)^
