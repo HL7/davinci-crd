@@ -2,10 +2,10 @@
   "package-id" : "hl7.fhir.us.davinci-crd",
   "version" : "2.2.0-snapshot",
   "milestone" : true,
-	"path": "http://hl7.org/fhir/us/davinci-crd/STU2.2.0-snapshot",
+	"path": "http://hl7.org/fhir/us/davinci-crd/2.2.0-snapshot",
   "status" : "preview",
   "mode" : "working",
   "sequence" : "STU 2.2",
-  "desc" : "STU 2.2.0 Peer Review",
-  "descmd" : "STU 2.2.0 Peer Review snapshot.  See [list of changes](http://hl7.org/fhir/us/davinci-crd/2025Sep/history.html#release-220-snapshot)"
+  "desc" : "STU 2.2.0 post-ballot Peer Review",
+  "descmd" : "STU 2.2.0 post-ballot Peer Review snapshot.  See [list of changes](http://hl7.org/fhir/us/davinci-crd/2.2.0-snapshot/history.html#release-220-snapshot)"
 }
