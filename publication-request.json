@@ -3,7 +3,7 @@
   "version" : "2.2.0-snapshot",
   "milestone" : true,
 	"path": "http://hl7.org/fhir/us/davinci-crd/STU2.2.0-snapshot",
-  "status" : "ballot",
+  "status" : "preview",
   "mode" : "working",
   "sequence" : "STU 2.2",
   "desc" : "STU 2.2.0 Peer Review",
