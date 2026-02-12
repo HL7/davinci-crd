@@ -6115,3 +6115,315 @@ e: {
   "error" : "Unable to find a server to expand 'http://hl7.org/fhir/us/davinci-crd/ValueSet/X12ServiceType'"
 }
 -------------------------------------------------------------------------------------
+{"hierarchical" : false, "url": "http://hl7.org/fhir/ValueSet/medicationrequest-category"}####
+e: {
+  "source" : tx.fhir.org,
+  "valueSet" : {
+  "resourceType" : "ValueSet",
+  "meta" : {
+    "lastUpdated" : "2019-11-01T09:29:23.356+11:00",
+    "profile" : ["http://hl7.org/fhir/StructureDefinition/shareablevalueset"]
+  },
+  "url" : "http://hl7.org/fhir/ValueSet/medicationrequest-category",
+  "identifier" : [{
+    "system" : "urn:ietf:rfc:3986",
+    "value" : "urn:oid:2.16.840.1.113883.4.642.3.1322"
+  }],
+  "version" : "4.0.1",
+  "name" : "medicationRequest Category Codes",
+  "title" : "Medication request  category  codes",
+  "status" : "draft",
+  "experimental" : false,
+  "date" : "2019-11-01T09:29:23+11:00",
+  "immutable" : true,
+  "expansion" : {
+    "identifier" : "urn:uuid:5133b1ce-b862-4740-96f9-c5deb7fd8384",
+    "timestamp" : "2026-02-12T08:40:39.613Z",
+    "total" : 4,
+    "parameter" : [{
+      "name" : "limitedExpansion",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "excludeNested",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "count",
+      "valueInteger" : 0
+    },
+    {
+      "name" : "used-codesystem",
+      "valueUri" : "http://terminology.hl7.org/CodeSystem/medicationrequest-category|4.0.1"
+    }],
+    "contains" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+      "code" : "inpatient",
+      "display" : "Inpatient"
+    },
+    {
+      "system" : "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+      "code" : "outpatient",
+      "display" : "Outpatient"
+    },
+    {
+      "system" : "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+      "code" : "community",
+      "display" : "Community"
+    },
+    {
+      "system" : "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+      "code" : "discharge",
+      "display" : "Discharge"
+    }]
+  }
+},
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "url": "http://hl7.org/fhir/us/core/ValueSet/us-core-servicerequest-category"}####
+e: {
+  "source" : tx.fhir.org,
+  "valueSet" : {
+  "resourceType" : "ValueSet",
+  "url" : "http://hl7.org/fhir/us/core/ValueSet/us-core-servicerequest-category",
+  "identifier" : [{
+    "system" : "urn:ietf:rfc:3986",
+    "value" : "urn:oid:2.16.840.1.113883.4.642.40.2.48.20"
+  }],
+  "version" : "9.0.0-ballot",
+  "name" : "USCoreServiceRequestCategoryCodes",
+  "title" : "US Core ServiceRequest Category Codes",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2022-09-29",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US"
+    }]
+  }],
+  "expansion" : {
+    "identifier" : "urn:uuid:c08e4bf5-cac3-41da-9b83-e35e6e6047df",
+    "timestamp" : "2026-02-12T08:43:13.253Z",
+    "total" : 9,
+    "parameter" : [{
+      "name" : "limitedExpansion",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "excludeNested",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "count",
+      "valueInteger" : 0
+    },
+    {
+      "name" : "used-codesystem",
+      "valueUri" : "http://hl7.org/fhir/us/core/CodeSystem/us-core-category|9.0.0-ballot"
+    },
+    {
+      "name" : "used-codesystem",
+      "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901"
+    },
+    {
+      "name" : "warning-draft",
+      "valueUri" : "http://hl7.org/fhir/ValueSet/servicerequest-category|4.0.1"
+    },
+    {
+      "name" : "used-valueset",
+      "valueUri" : "http://hl7.org/fhir/ValueSet/servicerequest-category|4.0.1"
+    },
+    {
+      "name" : "system-version",
+      "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+    }],
+    "contains" : [{
+      "system" : "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+      "code" : "sdoh",
+      "display" : "SDOH"
+    },
+    {
+      "system" : "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+      "code" : "functional-status",
+      "display" : "Functional Status"
+    },
+    {
+      "system" : "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+      "code" : "disability-status",
+      "display" : "Disability Status"
+    },
+    {
+      "system" : "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+      "code" : "cognitive-status",
+      "display" : "Cognitive Status"
+    },
+    {
+      "system" : "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+      "code" : "treatment-intervention-preference",
+      "display" : "Treatment Intervention Preference"
+    },
+    {
+      "system" : "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+      "code" : "care-experience-preference",
+      "display" : "Care Experience Preference"
+    },
+    {
+      "system" : "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+      "code" : "observation-adi-documentation",
+      "display" : "Observation ADI Documentation"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "386053000",
+      "display" : "Investigations"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "410606002",
+      "display" : "Social service procedure (procedure)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "108252007",
+      "display" : "Laboratory procedure"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "363679005",
+      "display" : "Imaging (procedure)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "409063005",
+      "display" : "Counselling"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "409073007",
+      "display" : "Education"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "387713003",
+      "display" : "Surgical procedure (procedure)"
+    }]
+  }
+},
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "url": "http://hl7.org/fhir/us/core/ValueSet/us-core-servicerequest-category|7.0.0"}####
+e: {
+  "from-server" : true,
+  "error" : "Error from https://tx.fhir.org/r4: Unable to find value set for URL \"http://hl7.org/fhir/us/core/ValueSet/us-core-servicerequest-category|7.0.0\""
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "url": "http://terminology.hl7.org/ValueSet/v3-ActEncounterCode|3.0.0"}####
+e: {
+  "source" : tx.fhir.org,
+  "valueSet" : {
+  "resourceType" : "ValueSet",
+  "language" : "en",
+  "url" : "http://terminology.hl7.org/ValueSet/v3-ActEncounterCode",
+  "identifier" : [{
+    "system" : "urn:ietf:rfc:3986",
+    "value" : "urn:oid:2.16.840.1.113883.1.11.13955"
+  }],
+  "version" : "3.0.0",
+  "name" : "ActEncounterCode",
+  "title" : "ActEncounterCode",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2014-03-26",
+  "expansion" : {
+    "identifier" : "urn:uuid:ad4a735b-de38-4ef3-bd5a-12879f3c0fb9",
+    "timestamp" : "2026-02-12T08:43:14.691Z",
+    "total" : 12,
+    "parameter" : [{
+      "name" : "limitedExpansion",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "displayLanguage",
+      "valueCode" : "en"
+    },
+    {
+      "name" : "excludeNested",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "count",
+      "valueInteger" : 0
+    },
+    {
+      "name" : "used-codesystem",
+      "valueUri" : "http://terminology.hl7.org/CodeSystem/v3-ActCode|9.0.0"
+    }],
+    "contains" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+      "code" : "HH",
+      "display" : "home health"
+    },
+    {
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+      "code" : "SS",
+      "display" : "short stay"
+    },
+    {
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+      "code" : "VR",
+      "display" : "virtual"
+    },
+    {
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+      "code" : "AMB",
+      "display" : "ambulatory"
+    },
+    {
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+      "code" : "FLD",
+      "display" : "field"
+    },
+    {
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+      "code" : "PRENC",
+      "display" : "pre-admission"
+    },
+    {
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+      "code" : "IMP",
+      "display" : "inpatient encounter"
+    },
+    {
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+      "code" : "NONAC",
+      "display" : "inpatient non-acute"
+    },
+    {
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+      "code" : "ACUTE",
+      "display" : "inpatient acute"
+    },
+    {
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+      "code" : "OBSENC",
+      "display" : "observation encounter"
+    },
+    {
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+      "code" : "EMER",
+      "display" : "emergency"
+    }]
+  }
+},
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/X12ServiceType"}####
+e: {
+  "from-server" : true,
+  "error" : "Unable to find a server to expand 'http://hl7.org/fhir/us/davinci-crd/ValueSet/X12ServiceType'"
+}
+-------------------------------------------------------------------------------------

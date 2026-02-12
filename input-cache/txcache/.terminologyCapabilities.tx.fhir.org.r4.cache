@@ -6,7 +6,7 @@
   "name" : "FHIRReferenceServerTerminologyCapabilities",
   "title" : "FHIR Reference Server Terminology Capability Statement",
   "status" : "active",
-  "date" : "2026-02-02T15:55:37.800Z",
+  "date" : "2026-02-12T08:39:31.738Z",
   "contact" : [{
     "telecom" : [{
       "system" : "other",
