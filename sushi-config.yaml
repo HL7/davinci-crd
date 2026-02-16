@@ -98,8 +98,7 @@ dependencies:
 #  hl7.fhir.uv.tools:
     id: tools
     uri: http://hl7.org/fhir/tools/ImplementationGuide/hl7.fhir.uv.tools
-#    version: current
-    version: current
+    version: 1.0.0
     reason: |
       Defines the CDS Hooks logical models
   hl7.fhir.uv.cds-hooks:
