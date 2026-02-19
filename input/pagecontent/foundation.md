@@ -90,17 +90,24 @@ Also, see the [Operational Recommendations](operational.html) section.
 * §found-21^crd-client^processing:Such access tokens **SHOULD** have an expiration time of no longer than 30 seconds which should be sufficient for even 'parallel' decision support with something like 'Order Select' where a user continues to work while the decision support call is processing.§
 
 ### Additional Data Retrieval
-The context information provided as part of hook invocation will often not be enough for a CRD server to fully determine coverage requirements. This section of the guide describes a common set of queries that define data that most, if not all, CRD servers will need to perform their requirements assessment.
-<a name="FHIR-52444"> </a>
-<div class="modified-content" markdown="1">§found-22^crd-client,crd-server^exchange:For this release of the IG, conformant CRD clients and servers **SHALL** support the CDS Hooks [prefetch]({{site.data.fhir.ver.cdshooks}}/index.html#prefetch-template) capability.§  <a name="FHIR-48771a"> </a><a name="FHIR-52784a"> </a>§found-23^crd-client^exchange:Clients **SHALL** be able to supply all the existing resources defined in the [prefetch](#prefetch) section below for request resources they support.§  §found-24?^crd-server^exchange:Servers **SHALL** use prefetch expressions in the manner described if those data elements are relevant to their coverage determination or other decision support.§  
+The context information provided as part of hook invocation will often not be enough for a CRD server to fully determine coverage requirements.
+<p class="modified-content" markdown="1"><a name="FHIR-52784b"> </a>
+There are two possible mechanisms that can be used by the service to gather additional information needed: 'prefetch' and querying the CRD client's FHIR API to retrieve additional resources. Both mechanisms are defined as part of the [CDS Hooks specification]({{site.data.fhir.ver.cdshooks}}/index.html#providing-fhir-resources-to-a-cds-service).
+Expectations for support of both of these mechanisms are detailed in the subsections below.  Additional subsections cover error handling in situations where data access mechanisms do not work as required and general guidance for constructing queries.
+</p>
 
-Each CRD server will define the prefetch requests for their CRD server based on the information they require to provide coverage requirements. §found-25^crd-server^exchange:They **MAY** include more and/or less prefetch requests than described in this Additional Data Retrieval section, based on which data is desired.§ §found-26^crd-server^exchange:Prefetch requests **SHOULD** only include information that is always expected to be needed for each hook invocation.§ §found-27?^crd-server^exchange:When information is only needed for certain invocations of the hook (e.g., for specific types of medications or services), that information **SHALL** only be retrieved by query using the provided token, never requested universally via prefetch.§ Not all CRD clients will support prefetch requests that go beyond the standard set of prefetches listed below.
+#### Prefetch
+<p class="new-content" markdown="1">
+[Prefetch]({{site.data.fhir.ver.cdshooks}}/index.html#prefetch-template) is a mechanism CDS Hooks uses to allow a server to solicit a client to *always* provide certain information when they invoke a hook on the grounds that that information will *always* be relevant to the decision-support provided.  Prefetch reduces the amount of querying a server needs to perform and also reduces load on the client by allowing them to send information they often already have in memory rather than needing to respond to separate query calls.</p>
 
-The base requirement for these prefetches, whether based on Encounter or one of the request resources, is to bring back the following associated resources:
-</div>
+CRD relies on enhanced prefetch capabilities newly introduced in the ballot version of CDS Hooks on which this guide depends.  This enhanced mechanism allows the inclusion of a limitted set of FHIRPath in a manner similar to the [x-fhir-query](https://hl7.org/fhir/R5/fhir-xquery.html) syntax.  The details of how it works can be found in the CDS specification [here]({{site.data.fhir.ver.hooks}}/index.html#prefetch-tokens-containing-simpler-fhirpath).  <a name="FHIR-49128"> </a><a name="FHIR-52784c"> </a>
+<span class="modified-content" markdown="1">§found-28^crd-client^processing:CRD Clients **SHALL** be able to parse and execute prefetches that use the simple FHIRPath approach and not fail if that syntax is present.§</span>
 
+<div class="modified-content" markdown="1">
+This specification identifies a set of key resources related to the hook context that will be needed by most CRD servers to provide mandated decision support.  These are:
 *  Patient
 *  Relevant Coverage
+*  The request resource (if not included in the hook context)
 *  Authoring Practitioner
 *  Authoring Organization
 *  Requested performing Practitioner (if specified)
@@ -109,31 +116,92 @@ The base requirement for these prefetches, whether based on Encounter or one of 
 *  Associated Medication (if any)
 *  Associated Device (if any)
 
-Not all these will be relevant for all resource types. Different resources have differently named data elements and search parameters for them. In some cases, support only exists as extensions or does not exist at all. Where necessary, this implementation guide defines additional extensions to support retrieval of these elements. The intention is for both extensions and search parameters to eventually migrate into the core FHIR specification.
+Not all these will be relevant for all resource types and in some cases, may not be relevant for a given payer's decision support needs.  How these various concepts are represented and accessed varies by resource. Different resources have differently named data elements and search parameters for them. In some cases, support only exists as extensions or does not exist at all. Where necessary, this implementation guide defines additional extensions to support retrieval of these elements. The intention is for IG-defined extensions and search parameters to eventually migrate into the core FHIR specification.
 
-<p class="modified-content" markdown="1"><a name="FHIR-52784b"> </a>
-There are two possible mechanisms that can be used by the service to gather information needed: prefetch and querying the CRD client to retrieve additional resources. Both mechanisms are defined as part of the [CDS Hooks specification]({{site.data.fhir.ver.cdshooks}}/index.html#providing-fhir-resources-to-a-cds-service). While prefetch must be supported for the data elements listed above, either approach can be used to retrieve additional data, though not all CRD clients will necessarily support prefetch for other types of data.  If prefetch is not supported, CRD servers can fall back to using direct query.</p>
+Most of these resources are directly related to the request resource or encounter associated with the hook invocation.  The exception is the 'relevant coverage'.  While coverage can be filtered by patient and status, as mentioned in [Controlling Hook Invocation](deviations.html#controlling-hook-invocation), <a name="FHIR-48797"> </a><a name="FHIR-52784d"> </a>Coverage included in prefetch must be limited to a single instance reflecting the coverage relevant to the requests or encounter associated with the hook invocation.  How this happens is up to the CRD client.
 
-#### Prefetch
-<a name="FHIR-49128"> </a><a name="FHIR-52784c"> </a>
-<span class="modified-content" markdown="1">§found-28^crd-server^processing:CRD Servers **SHALL** be able to parse and execute prefetches that use the x-fhir-query syntax defined in the current CDS Hooks specification and not fail if that syntax is present.§</span>  §found-29^crd-client^processing:CRD client implementations **SHOULD NOT** depend on standardized prefetch key names.§ §found-30^crd-client^processing:CRD clients supporting prefetch **SHALL** inspect the CDS Hooks discovery endpoint to determine exact prefetch key names and queries.§
+<a name="FHIR-52444"> </a>§found-22^crd-client,crd-server^exchange:For this release of the IG, conformant CRD clients and servers **SHALL** support the CDS Hooks prefetch capability.§  <a name="FHIR-48771a"> </a><a name="FHIR-52784a"> </a>§found-23^crd-client^exchange:Clients **SHALL** be able to supply the information listed in the bullets above via prefetch for the request resources they support when data exists using the search parameters and FHIRPath expressions covered in the [standard prefetch](#standard-prefetch) section below.§
 
-<a name="FHIR-48797"> </a><a name="FHIR-52784d"> </a>
-<div class="modified-content" markdown="1">
-In most cases, payers will require information about a patient's coverage. §found-31^crd-client^exchange:As mentioned in [Controlling Hook Invocation](deviations.html#controlling-hook-invocation), Coverage included in prefetch **SHALL** be limited to a single instance.§ How this happens is up to the CRD client.
+Each CRD server will define the prefetch requests for their CRD server based on the information they require to provide coverage requirements. §found-25^crd-server^exchange:They **MAY** include more and/or less prefetch requests than described in 'standard' prefetch section below, based on which data is desired.§ §found-26^crd-server^exchange:Prefetch requests **SHOULD** only include information that is always expected to be needed for each hook invocation.§ §found-27?^crd-server^exchange:When information is only needed for certain invocations of the hook (e.g., for specific types of medications or services), that information **SHOULD** only be retrieved by query using the provided token, not requested universally via prefetch.§ Not all CRD clients will support prefetch requests that go beyond the standard set of prefetches listed below.
 
-Coverage prefetch will look like this:
+##### Standard Prefetch
+The prefetch instance below shows the set of prefetch queries necessary to retrieve the related resources that need to be supported by CRD clients as discussed in the conformance statements above.  It covers all hooks and all CRD-supported resource types and thus is more comprehensive than what will necessarily be requested by a given CRD service.  §found-24?^crd-server^exchange:Servers **SHALL** use prefetch expressions in the manner described if those data elements are relevant to their coverage determination or other decision support.§  §found-29^crd-client^processing:CRD client implementations **SHOULD NOT** depend on standardized prefetch key names.§ §found-30^crd-client^processing:CRD clients supporting prefetch **SHALL** inspect the CDS Hooks discovery endpoint to determine exact prefetch key names and queries.§
 
+NOTE: Some of the prefetch queries are quite long.  The set of places where relevant practitioners could be found is quite large.  However, for a given order, the number that will actually be relevant will be small and in many cases, the same practitioner will be referenced in more than one place, further reducing the amount of data actually returned.
+
+###### Appointment Book Prefetch
+<p>
+  <button class="btn btn-info " type="button" title="Click to Show or hide Prefetch JSON" data-toggle="collapse" data-target="#appointment-book-prefetch-json" aria-expanded="false" aria-controls="collapseExample">
+    Click to Show or hide Prefetch JSON
+  </button>
+</p>
+<div class="collapse" id="appointment-book-prefetch-json">
 {% raw %}
-{% fragment Binary/CRDServiceRequest JSON EXCEPT: prefetch.where(key='coverage')  %}
+{% fragment Binary/CRDServices JSON EXCEPT: services.where(hook='appointment-book') EXCEPT: hook | prefetch BASE: services %}
 {% endraw %}
+</div>
 
-The minimum set of prefetch expectations for all hook types that must be supported by all CRD clients and solicited (when relevant) by all CRD servers is as follows:
+###### Encounter Start Prefetch
+<p>
+  <button class="btn btn-info " type="button" title="Click to Show or hide Prefetch JSON" data-toggle="collapse" data-target="#encounter-start-prefetch-json" aria-expanded="false" aria-controls="collapseExample">
+    Click to Show or hide Prefetch JSON
+  </button>
+</p>
+<div class="collapse" id="encounter-start-prefetch-json">
 {% raw %}
-{% fragment Binary/CRDServices JSON EXCEPT: services EXCEPT: hook | prefetch BASE: services %}
+{% fragment Binary/CRDServices JSON EXCEPT: services.where(hook='encounter-start') EXCEPT: hook | prefetch BASE: services %}
 {% endraw %}
+</div>
 
-Other information will need to be retrieved using queries that are more specific to the type of hook being invoked and the resources passed with it.
+###### Encounter Discharge Prefetch
+<p>
+  <button class="btn btn-info " type="button" title="Click to Show or hide Prefetch JSON" data-toggle="collapse" data-target="#encounter-discharge-prefetch-json" aria-expanded="false" aria-controls="collapseExample">
+    Click to Show or hide Prefetch JSON
+  </button>
+</p>
+<div class="collapse" id="encounter-discharge-prefetch-json">
+{% raw %}
+{% fragment Binary/CRDServices JSON EXCEPT: services.where(hook='encounter-discharge') EXCEPT: hook | prefetch BASE: services %}
+{% endraw %}
+</div>
+
+###### Order Dispatch Prefetch
+<p>
+  <button class="btn btn-info " type="button" title="Click to Show or hide Prefetch JSON" data-toggle="collapse" data-target="#order-dispatch-prefetch-json" aria-expanded="false" aria-controls="collapseExample">
+    Click to Show or hide Prefetch JSON
+  </button>
+</p>
+<div class="collapse" id="order-dispatch-prefetch-json">
+{% raw %}
+{% fragment Binary/CRDServices JSON EXCEPT: services.where(hook='order-dispatch') EXCEPT: hook | prefetch BASE: services %}
+{% endraw %}
+</div>
+
+###### Order Select Prefetch
+<p>
+  <button class="btn btn-info " type="button" title="Click to Show or hide Prefetch JSON" data-toggle="collapse" data-target="#order-select-prefetch-json" aria-expanded="false" aria-controls="collapseExample">
+    Click to Show or hide Prefetch JSON
+  </button>
+</p>
+<div class="collapse" id="order-select-prefetch-json">
+{% raw %}
+{% fragment Binary/CRDServices JSON EXCEPT: services.where(hook='order-select') EXCEPT: hook | prefetch BASE: services %}
+{% endraw %}
+</div>
+
+###### Order Sign Prefetch
+<p>
+  <button class="btn btn-info " type="button" title="Click to Show or hide Prefetch JSON" data-toggle="collapse" data-target="#order-sign-prefetch-json" aria-expanded="false" aria-controls="collapseExample">
+    Click to Show or hide Prefetch JSON
+  </button>
+</p>
+<div class="collapse" id="order-sign-prefetch-json">
+{% raw %}
+{% fragment Binary/CRDServices JSON EXCEPT: services.where(hook='order-sign') EXCEPT: hook | prefetch BASE: services %}
+{% endraw %}
+</div>
+
+NOTE: support for access to resources and using the search parameters listed above as part of prefetch does NOT necessarily mean the CRD client will support those same search capabilities via their RESTful API.  RESTful API expectations are set by US Core, not this IG.
 </div>
 
 #### FHIR Resource Access
