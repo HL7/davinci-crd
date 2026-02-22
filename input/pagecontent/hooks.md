@@ -151,7 +151,7 @@ Note that Practitioner and PractitionerRole include both licensed healthcare pro
 </table>
 
 Notes: 
-* §hook-25^crd-server^processing:CRD Servers **MAY** use the appointment-book hook as a basis for associating a patient with a particular practitioner from a payer attribution perspective.§
+* §hook-25^crd-server^processing:CRD Servers **MAY** use the encounter-start hook as a basis for associating a patient with a particular practitioner from a payer attribution perspective.§
 
 ### encounter-discharge
 This hook is described in the CDS Hooks specification [here]({{site.data.fhir.ver.hooks}}/encounter-discharge.html).  This version of the CRD implementation guide refers to version 1.0 of the hook.
@@ -370,5 +370,5 @@ This hook serves a very similar purpose to [order-select](#order-select).  The m
 Use and profiles for [order-select](#order-select) also apply to `order-sign`.
 
 Notes: 
-* §hook-31^crd-server^processing:CRD Servers **MAY** use the order-select hook as a basis for associating a patient with a particular practitioner from a payer attribution perspective.§
+* §hook-31^crd-server^processing:CRD Servers **MAY** use the order-sign hook as a basis for associating a patient with a particular practitioner from a payer attribution perspective.§
 * §hook-32^crd-client,crd-server^exchange,processing:CRD clients and servers **SHALL**, at minimum, support returning and processing the [Coverage Information](StructureDefinition-ext-coverage-information.html) system action for all invocations of the order-select hook.§
