@@ -363,7 +363,7 @@ Notes:
 
 
 ### order-sign
-This hook is described in the CDS Hooks specification [here]({{site.data.fhir.ver.hooks}}/order-sign.html).  This version of the CRD implementation guide refers to version 1.1 of the hook which, at the time of publication, was not available as a snapshot.  Therefore, the preceding link refers to the CDS hooks current build.
+This hook is described in the CDS Hooks specification [here]({{site.data.fhir.ver.hooks}}/order-sign.html).  This version of the CRD implementation guide refers to version 1.0 of the hook.
 
 This hook serves a very similar purpose to [order-select](#order-select).  The main difference is that all the listed draft orders are considered 'complete'.  That means that it is appropriate to provide warnings if there is insufficient information to determine coverage requirements.  Also, all `draftOrders` are appropriate to comment on when using order-sign as the `selections` field found in in order-select is not used in order-sign.
 
