@@ -279,7 +279,7 @@ Notes:
 
 
 ### order-select
-This hook is described in the CDS Hooks specification [here]({{site.data.fhir.ver.hooks}}order-select.html).  This version of the CRD implementation guide refers to version 1.0 of the hook.
+This hook is described in the CDS Hooks specification [here]({{site.data.fhir.ver.hooks}}/order-select.html).  This version of the CRD implementation guide refers to version 1.0 of the hook.
 
 Support for this hook is optional, as not all information will necessarily be available when this hook is invoked.  Therefore, the [Order Sign](#order-sign) and [Order Dispatch](#order-dispatch) hooks are more critical to implement because they fire when information is required to be more complete and also represent the 'end' of the user engagement in their respective processes.  That said, the "Order Select" hook is still quite useful.
 
