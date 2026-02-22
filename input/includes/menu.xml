@@ -89,7 +89,7 @@
         <a href="{{site.data.fhir.path}}index.html">FHIR R4 Spec</a>
       </li>
       <li>
-        <a href="{{site.data.fhir.ver.hrex}}">HRex 1.1.0</a>
+        <a href="{{site.data.fhir.ver.hrex}}">HRex 1.2.0</a>
       </li>
       <li>
         <a href="{{site.data.fhir.ver.uscore3}}">US Core 3.1.1</a>
@@ -101,7 +101,7 @@
         <a href="{{site.data.fhir.ver.uscore7}}">US Core 7.0.0</a>
       </li>
       <li>
-        <a href="{{site.data.fhir.ver.cdshooks}}">CDS Hooks 2.0.1</a>
+        <a href="{{site.data.fhir.ver.cdshooks}}">CDS Hooks 3.0.0</a>
       </li>
       <li>
         <a href="http://hl7.org/fhir/smart-app-launch/index.html">SMART on FHIR <img src="external.png" style="text-align: baseline"/></a>
