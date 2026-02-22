@@ -4,7 +4,7 @@ To meet requirements identified by Da Vinci project participants, it is necessar
 
 Each capability listed here has been proposed to the CDS Hooks community and could become part of the official specification in a future release.  However, there is a significant likelihood that the way the requirements are met will vary from the syntax or even the architectural approach proposed in this guide.  Future versions of this implementation guide will be updated to align with how these requirements are addressed in future versions of the CDS Hooks specification.  Until both the CDS Hooks content and the FHIR and US Core content underlying this specification are *Normative* (locked into backward compatibility mode), the CRD implementation guide will remain as STU.
 
-This implementation guide extends/customizes CDS Hooks in 5 ways: additional hook resources, a hook configuration mechanism, additional prefetch capabilities, additional response capabilities, and the ability to link hooks to their corresponding request.  Each are described below:
+This implementation guide extends/customizes CDS Hooks in 4 ways: additional hook resources, a hook configuration mechanism, additional response capabilities, and the ability to link hooks to their corresponding request.  Each are described below:
 
 <div class="new-content" markdown="1">
 ### CRD Version declaration
@@ -112,48 +112,6 @@ Notes:
     * §dev-16^crd-client^exchange:CRD Clients **MAY** send configuration information that CRD Servers do not support.§ In this case, §dev-17^crd-server^processing:CRD Servers **SHALL** ignore unsupported configuration information.§
 
 *  This specification provides no guidance on exactly when/how CRD Clients are expected to manage hook configuration.  This could be done at the level of provider roles, individual providers, location from which the hook is invoked, or other means.  CRD Clients can experiment and determine what types of configuration make the most sense and at what levels they can support managing/persisting configuration information.
-
-
-### Additional prefetch capabilities
-One of the options supported in CDS Hooks is the ability for a service to request that certain data be [prefetched]({{site.data.fhir.ver.cdshooks}}/index.html#prefetch-template) for efficiency reasons and to simplify processing for the CDS service.  However, there is a limit in that, in the current CDS Hooks specification, prefetch can only use hook context information that is expressed as a simple key value.  It cannot leverage context information passed as resources.
-
-A [proposal](https://github.com/cds-hooks/docs/issues/377) has been submitted suggesting how to address this issue.  The work group responsible for the specification has proposed adopting a modified version of this proposal that does not include _include support.  This version of the implementation guide pre-adopts that proposal.  
-
-<a name="FHIR-49128"> </a>
-<p class="modified-content" markdown="1">(See the [foundation page](foundation.html#additional-data-retrieval) for language on conformance expectations.)</p>
-
-The limitations on the XPath expressions that can be used are as follows:
-* variables are limited to 'context' and the data elements reachable from it. (e.g. `_id={% raw %}{{context.draftOrders.entry.resource.ofType(ServiceRequest).location.id()}}{% endraw %}`)
-* functions are limited to today(), ofType(), resolve(), and a new function read() (discussed below)
-* addition or subtraction of 'days' (e.g. `lt{% raw %}{{today() - 7 days}}{% endraw %}`)
-
-Additional restrictions on prefetch in general are that only the following are expected to be supported:
-* instance level read interactions (for resources with known ids such as Patient, Practitioner, or Encounter)
-* type level search interactions; e.g. patient={% raw %}{{context.patientId}}{% endraw %}
-* Resource references (e.g. patient={% raw %}{{context.patientId}}){% endraw %}
-* token search parameters using equality (e.g. code=4548-4) and optionally the :in modifier (no other modifiers for token parameters)
-* date search parameters on date, dateTime, instant, or Period types only, and using only the prefixes eq, lt, gt, ge, le
-* the _count parameter to limit the number of results returned
-* the _sort parameter to allow for most recent and first queries
-
-Prefetches can depend on the results of prior prefeches.  In this case, the result of the prior prefetch can be expressed as a variable using the name specified in the prefetch.  For example, if one prefetch value was defined as:
-  `"encounter": "Encounter?_id={% raw %}{{%context.encounterId}}{% endraw %}"`
-then a subsequent prefetch could be defined as:
-  `"practitioners" : "Practitioner?_id=%encounter.participant.individual.resolve().ofType(Practitioner).id"`
-  
-NOTE: Dependencies on other prefetches should be minimized as it limits what queries can be performed in parallel.  §dev-18^crd-server^exchange:Prefetches with dependencies **SHALL** be listed after the prefetches they depend on.§
-
-Recognizing these tokens does not mean the client must support prefetch or the requested prefetch query, only that it recognizes the token, does not treat it as an error and - if it supports the query - substitutes the token correctly.
-
-For example, a prefetch for `order-sign` might look like this:
-
-{% raw %}
-{% fragment Binary/CRDServices JSON BASE:services.where(hook='order-sign') EXCEPT:prefetch %}
-{% endraw %}
-
-
-This might result in an executed query that looks like this: `Practitioner?_id=2347,10948,5881`
-
 
 ### Additional response capabilities
 CDS Hooks supports suggestions that involve multiple actions.  CRD uses this in one situation where additional capabilities will be needed: creating a Task to complete a Questionnaire.
