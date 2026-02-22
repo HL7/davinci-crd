@@ -14,7 +14,7 @@ In rare situations, circumstances might change in a way that invalidates informa
 
 ### Multiple Components
 
-As discussed in the section on [ePA coordinators](epa.html), CRD clients and/or CRD servers might not be monolithing, but instead constructed of various components (referred to on the page as provider HIT and payer HIT), respectively.  §impl-3^crd-client,crd-server^exchange:Even if implemented using multiple components, there is still a requirement that the exchanges between the provider HIT (including any ePA coordinators) and the payer HIT (including any ePA coordinators) **SHALL** replicate all of the defined exchanges between provider and payer.§  I.e. A system implemented as components should appear no different to its communication partner than a monolithic system.
+As discussed in the section on [ePA coordinators](epa.html), CRD clients and/or CRD servers might not be monolithic, but instead constructed of various components (referred to on the page as provider HIT and payer HIT), respectively.  §impl-3^crd-client,crd-server^exchange:Even if implemented using multiple components, there is still a requirement that the exchanges between the provider HIT (including any ePA coordinators) and the payer HIT (including any ePA coordinators) **SHALL** replicate all of the defined exchanges between provider and payer.§  I.e. A system implemented as components should appear no different to its communication partner than a monolithic system.
 
 ### Managing 
 
