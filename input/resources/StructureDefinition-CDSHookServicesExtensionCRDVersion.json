@@ -30,7 +30,14 @@
         "path": "string",
         "short": "CRD version(s) supported by the hook",
         "definition": "Indicates a CRD version the service supports for the specified hook type",
-        "max": "*"
+        "max": "*",
+        "constraint": [{
+          "key": "crdver-1",
+          "severity": "error",
+          "human": "Version must be the major.minor of the CRD spec",
+          "expression": "%context.matches('[1-9]\\d*\\.[1-9]\\d*')"
+        }],
+        "condition": ["crdver-1"]
       }
     ]
   }
