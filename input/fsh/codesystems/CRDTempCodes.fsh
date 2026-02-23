@@ -1,3 +1,7 @@
+/*
+ * The content in this code system is maintained for backwards compatibility only.  These codes are deprecated and will eventually be retired.
+ */
+
 CodeSystem: CRDTempCodes
 Id: temp
 Title: "CRD Temporary Codes"
@@ -11,12 +15,15 @@ Description: "Codes temporarily defined as part of the CRD implementation guide.
 * ^property[0].uri = "http://hl7.org/fhir/concept-properties#notSelectable"
 * ^property[0].type = #boolean
 // Coverage assertion reasons - https://jira.hl7.org/browse/UP-668
+// Now maintained in sourceOfTruth/v3/codeSystems/v3-ActReason.xml
 * #gold-card               "Gold card"                           "Ordering Practitioner has been granted 'gold card' status with this payer/coverage type."
-* #no-member-found         "Member not found"                    "The CRD server was unable to find a matching member, so no coverage information can be provided"
-* #no-active-coverage      "Coverage not active"                 "The referenced insurance coverage for the member is not active, so no coverage information can be provided"
+* #no-member-found         "Member not found"                    "The server was unable to find a matching member or was unable to resolve to a single member, so no coverage information can be provided."
+* #no-active-coverage      "Coverage not active"                 "The referenced coverage for the member was found but is not in force during the relevant time period for which the coverage is being evaluated."
+* #coverage-not-found      "Coverage not found"                  "The payer is not available to resolve the provided coverage information to an existing coverage record, or it is not specific enough to resolve to a single coverage."
 * #auth-out-network        "Authorization needed out-of-network" "Authorization is necessary if out-of-network."
 
 // Coverage detail types - https://jira.hl7.org/browse/UP-670
+// Now maintained in sourceOfTruth/fhir/codeSystems/CodeSystem-crd-coverage-detail.xml
 * #_limitation              "Limitation details"                "Identifies detail codes that define limitations of coverage.  (Category should be 'cat-limitation')"
   * ^property.code = #abstract
   * ^property.valueBoolean = true
@@ -36,6 +43,7 @@ Description: "Codes temporarily defined as part of the CRD implementation guide.
 * #instructions             "Instructions"                      "Information to display to the user that gives guidance about what steps to take in achieving the recommended actions identified by this coverage-information (e.g. special instructions about requesting authorization, details about information needed, details about data retention, etc.).  Value should be a string.  (Category may vary.)"
 
 // Card types - https://jira.hl7.org/browse/UP-669
+// Now maintained in sourceOfTruth/fhir/codeSystems/CodeSystem-cdshooks-card-type.xml
 * #_cardType               "Card Type (abstract)"              "A collector for different profiles on CDS Hooks card"
   * ^property.code = #abstract
   * ^property.valueBoolean = true
@@ -55,11 +63,31 @@ Description: "Codes temporarily defined as part of the CRD implementation guide.
   * #guideline                "Guideline"                      "Indication that there is a guideline available for the proposed therapy (with an option to view)"
   * #off-guideline            "Off Guideline"                  "Notice that the proposed therapy may be contrary to best-practice guidelines, typically with an option to view the relevant guideline"
 
+// Requirement categories - https://jira.hl7.org/browse/UP-783
+// To be maintained in sourceOfTruth/fhir/codeSystems/CodeSystem-requirement-category.xml
 * #_reqcat      "Requirements Categories"  "Codes that help to categorize requirements statements"
   * ^property.code = #abstract
   * ^property.valueBoolean = true
-  * #business   "business"            "Requirements relating to the business operations of the entities responsible for a system"
-  * #exchange   "exchange"            "Requirements relating to when or how data is exchanged with other systems"
-  * #processing "processing"          "Requirements related to how data is dealt with internally to a system"
-  * #storage    "storage"             "Requirements relating to when or how data is or is not persisted within a system"
-  * #ui         "ui"                  "Requirements relating to the appearance of information on a user interface"
+  * #behavioral "Behavioral"                   "Categories related to how the system behaves"
+    * ^property.code = #abstract
+    * ^property.valueBoolean = true
+    * #business   "Business"                   "Requirements relating to the business operations of the entities responsible for a system"
+    * #functional "Functional"                 "Requirements related to what the system does (inputs turned into outputs)"
+      * #exchange    "Exchange"                "Requirements relating to when, how, or what data is exchanged with other systems"
+      * #processing  "Processing"              "Requirements related to how data must be analyzed, transformed, considered, or otherwise used within a system"
+      * #storage     "Storage"                 "Requirements related to if or how data is persisted in a system"
+    * #non-functional "Non-functional"         "Requirements related to how the system accomplishes functional requirements"
+      * #availability "Availability"           "Requirements related to how and when a system needs to be reachable and useable"
+      * #ui           "User Interface"         "Requirements related to how information is collected from and exposed to humans (or animals)"
+        * #ui-accessibility "UI Accessibility" "Requirements around user interface that ensure a satisfactory experience for users from different backgrounds or with varying physical, cognitive, and/or sensory abilities"
+        * #ui-consistency   "UI Consistency"   "Requirements around ensuring that different implementations have sufficiently aligned appearance and mechanisms of interaction"
+        * #ui-usability     "UI Usability"     "Requirements related to the intuitiveness, simplicity, and ease-of-use of a user-interface"
+      * #security    "Security/Privacy"        "Requirements that ensure that data is appropriately protected from threats and respects rules around what parties are permitted to access or manipulate"
+      * #safety      "Safety"                  "Requirements that ensure that system operation does not negatively impact the wellbeing of people or assets"
+      * #performance "Performance/Scalability" "Requirements that deal with timeliness of processing and/or responsiveness under differing levels of load/volume"
+  * #source     "Source"                       "Categories related to where the requirement came from"
+    * ^property.code = #abstract
+    * ^property.valueBoolean = true
+    * #user   "User Requirements"              "Requirements originating from the community of individuals expected to use the system/solution"
+    * #legal  "Legal Requirements"             "Requirements originating from regulation or law"
+    * #design "Design Decisions"               "Requirements documenting decisions made in the design of the solution"
