@@ -29,12 +29,3 @@ Title: "CRD Bundle of Request Resources"
 Description: "This profile defines the Bundle used to convey the relevant orders for the order-select, order-sign, and order-dispatch hooks."
 * ^experimental = false
 * entry.resource only CRDAppointmentWithOrder or CRDAppointmentNoOrder or CRDCommunicationRequest or CRDDeviceRequest or CRDEncounter or CRDMedicationRequest or CRDNutritionOrder or CRDServiceRequest or CRDVisionPrescription
-
-Profile: CRDTaskBundle
-Parent: CRDBaseBundle
-Id: profile-bundle-task
-Title: "CRD Bundle of Dispatch Tasks"
-Description: "This profile defines the Bundle used for the order-dispatch hook to convey the Tasks with the dispatching information."
-* ^experimental = false
-* entry.resource only CRDTaskDispatch
-

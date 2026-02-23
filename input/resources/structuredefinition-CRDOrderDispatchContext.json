@@ -19,17 +19,10 @@
   "differential" : {
     "element" : [
       {
-        "path" : "CDSHookOrderDispatchContext.dispatchedOrders",
-        "type" : [{ 
-          "code" : "Bundle",
-          "profile" : ["http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-bundle-request"]
-        }]
-      },
-      {
         "path" : "CDSHookOrderDispatchContext.fulfillmentTasks",
         "type" : [{ 
-          "code" : "Bundle",
-          "profile" : ["http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-bundle-task"]
+          "code" : "Task",
+          "profile" : ["http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-task"]
         }]
       }
     ]
