@@ -20,11 +20,4 @@ Title: "Official CRD Coverage Detail Codes Value Set"
 Description: "Codes for name-value-pair details on a coverage assertion - now using official FHIR codes"
 * ^status = #active
 * ^experimental = false
-* $crd-coverage-detail#allowed-quantity
-* $crd-coverage-detail#allowed-period
-* $crd-coverage-detail#in-network-copay
-* $crd-coverage-detail#out-network-copay
-* $crd-coverage-detail#concurrent-review
-* $crd-coverage-detail#appropriate-use-needed
-* $crd-coverage-detail#policy-link
-* $crd-coverage-detail#instructions
+* include codes from system $crd-coverage-detail

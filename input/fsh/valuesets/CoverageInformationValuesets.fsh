@@ -64,15 +64,34 @@ Description: "Codes defining whether information about the performer, location, 
 
 ValueSet: CRDCoverageAssertionReasons
 Id: coverageAssertionReasons
+//Title: "Deprecated CRD Coverage Assertion Reasons Value Set"
+//Description: "Reasons for a coverage assertion in the coverage-information extension - replaced by the coverageAssertionReasonsNew value set.  Support for this ValueSet will be dropped in a future version."
 Title: "CRD Coverage Assertion Reasons Value Set"
 Description: "Reasons for a coverage assertion in the coverage-information extension"
 * ^status = #active
 * ^experimental = false
 * ^extension[$fmm].valueInteger = 1
+//* ^extension[$standards-status].valueCode = #deprecated
 * CRDTempCodes#gold-card
 * CRDTempCodes#no-member-found
 * CRDTempCodes#no-active-coverage
+* CRDTempCodes#coverage-not-found
 * CRDTempCodes#auth-out-network
+
+/*
+ValueSet: CRDCoverageAssertionReasonsNew
+Id: coverageAssertionReasonsNew
+Title: "Official CRD Coverage Assertion Reasons Value Set"
+Description: "Reasons for a coverage assertion in the coverage-information extension - now using official FHIR codes"
+* ^status = #active
+* ^experimental = false
+* ^extension[$fmm].valueInteger = 1
+* $v3-ActReason#gold-card
+* $v3-ActReason#no-member-found
+* $v3-ActReason#no-active-coverage
+* $v3-ActReason#coverage-not-found
+* $v3-ActReason#auth-out-network
+*/
 
 ValueSet: CRDCoverageDetailCategories
 Id: coverageDetailCategories

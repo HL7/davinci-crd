@@ -1,6 +1,7 @@
 {
   "https://codesystem.x12.org/005010/1365" : null,
   "http://hl7.org/fhir/us/davinci-hrex/ActorDefinition/hrex-source-actor" : null,
+  "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-task" : null,
   "http://hl7.org/fhir/us/davinci-hrex/ActorDefinition/hrex-disc-client-actor" : null,
   "http://hl7.org/fhir/us/davinci-hrex/ActorDefinition/hrex-disc-server-actor" : null,
   "http://hl7.org/fhir/us/davinci-hrex/ActorDefinition/hrex-consumer-actor" : null,

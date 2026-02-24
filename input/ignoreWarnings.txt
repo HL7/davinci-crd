@@ -1,70 +1,69 @@
 == Suppressed Messages ==
 
-# 0a. These profiles *are* referenced.  Tooling is incorrectly reporting this warning.  https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/Logical.20model.20profile.20usage.20isn't.20fully.20checked/with/531678625
+# 00a. These profiles *are* referenced.  Tooling is incorrectly reporting this warning.  https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/Logical.20model.20profile.20usage.20isn't.20fully.20checked/with/531678625
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CDSHookServiceResponseExtensionAssociatedResource'): The Implementation Guide contains no examples for this data type profile
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-bundle-appointment'): The Implementation Guide contains no examples for this profile
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-bundle-request'): The Implementation Guide contains no examples for this profile
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-bundle-task'): The Implementation Guide contains no examples for this profile
 
-# 0b. Much of the terminology has been moved, but one code wasn't approved in the most recent release (it's on track to being approved next round).  Also one new set of codes has been defined for internal use within the IG.  It'll be proposed to THO soon.  Finally, we need to maintain the old temporary codes for a while as a transition pathway.
-INFORMATION: CodeSystem/temp: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
-
-# 0c. These are issues are caused by the inter-version extensions pack and should be addressed in the next release of that package
+# 00b. These are issues are caused by the inter-version extensions pack and should be addressed in the next release of that package
 ERROR: CommunicationRequest/example: CommunicationRequest.payload[0].extension[0]: Slicing cannot be evaluated: Unable to resolve profile CanonicalType[http://hl7.org/fhir/5.0/StructureDefinition/extension-CommunicationRequest.payload.content%5Bx%5D]
 ERROR: CommunicationRequest/example: CommunicationRequest.payload[0].extension[0].url: Value is 'http://hl7.org/fhir/5.0/StructureDefinition/extension-CommunicationRequest.payload.content%5Bx%5D' but is fixed to 'http://hl7.org/fhir/5.0/StructureDefinition/extension-CommunicationRequest.payload.content[x]' in the profile http://hl7.org/fhir/5.0/StructureDefinition/extension-CommunicationRequest.payload.content[x]|4.0.1#Extension.url
-INFORMATION: CommunicationRequest/example: CommunicationRequest.payload[0]: CommunicationRequest.payload.extension:codeableConcept: Found 0 matches, but unable to check minimum required (CommunicationRequest.payload.extension) due to lack of slicing validation (from http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-communicationrequest|2.2.0-snapshot)
+INFORMATION: CommunicationRequest/example: CommunicationRequest.payload[0]: CommunicationRequest.payload.extension:codeableConcept: Found 0 matches, but unable to check minimum required (CommunicationRequest.payload.extension) due to lack of slicing validation (from http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-communicationrequest|2.2.0)
 
-# 0d. The profile references all have an extension pointing to a sub-element, but the validation is occurring against the root profile element, not the referenced sub-element.  https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/Profiles.20referencing.20sub-elements.20not.20working.20for.20LMs/with/531685344
-INFORMATION: Binary/CRDServiceResponse: CDSHooksResponse.cards[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse|2.2.0-snapshot (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Binary/CRDServiceResponse: CDSHooksResponse.cards[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse|2.2.0-snapshot (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Binary/CRDServiceResponse: CDSHooksResponse.cards[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse|2.2.0-snapshot (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Binary/CRDServiceResponse: CDSHooksResponse.systemActions[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse|2.2.0-snapshot (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Binary/CRDServiceResponse2: CDSHooksResponse.cards[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse|2.2.0-snapshot (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Binary/CRDServiceResponse2: CDSHooksResponse.cards[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse|2.2.0-snapshot (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Binary/CRDServiceResponse2: CDSHooksResponse.cards[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse|2.2.0-snapshot (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Binary/CRDServiceResponse2: CDSHooksResponse.cards[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse|2.2.0-snapshot (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Binary/CRDServiceResponse2: CDSHooksResponse.cards[4]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse|2.2.0-snapshot (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Binary/CRDServiceResponse3: CDSHooksResponse.systemActions[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse|2.2.0-snapshot (this may not be a problem, but you should check that it's not intended to match a slice)
+# 00c. The profile references all have an extension pointing to a sub-element, but the validation is occurring against the root profile element, not the referenced sub-element.  https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/Profiles.20referencing.20sub-elements.20not.20working.20for.20LMs/with/531685344
+INFORMATION: Binary/CRDServiceResponse: CDSHooksResponse.cards[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse|2.2.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Binary/CRDServiceResponse: CDSHooksResponse.cards[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse|2.2.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Binary/CRDServiceResponse: CDSHooksResponse.cards[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse|2.2.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Binary/CRDServiceResponse: CDSHooksResponse.systemActions[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse|2.2.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Binary/CRDServiceResponse2: CDSHooksResponse.cards[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse|2.2.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Binary/CRDServiceResponse2: CDSHooksResponse.cards[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse|2.2.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Binary/CRDServiceResponse2: CDSHooksResponse.cards[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse|2.2.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Binary/CRDServiceResponse2: CDSHooksResponse.cards[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse|2.2.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Binary/CRDServiceResponse2: CDSHooksResponse.cards[4]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse|2.2.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Binary/CRDServiceResponse3: CDSHooksResponse.systemActions[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/CRDHooksResponse|2.2.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 
-# 0e. This is an error in the publication of the tools IG.  The model is not experimental
+# 00d. This is an error in the publication of the tools IG.  The model is not experimental
 The definition builds on 'http://hl7.org/fhir/tools/StructureDefinition/CDSHooksRequest' which is experimental, but this definition is not labeled as experimental
 The definition builds on 'http://hl7.org/fhir/tools/StructureDefinition/CDSHooksResponse' which is experimental, but this definition is not labeled as experimental
 
-# 0f. These codes are valid, however we need the version of CPT supported by tx.fhir.org to be updated to a more recent version.  See https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/CPT.20codes.20complaining.20about.20non-validity/with/562484006
-ERROR: ServiceRequest/example: ServiceRequest.code.extension[0].value.ofType(CodeableConcept).coding[0].code: Unknown code '0795T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'
-INFORMATION: ServiceRequest/example: ServiceRequest.code.extension[0].value.ofType(CodeableConcept).coding[0].code: Code '0795T' not found in CPT
-ERROR: ServiceRequest/example: ServiceRequest.code.extension[1].value.ofType(CodeableConcept).coding[0].code: Unknown code '0796T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'
-INFORMATION: ServiceRequest/example: ServiceRequest.code.extension[1].value.ofType(CodeableConcept).coding[0].code: Code '0796T' not found in CPT
-ERROR: ServiceRequest/example: ServiceRequest.code.extension[2].value.ofType(CodeableConcept).coding[0].code: Unknown code '0797T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'
-INFORMATION: ServiceRequest/example: ServiceRequest.code.extension[2].value.ofType(CodeableConcept).coding[0].code: Code '0797T' not found in CPT
-ERROR: ServiceRequest/example: ServiceRequest.code.extension[3].value.ofType(CodeableConcept).coding[0].code: Unknown code '0804T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'
-INFORMATION: ServiceRequest/example: ServiceRequest.code.extension[3].value.ofType(CodeableConcept).coding[0].code: Code '0804T' not found in CPT
-ERROR: ServiceRequest/example: ServiceRequest.code.extension[4].value.ofType(CodeableConcept).coding[0].code: Unknown code '0823T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'
-INFORMATION: ServiceRequest/example: ServiceRequest.code.extension[4].value.ofType(CodeableConcept).coding[0].code: Code '0823T' not found in CPT
-ERROR: ServiceRequest/example: ServiceRequest.code.extension[5].value.ofType(CodeableConcept).coding[0].code: Unknown code '0915T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'
-INFORMATION: ServiceRequest/example: ServiceRequest.code.extension[5].value.ofType(CodeableConcept).coding[0].code: Code '0915T' not found in CPT
+# 00e. These codes are valid, however we need the version of CPT supported by tx.fhir.org to be updated to a more recent version.  See https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/CPT.20codes.20complaining.20about.20non-validity/with/562484006
+Unknown code '0795T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'
+Unknown code '0796T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'
+Unknown code '0797T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'
+Unknown code '0804T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'
+Unknown code '0823T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'
+Unknown code '0915T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'
 
-# 0g. These will go away once the next release of the Tools IG is published and we can point to that
-No definition could be found for URL value 'http://hl7.org/fhir/tools/StructureDefinition/requirements-actorkey'
-No definition could be found for URL value 'http://hl7.org/fhir/tools/StructureDefinition/requirements-statementcategory'
-No definition could be found for URL value 'http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor'
-No definition could be found for URL value 'http://hl7.org/fhir/tools/StructureDefinition/requirements-statementshallnot'
-WARNING: D:\Git\_IGs\davinci-crd2\fsh-generated\resources\ImplementationGuide-davinci-crd: Unknown Parameters: [requirements-category-vs=http://hl7.org/fhir/us/davinci-crd/ValueSet/cs-categories, term-params-in-artifacts=true, toggle-changes=true]
-ERROR: ImplementationGuide/hl7.fhir.us.davinci-crd: ImplementationGuide.definition.extension[3].extension[0].value.ofType(string): The System URI could not be determined for the code 'requirements-category-vs' in the ValueSet 'http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.8.0'
-ERROR: ImplementationGuide/hl7.fhir.us.davinci-crd: ImplementationGuide.definition.extension[3].extension[0].value.ofType(string): The value provided ('requirements-category-vs') was not found in the value set 'ig-parameters Codes ValueSet' (http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.8.0), and a code is required from this value set  (error message = The System URI could not be determined for the code 'requirements-category-vs' in the ValueSet 'http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.8.0'; The provided code '#requirements-category-vs' was not found in the value set 'http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.8.0')
-ERROR: ImplementationGuide/hl7.fhir.us.davinci-crd: ImplementationGuide.definition.extension[8].extension[0].value.ofType(string): The System URI could not be determined for the code 'term-params-in-artifacts' in the ValueSet 'http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.8.0'
-ERROR: ImplementationGuide/hl7.fhir.us.davinci-crd: ImplementationGuide.definition.extension[8].extension[0].value.ofType(string): The value provided ('term-params-in-artifacts') was not found in the value set 'ig-parameters Codes ValueSet' (http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.8.0), and a code is required from this value set  (error message = The System URI could not be determined for the code 'term-params-in-artifacts' in the ValueSet 'http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.8.0'; The provided code '#term-params-in-artifacts' was not found in the value set 'http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.8.0')
+# 00f. **[New issue] These codes used to validate but stopped with the recent terminology server transition.  They are valid.
+A definition for CodeSystem 'http://www.nlm.nih.gov/research/umls/rxnorm' version '05062024' could not be found, so the code cannot be validated. Valid versions: ??
+A definition for CodeSystem 'https://www.nubc.org/CodeSystem/PatDischargeStatus' could not be found, so the code cannot be validated
+Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/core/ValueSet/us-core-discharge-disposition|7.0.0' because the code system http://snomed.info/sct was not found
+Unknown code '77061' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'
+Unknown code '77062' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'
+Unknown code '77065' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'
+Unknown code '77066' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'
+Unknown code '77067' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'
+Unknown code '80076' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'
+Unknown code '99211' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'
+
+# 00g. These will go away once the next release of the Tools IG is published and we can point to that
 ERROR: ImplementationGuide/hl7.fhir.us.davinci-crd: ImplementationGuide.definition.extension[35].url: No definition could be found for URL value 'http://hl7.org/fhir/tools/StructureDefinition/expansion-parameters'
-ERROR: ImplementationGuide/hl7.fhir.us.davinci-crd: ImplementationGuide.definition.extension[39].extension[0].value.ofType(code): The System URI could not be determined for the code 'requirements-category-vs' in the ValueSet 'http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.8.0'
-ERROR: ImplementationGuide/hl7.fhir.us.davinci-crd: ImplementationGuide.definition.extension[39].extension[0].value.ofType(code): The value provided ('requirements-category-vs') was not found in the value set 'ig-parameters Codes ValueSet' (http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.8.0), and a code is required from this value set  (error message = The System URI could not be determined for the code 'requirements-category-vs' in the ValueSet 'http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.8.0'; The provided code '#requirements-category-vs' was not found in the value set 'http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.8.0')
-ERROR: ImplementationGuide/hl7.fhir.us.davinci-crd: ImplementationGuide.definition.extension[44].extension[0].value.ofType(code): The System URI could not be determined for the code 'term-params-in-artifacts' in the ValueSet 'http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.8.0'
-ERROR: ImplementationGuide/hl7.fhir.us.davinci-crd: ImplementationGuide.definition.extension[44].extension[0].value.ofType(code): The value provided ('term-params-in-artifacts') was not found in the value set 'ig-parameters Codes ValueSet' (http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.8.0), and a code is required from this value set  (error message = The System URI could not be determined for the code 'term-params-in-artifacts' in the ValueSet 'http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.8.0'; The provided code '#term-params-in-artifacts' was not found in the value set 'http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.8.0')
 
-# 0h. The IG publisher is incorrectly validating CRD slices against US core slices that they're not intended to derive from.  https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/Checking.20terminology.20isn't.20working.20across.20slices/with/569134880
+# 00h. The IG publisher is incorrectly validating CRD slices against US core slices that they're not intended to derive from.  https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/Checking.20terminology.20isn't.20working.20across.20slices/with/569134880
 ERROR: StructureDefinition/profile-medicationrequest: StructureDefinition: This profile does not comply with claimed profile 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|6.1.0'
 ERROR: StructureDefinition/profile-servicerequest: StructureDefinition: This profile does not comply with claimed profile 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-servicerequest|6.1.0'
 
-# 01. While technically invalid, US Core is evaluating approving this as a patch.  Patch request submitted as https://jira.hl7.org/browse/FHIR-51489 (waiting on approval)
+# 00i. This will resolve once HRex 1.2.0 is published
+ERROR: en\CapabilityStatement-crd-server.html#/html/body/div/div/div/div/div/div/div/div/blockquote/div/p/a at Line 436, column 165: The link 'http://hl7.org/fhir/us/davinci-hrex/STU1.2.0/security.html' for "HRex implementation guide" cannot be resolved
+ERROR: CapabilityStatement.text.div: Hyperlink 'http://hl7.org/fhir/us/davinci-hrex/STU1.2.0/security.html' at 'div/div/div/blockquote/div/p/a' for 'HRex implementation guide' does not resolve
+
+# 00j. **[New Issue] New issues caused by change of tx server
+ERROR: ValueSet.where(id = 'billingCodes'): Error from https://tx.fhir.org/r4: Error: 0ms tx-op
+ERROR: ValueSet.where(id = 'deviceRequest'): Error from https://tx.fhir.org/r4: Error: 0ms tx-op
+ERROR: ValueSet.where(id = 'serviceRequestCodes'): Error from https://tx.fhir.org/r4: Error: 0ms tx-op
+
+
+# 01. **[Updated to denote approval] While technically invalid, US Core has approved this as a patch https://jira.hl7.org/browse/FHIR-39382
 ERROR: StructureDefinition/profile-organization: StructureDefinition: This profile does not comply with claimed profile 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|3.1.1'
 ERROR: StructureDefinition/profile-practitioner: StructureDefinition: This profile does not comply with claimed profile 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|3.1.1'
 
@@ -79,18 +78,22 @@ WARNING: DA VINCI: The Change Log page (history.html) does not include an h3 sec
 WARNING: DA VINCI: The Change Log page (history.html) does not include an h3 section for the version 0.3.0
 WARNING: DA VINCI: The Change Log page (history.html) does not include an h3 section for the version 0.1.0
 
-# 04. These are inherited from US Core and SDC
+# 04. **[Combined suppression warnings under one heading] These are inherited from US Core and SDC
 INFORMATION: StructureDefinition/profile-coverage: StructureDefinition.snapshot.element[9].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: StructureDefinition/profile-coverage: StructureDefinition.snapshot.element[29].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: StructureDefinition/profile-medicationrequest: StructureDefinition.snapshot.element[15].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: StructureDefinition/profile-organization: StructureDefinition.snapshot.element[9].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: StructureDefinition/profile-practitioner: StructureDefinition.snapshot.element[9].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: StructureDefinition/profile-servicerequest: StructureDefinition.snapshot.element[18].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
+INFORMATION: StructureDefinition/CDSHookServiceRequestExtensionRequestCRDVersion: StructureDefinition.snapshot.element[3].type[0].extension[1]: The extension http://hl7.org/fhir/StructureDefinition/regex|5.2.0 is deprecated with the note: 'This was deprecated in favor of using a constraint on the element using FHIRPath, since constraints allow for the provision of a human readable message associated with the regex'
+INFORMATION: StructureDefinition/profile-taskquestionnaire: StructureDefinition.snapshot.element[48].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
+INFORMATION: StructureDefinition/profile-taskquestionnaire: StructureDefinition.snapshot.element[66].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
+INFORMATION: StructureDefinition/profile-appointment-base: StructureDefinition.snapshot.element[4].binding.extension[0]: The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.2.0 is deprecated
 
 # 05. This link is intended to be version-independent
 %The link 'http://hl7.org/fhir/us/davinci-crd' for "Coverage Requirements Discovery (CRD)" is a canonical link and is therefore unsafe with regard to versions
 
-# 06. Device for CRD doesn't meet the constraints of Implantable Device.  See US Core Ticket FHIR-29674
+# 06. **[updated as approved] Device for CRD doesn't meet the constraints of Implantable Device.  Approved in US Core Ticket FHIR-29674
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-device').baseDefinition: US FHIR Usage rules require that all profiles on Device derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
 
 # 07. These are example code systems, so no resolution is expected
@@ -99,8 +102,10 @@ A definition for CodeSystem 'http://example.org/fhir/CodeSystem/SomeCodes' could
 
 # 08. This is a terminology server limitation
 A definition for CodeSystem 'https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets' could not be found, so the code cannot be validated
+Unable to expand included value set 'http://hl7.org/fhir/us/davinci-crd/ValueSet/deviceRequest': Unable to expand imported value set: Error from https://tx.fhir.org/r4: The code System "http://www.ama-assn.org/go/cpt" has a grammar, and cannot be enumerated directly (and Error from https://tx.fhir.org/r4: Error: 0ms tx-op
 
-# 09. These are incorrectly declared as 'draft' in their source IGs
+
+# 09. These are incorrectly declared as 'draft' in their source specifications
 Reference to draft CodeSystem http://hl7.org/fhir/uv/sdc/CodeSystem/temp|3.0.0
 Reference to draft CodeSystem http://hl7.org/fhir/CodeSystem/task-code|4.0.1
 Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/dose-rate-type|1.0.0
@@ -111,21 +116,17 @@ INFORMATION: StructureDefinition/profile-organization: StructureDefinition.snaps
 INFORMATION: StructureDefinition/profile-organization: StructureDefinition.snapshot.element[12].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 INFORMATION: StructureDefinition/profile-practitioner: StructureDefinition.snapshot.element[10].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 
-# 11. This version pinning is expected and wanted
+# 11. **[Updated pinning choices] This version pinning is expected and wanted
 %to 20240606 from choices of 20170601 (us.nlm.vsac#0.11.0), 20240606 (us.nlm.vsac#0.19.0)
 %to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#6.2.0)
+%to 5.2.0 from choices of 1.0.0 (hl7.fhir.uv.extensions.r4#1.0.0), 5.1.0-cibuild (hl7.fhir.uv.extensions.r4#5.1.0-snapshot1), 5.2.0 (hl7.fhir.uv.extensions.r4#5.2.0)
 %to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
 %to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
 
-# 12. We're inheriting the use of these extensions from the core spec
-The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.2.0 is deprecated
-The extension http://hl7.org/fhir/StructureDefinition/regex|5.3.0-ballot-tc1 is deprecated with the note: 'This was deprecated in favor of using a constraint on the element using FHIRPath, since constraints allow for the provision of a human readable message associated with the regex'
-INFORMATION: StructureDefinition/CDSHookServiceRequestExtensionRequestCRDVersion: StructureDefinition.snapshot.element[3].type[0].extension[1]: The extension http://hl7.org/fhir/StructureDefinition/regex|5.2.0 is deprecated with the note: 'This was deprecated in favor of using a constraint on the element using FHIRPath, since constraints allow for the provision of a human readable message associated with the regex'
 
-# 13. This is a tooling limitation and doesn't indicate an issue with the IG
-INFORMATION: ValueSet.where(id = 'orderDetail'): The value set expansion is too large, and only a subset has been displayed
 
-# 14. These are example values and are not expected to resolve
+
+# 13. These are example references and are not expected to resolve
 WARNING: Binary/CRDServiceRequest: CDSHooksRequest.context.userId: No definition could be found for URL value 'Practitioner/ABC'
 WARNING: Binary/CRDServiceRequest2: CDSHooksRequest.context.performer: No definition could be found for URL value 'Organization/pharm1'
 WARNING: Binary/CRDServiceRequest3: CDSHooksRequest.context.userId: No definition could be found for URL value 'Practitioner/ABC'
@@ -133,25 +134,21 @@ WARNING: Binary/CRDServiceRequest4: CDSHooksRequest.context.userId: No definitio
 WARNING: Binary/CRDServiceResponse: CDSHooksResponse.cards[2].suggestions[0].actions[0].resourceId: No definition could be found for URL value 'ServiceRequest/2468'
 WARNING: Binary/CRDServiceResponse2: CDSHooksResponse.cards[0].suggestions[0].actions[0].resourceId: No definition could be found for URL value 'MedicationRequest/2222'
 
-# 15. This is inherited from SDC
-INFORMATION: StructureDefinition/profile-taskquestionnaire: StructureDefinition.snapshot.element[48].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
-INFORMATION: StructureDefinition/profile-taskquestionnaire: StructureDefinition.snapshot.element[66].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
-
-# 16. These two code systems only contain codes that are bound to elements of type 'code' and therefore do not require TSMG approval to remain in the IG
+# 14. These two code systems only contain codes that are bound to elements of type 'code' and therefore do not require TSMG approval to remain in the IG
 INFORMATION: CodeSystem/coverage-information-codes: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 INFORMATION: CodeSystem/crd-metric-codes: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
-# 17. We explicitly only want the versions pointed to in current and anticipated regulation
+# 15. We explicitly only want the versions pointed to in current and anticipated regulation
 WARNING: ImplementationGuide/hl7.fhir.us.davinci-crd: ImplementationGuide.dependsOn[2]: The ImplementationGuide uses package hl7.fhir.us.core#7.0.0 released on 2024-05-08, but the most recent appropriate version is 8.0.1. This reference is getting old and the more recent version should be considered
 
-# 18. These are inherited from US Core.  US Core marks identifier as MS, but in doing so, don't actually intend that all identifiers are supported (even though that's what marking the base element as MS means)
+# 16. These are inherited from US Core.  US Core marks identifier as MS, but in doing so, don't actually intend that all identifiers are supported (even though that's what marking the base element as MS means)
 WARNING: StructureDefinition/profile-organization: StructureDefinition.snapshot: The slice 'CLIA' on path 'Organization.identifier' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true
 WARNING: StructureDefinition/profile-organization: StructureDefinition.snapshot: The slice 'NAIC' on path 'Organization.identifier' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true
 
-# 19. There is an example of this profile as part of another instance
+# 17. There is an example of this profile as part of another instance
 INFORMATION: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-medication'): The Implementation Guide contains no explicitly linked examples for this profile
 
-# 20. This is intentional.  Only portions of these profiles are used, as part of the CDSHooksResponse profile.  There's no intention they be used directly, so abstract is appropriate.
+# 18. This is intentional.  Only portions of these profiles are used, as part of the CDSHooksResponse profile.  There's no intention they be used directly, so abstract is appropriate.
 WARNING: StructureDefinition/CRDHooksResponse-additionalOrders: StructureDefinition: CDSHooksResponse is labeled as an abstract type, but no concrete descendants were found (check definitions - this is usually an error unless concrete definitions are in some other package)
 WARNING: StructureDefinition/CRDHooksResponse-adjustCoverage: StructureDefinition: CDSHooksResponse is labeled as an abstract type, but no concrete descendants were found (check definitions - this is usually an error unless concrete definitions are in some other package)
 WARNING: StructureDefinition/CRDHooksResponse-alternateRequest: StructureDefinition: CDSHooksResponse is labeled as an abstract type, but no concrete descendants were found (check definitions - this is usually an error unless concrete definitions are in some other package)
@@ -161,37 +158,42 @@ WARNING: StructureDefinition/CRDHooksResponse-formCompletion: StructureDefinitio
 WARNING: StructureDefinition/CRDHooksResponse-instructions: StructureDefinition: CDSHooksResponse is labeled as an abstract type, but no concrete descendants were found (check definitions - this is usually an error unless concrete definitions are in some other package)
 WARNING: StructureDefinition/CRDHooksResponse-launchSMART: StructureDefinition: CDSHooksResponse is labeled as an abstract type, but no concrete descendants were found (check definitions - this is usually an error unless concrete definitions are in some other package)
 
-# 21. This pinning is correct
-Pinned the version of http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.1066 to 20240606 from choices of 20190521 (us.nlm.vsac#0.11.0), 20240606 (us.nlm.vsac#0.19.0)
-Pinned the version of http://hl7.org/fhir/StructureDefinition/alternate-reference to 5.2.0 from choices of 1.0.0 (hl7.fhir.uv.extensions.r4#1.0.0), 5.1.0 (hl7.fhir.uv.extensions.r4#5.1.0), 5.2.0 (hl7.fhir.uv.extensions.r4#5.2.0)
+# 19. The deprecated value sets are included as an additional binding for backwards compatibility purposes
+Reference to deprecated ValueSet http://hl7.org/fhir/us/davinci-crd/ValueSet/coverageDetail|2.2.0
 
-# 22. The deprecated value set is included as an additional binding for backwards compatibility purposes
-Reference to deprecated ValueSet http://hl7.org/fhir/us/davinci-crd/ValueSet/coverageDetail|2.2.0-snapshot
-
-# 23. The use of conformance verbs on these pages isn't actually as conformance statements
-INFORMATION: en/history.html: The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause: 'FHIR-49742 - Change logical model token 0..1 to 1..1, made expectation to provide a token 'SHALL' instead of 'will' (correction) link'
+# 20. **[Updated to reflect text changes] The use of conformance verbs on these pages isn't actually as conformance statements
 INFORMATION: en/conformance.html: The html source contains the word 'MAY' but it is not in a text phrase marked as a conformance clause: 'This implementation guide uses specific terminology such as SHALL, SHOULD, MAY to flag statements that have relevance for the evaluation of conformance with the guide.  As well, profiles in this implementation guide make use of the mustSupport element.  Base expectations for the interpretation of these terms are set in the FHIR core specification and general Da Vinci-wide expectations are defined in HRex.'
+INFORMATION: en/conformance.html: The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause: 'In order to conform to this implementation guide, in addition to adhering to any relevant 'SHALL' statements:'
 INFORMATION: en/conformance.html: The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause: 'This implementation guide uses specific terminology such as SHALL, SHOULD, MAY to flag statements that have relevance for the evaluation of conformance with the guide.  As well, profiles in this implementation guide make use of the mustSupport element.  Base expectations for the interpretation of these terms are set in the FHIR core specification and general Da Vinci-wide expectations are defined in HRex.'
 INFORMATION: en/conformance.html: The html source contains the word 'SHOULD' but it is not in a text phrase marked as a conformance clause: 'This implementation guide uses specific terminology such as SHALL, SHOULD, MAY to flag statements that have relevance for the evaluation of conformance with the guide.  As well, profiles in this implementation guide make use of the mustSupport element.  Base expectations for the interpretation of these terms are set in the FHIR core specification and general Da Vinci-wide expectations are defined in HRex.'
-INFORMATION: en/conformance.html: The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause: 'In order to conform to this implementation guide, in addition to adhering to any relevant 'SHALL' statements:'
+INFORMATION: en/foundation.html: The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause: 'The authors of this IG acknowledge that this may limit the payer from providing full responses to all calls where a response is theoretically possible. Systems should provide the best information they can in a timely fashion and rely on other layers of the payment and adjudication process to catch issues that require longer processing. For example, if a system is able to provide a response on eligibility within the time window, but not on whether prior authorization is needed, it can return cards indicating the service is covered, but that DTR is needed (to determine prior authorization requirements). A determination that additional information is needed (e.g., via DTR) is considered to be a valid response. Where a CRD server responds with a coverage information extension indicating doc-needed of 'clinical', 'admin', or 'patient' and the payer supports DTR, the responsible organization SHOULD support soliciting the identified additional information via DTR. This expectation is intended to change to 'SHALL' in a future release.'
 INFORMATION: en/foundation.html: The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause: 'The expectation of CRD is that CRD servers SHOULD query all data necessary to make their coverage determination decisions if that data is available for query in the EHR and that data is not returned in prefetch.  Coverage determination decisions are whether the service is covered, whether prior authorization is required, and whether additional information needs to be gathered.  It is not acceptable for a CRD server to rely exclusively on DTR as a mechanism to retrieve data.  DTR is for data retrieval that requires human intervention or review.  There may be circumstances where time constraints prevent all needed data from being retrieved, in which case DTR retrieval of data that would not typically need human review may be necessary.  However, this should never be the design objective.  This query requirement may be tightened to 'SHALL' in a future release.'
-INFORMATION: en/foundation.html: The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause: 'The authors of this IG acknowledge that this may limit the payer from providing full responses to all calls where a response is theoretically possible. Systems should provide the best information they can in a timely fashion and rely on other layers of the payment and adjudication process to catch issues that require longer processing. For example, if a system is able to provide a response on eligibility within the time window, but not on whether prior authorization is needed, it can return cards indicating the service is covered, but that DTR is needed (to determine prior authorization requirements). A determination that additional information is needed (e.g., via DTR) is considered to be a valid response. Where a CRD server responds with a coverage information extension indicating doc-needed of 'clinical', 'admin', or 'patient' and the payer supports DTR, the responsible organization SHOULD support gathering the additional information via DTR. This expectation is intended to change to 'SHALL' in a future release.'
+INFORMATION: en/history.html: The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause: 'FHIR-49742 - Change logical model token 0..1 to 1..1, made expectation to provide a token 'SHALL' instead of 'will' (correction) link'
 INFORMATION: en/implementation.html: The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause: 'Key aspects of interoperability for this specification include agreement on how to identify payers, identify different types of coverage, etc. As yet, there is no industry-wide solution to this issue. However, HL7 is working with industry partners on viable solutions to these issues. Guidance and recommendations on how to manage consistent identity of payer concepts as well as other topics can be found in the CRD Implementer Support confluence page. Some of the guidance there may migrate to this specification and become 'SHALL' in future releases, so implementers are strongly encouraged to align with the guidance on the page in their early development.'
 INFORMATION: en/metrics.html: The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause: 'Each of these IGs recommends a set of metrics that SHOULD or MAY be collected by their respective implementations to facilitate the evaluation of adoption, functionality, processes, and improved outcomes. While there are current and proposed state requirements for prior authorization metric reporting, at the time of publication there is no requirement to report on the metrics defined here.  However, it is reasonable to believe that in the future interested entities (providers, payers, regulators, quality organizations, certification agencies, states, etc.) will ask for these metrics to evaluate the ongoing automation of the supported processes / exchanges. While this guide will not require these metrics to be captured in this release, the authors strongly recommend that each implementation do so with the expectation that collection and dissemination of these metrics may become a requirement ('SHALL') in future version of these IGs.'
 INFORMATION: en/operational.html: The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause: 'CRD clients and servers SHOULD support encounter-start and order-select, both to allow payer caching and to allow payers to return useful responses when possible (e.g. coverage expired, service not covered) with the limited information available in those hooks.  Requirements for either or both hook might be tightened to 'SHALL' in a future release of this specification.'
 
-# 24. This is referenced in the core spec and it's being undeprecated in R6
+# 21. This is referenced in the core spec and it's being undeprecated in R6
 Reference to deprecated ValueSet http://hl7.org/fhir/5.0/ValueSet/jurisdiction|5.0.0
 
-# 25. These are R5 resources, so we have to (and do) point to the R5 version
+# 22. These are R5 resources, so we have to (and do) point to the R5 version
 WARNING: DA VINCI: The How to Read page (background.html) needs to include a reference to the http://hl7.org/fhir/R4/actordefinition.html because this IG uses the actordefinition resource.
 WARNING: DA VINCI: The How to Read page (background.html) needs to include a reference to the http://hl7.org/fhir/R4/requirements.html because this IG uses the requirements resource.
 
-# 26. X12 Code Systems and Value Sets that are referenced in the guide but not freely available
+# 23. X12 Code Systems and Value Sets that are referenced in the guide but not freely available
 A definition for CodeSystem 'https://codesystem.x12.org/005010/1365' could not be found, so the code cannot be validated
-Error from https://tx.fhir.org/r4: A definition for CodeSystem 'https://codesystem.x12.org/005010/1365' could not be found, so the value set cannot be expanded
 No definition could be found for URL value 'https://codesystem.x12.org/005010/1365'
+ERROR: ValueSet.where(id = 'X12ServiceType'): Error from https://tx.fhir.org/r4: Error: A definition for CodeSystem 'https://codesystem.x12.org/005010/1365' could not be found, so the value set cannot be expanded
 
-# 27. These repetitions are not expected to match any slices
-INFORMATION: Practitioner/full: Practitioner.identifier[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-practitioner|2.2.0-snapshot (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: ServiceRequest/example: ServiceRequest.reasonCode[0].coding[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-servicerequest|2.2.0-snapshot (this may not be a problem, but you should check that it's not intended to match a slice)
+
+# 24. These repetitions are not expected to match any slices
+INFORMATION: Practitioner/full: Practitioner.identifier[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-practitioner|2.2.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: ServiceRequest/example: ServiceRequest.reasonCode[0].coding[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-servicerequest|2.2.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+
+# 25. **[New] These are from real-world examples, so the status isn't a concern
+The concept '0093-0948' has a status of inactive and its use should be reviewed
+The concept '59011-410' has a status of inactive and its use should be reviewed
+
+# 25. **[Updated approval status] All terminology with the exception of two value sets has been moved into THO.  Those have THO proposals - one approved, one not.  The not-yet approved one is for internal IG use, not implementer use.
+INFORMATION: CodeSystem/temp: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+

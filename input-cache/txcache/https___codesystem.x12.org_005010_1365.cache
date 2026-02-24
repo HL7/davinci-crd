@@ -39,3 +39,9 @@ e: {
   "error" : "Error from https://tx.fhir.org/r4: A definition for CodeSystem 'https://codesystem.x12.org/005010/1365' could not be found, so the value set cannot be expanded"
 }
 -------------------------------------------------------------------------------------
+{"hierarchical" : true, "language": "en", "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/X12ServiceType", "version": "2.2.0"}####
+e: {
+  "from-server" : true,
+  "error" : "Error from https://tx.fhir.org/r4: Error: A definition for CodeSystem 'https://codesystem.x12.org/005010/1365' could not be found, so the value set cannot be expanded"
+}
+-------------------------------------------------------------------------------------

@@ -22,7 +22,6 @@ v: {
   "system" : "http://hl7.org/fhir/sid/ndc",
   "server" : "https://tx.fhir.org/r4",
   "diagnostics" : "0 0 : start\r\n0 0     : 0ms  : Analysing http://hl7.org/fhir/ValueSet/@all for validation purposes\r\n0 0     : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n0 0     : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n0 0     : 0ms  : Prepare include: \"()\"\r\n0 0     : 0ms  : Validate \"[http://hl7.org/fhir/sid/ndc#0093-0948 (\"Diclofenac Potassium  (product)\")]\"\r\n0 0     : 0ms  : Check \"http://hl7.org/fhir/sid/ndc#0093-0948\"\r\n0 0     : 0ms  : Using CodeSystem \"http://hl7.org/fhir/sid/ndc|\" (content = complete)\r\n",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -52,9 +51,264 @@ v: {
   "system" : "http://hl7.org/fhir/sid/ndc",
   "server" : "https://tx.fhir.org/r4",
   "diagnostics" : "0 0 : start\r\n0 0     : 0ms  : Analysing http://hl7.org/fhir/ValueSet/@all for validation purposes\r\n0 0     : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n0 0     : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n0 0     : 0ms  : Prepare include: \"()\"\r\n0 0     : 0ms  : Validate \"[http://hl7.org/fhir/sid/ndc#59011-410 (\"OxyContin  (product)\")]\"\r\n0 0     : 0ms  : Check \"http://hl7.org/fhir/sid/ndc#59011-410\"\r\n0 0     : 0ms  : Using CodeSystem \"http://hl7.org/fhir/sid/ndc|\" (content = complete)\r\n",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
+}
+
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://hl7.org/fhir/sid/ndc",
+    "code" : "0093-0948",
+    "display" : "Diclofenac Potassium  (product)"
+  }]
+}, "langs":"en", "useServer":"true", "useClient":"false", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  },
+  {
+    "name" : "defaultDisplayLanguage",
+    "valueCode" : "en"
+  }]
+}}####
+v: {
+  "display" : "Diclofenac Potassium (product)",
+  "code" : "0093-0948",
+  "system" : "http://hl7.org/fhir/sid/ndc",
+  "version" : "2021-11-01",
+  "severity" : "error",
+  "error" : "The concept '0093-0948' has a status of inactive and its use should be reviewed; Wrong whitespace in Display Name 'Diclofenac Potassium  (product)' for http://hl7.org/fhir/sid/ndc#0093-0948. Valid display is 'Diclofenac Potassium (product)' (en) (for the language(s) 'en')",
+  "class" : "UNKNOWN",
+  "server" : "https://tx.fhir.org/r4",
+  "inactive" : true,
+  "diagnostics" : "0ms tx-op\n1ms http://hl7.org/fhir/sid/ndc/vs|2021-11-01: Validate \"[undefined#0093-0948 (\"Diclofenac Potassium  (product)\")]\"\n1ms http://hl7.org/fhir/sid/ndc/vs|2021-11-01: Check \"http://hl7.org/fhir/sid/ndc#0093-0948\"\n1ms http://hl7.org/fhir/sid/ndc/vs|2021-11-01: CodeSystem found: http://hl7.org/fhir/sid/ndc|2021-11-01 for http://hl7.org/fhir/sid/ndc|2021-11-01\n1ms http://hl7.org/fhir/sid/ndc/vs|2021-11-01: check code in () at CodeableConcept.coding[0]\n90ms http://hl7.org/fhir/sid/ndc/vs|2021-11-01: Code \"0093-0948\" found in http://hl7.org/fhir/sid/ndc|2021-11-01",
+  "issues" : {
+  "resourceType" : "OperationOutcome",
+  "issue" : [{
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString" : "Display_Name_WS_for__should_be_one_of__instead_of"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
+      "valueUrl" : "https://tx.fhir.org/r4"
+    }],
+    "severity" : "error",
+    "code" : "invalid",
+    "details" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
+        "code" : "invalid-display"
+      }],
+      "text" : "Wrong whitespace in Display Name 'Diclofenac Potassium  (product)' for http://hl7.org/fhir/sid/ndc#0093-0948. Valid display is 'Diclofenac Potassium (product)' (en) (for the language(s) 'en')"
+    },
+    "expression" : ["CodeableConcept.coding[0].display"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString" : "INACTIVE_CONCEPT_FOUND"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
+      "valueUrl" : "https://tx.fhir.org/r4"
+    }],
+    "severity" : "warning",
+    "code" : "business-rule",
+    "details" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
+        "code" : "code-comment"
+      }],
+      "text" : "The concept '0093-0948' has a status of inactive and its use should be reviewed"
+    },
+    "expression" : ["CodeableConcept.coding[0]"]
+  }]
+}
+
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://hl7.org/fhir/sid/ndc",
+    "code" : "59011-410",
+    "display" : "OxyContin  (product)"
+  }]
+}, "langs":"en", "useServer":"true", "useClient":"false", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  },
+  {
+    "name" : "defaultDisplayLanguage",
+    "valueCode" : "en"
+  }]
+}}####
+v: {
+  "display" : "OxyContin (product)",
+  "code" : "59011-410",
+  "system" : "http://hl7.org/fhir/sid/ndc",
+  "version" : "2021-11-01",
+  "severity" : "error",
+  "error" : "The concept '59011-410' has a status of inactive and its use should be reviewed; Wrong whitespace in Display Name 'OxyContin  (product)' for http://hl7.org/fhir/sid/ndc#59011-410. Valid display is 'OxyContin (product)' (en) (for the language(s) 'en')",
+  "class" : "UNKNOWN",
+  "server" : "https://tx.fhir.org/r4",
+  "inactive" : true,
+  "diagnostics" : "0ms tx-op\n0ms http://hl7.org/fhir/sid/ndc/vs|2021-11-01: Validate \"[undefined#59011-410 (\"OxyContin  (product)\")]\"\n1ms http://hl7.org/fhir/sid/ndc/vs|2021-11-01: Check \"http://hl7.org/fhir/sid/ndc#59011-410\"\n1ms http://hl7.org/fhir/sid/ndc/vs|2021-11-01: CodeSystem found: http://hl7.org/fhir/sid/ndc|2021-11-01 for http://hl7.org/fhir/sid/ndc|2021-11-01\n1ms http://hl7.org/fhir/sid/ndc/vs|2021-11-01: check code in () at CodeableConcept.coding[0]\n85ms http://hl7.org/fhir/sid/ndc/vs|2021-11-01: Code \"59011-410\" found in http://hl7.org/fhir/sid/ndc|2021-11-01",
+  "issues" : {
+  "resourceType" : "OperationOutcome",
+  "issue" : [{
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString" : "Display_Name_WS_for__should_be_one_of__instead_of"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
+      "valueUrl" : "https://tx.fhir.org/r4"
+    }],
+    "severity" : "error",
+    "code" : "invalid",
+    "details" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
+        "code" : "invalid-display"
+      }],
+      "text" : "Wrong whitespace in Display Name 'OxyContin  (product)' for http://hl7.org/fhir/sid/ndc#59011-410. Valid display is 'OxyContin (product)' (en) (for the language(s) 'en')"
+    },
+    "expression" : ["CodeableConcept.coding[0].display"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString" : "INACTIVE_CONCEPT_FOUND"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
+      "valueUrl" : "https://tx.fhir.org/r4"
+    }],
+    "severity" : "warning",
+    "code" : "business-rule",
+    "details" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
+        "code" : "code-comment"
+      }],
+      "text" : "The concept '59011-410' has a status of inactive and its use should be reviewed"
+    },
+    "expression" : ["CodeableConcept.coding[0]"]
+  }]
+}
+
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://hl7.org/fhir/sid/ndc",
+    "code" : "0093-0948",
+    "display" : "Diclofenac Potassium (product)"
+  }]
+}, "langs":"en", "useServer":"true", "useClient":"false", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  },
+  {
+    "name" : "defaultDisplayLanguage",
+    "valueCode" : "en"
+  }]
+}}####
+v: {
+  "display" : "Diclofenac Potassium (product)",
+  "code" : "0093-0948",
+  "system" : "http://hl7.org/fhir/sid/ndc",
+  "version" : "2021-11-01",
+  "severity" : "warning",
+  "error" : "The concept '0093-0948' has a status of inactive and its use should be reviewed",
+  "server" : "https://tx.fhir.org/r4",
+  "inactive" : true,
+  "diagnostics" : "0ms tx-op\n1ms http://hl7.org/fhir/sid/ndc/vs|2021-11-01: Validate \"[undefined#0093-0948 (\"Diclofenac Potassium (product)\")]\"\n1ms http://hl7.org/fhir/sid/ndc/vs|2021-11-01: Check \"http://hl7.org/fhir/sid/ndc#0093-0948\"\n1ms http://hl7.org/fhir/sid/ndc/vs|2021-11-01: CodeSystem found: http://hl7.org/fhir/sid/ndc|2021-11-01 for http://hl7.org/fhir/sid/ndc|2021-11-01\n1ms http://hl7.org/fhir/sid/ndc/vs|2021-11-01: check code in () at CodeableConcept.coding[0]\n94ms http://hl7.org/fhir/sid/ndc/vs|2021-11-01: Code \"0093-0948\" found in http://hl7.org/fhir/sid/ndc|2021-11-01",
+  "unknown-systems" : "",
+  "issues" : {
+  "resourceType" : "OperationOutcome",
+  "issue" : [{
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString" : "INACTIVE_CONCEPT_FOUND"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
+      "valueUrl" : "https://tx.fhir.org/r4"
+    }],
+    "severity" : "warning",
+    "code" : "business-rule",
+    "details" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
+        "code" : "code-comment"
+      }],
+      "text" : "The concept '0093-0948' has a status of inactive and its use should be reviewed"
+    },
+    "expression" : ["CodeableConcept.coding[0]"]
+  }]
+}
+
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://hl7.org/fhir/sid/ndc",
+    "code" : "59011-410",
+    "display" : "OxyContin (product)"
+  }]
+}, "langs":"en", "useServer":"true", "useClient":"false", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  },
+  {
+    "name" : "defaultDisplayLanguage",
+    "valueCode" : "en"
+  }]
+}}####
+v: {
+  "display" : "OxyContin (product)",
+  "code" : "59011-410",
+  "system" : "http://hl7.org/fhir/sid/ndc",
+  "version" : "2021-11-01",
+  "severity" : "warning",
+  "error" : "The concept '59011-410' has a status of inactive and its use should be reviewed",
+  "server" : "https://tx.fhir.org/r4",
+  "inactive" : true,
+  "diagnostics" : "0ms tx-op\n1ms http://hl7.org/fhir/sid/ndc/vs|2021-11-01: Validate \"[undefined#59011-410 (\"OxyContin (product)\")]\"\n1ms http://hl7.org/fhir/sid/ndc/vs|2021-11-01: Check \"http://hl7.org/fhir/sid/ndc#59011-410\"\n1ms http://hl7.org/fhir/sid/ndc/vs|2021-11-01: CodeSystem found: http://hl7.org/fhir/sid/ndc|2021-11-01 for http://hl7.org/fhir/sid/ndc|2021-11-01\n1ms http://hl7.org/fhir/sid/ndc/vs|2021-11-01: check code in () at CodeableConcept.coding[0]\n87ms http://hl7.org/fhir/sid/ndc/vs|2021-11-01: Code \"59011-410\" found in http://hl7.org/fhir/sid/ndc|2021-11-01",
+  "unknown-systems" : "",
+  "issues" : {
+  "resourceType" : "OperationOutcome",
+  "issue" : [{
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString" : "INACTIVE_CONCEPT_FOUND"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
+      "valueUrl" : "https://tx.fhir.org/r4"
+    }],
+    "severity" : "warning",
+    "code" : "business-rule",
+    "details" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
+        "code" : "code-comment"
+      }],
+      "text" : "The concept '59011-410' has a status of inactive and its use should be reviewed"
+    },
+    "expression" : ["CodeableConcept.coding[0]"]
+  }]
 }
 
 }

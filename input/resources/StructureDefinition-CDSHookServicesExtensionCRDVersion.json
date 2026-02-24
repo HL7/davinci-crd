@@ -35,7 +35,7 @@
           "key": "crdver-1",
           "severity": "error",
           "human": "Version must be the major.minor of the CRD spec",
-          "expression": "%context.matches('[1-9]\\d*\\.[1-9]\\d*')"
+          "expression": "%context.matches('^[1-9]\\\\d*\\\\.[1-9]\\\\d*$')"
         }],
         "condition": ["crdver-1"]
       }

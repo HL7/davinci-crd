@@ -21,8 +21,8 @@
       {
         "path" : "CDSHookOrderDispatchContext.fulfillmentTasks",
         "type" : [{ 
-          "code" : "Task",
-          "profile" : ["http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-task"]
+          "code" : "Resource",
+          "profile" : ["http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-task-dispatch"]
         }]
       }
     ]

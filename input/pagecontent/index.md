@@ -1,7 +1,7 @@
 {% raw %}
 {% endraw %}
 
-<blockquote class="note-to-balloters" markdown="1">
+<!--<blockquote class="note-to-balloters" markdown="1">
 Welcome to the post-ballot public review for the STU 2.2 release of the Da Vinci Coverage Requirements Discovery (CRD) implementation guide.
 
 As a result of ballot feedback, a number of [additional changes](history.html#release-220-snapshot) have been made to the IG, some of them substantive.  Because of these substantive changes, we're providing an opportunity for the community to perform an additional layer of review to the changes.  Feedback on this release should be limited to only those aspects of the specification changed since the ballot, though technical corrections identifying issues with spelling, grammar, formatting, broken links, etc. are welcome for any portion of the specification.  Feedback submitted against other parts of the specification will likely be deferred to a future release, particularly if they would involve substantive change, though all feedback provided will be considered at some point.
@@ -10,8 +10,7 @@ Feedback on changes made since the ballot will generally fall into one of two ca
 * The change was not made as agreed or accidentally introduced a new issue.  (Please check for situations where an agreed change was subsequently overridden by a subsequent change.)
 * The commenter disagrees with some of the changes made.  While the project *can* revisit decisions, doing so requires convincing new arguments not already discussed and considered by the regular project calls.  Therefore, be sure to provide clear justification for any request to revisit and be aware that those attending the calls may quickly find the issue non-persuasive if there have not been new, not previously discussed, considerations identified.
 
-Feedback should be provided using HL7's [Jira mechanism](https://jira.hl7.org/secure/CreateIssueDetails!init.jspa?pid=10405&issuetype=10600&customfield_11302=FHIR-us-davinci-crd), though discussion on the [HRex Zulip stream](https://chat.fhir.org/#narrow/stream/180803-Da-Vinci-CRD) is also welcome.
-</blockquote>
+</blockquote>-->
 
 <blockquote class="stu-note" markdown="1">
 This STU update of the specification reflects several changes based on implementer feedback about the Coverage Requirements Discovery (hereafter, CRD) specification arising from detailed review, connectathons and implementation experience.  "STU notes" call out additional key considerations where feedback is desired.
@@ -29,6 +28,8 @@ This implementation guide is dependent on other specifications.  Please submit a
 Individuals interested in participating in the Coverage Requirements Discovery implementation guide project or other HL7 Da Vinci projects can find information about Da Vinci [here](http://www.hl7.org/about/davinci).
 
 A summary of the major changes from the previous release can be found [here](history.html).
+
+Feedback should be provided using HL7's [Jira mechanism](https://jira.hl7.org/secure/CreateIssueDetails!init.jspa?pid=10405&issuetype=10600&customfield_11302=FHIR-us-davinci-crd), though discussion on the [HRex Zulip stream](https://chat.fhir.org/#narrow/stream/180803-Da-Vinci-CRD) is also welcome.
 </blockquote>
 
 

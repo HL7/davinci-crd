@@ -38,7 +38,7 @@ RuleSet: CommonClient
 * rest
   * mode = #server
   * documentation = "A CRD Client provides a FHIR server endpoint, returning patient information to the CRD server, ensuring it has the needed information to perform decision support."
-  * security.description = "Implementations **SHALL** meet the general security requirements documented in the [[http://hl7.org/fhir/us/davinci-hrex/STU1.2.0-snapshot/security.html|HRex implementation guide]]."
+  * security.description = "Implementations **SHALL** meet the general security requirements documented in the [[http://hl7.org/fhir/us/davinci-hrex/STU1.2.0/security.html|HRex implementation guide]]."
   * insert CSresourceCRD(#Appointment, profile-appointment-with-order)
     * resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-appointment-no-order"
     * resource[=].versioning = #versioned-update
