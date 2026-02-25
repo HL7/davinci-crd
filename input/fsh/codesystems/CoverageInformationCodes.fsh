@@ -12,6 +12,7 @@ Description: "Codes used by 'code' elements within the Coverage-Information exte
 * ^property[0].type = #boolean
 // Coverage guidance - general
 * #conditional             "Conditional"                       "There is the potential for information requirements from a participant type not listed.  However, a decision on whether there in fact are additional information requirements cannot be made without more information (more detailed code, service rendering information, etc.)"
+* #indeterminate           "Indeterminate"                     "Indicates that, due to technical issues on the part of the client and/or server, consent restrictions by the patient, or similar atypical limitations or constraints, the payer is unable to evaluate coverage requirements"
 // Coverage guidance - covered
 * #covered                 "Covered"                           "Regular coverage applies.  Coverage is still subject to normal plan limits, deductibles, and other considerations meaning there is no guarantee of payment.  This response does NOT replace any need for a pre-determination, if required."
 * #not-covered             "Not covered"                       "No coverage or possibility of coverage for this service"

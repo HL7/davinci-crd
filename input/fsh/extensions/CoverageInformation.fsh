@@ -21,7 +21,7 @@ Description: "Captures assertions from a payer about the coverage rules for a se
 * ^context[=].expression = "ServiceRequest"
 * ^context[+].type = #element
 * ^context[=].expression = "VisionPrescription"
-* obeys crd-ci-q1 and crd-ci-q2 and crd-ci-q3 and crd-ci-q4 and crd-ci-q5 and crd-ci-q6 and crd-ci-q7 and crd-ci-q8
+* obeys crd-ci-q1 and crd-ci-q2 and crd-ci-q3 and crd-ci-q4 and crd-ci-q5 and crd-ci-q6 and crd-ci-q7 and crd-ci-q8 and crd-ci-q9
 * . ^short = "CoverageInfo"
   * ^definition = "Indicates coverage information."
 * ^extension[$fmm].valueInteger = 1
@@ -220,3 +220,8 @@ Invariant: crd-ci-q8
 Description: "If doc-purpose is present with a value other than 'conditional', then reason must be present"
 Severity: #error
 Expression: "extension.where(url = 'doc-purpose' and value != 'conditional').exists() implies extension.where(url = 'reason').exists()"
+
+Invariant: crd-ci-q9
+Description: "If any of 'covered', 'pa-needed', or 'doc-needed' is set to 'indeterminate', then reason must be present to explain the issue that is preventing the payer from making a coverage determination."
+Severity: #error
+Expression: "extension.where((url = 'covered' or url = 'pa-needed' or url = 'doc-needed') and value = 'indeterminate').count() >= 1 implies extension.where(url = 'reason').exists()"

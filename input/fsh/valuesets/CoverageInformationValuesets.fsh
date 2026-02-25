@@ -8,6 +8,7 @@ Description: "Codes defining whether the ordered/requested service is covered un
 * CoverageInformationCodes#not-covered
 * CoverageInformationCodes#covered
 * CoverageInformationCodes#conditional
+* CoverageInformationCodes#indeterminate
 
 ValueSet: CRDCoveragePaDetail
 Id: coveragePaDetail
@@ -21,6 +22,7 @@ Description: "Codes defining whether prior auth will be needed for coverage to b
 * CoverageInformationCodes#satisfied
 * CoverageInformationCodes#performpa
 * CoverageInformationCodes#conditional
+* CoverageInformationCodes#indeterminate
 
 ValueSet: CRDAdditionalDoc
 Id: AdditionalDocumentation
@@ -33,6 +35,7 @@ Description: "Codes defining whether additional documentation needs to be captur
 * CoverageInformationCodes#admin
 * CoverageInformationCodes#patient
 * CoverageInformationCodes#conditional
+* CoverageInformationCodes#indeterminate
 
 ValueSet: CRDDocReason
 Id: DocReason

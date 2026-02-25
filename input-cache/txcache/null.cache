@@ -9500,3 +9500,185 @@ e: {
   "error" : "Unable to find a server to expand 'http://hl7.org/fhir/us/davinci-crd/ValueSet/X12ServiceType'"
 }
 -------------------------------------------------------------------------------------
+{"hierarchical" : false, "url": "http://hl7.org/fhir/ValueSet/medicationrequest-category"}####
+e: {
+  "source" : tx.fhir.org,
+  "valueSet" : {
+  "resourceType" : "ValueSet",
+  "meta" : {
+    "lastUpdated" : "2019-11-01T09:29:23.356+11:00",
+    "profile" : ["http://hl7.org/fhir/StructureDefinition/shareablevalueset"]
+  },
+  "url" : "http://hl7.org/fhir/ValueSet/medicationrequest-category",
+  "identifier" : [{
+    "system" : "urn:ietf:rfc:3986",
+    "value" : "urn:oid:2.16.840.1.113883.4.642.3.1322"
+  }],
+  "version" : "4.0.1",
+  "name" : "medicationRequest Category Codes",
+  "title" : "Medication request  category  codes",
+  "status" : "draft",
+  "experimental" : false,
+  "date" : "2019-11-01T09:29:23+11:00",
+  "contact" : [{
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://hl7.org/fhir"
+    }]
+  }],
+  "immutable" : true,
+  "expansion" : {
+    "identifier" : "urn:uuid:726e73d3-7f27-4662-97d9-573e533e9906",
+    "timestamp" : "2026-02-24T15:04:39.929Z",
+    "total" : 4,
+    "parameter" : [{
+      "name" : "excludeNested",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "count",
+      "valueInteger" : 0
+    },
+    {
+      "name" : "used-codesystem",
+      "valueUri" : "http://terminology.hl7.org/CodeSystem/medicationrequest-category|1.0.0"
+    }]
+  }
+},
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "url": "http://hl7.org/fhir/us/core/ValueSet/us-core-servicerequest-category"}####
+e: {
+  "source" : tx.fhir.org,
+  "valueSet" : {
+  "resourceType" : "ValueSet",
+  "url" : "http://hl7.org/fhir/us/core/ValueSet/us-core-servicerequest-category",
+  "identifier" : [{
+    "system" : "urn:ietf:rfc:3986",
+    "value" : "urn:oid:2.16.840.1.113883.4.642.40.2.48.20"
+  }],
+  "version" : "9.0.0-ballot",
+  "name" : "USCoreServiceRequestCategoryCodes",
+  "title" : "US Core ServiceRequest Category Codes",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2022-09-29",
+  "contact" : [{
+    "name" : "HL7 International / Cross-Group Projects",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://www.hl7.org/Special/committees/cgp"
+    },
+    {
+      "system" : "email",
+      "value" : "cgp@lists.HL7.org"
+    }]
+  }],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US"
+    }]
+  }],
+  "expansion" : {
+    "identifier" : "urn:uuid:c01f56b7-5c9a-4800-9a60-0e58b0cefd57",
+    "timestamp" : "2026-02-24T15:06:48.138Z",
+    "total" : 9,
+    "parameter" : [{
+      "name" : "excludeNested",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "count",
+      "valueInteger" : 0
+    },
+    {
+      "name" : "used-codesystem",
+      "valueUri" : "http://hl7.org/fhir/us/core/CodeSystem/us-core-category|9.0.0-ballot"
+    },
+    {
+      "name" : "used-codesystem",
+      "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901"
+    },
+    {
+      "name" : "warning-draft",
+      "valueUri" : "http://hl7.org/fhir/ValueSet/servicerequest-category|4.0.1"
+    },
+    {
+      "name" : "used-valueset",
+      "valueUri" : "http://hl7.org/fhir/ValueSet/servicerequest-category|4.0.1"
+    },
+    {
+      "name" : "system-version",
+      "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+    }]
+  }
+},
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "url": "http://hl7.org/fhir/us/core/ValueSet/us-core-servicerequest-category|7.0.0"}####
+e: {
+  "from-server" : true,
+  "error" : "Error from https://tx.fhir.org/r4: Error: ValueSet not found: http://hl7.org/fhir/us/core/ValueSet/us-core-servicerequest-category|7.0.0"
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "url": "http://terminology.hl7.org/ValueSet/v3-ActEncounterCode|3.0.0"}####
+e: {
+  "source" : tx.fhir.org,
+  "valueSet" : {
+  "resourceType" : "ValueSet",
+  "language" : "en",
+  "url" : "http://terminology.hl7.org/ValueSet/v3-ActEncounterCode",
+  "identifier" : [{
+    "system" : "urn:ietf:rfc:3986",
+    "value" : "urn:oid:2.16.840.1.113883.1.11.13955"
+  }],
+  "version" : "3.0.0",
+  "name" : "ActEncounterCode",
+  "title" : "ActEncounterCode",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2014-03-26",
+  "contact" : [{
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://hl7.org"
+    },
+    {
+      "system" : "email",
+      "value" : "hq@HL7.org"
+    }]
+  }],
+  "expansion" : {
+    "identifier" : "urn:uuid:f64b00b2-e9d7-44e8-93d4-4a2f099580e8",
+    "timestamp" : "2026-02-24T15:06:49.340Z",
+    "total" : 11,
+    "parameter" : [{
+      "name" : "displayLanguage",
+      "valueCode" : "en"
+    },
+    {
+      "name" : "excludeNested",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "count",
+      "valueInteger" : 0
+    },
+    {
+      "name" : "used-codesystem",
+      "valueUri" : "http://terminology.hl7.org/CodeSystem/v3-ActCode|9.0.0"
+    }]
+  }
+},
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/X12ServiceType"}####
+e: {
+  "from-server" : true,
+  "error" : "Unable to find a server to expand 'http://hl7.org/fhir/us/davinci-crd/ValueSet/X12ServiceType'"
+}
+-------------------------------------------------------------------------------------

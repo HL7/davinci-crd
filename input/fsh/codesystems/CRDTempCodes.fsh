@@ -21,6 +21,7 @@ Description: "Codes temporarily defined as part of the CRD implementation guide.
 * #no-active-coverage      "Coverage not active"                 "The referenced coverage for the member was found but is not in force during the relevant time period for which the coverage is being evaluated."
 * #coverage-not-found      "Coverage not found"                  "The payer is not available to resolve the provided coverage information to an existing coverage record, or it is not specific enough to resolve to a single coverage."
 * #auth-out-network        "Authorization needed out-of-network" "Authorization is necessary if out-of-network."
+* #technical               "Technical issues"                    "The server encountered technical issues either internally or with their interaction with the client.  It is possible these issues are transient and later calls might provide more information."
 
 // Coverage detail types - https://jira.hl7.org/browse/UP-670
 // Now maintained in sourceOfTruth/fhir/codeSystems/CodeSystem-crd-coverage-detail.xml
