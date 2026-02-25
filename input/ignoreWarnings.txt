@@ -61,6 +61,9 @@ ERROR: CapabilityStatement.text.div: Hyperlink 'http://hl7.org/fhir/us/davinci-h
 ERROR: ValueSet.where(id = 'billingCodes'): Error from https://tx.fhir.org/r4: Error: 0ms tx-op
 ERROR: ValueSet.where(id = 'deviceRequest'): Error from https://tx.fhir.org/r4: Error: 0ms tx-op
 ERROR: ValueSet.where(id = 'serviceRequestCodes'): Error from https://tx.fhir.org/r4: Error: 0ms tx-op
+WARNING: MedicationRequest/annotated-example: MedicationRequest.medication.ofType(CodeableConcept).coding[0].system: A definition for CodeSystem 'http://www.nlm.nih.gov/research/umls/rxnorm' version '05062024' could not be found, so the code cannot be validated. Valid versions: 02032025
+WARNING: StructureDefinition/profile-encounter: StructureDefinition: The validator cannot confirm that this profile complies with the claimed profile 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|6.1.0'
+WARNING: StructureDefinition/profile-encounter: StructureDefinition: The validator cannot confirm that this profile complies with the claimed profile 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|3.1.1'
 
 # 00k. **[New Issue] This requires an update to the IG publisher.  Also had to remove the Requirements resource to allow the CI-build to run.  Pull request submitted
 WARNING: The jira specification file appears to be out of date with the versions, artifacts and pages currently defined in the IG.  A proposed revised file to be reviewed and, if appropriate, submitted as a pull request against the XML folder in https://github.com/HL7/JIRA-Spec-Artifacts.  To see the differences, perform a file compare on 'template/jira-current.xml' (a normalized view of what is in Github) and 'template/jira-new.xml' (reflects current IG content)
