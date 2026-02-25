@@ -2,11 +2,11 @@
   "resourceType" : "TerminologyCapabilities",
   "id" : "FhirServer",
   "url" : "https://tx.fhir.org/r4/TerminologyCapabilities/tx",
-  "version" : "0.5.1",
+  "version" : "0.5.4",
   "name" : "FHIRTerminologyServer",
   "title" : "FHIR Terminology Server",
   "status" : "active",
-  "date" : "2026-02-24T05:08:58.865Z",
+  "date" : "2026-02-25T07:21:32.873Z",
   "contact" : [{
     "telecom" : [{
       "system" : "other",
@@ -1837,6 +1837,9 @@
     },
     {
       "code" : "http://snomed.info/sct/731000124108/version/20250901"
+    },
+    {
+      "code" : "http://snomed.info/sct/731000124108/version/20240301"
     },
     {
       "code" : "http://snomed.info/xsct/900000000000207008/version/20250814"
@@ -9774,7 +9777,7 @@
   {
     "uri" : "http://www.nlm.nih.gov/research/umls/rxnorm",
     "version" : [{
-      "code" : "??"
+      "code" : "02032025"
     }]
   },
   {
