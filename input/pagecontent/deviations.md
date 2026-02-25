@@ -138,7 +138,7 @@ For example, the following [CDS Hooks Suggestion]({{site.data.fhir.ver.cdshooks}
 
 Note: Sending existing prior authorizations is not in scope for this version of the IG.
 
-### Linking cards to requests
+### Linking responses to requests
 Some CDS hooks have a single context.  [encounter-start](hooks.html#encounter-start) and [encounter-discharge](hooks.html#encounter-discharge) are tied to their respective encounter and there is no question as to which encounter a returned card is associated with.  However, the [appointment-book](hooks.html#appointment-book), [order-select](hooks.html#order-select), and [order-sign](hooks.html#order-sign) hooks all allow passing in multiple resources as part of the hook invocation.  Each card returned in the hook response might be associated with only one of the referenced appointment or order resources, or a subset of them.  A CRD client might wish to be able to track *what* resource(s) a card was associated with.  This might be for audit, to control how or where the card is rendered on the screen, to allow the card to be directly associated with the triggering resource, or to enable various other workflow considerations.
 
 <p class="modified-content" markdown="1">This implementation guide defines a standard extension - [davinci-crd.associated-resource](StructureDefinition-CDSHookServiceResponseExtensionAssociatedResource.html) -  that can appear on any card that provides a local reference to the appointment, order, or other context resource to which the card is 'pertinent'.  It is optional and has a value consisting of 1..* local references referring to the resource type and resource id of the resource being linked.</p>
