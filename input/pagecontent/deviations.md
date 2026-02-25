@@ -4,7 +4,7 @@ To meet requirements identified by Da Vinci project participants, it is necessar
 
 Each capability listed here has been proposed to the CDS Hooks community and could become part of the official specification in a future release.  However, there is a significant likelihood that the way the requirements are met will vary from the syntax or even the architectural approach proposed in this guide.  Future versions of this implementation guide will be updated to align with how these requirements are addressed in future versions of the CDS Hooks specification.  Until both the CDS Hooks content and the FHIR and US Core content underlying this specification are *Normative* (locked into backward compatibility mode), the CRD implementation guide will remain as STU.
 
-This implementation guide extends/customizes CDS Hooks in 4 ways: additional hook resources, a hook configuration mechanism, additional response capabilities, and the ability to link hooks to their corresponding request.  Each are described below:
+<span class="modified-content" markdown="1"><a name="FHIR-55805"> </a>This implementation guide extends/customizes CDS Hooks in four ways: adding [version declaration](#crd-version-declaration), adding a [hook configuration mechanism](#new-hook-configuration-mechanism), adding [additional response capabilities](#additional-response-capabilities), and the introducing ability to [link responses to their corresponding request](#linking-responses-to-requests).  This page also defines [custom constraints](#controlling-hook-invocation) on how coverage prefetch is populated.</span>
 
 <div class="new-content" markdown="1">
 ### CRD Version declaration
@@ -51,7 +51,7 @@ Extensions will be enabled in two places:
 2.  The hook's [HTTP Request]({{site.data.fhir.ver.cdshooks}}/index.html#http-request_1) object will include an extension to pass specific configuration settings as part of the hook invocation
 
 
-### Configuration options extension
+#### Configuration options extension
 <p class="modified-content" markdown="1">An extension called [davinci-crd.configuration-options](StructureDefinition-CDSHookServicesExtensionConfiguration.html) will define a configuration object with an array of available configurable options within the CDS Service, where:</p>
 
 §§dev-4^crd-server^exchange:Each configuration option **SHALL** include four mandatory elements.^
