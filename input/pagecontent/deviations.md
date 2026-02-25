@@ -4,7 +4,7 @@ To meet requirements identified by Da Vinci project participants, it is necessar
 
 Each capability listed here has been proposed to the CDS Hooks community and could become part of the official specification in a future release.  However, there is a significant likelihood that the way the requirements are met will vary from the syntax or even the architectural approach proposed in this guide.  Future versions of this implementation guide will be updated to align with how these requirements are addressed in future versions of the CDS Hooks specification.  Until both the CDS Hooks content and the FHIR and US Core content underlying this specification are *Normative* (locked into backward compatibility mode), the CRD implementation guide will remain as STU.
 
-<span class="modified-content" markdown="1"><a name="FHIR-55805"> </a>This implementation guide extends/customizes CDS Hooks in four ways: adding [version declaration](#crd-version-declaration), adding a [hook configuration mechanism](#new-hook-configuration-mechanism), adding [additional response capabilities](#additional-response-capabilities), and the introducing ability to [link responses to their corresponding request](#linking-responses-to-requests).  This page also defines [custom constraints](#controlling-hook-invocation) on how coverage prefetch is populated.</span>
+<span class="modified-content" markdown="1"><a name="FHIR-55805"> </a>This implementation guide extends/customizes CDS Hooks in four ways: adding [version declaration](#crd-version-declaration), adding a [hook configuration mechanism](#new-hook-configuration-mechanism), adding [additional response capabilities](#additional-response-capabilities), and the introducing ability to [link responses to their corresponding request](#linking-responses-to-requests).  This page also defines [custom constraints](#hook-invocation-for-multi-coverage-patients) on how coverage prefetch is populated.</span>
 
 <div class="new-content" markdown="1">
 ### CRD Version declaration
@@ -148,7 +148,7 @@ Some CDS hooks have a single context.  [encounter-start](hooks.html#encounter-st
 {% fragment Binary/CRDServiceResponse2 JSON BASE:cards.where(source.topic.where(code='therapy-alternatives-req').exists()) EXCEPT:extension | summary | indicator %}
 
 
-### Controlling hook invocation
+### Hook invocation for multi-coverage patients
 <a name="FHIR-49897"> </a>
 <p class="modified-content" markdown="1">§dev-26^crd-client^exchange:CRD clients **SHALL** only invoke hooks on payer services where the patient record indicates active coverage with the payer associated with the service and where there is no recorded indication the patient intends to bypass insurance coverage (i.e. the service or product is not flagged as 'patient-pay').§  §dev-27^crd-client^exchange:CRD clients **MAY** limit hook invocation to only those payers that are believed to potentially have relevant information related to the current action - for example, clinical guidance, contraindication detection, etc.§  This might be more payers than just those that are likely to provide coverage for the services referred to by the hook.</p>
 
