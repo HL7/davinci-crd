@@ -17,7 +17,7 @@ This STU update of the specification reflects several changes based on implement
 
 This specification is a Standard for Trial Use.  It is expected to continue to evolve and improve through connectathon testing and feedback from early adopters.
 
-Feedback is welcome and may be submitted through the [FHIR change tracker](http://hl7.org/fhir-issues) indicating "US Da Vinci CRD" as the specification.
+Feedback is welcome.  Requests for change may be submitted through the [FHIR change tracker](http://hl7.org/fhir-issues) indicating "US Da Vinci CRD" as the specification.  Questions should be raised on the [HRex Zulip stream](https://chat.fhir.org/#narrow/stream/180803-Da-Vinci-CRD).
 
 This implementation guide is dependent on other specifications.  Please submit any comments you have on these base specifications as follows:
 
@@ -29,7 +29,7 @@ Individuals interested in participating in the Coverage Requirements Discovery i
 
 A summary of the major changes from the previous release can be found [here](history.html).
 
-Feedback should be provided using HL7's [Jira mechanism](https://jira.hl7.org/secure/CreateIssueDetails!init.jspa?pid=10405&issuetype=10600&customfield_11302=FHIR-us-davinci-crd), though discussion on the [HRex Zulip stream](https://chat.fhir.org/#narrow/stream/180803-Da-Vinci-CRD) is also welcome.
+One of the changes in this release is migrating a number of codes from a temporary 'custom' code system in this IG to a standard code system that will eventually allow codes to evolve without a new release of this IG and to be shared with other specifications.  Support for the CRD-specific code system alongside the new code system continues to be mandated in this release to ease transition.  The set of codes for one value set - [Coverage Assertion Reasons](ValueSet-coverageAssertionReasons.html) did not complete it's migration in time for this release.  See the comment on that value set for recommendations.
 </blockquote>
 
 

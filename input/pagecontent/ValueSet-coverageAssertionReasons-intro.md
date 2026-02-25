@@ -1,3 +1,3 @@
 <blockquote class="note-to-balloters" markdown="1">
-This value set uses codes slated to be moved from the temporary code system to a more permanent URL.
+This value set uses codes slated to be moved from the temporary code system.  While this migration did not happen in time to enforce the use of the permanent code system in this release, the codes should appear in the shared [Act Reason](https://terminology.hl7.org/CodeSystem-v3-ActReason.html) code system by the summer of 2026, and one of the codes is available now.  §prof-15^crd-server^exchange:CRD servers **SHOULD** start sending the ActReason codes in parallel with the CRD-specific codes once they are available to ease transition in future releases when the CRD value set will be deprecated and eventually retired.§
 </blockquote>
