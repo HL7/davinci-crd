@@ -50,7 +50,7 @@ Provision of and acceptance of decision support cards outside the coverage and d
 Response types are listed from least sophisticated to most sophisticated, and potentially more useful or powerful. As a rule, the more a response can automate manual processes and the more context-specific the behavior is, the more useful the decision support will be to the clinician and the more likely it will be used.
 
 Notes:
-* CRD clients will provide resources, such as MedicationRequest, in the context object of the CDS Hooks request. These resources might be temporary in the context in which the CDS Hook is triggered, such as when a proposed medication order is being reviewed. In this case, the CDS client must maintain a stable identifier for these temporary resources to allow CRD responses to refer to them in CDS Hook actions.
+* CRD clients will provide resources, such as MedicationRequest, in the context object of the CDS Hooks request. These resources might be temporary in the context in which the CDS Hook is triggered, such as when a proposed medication order is being reviewed. In this case, the CDS client must maintain a stable identifier for these temporary resources to allow CRD responses to refer to them in CDS Hook actions.  <span class="modified-content" markdown="1"><a name="FHIR-55851"> </a>See the [foundation page](foundation.html#additional-considerations) for more details.</span>
 
 * Hook responses may contain multiple cards and/or system actions corresponding to a mixture of the response types defined in this IG. For example, providing links, textual guidance, as well as suggestions for alternative orders.
 
