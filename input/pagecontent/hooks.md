@@ -44,7 +44,7 @@ The 'secondary' hooks are [Orders Select](#order-select), [Encounter Start](#enc
 
 The following sections describe the hooks covered by this implementation guide as well as setting conformance expectations related to those hooks. 
 
-§hook-20^crd-client^exchange:Where profiles are provided in a table for the hook sections below, CRD clients **SHALL** ensure that data included in the hook invocation complies with the listed profiles.§  §hook-21^crd-server^processing:CRD servers **SHALL NOT** depend on data not covered by the identified profiles in order to return valid coverage-information responses.§
+<a name="FHIR-55850"> </a>§hook-20^crd-client^exchange:The body of hook invocations **SHALL** conform to the [CRD CDSHooks Request logical model.  Additionally, profiles are provided in a table for the hook sections below.§  §hook-20^crd-client^exchange:CRD clients **SHALL** ensure that data included in the hook invocation complies with the listed profiles.§  §hook-21^crd-server^processing:CRD servers **SHALL NOT** depend on data not covered by the identified profiles in order to return valid coverage-information responses.§
 
 </div>
 
@@ -79,7 +79,7 @@ Potentially relevant CRD advice related to this hook might include:
 
 While this hook supports userIds of Patient and RelatedPerson, for CRD purposes it is enough to support Practitioner and PractitionerRole.  Support for Patient and RelatedPerson as users is optional.  (Note that Practitioner and PractitionerRole include both licensed healthcare professionals as well as administrative staff.)
 
-<p class="modified-content" markdown="1"><a name="FHIR-53579-b"> </a>The following table contains the essential profiles relevant to the invocation of the hook, including the resources passed in the the appointments context element, as well as those retrieved via mandatory prefetch.  The conformance rules stated in [Hook Categories](#FHIR-53579-a) above apply to the use of these profiles.</p>
+<p class="modified-content" markdown="1"><a name="FHIR-53579-b"> </a>The following table contains the essential profiles relevant to the invocation of the hook, including the resources passed in the the appointments context element, as well as those retrieved via mandatory prefetch.  The conformance rules stated in [Hook Categories](#FHIR-53579-a) above apply to the use of these profiles.  <a name="FHIR-55850-a"> </a>§hook-6?^crd-client^exchange:The 'context' field in invocations of the appointment-book hook **SHALL** conform to the logical model specified [here](StructureDefinition-CRDAppointmentBookContext.html)§</p>
 
 <table class="grid">
   <thead>
@@ -123,7 +123,7 @@ The advice returned for this hook would include the same sorts of advice as prov
 
 Note that Practitioner and PractitionerRole include both licensed healthcare professionals, as well as administrative staff.
 
-<p class="modified-content" markdown="1"><a name="FHIR-53579-c"> </a>The following table contains the essential profiles relevant to the invocation of the hook, including the resources passed in the the appointments context element, as well as those retrieved via mandatory prefetch.  The conformance rules stated in [Hook Categories](#FHIR-53579-a) above apply to the use of these profiles.</p>
+<p class="modified-content" markdown="1"><a name="FHIR-53579-c"> </a>The following table contains the essential profiles relevant to the invocation of the hook, including the resources passed in the the appointments context element, as well as those retrieved via mandatory prefetch.  The conformance rules stated in [Hook Categories](#FHIR-53579-a) above apply to the use of these profiles.  <a name="FHIR-55850-b"> </a>§hook-6?^crd-client^exchange:The 'context' field in invocations of the encounter-start hook **SHALL** conform to the logical model specified [here]({{site.data.fhir.ver.tools}}/StructureDefinition-CDSHookEncounterStartContext.html)§</p>
 
 <table class="grid">
   <thead>
@@ -164,7 +164,7 @@ Potentially relevant CRD advice related to this hook might include:
 
 * Ensuring that required follow-up planning is complete and appropriate transfer of care has been arranged, particularly for accountable care models
 
-<p class="modified-content" markdown="1"><a name="FHIR-53579-d"> </a>The following table contains the essential profiles relevant to the invocation of the hook, including the resources passed in the the appointments context element, as well as those retrieved via mandatory prefetch.  The conformance rules stated in [Hook Categories](#FHIR-53579-a) above apply to the use of these profiles.</p>
+<p class="modified-content" markdown="1"><a name="FHIR-53579-d"> </a>The following table contains the essential profiles relevant to the invocation of the hook, including the resources passed in the the appointments context element, as well as those retrieved via mandatory prefetch.  The conformance rules stated in [Hook Categories](#FHIR-53579-a) above apply to the use of these profiles.  <a name="FHIR-55850-c"> </a>§hook-6?^crd-client^exchange:The 'context' field in invocations of the encounter-discharge hook **SHALL** conform to the logical model specified [here]({{site.data.fhir.ver.tools}}/StructureDefinition-CDSHookEncounterDischargeContext.html)§</p>
 
 <table class="grid">
   <thead>
@@ -218,7 +218,7 @@ CRD responses might include:
 * Information about preauthorization and clinical documentation requirements, including forms to be completed
 * Alternative performers (e.g. in-network providers)
 
-<p class="modified-content" markdown="1"><a name="FHIR-53579-e"> </a>The following table contains the essential profiles relevant to the invocation of the hook, including the resources passed in the the appointments context element, as well as those retrieved via mandatory prefetch.  The conformance rules stated in [Hook Categories](#FHIR-53579-a) above apply to the use of these profiles.</p>
+<p class="modified-content" markdown="1"><a name="FHIR-53579-e"> </a>The following table contains the essential profiles relevant to the invocation of the hook, including the resources passed in the the appointments context element, as well as those retrieved via mandatory prefetch.  The conformance rules stated in [Hook Categories](#FHIR-53579-a) above apply to the use of these profiles.  <a name="FHIR-55850-d"> </a>§hook-6?^crd-client^exchange:The 'context' field in invocations of the order-dispatch hook **SHALL** conform to the logical model specified [here](StructureDefinition-CRDOrderDispatchContext.html)§</p>
 
 <table class="grid">
   <thead>
@@ -309,7 +309,7 @@ CRD responses might include:
 * Recommendations about in-network vs. out-of-network providers for referrals
 
 
-<p class="modified-content" markdown="1"><a name="FHIR-53579-f"> </a>The following table contains the essential profiles relevant to the invocation of the hook, including the resources passed in the the appointments context element, as well as those retrieved via mandatory prefetch.  The conformance rules stated in [Hook Categories](#FHIR-53579-a) above apply to the use of these profiles.</p>
+<p class="modified-content" markdown="1"><a name="FHIR-53579-f"> </a>The following table contains the essential profiles relevant to the invocation of the hook, including the resources passed in the the appointments context element, as well as those retrieved via mandatory prefetch.  The conformance rules stated in [Hook Categories](#FHIR-53579-a) above apply to the use of these profiles.  <a name="FHIR-55850-e"> </a>§hook-6?^crd-client^exchange:The 'context' field in invocations of the order-select hook **SHALL** conform to the logical model specified [here](StructureDefinition-CRDOrderSelectContext.html)§</p>
 
 <table class="grid">
   <thead>
@@ -367,7 +367,7 @@ This hook is described in the CDS Hooks specification [here]({{site.data.fhir.ve
 
 This hook serves a very similar purpose to [order-select](#order-select).  The main difference is that all the listed draft orders are considered 'complete'.  That means that it is appropriate to provide warnings if there is insufficient information to determine coverage requirements.  Also, all `draftOrders` are appropriate to comment on when using order-sign as the `selections` field found in in order-select is not used in order-sign.
 
-Use and profiles for [order-select](#order-select) also apply to `order-sign`.
+Use and profiles for [order-select](#order-select) also apply to `order-sign`.  <a name="FHIR-55850-f"> </a>§hook-6?^crd-client^exchange:The 'context' field in invocations of the order-sign hook **SHALL** conform to the logical model specified [here](StructureDefinition-CRDOrderSignContext.html)§
 
 Notes: 
 * §hook-31^crd-server^processing:CRD Servers **MAY** use the order-sign hook as a basis for associating a patient with a particular practitioner from a payer attribution perspective.§
