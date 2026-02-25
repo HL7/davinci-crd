@@ -33,7 +33,7 @@ In addition to the [guidance provided in the CDS Hooks specification]({{site.dat
 * §resp-12?^crd-server^exchange:Where [systemActions]({{site.data.fhir.ver.cdshooks}}/index.html#system-action) are used, CRD servers **SHOULD NOT** return equivalent information in a card for user display.§ It is the responsibility of the CRD client to determine how best to present the results of the newly created or revised records.
 
 
-<p class="new-content" markdown="1">A profile defining the generic constraints that apply to all CRD responses can be found [here](StructureDefinition-CRDHooksResponseBase.html).</p>
+<p class="new-content" markdown="1"><a name="FHIR-55852"> </a>§resp-11^crd-server^exchange:All CRD responses **SHALL** comply with the general profile found [here](StructureDefinition-CRDHooksResponseBase.html).§</p>
 
 ### Potential CRD Response Types
 <p class="modified-content" markdown="1">
@@ -69,7 +69,7 @@ For example, this CDS Hooks [Card]({{site.data.fhir.ver.cdshooks}}/index.html#cd
 
 §resp-20?^crd-server^exchange:As much as technically possible, links provided **SHOULD** be 'deep' links that take the user to the specific place in the documentation relevant to the current hook context to minimize provider reading and navigation time.§
 
-<p class="new-content" markdown="1">A profile defining the expectations of an External Reference response can be found [here](StructureDefinition-CRDHooksResponse-externalReference.html).</p>
+<p class="new-content" markdown="1"><a name="FHIR-55852-a"> </a>§resp-11^crd-server^exchange:External Reference responses **SHALL* comply with the logical model profile found [here](StructureDefinition-CRDHooksResponse-externalReference.html).§</p>
 
 
 ### Instructions Response Type
@@ -79,7 +79,7 @@ This example CDS Hooks [card]({{site.data.fhir.ver.cdshooks}}/index.html#cds-ser
 
 {% fragment Binary/CRDServiceResponse JSON BASE:cards.where(source.topic.where(code='clinical-reminder').exists()) %}
 
-<p class="new-content" markdown="1">A profile defining the expectations of an Instructions response can be found [here](StructureDefinition-CRDHooksResponse-instructions.html).</p>
+<p class="new-content" markdown="1"><a name="FHIR-55852-b"> </a>§resp-11^crd-server^exchange:Instructions responses **SHALL* comply with the logical model profile found [here](StructureDefinition-CRDHooksResponse-instructions.html).§</p>
 
 
 ### Coverage Information Response Type
@@ -194,7 +194,7 @@ The information added to the order here is often going to be relevant/important 
 
 Payers with existing tools that process prior authorization requests may have dependencies on data elements that are not found in the clinical orders being submitted as part of CRD such as service type or modifier codes. §resp-48^crd-server^exchange:Where CRD servers need data that was not transmitted, they **SHOULD** attempt to infer values from elements that are present.§ For example, 'service type' can often be inferred based on the nature of the service, the location, the performer, etc. In situations where the inferred element has an impact on the results, payers should document that as part of their 'coverage-information' extension. In situations where inference is not possible and an element must be known; the payer may indicate that formal prior authorization is necessary. This situation should be minimized as much as possible.
 
-<p class="new-content" markdown="1">A profile defining the expectations of an Coverage Information response can be found [here](StructureDefinition-CRDHooksResponse-coverageInformation.html).</p>
+<p class="new-content" markdown="1"><a name="FHIR-55852-c"> </a>§resp-11^crd-server^exchange:Coverage Information responses **SHALL* comply with the logical model profile found [here](StructureDefinition-CRDHooksResponse-coverageInformation.html).§</p>
 
 
 ### Propose Alternate Request Response Type
@@ -256,7 +256,7 @@ For example, this card proposes replacing the draft prescription for a brand-nam
 
 {% fragment Binary/CRDServiceResponse2 JSON BASE:cards.where(source.topic.where(code='therapy-alternatives-req').exists()).suggestions EXCEPT:id | medication BASE:actions.resource %}
 
-<p class="new-content" markdown="1">A profile defining the expectations of an Alternate Request response can be found [here](StructureDefinition-CRDHooksResponse-alternateRequest.html).</p>
+<p class="new-content" markdown="1"><a name="FHIR-55852-d"> </a>§resp-11^crd-server^exchange:Alternate Request responses **SHALL* comply with the logical model profile found [here](StructureDefinition-CRDHooksResponse-alternateRequest.html).§</p>
 
 
 ### Identify Additional Orders Response Type
@@ -313,7 +313,7 @@ This example proposes adding a monthly test to check liver function:
 
 {% fragment Binary/CRDServiceResponse2 JSON BASE:cards.where(source.topic.where(code='clinical-reminder').exists()).suggestions %}
 
-<p class="new-content" markdown="1">A profile defining the expectations of an Additional Orders response can be found [here](StructureDefinition-CRDHooksResponse-additionalOrders.html).</p>
+<p class="new-content" markdown="1"><a name="FHIR-55852-e"> </a>§resp-11^crd-server^exchange:Additional Orders responses **SHALL* comply with the logical model profile= found [here](StructureDefinition-CRDHooksResponse-additionalOrders.html).§</p>
 
 
 ### Request Form Completion Response Type
@@ -361,7 +361,7 @@ The following is an example CDS Hooks [Suggestion]({{site.data.fhir.ver.cdshooks
 
 {% fragment Binary/CRDServiceResponse2 JSON BASE:cards.where(source.topic.where(code='123').exists()).suggestions EXCEPT:url BASE:actions.where(resource is Questionnaire).resource %}
 
-<p class="new-content" markdown="1">A profile defining the expectations of an Form Completion response can be found [here](StructureDefinition-CRDHooksResponse-formCompletion.html).</p>
+<p class="new-content" markdown="1"><a name="FHIR-55852-f"> </a>§resp-11^crd-server^exchange:Form Completion responses **SHALL* comply with the logical model profile found [here](StructureDefinition-CRDHooksResponse-formCompletion.html).§</p>
 
 
 <div class="modified-content" markdown="1">
@@ -383,7 +383,7 @@ For example, this CDS Hooks [card]({{site.data.fhir.ver.cdshooks}}/index.html#cd
 
 §resp-63?^crd-server^exchange:If returning a card rather than a system action, the "Update Coverage Records" response type **SHOULD NOT** be returned for hook types that are likely to be triggered by clinical users rather than administrative staff. Cards of this type would be appropriate for hooks such as encounter-start or appointment-book but would not be appropriate for order-select or order-sign.§
 
-<p class="new-content" markdown="1">A profile defining the expectations of an Adjust Coverage response can be found [here](StructureDefinition-CRDHooksResponse-adjustCoverage.html).</p>
+<p class="new-content" markdown="1"><a name="FHIR-55852-g"> </a>§resp-11^crd-server^exchange:Adjust Coverage responses **SHALL* comply with the logical model profile found [here](StructureDefinition-CRDHooksResponse-adjustCoverage.html).§</p>
 
 
 ### Launch SMART Application Response Type
@@ -399,4 +399,4 @@ For example, this [card]({{site.data.fhir.ver.cdshooks}}/index.html#cds-service-
 
 {% fragment Binary/CRDServiceResponse2 JSON BASE:cards.where(source.topic.where(code='guideline').exists()) %}
 
-<p class="new-content" markdown="1">A profile defining the expectations of an Launch SMART response can be found [here](StructureDefinition-CRDHooksResponse-launchSMART.html).</p>
+<p class="new-content" markdown="1"><a name="FHIR-55852-h"> </a>§resp-11^crd-server^exchange:Launch SMART responses **SHALL* comply with the logical model profile found [here](StructureDefinition-CRDHooksResponse-launchSMART.html).§</p>
