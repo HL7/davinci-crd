@@ -2,7 +2,7 @@
 {"code" : {
   "system" : "http://www.ama-assn.org/go/cpt",
   "code" : "77067"
-}, "valueSet" :null, "langs":"en", "useServer":"true", "useClient":"true", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+}, "valueSet" :null, "langs":"en", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
   "resourceType" : "Parameters",
   "parameter" : [{
     "name" : "system-version",
@@ -19,7 +19,8 @@ v: {
   "system" : "http://www.ama-assn.org/go/cpt",
   "version" : "2023",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0 0 : start\r\n0 0     : 0ms  : Analysing http://hl7.org/fhir/ValueSet/@all for validation purposes\r\n0 0     : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n0 0     : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n0 0     : 0ms  : Prepare include: \"()\"\r\n0 0     : 0ms  : Validate \"[http://www.ama-assn.org/go/cpt#77067 (\"\")]\"\r\n0 0     : 0ms  : Check \"http://www.ama-assn.org/go/cpt#77067\"\r\n0 0     : 0ms  : Using CodeSystem \"http://www.ama-assn.org/go/cpt|2023\" (content = complete)\r\n",
+  "diagnostics" : "0ms tx-op\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[undefined#77067 (\"undefined\")]\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#77067\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n1ms http://www.ama-assn.org/go/cpt/vs|2023: check code in () at Coding\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"77067\" found in http://www.ama-assn.org/go/cpt|2023",
+  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -37,697 +38,7 @@ v: {
 }}####
 e: {
   "from-server" : true,
-  "error" : "Error from https://tx.fhir.org/r4: The code System \"http://www.ama-assn.org/go/cpt\" has a grammar, and cannot be enumerated directly"
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "http://www.ama-assn.org/go/cpt",
-    "code" : "0795T"
-  }]
-}, "langs":"en", "useServer":"true", "useClient":"false", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "severity" : "error",
-  "error" : "Unknown code '0795T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'",
-  "class" : "UNKNOWN",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0 0 : start\r\n0 0     : 0ms  : Analysing http://hl7.org/fhir/ValueSet/@all for validation purposes\r\n0 0     : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n0 0     : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n0 0     : 0ms  : Prepare include: \"()\"\r\n0 0     : 0ms  : Validate \"[http://www.ama-assn.org/go/cpt#0795T (\"\")]\"\r\n0 0     : 0ms  : Check \"http://www.ama-assn.org/go/cpt#0795T\"\r\n0 0     : 0ms  : Using CodeSystem \"http://www.ama-assn.org/go/cpt|2023\" (content = complete)\r\n",
-  "issues" : {
-  "resourceType" : "OperationOutcome",
-  "issue" : [{
-    "extension" : [{
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
-      "valueString" : "Unknown_Code_in_Version"
-    },
-    {
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
-      "valueUrl" : "https://tx.fhir.org/r4"
-    }],
-    "severity" : "error",
-    "code" : "code-invalid",
-    "details" : {
-      "coding" : [{
-        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
-        "code" : "invalid-code"
-      }],
-      "text" : "Unknown code '0795T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'"
-    },
-    "location" : ["CodeableConcept.coding[0].code"],
-    "expression" : ["CodeableConcept.coding[0].code"]
-  },
-  {
-    "extension" : [{
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
-      "valueUrl" : "https://tx.fhir.org/r4"
-    }],
-    "severity" : "information",
-    "code" : "code-invalid",
-    "details" : {
-      "coding" : [{
-        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
-        "code" : "invalid-code"
-      }],
-      "text" : "Code '0795T' not found in CPT"
-    },
-    "location" : ["CodeableConcept.coding[0].code"],
-    "expression" : ["CodeableConcept.coding[0].code"]
-  }]
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "http://www.ama-assn.org/go/cpt",
-    "code" : "0796T"
-  }]
-}, "langs":"en", "useServer":"true", "useClient":"false", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "severity" : "error",
-  "error" : "Unknown code '0796T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'",
-  "class" : "UNKNOWN",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0 0 : start\r\n0 0     : 0ms  : Analysing http://hl7.org/fhir/ValueSet/@all for validation purposes\r\n0 0     : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n0 0     : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n0 0     : 0ms  : Prepare include: \"()\"\r\n0 0     : 0ms  : Validate \"[http://www.ama-assn.org/go/cpt#0796T (\"\")]\"\r\n0 0     : 0ms  : Check \"http://www.ama-assn.org/go/cpt#0796T\"\r\n0 0     : 0ms  : Using CodeSystem \"http://www.ama-assn.org/go/cpt|2023\" (content = complete)\r\n",
-  "issues" : {
-  "resourceType" : "OperationOutcome",
-  "issue" : [{
-    "extension" : [{
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
-      "valueString" : "Unknown_Code_in_Version"
-    },
-    {
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
-      "valueUrl" : "https://tx.fhir.org/r4"
-    }],
-    "severity" : "error",
-    "code" : "code-invalid",
-    "details" : {
-      "coding" : [{
-        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
-        "code" : "invalid-code"
-      }],
-      "text" : "Unknown code '0796T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'"
-    },
-    "location" : ["CodeableConcept.coding[0].code"],
-    "expression" : ["CodeableConcept.coding[0].code"]
-  },
-  {
-    "extension" : [{
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
-      "valueUrl" : "https://tx.fhir.org/r4"
-    }],
-    "severity" : "information",
-    "code" : "code-invalid",
-    "details" : {
-      "coding" : [{
-        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
-        "code" : "invalid-code"
-      }],
-      "text" : "Code '0796T' not found in CPT"
-    },
-    "location" : ["CodeableConcept.coding[0].code"],
-    "expression" : ["CodeableConcept.coding[0].code"]
-  }]
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "http://www.ama-assn.org/go/cpt",
-    "code" : "0797T"
-  }]
-}, "langs":"en", "useServer":"true", "useClient":"false", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "severity" : "error",
-  "error" : "Unknown code '0797T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'",
-  "class" : "UNKNOWN",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0 0 : start\r\n0 0     : 0ms  : Analysing http://hl7.org/fhir/ValueSet/@all for validation purposes\r\n0 0     : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n0 0     : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n0 0     : 0ms  : Prepare include: \"()\"\r\n0 0     : 0ms  : Validate \"[http://www.ama-assn.org/go/cpt#0797T (\"\")]\"\r\n0 0     : 0ms  : Check \"http://www.ama-assn.org/go/cpt#0797T\"\r\n0 0     : 0ms  : Using CodeSystem \"http://www.ama-assn.org/go/cpt|2023\" (content = complete)\r\n",
-  "issues" : {
-  "resourceType" : "OperationOutcome",
-  "issue" : [{
-    "extension" : [{
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
-      "valueString" : "Unknown_Code_in_Version"
-    },
-    {
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
-      "valueUrl" : "https://tx.fhir.org/r4"
-    }],
-    "severity" : "error",
-    "code" : "code-invalid",
-    "details" : {
-      "coding" : [{
-        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
-        "code" : "invalid-code"
-      }],
-      "text" : "Unknown code '0797T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'"
-    },
-    "location" : ["CodeableConcept.coding[0].code"],
-    "expression" : ["CodeableConcept.coding[0].code"]
-  },
-  {
-    "extension" : [{
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
-      "valueUrl" : "https://tx.fhir.org/r4"
-    }],
-    "severity" : "information",
-    "code" : "code-invalid",
-    "details" : {
-      "coding" : [{
-        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
-        "code" : "invalid-code"
-      }],
-      "text" : "Code '0797T' not found in CPT"
-    },
-    "location" : ["CodeableConcept.coding[0].code"],
-    "expression" : ["CodeableConcept.coding[0].code"]
-  }]
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "http://www.ama-assn.org/go/cpt",
-    "code" : "0804T"
-  }]
-}, "langs":"en", "useServer":"true", "useClient":"false", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "severity" : "error",
-  "error" : "Unknown code '0804T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'",
-  "class" : "UNKNOWN",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0 0 : start\r\n0 0     : 0ms  : Analysing http://hl7.org/fhir/ValueSet/@all for validation purposes\r\n0 0     : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n0 0     : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n0 0     : 0ms  : Prepare include: \"()\"\r\n0 0     : 0ms  : Validate \"[http://www.ama-assn.org/go/cpt#0804T (\"\")]\"\r\n0 0     : 0ms  : Check \"http://www.ama-assn.org/go/cpt#0804T\"\r\n0 0     : 0ms  : Using CodeSystem \"http://www.ama-assn.org/go/cpt|2023\" (content = complete)\r\n",
-  "issues" : {
-  "resourceType" : "OperationOutcome",
-  "issue" : [{
-    "extension" : [{
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
-      "valueString" : "Unknown_Code_in_Version"
-    },
-    {
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
-      "valueUrl" : "https://tx.fhir.org/r4"
-    }],
-    "severity" : "error",
-    "code" : "code-invalid",
-    "details" : {
-      "coding" : [{
-        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
-        "code" : "invalid-code"
-      }],
-      "text" : "Unknown code '0804T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'"
-    },
-    "location" : ["CodeableConcept.coding[0].code"],
-    "expression" : ["CodeableConcept.coding[0].code"]
-  },
-  {
-    "extension" : [{
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
-      "valueUrl" : "https://tx.fhir.org/r4"
-    }],
-    "severity" : "information",
-    "code" : "code-invalid",
-    "details" : {
-      "coding" : [{
-        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
-        "code" : "invalid-code"
-      }],
-      "text" : "Code '0804T' not found in CPT"
-    },
-    "location" : ["CodeableConcept.coding[0].code"],
-    "expression" : ["CodeableConcept.coding[0].code"]
-  }]
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "http://www.ama-assn.org/go/cpt",
-    "code" : "0823T"
-  }]
-}, "langs":"en", "useServer":"true", "useClient":"false", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "severity" : "error",
-  "error" : "Unknown code '0823T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'",
-  "class" : "UNKNOWN",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0 0 : start\r\n16 16   : 0ms  : Analysing http://hl7.org/fhir/ValueSet/@all for validation purposes\r\n16 0    : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n16 0    : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n16 0    : 0ms  : Prepare include: \"()\"\r\n16 0    : 0ms  : Validate \"[http://www.ama-assn.org/go/cpt#0823T (\"\")]\"\r\n16 0    : 0ms  : Check \"http://www.ama-assn.org/go/cpt#0823T\"\r\n16 0    : 0ms  : Using CodeSystem \"http://www.ama-assn.org/go/cpt|2023\" (content = complete)\r\n",
-  "issues" : {
-  "resourceType" : "OperationOutcome",
-  "issue" : [{
-    "extension" : [{
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
-      "valueString" : "Unknown_Code_in_Version"
-    },
-    {
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
-      "valueUrl" : "https://tx.fhir.org/r4"
-    }],
-    "severity" : "error",
-    "code" : "code-invalid",
-    "details" : {
-      "coding" : [{
-        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
-        "code" : "invalid-code"
-      }],
-      "text" : "Unknown code '0823T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'"
-    },
-    "location" : ["CodeableConcept.coding[0].code"],
-    "expression" : ["CodeableConcept.coding[0].code"]
-  },
-  {
-    "extension" : [{
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
-      "valueUrl" : "https://tx.fhir.org/r4"
-    }],
-    "severity" : "information",
-    "code" : "code-invalid",
-    "details" : {
-      "coding" : [{
-        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
-        "code" : "invalid-code"
-      }],
-      "text" : "Code '0823T' not found in CPT"
-    },
-    "location" : ["CodeableConcept.coding[0].code"],
-    "expression" : ["CodeableConcept.coding[0].code"]
-  }]
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "http://www.ama-assn.org/go/cpt",
-    "code" : "0915T"
-  }]
-}, "langs":"en", "useServer":"true", "useClient":"false", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "severity" : "error",
-  "error" : "Unknown code '0915T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'",
-  "class" : "UNKNOWN",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0 0 : start\r\n0 0     : 0ms  : Analysing http://hl7.org/fhir/ValueSet/@all for validation purposes\r\n0 0     : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n0 0     : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n0 0     : 0ms  : Prepare include: \"()\"\r\n0 0     : 0ms  : Validate \"[http://www.ama-assn.org/go/cpt#0915T (\"\")]\"\r\n0 0     : 0ms  : Check \"http://www.ama-assn.org/go/cpt#0915T\"\r\n0 0     : 0ms  : Using CodeSystem \"http://www.ama-assn.org/go/cpt|2023\" (content = complete)\r\n",
-  "issues" : {
-  "resourceType" : "OperationOutcome",
-  "issue" : [{
-    "extension" : [{
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
-      "valueString" : "Unknown_Code_in_Version"
-    },
-    {
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
-      "valueUrl" : "https://tx.fhir.org/r4"
-    }],
-    "severity" : "error",
-    "code" : "code-invalid",
-    "details" : {
-      "coding" : [{
-        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
-        "code" : "invalid-code"
-      }],
-      "text" : "Unknown code '0915T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'"
-    },
-    "location" : ["CodeableConcept.coding[0].code"],
-    "expression" : ["CodeableConcept.coding[0].code"]
-  },
-  {
-    "extension" : [{
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
-      "valueUrl" : "https://tx.fhir.org/r4"
-    }],
-    "severity" : "information",
-    "code" : "code-invalid",
-    "details" : {
-      "coding" : [{
-        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
-        "code" : "invalid-code"
-      }],
-      "text" : "Code '0915T' not found in CPT"
-    },
-    "location" : ["CodeableConcept.coding[0].code"],
-    "expression" : ["CodeableConcept.coding[0].code"]
-  }]
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "http://www.ama-assn.org/go/cpt",
-    "code" : "99211"
-  }],
-  "text" : "Office Visit"
-}, "langs":"en", "useServer":"true", "useClient":"false", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Office or other outpatient visit for the evaluation and management of an established patient that may not require the presence of a physician or other qualified health care professional",
-  "code" : "99211",
-  "system" : "http://www.ama-assn.org/go/cpt",
-  "version" : "2023",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0 0 : start\r\n0 0     : 0ms  : Analysing http://hl7.org/fhir/ValueSet/@all for validation purposes\r\n0 0     : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n0 0     : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n0 0     : 0ms  : Prepare include: \"()\"\r\n0 0     : 0ms  : Validate \"[http://www.ama-assn.org/go/cpt#99211 (\"\")]\"\r\n0 0     : 0ms  : Check \"http://www.ama-assn.org/go/cpt#99211\"\r\n0 0     : 0ms  : Using CodeSystem \"http://www.ama-assn.org/go/cpt|2023\" (content = complete)\r\n",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "http://www.ama-assn.org/go/cpt",
-    "code" : "77061"
-  }]
-}, "langs":"en", "useServer":"true", "useClient":"false", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Diagnostic digital breast tomosynthesis; unilateral",
-  "code" : "77061",
-  "system" : "http://www.ama-assn.org/go/cpt",
-  "version" : "2023",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0 0 : start\r\n0 0     : 0ms  : Analysing http://hl7.org/fhir/ValueSet/@all for validation purposes\r\n0 0     : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n0 0     : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n0 0     : 0ms  : Prepare include: \"()\"\r\n0 0     : 0ms  : Validate \"[http://www.ama-assn.org/go/cpt#77061 (\"\")]\"\r\n0 0     : 0ms  : Check \"http://www.ama-assn.org/go/cpt#77061\"\r\n0 0     : 0ms  : Using CodeSystem \"http://www.ama-assn.org/go/cpt|2023\" (content = complete)\r\n",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "http://www.ama-assn.org/go/cpt",
-    "code" : "77062"
-  }]
-}, "langs":"en", "useServer":"true", "useClient":"false", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Diagnostic digital breast tomosynthesis; bilateral",
-  "code" : "77062",
-  "system" : "http://www.ama-assn.org/go/cpt",
-  "version" : "2023",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0 0 : start\r\n16 16   : 0ms  : Analysing http://hl7.org/fhir/ValueSet/@all for validation purposes\r\n16 0    : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n16 0    : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n16 0    : 0ms  : Prepare include: \"()\"\r\n16 0    : 0ms  : Validate \"[http://www.ama-assn.org/go/cpt#77062 (\"\")]\"\r\n16 0    : 0ms  : Check \"http://www.ama-assn.org/go/cpt#77062\"\r\n16 0    : 0ms  : Using CodeSystem \"http://www.ama-assn.org/go/cpt|2023\" (content = complete)\r\n",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "http://www.ama-assn.org/go/cpt",
-    "code" : "77065"
-  }]
-}, "langs":"en", "useServer":"true", "useClient":"false", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Diagnostic mammography, including computer-aided detection (CAD) when performed; unilateral",
-  "code" : "77065",
-  "system" : "http://www.ama-assn.org/go/cpt",
-  "version" : "2023",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0 0 : start\r\n0 0     : 0ms  : Analysing http://hl7.org/fhir/ValueSet/@all for validation purposes\r\n0 0     : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n0 0     : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n0 0     : 0ms  : Prepare include: \"()\"\r\n0 0     : 0ms  : Validate \"[http://www.ama-assn.org/go/cpt#77065 (\"\")]\"\r\n0 0     : 0ms  : Check \"http://www.ama-assn.org/go/cpt#77065\"\r\n0 0     : 0ms  : Using CodeSystem \"http://www.ama-assn.org/go/cpt|2023\" (content = complete)\r\n",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "http://www.ama-assn.org/go/cpt",
-    "code" : "77066"
-  }]
-}, "langs":"en", "useServer":"true", "useClient":"false", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Diagnostic mammography, including computer-aided detection (CAD) when performed; bilateral",
-  "code" : "77066",
-  "system" : "http://www.ama-assn.org/go/cpt",
-  "version" : "2023",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0 0 : start\r\n0 0     : 0ms  : Analysing http://hl7.org/fhir/ValueSet/@all for validation purposes\r\n0 0     : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n0 0     : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n0 0     : 0ms  : Prepare include: \"()\"\r\n0 0     : 0ms  : Validate \"[http://www.ama-assn.org/go/cpt#77066 (\"\")]\"\r\n0 0     : 0ms  : Check \"http://www.ama-assn.org/go/cpt#77066\"\r\n0 0     : 0ms  : Using CodeSystem \"http://www.ama-assn.org/go/cpt|2023\" (content = complete)\r\n",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://www.ama-assn.org/go/cpt",
-  "code" : "77065"
-}, "valueSet" :null, "langs":"en", "useServer":"true", "useClient":"true", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Diagnostic mammography, including computer-aided detection (CAD) when performed; unilateral",
-  "code" : "77065",
-  "system" : "http://www.ama-assn.org/go/cpt",
-  "version" : "2023",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0 0 : start\r\n0 0     : 0ms  : Analysing http://hl7.org/fhir/ValueSet/@all for validation purposes\r\n0 0     : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n0 0     : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n0 0     : 0ms  : Prepare include: \"()\"\r\n0 0     : 0ms  : Validate \"[http://www.ama-assn.org/go/cpt#77065 (\"\")]\"\r\n0 0     : 0ms  : Check \"http://www.ama-assn.org/go/cpt#77065\"\r\n0 0     : 0ms  : Using CodeSystem \"http://www.ama-assn.org/go/cpt|2023\" (content = complete)\r\n",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://www.ama-assn.org/go/cpt",
-  "code" : "77066"
-}, "valueSet" :null, "langs":"en", "useServer":"true", "useClient":"true", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Diagnostic mammography, including computer-aided detection (CAD) when performed; bilateral",
-  "code" : "77066",
-  "system" : "http://www.ama-assn.org/go/cpt",
-  "version" : "2023",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0 0 : start\r\n0 0     : 0ms  : Analysing http://hl7.org/fhir/ValueSet/@all for validation purposes\r\n0 0     : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n0 0     : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n0 0     : 0ms  : Prepare include: \"()\"\r\n0 0     : 0ms  : Validate \"[http://www.ama-assn.org/go/cpt#77066 (\"\")]\"\r\n0 0     : 0ms  : Check \"http://www.ama-assn.org/go/cpt#77066\"\r\n0 0     : 0ms  : Using CodeSystem \"http://www.ama-assn.org/go/cpt|2023\" (content = complete)\r\n",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "http://www.ama-assn.org/go/cpt",
-    "code" : "80076",
-    "display" : "Hepatic function panel"
-  }]
-}, "langs":"en", "useServer":"true", "useClient":"false", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Hepatic function panel This panel must include the following: Albumin (82040) Bilirubin, total (82247) Bilirubin, direct (82248) Phosphatase, alkaline (84075) Protein, total (84155) Transferase, alanine amino (ALT) (SGPT) (84460) Transferase, aspartate amino (AST) (SGOT) (84450)",
-  "code" : "80076",
-  "system" : "http://www.ama-assn.org/go/cpt",
-  "version" : "2023",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0 0 : start\r\n0 0     : 0ms  : Analysing http://hl7.org/fhir/ValueSet/@all for validation purposes\r\n0 0     : 0ms  : Parameters: disp-lang=en, default-to-latest\r\n0 0     : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n0 0     : 0ms  : Prepare include: \"()\"\r\n0 0     : 0ms  : Validate \"[http://www.ama-assn.org/go/cpt#80076 (\"Hepatic function panel\")]\"\r\n0 0     : 0ms  : Check \"http://www.ama-assn.org/go/cpt#80076\"\r\n0 0     : 0ms  : Using CodeSystem \"http://www.ama-assn.org/go/cpt|2023\" (content = complete)\r\n",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"hierarchical" : true, "valueSet" :{
-  "resourceType" : "ValueSet",
-  "compose" : {
-    "inactive" : true,
-    "include" : [{
-      "system" : "http://www.ama-assn.org/go/cpt"
-    }]
-  }
-}}####
-e: {
-  "from-server" : true,
-  "error" : "Error from https://tx.fhir.org/r4: The code System \"http://www.ama-assn.org/go/cpt\" has a grammar, and cannot be enumerated directly"
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://www.ama-assn.org/go/cpt",
-  "code" : "77067"
-}, "valueSet" :null, "langs":"en", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "code" : "77067",
-  "system" : "http://www.ama-assn.org/go/cpt",
-  "version" : "2023",
-  "severity" : "error",
-  "error" : "Unknown code '77067' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'",
-  "class" : "UNKNOWN",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[undefined#77067 (\"undefined\")]\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#77067\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n1ms http://www.ama-assn.org/go/cpt/vs|2023: check code in () at Coding\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"77067\" not found in http://www.ama-assn.org/go/cpt|2023: undefined",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome",
-  "issue" : [{
-    "extension" : [{
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
-      "valueString" : "Unknown_Code_in_Version"
-    },
-    {
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
-      "valueUrl" : "https://tx.fhir.org/r4"
-    }],
-    "severity" : "error",
-    "code" : "code-invalid",
-    "details" : {
-      "coding" : [{
-        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
-        "code" : "invalid-code"
-      }],
-      "text" : "Unknown code '77067' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'"
-    },
-    "expression" : ["Coding.code"]
-  }]
-}
-
+  "error" : "Error from https://tx.fhir.org/r4: Error: 0ms tx-op\n1ms start working\n1ms compose #1"
 }
 -------------------------------------------------------------------------------------
 {"code" : {
@@ -1042,34 +353,15 @@ v: {
   }]
 }}####
 v: {
-  "severity" : "error",
-  "error" : "Unknown code '99211' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'",
-  "class" : "UNKNOWN",
+  "display" : "Office or other outpatient visit for the evaluation and management of an established patient that may not require the presence of a physician or other qualified health care professional",
+  "code" : "99211",
+  "system" : "http://www.ama-assn.org/go/cpt",
+  "version" : "2023",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[undefined#99211 (\"undefined\")]\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#99211\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n1ms http://www.ama-assn.org/go/cpt/vs|2023: check code in () at CodeableConcept.coding[0]\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"99211\" not found in http://www.ama-assn.org/go/cpt|2023: undefined",
+  "diagnostics" : "0ms tx-op\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[undefined#99211 (\"undefined\")]\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#99211\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n1ms http://www.ama-assn.org/go/cpt/vs|2023: check code in () at CodeableConcept.coding[0]\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"99211\" found in http://www.ama-assn.org/go/cpt|2023",
   "unknown-systems" : "",
   "issues" : {
-  "resourceType" : "OperationOutcome",
-  "issue" : [{
-    "extension" : [{
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
-      "valueString" : "Unknown_Code_in_Version"
-    },
-    {
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
-      "valueUrl" : "https://tx.fhir.org/r4"
-    }],
-    "severity" : "error",
-    "code" : "code-invalid",
-    "details" : {
-      "coding" : [{
-        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
-        "code" : "invalid-code"
-      }],
-      "text" : "Unknown code '99211' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'"
-    },
-    "expression" : ["CodeableConcept.coding[0].code"]
-  }]
+  "resourceType" : "OperationOutcome"
 }
 
 }
@@ -1091,34 +383,15 @@ v: {
   }]
 }}####
 v: {
-  "severity" : "error",
-  "error" : "Unknown code '77061' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'",
-  "class" : "UNKNOWN",
+  "display" : "Diagnostic digital breast tomosynthesis; unilateral",
+  "code" : "77061",
+  "system" : "http://www.ama-assn.org/go/cpt",
+  "version" : "2023",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[undefined#77061 (\"undefined\")]\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#77061\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n1ms http://www.ama-assn.org/go/cpt/vs|2023: check code in () at CodeableConcept.coding[0]\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"77061\" not found in http://www.ama-assn.org/go/cpt|2023: undefined",
+  "diagnostics" : "0ms tx-op\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[undefined#77061 (\"undefined\")]\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#77061\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n1ms http://www.ama-assn.org/go/cpt/vs|2023: check code in () at CodeableConcept.coding[0]\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"77061\" found in http://www.ama-assn.org/go/cpt|2023",
   "unknown-systems" : "",
   "issues" : {
-  "resourceType" : "OperationOutcome",
-  "issue" : [{
-    "extension" : [{
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
-      "valueString" : "Unknown_Code_in_Version"
-    },
-    {
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
-      "valueUrl" : "https://tx.fhir.org/r4"
-    }],
-    "severity" : "error",
-    "code" : "code-invalid",
-    "details" : {
-      "coding" : [{
-        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
-        "code" : "invalid-code"
-      }],
-      "text" : "Unknown code '77061' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'"
-    },
-    "expression" : ["CodeableConcept.coding[0].code"]
-  }]
+  "resourceType" : "OperationOutcome"
 }
 
 }
@@ -1140,34 +413,15 @@ v: {
   }]
 }}####
 v: {
-  "severity" : "error",
-  "error" : "Unknown code '77062' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'",
-  "class" : "UNKNOWN",
+  "display" : "Diagnostic digital breast tomosynthesis; bilateral",
+  "code" : "77062",
+  "system" : "http://www.ama-assn.org/go/cpt",
+  "version" : "2023",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[undefined#77062 (\"undefined\")]\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#77062\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n1ms http://www.ama-assn.org/go/cpt/vs|2023: check code in () at CodeableConcept.coding[0]\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"77062\" not found in http://www.ama-assn.org/go/cpt|2023: undefined",
+  "diagnostics" : "0ms tx-op\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[undefined#77062 (\"undefined\")]\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#77062\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n1ms http://www.ama-assn.org/go/cpt/vs|2023: check code in () at CodeableConcept.coding[0]\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"77062\" found in http://www.ama-assn.org/go/cpt|2023",
   "unknown-systems" : "",
   "issues" : {
-  "resourceType" : "OperationOutcome",
-  "issue" : [{
-    "extension" : [{
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
-      "valueString" : "Unknown_Code_in_Version"
-    },
-    {
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
-      "valueUrl" : "https://tx.fhir.org/r4"
-    }],
-    "severity" : "error",
-    "code" : "code-invalid",
-    "details" : {
-      "coding" : [{
-        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
-        "code" : "invalid-code"
-      }],
-      "text" : "Unknown code '77062' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'"
-    },
-    "expression" : ["CodeableConcept.coding[0].code"]
-  }]
+  "resourceType" : "OperationOutcome"
 }
 
 }
@@ -1189,34 +443,15 @@ v: {
   }]
 }}####
 v: {
-  "severity" : "error",
-  "error" : "Unknown code '77065' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'",
-  "class" : "UNKNOWN",
+  "display" : "Diagnostic mammography, including computer-aided detection (CAD) when performed; unilateral",
+  "code" : "77065",
+  "system" : "http://www.ama-assn.org/go/cpt",
+  "version" : "2023",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[undefined#77065 (\"undefined\")]\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#77065\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n1ms http://www.ama-assn.org/go/cpt/vs|2023: check code in () at CodeableConcept.coding[0]\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"77065\" not found in http://www.ama-assn.org/go/cpt|2023: undefined",
+  "diagnostics" : "0ms tx-op\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[undefined#77065 (\"undefined\")]\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#77065\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n1ms http://www.ama-assn.org/go/cpt/vs|2023: check code in () at CodeableConcept.coding[0]\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"77065\" found in http://www.ama-assn.org/go/cpt|2023",
   "unknown-systems" : "",
   "issues" : {
-  "resourceType" : "OperationOutcome",
-  "issue" : [{
-    "extension" : [{
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
-      "valueString" : "Unknown_Code_in_Version"
-    },
-    {
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
-      "valueUrl" : "https://tx.fhir.org/r4"
-    }],
-    "severity" : "error",
-    "code" : "code-invalid",
-    "details" : {
-      "coding" : [{
-        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
-        "code" : "invalid-code"
-      }],
-      "text" : "Unknown code '77065' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'"
-    },
-    "expression" : ["CodeableConcept.coding[0].code"]
-  }]
+  "resourceType" : "OperationOutcome"
 }
 
 }
@@ -1238,34 +473,15 @@ v: {
   }]
 }}####
 v: {
-  "severity" : "error",
-  "error" : "Unknown code '77066' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'",
-  "class" : "UNKNOWN",
+  "display" : "Diagnostic mammography, including computer-aided detection (CAD) when performed; bilateral",
+  "code" : "77066",
+  "system" : "http://www.ama-assn.org/go/cpt",
+  "version" : "2023",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[undefined#77066 (\"undefined\")]\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#77066\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n1ms http://www.ama-assn.org/go/cpt/vs|2023: check code in () at CodeableConcept.coding[0]\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"77066\" not found in http://www.ama-assn.org/go/cpt|2023: undefined",
+  "diagnostics" : "0ms tx-op\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[undefined#77066 (\"undefined\")]\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#77066\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n1ms http://www.ama-assn.org/go/cpt/vs|2023: check code in () at CodeableConcept.coding[0]\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"77066\" found in http://www.ama-assn.org/go/cpt|2023",
   "unknown-systems" : "",
   "issues" : {
-  "resourceType" : "OperationOutcome",
-  "issue" : [{
-    "extension" : [{
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
-      "valueString" : "Unknown_Code_in_Version"
-    },
-    {
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
-      "valueUrl" : "https://tx.fhir.org/r4"
-    }],
-    "severity" : "error",
-    "code" : "code-invalid",
-    "details" : {
-      "coding" : [{
-        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
-        "code" : "invalid-code"
-      }],
-      "text" : "Unknown code '77066' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'"
-    },
-    "expression" : ["CodeableConcept.coding[0].code"]
-  }]
+  "resourceType" : "OperationOutcome"
 }
 
 }
@@ -1285,37 +501,15 @@ v: {
   }]
 }}####
 v: {
+  "display" : "Diagnostic mammography, including computer-aided detection (CAD) when performed; unilateral",
   "code" : "77065",
   "system" : "http://www.ama-assn.org/go/cpt",
   "version" : "2023",
-  "severity" : "error",
-  "error" : "Unknown code '77065' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'",
-  "class" : "UNKNOWN",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[undefined#77065 (\"undefined\")]\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#77065\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n1ms http://www.ama-assn.org/go/cpt/vs|2023: check code in () at Coding\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"77065\" not found in http://www.ama-assn.org/go/cpt|2023: undefined",
+  "diagnostics" : "0ms tx-op\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[undefined#77065 (\"undefined\")]\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#77065\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n1ms http://www.ama-assn.org/go/cpt/vs|2023: check code in () at Coding\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"77065\" found in http://www.ama-assn.org/go/cpt|2023",
   "unknown-systems" : "",
   "issues" : {
-  "resourceType" : "OperationOutcome",
-  "issue" : [{
-    "extension" : [{
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
-      "valueString" : "Unknown_Code_in_Version"
-    },
-    {
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
-      "valueUrl" : "https://tx.fhir.org/r4"
-    }],
-    "severity" : "error",
-    "code" : "code-invalid",
-    "details" : {
-      "coding" : [{
-        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
-        "code" : "invalid-code"
-      }],
-      "text" : "Unknown code '77065' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'"
-    },
-    "expression" : ["Coding.code"]
-  }]
+  "resourceType" : "OperationOutcome"
 }
 
 }
@@ -1335,37 +529,15 @@ v: {
   }]
 }}####
 v: {
+  "display" : "Diagnostic mammography, including computer-aided detection (CAD) when performed; bilateral",
   "code" : "77066",
   "system" : "http://www.ama-assn.org/go/cpt",
   "version" : "2023",
-  "severity" : "error",
-  "error" : "Unknown code '77066' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'",
-  "class" : "UNKNOWN",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n0ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[undefined#77066 (\"undefined\")]\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#77066\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n1ms http://www.ama-assn.org/go/cpt/vs|2023: check code in () at Coding\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"77066\" not found in http://www.ama-assn.org/go/cpt|2023: undefined",
+  "diagnostics" : "0ms tx-op\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[undefined#77066 (\"undefined\")]\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#77066\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n1ms http://www.ama-assn.org/go/cpt/vs|2023: check code in () at Coding\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"77066\" found in http://www.ama-assn.org/go/cpt|2023",
   "unknown-systems" : "",
   "issues" : {
-  "resourceType" : "OperationOutcome",
-  "issue" : [{
-    "extension" : [{
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
-      "valueString" : "Unknown_Code_in_Version"
-    },
-    {
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
-      "valueUrl" : "https://tx.fhir.org/r4"
-    }],
-    "severity" : "error",
-    "code" : "code-invalid",
-    "details" : {
-      "coding" : [{
-        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
-        "code" : "invalid-code"
-      }],
-      "text" : "Unknown code '77066' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'"
-    },
-    "expression" : ["Coding.code"]
-  }]
+  "resourceType" : "OperationOutcome"
 }
 
 }
@@ -1388,35 +560,30 @@ v: {
   }]
 }}####
 v: {
-  "severity" : "error",
-  "error" : "Unknown code '80076' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'",
-  "class" : "UNKNOWN",
+  "display" : "Hepatic function panel This panel must include the following: Albumin (82040) Bilirubin, total (82247) Bilirubin, direct (82248) Phosphatase, alkaline (84075) Protein, total (84155) Transferase, alanine amino (ALT) (SGPT) (84460) Transferase, aspartate amino (AST) (SGOT) (84450)",
+  "code" : "80076",
+  "system" : "http://www.ama-assn.org/go/cpt",
+  "version" : "2023",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[undefined#80076 (\"Hepatic function panel\")]\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#80076\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n1ms http://www.ama-assn.org/go/cpt/vs|2023: check code in () at CodeableConcept.coding[0]\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"80076\" not found in http://www.ama-assn.org/go/cpt|2023: undefined",
+  "diagnostics" : "0ms tx-op\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[undefined#80076 (\"Hepatic function panel\")]\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#80076\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n1ms http://www.ama-assn.org/go/cpt/vs|2023: check code in () at CodeableConcept.coding[0]\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"80076\" found in http://www.ama-assn.org/go/cpt|2023",
   "unknown-systems" : "",
   "issues" : {
-  "resourceType" : "OperationOutcome",
-  "issue" : [{
-    "extension" : [{
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
-      "valueString" : "Unknown_Code_in_Version"
-    },
-    {
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
-      "valueUrl" : "https://tx.fhir.org/r4"
-    }],
-    "severity" : "error",
-    "code" : "code-invalid",
-    "details" : {
-      "coding" : [{
-        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
-        "code" : "invalid-code"
-      }],
-      "text" : "Unknown code '80076' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'"
-    },
-    "expression" : ["CodeableConcept.coding[0].code"]
-  }]
+  "resourceType" : "OperationOutcome"
 }
 
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : true, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "inactive" : true,
+    "include" : [{
+      "system" : "http://www.ama-assn.org/go/cpt"
+    }]
+  }
+}}####
+e: {
+  "from-server" : true,
+  "error" : "Error from https://tx.fhir.org/r4: Error: 0ms tx-op\n1ms start working\n1ms compose #1"
 }
 -------------------------------------------------------------------------------------

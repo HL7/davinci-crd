@@ -14,7 +14,7 @@ Description: "Codes temporarily defined as part of the CRD implementation guide.
 * ^property[0].code = #abstract
 * ^property[0].uri = "http://hl7.org/fhir/concept-properties#notSelectable"
 * ^property[0].type = #boolean
-// Coverage assertion reasons - https://jira.hl7.org/browse/UP-668
+// Coverage assertion reasons - https://jira.hl7.org/browse/UP-668, https://jira.hl7.org/browse/UP-782
 // Now maintained in sourceOfTruth/v3/codeSystems/v3-ActReason.xml
 * #gold-card               "Gold card"                           "Ordering Practitioner has been granted 'gold card' status with this payer/coverage type."
 * #no-member-found         "Member not found"                    "The server was unable to find a matching member or was unable to resolve to a single member, so no coverage information can be provided."

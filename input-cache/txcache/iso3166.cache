@@ -19,13 +19,17 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:284cc75b-d6e6-476c-9f88-040129b182a4",
-    "timestamp" : "2026-01-02T22:25:50.361Z",
+    "identifier" : "urn:uuid:e3f39728-da76-4753-8038-32ed2cf77e86",
+    "timestamp" : "2026-02-26T00:22:33.512Z",
     "total" : 249,
     "offset" : 0,
     "parameter" : [{
       "name" : "excludeNested",
       "valueBoolean" : true
+    },
+    {
+      "name" : "includeDefinition",
+      "valueBoolean" : false
     },
     {
       "name" : "offset",
@@ -62,7 +66,7 @@ e: {
     {
       "system" : "urn:iso:std:iso:3166",
       "code" : "ALA",
-      "display" : "Eland Islands"
+      "display" : "Åland Islands"
     },
     {
       "system" : "urn:iso:std:iso:3166",
@@ -177,7 +181,7 @@ e: {
     {
       "system" : "urn:iso:std:iso:3166",
       "code" : "BLM",
-      "display" : "Saint Barthilemy"
+      "display" : "Saint Barthélemy"
     },
     {
       "system" : "urn:iso:std:iso:3166",
@@ -262,7 +266,7 @@ e: {
     {
       "system" : "urn:iso:std:iso:3166",
       "code" : "CIV",
-      "display" : "Ctte d'Ivoire"
+      "display" : "Côte d'Ivoire"
     },
     {
       "system" : "urn:iso:std:iso:3166",
@@ -312,7 +316,7 @@ e: {
     {
       "system" : "urn:iso:std:iso:3166",
       "code" : "CUW",
-      "display" : "Curagao"
+      "display" : "Curaçao"
     },
     {
       "system" : "urn:iso:std:iso:3166",
@@ -977,7 +981,7 @@ e: {
     {
       "system" : "urn:iso:std:iso:3166",
       "code" : "REU",
-      "display" : "Riunion"
+      "display" : "Réunion"
     },
     {
       "system" : "urn:iso:std:iso:3166",
@@ -1309,13 +1313,17 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:15b7ce88-6f4e-4534-bccf-b48901e3d2b5",
-    "timestamp" : "2026-01-02T22:25:51.345Z",
+    "identifier" : "urn:uuid:2582655b-d009-4a84-a206-763388ad860a",
+    "timestamp" : "2026-02-26T00:22:34.248Z",
     "total" : 291,
     "offset" : 0,
     "parameter" : [{
       "name" : "excludeNested",
       "valueBoolean" : true
+    },
+    {
+      "name" : "includeDefinition",
+      "valueBoolean" : false
     },
     {
       "name" : "offset",
@@ -1402,7 +1410,7 @@ e: {
     {
       "system" : "urn:iso:std:iso:3166",
       "code" : "AX",
-      "display" : "Eland Islands"
+      "display" : "Åland Islands"
     },
     {
       "system" : "urn:iso:std:iso:3166",
@@ -1457,7 +1465,7 @@ e: {
     {
       "system" : "urn:iso:std:iso:3166",
       "code" : "BL",
-      "display" : "Saint Barthilemy"
+      "display" : "Saint Barthélemy"
     },
     {
       "system" : "urn:iso:std:iso:3166",
@@ -1547,7 +1555,7 @@ e: {
     {
       "system" : "urn:iso:std:iso:3166",
       "code" : "CI",
-      "display" : "Ctte d'Ivoire"
+      "display" : "Côte d'Ivoire"
     },
     {
       "system" : "urn:iso:std:iso:3166",
@@ -1592,7 +1600,7 @@ e: {
     {
       "system" : "urn:iso:std:iso:3166",
       "code" : "CW",
-      "display" : "Curagao"
+      "display" : "Curaçao"
     },
     {
       "system" : "urn:iso:std:iso:3166",
@@ -2267,7 +2275,7 @@ e: {
     {
       "system" : "urn:iso:std:iso:3166",
       "code" : "RE",
-      "display" : "Riunion"
+      "display" : "Réunion"
     },
     {
       "system" : "urn:iso:std:iso:3166",
@@ -2527,7 +2535,7 @@ e: {
     {
       "system" : "urn:iso:std:iso:3166",
       "code" : "VI",
-      "display" : "Virgin Islands,"
+      "display" : "Virgin Islands, U.S."
     },
     {
       "system" : "urn:iso:std:iso:3166",
@@ -2809,13 +2817,17 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:7e934ff7-a143-4dcf-8e9b-e7686b6364ec",
-    "timestamp" : "2026-01-02T22:25:52.314Z",
+    "identifier" : "urn:uuid:17d6868f-faae-4a56-8330-bc2bab7f2b02",
+    "timestamp" : "2026-02-26T00:22:34.983Z",
     "total" : 249,
     "offset" : 0,
     "parameter" : [{
       "name" : "excludeNested",
       "valueBoolean" : true
+    },
+    {
+      "name" : "includeDefinition",
+      "valueBoolean" : false
     },
     {
       "name" : "offset",
@@ -3197,7 +3209,7 @@ e: {
     {
       "system" : "urn:iso:std:iso:3166",
       "code" : "248",
-      "display" : "Eland Islands"
+      "display" : "Åland Islands"
     },
     {
       "system" : "urn:iso:std:iso:3166",
@@ -3377,7 +3389,7 @@ e: {
     {
       "system" : "urn:iso:std:iso:3166",
       "code" : "384",
-      "display" : "Ctte d'Ivoire"
+      "display" : "Côte d'Ivoire"
     },
     {
       "system" : "urn:iso:std:iso:3166",
@@ -3587,7 +3599,7 @@ e: {
     {
       "system" : "urn:iso:std:iso:3166",
       "code" : "531",
-      "display" : "Curagao"
+      "display" : "Curaçao"
     },
     {
       "system" : "urn:iso:std:iso:3166",
@@ -3742,7 +3754,7 @@ e: {
     {
       "system" : "urn:iso:std:iso:3166",
       "code" : "638",
-      "display" : "Riunion"
+      "display" : "Réunion"
     },
     {
       "system" : "urn:iso:std:iso:3166",
@@ -3762,7 +3774,7 @@ e: {
     {
       "system" : "urn:iso:std:iso:3166",
       "code" : "652",
-      "display" : "Saint Barthilemy"
+      "display" : "Saint Barthélemy"
     },
     {
       "system" : "urn:iso:std:iso:3166",

@@ -196,5 +196,5 @@ INFORMATION: ServiceRequest/example: ServiceRequest.reasonCode[0].coding[0]: Thi
 The concept '0093-0948' has a status of inactive and its use should be reviewed
 The concept '59011-410' has a status of inactive and its use should be reviewed
 
-# 25. **[Updated approval status] All terminology with the exception of two value sets has been moved into THO.  Those have THO proposals - one approved, one not.  The not-yet approved one is for internal IG use, not implementer use.
+# 25. **[Updated approval status] All terminology with the exception of two value sets has been moved into THO.  Those have THO proposals - one approved (https://jira.hl7.org/browse/UP-668), one not (https://jira.hl7.org/browse/UP-782).  The not-yet approved one is for internal IG use, not implementer use.
 INFORMATION: CodeSystem/temp: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)

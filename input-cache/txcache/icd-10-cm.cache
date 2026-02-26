@@ -9,60 +9,20 @@
   }
 }}####
 e: {
-  "from-server" : true,
-  "error" : "Error from https://tx.fhir.org/r4: The value set '' expansion has too many codes to display (>10000)"
-}
--------------------------------------------------------------------------------------
-{"hierarchical" : true, "valueSet" :{
-  "resourceType" : "ValueSet",
-  "compose" : {
-    "inactive" : true,
-    "include" : [{
-      "system" : "http://hl7.org/fhir/sid/icd-10-cm"
-    }]
-  }
-}}####
-e: {
-  "from-server" : true,
-  "error" : "Error from https://tx.fhir.org/r4: The value set '' expansion has too many codes to display (>10000)"
-}
--------------------------------------------------------------------------------------
-{"hierarchical" : true, "language": "en", "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/ICD10CM", "version": "2.2.0-snapshot"}####
-e: {
   "source" : tx.fhir.org,
   "valueSet" : {
   "resourceType" : "ValueSet",
-  "url" : "http://hl7.org/fhir/us/davinci-crd/ValueSet/ICD10CM",
-  "identifier" : [{
-    "system" : "urn:ietf:rfc:3986",
-    "value" : "urn:oid:2.16.840.1.113883.4.642.40.18.48.35"
-  }],
-  "version" : "2.2.0-snapshot",
-  "name" : "ICD10CM",
-  "title" : "ICD10CM Disease codes",
   "status" : "active",
-  "experimental" : false,
-  "date" : "2026-01-21T21:55:14-07:00",
-  "jurisdiction" : [{
-    "coding" : [{
-      "system" : "urn:iso:std:iso:3166",
-      "code" : "US"
-    }]
-  }],
   "expansion" : {
-    "identifier" : "urn:uuid:9ff4859d-bae1-420c-86d1-cf0fe6ca1193",
-    "timestamp" : "2026-01-22T05:02:02.584Z",
+    "identifier" : "urn:uuid:ca609bba-c604-4965-924d-4495cb79e665",
+    "timestamp" : "2026-02-25T16:50:38.650Z",
     "offset" : 0,
     "parameter" : [{
-      "name" : "limitedExpansion",
+      "name" : "excludeNested",
       "valueBoolean" : true
     },
     {
-      "name" : "displayLanguage",
-      "valueCode" : "en"
-    },
-    {
-      "name" : "excludeNested",
+      "name" : "includeDefinition",
       "valueBoolean" : false
     },
     {
@@ -325,7 +285,7 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A04.72",
-      "display" : "Enterocolitis d/t Clostridium difficile, not spcf as recur"
+      "display" : "Enterocolitis due to Clostridium difficile, not specified as recurrent"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
@@ -340,7 +300,7 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A05",
-      "display" : "Oth bacterial foodborne intoxications, NEC"
+      "display" : "Other bacterial foodborne intoxications, not elsewhere classified"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
@@ -355,7 +315,7 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A05.2",
-      "display" : "Foodborne Clostridium perfringens intoxication"
+      "display" : "Foodborne Clostridium perfringens [Clostridium welchii] intoxication"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
@@ -505,7 +465,7 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A08.1",
-      "display" : "Acute gastrent d/t Norwalk agent and oth small round viruses"
+      "display" : "Acute gastroenteropathy due to Norwalk agent and other small round viruses"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
@@ -820,7 +780,7 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A18.83",
-      "display" : "Tuberculosis of digestive tract organs, NEC"
+      "display" : "Tuberculosis of digestive tract organs, not elsewhere classified"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
@@ -1150,7 +1110,7 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A28.8",
-      "display" : "Oth zoonotic bacterial diseases, not elsewhere classified"
+      "display" : "Other specified zoonotic bacterial diseases, not elsewhere classified"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
@@ -1225,7 +1185,7 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A31.2",
-      "display" : "Dissem mycobacterium avium-intracellulare complex (DMAC)"
+      "display" : "Disseminated mycobacterium avium-intracellulare complex (DMAC)"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
@@ -1405,12 +1365,12 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A37.10",
-      "display" : "Whooping cough due to Bordetella parapertussis w/o pneumonia"
+      "display" : "Whooping cough due to Bordetella parapertussis without pneumonia"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A37.11",
-      "display" : "Whooping cough due to Bordetella parapertussis w pneumonia"
+      "display" : "Whooping cough due to Bordetella parapertussis with pneumonia"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
@@ -1420,12 +1380,12 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A37.80",
-      "display" : "Whooping cough due to other Bordetella species w/o pneumonia"
+      "display" : "Whooping cough due to other Bordetella species without pneumonia"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A37.81",
-      "display" : "Whooping cough due to oth Bordetella species with pneumonia"
+      "display" : "Whooping cough due to other Bordetella species with pneumonia"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
@@ -1850,12 +1810,12 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A49.01",
-      "display" : "Methicillin suscep staph infection, unsp site"
+      "display" : "Methicillin susceptible Staphylococcus aureus infection, unspecified site"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A49.02",
-      "display" : "Methicillin resis staph infection, unsp site"
+      "display" : "Methicillin resistant Staphylococcus aureus infection, unspecified site"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
@@ -2360,12 +2320,12 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A54.0",
-      "display" : "Gonocl infct of low GU tract w/o periureth or acc glnd abcs"
+      "display" : "Gonococcal infection of lower genitourinary tract without periurethral or accessory gland abscess"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A54.00",
-      "display" : "Gonococcal infection of lower genitourinary tract, unsp"
+      "display" : "Gonococcal infection of lower genitourinary tract, unspecified"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
@@ -2390,12 +2350,12 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A54.1",
-      "display" : "Gonocl infct of lower GU tract w periureth and acc glnd abcs"
+      "display" : "Gonococcal infection of lower genitourinary tract with periurethral and accessory gland abscess"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A54.2",
-      "display" : "Gonococcal pelviperitonitis and oth gonococcal GU infection"
+      "display" : "Gonococcal pelviperitonitis and other gonococcal genitourinary infection"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
@@ -2555,7 +2515,7 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A56.00",
-      "display" : "Chlamydial infection of lower genitourinary tract, unsp"
+      "display" : "Chlamydial infection of lower genitourinary tract, unspecified"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
@@ -2575,7 +2535,7 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A56.1",
-      "display" : "Chlamydial infection of pelviperitoneum and oth GU organs"
+      "display" : "Chlamydial infection of pelviperitoneum and other genitourinary organs"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
@@ -2715,7 +2675,7 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A63",
-      "display" : "Oth predominantly sexually transmitted diseases, NEC"
+      "display" : "Other predominantly sexually transmitted diseases, not elsewhere classified"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
@@ -2975,7 +2935,7 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A75.0",
-      "display" : "Epidemic louse-borne typhus fever d/t Rickettsia prowazekii"
+      "display" : "Epidemic louse-borne typhus fever due to Rickettsia prowazekii"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
@@ -3210,7 +3170,7 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A81.9",
-      "display" : "Atypical virus infection of central nervous system, unsp"
+      "display" : "Atypical virus infection of central nervous system, unspecified"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
@@ -3290,7 +3250,7 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A84.0",
-      "display" : "Far Eastern tick-borne encephalitis"
+      "display" : "Far Eastern tick-borne encephalitis [Russian spring-summer encephalitis]"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
@@ -3380,7 +3340,7 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A88",
-      "display" : "Oth viral infections of central nervous system, NEC"
+      "display" : "Other viral infections of central nervous system, not elsewhere classified"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
@@ -3455,7 +3415,7 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A92.32",
-      "display" : "West Nile virus infection with oth neurologic manifestation"
+      "display" : "West Nile virus infection with other neurologic manifestation"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
@@ -3985,7 +3945,7 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "B08",
-      "display" : "Oth viral infect with skin and mucous membrane lesions, NEC"
+      "display" : "Other viral infections characterized by skin and mucous membrane lesions, not elsewhere classified"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
@@ -4120,12 +4080,12 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "B08.8",
-      "display" : "Oth viral infections with skin and mucous membrane lesions"
+      "display" : "Other specified viral infections characterized by skin and mucous membrane lesions"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "B09",
-      "display" : "Unsp viral infection with skin and mucous membrane lesions"
+      "display" : "Unspecified viral infection characterized by skin and mucous membrane lesions"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
@@ -4215,7 +4175,7 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "B16.9",
-      "display" : "Acute hepatitis B w/o delta-agent and without hepatic coma"
+      "display" : "Acute hepatitis B without delta-agent and without hepatic coma"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
@@ -4545,7 +4505,7 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "B27.99",
-      "display" : "Infectious mononucleosis, unsp with other complication"
+      "display" : "Infectious mononucleosis, unspecified with other complication"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
@@ -5082,44 +5042,30 @@ e: {
   "error" : ""
 }
 -------------------------------------------------------------------------------------
-{"hierarchical" : true, "language": "en", "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/ICD10CM", "version": "2.2.0"}####
+{"hierarchical" : true, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "inactive" : true,
+    "include" : [{
+      "system" : "http://hl7.org/fhir/sid/icd-10-cm"
+    }]
+  }
+}}####
 e: {
   "source" : tx.fhir.org,
   "valueSet" : {
   "resourceType" : "ValueSet",
-  "url" : "http://hl7.org/fhir/us/davinci-crd/ValueSet/ICD10CM",
-  "identifier" : [{
-    "system" : "urn:ietf:rfc:3986",
-    "value" : "urn:oid:2.16.840.1.113883.4.642.40.18.48.35"
-  }],
-  "version" : "2.2.0",
-  "name" : "ICD10CM",
-  "title" : "ICD10CM Disease codes",
   "status" : "active",
-  "experimental" : false,
-  "date" : "2026-02-23T21:13:28-07:00",
-  "contact" : [{
-    "telecom" : [{
-      "system" : "url",
-      "value" : "http://www.hl7.org/Special/committees/fm"
-    }]
-  }],
-  "jurisdiction" : [{
-    "coding" : [{
-      "system" : "urn:iso:std:iso:3166",
-      "code" : "US"
-    }]
-  }],
   "expansion" : {
-    "identifier" : "urn:uuid:bc74833e-fb4f-4a03-b6a0-de32fc759ce4",
-    "timestamp" : "2026-02-24T04:20:20.586Z",
+    "identifier" : "urn:uuid:1a408364-7d7a-42ff-8647-de514e98831b",
+    "timestamp" : "2026-02-26T00:19:05.871Z",
     "offset" : 0,
     "parameter" : [{
-      "name" : "displayLanguage",
-      "valueCode" : "en"
+      "name" : "excludeNested",
+      "valueBoolean" : false
     },
     {
-      "name" : "excludeNested",
+      "name" : "includeDefinition",
       "valueBoolean" : false
     },
     {
@@ -5382,7 +5328,7 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A04.72",
-      "display" : "Enterocolitis d/t Clostridium difficile, not spcf as recur"
+      "display" : "Enterocolitis due to Clostridium difficile, not specified as recurrent"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
@@ -5397,7 +5343,7 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A05",
-      "display" : "Oth bacterial foodborne intoxications, NEC"
+      "display" : "Other bacterial foodborne intoxications, not elsewhere classified"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
@@ -5412,7 +5358,7 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A05.2",
-      "display" : "Foodborne Clostridium perfringens intoxication"
+      "display" : "Foodborne Clostridium perfringens [Clostridium welchii] intoxication"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
@@ -5562,7 +5508,7 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A08.1",
-      "display" : "Acute gastrent d/t Norwalk agent and oth small round viruses"
+      "display" : "Acute gastroenteropathy due to Norwalk agent and other small round viruses"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
@@ -5877,7 +5823,7 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A18.83",
-      "display" : "Tuberculosis of digestive tract organs, NEC"
+      "display" : "Tuberculosis of digestive tract organs, not elsewhere classified"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
@@ -6207,7 +6153,7 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A28.8",
-      "display" : "Oth zoonotic bacterial diseases, not elsewhere classified"
+      "display" : "Other specified zoonotic bacterial diseases, not elsewhere classified"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
@@ -6282,7 +6228,7 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A31.2",
-      "display" : "Dissem mycobacterium avium-intracellulare complex (DMAC)"
+      "display" : "Disseminated mycobacterium avium-intracellulare complex (DMAC)"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
@@ -6462,12 +6408,12 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A37.10",
-      "display" : "Whooping cough due to Bordetella parapertussis w/o pneumonia"
+      "display" : "Whooping cough due to Bordetella parapertussis without pneumonia"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A37.11",
-      "display" : "Whooping cough due to Bordetella parapertussis w pneumonia"
+      "display" : "Whooping cough due to Bordetella parapertussis with pneumonia"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
@@ -6477,12 +6423,12 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A37.80",
-      "display" : "Whooping cough due to other Bordetella species w/o pneumonia"
+      "display" : "Whooping cough due to other Bordetella species without pneumonia"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A37.81",
-      "display" : "Whooping cough due to oth Bordetella species with pneumonia"
+      "display" : "Whooping cough due to other Bordetella species with pneumonia"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
@@ -6907,12 +6853,12 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A49.01",
-      "display" : "Methicillin suscep staph infection, unsp site"
+      "display" : "Methicillin susceptible Staphylococcus aureus infection, unspecified site"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A49.02",
-      "display" : "Methicillin resis staph infection, unsp site"
+      "display" : "Methicillin resistant Staphylococcus aureus infection, unspecified site"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
@@ -7417,12 +7363,12 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A54.0",
-      "display" : "Gonocl infct of low GU tract w/o periureth or acc glnd abcs"
+      "display" : "Gonococcal infection of lower genitourinary tract without periurethral or accessory gland abscess"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A54.00",
-      "display" : "Gonococcal infection of lower genitourinary tract, unsp"
+      "display" : "Gonococcal infection of lower genitourinary tract, unspecified"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
@@ -7447,12 +7393,12 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A54.1",
-      "display" : "Gonocl infct of lower GU tract w periureth and acc glnd abcs"
+      "display" : "Gonococcal infection of lower genitourinary tract with periurethral and accessory gland abscess"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A54.2",
-      "display" : "Gonococcal pelviperitonitis and oth gonococcal GU infection"
+      "display" : "Gonococcal pelviperitonitis and other gonococcal genitourinary infection"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
@@ -7612,7 +7558,7 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A56.00",
-      "display" : "Chlamydial infection of lower genitourinary tract, unsp"
+      "display" : "Chlamydial infection of lower genitourinary tract, unspecified"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
@@ -7632,7 +7578,7 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A56.1",
-      "display" : "Chlamydial infection of pelviperitoneum and oth GU organs"
+      "display" : "Chlamydial infection of pelviperitoneum and other genitourinary organs"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
@@ -7772,7 +7718,7 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A63",
-      "display" : "Oth predominantly sexually transmitted diseases, NEC"
+      "display" : "Other predominantly sexually transmitted diseases, not elsewhere classified"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
@@ -8032,7 +7978,7 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A75.0",
-      "display" : "Epidemic louse-borne typhus fever d/t Rickettsia prowazekii"
+      "display" : "Epidemic louse-borne typhus fever due to Rickettsia prowazekii"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
@@ -8267,7 +8213,7 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A81.9",
-      "display" : "Atypical virus infection of central nervous system, unsp"
+      "display" : "Atypical virus infection of central nervous system, unspecified"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
@@ -8347,7 +8293,7 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A84.0",
-      "display" : "Far Eastern tick-borne encephalitis"
+      "display" : "Far Eastern tick-borne encephalitis [Russian spring-summer encephalitis]"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
@@ -8437,7 +8383,7 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A88",
-      "display" : "Oth viral infections of central nervous system, NEC"
+      "display" : "Other viral infections of central nervous system, not elsewhere classified"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
@@ -8512,7 +8458,7 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "A92.32",
-      "display" : "West Nile virus infection with oth neurologic manifestation"
+      "display" : "West Nile virus infection with other neurologic manifestation"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
@@ -9042,7 +8988,7 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "B08",
-      "display" : "Oth viral infect with skin and mucous membrane lesions, NEC"
+      "display" : "Other viral infections characterized by skin and mucous membrane lesions, not elsewhere classified"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
@@ -9177,12 +9123,12 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "B08.8",
-      "display" : "Oth viral infections with skin and mucous membrane lesions"
+      "display" : "Other specified viral infections characterized by skin and mucous membrane lesions"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "B09",
-      "display" : "Unsp viral infection with skin and mucous membrane lesions"
+      "display" : "Unspecified viral infection characterized by skin and mucous membrane lesions"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
@@ -9272,7 +9218,7 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "B16.9",
-      "display" : "Acute hepatitis B w/o delta-agent and without hepatic coma"
+      "display" : "Acute hepatitis B without delta-agent and without hepatic coma"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
@@ -9602,7 +9548,7 @@ e: {
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",
       "code" : "B27.99",
-      "display" : "Infectious mononucleosis, unsp with other complication"
+      "display" : "Infectious mononucleosis, unspecified with other complication"
     },
     {
       "system" : "http://hl7.org/fhir/sid/icd-10-cm",

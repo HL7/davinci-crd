@@ -1,0 +1,163 @@
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "inactive" : true,
+    "include" : [{
+      "system" : "http://hl7.org/fhir/sid/icd-9-cm"
+    }]
+  }
+}}####
+e: {
+  "source" : tx.fhir.org,
+  "valueSet" : {
+  "resourceType" : "ValueSet",
+  "status" : "active",
+  "expansion" : {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/valueset-unclosed",
+      "valueString" : "This extension is based on a fragment of the code system http://hl7.org/fhir/sid/icd-9-cm"
+    }],
+    "identifier" : "urn:uuid:1e306319-0fc8-4fa0-9e8e-1cf65e8a5628",
+    "timestamp" : "2026-02-26T00:15:11.838Z",
+    "total" : 22,
+    "offset" : 0,
+    "parameter" : [{
+      "name" : "excludeNested",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "includeDefinition",
+      "valueBoolean" : false
+    },
+    {
+      "name" : "offset",
+      "valueInteger" : 0
+    },
+    {
+      "name" : "count",
+      "valueInteger" : 1000
+    },
+    {
+      "name" : "fragment",
+      "valueUri" : "system() {\r\n    return this.codeSystem.jsonObj.url || '';\r\n  }|version() {\r\n    return this.codeSystem.jsonObj.version || null;\r\n  }"
+    },
+    {
+      "name" : "used-codesystem",
+      "valueUri" : "http://hl7.org/fhir/sid/icd-9-cm|2015"
+    }],
+    "contains" : [{
+      "system" : "http://hl7.org/fhir/sid/icd-9-cm",
+      "code" : "CLASSIFICATION OF PROCEDURES",
+      "display" : "CLASSIFICATION OF PROCEDURES"
+    },
+    {
+      "system" : "http://hl7.org/fhir/sid/icd-9-cm",
+      "code" : "87-99",
+      "display" : "MISCELLANEOUS DIAGNOSTIC AND THERAPEUTIC PROCEDURES"
+    },
+    {
+      "system" : "http://hl7.org/fhir/sid/icd-9-cm",
+      "code" : "99",
+      "display" : "Other Nonoperative Procedures"
+    },
+    {
+      "system" : "http://hl7.org/fhir/sid/icd-9-cm",
+      "code" : "99.0",
+      "display" : "Transfusion Of Blood And Blood Components"
+    },
+    {
+      "system" : "http://hl7.org/fhir/sid/icd-9-cm",
+      "code" : "99.00",
+      "display" : "Perioperative autologous transfusion of whole blood or blood components"
+    },
+    {
+      "system" : "http://hl7.org/fhir/sid/icd-9-cm",
+      "code" : "99.01",
+      "display" : "Exchange transfusion"
+    },
+    {
+      "system" : "http://hl7.org/fhir/sid/icd-9-cm",
+      "code" : "99.02",
+      "display" : "Transfusion of previously collected autologous blood"
+    },
+    {
+      "system" : "http://hl7.org/fhir/sid/icd-9-cm",
+      "code" : "99.03",
+      "display" : "Other transfusion of whole blood"
+    },
+    {
+      "system" : "http://hl7.org/fhir/sid/icd-9-cm",
+      "code" : "99.04",
+      "display" : "Transfusion of packed cells"
+    },
+    {
+      "system" : "http://hl7.org/fhir/sid/icd-9-cm",
+      "code" : "99.05",
+      "display" : "Transfusion of platelets"
+    },
+    {
+      "system" : "http://hl7.org/fhir/sid/icd-9-cm",
+      "code" : "99.06",
+      "display" : "Transfusion of coagulation factors"
+    },
+    {
+      "system" : "http://hl7.org/fhir/sid/icd-9-cm",
+      "code" : "99.07",
+      "display" : "Transfusion of other serum"
+    },
+    {
+      "system" : "http://hl7.org/fhir/sid/icd-9-cm",
+      "code" : "99.08",
+      "display" : "Transfusion of blood expander"
+    },
+    {
+      "system" : "http://hl7.org/fhir/sid/icd-9-cm",
+      "code" : "99.09",
+      "display" : "Transfusion of other substance"
+    },
+    {
+      "system" : "http://hl7.org/fhir/sid/icd-9-cm",
+      "code" : "CLASSIFICATION OF DISEASES AND INJURIES",
+      "display" : "CLASSIFICATION OF DISEASES AND INJURIES"
+    },
+    {
+      "system" : "http://hl7.org/fhir/sid/icd-9-cm",
+      "code" : "390-459",
+      "display" : "DISEASES OF THE CIRCULATORY SYSTEM"
+    },
+    {
+      "system" : "http://hl7.org/fhir/sid/icd-9-cm",
+      "code" : "410-414",
+      "display" : "ISCHEMIC HEART DISEASE"
+    },
+    {
+      "system" : "http://hl7.org/fhir/sid/icd-9-cm",
+      "code" : "410",
+      "display" : "Acute myocardial infarction"
+    },
+    {
+      "system" : "http://hl7.org/fhir/sid/icd-9-cm",
+      "code" : "410.9",
+      "display" : "Acute myocardial infarction of unspecified site"
+    },
+    {
+      "system" : "http://hl7.org/fhir/sid/icd-9-cm",
+      "code" : "410.90",
+      "display" : "Acute myocardial infarction of unspecified site, episode of care unspecified"
+    },
+    {
+      "system" : "http://hl7.org/fhir/sid/icd-9-cm",
+      "code" : "410.91",
+      "display" : "Acute myocardial infarction of unspecified site, initial episode of care"
+    },
+    {
+      "system" : "http://hl7.org/fhir/sid/icd-9-cm",
+      "code" : "410.92",
+      "display" : "Acute myocardial infarction of unspecified site, subsequent episode of care"
+    }]
+  }
+},
+  "error" : ""
+}
+-------------------------------------------------------------------------------------

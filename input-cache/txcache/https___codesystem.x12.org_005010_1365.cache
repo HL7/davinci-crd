@@ -1,24 +1,4 @@
 -------------------------------------------------------------------------------------
-{"hierarchical" : false, "valueSet" :{
-  "resourceType" : "ValueSet",
-  "compose" : {
-    "inactive" : true,
-    "include" : [{
-      "system" : "https://codesystem.x12.org/005010/1365"
-    }]
-  }
-}}####
-e: {
-  "from-server" : true,
-  "error" : "Error from https://tx.fhir.org/r4: A definition for CodeSystem 'https://codesystem.x12.org/005010/1365' could not be found, so the value set cannot be expanded"
-}
--------------------------------------------------------------------------------------
-{"hierarchical" : false, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/X12ServiceType", "version": "2.2.0-snapshot"}####
-e: {
-  "from-server" : true,
-  "error" : "Error from https://tx.fhir.org/r4: A definition for CodeSystem 'https://codesystem.x12.org/005010/1365' could not be found, so the value set cannot be expanded"
-}
--------------------------------------------------------------------------------------
 {"hierarchical" : true, "valueSet" :{
   "resourceType" : "ValueSet",
   "compose" : {
@@ -30,13 +10,7 @@ e: {
 }}####
 e: {
   "from-server" : true,
-  "error" : "Error from https://tx.fhir.org/r4: A definition for CodeSystem 'https://codesystem.x12.org/005010/1365' could not be found, so the value set cannot be expanded"
-}
--------------------------------------------------------------------------------------
-{"hierarchical" : true, "language": "en", "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/X12ServiceType", "version": "2.2.0-snapshot"}####
-e: {
-  "from-server" : true,
-  "error" : "Error from https://tx.fhir.org/r4: A definition for CodeSystem 'https://codesystem.x12.org/005010/1365' could not be found, so the value set cannot be expanded"
+  "error" : "Error from https://tx.fhir.org/r4: Error: A definition for CodeSystem 'https://codesystem.x12.org/005010/1365' could not be found, so the value set cannot be expanded"
 }
 -------------------------------------------------------------------------------------
 {"hierarchical" : true, "language": "en", "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/X12ServiceType", "version": "2.2.0"}####
