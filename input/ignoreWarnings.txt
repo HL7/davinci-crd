@@ -35,16 +35,8 @@ Unknown code '0823T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version 
 Unknown code '0915T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'
 
 # 00f. **[New issue] These codes used to validate but stopped with the recent terminology server transition.  They are valid.
-A definition for CodeSystem 'http://www.nlm.nih.gov/research/umls/rxnorm' version '05062024' could not be found, so the code cannot be validated. Valid versions: ??
 A definition for CodeSystem 'https://www.nubc.org/CodeSystem/PatDischargeStatus' could not be found, so the code cannot be validated
 Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/core/ValueSet/us-core-discharge-disposition|7.0.0' because the code system http://snomed.info/sct was not found
-Unknown code '77061' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'
-Unknown code '77062' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'
-Unknown code '77065' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'
-Unknown code '77066' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'
-Unknown code '77067' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'
-Unknown code '80076' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'
-Unknown code '99211' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'
 
 # 00g. These will go away once the next release of the Tools IG is published and we can point to that
 ERROR: ImplementationGuide/hl7.fhir.us.davinci-crd: ImplementationGuide.definition.extension[35].url: No definition could be found for URL value 'http://hl7.org/fhir/tools/StructureDefinition/expansion-parameters'
