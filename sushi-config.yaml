@@ -61,11 +61,11 @@ dependencies:
 #    uri: http://terminology.hl7.org/ImplementationGuide/hl7.terminology
 #    reason: |
 #      Provides the latest versions of FHIR code systems and value sets, which are referenced by this IG
-#  hl7.fhir.uv.xver-r5.r4:
-#    id: xver
-#    version: dev
-#    reason: |
-#      Needed to pre-adopt R5 Questionnaire elements in R4
+  hl7.fhir.uv.xver-r5.r4:
+    id: xver
+    version: dev
+    reason: |
+      Needed to pre-adopt R5 Questionnaire elements in R4
   hl7.fhir.us.core:
     id: uscore7
     version: 7.0.0
