@@ -9,37 +9,13 @@
   }
 }}####
 e: {
-  "source" : tx-nordics.fhir.org,
-  "valueSet" : {
-  "resourceType" : "ValueSet",
-  "status" : "active",
-  "expansion" : {
-    "identifier" : "urn:uuid:50c2fa68-1191-439f-9c39-bd3886ac48c8",
-    "timestamp" : "2026-02-26T01:19:12+01:00",
-    "total" : 0,
-    "offset" : 0,
-    "parameter" : [{
-      "name" : "used-codesystem",
-      "valueUri" : "https://www.nubc.org/CodeSystem/TypeOfBill|1.0.0"
-    },
-    {
-      "name" : "version",
-      "valueUri" : "https://www.nubc.org/CodeSystem/TypeOfBill|1.0.0"
-    },
-    {
-      "name" : "excludeNested",
-      "valueBoolean" : false
-    },
-    {
-      "name" : "offset",
-      "valueInteger" : 0
-    },
-    {
-      "name" : "count",
-      "valueInteger" : 1000
-    }]
-  }
-},
-  "error" : ""
+  "from-server" : true,
+  "error" : "Error from https://tx.fhir.org/r4: Error: A definition for CodeSystem 'https://www.nubc.org/CodeSystem/TypeOfBill' could not be found, so the value set cannot be expanded"
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : true, "language": "en", "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/NUBCTypeOfBill", "version": "2.2.0"}####
+e: {
+  "from-server" : true,
+  "error" : "Error from https://tx.fhir.org/r4: Error: A definition for CodeSystem 'https://www.nubc.org/CodeSystem/TypeOfBill' could not be found, so the value set cannot be expanded"
 }
 -------------------------------------------------------------------------------------

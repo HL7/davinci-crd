@@ -57,7 +57,7 @@ Alias: $VisionPrescription   = http://hl7.org/fhir/StructureDefinition/VisionPre
 Alias: $Timing               = http://hl7.org/fhir/StructureDefinition/Timing
 // Extensions
 Alias: $alternate-reference                            = http://hl7.org/fhir/StructureDefinition/alternate-reference
-Alias: $extension-CommunicationRequest.payload.content = http://hl7.org/fhir/5.0/StructureDefinition/extension-CommunicationRequest.payload.content%5Bx%5D
+Alias: $extension-CommunicationRequest.payload.content = http://hl7.org/fhir/5.0/StructureDefinition/extension-CommunicationRequest.payload.content
 Alias: $fmm                                            = http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm
 Alias: $standards-status                               = http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
 Alias: $compliesWithProfile                            = http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile

@@ -18,8 +18,8 @@ e: {
       "url" : "http://hl7.org/fhir/StructureDefinition/valueset-unclosed",
       "valueString" : "This extension is based on a fragment of the code system http://hl7.org/fhir/sid/icd-9-cm"
     }],
-    "identifier" : "urn:uuid:1e306319-0fc8-4fa0-9e8e-1cf65e8a5628",
-    "timestamp" : "2026-02-26T00:15:11.838Z",
+    "identifier" : "urn:uuid:edc44259-047e-4550-bfe1-fba1f53ba6e2",
+    "timestamp" : "2026-03-03T18:48:18.353Z",
     "total" : 22,
     "offset" : 0,
     "parameter" : [{
@@ -40,7 +40,7 @@ e: {
     },
     {
       "name" : "fragment",
-      "valueUri" : "system() {\r\n    return this.codeSystem.jsonObj.url || '';\r\n  }|version() {\r\n    return this.codeSystem.jsonObj.version || null;\r\n  }"
+      "valueUri" : "http://hl7.org/fhir/sid/icd-9-cm|2015"
     },
     {
       "name" : "used-codesystem",

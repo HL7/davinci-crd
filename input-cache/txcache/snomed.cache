@@ -19,7 +19,7 @@ v: {
   "system" : "http://snomed.info/sct",
   "version" : "http://snomed.info/sct/731000124108/version/20250901",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[undefined#71388002 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#71388002\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in () at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"71388002\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
+  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#71388002 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#71388002\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"71388002\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -47,7 +47,7 @@ v: {
   "system" : "http://snomed.info/sct",
   "version" : "http://snomed.info/sct/731000124108/version/20250901",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[undefined#182922004 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#182922004\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in () at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"182922004\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
+  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#182922004 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#182922004\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"182922004\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -75,7 +75,7 @@ v: {
   "system" : "http://snomed.info/sct",
   "version" : "http://snomed.info/sct/731000124108/version/20250901",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[undefined#229912004 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#229912004\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in () at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"229912004\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
+  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#229912004 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#229912004\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"229912004\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -107,8 +107,8 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:89d94854-b11c-4e12-98a3-33cbc9f19af8",
-    "timestamp" : "2026-02-26T00:11:59.960Z",
+    "identifier" : "urn:uuid:91cce42f-3ad0-43c0-b293-d5666406c567",
+    "timestamp" : "2026-03-03T18:45:11.029Z",
     "total" : 3,
     "offset" : 0,
     "parameter" : [{
@@ -175,7 +175,7 @@ v: {
   "system" : "http://snomed.info/sct",
   "version" : "http://snomed.info/sct/731000124108/version/20250901",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[undefined#762766007 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#762766007\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in () at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"762766007\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
+  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#762766007 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#762766007\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"762766007\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -203,7 +203,7 @@ v: {
   "system" : "http://snomed.info/sct",
   "version" : "http://snomed.info/sct/731000124108/version/20250901",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[undefined#412413001 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#412413001\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in () at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"412413001\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
+  "diagnostics" : "0ms tx-op\n0ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#412413001 (\"undefined\")]\"\n0ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#412413001\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"412413001\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -231,7 +231,7 @@ v: {
   "system" : "http://snomed.info/sct",
   "version" : "http://snomed.info/sct/731000124108/version/20250901",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[undefined#346415002 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#346415002\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in () at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"346415002\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
+  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#346415002 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#346415002\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"346415002\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -259,7 +259,7 @@ v: {
   "system" : "http://snomed.info/sct",
   "version" : "http://snomed.info/sct/731000124108/version/20250901",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[undefined#890302005 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#890302005\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in () at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"890302005\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
+  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#890302005 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#890302005\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"890302005\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -288,8 +288,8 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:1e234548-c9f5-426a-9ce0-a1d5fe8f0678",
-    "timestamp" : "2026-02-26T00:12:03.207Z",
+    "identifier" : "urn:uuid:45610275-f075-45ec-8c08-c6bec5f00848",
+    "timestamp" : "2026-03-03T18:45:13.199Z",
     "total" : 2,
     "offset" : 0,
     "parameter" : [{
@@ -400,8 +400,8 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:51bf667c-5d1a-47f1-9fbe-c35b76ae11c4",
-    "timestamp" : "2026-02-26T00:12:03.755Z",
+    "identifier" : "urn:uuid:d9c49578-377b-4f20-b960-e8331249c9a7",
+    "timestamp" : "2026-03-03T18:45:13.635Z",
     "total" : 18,
     "offset" : 0,
     "parameter" : [{
@@ -543,7 +543,7 @@ v: {
   "system" : "http://snomed.info/sct",
   "version" : "http://snomed.info/sct/731000124108/version/20250901",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[undefined#226355009 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#226355009\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in () at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"226355009\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
+  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#226355009 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#226355009\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"226355009\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -571,7 +571,7 @@ v: {
   "system" : "http://snomed.info/sct",
   "version" : "http://snomed.info/sct/731000124108/version/20250901",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[undefined#71388002 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#71388002\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in () at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"71388002\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
+  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#71388002 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#71388002\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"71388002\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -599,7 +599,7 @@ v: {
   "system" : "http://snomed.info/sct",
   "version" : "http://snomed.info/sct/731000124108/version/20250901",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[undefined#182922004 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#182922004\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in () at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"182922004\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
+  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#182922004 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#182922004\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"182922004\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -627,7 +627,7 @@ v: {
   "system" : "http://snomed.info/sct",
   "version" : "http://snomed.info/sct/731000124108/version/20250901",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[undefined#229912004 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#229912004\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in () at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"229912004\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
+  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#229912004 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#229912004\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"229912004\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -655,7 +655,7 @@ v: {
   "system" : "http://snomed.info/sct",
   "version" : "http://snomed.info/sct/731000124108/version/20250901",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[undefined#35011000087100 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#35011000087100\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in () at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"35011000087100\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
+  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#35011000087100 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#35011000087100\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"35011000087100\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -737,7 +737,7 @@ v: {
   "system" : "http://snomed.info/sct",
   "version" : "http://snomed.info/sct/731000124108/version/20250901",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[undefined#762766007 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#762766007\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in () at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"762766007\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
+  "diagnostics" : "0ms tx-op\n0ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#762766007 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#762766007\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"762766007\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -765,7 +765,7 @@ v: {
   "system" : "http://snomed.info/sct",
   "version" : "http://snomed.info/sct/731000124108/version/20250901",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[undefined#412413001 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#412413001\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in () at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"412413001\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
+  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#412413001 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#412413001\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"412413001\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -793,7 +793,7 @@ v: {
   "system" : "http://snomed.info/sct",
   "version" : "http://snomed.info/sct/731000124108/version/20250901",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[undefined#346415002 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#346415002\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in () at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"346415002\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
+  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#346415002 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#346415002\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"346415002\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -821,7 +821,7 @@ v: {
   "system" : "http://snomed.info/sct",
   "version" : "http://snomed.info/sct/731000124108/version/20250901",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[undefined#890302005 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#890302005\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in () at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"890302005\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
+  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#890302005 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#890302005\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"890302005\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -849,7 +849,7 @@ v: {
   "system" : "http://snomed.info/sct",
   "version" : "http://snomed.info/sct/731000124108/version/20250901",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[undefined#11713004 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#11713004\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in () at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"11713004\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
+  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#11713004 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#11713004\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"11713004\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -904,7 +904,7 @@ v: {
   "system" : "http://snomed.info/sct",
   "version" : "http://snomed.info/sct/731000124108/version/20250901",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[undefined#31212001 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#31212001\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in () at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"31212001\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
+  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#31212001 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#31212001\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"31212001\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -1391,7 +1391,7 @@ v: {
   "system" : "http://snomed.info/sct",
   "version" : "http://snomed.info/sct/731000124108/version/20250901",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[undefined#226355009 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#226355009\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in () at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"226355009\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
+  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#226355009 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#226355009\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"226355009\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -1423,8 +1423,8 @@ e: {
       "url" : "http://hl7.org/fhir/StructureDefinition/valueset-unclosed",
       "valueBoolean" : true
     }],
-    "identifier" : "urn:uuid:1867c5a3-3257-48ae-bc8b-238f2fb63145",
-    "timestamp" : "2026-02-26T00:12:31.442Z",
+    "identifier" : "urn:uuid:2ac06459-6302-45e4-98ae-dab9ba085848",
+    "timestamp" : "2026-03-03T18:45:33.512Z",
     "total" : 77,
     "offset" : 0,
     "parameter" : [{
@@ -1859,8 +1859,8 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:ae9b5b55-83ee-418f-b8b6-01107ec4553a",
-    "timestamp" : "2026-02-26T00:15:06.326Z",
+    "identifier" : "urn:uuid:90f4dfad-0661-47a6-b6e0-6d58cd54acb6",
+    "timestamp" : "2026-03-03T18:48:13.527Z",
     "total" : 1,
     "offset" : 0,
     "parameter" : [{
@@ -1921,8 +1921,8 @@ e: {
       "url" : "http://hl7.org/fhir/StructureDefinition/valueset-unclosed",
       "valueBoolean" : true
     }],
-    "identifier" : "urn:uuid:724b4a00-22f9-4641-8b51-85e97ca4c2ab",
-    "timestamp" : "2026-02-26T00:15:06.882Z",
+    "identifier" : "urn:uuid:b428498e-271e-4246-8a59-f8a7d53a8a9c",
+    "timestamp" : "2026-03-03T18:48:13.979Z",
     "offset" : 0,
     "parameter" : [{
       "name" : "excludeNested",
@@ -6977,8 +6977,8 @@ e: {
       "url" : "http://hl7.org/fhir/StructureDefinition/valueset-unclosed",
       "valueBoolean" : true
     }],
-    "identifier" : "urn:uuid:3159d432-270a-4500-ad5a-5c49f9a026cd",
-    "timestamp" : "2026-02-26T00:15:08.541Z",
+    "identifier" : "urn:uuid:853add70-6fd1-48d9-81eb-f2c2eb7b2fb4",
+    "timestamp" : "2026-03-03T18:48:15.042Z",
     "offset" : 0,
     "parameter" : [{
       "name" : "excludeNested",
@@ -12033,8 +12033,8 @@ e: {
       "url" : "http://hl7.org/fhir/StructureDefinition/valueset-unclosed",
       "valueBoolean" : true
     }],
-    "identifier" : "urn:uuid:5f2bd0cd-8ed3-4a26-890b-0f5be75ccfa0",
-    "timestamp" : "2026-02-26T00:15:09.523Z",
+    "identifier" : "urn:uuid:83a58870-4381-4bb3-ba76-f96021118afc",
+    "timestamp" : "2026-03-03T18:48:15.948Z",
     "offset" : 0,
     "parameter" : [{
       "name" : "excludeNested",
@@ -17086,7 +17086,7 @@ v: {
   "system" : "http://snomed.info/sct",
   "version" : "http://snomed.info/sct/731000124108/version/20250901",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[undefined#386053000 (\"Evaluation procedure (procedure)\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#386053000\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in () at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"386053000\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
+  "diagnostics" : "0ms tx-op\n0ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#386053000 (\"Evaluation procedure (procedure)\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#386053000\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"386053000\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -17114,7 +17114,7 @@ v: {
   "system" : "http://snomed.info/sct",
   "version" : "http://snomed.info/sct/731000124108/version/20250901",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://hl7.org/fhir/us/core/ValueSet/us-core-servicerequest-category--1|7.0.0: Analysing http://hl7.org/fhir/us/core/ValueSet/us-core-servicerequest-category--1|7.0.0 for validation purposes\n1ms http://hl7.org/fhir/us/core/ValueSet/us-core-servicerequest-category--1|7.0.0: Prepare include[0]: \"()\"\n1ms http://hl7.org/fhir/us/core/ValueSet/us-core-servicerequest-category--1|7.0.0: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/us/core/ValueSet/us-core-servicerequest-category--1|7.0.0: Validate \"[undefined#386053000 (\"undefined\")]\"\n1ms http://hl7.org/fhir/us/core/ValueSet/us-core-servicerequest-category--1|7.0.0: Check \"http://snomed.info/sct#386053000\"\n1ms http://hl7.org/fhir/us/core/ValueSet/us-core-servicerequest-category--1|7.0.0: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/us/core/ValueSet/us-core-servicerequest-category--1|7.0.0: check code in () at Coding\n1ms http://hl7.org/fhir/us/core/ValueSet/us-core-servicerequest-category--1|7.0.0: Code \"386053000\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
+  "diagnostics" : "0ms tx-op\n1ms http://hl7.org/fhir/us/core/ValueSet/us-core-servicerequest-category--1|7.0.0: Analysing http://hl7.org/fhir/us/core/ValueSet/us-core-servicerequest-category--1|7.0.0 for validation purposes\n1ms http://hl7.org/fhir/us/core/ValueSet/us-core-servicerequest-category--1|7.0.0: Parameters: disp-lang=en, generate-narrative, default-to-latest\n1ms http://hl7.org/fhir/us/core/ValueSet/us-core-servicerequest-category--1|7.0.0: Version Rules: default:http://snomed.info/sct#http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/us/core/ValueSet/us-core-servicerequest-category--1|7.0.0: Prepare include[0]: \"(http://snomed.info/sct)(386053000,410606002)\"\n1ms http://hl7.org/fhir/us/core/ValueSet/us-core-servicerequest-category--1|7.0.0: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/us/core/ValueSet/us-core-servicerequest-category--1|7.0.0: Validate \"[http://snomed.info/sct#386053000 (\"undefined\")]\"\n1ms http://hl7.org/fhir/us/core/ValueSet/us-core-servicerequest-category--1|7.0.0: Check \"http://snomed.info/sct#386053000\"\n1ms http://hl7.org/fhir/us/core/ValueSet/us-core-servicerequest-category--1|7.0.0: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/us/core/ValueSet/us-core-servicerequest-category--1|7.0.0: check code in (http://snomed.info/sct)(386053000,410606002) at Coding\n1ms http://hl7.org/fhir/us/core/ValueSet/us-core-servicerequest-category--1|7.0.0: Code \"386053000\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -17143,7 +17143,7 @@ v: {
   "system" : "http://snomed.info/sct",
   "version" : "http://snomed.info/sct/731000124108/version/20250901",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[undefined#386053000 (\"Evaluation procedure (procedure)\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#386053000\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in () at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"386053000\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
+  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#386053000 (\"Evaluation procedure (procedure)\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#386053000\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"386053000\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -17174,7 +17174,7 @@ v: {
   "system" : "http://snomed.info/sct",
   "version" : "http://snomed.info/sct/731000124108/version/20250901",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[undefined#386053000 (\"Evaluation procedure (procedure)\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#386053000\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in () at CodeableConcept.coding[0]\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"386053000\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
+  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#386053000 (\"Evaluation procedure (procedure)\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#386053000\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at CodeableConcept.coding[0]\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"386053000\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -17205,7 +17205,7 @@ v: {
   "system" : "http://snomed.info/sct",
   "version" : "http://snomed.info/sct/731000124108/version/20250901",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://hl7.org/fhir/ValueSet/c80-practice-codes|4.0.1: Analysing http://hl7.org/fhir/ValueSet/c80-practice-codes|4.0.1 for validation purposes\n1ms http://hl7.org/fhir/ValueSet/c80-practice-codes|4.0.1: Prepare include[0]: \"()\"\n2ms http://hl7.org/fhir/ValueSet/c80-practice-codes|4.0.1: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n2ms http://hl7.org/fhir/ValueSet/c80-practice-codes|4.0.1: Validate \"[undefined#394814009 (\"General practice (specialty)\")]\"\n2ms http://hl7.org/fhir/ValueSet/c80-practice-codes|4.0.1: Check \"http://snomed.info/sct#394814009\"\n2ms http://hl7.org/fhir/ValueSet/c80-practice-codes|4.0.1: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108\n2ms http://hl7.org/fhir/ValueSet/c80-practice-codes|4.0.1: check code in () at CodeableConcept.coding[0]\n2ms http://hl7.org/fhir/ValueSet/c80-practice-codes|4.0.1: Code \"394814009\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
+  "diagnostics" : "0ms tx-op\n1ms http://hl7.org/fhir/ValueSet/c80-practice-codes|4.0.1: Analysing http://hl7.org/fhir/ValueSet/c80-practice-codes|4.0.1 for validation purposes\n1ms http://hl7.org/fhir/ValueSet/c80-practice-codes|4.0.1: Parameters: disp-lang=en, generate-narrative, default-to-latest\n1ms http://hl7.org/fhir/ValueSet/c80-practice-codes|4.0.1: Version Rules: default:http://snomed.info/sct#http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/ValueSet/c80-practice-codes|4.0.1: Prepare include[0]: \"(http://snomed.info/sct)(408467006,394577000,394578005,421661004,408462000,394579002,394804000,394580004,394803006,408480009,408454008,394809005,394592004,394600006,394601005,394581000,408478003,394812008,408444009,394582007,408475000,410005002,394583002,419772000,394584008,408443003,394802001,394915009,394814009,394808002,394811001,408446006,394586005,394916005,408472002,394597005,394598000,394807007,419192003,408468001,394593009,394813003,410001006,394589003,394591006,394599008,394649004,408470005,394585009,394821009,422191005,394594003,416304004,418960008,394882004,394806003,394588006,408459003,394607009,419610006,418058008,420208008,418652005,418535003,418862001,419365004,418002000,419983000,419170002,419472004,394539006,420112009,409968004,394587001,394913002,408440000,418112009,419815003,394914008,408455009,394602003,408447002,394810000,408450004,408476004,408469009,408466002,408471009,408464004,408441001,408465003,394605001,394608004,408461007,408460008,408460008,394606000,408449004,394608004,418018006,394604002,394609007,408474001,394610002,394611003,408477008,394801008,408463005,419321007,394576009,394590007,409967009,408448007,419043006,394612005,394733009,394732004)\"\n1ms http://hl7.org/fhir/ValueSet/c80-practice-codes|4.0.1: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/ValueSet/c80-practice-codes|4.0.1: Validate \"[http://snomed.info/sct#394814009 (\"General practice (specialty)\")]\"\n1ms http://hl7.org/fhir/ValueSet/c80-practice-codes|4.0.1: Check \"http://snomed.info/sct#394814009\"\n1ms http://hl7.org/fhir/ValueSet/c80-practice-codes|4.0.1: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/ValueSet/c80-practice-codes|4.0.1: check code in (http://snomed.info/sct)(408467006,394577000,394578005,421661004,408462000,394579002,394804000,394580004,394803006,408480009,408454008,394809005,394592004,394600006,394601005,394581000,408478003,394812008,408444009,394582007,408475000,410005002,394583002,419772000,394584008,408443003,394802001,394915009,394814009,394808002,394811001,408446006,394586005,394916005,408472002,394597005,394598000,394807007,419192003,408468001,394593009,394813003,410001006,394589003,394591006,394599008,394649004,408470005,394585009,394821009,422191005,394594003,416304004,418960008,394882004,394806003,394588006,408459003,394607009,419610006,418058008,420208008,418652005,418535003,418862001,419365004,418002000,419983000,419170002,419472004,394539006,420112009,409968004,394587001,394913002,408440000,418112009,419815003,394914008,408455009,394602003,408447002,394810000,408450004,408476004,408469009,408466002,408471009,408464004,408441001,408465003,394605001,394608004,408461007,408460008,408460008,394606000,408449004,394608004,418018006,394604002,394609007,408474001,394610002,394611003,408477008,394801008,408463005,419321007,394576009,394590007,409967009,408448007,419043006,394612005,394733009,394732004) at CodeableConcept.coding[0]\n1ms http://hl7.org/fhir/ValueSet/c80-practice-codes|4.0.1: Code \"394814009\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -17236,7 +17236,7 @@ v: {
   "system" : "http://snomed.info/sct",
   "version" : "http://snomed.info/sct/731000124108/version/20250901",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[undefined#310361003 (\"Non-urgent cardiological admission\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#310361003\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in () at CodeableConcept.coding[0]\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"310361003\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
+  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#310361003 (\"Non-urgent cardiological admission\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#310361003\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at CodeableConcept.coding[0]\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"310361003\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -17267,7 +17267,7 @@ v: {
   "system" : "http://snomed.info/sct",
   "version" : "http://snomed.info/sct/731000124108/version/20250901",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: Analysing http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1 for validation purposes\n1ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: Prepare include[0]: \"()\"\n1ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: Prepare include[1]: \"()\"\n1ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: Prepare include[2]: \"()\"\n1ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: Prepare include[3]: \"()\"\n1ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: Validate \"[undefined#34068001 (\"Heart valve replacement\")]\"\n1ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: Check \"http://snomed.info/sct#34068001\"\n1ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: check code in () at CodeableConcept.coding[0]\n6ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: Filter undefined is-a 404684003: Code \"34068001\" not found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n6ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108\n6ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: check code in () at CodeableConcept.coding[0]\n8ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: Filter undefined is-a 71388002: Code \"34068001\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
+  "diagnostics" : "0ms tx-op\n1ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: Analysing http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1 for validation purposes\n1ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: Parameters: disp-lang=en, generate-narrative, default-to-latest\n1ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: Version Rules: default:http://snomed.info/sct#http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: Prepare include[0]: \"(http://snomed.info/sct)(conceptis-a404684003)\"\n1ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: Prepare include[1]: \"(http://snomed.info/sct)(conceptis-a71388002)\"\n1ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: Prepare include[2]: \"(http://snomed.info/sct)(conceptis-a243796009)\"\n1ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: Prepare include[3]: \"(http://snomed.info/sct)(conceptis-a272379006)\"\n1ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: Validate \"[http://snomed.info/sct#34068001 (\"Heart valve replacement\")]\"\n1ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: Check \"http://snomed.info/sct#34068001\"\n1ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: check code in (http://snomed.info/sct)(conceptis-a404684003) at CodeableConcept.coding[0]\n6ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: Filter concept is-a 404684003: Code \"34068001\" not found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n6ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108\n6ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: check code in (http://snomed.info/sct)(conceptis-a71388002) at CodeableConcept.coding[0]\n8ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: Filter concept is-a 71388002: Code \"34068001\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -17298,7 +17298,7 @@ v: {
   "system" : "http://snomed.info/sct",
   "version" : "http://snomed.info/sct/731000124108/version/20250901",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[undefined#1145423002 (\"Azithromycin 250 mg oral tablet\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#1145423002\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in () at CodeableConcept.coding[0]\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"1145423002\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
+  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#1145423002 (\"Azithromycin 250 mg oral tablet\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#1145423002\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at CodeableConcept.coding[0]\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"1145423002\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -17329,7 +17329,7 @@ v: {
   "system" : "http://snomed.info/sct",
   "version" : "http://snomed.info/sct/731000124108/version/20250901",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[undefined#311504000 (\"With or after food\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#311504000\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in () at CodeableConcept.coding[0]\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"311504000\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
+  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#311504000 (\"With or after food\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#311504000\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at CodeableConcept.coding[0]\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"311504000\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -17360,7 +17360,7 @@ v: {
   "system" : "http://snomed.info/sct",
   "version" : "http://snomed.info/sct/731000124108/version/20250901",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[undefined#26643006 (\"Oral Route\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#26643006\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in () at CodeableConcept.coding[0]\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"26643006\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
+  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#26643006 (\"Oral Route\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#26643006\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at CodeableConcept.coding[0]\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"26643006\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -17391,7 +17391,7 @@ v: {
   "system" : "http://snomed.info/sct",
   "version" : "http://snomed.info/sct/731000124108/version/20250901",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[undefined#421521009 (\"Swallow - dosing instruction imperative (qualifier value)\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#421521009\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in () at CodeableConcept.coding[0]\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"421521009\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
+  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#421521009 (\"Swallow - dosing instruction imperative (qualifier value)\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#421521009\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at CodeableConcept.coding[0]\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"421521009\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -17422,7 +17422,7 @@ v: {
   "system" : "http://snomed.info/sct",
   "version" : "http://snomed.info/sct/731000124108/version/20250901",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: Analysing http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0 for validation purposes\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: Prepare include[0]: \"()\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: Prepare include[1]: \"()\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: Prepare include[2]: \"()\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: Prepare include[3]: \"()\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: Prepare include[4]: \"()\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: Validate \"[undefined#227493005 (\"Cashew Nut\")]\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: Check \"http://snomed.info/sct#227493005\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: check code in () at CodeableConcept.coding[0]\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: Filter undefined is-a 762766007: Code \"227493005\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
+  "diagnostics" : "0ms tx-op\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: Analysing http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0 for validation purposes\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: Parameters: disp-lang=en, generate-narrative, default-to-latest\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: Version Rules: default:http://snomed.info/sct#http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: Prepare include[0]: \"(http://snomed.info/sct)(conceptis-a762766007)\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: Prepare include[1]: \"(http://snomed.info/sct)(conceptis-a412413001)\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: Prepare include[2]: \"(http://snomed.info/sct)(conceptis-a346415002)\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: Prepare include[3]: \"(http://snomed.info/sct)(conceptis-a890302005)\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: Prepare include[4]: \"(http://snomed.info/sct)(11713004,444923006)\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: Validate \"[http://snomed.info/sct#227493005 (\"Cashew Nut\")]\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: Check \"http://snomed.info/sct#227493005\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: check code in (http://snomed.info/sct)(conceptis-a762766007) at CodeableConcept.coding[0]\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: Filter concept is-a 762766007: Code \"227493005\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -17453,7 +17453,7 @@ v: {
   "error" : "No valid coding was found for the value set 'http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0'",
   "class" : "UNKNOWN",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Analysing http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0 for validation purposes\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Prepare include[0]: \"()\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Prepare include[1]: \"()\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Prepare include[2]: \"()\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Validate \"[undefined#15108003 (\"Restricted fiber diet\")]\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Check \"http://snomed.info/sct#15108003\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: check code in () at CodeableConcept.coding[0]\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Filter undefined is-a 182922004: Code \"15108003\" not found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: check code in () at CodeableConcept.coding[0]\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Filter undefined is-a 229912004: Code \"15108003\" not found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: check code in () at CodeableConcept.coding[0]",
+  "diagnostics" : "0ms tx-op\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Analysing http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0 for validation purposes\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Parameters: disp-lang=en, generate-narrative, default-to-latest\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Version Rules: default:http://snomed.info/sct#http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Prepare include[0]: \"(http://snomed.info/sct)(conceptis-a182922004)\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Prepare include[1]: \"(http://snomed.info/sct)(conceptis-a229912004)\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Prepare include[2]: \"(http://snomed.info/sct)(35011000087100,1297276008,40043006)\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Validate \"[http://snomed.info/sct#15108003 (\"Restricted fiber diet\")]\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Check \"http://snomed.info/sct#15108003\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: check code in (http://snomed.info/sct)(conceptis-a182922004) at CodeableConcept.coding[0]\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Filter concept is-a 182922004: Code \"15108003\" not found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: check code in (http://snomed.info/sct)(conceptis-a229912004) at CodeableConcept.coding[0]\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Filter concept is-a 229912004: Code \"15108003\" not found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: check code in (http://snomed.info/sct)(35011000087100,1297276008,40043006) at CodeableConcept.coding[0]",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",
@@ -17523,7 +17523,7 @@ v: {
   "error" : "No valid coding was found for the value set 'http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0'",
   "class" : "UNKNOWN",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Analysing http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0 for validation purposes\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Prepare include[0]: \"()\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Prepare include[1]: \"()\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Prepare include[2]: \"()\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Validate \"[undefined#16208003 (\"Low fat diet\")]\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Check \"http://snomed.info/sct#16208003\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: check code in () at CodeableConcept.coding[0]\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Filter undefined is-a 182922004: Code \"16208003\" not found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: check code in () at CodeableConcept.coding[0]\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Filter undefined is-a 229912004: Code \"16208003\" not found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: check code in () at CodeableConcept.coding[0]",
+  "diagnostics" : "0ms tx-op\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Analysing http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0 for validation purposes\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Parameters: disp-lang=en, generate-narrative, default-to-latest\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Version Rules: default:http://snomed.info/sct#http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Prepare include[0]: \"(http://snomed.info/sct)(conceptis-a182922004)\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Prepare include[1]: \"(http://snomed.info/sct)(conceptis-a229912004)\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Prepare include[2]: \"(http://snomed.info/sct)(35011000087100,1297276008,40043006)\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Validate \"[http://snomed.info/sct#16208003 (\"Low fat diet\")]\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Check \"http://snomed.info/sct#16208003\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: check code in (http://snomed.info/sct)(conceptis-a182922004) at CodeableConcept.coding[0]\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Filter concept is-a 182922004: Code \"16208003\" not found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: check code in (http://snomed.info/sct)(conceptis-a229912004) at CodeableConcept.coding[0]\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Filter concept is-a 229912004: Code \"16208003\" not found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: check code in (http://snomed.info/sct)(35011000087100,1297276008,40043006) at CodeableConcept.coding[0]",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",
@@ -17592,7 +17592,7 @@ v: {
   "error" : "No valid coding was found for the value set 'http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code|2.2.0'",
   "class" : "UNKNOWN",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code|2.2.0: Analysing http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code|2.2.0 for validation purposes\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code|2.2.0: Prepare include[0]: \"()\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code|2.2.0: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code|2.2.0: Prepare include[1]: \"()\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code|2.2.0: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code|2.2.0: Validate \"[undefined#256674009 (\"Fat\")]\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code|2.2.0: Check \"http://snomed.info/sct#256674009\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code|2.2.0: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code|2.2.0: check code in () at CodeableConcept.coding[0]\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code|2.2.0: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code|2.2.0: check code in () at CodeableConcept.coding[0]\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code|2.2.0: Filter undefined is-a 226355009: Code \"256674009\" not found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
+  "diagnostics" : "0ms tx-op\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code|2.2.0: Analysing http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code|2.2.0 for validation purposes\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code|2.2.0: Parameters: disp-lang=en, generate-narrative, default-to-latest\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code|2.2.0: Version Rules: default:http://snomed.info/sct#http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code|2.2.0: Prepare include[0]: \"(http://snomed.info/sct)(31212001,68356001,71482002,31539008,19751002,63793008,60471000,41503000,111064005,29183001,43268001,57272005,70726008,73196006,34865002,2832002,11555005,25958007)\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code|2.2.0: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code|2.2.0: Prepare include[1]: \"(http://snomed.info/sct)(conceptis-a226355009)\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code|2.2.0: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code|2.2.0: Validate \"[http://snomed.info/sct#256674009 (\"Fat\")]\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code|2.2.0: Check \"http://snomed.info/sct#256674009\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code|2.2.0: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code|2.2.0: check code in (http://snomed.info/sct)(31212001,68356001,71482002,31539008,19751002,63793008,60471000,41503000,111064005,29183001,43268001,57272005,70726008,73196006,34865002,2832002,11555005,25958007) at CodeableConcept.coding[0]\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code|2.2.0: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code|2.2.0: check code in (http://snomed.info/sct)(conceptis-a226355009) at CodeableConcept.coding[0]\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code|2.2.0: Filter concept is-a 226355009: Code \"256674009\" not found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",
@@ -17662,7 +17662,7 @@ v: {
   "system" : "http://snomed.info/sct",
   "version" : "http://snomed.info/sct/731000124108/version/20250901",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[undefined#726551006 (\"Contrast enhanced spectral mammography (Procedure)\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#726551006\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in () at CodeableConcept.coding[0]\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"726551006\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
+  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#726551006 (\"Contrast enhanced spectral mammography (Procedure)\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#726551006\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at CodeableConcept.coding[0]\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"726551006\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -17693,7 +17693,7 @@ v: {
   "system" : "http://snomed.info/sct",
   "version" : "http://snomed.info/sct/731000124108/version/20250901",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[undefined#108252007 (\"Laboratory procedure\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#108252007\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in () at CodeableConcept.coding[0]\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"108252007\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
+  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#108252007 (\"Laboratory procedure\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#108252007\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at CodeableConcept.coding[0]\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"108252007\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -17725,8 +17725,8 @@ e: {
       "url" : "http://hl7.org/fhir/StructureDefinition/valueset-unclosed",
       "valueBoolean" : true
     }],
-    "identifier" : "urn:uuid:e73da089-8316-447b-8b86-6b71db42a4c3",
-    "timestamp" : "2026-02-26T00:21:27.958Z",
+    "identifier" : "urn:uuid:2700d403-ecef-4a82-ba7b-eeedf6133fae",
+    "timestamp" : "2026-03-03T18:55:24.201Z",
     "total" : 275,
     "offset" : 0,
     "parameter" : [{
@@ -19157,8 +19157,8 @@ e: {
       "url" : "http://hl7.org/fhir/StructureDefinition/valueset-unclosed",
       "valueBoolean" : true
     }],
-    "identifier" : "urn:uuid:6618bb9a-7e45-4d9f-bed8-9a5cd12790c9",
-    "timestamp" : "2026-02-26T00:21:28.725Z",
+    "identifier" : "urn:uuid:b8c9fb34-63ce-42e8-9f57-00017145e841",
+    "timestamp" : "2026-03-03T18:55:24.923Z",
     "total" : 14,
     "offset" : 0,
     "parameter" : [{
@@ -19284,8 +19284,8 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:b4982081-11c7-4a1c-a25b-fc99caf2546f",
-    "timestamp" : "2026-02-26T00:21:29.272Z",
+    "identifier" : "urn:uuid:000e6314-2cb1-4530-89e1-1a83c62f98fe",
+    "timestamp" : "2026-03-03T18:55:25.418Z",
     "total" : 3,
     "offset" : 0,
     "parameter" : [{
@@ -19356,8 +19356,8 @@ e: {
       "url" : "http://hl7.org/fhir/StructureDefinition/valueset-unclosed",
       "valueBoolean" : true
     }],
-    "identifier" : "urn:uuid:d2a5fe47-ad26-4a96-b4e6-5a413a7078dc",
-    "timestamp" : "2026-02-26T00:21:31.351Z",
+    "identifier" : "urn:uuid:fc33b02c-ea38-4411-95d7-0d734cb3bf25",
+    "timestamp" : "2026-03-03T18:55:26.259Z",
     "offset" : 0,
     "parameter" : [{
       "name" : "excludeNested",
@@ -24412,8 +24412,8 @@ e: {
       "url" : "http://hl7.org/fhir/StructureDefinition/valueset-unclosed",
       "valueBoolean" : true
     }],
-    "identifier" : "urn:uuid:c0b67794-b9cd-4823-b7f1-85ce0c30d56a",
-    "timestamp" : "2026-02-26T00:21:32.819Z",
+    "identifier" : "urn:uuid:eb88cddc-0c08-4a4a-afcd-12395aa52568",
+    "timestamp" : "2026-03-03T18:55:27.270Z",
     "total" : 31,
     "offset" : 0,
     "parameter" : [{
@@ -24624,8 +24624,8 @@ e: {
       "url" : "http://hl7.org/fhir/StructureDefinition/valueset-unclosed",
       "valueBoolean" : true
     }],
-    "identifier" : "urn:uuid:030080af-43be-446e-9eb9-7d02446d9a83",
-    "timestamp" : "2026-02-26T00:21:33.366Z",
+    "identifier" : "urn:uuid:4de4ebc4-6927-4553-98a8-14216c9acd57",
+    "timestamp" : "2026-03-03T18:55:27.785Z",
     "total" : 95,
     "offset" : 0,
     "parameter" : [{
@@ -25156,8 +25156,8 @@ e: {
       "url" : "http://hl7.org/fhir/StructureDefinition/valueset-unclosed",
       "valueBoolean" : true
     }],
-    "identifier" : "urn:uuid:caef4c32-6120-4eaa-a2bc-a1dec3bc7869",
-    "timestamp" : "2026-02-26T00:21:34.037Z",
+    "identifier" : "urn:uuid:cda95b07-2d03-4243-8121-79f1a9931efc",
+    "timestamp" : "2026-03-03T18:55:28.400Z",
     "total" : 2,
     "offset" : 0,
     "parameter" : [{
@@ -25220,8 +25220,8 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:62179dfc-5ac8-4ba2-9f6f-18104d5543cd",
-    "timestamp" : "2026-02-26T00:21:34.585Z",
+    "identifier" : "urn:uuid:687e2d5a-482e-4855-8f44-886234f7bfe5",
+    "timestamp" : "2026-03-03T18:55:28.931Z",
     "total" : 2,
     "offset" : 0,
     "parameter" : [{
@@ -25332,8 +25332,8 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:da4a03cc-5966-4b62-bf7c-0cc14139d93b",
-    "timestamp" : "2026-02-26T00:21:39.945Z",
+    "identifier" : "urn:uuid:e1f9bcba-a6fe-4e5e-ad69-8203ae6583f0",
+    "timestamp" : "2026-03-03T18:55:29.897Z",
     "total" : 18,
     "offset" : 0,
     "parameter" : [{
@@ -25479,8 +25479,8 @@ e: {
       "url" : "http://hl7.org/fhir/StructureDefinition/valueset-unclosed",
       "valueBoolean" : true
     }],
-    "identifier" : "urn:uuid:4c40a83f-f927-4db6-a75b-0a6c4d3d35d1",
-    "timestamp" : "2026-02-26T00:21:40.491Z",
+    "identifier" : "urn:uuid:e91af5ab-9ee8-4f40-b693-634c8f880c0f",
+    "timestamp" : "2026-03-03T18:55:30.369Z",
     "total" : 496,
     "offset" : 0,
     "parameter" : [{

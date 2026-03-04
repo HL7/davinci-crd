@@ -1,2 +1,14 @@
 {
+  "systems" : [{
+    "system" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/coverage-information-codes",
+    "url" : "http://hl7.org/fhir/us/davinci-crd/CodeSystem/coverage-information-codes",
+    "authoritative" : [],
+    "candidates" : ["https://tx.fhir.org/r4"]
+  },
+  {
+    "system" : "http://snomed.info/sct",
+    "url" : "http://snomed.info/sct",
+    "authoritative" : [],
+    "candidates" : ["https://tx.fhir.org/r4"]
+  }]
 }

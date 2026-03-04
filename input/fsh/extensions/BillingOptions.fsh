@@ -7,7 +7,7 @@ Description: "Identifies billing codes that could potentially be used for this c
 * ^context[0].type = #element
 * ^context[=].expression = "Appointment.serviceType"
 * ^context[+].type = #fhirpath
-* ^context[=].expression = "CommunicationRequest.payload.content.extension('http://hl7.org/fhir/5.0/StructureDefinition/extension-CommunicationRequest.payload.content%5Bx%5D')"
+* ^context[=].expression = "CommunicationRequest.payload.content.extension('http://hl7.org/fhir/5.0/StructureDefinition/extension-CommunicationRequest.payload.content')"
 * ^context[+].type = #element
 * ^context[=].expression = "Device"
 * ^context[+].type = #fhirpath

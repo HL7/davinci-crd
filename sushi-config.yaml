@@ -55,12 +55,17 @@ releaseLabel: STU 2.2
 # │  To use a provided input/includes/menu.xml file, delete the "menu" property below.             │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 dependencies:
-  hl7.terminology.r4:
-    id: terminology
-    version: 7.0.1
-    uri: http://terminology.hl7.org/ImplementationGuide/hl7.terminology
-    reason: |
-      Provides the latest versions of FHIR code systems and value sets, which are referenced by this IG
+#  hl7.terminology.r4:
+#    id: terminology
+#    version: 7.0.1
+#    uri: http://terminology.hl7.org/ImplementationGuide/hl7.terminology
+#    reason: |
+#      Provides the latest versions of FHIR code systems and value sets, which are referenced by this IG
+#  hl7.fhir.uv.xver-r5.r4:
+#    id: xver
+#    version: dev
+#    reason: |
+#      Needed to pre-adopt R5 Questionnaire elements in R4
   hl7.fhir.us.core:
     id: uscore7
     version: 7.0.0
@@ -81,7 +86,7 @@ dependencies:
       Defines USCDI v1 EHR expectations on a range of resources that will be passed to and/or queried by CRD servers.  
   hl7.fhir.uv.sdc:
     id: sdc
-    version: 3.0.0
+    version: current
     reason: |
       Defines expectations for Questionnaires prompted by cards
   hl7.fhir.us.davinci-hrex:
@@ -89,11 +94,11 @@ dependencies:
     version: current
     reason: |
       Defines common conformance rules across all Da Vinci IGs, as well as additional constraints and profiles beyond U.S. Core
-  hl7.fhir.extensions.r5:
-    id: r5ext
-    version: 4.0.1
-    reason: |
-      Makes available certain R5 elements for use as part of this R4 IG
+#  hl7.fhir.extensions.r5:
+#    id: r5ext
+#    version: 4.0.1
+#    reason: |
+#      Makes available certain R5 elements for use as part of this R4 IG
   us.nlm.vsac:
     id: vsac
     uri: http://fhir.org/packages/us.nlm.vsac/ImplementationGuide/us.nlm.vsac
@@ -101,10 +106,9 @@ dependencies:
     reason: |
       Uses the latest version of the VSAC codes
   hl7.fhir.uv.tools.r4:
-#  hl7.fhir.uv.tools:
     id: tools
     uri: http://hl7.org/fhir/tools/ImplementationGuide/hl7.fhir.uv.tools
-    version: 1.0.0
+    version: 1.1.0
     reason: |
       Defines the CDS Hooks logical models
   hl7.fhir.uv.cds-hooks:

@@ -1,20 +1,16 @@
 {
   "https://codesystem.x12.org/005010/1365" : null,
   "http://unstats.un.org/unsd/methods/m49/m49.htm" : null,
-  "https://www.usps.com/" : {
-    "server" : "http://tx.fhir.org/r4",
-    "filename" : "cs-7076d9b2-f989-478e-b1e2-3e6a45df092b.json"
-  },
   "urn:ietf:bcp:13" : null,
   "http://nucc.org/provider-taxonomy" : {
     "server" : "http://tx.fhir.org/r4",
-    "filename" : "cs-90a0e150-1e2f-449f-a19c-414a2118afe4.json"
+    "filename" : "cs-94c0a32c-ad7d-4699-ac88-774566fb8210.json"
   },
   "https://example.org/some-organization/device-codes" : null,
   "http://example.org/fhir/CodeSystem/SomeCodes" : null,
   "http://snomed.info/sct" : {
     "server" : "http://tx.fhir.org/r4",
-    "filename" : "cs-21df0f74-ade1-4315-a769-a320cc665c82.json"
+    "filename" : "cs-76ceb939-4b4d-454d-a35e-dbb2d2fcd1e1.json"
   },
   "http://codesystem.x12.org/005010/1365" : null
 }

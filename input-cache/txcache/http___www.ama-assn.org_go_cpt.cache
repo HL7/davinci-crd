@@ -19,7 +19,7 @@ v: {
   "system" : "http://www.ama-assn.org/go/cpt",
   "version" : "2023",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[undefined#77067 (\"undefined\")]\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#77067\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n1ms http://www.ama-assn.org/go/cpt/vs|2023: check code in () at Coding\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"77067\" found in http://www.ama-assn.org/go/cpt|2023",
+  "diagnostics" : "0ms tx-op\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[http://www.ama-assn.org/go/cpt#77067 (\"undefined\")]\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#77067\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n1ms http://www.ama-assn.org/go/cpt/vs|2023: check code in (http://www.ama-assn.org/go/cpt) at Coding\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"77067\" found in http://www.ama-assn.org/go/cpt|2023",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -38,7 +38,7 @@ v: {
 }}####
 e: {
   "from-server" : true,
-  "error" : "Error from https://tx.fhir.org/r4: Error: 0ms tx-op\n1ms start working\n1ms compose #1"
+  "error" : "Error from https://tx.fhir.org/r4: Error: The code System \"http://www.ama-assn.org/go/cpt\" has a grammar, and cannot be enumerated directly"
 }
 -------------------------------------------------------------------------------------
 {"code" : {
@@ -62,7 +62,7 @@ v: {
   "error" : "Unknown code '0795T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'",
   "class" : "UNKNOWN",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[undefined#0795T (\"undefined\")]\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#0795T\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n1ms http://www.ama-assn.org/go/cpt/vs|2023: check code in () at CodeableConcept.coding[0]\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"0795T\" not found in http://www.ama-assn.org/go/cpt|2023: undefined",
+  "diagnostics" : "0ms tx-op\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[http://www.ama-assn.org/go/cpt#0795T (\"undefined\")]\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#0795T\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n1ms http://www.ama-assn.org/go/cpt/vs|2023: check code in (http://www.ama-assn.org/go/cpt) at CodeableConcept.coding[0]\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"0795T\" not found in http://www.ama-assn.org/go/cpt|2023: undefined",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",
@@ -111,7 +111,7 @@ v: {
   "error" : "Unknown code '0796T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'",
   "class" : "UNKNOWN",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[undefined#0796T (\"undefined\")]\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#0796T\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n1ms http://www.ama-assn.org/go/cpt/vs|2023: check code in () at CodeableConcept.coding[0]\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"0796T\" not found in http://www.ama-assn.org/go/cpt|2023: undefined",
+  "diagnostics" : "0ms tx-op\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[http://www.ama-assn.org/go/cpt#0796T (\"undefined\")]\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#0796T\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n1ms http://www.ama-assn.org/go/cpt/vs|2023: check code in (http://www.ama-assn.org/go/cpt) at CodeableConcept.coding[0]\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"0796T\" not found in http://www.ama-assn.org/go/cpt|2023: undefined",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",
@@ -160,7 +160,7 @@ v: {
   "error" : "Unknown code '0797T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'",
   "class" : "UNKNOWN",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[undefined#0797T (\"undefined\")]\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#0797T\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n1ms http://www.ama-assn.org/go/cpt/vs|2023: check code in () at CodeableConcept.coding[0]\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"0797T\" not found in http://www.ama-assn.org/go/cpt|2023: undefined",
+  "diagnostics" : "0ms tx-op\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[http://www.ama-assn.org/go/cpt#0797T (\"undefined\")]\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#0797T\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n1ms http://www.ama-assn.org/go/cpt/vs|2023: check code in (http://www.ama-assn.org/go/cpt) at CodeableConcept.coding[0]\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"0797T\" not found in http://www.ama-assn.org/go/cpt|2023: undefined",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",
@@ -209,7 +209,7 @@ v: {
   "error" : "Unknown code '0804T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'",
   "class" : "UNKNOWN",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[undefined#0804T (\"undefined\")]\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#0804T\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n1ms http://www.ama-assn.org/go/cpt/vs|2023: check code in () at CodeableConcept.coding[0]\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"0804T\" not found in http://www.ama-assn.org/go/cpt|2023: undefined",
+  "diagnostics" : "0ms tx-op\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[http://www.ama-assn.org/go/cpt#0804T (\"undefined\")]\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#0804T\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n1ms http://www.ama-assn.org/go/cpt/vs|2023: check code in (http://www.ama-assn.org/go/cpt) at CodeableConcept.coding[0]\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"0804T\" not found in http://www.ama-assn.org/go/cpt|2023: undefined",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",
@@ -258,7 +258,7 @@ v: {
   "error" : "Unknown code '0823T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'",
   "class" : "UNKNOWN",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[undefined#0823T (\"undefined\")]\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#0823T\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n1ms http://www.ama-assn.org/go/cpt/vs|2023: check code in () at CodeableConcept.coding[0]\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"0823T\" not found in http://www.ama-assn.org/go/cpt|2023: undefined",
+  "diagnostics" : "0ms tx-op\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[http://www.ama-assn.org/go/cpt#0823T (\"undefined\")]\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#0823T\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n1ms http://www.ama-assn.org/go/cpt/vs|2023: check code in (http://www.ama-assn.org/go/cpt) at CodeableConcept.coding[0]\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"0823T\" not found in http://www.ama-assn.org/go/cpt|2023: undefined",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",
@@ -307,7 +307,7 @@ v: {
   "error" : "Unknown code '0915T' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'",
   "class" : "UNKNOWN",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[undefined#0915T (\"undefined\")]\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#0915T\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n1ms http://www.ama-assn.org/go/cpt/vs|2023: check code in () at CodeableConcept.coding[0]\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"0915T\" not found in http://www.ama-assn.org/go/cpt|2023: undefined",
+  "diagnostics" : "0ms tx-op\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[http://www.ama-assn.org/go/cpt#0915T (\"undefined\")]\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#0915T\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n1ms http://www.ama-assn.org/go/cpt/vs|2023: check code in (http://www.ama-assn.org/go/cpt) at CodeableConcept.coding[0]\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"0915T\" not found in http://www.ama-assn.org/go/cpt|2023: undefined",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",
@@ -358,7 +358,7 @@ v: {
   "system" : "http://www.ama-assn.org/go/cpt",
   "version" : "2023",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[undefined#99211 (\"undefined\")]\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#99211\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n1ms http://www.ama-assn.org/go/cpt/vs|2023: check code in () at CodeableConcept.coding[0]\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"99211\" found in http://www.ama-assn.org/go/cpt|2023",
+  "diagnostics" : "0ms tx-op\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[http://www.ama-assn.org/go/cpt#99211 (\"undefined\")]\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#99211\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n1ms http://www.ama-assn.org/go/cpt/vs|2023: check code in (http://www.ama-assn.org/go/cpt) at CodeableConcept.coding[0]\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"99211\" found in http://www.ama-assn.org/go/cpt|2023",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -388,7 +388,7 @@ v: {
   "system" : "http://www.ama-assn.org/go/cpt",
   "version" : "2023",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[undefined#77061 (\"undefined\")]\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#77061\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n1ms http://www.ama-assn.org/go/cpt/vs|2023: check code in () at CodeableConcept.coding[0]\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"77061\" found in http://www.ama-assn.org/go/cpt|2023",
+  "diagnostics" : "0ms tx-op\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[http://www.ama-assn.org/go/cpt#77061 (\"undefined\")]\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#77061\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n1ms http://www.ama-assn.org/go/cpt/vs|2023: check code in (http://www.ama-assn.org/go/cpt) at CodeableConcept.coding[0]\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"77061\" found in http://www.ama-assn.org/go/cpt|2023",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -418,7 +418,7 @@ v: {
   "system" : "http://www.ama-assn.org/go/cpt",
   "version" : "2023",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[undefined#77062 (\"undefined\")]\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#77062\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n1ms http://www.ama-assn.org/go/cpt/vs|2023: check code in () at CodeableConcept.coding[0]\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"77062\" found in http://www.ama-assn.org/go/cpt|2023",
+  "diagnostics" : "0ms tx-op\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[http://www.ama-assn.org/go/cpt#77062 (\"undefined\")]\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#77062\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n1ms http://www.ama-assn.org/go/cpt/vs|2023: check code in (http://www.ama-assn.org/go/cpt) at CodeableConcept.coding[0]\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"77062\" found in http://www.ama-assn.org/go/cpt|2023",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -448,7 +448,7 @@ v: {
   "system" : "http://www.ama-assn.org/go/cpt",
   "version" : "2023",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[undefined#77065 (\"undefined\")]\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#77065\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n1ms http://www.ama-assn.org/go/cpt/vs|2023: check code in () at CodeableConcept.coding[0]\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"77065\" found in http://www.ama-assn.org/go/cpt|2023",
+  "diagnostics" : "0ms tx-op\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[http://www.ama-assn.org/go/cpt#77065 (\"undefined\")]\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#77065\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n1ms http://www.ama-assn.org/go/cpt/vs|2023: check code in (http://www.ama-assn.org/go/cpt) at CodeableConcept.coding[0]\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"77065\" found in http://www.ama-assn.org/go/cpt|2023",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -478,7 +478,7 @@ v: {
   "system" : "http://www.ama-assn.org/go/cpt",
   "version" : "2023",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[undefined#77066 (\"undefined\")]\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#77066\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n1ms http://www.ama-assn.org/go/cpt/vs|2023: check code in () at CodeableConcept.coding[0]\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"77066\" found in http://www.ama-assn.org/go/cpt|2023",
+  "diagnostics" : "0ms tx-op\n6ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[http://www.ama-assn.org/go/cpt#77066 (\"undefined\")]\"\n6ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#77066\"\n6ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n6ms http://www.ama-assn.org/go/cpt/vs|2023: check code in (http://www.ama-assn.org/go/cpt) at CodeableConcept.coding[0]\n6ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"77066\" found in http://www.ama-assn.org/go/cpt|2023",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -506,7 +506,7 @@ v: {
   "system" : "http://www.ama-assn.org/go/cpt",
   "version" : "2023",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[undefined#77065 (\"undefined\")]\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#77065\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n1ms http://www.ama-assn.org/go/cpt/vs|2023: check code in () at Coding\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"77065\" found in http://www.ama-assn.org/go/cpt|2023",
+  "diagnostics" : "0ms tx-op\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[http://www.ama-assn.org/go/cpt#77065 (\"undefined\")]\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#77065\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n1ms http://www.ama-assn.org/go/cpt/vs|2023: check code in (http://www.ama-assn.org/go/cpt) at Coding\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"77065\" found in http://www.ama-assn.org/go/cpt|2023",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -534,7 +534,7 @@ v: {
   "system" : "http://www.ama-assn.org/go/cpt",
   "version" : "2023",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[undefined#77066 (\"undefined\")]\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#77066\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n1ms http://www.ama-assn.org/go/cpt/vs|2023: check code in () at Coding\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"77066\" found in http://www.ama-assn.org/go/cpt|2023",
+  "diagnostics" : "0ms tx-op\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[http://www.ama-assn.org/go/cpt#77066 (\"undefined\")]\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#77066\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n1ms http://www.ama-assn.org/go/cpt/vs|2023: check code in (http://www.ama-assn.org/go/cpt) at Coding\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"77066\" found in http://www.ama-assn.org/go/cpt|2023",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -565,7 +565,7 @@ v: {
   "system" : "http://www.ama-assn.org/go/cpt",
   "version" : "2023",
   "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[undefined#80076 (\"Hepatic function panel\")]\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#80076\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n1ms http://www.ama-assn.org/go/cpt/vs|2023: check code in () at CodeableConcept.coding[0]\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"80076\" found in http://www.ama-assn.org/go/cpt|2023",
+  "diagnostics" : "0ms tx-op\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Validate \"[http://www.ama-assn.org/go/cpt#80076 (\"Hepatic function panel\")]\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Check \"http://www.ama-assn.org/go/cpt#80076\"\n1ms http://www.ama-assn.org/go/cpt/vs|2023: CodeSystem found: http://www.ama-assn.org/go/cpt|2023 for http://www.ama-assn.org/go/cpt|2023\n1ms http://www.ama-assn.org/go/cpt/vs|2023: check code in (http://www.ama-assn.org/go/cpt) at CodeableConcept.coding[0]\n1ms http://www.ama-assn.org/go/cpt/vs|2023: Code \"80076\" found in http://www.ama-assn.org/go/cpt|2023",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -584,6 +584,6 @@ v: {
 }}####
 e: {
   "from-server" : true,
-  "error" : "Error from https://tx.fhir.org/r4: Error: 0ms tx-op\n1ms start working\n1ms compose #1"
+  "error" : "Error from https://tx.fhir.org/r4: Error: The code System \"http://www.ama-assn.org/go/cpt\" has a grammar, and cannot be enumerated directly"
 }
 -------------------------------------------------------------------------------------
