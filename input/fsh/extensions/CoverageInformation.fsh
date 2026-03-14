@@ -49,14 +49,14 @@ Description: "Captures assertions from a payer about the coverage rules for a se
   * value[x] 1..1
   * value[x] only Reference(CRDCoverage)
 * extension[covered] only Extension
-  * ^short = "covered | not-covered | conditional"
+  * ^short = "covered | not-covered | conditional | indeterminate"
   * ^definition = "Indicates whether the ordered/requested service is covered under patient's plan.  This includes checking whether the proposed service is a benefit under the patient's plan.  It **MAY** also involve checking whether the patient has reached their limits under the current plan period but is not required to."
   * ^comment = "Details on why coverage does not exist would be conveyed in the 'reason' element."
   * value[x] 1..1
   * value[x] only code
   * value[x] from CRDCoveredInfo (required)
 * extension[pa-needed] only Extension
-  * ^short = "no-auth | auth-needed | satisfied | performpa | conditional"
+  * ^short = "no-auth | auth-needed | satisfied | performpa | conditional | indeterminate"
   * ^definition = "Indicates whether prior auth will be needed for coverage to be provided"
   * ^condition[+] = crd-ci-q2
   * ^condition[+] = crd-ci-q5
@@ -64,7 +64,7 @@ Description: "Captures assertions from a payer about the coverage rules for a se
   * value[x] only code
   * value[x] from CRDCoveragePaDetail (required)
 * extension[doc-needed] only Extension
-  * ^short = "clinical | admin | patient | conditional"
+  * ^short = "clinical | admin | patient | conditional | indeterminate"
   * ^definition = "Indicates whether additional documentation needs to be captured (purpose in next element)"
   * ^comment = "See additional guidance in the [notes](StructureDefinition-ext-coverage-information.html#doc-needed-vs-info-needed)"
   * value[x] 1..1
