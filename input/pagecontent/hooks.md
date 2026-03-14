@@ -208,7 +208,7 @@ The different relevant resource types are as follows (support can vary between c
 * **MedicationRequest**: Used to order inpatient and outpatient medications.<sup>*</sup>  Can also be used to order vaccinations.
 * **ServiceRequest**: Used to order a referral, lab tests, diagnostic imaging, and sometimes to schedule a future appointment (also see [appointment-book](#appointment-book)).
 * **NutritionOrder**: Used to order the preparation of specific meal types.  Generally used for in-patient care, but potentially also relevant for homecare.
-* <span class="new-content" markdown="1"><a name="FHIR-49805a"> </a>**Vision Prescription**: Used to order eyeglasses, contacts, and similar vision-related prosthetics.</span>
+* <span class="new-content" markdown="1"><a name="FHIR-49805a"> </a>**VisionPrescription**: Used to order eyeglasses, contacts, and similar vision-related prosthetics.</span>
 
 <sup>*</sup> - Note: in the medication space, regulations may mandate alternate standards for some of the functionality covered by CRD for certain classes of medications.  E.g. NCPDP Script
 
@@ -296,7 +296,7 @@ The different relevant resource types are as follows (support can vary between c
 * **MedicationRequest**: Used to order inpatient and outpatient medications.<sup>*</sup>  Can also be used to order vaccinations.
 * **ServiceRequest**: Used to order a referral, lab tests, diagnostic imaging, and sometimes to schedule a future appointment (also see [appointment-book](#appointment-book)).
 * **NutritionOrder**: Used to order the preparation of specific meal types.  Generally used for in-patient care, but potentially also relevant for homecare.
-* <span class="new-content" span="1"><a name="FHIR-49805b"> </a>**Vision Prescription**: Used to order eyeglasses, contacts, and similar vision-related prosthetics.</span>
+* <span class="new-content" span="1"><a name="FHIR-49805b"> </a>**VisionPrescription**: Used to order eyeglasses, contacts, and similar vision-related prosthetics.</span>
 
 <sup>*</sup> - Note: in the medication space, regulations may mandate alternate standards for some of the functionality covered by CRD for certain classes of medications.  E.g. NCPDP Script
 
