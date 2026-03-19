@@ -228,6 +228,10 @@ CRD responses might include:
     </tr>
   </thead>
   <tr>
+    <td><a href="StructureDefinition-profile-communicationrequest.html">profile-communicationrequest</a></td>
+    <td/>
+  </tr>
+  <tr>
     <td><a href="StructureDefinition-profile-devicerequest.html">profile-devicerequest</a></td>
     <td/>
   </tr>
@@ -318,6 +322,10 @@ CRD responses might include:
       <th>HRex &amp; US Core Profiles</th>
     </tr>
   </thead>
+  <tr>
+    <td><a href="StructureDefinition-profile-communicationrequest.html">profile-communicationrequest</a></td>
+    <td/>
+  </tr>
   <tr>
     <td><a href="StructureDefinition-profile-devicerequest.html">profile-devicerequest</a></td>
     <td/>
