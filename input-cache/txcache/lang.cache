@@ -1,0 +1,46 @@
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "inactive" : true,
+    "include" : [{
+      "system" : "urn:ietf:bcp:47",
+      "filter" : [{
+        "property" : "ext-lang",
+        "op" : "exists",
+        "value" : "false"
+      },
+      {
+        "property" : "script",
+        "op" : "exists",
+        "value" : "false"
+      },
+      {
+        "property" : "variant",
+        "op" : "exists",
+        "value" : "false"
+      },
+      {
+        "property" : "extension",
+        "op" : "exists",
+        "value" : "false"
+      },
+      {
+        "property" : "private-use",
+        "op" : "exists",
+        "value" : "false"
+      }]
+    }]
+  }
+}}####
+e: {
+  "from-server" : true,
+  "error" : "Error from https://tx.fhir.org/r4: Error: Language valuesets cannot be expanded as they are based on a grammar"
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "url": "http://hl7.org/fhir/us/core/ValueSet/simple-language", "version": "7.0.0"}####
+e: {
+  "from-server" : true,
+  "error" : "Error from https://tx.fhir.org/r4: Error: Language valuesets cannot be expanded as they are based on a grammar"
+}
+-------------------------------------------------------------------------------------

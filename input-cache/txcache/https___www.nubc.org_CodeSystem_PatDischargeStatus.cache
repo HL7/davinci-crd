@@ -1,0 +1,21 @@
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "inactive" : true,
+    "include" : [{
+      "system" : "https://www.nubc.org/CodeSystem/PatDischargeStatus"
+    }]
+  }
+}}####
+e: {
+  "from-server" : true,
+  "error" : "Error from https://tx.fhir.org/r4: Error: A definition for CodeSystem 'https://www.nubc.org/CodeSystem/PatDischargeStatus' could not be found, so the value set cannot be expanded"
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "url": "http://hl7.org/fhir/us/core/ValueSet/us-core-discharge-disposition", "version": "7.0.0"}####
+e: {
+  "from-server" : true,
+  "error" : "Error from https://tx.fhir.org/r4: Error: A definition for CodeSystem 'https://www.nubc.org/CodeSystem/PatDischargeStatus' could not be found, so the value set cannot be expanded"
+}
+-------------------------------------------------------------------------------------

@@ -1,56 +1,4 @@
 -------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "https://www.usps.com/",
-  "code" : "MA"
-}, "valueSet" :null, "langs":"en", "useServer":"true", "useClient":"false", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Massachusetts",
-  "code" : "MA",
-  "system" : "https://www.usps.com/",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms https://www.usps.com//vs: Validate \"[https://www.usps.com/#MA (\"undefined\")]\"\n1ms https://www.usps.com//vs: Check \"https://www.usps.com/#MA\"\n1ms https://www.usps.com//vs: CodeSystem found: https://www.usps.com/|null for https://www.usps.com/\n1ms https://www.usps.com//vs: check code in (https://www.usps.com/) at Coding\n1ms https://www.usps.com//vs: Code \"MA\" found in https://www.usps.com/|null",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "https://www.usps.com/",
-  "code" : "MA"
-}, "url": "http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state--0", "version": "7.0.0", "langs":"en", "useServer":"true", "useClient":"false", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Massachusetts",
-  "code" : "MA",
-  "system" : "https://www.usps.com/",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state--0|7.0.0: Analysing http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state--0|7.0.0 for validation purposes\n1ms http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state--0|7.0.0: Parameters: disp-lang=en, generate-narrative, default-to-latest\n1ms http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state--0|7.0.0: Version Rules: default:http://snomed.info/sct#http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state--0|7.0.0: Prepare include[0]: \"(https://www.usps.com/)\"\n1ms http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state--0|7.0.0: CodeSystem found: \"https://www.usps.com/|null\"\n1ms http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state--0|7.0.0: Validate \"[https://www.usps.com/#MA (\"undefined\")]\"\n1ms http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state--0|7.0.0: Check \"https://www.usps.com/#MA\"\n1ms http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state--0|7.0.0: CodeSystem found: https://www.usps.com/|null for https://www.usps.com/\n1ms http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state--0|7.0.0: check code in (https://www.usps.com/) at Coding\n1ms http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state--0|7.0.0: Code \"MA\" found in https://www.usps.com/|null",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
 {"hierarchical" : false, "valueSet" :{
   "resourceType" : "ValueSet",
   "compose" : {
@@ -66,8 +14,8 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:0895380e-b539-4fe2-9c91-faabc77582fa",
-    "timestamp" : "2026-03-04T03:36:58.740Z",
+    "identifier" : "urn:uuid:d9ed8735-58e0-407e-9f56-3e4f987f3510",
+    "timestamp" : "2026-03-21T05:35:29.433Z",
     "total" : 62,
     "offset" : 0,
     "parameter" : [{

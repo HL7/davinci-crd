@@ -1,102 +1,154 @@
 -------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "71388002"
-}, "valueSet" :null, "langs":"en, en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Procedure",
-  "code" : "71388002",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#71388002 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#71388002\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"71388002\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "182922004"
-}, "valueSet" :null, "langs":"en, en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Dietary regime",
-  "code" : "182922004",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#182922004 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#182922004\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"182922004\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "229912004"
-}, "valueSet" :null, "langs":"en, en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Enteral feeding",
-  "code" : "229912004",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#229912004 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#229912004\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"229912004\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"hierarchical" : true, "valueSet" :{
+{"hierarchical" : false, "valueSet" :{
   "resourceType" : "ValueSet",
   "compose" : {
-    "inactive" : false,
+    "inactive" : true,
     "include" : [{
       "system" : "http://snomed.info/sct",
+      "version" : "http://snomed.info/sct/731000124108",
       "concept" : [{
-        "code" : "35011000087100"
+        "code" : "443031000124106",
+        "display" : "Adult critical care formula"
       },
       {
-        "code" : "1297276008"
+        "code" : "443051000124104",
+        "display" : "Adult diabetes specialty formula"
       },
       {
-        "code" : "40043006"
+        "code" : "442911000124109",
+        "display" : "Adult elemental formula"
+      },
+      {
+        "code" : "443021000124108",
+        "display" : "Adult hepatic specialty formula"
+      },
+      {
+        "code" : "442971000124100",
+        "display" : "Adult high energy formula"
+      },
+      {
+        "code" : "442981000124102",
+        "display" : "Adult hydrolyzed protein formula"
+      },
+      {
+        "code" : "442991000124104",
+        "display" : "Adult high protein formula"
+      },
+      {
+        "code" : "443011000124100",
+        "display" : "Adult high protein high fiber formula"
+      },
+      {
+        "code" : "442961000124107",
+        "display" : "Adult low carbohydrate formula"
+      },
+      {
+        "code" : "442951000124105",
+        "display" : "Adult pulmonary specialty formula"
+      },
+      {
+        "code" : "442941000124108",
+        "display" : "Adult renal specialty formula"
+      },
+      {
+        "code" : "442921000124101",
+        "display" : "Adult standard formula"
+      },
+      {
+        "code" : "442931000124103",
+        "display" : "Adult soy protein isolate formula"
+      },
+      {
+        "code" : "443361000124100",
+        "display" : "Pediatric Formula"
+      },
+      {
+        "code" : "443401000124105",
+        "display" : "Pediatric elemental formula"
+      },
+      {
+        "code" : "443491000124103",
+        "display" : "Pediatric high energy formula"
+      },
+      {
+        "code" : "443501000124106",
+        "display" : "Pediatric high energy formula with increased fiber"
+      },
+      {
+        "code" : "443421000124100",
+        "display" : "Pediatric hydrolyzed protein formula"
+      },
+      {
+        "code" : "443471000124104",
+        "display" : "Pediatric increased fiber formula"
+      },
+      {
+        "code" : "444431000124104",
+        "display" : "Pediatric reduced energy formula"
+      },
+      {
+        "code" : "443451000124109",
+        "display" : "Pediatric standard formula"
+      },
+      {
+        "code" : "441561000124106",
+        "display" : "Standard enteral formula with fiber"
+      },
+      {
+        "code" : "443461000124106",
+        "display" : "Standard Formula"
+      },
+      {
+        "code" : "441531000124102",
+        "display" : "Standard Enteral Formula"
+      },
+      {
+        "code" : "443561000124107",
+        "display" : "Soy based formula"
+      },
+      {
+        "code" : "443481000124101",
+        "display" : "Renal Formula"
+      },
+      {
+        "code" : "441571000124104",
+        "display" : "High energy enteral formula with fiber"
+      },
+      {
+        "code" : "441591000124103",
+        "display" : "Diabetic enteral formula with fiber"
+      },
+      {
+        "code" : "441601000124106",
+        "display" : "Diabetic high calorie high protein enteral formula with fiber"
+      },
+      {
+        "code" : "443351000124102",
+        "display" : "Increased fiber formula"
+      },
+      {
+        "code" : "443771000124106",
+        "display" : "Hydrolyzed protein formula"
+      },
+      {
+        "code" : "441671000124100",
+        "display" : "Hydrolyzed peptide-based high protein enteral formula"
+      },
+      {
+        "code" : "443111000124101",
+        "display" : "High protein formula"
+      },
+      {
+        "code" : "443431000124102",
+        "display" : "High Energy Formula"
+      },
+      {
+        "code" : "443411000124108",
+        "display" : "Elemental Formula"
+      },
+      {
+        "code" : "442651000124102",
+        "display" : "Adult formula"
       }]
     }]
   }
@@ -107,13 +159,13 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:91cce42f-3ad0-43c0-b293-d5666406c567",
-    "timestamp" : "2026-03-03T18:45:11.029Z",
-    "total" : 3,
+    "identifier" : "urn:uuid:c27b64cb-db7b-4408-89c6-b96c61cf7b22",
+    "timestamp" : "2026-03-21T05:35:20.254Z",
+    "total" : 36,
     "offset" : 0,
     "parameter" : [{
       "name" : "excludeNested",
-      "valueBoolean" : false
+      "valueBoolean" : true
     },
     {
       "name" : "includeDefinition",
@@ -130,1273 +182,190 @@ e: {
     {
       "name" : "used-codesystem",
       "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901"
-    },
-    {
-      "name" : "system-version",
-      "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
     }],
     "contains" : [{
       "system" : "http://snomed.info/sct",
-      "code" : "35011000087100",
-      "display" : "Mixed milk feeding"
+      "code" : "443031000124106",
+      "display" : "Adult critical care formula"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "1297276008",
-      "display" : "Breast milk feeding"
+      "code" : "443051000124104",
+      "display" : "Adult diabetic specialty formula"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "40043006",
-      "display" : "Bottle feeding of patient"
+      "code" : "442911000124109",
+      "display" : "Adult elemental formula"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "443021000124108",
+      "display" : "Adult hepatic specialty formula"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "442971000124100",
+      "display" : "Adult high energy formula"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "442981000124102",
+      "display" : "Adult hydrolysed protein formula"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "442991000124104",
+      "display" : "Adult high protein formula"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "443011000124100",
+      "display" : "Adult high protein high fibre formula"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "442961000124107",
+      "display" : "Adult low carbohydrate formula"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "442951000124105",
+      "display" : "Adult pulmonary specialty formula"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "442941000124108",
+      "display" : "Adult renal specialty formula"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "442921000124101",
+      "display" : "Adult standard formula"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "442931000124103",
+      "display" : "Adult soy protein isolate formula"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "443361000124100",
+      "display" : "Paediatric formula"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "443401000124105",
+      "display" : "Paediatric elemental formula"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "443491000124103",
+      "display" : "Paediatric high calorie formula"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "443501000124106",
+      "display" : "Paediatric high energy formula with increased fibre"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "443421000124100",
+      "display" : "Paediatric hydrolysed protein formula"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "443471000124104",
+      "display" : "Paediatric increased fibre formula"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "444431000124104",
+      "display" : "Paediatric reduced energy formula"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "443451000124109",
+      "display" : "Paediatric standard formula"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "441561000124106",
+      "display" : "Standard enteral formula with fibre"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "443461000124106",
+      "display" : "Standard formula"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "441531000124102",
+      "display" : "Standard enteral formula"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "443561000124107",
+      "display" : "Soy-based formula"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "443481000124101",
+      "display" : "Renal formula"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "441571000124104",
+      "display" : "High energy enteral formula with fibre"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "441591000124103",
+      "display" : "Diabetic enteral formula with fibre"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "441601000124106",
+      "display" : "Diabetic high calorie high protein enteral formula with fiber"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "443351000124102",
+      "display" : "Increased fibre formula"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "443771000124106",
+      "display" : "Hydrolysed protein formula"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "441671000124100",
+      "display" : "Hydrolysed peptide-based high protein enteral formula"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "443111000124101",
+      "display" : "High protein formula"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "443431000124102",
+      "display" : "High energy formula"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "443411000124108",
+      "display" : "Elemental formula"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "442651000124102",
+      "display" : "Adult formula"
     }]
   }
 },
   "error" : ""
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "762766007"
-}, "valueSet" :null, "langs":"en, en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Edible substance (substance)",
-  "code" : "762766007",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#762766007 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#762766007\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"762766007\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "412413001"
-}, "valueSet" :null, "langs":"en, en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Infant formula (product)",
-  "code" : "412413001",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n0ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#412413001 (\"undefined\")]\"\n0ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#412413001\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"412413001\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "346415002"
-}, "valueSet" :null, "langs":"en, en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Enteral+supplement feeds",
-  "code" : "346415002",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#346415002 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#346415002\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"346415002\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "890302005"
-}, "valueSet" :null, "langs":"en, en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Potable water (substance)",
-  "code" : "890302005",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#890302005 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#890302005\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"890302005\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"hierarchical" : true, "valueSet" :{
-  "resourceType" : "ValueSet",
-  "compose" : {
-    "inactive" : false,
-    "include" : [{
-      "system" : "http://snomed.info/sct",
-      "concept" : [{
-        "code" : "11713004"
-      },
-      {
-        "code" : "444923006"
-      }]
-    }]
-  }
-}}####
-e: {
-  "source" : tx.fhir.org,
-  "valueSet" : {
-  "resourceType" : "ValueSet",
-  "status" : "active",
-  "expansion" : {
-    "identifier" : "urn:uuid:45610275-f075-45ec-8c08-c6bec5f00848",
-    "timestamp" : "2026-03-03T18:45:13.199Z",
-    "total" : 2,
-    "offset" : 0,
-    "parameter" : [{
-      "name" : "excludeNested",
-      "valueBoolean" : false
-    },
-    {
-      "name" : "includeDefinition",
-      "valueBoolean" : false
-    },
-    {
-      "name" : "offset",
-      "valueInteger" : 0
-    },
-    {
-      "name" : "count",
-      "valueInteger" : 1000
-    },
-    {
-      "name" : "used-codesystem",
-      "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901"
-    },
-    {
-      "name" : "system-version",
-      "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-    }],
-    "contains" : [{
-      "system" : "http://snomed.info/sct",
-      "code" : "11713004",
-      "display" : "Water"
-    },
-    {
-      "system" : "http://snomed.info/sct",
-      "code" : "444923006",
-      "display" : "Tap water"
-    }]
-  }
-},
-  "error" : ""
-}
--------------------------------------------------------------------------------------
-{"hierarchical" : true, "valueSet" :{
-  "resourceType" : "ValueSet",
-  "compose" : {
-    "inactive" : false,
-    "include" : [{
-      "system" : "http://snomed.info/sct",
-      "concept" : [{
-        "code" : "31212001"
-      },
-      {
-        "code" : "68356001"
-      },
-      {
-        "code" : "71482002"
-      },
-      {
-        "code" : "31539008"
-      },
-      {
-        "code" : "19751002"
-      },
-      {
-        "code" : "63793008"
-      },
-      {
-        "code" : "60471000"
-      },
-      {
-        "code" : "41503000"
-      },
-      {
-        "code" : "111064005"
-      },
-      {
-        "code" : "29183001"
-      },
-      {
-        "code" : "43268001"
-      },
-      {
-        "code" : "57272005"
-      },
-      {
-        "code" : "70726008"
-      },
-      {
-        "code" : "73196006"
-      },
-      {
-        "code" : "34865002"
-      },
-      {
-        "code" : "2832002"
-      },
-      {
-        "code" : "11555005"
-      },
-      {
-        "code" : "25958007"
-      }]
-    }]
-  }
-}}####
-e: {
-  "source" : tx.fhir.org,
-  "valueSet" : {
-  "resourceType" : "ValueSet",
-  "status" : "active",
-  "expansion" : {
-    "identifier" : "urn:uuid:d9c49578-377b-4f20-b960-e8331249c9a7",
-    "timestamp" : "2026-03-03T18:45:13.635Z",
-    "total" : 18,
-    "offset" : 0,
-    "parameter" : [{
-      "name" : "excludeNested",
-      "valueBoolean" : false
-    },
-    {
-      "name" : "includeDefinition",
-      "valueBoolean" : false
-    },
-    {
-      "name" : "offset",
-      "valueInteger" : 0
-    },
-    {
-      "name" : "count",
-      "valueInteger" : 1000
-    },
-    {
-      "name" : "used-codesystem",
-      "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901"
-    },
-    {
-      "name" : "system-version",
-      "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-    }],
-    "contains" : [{
-      "system" : "http://snomed.info/sct",
-      "code" : "31212001",
-      "display" : "Calcium compound"
-    },
-    {
-      "system" : "http://snomed.info/sct",
-      "code" : "68356001",
-      "display" : "Chlorine compound"
-    },
-    {
-      "system" : "http://snomed.info/sct",
-      "code" : "71482002",
-      "display" : "Iron compound"
-    },
-    {
-      "system" : "http://snomed.info/sct",
-      "code" : "31539008",
-      "display" : "Magnesium compound"
-    },
-    {
-      "system" : "http://snomed.info/sct",
-      "code" : "19751002",
-      "display" : "Potassium compound"
-    },
-    {
-      "system" : "http://snomed.info/sct",
-      "code" : "63793008",
-      "display" : "Phosphorus compound"
-    },
-    {
-      "system" : "http://snomed.info/sct",
-      "code" : "60471000",
-      "display" : "Sodium compound"
-    },
-    {
-      "system" : "http://snomed.info/sct",
-      "code" : "41503000",
-      "display" : "Zinc compound"
-    },
-    {
-      "system" : "http://snomed.info/sct",
-      "code" : "111064005",
-      "display" : "Sulfur compound"
-    },
-    {
-      "system" : "http://snomed.info/sct",
-      "code" : "29183001",
-      "display" : "Fluorine compound"
-    },
-    {
-      "system" : "http://snomed.info/sct",
-      "code" : "43268001",
-      "display" : "Copper compound"
-    },
-    {
-      "system" : "http://snomed.info/sct",
-      "code" : "57272005",
-      "display" : "Iodine compound"
-    },
-    {
-      "system" : "http://snomed.info/sct",
-      "code" : "70726008",
-      "display" : "Selenium compound"
-    },
-    {
-      "system" : "http://snomed.info/sct",
-      "code" : "73196006",
-      "display" : "Manganese compound"
-    },
-    {
-      "system" : "http://snomed.info/sct",
-      "code" : "34865002",
-      "display" : "Chromium compound"
-    },
-    {
-      "system" : "http://snomed.info/sct",
-      "code" : "2832002",
-      "display" : "Molybdenum compound"
-    },
-    {
-      "system" : "http://snomed.info/sct",
-      "code" : "11555005",
-      "display" : "Boron compound"
-    },
-    {
-      "system" : "http://snomed.info/sct",
-      "code" : "25958007",
-      "display" : "Cobalt compound"
-    }]
-  }
-},
-  "error" : ""
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "226355009"
-}, "valueSet" :null, "langs":"en, en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Nutrients",
-  "code" : "226355009",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#226355009 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#226355009\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"226355009\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "71388002"
-}, "valueSet" :null, "langs":"", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Procedure",
-  "code" : "71388002",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#71388002 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#71388002\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"71388002\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "182922004"
-}, "valueSet" :null, "langs":"", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Dietary regime",
-  "code" : "182922004",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#182922004 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#182922004\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"182922004\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "229912004"
-}, "valueSet" :null, "langs":"", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Enteral feeding",
-  "code" : "229912004",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#229912004 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#229912004\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"229912004\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "35011000087100"
-}, "valueSet" :null, "langs":"en, en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "exampleOK":"true", "membershipOnly":"false", "displayWarningMode":"true", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Mixed breast milk and bottle feeding (regime/therapy)",
-  "code" : "35011000087100",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#35011000087100 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#35011000087100\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"35011000087100\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "1297276008"
-}, "valueSet" :null, "langs":"en, en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "exampleOK":"true", "membershipOnly":"false", "displayWarningMode":"true", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Breast milk feeding (regime/therapy)",
-  "code" : "1297276008",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "40043006"
-}, "valueSet" :null, "langs":"en, en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "exampleOK":"true", "membershipOnly":"false", "displayWarningMode":"true", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Bottle feeding of patient",
-  "code" : "40043006",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "762766007"
-}, "valueSet" :null, "langs":"", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Edible substance (substance)",
-  "code" : "762766007",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n0ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#762766007 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#762766007\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"762766007\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "412413001"
-}, "valueSet" :null, "langs":"", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Infant formula (product)",
-  "code" : "412413001",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#412413001 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#412413001\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"412413001\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "346415002"
-}, "valueSet" :null, "langs":"", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Enteral+supplement feeds",
-  "code" : "346415002",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#346415002 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#346415002\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"346415002\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "890302005"
-}, "valueSet" :null, "langs":"", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Potable water (substance)",
-  "code" : "890302005",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#890302005 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#890302005\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"890302005\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "11713004"
-}, "valueSet" :null, "langs":"en, en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "exampleOK":"true", "membershipOnly":"false", "displayWarningMode":"true", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Water",
-  "code" : "11713004",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#11713004 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#11713004\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"11713004\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "444923006"
-}, "valueSet" :null, "langs":"en, en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "exampleOK":"true", "membershipOnly":"false", "displayWarningMode":"true", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Tap water (substance)",
-  "code" : "444923006",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "31212001"
-}, "valueSet" :null, "langs":"en, en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "exampleOK":"true", "membershipOnly":"false", "displayWarningMode":"true", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Calcium compound",
-  "code" : "31212001",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#31212001 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#31212001\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"31212001\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "68356001"
-}, "valueSet" :null, "langs":"en, en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "exampleOK":"true", "membershipOnly":"false", "displayWarningMode":"true", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Chlorine compound",
-  "code" : "68356001",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "71482002"
-}, "valueSet" :null, "langs":"en, en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "exampleOK":"true", "membershipOnly":"false", "displayWarningMode":"true", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Iron compound",
-  "code" : "71482002",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "31539008"
-}, "valueSet" :null, "langs":"en, en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "exampleOK":"true", "membershipOnly":"false", "displayWarningMode":"true", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Magnesium compound",
-  "code" : "31539008",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "19751002"
-}, "valueSet" :null, "langs":"en, en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "exampleOK":"true", "membershipOnly":"false", "displayWarningMode":"true", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Potassium compound",
-  "code" : "19751002",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "63793008"
-}, "valueSet" :null, "langs":"en, en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "exampleOK":"true", "membershipOnly":"false", "displayWarningMode":"true", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Phosphorus compound",
-  "code" : "63793008",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "60471000"
-}, "valueSet" :null, "langs":"en, en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "exampleOK":"true", "membershipOnly":"false", "displayWarningMode":"true", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Sodium compound",
-  "code" : "60471000",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "41503000"
-}, "valueSet" :null, "langs":"en, en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "exampleOK":"true", "membershipOnly":"false", "displayWarningMode":"true", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Zinc compound",
-  "code" : "41503000",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "111064005"
-}, "valueSet" :null, "langs":"en, en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "exampleOK":"true", "membershipOnly":"false", "displayWarningMode":"true", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Sulfur compound",
-  "code" : "111064005",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "29183001"
-}, "valueSet" :null, "langs":"en, en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "exampleOK":"true", "membershipOnly":"false", "displayWarningMode":"true", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Fluorine compound",
-  "code" : "29183001",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "43268001"
-}, "valueSet" :null, "langs":"en, en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "exampleOK":"true", "membershipOnly":"false", "displayWarningMode":"true", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Copper compound",
-  "code" : "43268001",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "57272005"
-}, "valueSet" :null, "langs":"en, en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "exampleOK":"true", "membershipOnly":"false", "displayWarningMode":"true", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Iodine compound",
-  "code" : "57272005",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "70726008"
-}, "valueSet" :null, "langs":"en, en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "exampleOK":"true", "membershipOnly":"false", "displayWarningMode":"true", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Selenium compound",
-  "code" : "70726008",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "73196006"
-}, "valueSet" :null, "langs":"en, en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "exampleOK":"true", "membershipOnly":"false", "displayWarningMode":"true", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Manganese compound",
-  "code" : "73196006",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "34865002"
-}, "valueSet" :null, "langs":"en, en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "exampleOK":"true", "membershipOnly":"false", "displayWarningMode":"true", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Chromium compound",
-  "code" : "34865002",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "2832002"
-}, "valueSet" :null, "langs":"en, en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "exampleOK":"true", "membershipOnly":"false", "displayWarningMode":"true", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Molybdenum compound",
-  "code" : "2832002",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "11555005"
-}, "valueSet" :null, "langs":"en, en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "exampleOK":"true", "membershipOnly":"false", "displayWarningMode":"true", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Boron compound",
-  "code" : "11555005",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "25958007"
-}, "valueSet" :null, "langs":"en, en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "exampleOK":"true", "membershipOnly":"false", "displayWarningMode":"true", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Cobalt compound",
-  "code" : "25958007",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "226355009"
-}, "valueSet" :null, "langs":"", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Nutrients",
-  "code" : "226355009",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#226355009 (\"undefined\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#226355009\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"226355009\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
 }
 -------------------------------------------------------------------------------------
 {"hierarchical" : false, "valueSet" :{
@@ -1405,10 +374,61 @@ v: {
     "inactive" : true,
     "include" : [{
       "system" : "http://snomed.info/sct",
-      "filter" : [{
-        "property" : "concept",
-        "op" : "is-a",
-        "value" : "308335008"
+      "concept" : [{
+        "code" : "255620007",
+        "display" : "Foods"
+      },
+      {
+        "code" : "28647000",
+        "display" : "Meat"
+      },
+      {
+        "code" : "22836000",
+        "display" : "Vegetables"
+      },
+      {
+        "code" : "72511004",
+        "display" : "Fruit"
+      },
+      {
+        "code" : "226760005",
+        "display" : "Dairy foods"
+      },
+      {
+        "code" : "226887002",
+        "display" : "Dietary Fats and Oils"
+      },
+      {
+        "code" : "102263004",
+        "display" : "Eggs"
+      },
+      {
+        "code" : "74242007",
+        "display" : "Food Starch"
+      },
+      {
+        "code" : "227415002",
+        "display" : "Fruit Nuts and Seeds"
+      },
+      {
+        "code" : "264331002",
+        "display" : "Grain"
+      },
+      {
+        "code" : "227518002",
+        "display" : "Sauce seasonings and soups"
+      },
+      {
+        "code" : "44027008",
+        "display" : "Seafood"
+      },
+      {
+        "code" : "226529007",
+        "display" : "Starchy food"
+      },
+      {
+        "code" : "227210005",
+        "display" : "Vegetables plus herbs and spices"
       }]
     }]
   }
@@ -1419,13 +439,156 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "extension" : [{
-      "url" : "http://hl7.org/fhir/StructureDefinition/valueset-unclosed",
+    "identifier" : "urn:uuid:f6dde245-2233-4c70-a473-b732f23b5dcb",
+    "timestamp" : "2026-03-21T05:35:20.495Z",
+    "total" : 14,
+    "offset" : 0,
+    "parameter" : [{
+      "name" : "excludeNested",
       "valueBoolean" : true
+    },
+    {
+      "name" : "includeDefinition",
+      "valueBoolean" : false
+    },
+    {
+      "name" : "offset",
+      "valueInteger" : 0
+    },
+    {
+      "name" : "count",
+      "valueInteger" : 1000
+    },
+    {
+      "name" : "used-codesystem",
+      "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901"
+    },
+    {
+      "name" : "system-version",
+      "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
     }],
-    "identifier" : "urn:uuid:2ac06459-6302-45e4-98ae-dab9ba085848",
-    "timestamp" : "2026-03-03T18:45:33.512Z",
-    "total" : 77,
+    "property" : [{
+      "code" : "status",
+      "uri" : "http://hl7.org/fhir/concept-properties#status"
+    }],
+    "contains" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "255620007",
+      "display" : "Food"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "28647000",
+      "display" : "Meat"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "22836000",
+      "display" : "Vegetable"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "72511004",
+      "display" : "Fruit"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "inactive" : true,
+      "code" : "226760005",
+      "display" : "Dairy food",
+      "property" : [{
+        "code" : "status",
+        "valueCode" : "inactive"
+      }]
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "226887002",
+      "display" : "Fat and oil"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "102263004",
+      "display" : "Eggs (edible)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "74242007",
+      "display" : "Food starch"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "227415002",
+      "display" : "Fruit nuts and seeds"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "264331002",
+      "display" : "Grain"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "227518002",
+      "display" : "Sauces seasonings and soups"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "44027008",
+      "display" : "Seafood"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "226529007",
+      "display" : "Starchy food"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "227210005",
+      "display" : "Vegetables pulses herbs and spices"
+    }]
+  }
+},
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "inactive" : true,
+    "include" : [{
+      "system" : "http://snomed.info/sct",
+      "concept" : [{
+        "code" : "108252007",
+        "display" : "Laboratory procedure"
+      },
+      {
+        "code" : "363679005",
+        "display" : "Imaging"
+      },
+      {
+        "code" : "409063005",
+        "display" : "Counselling"
+      },
+      {
+        "code" : "409073007",
+        "display" : "Education"
+      },
+      {
+        "code" : "387713003",
+        "display" : "Surgical procedure"
+      }]
+    }]
+  }
+}}####
+e: {
+  "source" : tx.fhir.org,
+  "valueSet" : {
+  "resourceType" : "ValueSet",
+  "status" : "active",
+  "expansion" : {
+    "identifier" : "urn:uuid:806a5b49-f4d5-46e8-a15e-99d5a7da11e9",
+    "timestamp" : "2026-03-21T05:35:20.792Z",
+    "total" : 5,
     "offset" : 0,
     "parameter" : [{
       "name" : "excludeNested",
@@ -1453,388 +616,678 @@ e: {
     }],
     "contains" : [{
       "system" : "http://snomed.info/sct",
-      "code" : "308335008",
-      "display" : "Patient encounter procedure"
+      "code" : "108252007",
+      "display" : "Laboratory procedure"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "363679005",
+      "display" : "Imaging"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "409063005",
+      "display" : "Counselling"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "409073007",
+      "display" : "Education"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "387713003",
+      "display" : "Surgical procedure"
+    }]
+  }
+},
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "inactive" : true,
+    "include" : [{
+      "system" : "http://snomed.info/sct",
+      "version" : "http://snomed.info/sct/731000124108",
+      "concept" : [{
+        "code" : "442901000124106",
+        "display" : "Adult clear liquid supplement"
+      },
+      {
+        "code" : "443031000124106",
+        "display" : "Adult critical care formula"
+      },
+      {
+        "code" : "443051000124104",
+        "display" : "Adult diabetes specialty formula"
+      },
+      {
+        "code" : "442911000124109",
+        "display" : "Adult elemental formula"
+      },
+      {
+        "code" : "443021000124108",
+        "display" : "Adult hepatic specialty formula"
+      },
+      {
+        "code" : "442971000124100",
+        "display" : "Adult high energy formula"
+      },
+      {
+        "code" : "442981000124102",
+        "display" : "Adult hydrolyzed protein formula"
+      },
+      {
+        "code" : "442991000124104",
+        "display" : "Adult high protein formula"
+      },
+      {
+        "code" : "443011000124100",
+        "display" : "Adult high protein high fiber formula"
+      },
+      {
+        "code" : "442961000124107",
+        "display" : "Adult low carbohydrate formula"
+      },
+      {
+        "code" : "442951000124105",
+        "display" : "Adult pulmonary specialty formula"
+      },
+      {
+        "code" : "442941000124108",
+        "display" : "Adult renal specialty formula"
+      },
+      {
+        "code" : "442921000124101",
+        "display" : "Adult standard formula"
+      },
+      {
+        "code" : "442931000124103",
+        "display" : "Adult soy protein isolate formula"
+      },
+      {
+        "code" : "444331000124106",
+        "display" : "Diabetic meal replacement bar"
+      },
+      {
+        "code" : "443361000124100",
+        "display" : "Pediatric Formula"
+      },
+      {
+        "code" : "443391000124108",
+        "display" : "Pediatric clear liquid supplement"
+      },
+      {
+        "code" : "443401000124105",
+        "display" : "Pediatric elemental formula"
+      },
+      {
+        "code" : "443491000124103",
+        "display" : "Pediatric high energy formula"
+      },
+      {
+        "code" : "443501000124106",
+        "display" : "Pediatric high energy formula with increased fiber"
+      },
+      {
+        "code" : "443421000124100",
+        "display" : "Pediatric hydrolyzed protein formula"
+      },
+      {
+        "code" : "443471000124104",
+        "display" : "Pediatric increased fiber formula"
+      },
+      {
+        "code" : "444431000124104",
+        "display" : "Pediatric reduced energy formula"
+      },
+      {
+        "code" : "443451000124109",
+        "display" : "Pediatric standard formula"
+      },
+      {
+        "code" : "444321000124108",
+        "display" : "Standard pudding oral supplement"
+      },
+      {
+        "code" : "441561000124106",
+        "display" : "Standard enteral formula with fiber"
+      },
+      {
+        "code" : "443461000124106",
+        "display" : "Standard Formula"
+      },
+      {
+        "code" : "441531000124102",
+        "display" : "Standard Enteral Formula"
+      },
+      {
+        "code" : "443561000124107",
+        "display" : "Soy based formula"
+      },
+      {
+        "code" : "443481000124101",
+        "display" : "Renal Formula"
+      },
+      {
+        "code" : "441571000124104",
+        "display" : "High energy enteral formula with fiber"
+      },
+      {
+        "code" : "441591000124103",
+        "display" : "Diabetic enteral formula with fiber"
+      },
+      {
+        "code" : "441601000124106",
+        "display" : "Diabetic high calorie high protein enteral formula with fiber"
+      },
+      {
+        "code" : "443351000124102",
+        "display" : "Increased fiber formula"
+      },
+      {
+        "code" : "443771000124106",
+        "display" : "Hydrolyzed protein formula"
+      },
+      {
+        "code" : "441671000124100",
+        "display" : "Hydrolyzed peptide-based high protein enteral formula"
+      },
+      {
+        "code" : "443111000124101",
+        "display" : "High protein formula"
+      },
+      {
+        "code" : "443431000124102",
+        "display" : "High Energy Formula"
+      },
+      {
+        "code" : "443411000124108",
+        "display" : "Elemental Formula"
+      },
+      {
+        "code" : "444361000124102",
+        "display" : "Electrolyte replacement supplement"
+      },
+      {
+        "code" : "444401000124107",
+        "display" : "Frozen electrolyte replacement supplement"
+      },
+      {
+        "code" : "444381000124107",
+        "display" : "Liquid electrolyte replacement supplement"
+      },
+      {
+        "code" : "444371000124109",
+        "display" : "Powdered electrolyte replacement supplement"
+      },
+      {
+        "code" : "443441000124107",
+        "display" : "Clear liquid supplement"
+      },
+      {
+        "code" : "442651000124102",
+        "display" : "Adult formula"
+      }]
+    }]
+  }
+}}####
+e: {
+  "source" : tx.fhir.org,
+  "valueSet" : {
+  "resourceType" : "ValueSet",
+  "status" : "active",
+  "expansion" : {
+    "identifier" : "urn:uuid:6d6fe741-6ce8-4017-8ff8-d343e267aded",
+    "timestamp" : "2026-03-21T05:35:21.023Z",
+    "total" : 45,
+    "offset" : 0,
+    "parameter" : [{
+      "name" : "excludeNested",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "includeDefinition",
+      "valueBoolean" : false
+    },
+    {
+      "name" : "offset",
+      "valueInteger" : 0
     },
     {
-      "system" : "http://snomed.info/sct",
-      "code" : "4525004",
-      "display" : "Emergency department patient visit"
-    },
-    {
-      "system" : "http://snomed.info/sct",
-      "code" : "12843005",
-      "display" : "Subsequent hospital visit by physician"
-    },
-    {
-      "system" : "http://snomed.info/sct",
-      "code" : "14736009",
-      "display" : "Patient evaluation and management"
-    },
-    {
-      "system" : "http://snomed.info/sct",
-      "code" : "18170008",
-      "display" : "Subsequent nursing facility visit"
-    },
-    {
-      "system" : "http://snomed.info/sct",
-      "code" : "19681004",
-      "display" : "Nursing evaluation of patient and report"
-    },
-    {
-      "system" : "http://snomed.info/sct",
-      "code" : "50357006",
-      "display" : "Evaluation and management of patient at home"
-    },
-    {
-      "system" : "http://snomed.info/sct",
-      "code" : "68341005",
-      "display" : "Hemodialysis, supervision at home"
-    },
-    {
-      "system" : "http://snomed.info/sct",
-      "code" : "69399002",
-      "display" : "Initial hospital visit by physician"
-    },
-    {
-      "system" : "http://snomed.info/sct",
-      "code" : "83362003",
-      "display" : "Final inpatient visit with instructions at discharge"
-    },
-    {
-      "system" : "http://snomed.info/sct",
-      "code" : "86013001",
-      "display" : "Periodic reevaluation and management of healthy individual"
-    },
-    {
-      "system" : "http://snomed.info/sct",
-      "code" : "86181006",
-      "display" : "Evaluation and management of inpatient"
+      "name" : "count",
+      "valueInteger" : 1000
     },
     {
+      "name" : "used-codesystem",
+      "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901"
+    }],
+    "property" : [{
+      "code" : "status",
+      "uri" : "http://hl7.org/fhir/concept-properties#status"
+    }],
+    "contains" : [{
       "system" : "http://snomed.info/sct",
-      "code" : "90526000",
-      "display" : "Initial evaluation and management of healthy individual"
+      "code" : "442901000124106",
+      "display" : "Adult clear liquid supplement"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "108219001",
-      "display" : "Physician visit with evaluation AND/OR management service"
+      "code" : "443031000124106",
+      "display" : "Adult critical care formula"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "108220007",
-      "display" : "Evaluation AND/OR management - new patient"
+      "code" : "443051000124104",
+      "display" : "Adult diabetic specialty formula"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "108221006",
-      "display" : "Evaluation AND/OR management - established patient"
+      "code" : "442911000124109",
+      "display" : "Adult elemental formula"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "185321005",
-      "display" : "Letter encounter to patient"
+      "code" : "443021000124108",
+      "display" : "Adult hepatic specialty formula"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "185345009",
-      "display" : "Encounter for symptom"
+      "code" : "442971000124100",
+      "display" : "Adult high energy formula"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "185346005",
-      "display" : "Encounter for sign"
+      "code" : "442981000124102",
+      "display" : "Adult hydrolysed protein formula"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "185347001",
-      "display" : "Encounter for problem"
+      "code" : "442991000124104",
+      "display" : "Adult high protein formula"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "185348006",
-      "display" : "Encounter for fear"
+      "code" : "443011000124100",
+      "display" : "Adult high protein high fibre formula"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "185349003",
-      "display" : "Encounter for check up"
+      "code" : "442961000124107",
+      "display" : "Adult low carbohydrate formula"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "185387006",
-      "display" : "New patient consultation"
+      "code" : "442951000124105",
+      "display" : "Adult pulmonary specialty formula"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "185462000",
-      "display" : "Home visit request by relative"
+      "code" : "442941000124108",
+      "display" : "Adult renal specialty formula"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "185463005",
-      "display" : "Visit out of hours"
+      "code" : "442921000124101",
+      "display" : "Adult standard formula"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "185464004",
-      "display" : "Out of hours visit - not night visit"
+      "code" : "442931000124103",
+      "display" : "Adult soy protein isolate formula"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "185465003",
-      "display" : "Weekend visit"
+      "code" : "444331000124106",
+      "display" : "Diabetic meal replacement bar"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "185466002",
-      "display" : "Home visit for urgent condition"
+      "code" : "443361000124100",
+      "display" : "Paediatric formula"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "185467006",
-      "display" : "Home visit for acute condition"
+      "code" : "443391000124108",
+      "display" : "Paediatric clear liquid supplement"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "185468001",
-      "display" : "Home visit for chronic condition"
+      "code" : "443401000124105",
+      "display" : "Paediatric elemental formula"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "185469009",
-      "display" : "District nurse visit"
+      "code" : "443491000124103",
+      "display" : "Paediatric high calorie formula"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "185470005",
-      "display" : "Home visit elderly assessment"
+      "code" : "443501000124106",
+      "display" : "Paediatric high energy formula with increased fibre"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "207195004",
-      "display" : "History and physical examination with evaluation and management of nursing facility patient"
+      "code" : "443421000124100",
+      "display" : "Paediatric hydrolysed protein formula"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "209099002",
-      "display" : "History and physical examination with management of domiciliary or rest home patient"
+      "code" : "443471000124104",
+      "display" : "Paediatric increased fibre formula"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "210098006",
-      "display" : "Domiciliary or rest home patient evaluation and management"
+      "code" : "444431000124104",
+      "display" : "Paediatric reduced energy formula"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "225929007",
-      "display" : "Joint home visit"
+      "code" : "443451000124109",
+      "display" : "Paediatric standard formula"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "270424005",
-      "display" : "Letter encounter from patient"
+      "inactive" : true,
+      "code" : "444321000124108",
+      "display" : "Standard pudding oral supplement",
+      "property" : [{
+        "code" : "status",
+        "valueCode" : "inactive"
+      }]
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "270427003",
-      "display" : "Patient-initiated encounter"
+      "code" : "441561000124106",
+      "display" : "Standard enteral formula with fibre"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "270430005",
-      "display" : "Provider-initiated encounter"
+      "code" : "443461000124106",
+      "display" : "Standard formula"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "288836004",
-      "display" : "Agreeing on elements of the care plan"
+      "code" : "441531000124102",
+      "display" : "Standard enteral formula"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "310587004",
-      "display" : "First annual visit by district nurse"
+      "code" : "443561000124107",
+      "display" : "Soy-based formula"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "310588009",
-      "display" : "Visit by health visitor"
+      "code" : "443481000124101",
+      "display" : "Renal formula"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "315205008",
-      "display" : "Bank holiday home visit"
+      "code" : "441571000124104",
+      "display" : "High energy enteral formula with fibre"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "401271004",
-      "display" : "E-mail sent to patient"
+      "code" : "441591000124103",
+      "display" : "Diabetic enteral formula with fibre"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "408482001",
-      "display" : "District nurse follow up"
+      "code" : "441601000124106",
+      "display" : "Diabetic high calorie high protein enteral formula with fiber"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "408483006",
-      "display" : "District nurse initial visit"
+      "code" : "443351000124102",
+      "display" : "Increased fibre formula"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "408487007",
-      "display" : "Health visitor follow up"
+      "code" : "443771000124106",
+      "display" : "Hydrolysed protein formula"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "416520008",
-      "display" : "Consultation for unaccompanied minor"
+      "code" : "441671000124100",
+      "display" : "Hydrolysed peptide-based high protein enteral formula"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "423215004",
-      "display" : "Provision of continuity of care"
+      "code" : "443111000124101",
+      "display" : "High protein formula"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "439058005",
-      "display" : "Home visit for care and maintenance of urinary catheter"
+      "code" : "443431000124102",
+      "display" : "High energy formula"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "439708006",
-      "display" : "Home visit"
+      "code" : "443411000124108",
+      "display" : "Elemental formula"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "439887005",
-      "display" : "Home visit for mechanical ventilation care"
+      "inactive" : true,
+      "code" : "444361000124102",
+      "display" : "Electrolyte replacement supplement",
+      "property" : [{
+        "code" : "status",
+        "valueCode" : "inactive"
+      }]
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "440068009",
-      "display" : "Home visit for newborn care and assessment"
+      "inactive" : true,
+      "code" : "444401000124107",
+      "display" : "Frozen electrolyte replacement supplement",
+      "property" : [{
+        "code" : "status",
+        "valueCode" : "inactive"
+      }]
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "440085006",
-      "display" : "Home visit for postpartum care and assessment"
+      "inactive" : true,
+      "code" : "444381000124107",
+      "display" : "Liquid electrolyte replacement supplement",
+      "property" : [{
+        "code" : "status",
+        "valueCode" : "inactive"
+      }]
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "440146002",
-      "display" : "Home visit for care and maintenance of colostomy"
+      "inactive" : true,
+      "code" : "444371000124109",
+      "display" : "Powdered electrolyte replacement supplement",
+      "property" : [{
+        "code" : "status",
+        "valueCode" : "inactive"
+      }]
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "440168007",
-      "display" : "Provision of copy of letter from specialist to patient"
+      "code" : "443441000124107",
+      "display" : "Clear liquid supplement"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "440568002",
-      "display" : "Visit with nurse at next appointment requested"
-    },
-    {
-      "system" : "http://snomed.info/sct",
-      "code" : "440611006",
-      "display" : "Home visit for marriage counseling"
-    },
-    {
+      "code" : "442651000124102",
+      "display" : "Adult formula"
+    }]
+  }
+},
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "inactive" : true,
+    "include" : [{
       "system" : "http://snomed.info/sct",
-      "code" : "440696002",
-      "display" : "Home visit for intramuscular injection"
+      "version" : "http://snomed.info/sct/731000124108",
+      "concept" : [{
+        "code" : "228053002",
+        "display" : "Cut-up food"
+      },
+      {
+        "code" : "439091000124107",
+        "display" : "Easy to chew food"
+      },
+      {
+        "code" : "228049004",
+        "display" : "Chopped food"
+      },
+      {
+        "code" : "441881000124103",
+        "display" : "Ground food"
+      },
+      {
+        "code" : "441761000124103",
+        "display" : "Minced food"
+      },
+      {
+        "code" : "441751000124100",
+        "display" : "Mashed food"
+      },
+      {
+        "code" : "228059003",
+        "display" : "Soft food"
+      },
+      {
+        "code" : "441791000124106",
+        "display" : "Strained food"
+      },
+      {
+        "code" : "228055009",
+        "display" : "Liquidized food"
+      },
+      {
+        "code" : "228056005",
+        "display" : "Lumpy food"
+      },
+      {
+        "code" : "441771000124105",
+        "display" : "Moist food"
+      },
+      {
+        "code" : "228057001",
+        "display" : "Semi-solid food"
+      },
+      {
+        "code" : "228058006",
+        "display" : "Single texture food"
+      },
+      {
+        "code" : "228060008",
+        "display" : "Solid food"
+      }]
+    }]
+  }
+}}####
+e: {
+  "source" : tx.fhir.org,
+  "valueSet" : {
+  "resourceType" : "ValueSet",
+  "status" : "active",
+  "expansion" : {
+    "identifier" : "urn:uuid:e8cf6882-447d-4240-a167-4606a7e37733",
+    "timestamp" : "2026-03-21T05:35:21.252Z",
+    "total" : 14,
+    "offset" : 0,
+    "parameter" : [{
+      "name" : "excludeNested",
+      "valueBoolean" : true
     },
     {
-      "system" : "http://snomed.info/sct",
-      "code" : "441244001",
-      "display" : "Home visit for cystostomy care and maintenance"
-    },
-    {
-      "system" : "http://snomed.info/sct",
-      "code" : "448337001",
-      "display" : "Telemedicine consultation with patient"
+      "name" : "includeDefinition",
+      "valueBoolean" : false
     },
     {
-      "system" : "http://snomed.info/sct",
-      "code" : "698704008",
-      "display" : "Home visit for rheumatology service"
+      "name" : "offset",
+      "valueInteger" : 0
     },
     {
-      "system" : "http://snomed.info/sct",
-      "code" : "704126008",
-      "display" : "Home visit for anticoagulation monitoring"
+      "name" : "count",
+      "valueInteger" : 1000
     },
     {
+      "name" : "used-codesystem",
+      "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901"
+    }],
+    "contains" : [{
       "system" : "http://snomed.info/sct",
-      "code" : "711458003",
-      "display" : "Encounter for fitness for duty exam"
+      "code" : "228053002",
+      "display" : "Cut-up food"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "866149003",
-      "display" : "Annual visit"
+      "code" : "439091000124107",
+      "display" : "Easy to chew food"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "1237136005",
-      "display" : "Consultation with patient"
+      "code" : "228049004",
+      "display" : "Chopped food"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "1258986006",
-      "display" : "Face-to-face encounter"
+      "code" : "441881000124103",
+      "display" : "Ground food"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "1269515004",
-      "display" : "Face to face consultation with patient"
+      "code" : "441761000124103",
+      "display" : "Minced food"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "3391000175108",
-      "display" : "Office visit for pediatric care and assessment"
+      "code" : "441751000124100",
+      "display" : "Mashed food"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "4141000175103",
-      "display" : "Encounter for blood donation"
+      "code" : "228059003",
+      "display" : "Soft food"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "6051000124107",
-      "display" : "Pharmacokinetic consultation"
+      "code" : "441791000124106",
+      "display" : "Strained food"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "6061000124109",
-      "display" : "Risk evaluation and mitigation strategy consultation"
+      "code" : "228055009",
+      "display" : "Liquidized food"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "444971000124105",
-      "display" : "Annual wellness visit"
+      "code" : "228056005",
+      "display" : "Lumpy food"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "452081000124104",
-      "display" : "Health evaluation of new immigrant"
+      "code" : "441771000124105",
+      "display" : "Moist food"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "453701000124103",
-      "display" : "In-person encounter"
+      "code" : "228057001",
+      "display" : "Semi-solid food"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "456201000124103",
-      "display" : "Medicare annual wellness visit"
+      "code" : "228058006",
+      "display" : "Single texture food"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "461231000124109",
-      "display" : "Consultation for suicide risk management"
+      "code" : "228060008",
+      "display" : "Solid food"
     }]
   }
 },
@@ -1859,8 +1312,8 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:90f4dfad-0661-47a6-b6e0-6d58cd54acb6",
-    "timestamp" : "2026-03-03T18:48:13.527Z",
+    "identifier" : "urn:uuid:7a1e751f-3702-40b5-a594-698bc4d89994",
+    "timestamp" : "2026-03-21T05:35:22.898Z",
     "total" : 1,
     "offset" : 0,
     "parameter" : [{
@@ -1921,8 +1374,8 @@ e: {
       "url" : "http://hl7.org/fhir/StructureDefinition/valueset-unclosed",
       "valueBoolean" : true
     }],
-    "identifier" : "urn:uuid:b428498e-271e-4246-8a59-f8a7d53a8a9c",
-    "timestamp" : "2026-03-03T18:48:13.979Z",
+    "identifier" : "urn:uuid:de42abe9-2b99-4d21-a42b-0473fe4ebd8b",
+    "timestamp" : "2026-03-21T05:35:23.211Z",
     "offset" : 0,
     "parameter" : [{
       "name" : "excludeNested",
@@ -6977,8 +6430,8 @@ e: {
       "url" : "http://hl7.org/fhir/StructureDefinition/valueset-unclosed",
       "valueBoolean" : true
     }],
-    "identifier" : "urn:uuid:853add70-6fd1-48d9-81eb-f2c2eb7b2fb4",
-    "timestamp" : "2026-03-03T18:48:15.042Z",
+    "identifier" : "urn:uuid:23799c98-df40-48a1-89fc-e343a95d8393",
+    "timestamp" : "2026-03-21T05:35:23.725Z",
     "offset" : 0,
     "parameter" : [{
       "name" : "excludeNested",
@@ -12033,8 +11486,8 @@ e: {
       "url" : "http://hl7.org/fhir/StructureDefinition/valueset-unclosed",
       "valueBoolean" : true
     }],
-    "identifier" : "urn:uuid:83a58870-4381-4bb3-ba76-f96021118afc",
-    "timestamp" : "2026-03-03T18:48:15.948Z",
+    "identifier" : "urn:uuid:0e76cbc4-4cc4-46b8-be6a-531e919065d7",
+    "timestamp" : "2026-03-21T05:35:24.244Z",
     "offset" : 0,
     "parameter" : [{
       "name" : "excludeNested",
@@ -17065,643 +16518,515 @@ e: {
   "error" : ""
 }
 -------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "386053000",
-  "display" : "Evaluation procedure (procedure)"
-}, "valueSet" :null, "langs":"", "useServer":"true", "useClient":"false", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
+{"hierarchical" : false, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "inactive" : true,
+    "include" : [{
+      "system" : "http://snomed.info/sct",
+      "filter" : [{
+        "property" : "concept",
+        "op" : "is-a",
+        "value" : "308335008"
+      }]
+    }]
+  }
 }}####
-v: {
-  "display" : "Patient evaluation procedure (procedure)",
-  "code" : "386053000",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n0ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#386053000 (\"Evaluation procedure (procedure)\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#386053000\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"386053000\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "386053000"
-}, "url": "http://hl7.org/fhir/us/core/ValueSet/us-core-servicerequest-category--1", "version": "7.0.0", "langs":"", "useServer":"true", "useClient":"false", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Patient evaluation procedure (procedure)",
-  "code" : "386053000",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://hl7.org/fhir/us/core/ValueSet/us-core-servicerequest-category--1|7.0.0: Analysing http://hl7.org/fhir/us/core/ValueSet/us-core-servicerequest-category--1|7.0.0 for validation purposes\n1ms http://hl7.org/fhir/us/core/ValueSet/us-core-servicerequest-category--1|7.0.0: Parameters: disp-lang=en, generate-narrative, default-to-latest\n1ms http://hl7.org/fhir/us/core/ValueSet/us-core-servicerequest-category--1|7.0.0: Version Rules: default:http://snomed.info/sct#http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/us/core/ValueSet/us-core-servicerequest-category--1|7.0.0: Prepare include[0]: \"(http://snomed.info/sct)(386053000,410606002)\"\n1ms http://hl7.org/fhir/us/core/ValueSet/us-core-servicerequest-category--1|7.0.0: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/us/core/ValueSet/us-core-servicerequest-category--1|7.0.0: Validate \"[http://snomed.info/sct#386053000 (\"undefined\")]\"\n1ms http://hl7.org/fhir/us/core/ValueSet/us-core-servicerequest-category--1|7.0.0: Check \"http://snomed.info/sct#386053000\"\n1ms http://hl7.org/fhir/us/core/ValueSet/us-core-servicerequest-category--1|7.0.0: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/us/core/ValueSet/us-core-servicerequest-category--1|7.0.0: check code in (http://snomed.info/sct)(386053000,410606002) at Coding\n1ms http://hl7.org/fhir/us/core/ValueSet/us-core-servicerequest-category--1|7.0.0: Code \"386053000\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://snomed.info/sct",
-  "code" : "386053000",
-  "display" : "Evaluation procedure (procedure)"
-}, "valueSet" :null, "langs":"en", "useServer":"true", "useClient":"false", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Patient evaluation procedure (procedure)",
-  "code" : "386053000",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#386053000 (\"Evaluation procedure (procedure)\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#386053000\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at Coding\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"386053000\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "http://snomed.info/sct",
-    "code" : "386053000",
-    "display" : "Evaluation procedure (procedure)"
-  }]
-}, "langs":"en", "useServer":"true", "useClient":"false", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Patient evaluation procedure (procedure)",
-  "code" : "386053000",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#386053000 (\"Evaluation procedure (procedure)\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#386053000\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at CodeableConcept.coding[0]\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"386053000\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "http://snomed.info/sct",
-    "code" : "394814009",
-    "display" : "General practice (specialty)"
-  }]
-}, "url": "http://hl7.org/fhir/ValueSet/c80-practice-codes", "version": "4.0.1", "langs":"en", "useServer":"true", "useClient":"false", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "General practice (specialty) (qualifier value)",
-  "code" : "394814009",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://hl7.org/fhir/ValueSet/c80-practice-codes|4.0.1: Analysing http://hl7.org/fhir/ValueSet/c80-practice-codes|4.0.1 for validation purposes\n1ms http://hl7.org/fhir/ValueSet/c80-practice-codes|4.0.1: Parameters: disp-lang=en, generate-narrative, default-to-latest\n1ms http://hl7.org/fhir/ValueSet/c80-practice-codes|4.0.1: Version Rules: default:http://snomed.info/sct#http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/ValueSet/c80-practice-codes|4.0.1: Prepare include[0]: \"(http://snomed.info/sct)(408467006,394577000,394578005,421661004,408462000,394579002,394804000,394580004,394803006,408480009,408454008,394809005,394592004,394600006,394601005,394581000,408478003,394812008,408444009,394582007,408475000,410005002,394583002,419772000,394584008,408443003,394802001,394915009,394814009,394808002,394811001,408446006,394586005,394916005,408472002,394597005,394598000,394807007,419192003,408468001,394593009,394813003,410001006,394589003,394591006,394599008,394649004,408470005,394585009,394821009,422191005,394594003,416304004,418960008,394882004,394806003,394588006,408459003,394607009,419610006,418058008,420208008,418652005,418535003,418862001,419365004,418002000,419983000,419170002,419472004,394539006,420112009,409968004,394587001,394913002,408440000,418112009,419815003,394914008,408455009,394602003,408447002,394810000,408450004,408476004,408469009,408466002,408471009,408464004,408441001,408465003,394605001,394608004,408461007,408460008,408460008,394606000,408449004,394608004,418018006,394604002,394609007,408474001,394610002,394611003,408477008,394801008,408463005,419321007,394576009,394590007,409967009,408448007,419043006,394612005,394733009,394732004)\"\n1ms http://hl7.org/fhir/ValueSet/c80-practice-codes|4.0.1: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/ValueSet/c80-practice-codes|4.0.1: Validate \"[http://snomed.info/sct#394814009 (\"General practice (specialty)\")]\"\n1ms http://hl7.org/fhir/ValueSet/c80-practice-codes|4.0.1: Check \"http://snomed.info/sct#394814009\"\n1ms http://hl7.org/fhir/ValueSet/c80-practice-codes|4.0.1: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/ValueSet/c80-practice-codes|4.0.1: check code in (http://snomed.info/sct)(408467006,394577000,394578005,421661004,408462000,394579002,394804000,394580004,394803006,408480009,408454008,394809005,394592004,394600006,394601005,394581000,408478003,394812008,408444009,394582007,408475000,410005002,394583002,419772000,394584008,408443003,394802001,394915009,394814009,394808002,394811001,408446006,394586005,394916005,408472002,394597005,394598000,394807007,419192003,408468001,394593009,394813003,410001006,394589003,394591006,394599008,394649004,408470005,394585009,394821009,422191005,394594003,416304004,418960008,394882004,394806003,394588006,408459003,394607009,419610006,418058008,420208008,418652005,418535003,418862001,419365004,418002000,419983000,419170002,419472004,394539006,420112009,409968004,394587001,394913002,408440000,418112009,419815003,394914008,408455009,394602003,408447002,394810000,408450004,408476004,408469009,408466002,408471009,408464004,408441001,408465003,394605001,394608004,408461007,408460008,408460008,394606000,408449004,394608004,418018006,394604002,394609007,408474001,394610002,394611003,408477008,394801008,408463005,419321007,394576009,394590007,409967009,408448007,419043006,394612005,394733009,394732004) at CodeableConcept.coding[0]\n1ms http://hl7.org/fhir/ValueSet/c80-practice-codes|4.0.1: Code \"394814009\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "http://snomed.info/sct",
-    "code" : "310361003",
-    "display" : "Non-urgent cardiological admission"
-  }]
-}, "langs":"en", "useServer":"true", "useClient":"false", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Non-urgent cardiological admission",
-  "code" : "310361003",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#310361003 (\"Non-urgent cardiological admission\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#310361003\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at CodeableConcept.coding[0]\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"310361003\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "http://snomed.info/sct",
-    "code" : "34068001",
-    "display" : "Heart valve replacement"
-  }]
-}, "url": "http://hl7.org/fhir/ValueSet/encounter-reason", "version": "4.0.1", "langs":"en", "useServer":"true", "useClient":"false", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Replacement of unspecified heart valve",
-  "code" : "34068001",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: Analysing http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1 for validation purposes\n1ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: Parameters: disp-lang=en, generate-narrative, default-to-latest\n1ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: Version Rules: default:http://snomed.info/sct#http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: Prepare include[0]: \"(http://snomed.info/sct)(conceptis-a404684003)\"\n1ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: Prepare include[1]: \"(http://snomed.info/sct)(conceptis-a71388002)\"\n1ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: Prepare include[2]: \"(http://snomed.info/sct)(conceptis-a243796009)\"\n1ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: Prepare include[3]: \"(http://snomed.info/sct)(conceptis-a272379006)\"\n1ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: Validate \"[http://snomed.info/sct#34068001 (\"Heart valve replacement\")]\"\n1ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: Check \"http://snomed.info/sct#34068001\"\n1ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: check code in (http://snomed.info/sct)(conceptis-a404684003) at CodeableConcept.coding[0]\n6ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: Filter concept is-a 404684003: Code \"34068001\" not found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n6ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108\n6ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: check code in (http://snomed.info/sct)(conceptis-a71388002) at CodeableConcept.coding[0]\n8ms http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1: Filter concept is-a 71388002: Code \"34068001\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "http://snomed.info/sct",
-    "code" : "1145423002",
-    "display" : "Azithromycin 250 mg oral tablet"
-  }]
-}, "langs":"en", "useServer":"true", "useClient":"false", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Product containing precisely azithromycin 250 milligram/1 each conventional release oral tablet (clinical drug)",
-  "code" : "1145423002",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#1145423002 (\"Azithromycin 250 mg oral tablet\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#1145423002\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at CodeableConcept.coding[0]\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"1145423002\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "http://snomed.info/sct",
-    "code" : "311504000",
-    "display" : "With or after food"
-  }]
-}, "langs":"en", "useServer":"true", "useClient":"false", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "With or after food",
-  "code" : "311504000",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#311504000 (\"With or after food\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#311504000\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at CodeableConcept.coding[0]\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"311504000\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "http://snomed.info/sct",
-    "code" : "26643006",
-    "display" : "Oral Route"
-  }]
-}, "langs":"en", "useServer":"true", "useClient":"false", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Oral route",
-  "code" : "26643006",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#26643006 (\"Oral Route\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#26643006\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at CodeableConcept.coding[0]\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"26643006\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "http://snomed.info/sct",
-    "code" : "421521009",
-    "display" : "Swallow - dosing instruction imperative (qualifier value)"
-  }]
-}, "langs":"en", "useServer":"true", "useClient":"false", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Swallow - dosing instruction imperative (qualifier value)",
-  "code" : "421521009",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#421521009 (\"Swallow - dosing instruction imperative (qualifier value)\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#421521009\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at CodeableConcept.coding[0]\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"421521009\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "http://snomed.info/sct",
-    "code" : "227493005",
-    "display" : "Cashew Nut"
-  }]
-}, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type", "version": "2.2.0", "langs":"en", "useServer":"true", "useClient":"false", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Cashew nuts",
-  "code" : "227493005",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: Analysing http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0 for validation purposes\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: Parameters: disp-lang=en, generate-narrative, default-to-latest\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: Version Rules: default:http://snomed.info/sct#http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: Prepare include[0]: \"(http://snomed.info/sct)(conceptis-a762766007)\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: Prepare include[1]: \"(http://snomed.info/sct)(conceptis-a412413001)\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: Prepare include[2]: \"(http://snomed.info/sct)(conceptis-a346415002)\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: Prepare include[3]: \"(http://snomed.info/sct)(conceptis-a890302005)\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: Prepare include[4]: \"(http://snomed.info/sct)(11713004,444923006)\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: Validate \"[http://snomed.info/sct#227493005 (\"Cashew Nut\")]\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: Check \"http://snomed.info/sct#227493005\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: check code in (http://snomed.info/sct)(conceptis-a762766007) at CodeableConcept.coding[0]\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/edible-substance-type|2.2.0: Filter concept is-a 762766007: Code \"227493005\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "http://snomed.info/sct",
-    "code" : "15108003",
-    "display" : "Restricted fiber diet"
-  }],
-  "text" : "Fiber restricted diet"
-}, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type", "version": "2.2.0", "langs":"en", "useServer":"true", "useClient":"false", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "severity" : "error",
-  "error" : "No valid coding was found for the value set 'http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0'",
-  "class" : "UNKNOWN",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Analysing http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0 for validation purposes\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Parameters: disp-lang=en, generate-narrative, default-to-latest\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Version Rules: default:http://snomed.info/sct#http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Prepare include[0]: \"(http://snomed.info/sct)(conceptis-a182922004)\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Prepare include[1]: \"(http://snomed.info/sct)(conceptis-a229912004)\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Prepare include[2]: \"(http://snomed.info/sct)(35011000087100,1297276008,40043006)\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Validate \"[http://snomed.info/sct#15108003 (\"Restricted fiber diet\")]\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Check \"http://snomed.info/sct#15108003\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: check code in (http://snomed.info/sct)(conceptis-a182922004) at CodeableConcept.coding[0]\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Filter concept is-a 182922004: Code \"15108003\" not found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: check code in (http://snomed.info/sct)(conceptis-a229912004) at CodeableConcept.coding[0]\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Filter concept is-a 229912004: Code \"15108003\" not found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: check code in (http://snomed.info/sct)(35011000087100,1297276008,40043006) at CodeableConcept.coding[0]",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome",
-  "issue" : [{
+e: {
+  "source" : tx.fhir.org,
+  "valueSet" : {
+  "resourceType" : "ValueSet",
+  "status" : "active",
+  "expansion" : {
     "extension" : [{
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
-      "valueString" : "None_of_the_provided_codes_are_in_the_value_set_one"
+      "url" : "http://hl7.org/fhir/StructureDefinition/valueset-unclosed",
+      "valueBoolean" : true
+    }],
+    "identifier" : "urn:uuid:46c5980a-d0f3-4eb1-a830-50dcac217374",
+    "timestamp" : "2026-03-21T05:35:27.781Z",
+    "total" : 77,
+    "offset" : 0,
+    "parameter" : [{
+      "name" : "excludeNested",
+      "valueBoolean" : true
     },
     {
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
-      "valueUrl" : "https://tx.fhir.org/r4"
-    }],
-    "severity" : "information",
-    "code" : "code-invalid",
-    "details" : {
-      "coding" : [{
-        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
-        "code" : "this-code-not-in-vs"
-      }],
-      "text" : "The provided code 'http://snomed.info/sct#15108003 ('Restricted fiber diet')' was not found in the value set 'http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0'"
-    },
-    "expression" : ["CodeableConcept.coding[0].code"]
-  },
-  {
-    "extension" : [{
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
-      "valueString" : "TX_GENERAL_CC_ERROR_MESSAGE"
+      "name" : "includeDefinition",
+      "valueBoolean" : false
     },
     {
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
-      "valueUrl" : "https://tx.fhir.org/r4"
+      "name" : "offset",
+      "valueInteger" : 0
+    },
+    {
+      "name" : "count",
+      "valueInteger" : 1000
+    },
+    {
+      "name" : "used-codesystem",
+      "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901"
+    },
+    {
+      "name" : "system-version",
+      "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
     }],
-    "severity" : "error",
-    "code" : "code-invalid",
-    "details" : {
-      "coding" : [{
-        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
-        "code" : "not-in-vs"
-      }],
-      "text" : "No valid coding was found for the value set 'http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0'"
-    }
-  }]
-}
-
+    "contains" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "308335008",
+      "display" : "Patient encounter procedure"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "4525004",
+      "display" : "Emergency department patient visit"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "12843005",
+      "display" : "Subsequent hospital visit by physician"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "14736009",
+      "display" : "Patient evaluation and management"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "18170008",
+      "display" : "Subsequent nursing facility visit"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "19681004",
+      "display" : "Nursing evaluation of patient and report"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "50357006",
+      "display" : "Evaluation and management of patient at home"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "68341005",
+      "display" : "Hemodialysis, supervision at home"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "69399002",
+      "display" : "Initial hospital visit by physician"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "83362003",
+      "display" : "Final inpatient visit with instructions at discharge"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "86013001",
+      "display" : "Periodic reevaluation and management of healthy individual"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "86181006",
+      "display" : "Evaluation and management of inpatient"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "90526000",
+      "display" : "Initial evaluation and management of healthy individual"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "108219001",
+      "display" : "Physician visit with evaluation AND/OR management service"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "108220007",
+      "display" : "Evaluation AND/OR management - new patient"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "108221006",
+      "display" : "Evaluation AND/OR management - established patient"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "185321005",
+      "display" : "Letter encounter to patient"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "185345009",
+      "display" : "Encounter for symptom"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "185346005",
+      "display" : "Encounter for sign"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "185347001",
+      "display" : "Encounter for problem"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "185348006",
+      "display" : "Encounter for fear"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "185349003",
+      "display" : "Encounter for check up"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "185387006",
+      "display" : "New patient consultation"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "185462000",
+      "display" : "Home visit request by relative"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "185463005",
+      "display" : "Visit out of hours"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "185464004",
+      "display" : "Out of hours visit - not night visit"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "185465003",
+      "display" : "Weekend visit"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "185466002",
+      "display" : "Home visit for urgent condition"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "185467006",
+      "display" : "Home visit for acute condition"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "185468001",
+      "display" : "Home visit for chronic condition"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "185469009",
+      "display" : "District nurse visit"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "185470005",
+      "display" : "Home visit elderly assessment"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "207195004",
+      "display" : "History and physical examination with evaluation and management of nursing facility patient"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "209099002",
+      "display" : "History and physical examination with management of domiciliary or rest home patient"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "210098006",
+      "display" : "Domiciliary or rest home patient evaluation and management"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "225929007",
+      "display" : "Joint home visit"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "270424005",
+      "display" : "Letter encounter from patient"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "270427003",
+      "display" : "Patient-initiated encounter"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "270430005",
+      "display" : "Provider-initiated encounter"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "288836004",
+      "display" : "Agreeing on elements of the care plan"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "310587004",
+      "display" : "First annual visit by district nurse"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "310588009",
+      "display" : "Visit by health visitor"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "315205008",
+      "display" : "Bank holiday home visit"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "401271004",
+      "display" : "E-mail sent to patient"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "408482001",
+      "display" : "District nurse follow up"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "408483006",
+      "display" : "District nurse initial visit"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "408487007",
+      "display" : "Health visitor follow up"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "416520008",
+      "display" : "Consultation for unaccompanied minor"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "423215004",
+      "display" : "Provision of continuity of care"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "439058005",
+      "display" : "Home visit for care and maintenance of urinary catheter"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "439708006",
+      "display" : "Home visit"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "439887005",
+      "display" : "Home visit for mechanical ventilation care"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "440068009",
+      "display" : "Home visit for newborn care and assessment"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "440085006",
+      "display" : "Home visit for postpartum care and assessment"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "440146002",
+      "display" : "Home visit for care and maintenance of colostomy"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "440168007",
+      "display" : "Provision of copy of letter from specialist to patient"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "440568002",
+      "display" : "Visit with nurse at next appointment requested"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "440611006",
+      "display" : "Home visit for marriage counseling"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "440696002",
+      "display" : "Home visit for intramuscular injection"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "441244001",
+      "display" : "Home visit for cystostomy care and maintenance"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "448337001",
+      "display" : "Telemedicine consultation with patient"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "698704008",
+      "display" : "Home visit for rheumatology service"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "704126008",
+      "display" : "Home visit for anticoagulation monitoring"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "711458003",
+      "display" : "Encounter for fitness for duty exam"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "866149003",
+      "display" : "Annual visit"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "1237136005",
+      "display" : "Consultation with patient"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "1258986006",
+      "display" : "Face-to-face encounter"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "1269515004",
+      "display" : "Face to face consultation with patient"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "3391000175108",
+      "display" : "Office visit for pediatric care and assessment"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "4141000175103",
+      "display" : "Encounter for blood donation"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "6051000124107",
+      "display" : "Pharmacokinetic consultation"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "6061000124109",
+      "display" : "Risk evaluation and mitigation strategy consultation"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "444971000124105",
+      "display" : "Annual wellness visit"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "452081000124104",
+      "display" : "Health evaluation of new immigrant"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "453701000124103",
+      "display" : "In-person encounter"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "456201000124103",
+      "display" : "Medicare annual wellness visit"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "461231000124109",
+      "display" : "Consultation for suicide risk management"
+    }]
+  }
+},
+  "error" : ""
 }
 -------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "http://snomed.info/sct",
-    "code" : "16208003",
-    "display" : "Low fat diet"
-  }],
-  "text" : "Low fat diet"
-}, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type", "version": "2.2.0", "langs":"en", "useServer":"true", "useClient":"false", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
+{"hierarchical" : false, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "inactive" : true,
+    "include" : [{
+      "system" : "http://snomed.info/sct",
+      "concept" : [{
+        "code" : "386053000",
+        "display" : "Evaluation procedure (procedure)"
+      },
+      {
+        "code" : "410606002",
+        "display" : "Social service procedure (procedure)"
+      }]
+    }]
+  }
 }}####
-v: {
-  "severity" : "error",
-  "error" : "No valid coding was found for the value set 'http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0'",
-  "class" : "UNKNOWN",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Analysing http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0 for validation purposes\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Parameters: disp-lang=en, generate-narrative, default-to-latest\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Version Rules: default:http://snomed.info/sct#http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Prepare include[0]: \"(http://snomed.info/sct)(conceptis-a182922004)\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Prepare include[1]: \"(http://snomed.info/sct)(conceptis-a229912004)\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Prepare include[2]: \"(http://snomed.info/sct)(35011000087100,1297276008,40043006)\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Validate \"[http://snomed.info/sct#16208003 (\"Low fat diet\")]\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Check \"http://snomed.info/sct#16208003\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: check code in (http://snomed.info/sct)(conceptis-a182922004) at CodeableConcept.coding[0]\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Filter concept is-a 182922004: Code \"16208003\" not found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: check code in (http://snomed.info/sct)(conceptis-a229912004) at CodeableConcept.coding[0]\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: Filter concept is-a 229912004: Code \"16208003\" not found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0: check code in (http://snomed.info/sct)(35011000087100,1297276008,40043006) at CodeableConcept.coding[0]",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome",
-  "issue" : [{
-    "extension" : [{
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
-      "valueString" : "None_of_the_provided_codes_are_in_the_value_set_one"
+e: {
+  "source" : tx.fhir.org,
+  "valueSet" : {
+  "resourceType" : "ValueSet",
+  "status" : "active",
+  "expansion" : {
+    "identifier" : "urn:uuid:6e11088d-b174-4e06-b3f1-49eaaceb8f87",
+    "timestamp" : "2026-03-21T05:35:29.099Z",
+    "total" : 2,
+    "offset" : 0,
+    "parameter" : [{
+      "name" : "excludeNested",
+      "valueBoolean" : true
     },
     {
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
-      "valueUrl" : "https://tx.fhir.org/r4"
-    }],
-    "severity" : "information",
-    "code" : "code-invalid",
-    "details" : {
-      "coding" : [{
-        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
-        "code" : "this-code-not-in-vs"
-      }],
-      "text" : "The provided code 'http://snomed.info/sct#16208003 ('Low fat diet')' was not found in the value set 'http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0'"
-    },
-    "expression" : ["CodeableConcept.coding[0].code"]
-  },
-  {
-    "extension" : [{
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
-      "valueString" : "TX_GENERAL_CC_ERROR_MESSAGE"
+      "name" : "includeDefinition",
+      "valueBoolean" : false
     },
     {
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
-      "valueUrl" : "https://tx.fhir.org/r4"
-    }],
-    "severity" : "error",
-    "code" : "code-invalid",
-    "details" : {
-      "coding" : [{
-        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
-        "code" : "not-in-vs"
-      }],
-      "text" : "No valid coding was found for the value set 'http://hl7.org/fhir/us/davinci-crd/ValueSet/diet-type|2.2.0'"
-    }
-  }]
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "http://snomed.info/sct",
-    "code" : "256674009",
-    "display" : "Fat"
-  }]
-}, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code", "version": "2.2.0", "langs":"en", "useServer":"true", "useClient":"false", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "severity" : "error",
-  "error" : "No valid coding was found for the value set 'http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code|2.2.0'",
-  "class" : "UNKNOWN",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code|2.2.0: Analysing http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code|2.2.0 for validation purposes\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code|2.2.0: Parameters: disp-lang=en, generate-narrative, default-to-latest\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code|2.2.0: Version Rules: default:http://snomed.info/sct#http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code|2.2.0: Prepare include[0]: \"(http://snomed.info/sct)(31212001,68356001,71482002,31539008,19751002,63793008,60471000,41503000,111064005,29183001,43268001,57272005,70726008,73196006,34865002,2832002,11555005,25958007)\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code|2.2.0: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code|2.2.0: Prepare include[1]: \"(http://snomed.info/sct)(conceptis-a226355009)\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code|2.2.0: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code|2.2.0: Validate \"[http://snomed.info/sct#256674009 (\"Fat\")]\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code|2.2.0: Check \"http://snomed.info/sct#256674009\"\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code|2.2.0: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code|2.2.0: check code in (http://snomed.info/sct)(31212001,68356001,71482002,31539008,19751002,63793008,60471000,41503000,111064005,29183001,43268001,57272005,70726008,73196006,34865002,2832002,11555005,25958007) at CodeableConcept.coding[0]\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code|2.2.0: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code|2.2.0: check code in (http://snomed.info/sct)(conceptis-a226355009) at CodeableConcept.coding[0]\n1ms http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code|2.2.0: Filter concept is-a 226355009: Code \"256674009\" not found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome",
-  "issue" : [{
-    "extension" : [{
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
-      "valueString" : "None_of_the_provided_codes_are_in_the_value_set_one"
+      "name" : "offset",
+      "valueInteger" : 0
     },
     {
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
-      "valueUrl" : "https://tx.fhir.org/r4"
-    }],
-    "severity" : "information",
-    "code" : "code-invalid",
-    "details" : {
-      "coding" : [{
-        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
-        "code" : "this-code-not-in-vs"
-      }],
-      "text" : "The provided code 'http://snomed.info/sct#256674009 ('Fat')' was not found in the value set 'http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code|2.2.0'"
-    },
-    "expression" : ["CodeableConcept.coding[0].code"]
-  },
-  {
-    "extension" : [{
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
-      "valueString" : "TX_GENERAL_CC_ERROR_MESSAGE"
+      "name" : "count",
+      "valueInteger" : 1000
     },
     {
-      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
-      "valueUrl" : "https://tx.fhir.org/r4"
+      "name" : "used-codesystem",
+      "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901"
+    },
+    {
+      "name" : "system-version",
+      "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
     }],
-    "severity" : "error",
-    "code" : "code-invalid",
-    "details" : {
-      "coding" : [{
-        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
-        "code" : "not-in-vs"
-      }],
-      "text" : "No valid coding was found for the value set 'http://hl7.org/fhir/us/davinci-crd/ValueSet/nutrient-code|2.2.0'"
-    }
-  }]
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "http://snomed.info/sct",
-    "code" : "726551006",
-    "display" : "Contrast enhanced spectral mammography (Procedure)"
-  }]
-}, "langs":"en", "useServer":"true", "useClient":"false", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Contrast enhanced spectral mammography (procedure)",
-  "code" : "726551006",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#726551006 (\"Contrast enhanced spectral mammography (Procedure)\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#726551006\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at CodeableConcept.coding[0]\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"726551006\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
+    "contains" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "386053000",
+      "display" : "Investigations"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "410606002",
+      "display" : "Social service procedure"
+    }]
+  }
+},
+  "error" : ""
 }
 -------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "http://snomed.info/sct",
-    "code" : "108252007",
-    "display" : "Laboratory procedure"
-  }]
-}, "langs":"en", "useServer":"true", "useClient":"false", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "system-version",
-    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
-  },
-  {
-    "name" : "defaultDisplayLanguage",
-    "valueCode" : "en"
-  }]
-}}####
-v: {
-  "display" : "Laboratory procedure",
-  "code" : "108252007",
-  "system" : "http://snomed.info/sct",
-  "version" : "http://snomed.info/sct/731000124108/version/20250901",
-  "server" : "https://tx.fhir.org/r4",
-  "diagnostics" : "0ms tx-op\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#108252007 (\"Laboratory procedure\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#108252007\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at CodeableConcept.coding[0]\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"108252007\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"hierarchical" : true, "valueSet" :{
+{"hierarchical" : false, "valueSet" :{
   "resourceType" : "ValueSet",
   "compose" : {
     "inactive" : true,
@@ -17725,13 +17050,13 @@ e: {
       "url" : "http://hl7.org/fhir/StructureDefinition/valueset-unclosed",
       "valueBoolean" : true
     }],
-    "identifier" : "urn:uuid:2700d403-ecef-4a82-ba7b-eeedf6133fae",
-    "timestamp" : "2026-03-03T18:55:24.201Z",
+    "identifier" : "urn:uuid:df5815f4-8204-4d94-922d-ecf02a5913ae",
+    "timestamp" : "2026-03-21T05:35:31.775Z",
     "total" : 275,
     "offset" : 0,
     "parameter" : [{
       "name" : "excludeNested",
-      "valueBoolean" : false
+      "valueBoolean" : true
     },
     {
       "name" : "includeDefinition",
@@ -19157,8 +18482,8 @@ e: {
       "url" : "http://hl7.org/fhir/StructureDefinition/valueset-unclosed",
       "valueBoolean" : true
     }],
-    "identifier" : "urn:uuid:b8c9fb34-63ce-42e8-9f57-00017145e841",
-    "timestamp" : "2026-03-03T18:55:24.923Z",
+    "identifier" : "urn:uuid:d9f4c8ea-be7b-48f9-b75b-030274a2179c",
+    "timestamp" : "2026-03-21T05:35:32.199Z",
     "total" : 14,
     "offset" : 0,
     "parameter" : [{
@@ -19284,8 +18609,8 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:000e6314-2cb1-4530-89e1-1a83c62f98fe",
-    "timestamp" : "2026-03-03T18:55:25.418Z",
+    "identifier" : "urn:uuid:98719f54-dadc-4033-84dc-3cff08380784",
+    "timestamp" : "2026-03-21T05:35:32.562Z",
     "total" : 3,
     "offset" : 0,
     "parameter" : [{
@@ -19332,7 +18657,7 @@ e: {
   "error" : ""
 }
 -------------------------------------------------------------------------------------
-{"hierarchical" : true, "valueSet" :{
+{"hierarchical" : false, "valueSet" :{
   "resourceType" : "ValueSet",
   "compose" : {
     "inactive" : true,
@@ -19356,12 +18681,12 @@ e: {
       "url" : "http://hl7.org/fhir/StructureDefinition/valueset-unclosed",
       "valueBoolean" : true
     }],
-    "identifier" : "urn:uuid:fc33b02c-ea38-4411-95d7-0d734cb3bf25",
-    "timestamp" : "2026-03-03T18:55:26.259Z",
+    "identifier" : "urn:uuid:1faa041f-9c32-4dc3-9173-e0f35d8215b0",
+    "timestamp" : "2026-03-21T05:35:32.895Z",
     "offset" : 0,
     "parameter" : [{
       "name" : "excludeNested",
-      "valueBoolean" : false
+      "valueBoolean" : true
     },
     {
       "name" : "includeDefinition",
@@ -24412,8 +23737,8 @@ e: {
       "url" : "http://hl7.org/fhir/StructureDefinition/valueset-unclosed",
       "valueBoolean" : true
     }],
-    "identifier" : "urn:uuid:eb88cddc-0c08-4a4a-afcd-12395aa52568",
-    "timestamp" : "2026-03-03T18:55:27.270Z",
+    "identifier" : "urn:uuid:bddf26a1-121f-46b0-a62a-c7b5aa06c97d",
+    "timestamp" : "2026-03-21T05:35:33.400Z",
     "total" : 31,
     "offset" : 0,
     "parameter" : [{
@@ -24624,8 +23949,8 @@ e: {
       "url" : "http://hl7.org/fhir/StructureDefinition/valueset-unclosed",
       "valueBoolean" : true
     }],
-    "identifier" : "urn:uuid:4de4ebc4-6927-4553-98a8-14216c9acd57",
-    "timestamp" : "2026-03-03T18:55:27.785Z",
+    "identifier" : "urn:uuid:962db8a5-937f-41cf-947d-c33e289a19d8",
+    "timestamp" : "2026-03-21T05:35:33.724Z",
     "total" : 95,
     "offset" : 0,
     "parameter" : [{
@@ -25156,8 +24481,8 @@ e: {
       "url" : "http://hl7.org/fhir/StructureDefinition/valueset-unclosed",
       "valueBoolean" : true
     }],
-    "identifier" : "urn:uuid:cda95b07-2d03-4243-8121-79f1a9931efc",
-    "timestamp" : "2026-03-03T18:55:28.400Z",
+    "identifier" : "urn:uuid:8588beed-b15b-482c-ad02-31a3d01d3fad",
+    "timestamp" : "2026-03-21T05:35:34.048Z",
     "total" : 2,
     "offset" : 0,
     "parameter" : [{
@@ -25220,8 +24545,8 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:687e2d5a-482e-4855-8f44-886234f7bfe5",
-    "timestamp" : "2026-03-03T18:55:28.931Z",
+    "identifier" : "urn:uuid:b4dc6ad8-847e-44c8-8c26-aac4f50212bf",
+    "timestamp" : "2026-03-21T05:35:34.357Z",
     "total" : 2,
     "offset" : 0,
     "parameter" : [{
@@ -25263,7 +24588,7 @@ e: {
   "error" : ""
 }
 -------------------------------------------------------------------------------------
-{"hierarchical" : true, "valueSet" :{
+{"hierarchical" : false, "valueSet" :{
   "resourceType" : "ValueSet",
   "compose" : {
     "inactive" : true,
@@ -25332,13 +24657,13 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:e1f9bcba-a6fe-4e5e-ad69-8203ae6583f0",
-    "timestamp" : "2026-03-03T18:55:29.897Z",
+    "identifier" : "urn:uuid:0fa1111d-9bc8-48b2-a3e2-1973900755ab",
+    "timestamp" : "2026-03-21T05:35:34.723Z",
     "total" : 18,
     "offset" : 0,
     "parameter" : [{
       "name" : "excludeNested",
-      "valueBoolean" : false
+      "valueBoolean" : true
     },
     {
       "name" : "includeDefinition",
@@ -25479,8 +24804,8 @@ e: {
       "url" : "http://hl7.org/fhir/StructureDefinition/valueset-unclosed",
       "valueBoolean" : true
     }],
-    "identifier" : "urn:uuid:e91af5ab-9ee8-4f40-b693-634c8f880c0f",
-    "timestamp" : "2026-03-03T18:55:30.369Z",
+    "identifier" : "urn:uuid:08074534-52af-44fd-9f0d-dcb63d45e1c6",
+    "timestamp" : "2026-03-21T05:35:35.047Z",
     "total" : 496,
     "offset" : 0,
     "parameter" : [{

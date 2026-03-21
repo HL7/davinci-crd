@@ -1,0 +1,26 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Renumber conformance (current file)",
+      "type": "shell",
+      "command": "python",
+      "args": [
+        "${workspaceFolder}/renumber_conformance.py",
+        "${file}"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Renumber conformance (dry-run, current file)",
+      "type": "shell",
+      "command": "python",
+      "args": [
+        "${workspaceFolder}/renumber_conformance.py",
+        "--dry-run",
+        "${file}"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}

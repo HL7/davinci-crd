@@ -16,10 +16,14 @@ e: {
   "expansion" : {
     "extension" : [{
       "url" : "http://hl7.org/fhir/StructureDefinition/valueset-unclosed",
+      "valueBoolean" : true
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/valueset-unclosed-reason",
       "valueString" : "This extension is based on a fragment of the code system http://hl7.org/fhir/sid/icd-9-cm"
     }],
-    "identifier" : "urn:uuid:edc44259-047e-4550-bfe1-fba1f53ba6e2",
-    "timestamp" : "2026-03-03T18:48:18.353Z",
+    "identifier" : "urn:uuid:95989851-6581-4d9b-bdb2-a730ffebaa65",
+    "timestamp" : "2026-03-21T05:35:25.414Z",
     "total" : 22,
     "offset" : 0,
     "parameter" : [{

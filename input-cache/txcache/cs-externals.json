@@ -8,6 +8,7 @@
   },
   "https://example.org/some-organization/device-codes" : null,
   "http://example.org/fhir/CodeSystem/SomeCodes" : null,
+  "http://snomed.info/sct|http://snomed.info/sct/731000124108" : null,
   "http://snomed.info/sct" : {
     "server" : "http://tx.fhir.org/r4",
     "filename" : "cs-76ceb939-4b4d-454d-a35e-dbb2d2fcd1e1.json"
