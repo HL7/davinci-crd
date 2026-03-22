@@ -63,7 +63,7 @@ dependencies:
 #      Provides the latest versions of FHIR code systems and value sets, which are referenced by this IG
   hl7.fhir.uv.xver-r5.r4:
     id: xver
-    version: dev
+    version: 0.1.0
     reason: |
       Needed to pre-adopt R5 Questionnaire elements in R4
   hl7.fhir.us.core:

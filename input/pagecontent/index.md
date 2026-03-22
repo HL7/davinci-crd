@@ -13,11 +13,11 @@ Feedback on changes made since the ballot will generally fall into one of two ca
 </blockquote>-->
 
 <blockquote class="stu-note" markdown="1">
-This STU update of the specification reflects several changes based on implementer feedback about the Coverage Requirements Discovery (hereafter, CRD) specification arising from detailed review, connectathons and implementation experience.  "STU notes" call out additional key considerations where feedback is desired.
+This STU update of the specification reflects changes based on implementer feedback about the Coverage Requirements Discovery (hereafter, CRD) specification arising from detailed review, connectathons and implementation experience.  "STU notes" call out additional key considerations where feedback is desired.
 
 This specification is a Standard for Trial Use.  It is expected to continue to evolve and improve through connectathon testing and feedback from early adopters.
 
-Feedback is welcome.  Requests for change may be submitted through the [FHIR change tracker](http://hl7.org/fhir-issues) indicating "US Da Vinci CRD" as the specification.  Questions should be raised on the [HRex Zulip stream](https://chat.fhir.org/#narrow/stream/180803-Da-Vinci-CRD).
+Feedback is welcome.  Requests for change may be submitted through the [FHIR change tracker](http://hl7.org/fhir-issues) indicating "US Da Vinci CRD" as the specification.  Questions should be raised on the [CRD Zulip stream](https://chat.fhir.org/#narrow/stream/180803-Da-Vinci-CRD).
 
 This implementation guide is dependent on other specifications.  Please submit any comments you have on these base specifications as follows:
 
@@ -25,7 +25,7 @@ This implementation guide is dependent on other specifications.  Please submit a
 * Feedback on the FHIR Core specification should be submitted to the [FHIR change tracker](http://hl7.org/fhir-issues) with "FHIR Core" as the specification.
 * Feedback on the US Core profiles should be submitted to the [FHIR change tracker](http://hl7.org/fhir-issues) with "US Core" as the specification.
 
-Individuals interested in participating in the Coverage Requirements Discovery implementation guide project or other HL7 Da Vinci projects can find information about Da Vinci [here](http://www.hl7.org/about/davinci).
+Individuals interested in participating in the Da Vinci Burden Reduction project or other HL7 Da Vinci projects can find information about Da Vinci [here](http://www.hl7.org/about/davinci).
 
 A summary of the major changes from the previous release can be found [here](history.html).
 
