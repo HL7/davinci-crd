@@ -1,12 +1,55 @@
 {
   "resourceType" : "Requirements",
   "id" : "fromNarrative",
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+    "valueCode" : "fm"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+    "valueInteger" : 4,
+    "_valueInteger" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
+        "valueCanonical" : "http://hl7.org/fhir/us/davinci-crd/ImplementationGuide/davinci-crd"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+    "valueCode" : "trial-use",
+    "_valueCode" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
+        "valueCanonical" : "http://hl7.org/fhir/us/davinci-crd/ImplementationGuide/davinci-crd"
+      }]
+    }
+  }],
   "url" : "http://hl7.org/fhir/us/davinci-crd/Requirements/fromNarrative",
+  "identifier" : [{
+    "system" : "urn:ietf:rfc:3986",
+    "value" : "urn:oid:2.16.840.1.113883.4.642.40.18.36.1"
+  }],
+  "version" : "2.2.0",
   "name" : "FromNarrative",
   "title" : "Narrative Conformance Statements",
   "status" : "active",
   "experimental" : false,
+  "date" : "2026-03-23T11:13:48-06:00",
+  "publisher" : "HL7 International / Financial Management",
+  "contact" : [{
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://www.hl7.org/Special/committees/fm"
+    }]
+  }],
   "description" : "Conformance statements found throughout the narrative of the IG consolidated into this computable resource for traceability purposes",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US"
+    }]
+  }],
   "actor" : ["http://hl7.org/fhir/us/davinci-crd/ActorDefinition/crd-server",
   "http://hl7.org/fhir/us/davinci-crd/ActorDefinition/crd-server-org",
   "http://hl7.org/fhir/us/davinci-crd/ActorDefinition/crd-client-org",
@@ -2424,7 +2467,7 @@
     "key" : "hook-27",
     "conformance" : ["SHALL"],
     "conditionality" : true,
-    "requirement" : "The 'context' field in invocations of the encounter-start hook **SHALL** conform to the logical model specified [here](http://hl7.org/fhir/tools/1.0.0/StructureDefinition-CDSHookEncounterStartContext.html)"
+    "requirement" : "The 'context' field in invocations of the encounter-start hook **SHALL** conform to the logical model specified [here](http://hl7.org/fhir/tools/1.1.0/StructureDefinition-CDSHookEncounterStartContext.html)"
   },
   {
     "extension" : [{
@@ -2463,7 +2506,7 @@
     "key" : "hook-29",
     "conformance" : ["SHALL"],
     "conditionality" : true,
-    "requirement" : "The 'context' field in invocations of the encounter-discharge hook **SHALL** conform to the logical model specified [here](http://hl7.org/fhir/tools/1.0.0/StructureDefinition-CDSHookEncounterDischargeContext.html)"
+    "requirement" : "The 'context' field in invocations of the encounter-discharge hook **SHALL** conform to the logical model specified [here](http://hl7.org/fhir/tools/1.1.0/StructureDefinition-CDSHookEncounterDischargeContext.html)"
   },
   {
     "extension" : [{
