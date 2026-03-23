@@ -5,17 +5,19 @@
       "title": "Payer XYZ Appointment Booking Decision Support",
       "description": "Indicates coverage requirements associated with draft orders, including expectations for prior authorization, recommended therapy alternatives, etc.",
       "id": "appointment-book-crd",
-      "prefetch": {
+      "prefetch" : {
         "patient": "Patient/{{context.patientId}}",
         "encounter": "Encounter/{{context.encounterId}}",
         "coverage": "Coverage?patient={{context.patientId}}&status=active",
         "deviceRequest" : "DeviceRequest?_id={{context.appointments.entry.resource.basedOn.extension('http://hl7.org/fhir/StructureDefinition/alternate-reference').value.resolve().ofType(DeviceRequest).id}}",
         "serviceRequest" : "ServiceRequest?_id={{context.appointments.entry.resource.basedOn.resolve().ofType(ServiceRequest).id}}",
         "medicationRequest" : "MedicationRequest?_id={{context.appointments.entry.resource.basedOn.extension('http://hl7.org/fhir/StructureDefinition/alternate-reference').value.resolve().ofType(MedicationRequest).id}}",
-        "practitionerRoles" : "PractitionerRole?_id={{%encounter.participant.individual.resolve().ofType(PractitionerRole).id|%encounter.serviceProvider.resolve().ofType(PractitionerRole).id|context.appointments.entry.resource.participant.actor.resolve().ofType(PractitionerRole).id|context.appointments.entry.resource.basedOn.resolve().performer.resolve().ofType(PractitionerRole).id|context.appointments.entry.resource.basedOn.resolve().requester.resolve().ofType(PractitionerRole).id}}",
-        "practitioners" : "Practitioner?_id={{%practitionerRoles.practitioner.resolve().id|%encounter.participant.individual.resolve().ofType(Practitioner).id|%encounter.serviceProvider.resolve().ofType(Practitioner).id|context.appointments.entry.resource.participant.actor.resolve().ofType(Practitioner).id|context.appointments.entry.resource.basedOn.resolve().performer.resolve().ofType(Practitioner).id|context.appointments.entry.resource.basedOn.resolve().requester.resolve().ofType(Practitioner).id}}",      
-        "organizations" : "Organization?_id={{%practitionerRoles.practitioner.resolve().id}}",
-        "locations" : "Practitioner?_id={{%practitionerRoles.location.resolve().id|%encounter.location.location.resolve().ofType(Location).id|context.appointments.entry.resource.participant.actor.resolve().ofType(Location).id|%serviceRequest.locationReference.resolve().ofType(Location).id}}"
+        "devices": "Device?_id={{%deviceRequests.entry.resource.code.resolve().id}}",
+        "medications": "Medication?_id={{%medicationRequests.entry.resource.medication.resolve().id}}",
+        "practitionerRoles" : "PractitionerRole?_id={{%encounter.participant.individual.resolve().ofType(PractitionerRole).id|context.appointments.entry.resource.participant.actor.resolve().ofType(PractitionerRole).id|%deviceRequests.entry.resource.performer.resolve().ofType(PractitionerRole).id|%deviceRequests.entry.resource.requester.resolve().ofType(PractitionerRole).id|%medicationRequests.entry.resource.performer.resolve().ofType(PractitionerRole).id|%medicationRequests.entry.resource.requester.resolve().ofType(PractitionerRole).id|%serviceRequests.entry.resource.performer.resolve().ofType(PractitionerRole).id|%serviceRequests.entry.resource.requester.resolve().ofType(PractitionerRole).id}}",
+        "practitioners" : "Practitioner?_id={{%practitionerRoles.entry.resource.practitioner.resolve().id|%encounter.participant.individual.resolve().ofType(Practitioner).id|context.appointments.entry.resource.participant.actor.resolve().ofType(Practitioner).id|%deviceRequests.entry.resource.performer.resolve().ofType(Practitioner).id|%deviceRequests.entry.resource.requester.resolve().ofType(Practitioner).id|%medicationRequests.entry.resource.performer.resolve().ofType(Practitioner).id|%medicationRequests.entry.resource.requester.resolve().ofType(Practitioner).id|%serviceRequests.entry.resource.performer.resolve().ofType(Practitioner).id|%serviceRequests.entry.resource.requester.resolve().ofType(Practitioner).id}}",
+        "organizations" : "Organization?_id={{%practitionerRoles.entry.resource.organization.resolve().id|%encounter.serviceProvider.resolve().ofType(Organization).id|%medicationRequests.entry.resource.dispenseRequest.performer.resolve().ofType(Organization).id|%serviceRequests.entry.resource.performer.resolve().ofType(Organization).id}}",
+        "locations" : "Location?_id={{%practitionerRoles.entry.resource.location.resolve().id|%encounter.location.location.resolve().id|context.appointments.entry.resource.participant.actor.resolve().ofType(Location).id|%serviceRequests.entry.resource.locationReference.resolve().ofType(Location).id}}"
       },
       "extension": {
         "davinci-crd.version": ["2.1","2.2"],
@@ -109,10 +111,10 @@
         "patient": "Patient/{{context.patientId}}",
         "encounter": "Encounter/{{context.encounterId}}",
         "coverage": "Coverage?patient={{context.patientId}}&status=active",
-        "practitionerRoles" : "PractitionerRole?_id={{%encounter.participant.individual.resolve().ofType(PractitionerRole).id|%encounter.serviceProvider.resolve().ofType(PractitionerRole).id}}",
-        "practitioners" : "Practitioner?_id={{%practitionerRoles.practitioner.resolve().id|%encounter.participant.individual.resolve().ofType(Practitioner).id|%encounter.serviceProvider.resolve().ofType(Practitioner).id}}",
-        "organizations" : "Organization?_id={{%practitionerRoles.organization.resolve().id}}",
-        "locations" : "Practitioner?_id={{%practitionerRoles.location.resolve().id|%encounter.location.location.resolve().ofType(Location).id}}"
+        "practitionerRoles" : "PractitionerRole?_id={{%encounter.participant.individual.resolve().ofType(PractitionerRole).id}}",
+        "practitioners" : "Practitioner?_id={{%practitionerRoles.entry.resource.practitioner.resolve().id|%encounter.participant.individual.resolve().ofType(Practitioner).id}}",
+        "organizations" : "Organization?_id={{%practitionerRoles.entry.resource.organization.resolve().id|%encounter.serviceProvider.resolve().ofType(Organization).id}}",
+        "locations" : "Location?_id={{%practitionerRoles.entry.resource.location.resolve().id|%encounter.location.location.resolve().id}}"
       },
       "extension": {
         "davinci-crd.version": ["2.2"],
@@ -192,10 +194,10 @@
         "patient": "Patient/{{context.patientId}}",
         "encounter": "Encounter/{{context.encounterId}}",
         "coverage": "Coverage?patient={{context.patientId}}&status=active",
-        "practitionerRoles" : "PractitionerRole?_id={{%encounter.participant.individual.resolve().ofType(PractitionerRole).id|%encounter.serviceProvider.resolve().ofType(PractitionerRole).id}}",
-        "practitioners" : "Practitioner?_id={{%practitionerRoles.practitioner.resolve().id|%encounter.participant.individual.resolve().ofType(Practitioner).id|%encounter.serviceProvider.resolve().ofType(Practitioner).id}}",
-        "organizations" : "Organization?_id={{%practitionerRoles.organization.resolve().id}}",
-        "locations" : "Practitioner?_id={{%practitionerRoles.location.resolve().id|%encounter.location.location.resolve().ofType(Location).id}}"
+        "practitionerRoles" : "PractitionerRole?_id={{%encounter.participant.individual.resolve().ofType(PractitionerRole).id}}",
+        "practitioners" : "Practitioner?_id={{%practitionerRoles.entry.resource.practitioner.resolve().id|%encounter.participant.individual.resolve().ofType(Practitioner).id}}",
+        "organizations" : "Organization?_id={{%practitionerRoles.entry.resource.organization.resolve().id|%encounter.serviceProvider.resolve().ofType(Organization).id}}",
+        "locations" : "Location?_id={{%practitionerRoles.entry.resource.location.resolve().id|%encounter.location.location.resolve().id}}"
       },
       "extension": {
         "davinci-crd.version": ["2.2"],
@@ -233,13 +235,18 @@
         "patient": "Patient/{{context.patientId}}",
         "encounter": "Encounter/{{context.encounterId}}",
         "coverage": "Coverage?patient={{context.patientId}}&status=active",
-        "communicationRequest": "CommunicationRequest?_id={{c}}",
-        "device": "Device?_id={{context.dispatchedOrders.resolve().ofType(DeviceRequest).code.resolve().id}}",
-        "medication": "Medication?_id={{context.dispatchedOrders.resolve().ofType(MedicationRequest).medication}}",
-        "practitionerRoles" : "PractitionerRole?_id={{%encounter.participant.individual.resolve().ofType(PractitionerRole).id|%encounter.serviceProvider.resolve().ofType(PractitionerRole).id|context.dispatchedOrders.resolve().sender.resolve().ofType(PractitionerRole).id|context.dispatchedOrders.resolve().recipient.resolve().ofType(PractitionerRole).id|context.dispatchedOrders.resolve().requester.resolve().ofType(PractitionerRole).id|context.dispatchedOrders.resolve().performer.resolve().ofType(PractitionerRole).id|context.dispatchedOrders.resolve().orderer.resolve().ofType(PractitionerRole).id|context.dispatchedOrders.resolve().prescriber.resolve().ofType(PractitionerRole).id}}",
-        "practitioners" : "Practitioner?_id={{%practitionerRoles.practitioner.resolve().id|%encounter.participant.individual.resolve().ofType(Practitioner).id|%encounter.serviceProvider.resolve().ofType(Practitioner).id|context.dispatchedOrders.resolve().sender.resolve().ofType(Practitioner).id|context.dispatchedOrders.resolve().recipient.resolve().ofType(Practitioner).id|context.dispatchedOrders.resolve().requester.resolve().ofType(Practitioner).id|context.dispatchedOrders.resolve().performer.resolve().ofType(Practitioner).id|context.dispatchedOrders.resolve().orderer.resolve().ofType(Practitioner).id|context.dispatchedOrders.resolve().prescriber.resolve().ofType(Practitioner).id}}",
-        "organizations" : "Organization?_id={{%practitionerRoles.organization.resolve().id|context.dispatchedOrders.resolve().dispenseRequest.performer.resolve().ofType(Organization).id}}",
-        "locations" : "Location?_id={{%practitionerRoles.location.resolve().id|%encounter.location.location.resolve().ofType(Location).id|context.dispatchedOrders.resolve().locationReference.resolve().ofType(Location).id}}"
+	      "communicationRequests": "CommunicationRequest?_id={{context.dispatchedOrders.resolve().ofType(CommunicationRequest).id}}",
+	      "deviceRequests": "DeviceRequest?_id={{context.dispatchedOrders.resolve().ofType(DeviceRequest).id}}",
+        "medicationRequests": "MedicationRequest?_id={{context.dispatchedOrders.resolve().ofType(MedicationRequest).id}}",
+        "nutritionOrders": "NutritionOrder?_id={{context.dispatchedOrders.resolve().ofType(NutritionOrder).id}}",
+        "serviceRequests": "ServiceRequest?_id={{context.dispatchedOrders.resolve().ofType(ServiceRequest).id}}",
+	      "visionPrescriptions": "VisionPrescription?_id={{context.dispatchedOrders.resolve().ofType(VisionPrescription).id}}",
+        "devices": "Device?_id={{%deviceRequests.entry.resource.code.resolve().id}}",
+        "medications": "Medication?_id={{%medicationRequests.entry.resource.medication.resolve().id}}",
+        "practitionerRoles": "PractitionerRole?_id={{%encounter.participant.individual.resolve().ofType(PractitionerRole).id|%communicationRequests.entry.resource.sender.resolve().ofType(PractitionerRole).id|%communicationRequests.entry.resource.recipient.resolve().ofType(PractitionerRole).id|%communicationRequests.entry.resource.requester.resolve().ofType(PractitionerRole).id|%deviceRequests.entry.resource.performer.resolve().ofType(PractitionerRole).id|%deviceRequests.entry.resource.requester.resolve().ofType(PractitionerRole).id|%medicationRequests.entry.resource.performer.resolve().ofType(PractitionerRole).id|%medicationRequests.entry.resource.requester.resolve().ofType(PractitionerRole).id|%serviceRequests.entry.resource.performer.resolve().ofType(PractitionerRole).id|%serviceRequests.entry.resource.requester.resolve().ofType(PractitionerRole).id|%nutritionOrders.entry.resource.orderer.resolve().ofType(PractitionerRole).id|%visionPrescriptions.entry.resource.prescriber.resolve().ofType(PractitionerRole).id}}",
+        "practitioners": "Practitioner?_id={{%practitionerRoles.entry.resource.practitioner.resolve().id|%encounter.participant.individual.resolve().ofType(Practitioner).id|%communicationRequests.entry.resource.sender.resolve().ofType(Practitioner).id|%communicationRequests.entry.resource.recipient.resolve().ofType(Practitioner).id|%communicationRequests.entry.resource.requester.resolve().ofType(Practitioner).id|%deviceRequests.entry.resource.performer.resolve().ofType(Practitioner).id|%deviceRequests.entry.resource.requester.resolve().ofType(Practitioner).id|%medicationRequests.entry.resource.performer.resolve().ofType(Practitioner).id|%medicationRequests.entry.resource.requester.resolve().ofType(Practitioner).id|%serviceRequests.entry.resource.performer.resolve().ofType(Practitioner).id|%serviceRequests.entry.resource.requester.resolve().ofType(Practitioner).id|%nutritionOrders.entry.resource.orderer.resolve().ofType(Practitioner).id|%visionPrescriptions.entry.resource.prescriber.resolve().ofType(Practitioner).id}}",
+        "organizations": "Organization?_id={{%practitionerRoles.entry.resource.organization.resolve().id|%encounter.serviceProvider.resolve().ofType(Organization).id|%communicationRequests.entry.resource.recipient.resolve().ofType(Organization).id|%communicationRequests.entry.resource.sender.resolve().ofType(Organization).id|%medicationRequests.entry.resource.dispenseRequest.performer.resolve().id|%serviceRequests.entry.resource.performer.resolve().ofType(Organization).id}}",
+        "locations": "Location?_id={{%practitionerRoles.entry.resource.location.resolve().id|%encounter.location.location.resolve().id|%serviceRequests.entry.resource.locationReference.resolve().id}}"
       },
       "extension": {
         "davinci-crd.version": ["2.2"],
@@ -270,12 +277,12 @@
         "patient": "Patient/{{context.patientId}}",
         "encounter": "Encounter/{{context.encounterId}}",
         "coverage": "Coverage?patient={{context.patientId}}&status=active",        
-        "device": "Device?_id={{context.draftOrders.entry.resource.ofType(DeviceRequest).code.resolve().id}}",
-        "medication": "Medication?_id={{context.draftOrders.entry.resource.ofType(MedicationRequest).medication}}",
-        "practitionerRoles" : "PractitionerRole?_id={{%encounter.participant.individual.resolve().ofType(PractitionerRole).id|%encounter.serviceProvider.resolve().ofType(PractitionerRole).id|context.draftOrders.entry.resource.sender.resolve().ofType(PractitionerRole).id|context.draftOrders.entry.resource.recipient.resolve().ofType(PractitionerRole).id|context.draftOrders.entry.resource.requester.resolve().ofType(PractitionerRole).id|context.draftOrders.entry.resource.performer.resolve().ofType(PractitionerRole).id|context.draftOrders.entry.resource.orderer.resolve().ofType(PractitionerRole).id|context.draftOrders.entry.resource.prescriber.resolve().ofType(PractitionerRole).id}}",
-        "practitioners" : "Practitioner?_id={{%practitionerRoles.practitioner.resolve().id|%encounter.participant.individual.resolve().ofType(Practitioner).id|%encounter.serviceProvider.resolve().ofType(Practitioner).id|context.draftOrders.entry.resource.sender.resolve().ofType(Practitioner).id|context.draftOrders.entry.resource.recipient.resolve().ofType(Practitioner).id|context.draftOrders.entry.resource.requester.resolve().ofType(Practitioner).id|context.draftOrders.entry.resource.performer.resolve().ofType(Practitioner).id|context.draftOrders.entry.resource.orderer.resolve().ofType(Practitioner).id|context.draftOrders.entry.resource.prescriber.resolve().ofType(Practitioner).id}}",
-        "organizations" : "Organization?_id={{%practitionerRoles.organization.resolve().id|context.draftOrders.entry.resource.dispenseRequest.performer.resolve().ofType(Organization).id}}",
-        "locations" : "Location?_id={{%practitionerRoles.location.resolve().id|%encounter.location.location.resolve().ofType(Location).id|context.draftOrders.entry.locationReference.resolve().ofType(Location).id}}"
+        "devices": "Device?_id={{context.draftOrders.entry.resource.ofType(DeviceRequest).code.resolve().id}}",
+        "medications": "Medication?_id={{context.draftOrders.entry.resource.ofType(MedicationRequest).medication.resolve().id}}",
+        "practitionerRoles": "PractitionerRole?_id={{%encounter.participant.individual.resolve().ofType(PractitionerRole).id|context.draftOrders.entry.resource.sender.resolve().ofType(PractitionerRole).id|context.draftOrders.entry.resource.recipient.resolve().ofType(PractitionerRole).id|context.draftOrders.entry.resource.requester.resolve().ofType(PractitionerRole).id|context.draftOrders.entry.resource.performer.resolve().ofType(PractitionerRole).id|context.draftOrders.entry.resource.orderer.resolve().ofType(PractitionerRole).id|context.draftOrders.entry.resource.prescriber.resolve().ofType(PractitionerRole).id}}",
+        "practitioners": "Practitioner?_id={{%practitionerRoles.entry.resource.practitioner.resolve().id|%encounter.participant.individual.resolve().ofType(Practitioner).id|context.draftOrders.entry.resource.sender.resolve().ofType(Practitioner).id|context.draftOrders.entry.resource.recipient.resolve().ofType(Practitioner).id|context.draftOrders.entry.resource.requester.resolve().ofType(Practitioner).id|context.draftOrders.entry.resource.performer.resolve().ofType(Practitioner).id|context.draftOrders.entry.resource.orderer.resolve().ofType(Practitioner).id|context.draftOrders.entry.resource.prescriber.resolve().ofType(Practitioner).id}}",
+        "organizations": "Organization?_id={{%practitionerRoles.entry.resource.organization.resolve().id|%encounter.serviceProvider.resolve().ofType(Organization).id|context.draftOrders.entry.resource.dispenseRequest.performer.resolve().id|context.draftOrders.entry.resource.sender.resolve().ofType(Organization).id|context.draftOrders.entry.resource.recipient.resolve().ofType(Organization).id|context.draftOrders.entry.resource.performer.resolve().ofType(Organization).id}}",
+        "locations": "Location?_id={{%practitionerRoles.entry.resource.location.resolve().id|%encounter.location.location.resolve().id|context.draftOrders.entry.resource.locationReference.resolve().id}}"
       },
       "extension": {
         "davinci-crd.version": ["2.2"],
@@ -390,12 +397,12 @@
         "patient": "Patient/{{context.patientId}}",
         "encounter": "Encounter/{{context.encounterId}}",
         "coverage": "Coverage?patient={{context.patientId}}&status=active",        
-        "device": "Device?_id={{context.draftOrders.entry.resource.ofType(DeviceRequest).code.resolve().id}}",
-        "medication": "Medication?_id={{context.draftOrders.entry.resource.ofType(MedicationRequest).medication}}",
-        "practitionerRoles" : "PractitionerRole?_id={{%encounter.participant.individual.resolve().ofType(PractitionerRole).id|%encounter.serviceProvider.resolve().ofType(PractitionerRole).id|context.draftOrders.entry.resource.sender.resolve().ofType(PractitionerRole).id|context.draftOrders.entry.resource.recipient.resolve().ofType(PractitionerRole).id|context.draftOrders.entry.resource.requester.resolve().ofType(PractitionerRole).id|context.draftOrders.entry.resource.performer.resolve().ofType(PractitionerRole).id|context.draftOrders.entry.resource.orderer.resolve().ofType(PractitionerRole).id|context.draftOrders.entry.resource.prescriber.resolve().ofType(PractitionerRole).id}}",
-        "practitioners" : "Practitioner?_id={{%practitionerRoles.practitioner.resolve().id|%encounter.participant.individual.resolve().ofType(Practitioner).id|%encounter.serviceProvider.resolve().ofType(Practitioner).id|context.draftOrders.entry.resource.sender.resolve().ofType(Practitioner).id|context.draftOrders.entry.resource.recipient.resolve().ofType(Practitioner).id|context.draftOrders.entry.resource.requester.resolve().ofType(Practitioner).id|context.draftOrders.entry.resource.performer.resolve().ofType(Practitioner).id|context.draftOrders.entry.resource.orderer.resolve().ofType(Practitioner).id|context.draftOrders.entry.resource.prescriber.resolve().ofType(Practitioner).id}}",
-        "organizations" : "Organization?_id={{%practitionerRoles.organization.resolve().id|context.draftOrders.entry.resource.dispenseRequest.performer.resolve().ofType(Organization).id}}",
-        "locations" : "Location?_id={{%practitionerRoles.location.resolve().id|%encounter.location.location.resolve().ofType(Location).id|context.draftOrders.entry.locationReference.resolve().ofType(Location).id}}"
+        "devices": "Device?_id={{context.draftOrders.entry.resource.ofType(DeviceRequest).code.resolve().id}}",
+        "medications": "Medication?_id={{context.draftOrders.entry.resource.ofType(MedicationRequest).medication.resolve().id}}",
+        "practitionerRoles": "PractitionerRole?_id={{%encounter.participant.individual.resolve().ofType(PractitionerRole).id|context.draftOrders.entry.resource.sender.resolve().ofType(PractitionerRole).id|context.draftOrders.entry.resource.recipient.resolve().ofType(PractitionerRole).id|context.draftOrders.entry.resource.requester.resolve().ofType(PractitionerRole).id|context.draftOrders.entry.resource.performer.resolve().ofType(PractitionerRole).id|context.draftOrders.entry.resource.orderer.resolve().ofType(PractitionerRole).id|context.draftOrders.entry.resource.prescriber.resolve().ofType(PractitionerRole).id}}",
+        "practitioners": "Practitioner?_id={{%practitionerRoles.entry.resource.practitioner.resolve().id|%encounter.participant.individual.resolve().ofType(Practitioner).id|context.draftOrders.entry.resource.sender.resolve().ofType(Practitioner).id|context.draftOrders.entry.resource.recipient.resolve().ofType(Practitioner).id|context.draftOrders.entry.resource.requester.resolve().ofType(Practitioner).id|context.draftOrders.entry.resource.performer.resolve().ofType(Practitioner).id|context.draftOrders.entry.resource.orderer.resolve().ofType(Practitioner).id|context.draftOrders.entry.resource.prescriber.resolve().ofType(Practitioner).id}}",
+        "organizations": "Organization?_id={{%practitionerRoles.entry.resource.organization.resolve().id|%encounter.serviceProvider.resolve().ofType(Organization).id|context.draftOrders.entry.resource.dispenseRequest.performer.resolve().id|context.draftOrders.entry.resource.sender.resolve().ofType(Organization).id|context.draftOrders.entry.resource.recipient.resolve().ofType(Organization).id|context.draftOrders.entry.resource.performer.resolve().ofType(Organization).id}}",
+        "locations": "Location?_id={{%practitionerRoles.entry.resource.location.resolve().id|%encounter.location.location.resolve().id|context.draftOrders.entry.resource.locationReference.resolve().id}}"
       },
       "extension": {
         "davinci-crd.version": ["2.2"],
