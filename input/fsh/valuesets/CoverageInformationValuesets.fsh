@@ -80,6 +80,7 @@ Description: "Reasons for a coverage assertion in the coverage-information exten
 * CRDTempCodes#no-active-coverage
 * CRDTempCodes#coverage-not-found
 * CRDTempCodes#auth-out-network
+* CRDTempCodes#technical
 
 /*
 ValueSet: CRDCoverageAssertionReasonsNew
