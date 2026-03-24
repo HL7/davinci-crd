@@ -12,6 +12,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
         "valueCanonical" : "http://hl7.org/fhir/us/davinci-crd/ImplementationGuide/davinci-crd"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
+        "valueCanonical" : "http://hl7.org/fhir/us/davinci-crd/ImplementationGuide/davinci-crd"
       }]
     }
   },
@@ -2467,7 +2471,7 @@
     "key" : "hook-27",
     "conformance" : ["SHALL"],
     "conditionality" : true,
-    "requirement" : "The 'context' field in invocations of the encounter-start hook **SHALL** conform to the logical model specified [here](http://hl7.org/fhir/tools/1.1.0/StructureDefinition-CDSHookEncounterStartContext.html)"
+    "requirement" : "The 'context' field in invocations of the encounter-start hook **SHALL** conform to the logical model specified [here](http://hl7.org/fhir/tools/1.1.2/StructureDefinition-CDSHookEncounterStartContext.html)"
   },
   {
     "extension" : [{
@@ -2506,7 +2510,7 @@
     "key" : "hook-29",
     "conformance" : ["SHALL"],
     "conditionality" : true,
-    "requirement" : "The 'context' field in invocations of the encounter-discharge hook **SHALL** conform to the logical model specified [here](http://hl7.org/fhir/tools/1.1.0/StructureDefinition-CDSHookEncounterDischargeContext.html)"
+    "requirement" : "The 'context' field in invocations of the encounter-discharge hook **SHALL** conform to the logical model specified [here](http://hl7.org/fhir/tools/1.1.2/StructureDefinition-CDSHookEncounterDischargeContext.html)"
   },
   {
     "extension" : [{
