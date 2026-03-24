@@ -144,7 +144,7 @@ Description: "Captures assertions from a payer about the coverage rules for a se
   * ^short = "Resources that impact this assertion"
   * ^definition = "If present, indicates that the determination represented here is dependent on the content, determination, and possibly execution of the referenced order(s)"
   * ^requirements = "For example, the authorization decision on a request for post-surgical physiotherapy might be dependent on the order for the surgery itself.  If coverage for the surgery is not approved or the order for the surgery is cancelled, that might impact the decision on covering the physiotherapy."
-  * value[x] only Reference(CRDAppointmentWithOrder or CRDAppointmentNoOrder or CRDCommunicationRequest or CRDDeviceRequest or CRDMedicationRequest or CRDNutritionOrder or CRDServiceRequest)
+  * value[x] only Reference(CRDAppointmentWithOrder or CRDAppointmentNoOrder or CRDCommunicationRequest or CRDDeviceRequest or CRDMedicationRequest or CRDNutritionOrder or CRDServiceRequest or CRDVisionPrescription)
 * extension[questionnaire] only Extension
   * ^short = "Questionnaire to complete"
   * ^definition = "A form to be filled out to gather more information."
