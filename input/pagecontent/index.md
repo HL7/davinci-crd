@@ -4,7 +4,7 @@
 <!--<blockquote class="note-to-balloters" markdown="1">
 Welcome to the post-ballot public review for the STU 2.2 release of the Da Vinci Coverage Requirements Discovery (CRD) implementation guide.
 
-As a result of ballot feedback, a number of [additional changes](history.html#release-220-snapshot) have been made to the IG, some of them substantive.  Because of these substantive changes, we're providing an opportunity for the community to perform an additional layer of review to the changes.  Feedback on this release should be limited to only those aspects of the specification changed since the ballot, though technical corrections identifying issues with spelling, grammar, formatting, broken links, etc. are welcome for any portion of the specification.  Feedback submitted against other parts of the specification will likely be deferred to a future release, particularly if they would involve substantive change, though all feedback provided will be considered at some point.
+As a result of ballot feedback, a number of [additional changes](changes.html#release-220-snapshot) have been made to the IG, some of them substantive.  Because of these substantive changes, we're providing an opportunity for the community to perform an additional layer of review to the changes.  Feedback on this release should be limited to only those aspects of the specification changed since the ballot, though technical corrections identifying issues with spelling, grammar, formatting, broken links, etc. are welcome for any portion of the specification.  Feedback submitted against other parts of the specification will likely be deferred to a future release, particularly if they would involve substantive change, though all feedback provided will be considered at some point.
 
 Feedback on changes made since the ballot will generally fall into one of two categories:
 * The change was not made as agreed or accidentally introduced a new issue.  (Please check for situations where an agreed change was subsequently overridden by a subsequent change.)
@@ -27,7 +27,7 @@ This implementation guide is dependent on other specifications.  Please submit a
 
 Individuals interested in participating in the Da Vinci Burden Reduction project or other HL7 Da Vinci projects can find information about Da Vinci [here](http://www.hl7.org/about/davinci).
 
-A summary of the major changes from the previous release can be found [here](history.html).
+A summary of the major changes from the previous release can be found [here](changes.html).
 
 One of the changes in this release is migrating a number of codes from a temporary 'custom' code system in this IG to a standard code system that will eventually allow codes to evolve without a new release of this IG and to be shared with other specifications.  Support for the CRD-specific code system alongside the new code system continues to be mandated in this release to ease transition.  The set of codes for one value set - [Coverage Assertion Reasons](ValueSet-coverageAssertionReasons.html) did not complete it's migration in time for this release.  See the comment on that value set for recommendations.
 </blockquote>

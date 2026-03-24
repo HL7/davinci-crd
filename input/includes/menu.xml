@@ -134,6 +134,6 @@
     </ul>
   </li>
   <li>
-    <a href="{{site.data.info.assets}}history.html">Change Log</a>
+    <a href="{{site.data.info.assets}}changes.html">Change Log</a>
   </li>
 </ul>
