@@ -13,7 +13,7 @@ e: {
   "error" : "Error from https://tx.fhir.org/r4: Error: A definition for CodeSystem 'https://www.nubc.org/CodeSystem/TypeOfBill' could not be found, so the value set cannot be expanded"
 }
 -------------------------------------------------------------------------------------
-{"hierarchical" : false, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/NUBCTypeOfBill", "version": "2.2.0"}####
+{"hierarchical" : false, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/NUBCTypeOfBill", "version": "2.2.1"}####
 e: {
   "from-server" : true,
   "error" : "Error from https://tx.fhir.org/r4: Error: A definition for CodeSystem 'https://www.nubc.org/CodeSystem/TypeOfBill' could not be found, so the value set cannot be expanded"

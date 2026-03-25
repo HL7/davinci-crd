@@ -4,15 +4,15 @@
     "profile" : ["http://hl7.org/fhir/StructureDefinition/TerminologyCapabilities"]
   },
   "text" : {
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h1>CSIRO Terminology Server (Ontoserver ®)</h1><table><tr><td>Publisher</td><td>HL7 Australia</td></tr><tr><td>Version</td><td>6.24.0.1773322911066</td></tr><tr><td>Date</td><td>2026-03-12</td></tr></table><p>Ontoserver supports a large portion of the FHIR Terminology Services specification. In particular, it has native support for SNOMED CT, LOINC, and code systems defined via the FHIR CodeSystem resource. This extends to supporting use of all defined and default filters in a FHIR ValueSet, as well as the implicitly defined ValueSets for SNOMED CT and LOINC.</p><p>More details are available in the <a href=\"https://ontoserver.csiro.au/docs/6.24.0/api-fhir.html\">Ontoserver documentation</a></p></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h1>CSIRO Terminology Server (Ontoserver ®)</h1><table><tr><td>Publisher</td><td>HL7 Australia</td></tr><tr><td>Version</td><td>6.24.0.1774450635927</td></tr><tr><td>Date</td><td>2026-03-25</td></tr></table><p>Ontoserver supports a large portion of the FHIR Terminology Services specification. In particular, it has native support for SNOMED CT, LOINC, and code systems defined via the FHIR CodeSystem resource. This extends to supporting use of all defined and default filters in a FHIR ValueSet, as well as the implicitly defined ValueSets for SNOMED CT and LOINC.</p><p>More details are available in the <a href=\"https://ontoserver.csiro.au/docs/6.24.0/api-fhir.html\">Ontoserver documentation</a></p></div>"
   },
   "url" : "https://tx.hl7.org.au/fhir/metadata?mode=terminology",
-  "version" : "6.24.0.1773322911066",
+  "version" : "6.24.0.1774450635927",
   "name" : "FHIR_Conformance_statement_for_Ontoserver",
   "title" : "FHIR Conformance statement for OntoserverÂ®",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-03-12T13:41:51+00:00",
+  "date" : "2026-03-25T14:57:15+00:00",
   "publisher" : "HL7 Australia",
   "contact" : [{
     "telecom" : [{

@@ -1,10 +1,10 @@
 {
   "package-id" : "hl7.fhir.us.davinci-crd",
-  "version" : "2.2.0",
-	"path": "http://hl7.org/fhir/us/davinci-crd/2.2.0",
+  "version" : "2.2.1",
+	"path": "http://hl7.org/fhir/us/davinci-crd/2.2.1",
   "status" : "trial-use",
-  "mode" : "milestone",
+  "mode" : "technical-correction",
   "sequence" : "STU 2.2",
-  "desc" : "STU 2.2.0 official release",
-  "descmd" : "STU 2.2.0 official release.  See [list of changes](http://hl7.org/fhir/us/davinci-crd/2.2.0/changes.html#release-220)"
+  "desc" : "STU 2.2.1 technical correction",
+  "descmd" : "STU 2.2.1 technical corrections.  See [list of changes](http://hl7.org/fhir/us/davinci-crd/2.2.1/changes.html#release-221)"
 }

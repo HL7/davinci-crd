@@ -25,7 +25,7 @@ v: {
   "error" : "The concept '0093-0948' has a status of inactive and its use should be reviewed",
   "server" : "https://tx.fhir.org/r4",
   "inactive" : true,
-  "diagnostics" : "0ms tx-op\n1ms http://hl7.org/fhir/sid/ndc/vs|2021-11-01: Validate \"[http://hl7.org/fhir/sid/ndc#0093-0948 (\"Diclofenac Potassium (product)\")]\"\n1ms http://hl7.org/fhir/sid/ndc/vs|2021-11-01: Check \"http://hl7.org/fhir/sid/ndc#0093-0948\"\n1ms http://hl7.org/fhir/sid/ndc/vs|2021-11-01: CodeSystem found: http://hl7.org/fhir/sid/ndc|2021-11-01 for http://hl7.org/fhir/sid/ndc|2021-11-01\n1ms http://hl7.org/fhir/sid/ndc/vs|2021-11-01: check code in (http://hl7.org/fhir/sid/ndc) at CodeableConcept.coding[0]\n93ms http://hl7.org/fhir/sid/ndc/vs|2021-11-01: Code \"0093-0948\" found in http://hl7.org/fhir/sid/ndc|2021-11-01",
+  "diagnostics" : "0ms tx-op\n0ms http://hl7.org/fhir/sid/ndc/vs|2021-11-01: Validate \"[http://hl7.org/fhir/sid/ndc#0093-0948 (\"Diclofenac Potassium (product)\")]\"\n0ms http://hl7.org/fhir/sid/ndc/vs|2021-11-01: Check \"http://hl7.org/fhir/sid/ndc#0093-0948\"\n0ms http://hl7.org/fhir/sid/ndc/vs|2021-11-01: CodeSystem found: http://hl7.org/fhir/sid/ndc|2021-11-01 for http://hl7.org/fhir/sid/ndc|2021-11-01\n0ms http://hl7.org/fhir/sid/ndc/vs|2021-11-01: check code in (http://hl7.org/fhir/sid/ndc) at CodeableConcept.coding[0]\n23ms http://hl7.org/fhir/sid/ndc/vs|2021-11-01: Code \"0093-0948\" found in http://hl7.org/fhir/sid/ndc|2021-11-01",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",
@@ -79,7 +79,7 @@ v: {
   "error" : "The concept '59011-410' has a status of inactive and its use should be reviewed",
   "server" : "https://tx.fhir.org/r4",
   "inactive" : true,
-  "diagnostics" : "0ms tx-op\n1ms http://hl7.org/fhir/sid/ndc/vs|2021-11-01: Validate \"[http://hl7.org/fhir/sid/ndc#59011-410 (\"OxyContin (product)\")]\"\n1ms http://hl7.org/fhir/sid/ndc/vs|2021-11-01: Check \"http://hl7.org/fhir/sid/ndc#59011-410\"\n1ms http://hl7.org/fhir/sid/ndc/vs|2021-11-01: CodeSystem found: http://hl7.org/fhir/sid/ndc|2021-11-01 for http://hl7.org/fhir/sid/ndc|2021-11-01\n1ms http://hl7.org/fhir/sid/ndc/vs|2021-11-01: check code in (http://hl7.org/fhir/sid/ndc) at CodeableConcept.coding[0]\n90ms http://hl7.org/fhir/sid/ndc/vs|2021-11-01: Code \"59011-410\" found in http://hl7.org/fhir/sid/ndc|2021-11-01",
+  "diagnostics" : "0ms tx-op\n0ms http://hl7.org/fhir/sid/ndc/vs|2021-11-01: Validate \"[http://hl7.org/fhir/sid/ndc#59011-410 (\"OxyContin (product)\")]\"\n0ms http://hl7.org/fhir/sid/ndc/vs|2021-11-01: Check \"http://hl7.org/fhir/sid/ndc#59011-410\"\n0ms http://hl7.org/fhir/sid/ndc/vs|2021-11-01: CodeSystem found: http://hl7.org/fhir/sid/ndc|2021-11-01 for http://hl7.org/fhir/sid/ndc|2021-11-01\n0ms http://hl7.org/fhir/sid/ndc/vs|2021-11-01: check code in (http://hl7.org/fhir/sid/ndc) at CodeableConcept.coding[0]\n22ms http://hl7.org/fhir/sid/ndc/vs|2021-11-01: Code \"59011-410\" found in http://hl7.org/fhir/sid/ndc|2021-11-01",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome",

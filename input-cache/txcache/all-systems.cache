@@ -11,19 +11,19 @@ e: {
   "error" : "Error from https://tx.fhir.org/r4: Error: The code System \"http://www.ama-assn.org/go/cpt\" has a grammar, and cannot be enumerated directly"
 }
 -------------------------------------------------------------------------------------
-{"hierarchical" : false, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes", "version": "2.2.0"}####
+{"hierarchical" : false, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/billingCodes", "version": "2.2.1"}####
 e: {
   "from-server" : true,
   "error" : "Error from https://tx.fhir.org/r4: Error: The code System \"http://www.ama-assn.org/go/cpt\" has a grammar, and cannot be enumerated directly"
 }
 -------------------------------------------------------------------------------------
-{"hierarchical" : false, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/deviceRequest", "version": "2.2.0"}####
+{"hierarchical" : false, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/deviceRequest", "version": "2.2.1"}####
 e: {
   "from-server" : true,
   "error" : "Error from https://tx.fhir.org/r4: Error: The code System \"http://www.ama-assn.org/go/cpt\" has a grammar, and cannot be enumerated directly"
 }
 -------------------------------------------------------------------------------------
-{"hierarchical" : false, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/serviceRequestCodes", "version": "2.2.0"}####
+{"hierarchical" : false, "url": "http://hl7.org/fhir/us/davinci-crd/ValueSet/serviceRequestCodes", "version": "2.2.1"}####
 e: {
   "from-server" : true,
   "error" : "Error from https://tx.fhir.org/r4: Error: The code System \"http://www.ama-assn.org/go/cpt\" has a grammar, and cannot be enumerated directly"
