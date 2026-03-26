@@ -20,6 +20,10 @@
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
         "valueCanonical" : "http://hl7.org/fhir/us/davinci-crd/ImplementationGuide/davinci-crd"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
+        "valueCanonical" : "http://hl7.org/fhir/us/davinci-crd/ImplementationGuide/davinci-crd"
       }]
     }
   },
@@ -38,7 +42,7 @@
     "system" : "urn:ietf:rfc:3986",
     "value" : "urn:oid:2.16.840.1.113883.4.642.40.18.36.1"
   }],
-  "version" : "2.2.0",
+  "version" : "2.2.1",
   "name" : "FromNarrative",
   "title" : "Narrative Conformance Statements",
   "status" : "active",
@@ -3609,7 +3613,7 @@
     }],
     "key" : "resp-22",
     "conformance" : ["SHALL"],
-    "requirement" : "External Reference responses ***SHALL** comply with the logical model profile found [here](StructureDefinition-CRDHooksResponse-externalReference.html)."
+    "requirement" : "External Reference responses **SHALL** comply with the logical model profile found [here](StructureDefinition-CRDHooksResponse-externalReference.html)."
   },
   {
     "extension" : [{
@@ -3650,7 +3654,7 @@
     }],
     "key" : "resp-24",
     "conformance" : ["SHALL"],
-    "requirement" : "Instructions responses ***SHALL** comply with the logical model profile found [here](StructureDefinition-CRDHooksResponse-instructions.html)."
+    "requirement" : "Instructions responses **SHALL** comply with the logical model profile found [here](StructureDefinition-CRDHooksResponse-instructions.html)."
   },
   {
     "extension" : [{
@@ -4228,7 +4232,7 @@
     }],
     "key" : "resp-52",
     "conformance" : ["SHALL"],
-    "requirement" : "Coverage Information responses ***SHALL** comply with the logical model profile found [here](StructureDefinition-CRDHooksResponse-coverageInformation.html)."
+    "requirement" : "Coverage Information responses **SHALL** comply with the logical model profile found [here](StructureDefinition-CRDHooksResponse-coverageInformation.html)."
   },
   {
     "extension" : [{
@@ -4305,7 +4309,7 @@
     }],
     "key" : "resp-56",
     "conformance" : ["SHALL"],
-    "requirement" : "Alternate Request responses ***SHALL** comply with the logical model profile found [here](StructureDefinition-CRDHooksResponse-alternateRequest.html)."
+    "requirement" : "Alternate Request responses **SHALL** comply with the logical model profile found [here](StructureDefinition-CRDHooksResponse-alternateRequest.html)."
   },
   {
     "extension" : [{
@@ -4344,7 +4348,7 @@
     }],
     "key" : "resp-58",
     "conformance" : ["SHALL"],
-    "requirement" : "Additional Orders responses ***SHALL** comply with the logical model profile= found [here](StructureDefinition-CRDHooksResponse-additionalOrders.html)."
+    "requirement" : "Additional Orders responses **SHALL** comply with the logical model profile= found [here](StructureDefinition-CRDHooksResponse-additionalOrders.html)."
   },
   {
     "extension" : [{
@@ -4483,7 +4487,7 @@
     }],
     "key" : "resp-65",
     "conformance" : ["SHALL"],
-    "requirement" : "Form Completion responses ***SHALL** comply with the logical model profile found [here](StructureDefinition-CRDHooksResponse-formCompletion.html)."
+    "requirement" : "Form Completion responses **SHALL** comply with the logical model profile found [here](StructureDefinition-CRDHooksResponse-formCompletion.html)."
   },
   {
     "extension" : [{
@@ -4602,7 +4606,7 @@
     }],
     "key" : "resp-71",
     "conformance" : ["SHALL"],
-    "requirement" : "Adjust Coverage responses ***SHALL** comply with the logical model profile found [here](StructureDefinition-CRDHooksResponse-adjustCoverage.html)."
+    "requirement" : "Adjust Coverage responses **SHALL** comply with the logical model profile found [here](StructureDefinition-CRDHooksResponse-adjustCoverage.html)."
   },
   {
     "extension" : [{
@@ -4621,7 +4625,7 @@
     }],
     "key" : "resp-72",
     "conformance" : ["SHALL"],
-    "requirement" : "Launch SMART responses ***SHALL** comply with the logical model profile found [here](StructureDefinition-CRDHooksResponse-launchSMART.html)."
+    "requirement" : "Launch SMART responses **SHALL** comply with the logical model profile found [here](StructureDefinition-CRDHooksResponse-launchSMART.html)."
   },
   {
     "extension" : [{
