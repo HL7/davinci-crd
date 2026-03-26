@@ -26,6 +26,6 @@ Profile: CRDRequestBundle
 Parent: CRDBaseBundle
 Id: profile-bundle-request
 Title: "CRD Bundle of Request Resources"
-Description: "This profile defines the Bundle used to convey the relevant orders for the order-select, order-sign, and order-dispatch hooks."
+Description: "This profile defines the Bundle used to convey the relevant orders for the order-select and order-sign hooks."
 * ^experimental = false
-* entry.resource only CRDAppointmentWithOrder or CRDAppointmentNoOrder or CRDCommunicationRequest or CRDDeviceRequest or CRDEncounter or CRDMedicationRequest or CRDNutritionOrder or CRDServiceRequest or CRDVisionPrescription
+* entry.resource only CRDCommunicationRequest or CRDDeviceRequest or CRDMedicationRequest or CRDNutritionOrder or CRDServiceRequest or CRDVisionPrescription
