@@ -36,6 +36,9 @@
         <a href="{{site.data.info.assets}}conformance.html">Conformance Expectations</a>
       </li>
       <li>
+        <a href="{{site.data.info.assets}}conformancedetails.html">Conformance Details</a>
+      </li>
+      <li>
         <a href="{{site.data.info.assets}}security.html">Privacy, Safety, and Security</a>
       </li>
       <li>
