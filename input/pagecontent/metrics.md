@@ -89,7 +89,7 @@ The table below defines a set of measures with a short name, purpose, conformanc
     </tr>
     <tr>
       <td>6</td>
-      <td>% requests with resposnes in under 5 seconds</td>
+      <td>% requests with responses in under 5 seconds</td>
       <td>Process Compliance</td>
       <td>Both</td>
       <td>
